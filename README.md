@@ -38,9 +38,9 @@ BeA Food ăn không ngon thì cút :))</br>
 
    `public void SaveOrder(int orderId, string customerName)`
  
-- Tên Class sử dụng danh từ, viết hoa chữ cái đầu</br>
+- Tên Class sử dụng danh từ, viết hoa chữ cái đầu, cấu trúc Tên Class + Tên Layer</br>
 
-   `public class User{}`
+   `public class UserBLL{}`
 
 - Tên Method dùng động từ, viết hoa chữ cái đầu</br>
 
