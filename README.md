@@ -6,6 +6,7 @@ BeA Food ăn không ngon thì cút :))</br>
  ## Lưu ý
  >Form Size: 1600 x 900</br>
 
+ >Nhiệm vụ của mỗi người sẽ được đưa ra trong Issues
  >Không được push trực tiếp lên branch "main"</br>
  >Ai làm nhiệm vụ gì thì tạo 1 branch với tên của nhiệm vụ đấy hoặc tạo trực tiếp từ issues đề ra.
 
