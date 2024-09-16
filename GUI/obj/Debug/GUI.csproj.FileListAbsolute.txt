@@ -12,3 +12,8 @@ D:\Code\C#\BTL_LapTrinhTrucQuan\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
 D:\Code\C#\BTL_LapTrinhTrucQuan\GUI\obj\Debug\GUI.csproj.Up2Date
 D:\Code\C#\BTL_LapTrinhTrucQuan\GUI\obj\Debug\GUI.exe
 D:\Code\C#\BTL_LapTrinhTrucQuan\GUI\obj\Debug\GUI.pdb
+D:\Code\C#\BTL_LapTrinhTrucQuan\GUI\bin\Debug\DAL.dll
+D:\Code\C#\BTL_LapTrinhTrucQuan\GUI\bin\Debug\Utilities.dll
+D:\Code\C#\BTL_LapTrinhTrucQuan\GUI\bin\Debug\DAL.pdb
+D:\Code\C#\BTL_LapTrinhTrucQuan\GUI\bin\Debug\Utilities.pdb
+D:\Code\C#\BTL_LapTrinhTrucQuan\GUI\obj\Debug\GUI.Form1.resources
