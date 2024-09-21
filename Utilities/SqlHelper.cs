@@ -89,15 +89,14 @@ namespace Utilities
                             if (param[0] == '@')
                                 cmd.Parameters.AddWithValue(param, objects[i++]);
                         }
-                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
                         {
-                            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-
                             DataTable dt = new DataTable();
                             adapter.Fill(dt);
                             return dt;
                         }
                     }
+                }
             }
             catch (SqlException)
             {
