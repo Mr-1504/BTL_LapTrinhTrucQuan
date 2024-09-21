@@ -7,8 +7,6 @@ namespace DAL
 {
     public class EmployeeDAL
     {
-        private string connectionString = SqlHelper.GetConnectionString();
-
         // Lấy số lượng nhân viên đang giữ chức vụ bất kỳ
         private int GetEmployeeCount(string prefix)
         {
