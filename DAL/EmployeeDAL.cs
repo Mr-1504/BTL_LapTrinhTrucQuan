@@ -17,12 +17,17 @@ namespace DAL
         }
 
         // Kiểm tra xem có nhân viên không
-        public int IsExistID(string userID)
+        public int IsExistEmployeeId(string employeeId)
         {
-            string query = "SELECT COUNT(*) FROM NhanVien WHERE MaNhanVien = @userID";
-            return SqlHelper.ExecuteScalar(query, new object[] {userID});
+            string query = "SELECT COUNT(*) FROM NhanVien WHERE MaNhanVien = @employeeId";
+            return SqlHelper.ExecuteScalar(query, new object[] {employeeId});
         }
 
+        public int IsExistEmployeeName(string employeeName)
+        {
+            string query = "SELECT COUNT(*) FROM NhanVien WHERE TenNhanVien = @employeeName";
+            return SqlHelper.ExecuteScalar(query, new object[] { employeeName });
+        }
 
         // Thêm một nhân viên
         public int AddNewEmployee(string prefix, EmployeeDTO employee)
@@ -61,16 +66,10 @@ namespace DAL
             return SqlHelper.ExecuteReader(query, new object[] { });
         }
 
-        // kiểm tra xem value có trong enum Employee không
-        private bool IsValidRole(string role)
-        {
-            return Enum.TryParse<Employee>(role, true, out var _);
-        }
-
         // tìm kiếm nhân viên theo thông tin bất kỳ
         public DataTable GetEmployee(Enum @enum, string getValue) 
         {
-            if (IsValidRole(@enum.ToString()))
+            if (Config.IsValidEnum<Employee>(@enum.ToString()))
             {
                 string query = "SELECT * FROM NhanVien WHERE " + @enum.GetEnumDescription() + " = @getValue";
                 Console.WriteLine(query);
