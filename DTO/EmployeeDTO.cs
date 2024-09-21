@@ -30,7 +30,6 @@ namespace DTO
             Hometown = hometown;
             NumberPhone = numberPhone;
             Address = address;
-            Console.WriteLine("Dia chi " + Address);
         }
     }
 }
