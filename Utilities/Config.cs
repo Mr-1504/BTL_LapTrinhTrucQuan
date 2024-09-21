@@ -40,6 +40,21 @@ namespace Utilities
         Other
     }
 
+    public enum Food
+    {
+        [Description("MaMonAn")]
+        FoodId,
+
+        [Description("TenMonAn")]
+        FoodName,
+
+        [Description("CachLam")]
+        FoodMaking,
+
+        [Description("DonGia")]
+        FoodUnitPrice
+    }
+
     public static class Config
     {
         public static string GetEnumDescription(this Enum value)
@@ -54,6 +69,11 @@ namespace Utilities
                 }
             }
             return value.ToString();
+        }
+
+        public static bool IsValidEnum<TEnum>(string value) where TEnum : struct, Enum
+        {
+            return Enum.IsDefined(typeof(TEnum), value) && Enum.TryParse<TEnum>(value, true, out var _);
         }
     }
 }
