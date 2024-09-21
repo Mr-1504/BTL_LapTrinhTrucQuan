@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data;
 using DAL;
 using Utilities;
 namespace BLL
@@ -12,10 +7,11 @@ namespace BLL
     {
         public int IsExist(string userID)
         {
-            return new FoodDAL().RemoveFood("CHI0003");
+            return new IngredientDAL().UpdateIngredient(new DTO.IngredientDTO("THI0001", "Thịt voi", Unit.Kg, "Bổ dưỡng lắm", "Ăn chín nhé", "Ăn ít thôi", 20));
+            //return new IngredientDAL().RemoveIngredient("THI0001");
         }
         public DataTable GetData() {
-            return new FoodDAL().GetFood(Food.FoodName, "Rau muống xào");
+            return new IngredientDAL().GetIngredient(Ingredient.IngredientId, "THI0001");
         }
     }
 }

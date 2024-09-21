@@ -7,8 +7,6 @@ namespace DAL
 {
     public class FoodDAL
     {
-        private string connectionString = SqlHelper.GetConnectionString();
-
         private int GetFoodCount(string prefix)
         {
             string query = "SELECT COUNT(*) FROM MonAn WHERE MaMonAn LIKE @Prefix + '%'";

@@ -18,8 +18,8 @@ namespace GUI
         {
             InitializeComponent();
 
-            int res = new Class1().IsExist("QL0001");
-            MessageBox.Show(res.ToString(), "thong bao", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //int res = new Class1().IsExist("QL0001");
+            //MessageBox.Show(res.ToString(), "thong bao", MessageBoxButtons.OK, MessageBoxIcon.Error);
             //if (res == 1)
             //{
             //    MessageBox.Show("Thanh cong", "thong bao", MessageBoxButtons.OK, MessageBoxIcon.Error);
