@@ -54,6 +54,10 @@
       <Project>{a98ce691-036e-4910-b622-be13025f8e24}</Project>
       <Name>DTO</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Utilities\Utilities.csproj">
+      <Project>{6c78b2c5-58e5-4a8e-9115-60919bd57607}</Project>
+      <Name>Utilities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

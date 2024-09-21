@@ -42,8 +42,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EmployeeDTO.cs" />
+    <Compile Include="FoodDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AccountDTO.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Utilities\Utilities.csproj">
+      <Project>{6c78b2c5-58e5-4a8e-9115-60919bd57607}</Project>
+      <Name>Utilities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

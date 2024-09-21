@@ -3,28 +3,36 @@
   "WorkspaceRootPath": "D:\\Code\\C#\\BTL_LapTrinhTrucQuan\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9026DC2D-E94F-49DF-BF0C-54D73B03B58D}|DAL\\DAL.csproj|d:\\code\\c#\\btl_laptrinhtrucquan\\dal\\accountdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9026DC2D-E94F-49DF-BF0C-54D73B03B58D}|DAL\\DAL.csproj|solutionrelative:dal\\accountdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9026DC2D-E94F-49DF-BF0C-54D73B03B58D}|DAL\\DAL.csproj|d:\\code\\c#\\btl_laptrinhtrucquan\\dal\\fooddal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9026DC2D-E94F-49DF-BF0C-54D73B03B58D}|DAL\\DAL.csproj|solutionrelative:dal\\fooddal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C78B2C5-58E5-4A8E-9115-60919BD57607}|Utilities\\Utilities.csproj|D:\\Code\\C#\\BTL_LapTrinhTrucQuan\\utilities\\sqlhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C78B2C5-58E5-4A8E-9115-60919BD57607}|Utilities\\Utilities.csproj|solutionrelative:utilities\\sqlhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9026DC2D-E94F-49DF-BF0C-54D73B03B58D}|DAL\\DAL.csproj|D:\\Code\\C#\\BTL_LapTrinhTrucQuan\\dal\\employeedal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9026DC2D-E94F-49DF-BF0C-54D73B03B58D}|DAL\\DAL.csproj|solutionrelative:dal\\employeedal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{27A08745-FB46-46B9-A4DB-0A068EF1C32C}|BLL\\BLL.csproj|d:\\code\\c#\\btl_laptrinhtrucquan\\bll\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{27A08745-FB46-46B9-A4DB-0A068EF1C32C}|BLL\\BLL.csproj|D:\\Code\\C#\\BTL_LapTrinhTrucQuan\\bll\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{27A08745-FB46-46B9-A4DB-0A068EF1C32C}|BLL\\BLL.csproj|solutionrelative:bll\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|d:\\code\\c#\\btl_laptrinhtrucquan\\gui\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6C78B2C5-58E5-4A8E-9115-60919BD57607}|Utilities\\Utilities.csproj|D:\\Code\\C#\\BTL_LapTrinhTrucQuan\\utilities\\config.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C78B2C5-58E5-4A8E-9115-60919BD57607}|Utilities\\Utilities.csproj|solutionrelative:utilities\\config.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A98CE691-036E-4910-B622-BE13025F8E24}|DTO\\DTO.csproj|D:\\Code\\C#\\BTL_LapTrinhTrucQuan\\dto\\fooddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A98CE691-036E-4910-B622-BE13025F8E24}|DTO\\DTO.csproj|solutionrelative:dto\\fooddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|D:\\Code\\C#\\BTL_LapTrinhTrucQuan\\gui\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|solutionrelative:gui\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|D:\\Code\\C#\\BTL_LapTrinhTrucQuan\\gui\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|solutionrelative:gui\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{27A08745-FB46-46B9-A4DB-0A068EF1C32C}|BLL\\BLL.csproj|D:\\Code\\C#\\BTL_LapTrinhTrucQuan\\bll\\securitybll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{27A08745-FB46-46B9-A4DB-0A068EF1C32C}|BLL\\BLL.csproj|solutionrelative:bll\\securitybll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|d:\\code\\c#\\btl_laptrinhtrucquan\\gui\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|solutionrelative:gui\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,85 +42,104 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "App.config",
-              "DocumentMoniker": "D:\\Code\\C#\\BTL_LapTrinhTrucQuan\\GUI\\App.config",
-              "RelativeDocumentMoniker": "GUI\\App.config",
-              "ToolTip": "D:\\Code\\C#\\BTL_LapTrinhTrucQuan\\GUI\\App.config",
-              "RelativeToolTip": "GUI\\App.config",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2024-09-16T06:56:43.266Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Class1.cs",
-              "DocumentMoniker": "D:\\Code\\C#\\BTL_LapTrinhTrucQuan\\BLL\\Class1.cs",
-              "RelativeDocumentMoniker": "BLL\\Class1.cs",
-              "ToolTip": "D:\\Code\\C#\\BTL_LapTrinhTrucQuan\\BLL\\Class1.cs",
-              "RelativeToolTip": "BLL\\Class1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAzAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "FoodDAL.cs",
+              "DocumentMoniker": "D:\\Code\\C#\\BTL_LapTrinhTrucQuan\\DAL\\FoodDAL.cs",
+              "RelativeDocumentMoniker": "DAL\\FoodDAL.cs",
+              "ToolTip": "D:\\Code\\C#\\BTL_LapTrinhTrucQuan\\DAL\\FoodDAL.cs",
+              "RelativeToolTip": "DAL\\FoodDAL.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAqwEEAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-16T06:38:23.166Z",
+              "WhenOpened": "2024-09-21T06:11:50.744Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Form1.cs",
+              "DocumentIndex": 5,
+              "Title": "FoodDTO.cs",
+              "DocumentMoniker": "D:\\Code\\C#\\BTL_LapTrinhTrucQuan\\DTO\\FoodDTO.cs",
+              "RelativeDocumentMoniker": "DTO\\FoodDTO.cs",
+              "ToolTip": "D:\\Code\\C#\\BTL_LapTrinhTrucQuan\\DTO\\FoodDTO.cs",
+              "RelativeToolTip": "DTO\\FoodDTO.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAgwBMAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T03:16:48.826Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Form1.cs [Design]",
               "DocumentMoniker": "D:\\Code\\C#\\BTL_LapTrinhTrucQuan\\GUI\\Form1.cs",
               "RelativeDocumentMoniker": "GUI\\Form1.cs",
-              "ToolTip": "D:\\Code\\C#\\BTL_LapTrinhTrucQuan\\GUI\\Form1.cs",
-              "RelativeToolTip": "GUI\\Form1.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAewBMAAABXAAAAAAAAAA==",
+              "ToolTip": "D:\\Code\\C#\\BTL_LapTrinhTrucQuan\\GUI\\Form1.cs [Design]",
+              "RelativeToolTip": "GUI\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-16T06:18:07.747Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AccountDAL.cs",
-              "DocumentMoniker": "D:\\Code\\C#\\BTL_LapTrinhTrucQuan\\DAL\\AccountDAL.cs",
-              "RelativeDocumentMoniker": "DAL\\AccountDAL.cs",
-              "ToolTip": "D:\\Code\\C#\\BTL_LapTrinhTrucQuan\\DAL\\AccountDAL.cs",
-              "RelativeToolTip": "DAL\\AccountDAL.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-15T10:51:41.624Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-18T07:03:41.125Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "SecurityBLL.cs",
-              "DocumentMoniker": "D:\\Code\\C#\\BTL_LapTrinhTrucQuan\\BLL\\SecurityBLL.cs",
-              "RelativeDocumentMoniker": "BLL\\SecurityBLL.cs",
-              "ToolTip": "D:\\Code\\C#\\BTL_LapTrinhTrucQuan\\BLL\\SecurityBLL.cs",
-              "RelativeToolTip": "BLL\\SecurityBLL.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB8AAAABAAAAAAAAAA==",
+              "Title": "Config.cs",
+              "DocumentMoniker": "D:\\Code\\C#\\BTL_LapTrinhTrucQuan\\Utilities\\Config.cs",
+              "RelativeDocumentMoniker": "Utilities\\Config.cs",
+              "ToolTip": "D:\\Code\\C#\\BTL_LapTrinhTrucQuan\\Utilities\\Config.cs",
+              "RelativeToolTip": "Utilities\\Config.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEsAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-15T10:49:57.077Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-20T13:22:21.002Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "EmployeeDAL.cs",
               "DocumentMoniker": "D:\\Code\\C#\\BTL_LapTrinhTrucQuan\\DAL\\EmployeeDAL.cs",
               "RelativeDocumentMoniker": "DAL\\EmployeeDAL.cs",
               "ToolTip": "D:\\Code\\C#\\BTL_LapTrinhTrucQuan\\DAL\\EmployeeDAL.cs",
               "RelativeToolTip": "DAL\\EmployeeDAL.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEcAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-15T07:54:20.398Z",
+              "WhenOpened": "2024-09-15T07:54:20.398Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SqlHelper.cs",
+              "DocumentMoniker": "D:\\Code\\C#\\BTL_LapTrinhTrucQuan\\Utilities\\SqlHelper.cs",
+              "RelativeDocumentMoniker": "Utilities\\SqlHelper.cs",
+              "ToolTip": "D:\\Code\\C#\\BTL_LapTrinhTrucQuan\\Utilities\\SqlHelper.cs",
+              "RelativeToolTip": "Utilities\\SqlHelper.cs",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAQwFYAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-20T09:49:08.985Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "D:\\Code\\C#\\BTL_LapTrinhTrucQuan\\GUI\\Form1.cs",
+              "RelativeDocumentMoniker": "GUI\\Form1.cs",
+              "ToolTip": "D:\\Code\\C#\\BTL_LapTrinhTrucQuan\\GUI\\Form1.cs",
+              "RelativeToolTip": "GUI\\Form1.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAIA9wDEAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-19T07:43:20.276Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "D:\\Code\\C#\\BTL_LapTrinhTrucQuan\\BLL\\Class1.cs",
+              "RelativeDocumentMoniker": "BLL\\Class1.cs",
+              "ToolTip": "D:\\Code\\C#\\BTL_LapTrinhTrucQuan\\BLL\\Class1.cs",
+              "RelativeToolTip": "BLL\\Class1.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAnwBEAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-16T06:38:23.166Z"
             }
           ]
         }
