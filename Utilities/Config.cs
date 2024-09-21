@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Utilities
 {
@@ -30,6 +26,18 @@ namespace Utilities
 
         [Description("DienThoai")]
         NumberPhone
+    }
+
+    public enum Gender
+    {
+        [Description("Nam")]
+        Male,
+
+        [Description("Nữ")]
+        Female,
+
+        [Description("Khác")]
+        Other
     }
 
     public static class Config
