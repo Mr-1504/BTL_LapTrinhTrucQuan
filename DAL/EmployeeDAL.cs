@@ -25,14 +25,15 @@ namespace DAL
 
 
         // Thêm một nhân viên
-        public int AddNewEmployee(string prefix, string name, string gender, DateTime birth, string hometown, string address, string numberPhone)
+        public int AddNewEmployee(string prefix, EmployeeDTO employee)
         {
             string employeeCount = (GetEmployeeCount(prefix) + 1).ToString();
             employeeCount = new string('0', 4 - employeeCount.Length) + employeeCount;
             string employeeId = prefix + employeeCount;
             string query = "INSERT INTO NhanVien (MaNhanVien, TenNhanVien, GioiTinh, NamSinh, QueQuan, DiaChi, DienThoai) " +
                            "VALUES ( @EMPLOYEEID , @NAME , @GENDER , @BIRTH , @HOMETOWN , @ADDRESS , @NUMBERPHONE )";
-            return SqlHelper.ExecuteNonQuery(query, new object[] {employeeId, name, gender, birth, hometown, address, numberPhone});
+            return SqlHelper.ExecuteNonQuery(query, new object[] {employeeId, employee.Name, employee.Gender.GetEnumDescription(), employee.Birth, 
+                    employee.Hometown, employee.Address, employee.NumberPhone});
         }
 
         // xóa nhân viên
@@ -44,11 +45,12 @@ namespace DAL
 
 
         // cập nhật thông tin nhân viên
-        public int UpdateEmployee(string employeeId, string name, string gender, DateTime birth, string hometown, string address, string numberPhone)
+        public int UpdateEmployee(EmployeeDTO employee)
         {
             string query = "UPDATE NhanVien SET TenNhanVien = @name , GioiTinh = @gender , NamSinh = @birth , QueQuan = @hometown , " +
                 "DiaChi = @address , DienThoai = @numberPhone WHERE MaNhanVien = @employeeId";
-            return SqlHelper.ExecuteNonQuery(query, new object[] { name, gender, birth, hometown, address, numberPhone, employeeId });
+            return SqlHelper.ExecuteNonQuery(query, new object[] { employee.Name, employee.Gender.GetEnumDescription(), employee.Birth, employee.Hometown
+                    , employee.Address, employee.NumberPhone, employee.EmployeeId});
         }
 
 
