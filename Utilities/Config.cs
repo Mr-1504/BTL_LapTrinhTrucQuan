@@ -55,6 +55,22 @@ namespace Utilities
         FoodUnitPrice
     }
 
+    public enum Ingredient
+    {
+        [Description("MaNguyenLieu")]
+        IngredientId,
+
+        [Description("TenNguyenLieu")]
+        IngredientName,
+
+        [Description("DonViTinh")]
+        IngredientUnit,
+    }
+    public enum Unit
+    {
+        Kg,
+        Gram
+    }
     public static class Config
     {
         public static string GetEnumDescription(this Enum value)
