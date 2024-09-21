@@ -32,7 +32,6 @@ namespace Utilities
                         {
                             if (param[0] == '@')
                                 cmd.Parameters.AddWithValue(param, objects[i++]);
-
                         }
                         conn.Open();
                         int result = cmd.ExecuteNonQuery();
@@ -85,7 +84,7 @@ namespace Utilities
                         string[] parameters = query.Split(' ');
                         int i = 0;
                         foreach (string param in parameters)
-                        {
+                        {   
                             if (param[0] == '@')
                                 cmd.Parameters.AddWithValue(param, objects[i++]);
                         }
