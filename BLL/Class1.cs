@@ -8,11 +8,11 @@ namespace BLL
         public int IsExist(string userID)
         {
            // return new SupplierDAL().UpdateSupplier(new DTO.SupplierDTO("0002", "Vinaphone", "Nghe an", "0983387388"));
-           return new SupplierDAL().RemoveSupplier("0002");
+           return new OrderDetailDAL().UpdateOrder(new DTO.OrderDetailDTO("0001", "XAO0001", 4));
         }
 
         public DataTable GetData() {
-            return new SupplierDAL().GetSuppliers();
+            return new OrderDetailDAL().GetOrderDetail();
         }
     }
 }
