@@ -74,7 +74,10 @@ namespace Utilities
 
     public enum Order
     {
+        [Description("Đã thanh toán")]
         paid,
+
+        [Description("Chưa thanh toán")]
         unpaid
     }
     public static class Config
