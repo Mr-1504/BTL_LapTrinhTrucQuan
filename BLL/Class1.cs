@@ -7,11 +7,12 @@ namespace BLL
     {
         public int IsExist(string userID)
         {
-            return new IngredientDAL().UpdateIngredient(new DTO.IngredientDTO("THI0001", "Thịt voi", Unit.Kg, "Bổ dưỡng lắm", "Ăn chín nhé", "Ăn ít thôi", 20));
-            //return new IngredientDAL().RemoveIngredient("THI0001");
+            return new OrderDAL().AddnewOrder(new DTO.OrderDTO(new System.DateTime(2014, 10, 3), 1000, Order.paid));
+          // return new OrderDAL().RemoveOrder("0002");
         }
+
         public DataTable GetData() {
-            return new IngredientDAL().GetIngredient(Ingredient.IngredientId, "THI0001");
+            return new OrderDAL().GetOrder("0001");
         }
     }
 }

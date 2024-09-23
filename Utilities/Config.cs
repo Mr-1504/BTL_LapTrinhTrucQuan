@@ -71,6 +71,15 @@ namespace Utilities
         Kg,
         Gram
     }
+
+    public enum Order
+    {
+        [Description("Đã thanh toán")]
+        paid,
+
+        [Description("Chưa thanh toán")]
+        unpaid
+    }
     public static class Config
     {
         public static string GetEnumDescription(this Enum value)
