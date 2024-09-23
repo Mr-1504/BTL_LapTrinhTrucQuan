@@ -71,6 +71,12 @@ namespace Utilities
         Kg,
         Gram
     }
+
+    public enum Order
+    {
+        paid,
+        unpaid
+    }
     public static class Config
     {
         public static string GetEnumDescription(this Enum value)
