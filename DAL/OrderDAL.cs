@@ -12,6 +12,12 @@ namespace DAL
             return SqlHelper.ExecuteScalar(query, new object[] {});
         }
 
+        public int IsExistOrderId(string orderId)
+        {
+            string query = "SELECT COUNT(*) FROM DonHang WHERE MaDon = @OrderId";
+            return SqlHelper.ExecuteScalar(query, new object[] { orderId });
+        }
+
         public int AddnewOrder(OrderDTO order)
         {
             string orderId = (GetOrderCount() + 1).ToString();
