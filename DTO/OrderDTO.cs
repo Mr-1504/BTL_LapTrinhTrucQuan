@@ -25,7 +25,7 @@ namespace DTO
             OrderStatus = orderStatus;
         }
 
-        public string OrderId { get => _orderId; set => _orderId = value; }
+        public string OrderId { get => _orderId; set => _orderId = value; } 
         public DateTime OrderDate { get => _orderDate; set => _orderDate = value; }
         public int TotalMoney { get => _totalMoney; set => _totalMoney = value; }
         public Order OrderStatus { get => _orderStatus; set => _orderStatus = value; }
