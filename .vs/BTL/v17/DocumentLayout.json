@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\Code\\C#\\BTL_LapTrinhTrucQuan\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{9026DC2D-E94F-49DF-BF0C-54D73B03B58D}|DAL\\DAL.csproj|d:\\code\\c#\\btl_laptrinhtrucquan\\dal\\supplierdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9026DC2D-E94F-49DF-BF0C-54D73B03B58D}|DAL\\DAL.csproj|solutionrelative:dal\\supplierdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{27A08745-FB46-46B9-A4DB-0A068EF1C32C}|BLL\\BLL.csproj|d:\\code\\c#\\btl_laptrinhtrucquan\\bll\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{27A08745-FB46-46B9-A4DB-0A068EF1C32C}|BLL\\BLL.csproj|solutionrelative:bll\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -52,11 +56,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
+              "Title": "SupplierDAL.cs",
+              "DocumentMoniker": "D:\\Code\\C#\\BTL_LapTrinhTrucQuan\\DAL\\SupplierDAL.cs",
+              "RelativeDocumentMoniker": "DAL\\SupplierDAL.cs",
+              "ToolTip": "D:\\Code\\C#\\BTL_LapTrinhTrucQuan\\DAL\\SupplierDAL.cs",
+              "RelativeToolTip": "DAL\\SupplierDAL.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAqwDQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T12:58:04.322Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "dbo.HoaDonNhap.sql",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/_1504__SQLEXPRESS/QuanLyNguyenLieuMonAn/True/SqlTable/dbo.HoaDonNhap.sql",
               "ToolTip": "ViewDataWindow_MSSQL__/_1504__SQLEXPRESS/QuanLyNguyenLieuMonAn/True/SqlTable/dbo.HoaDonNhap.sql",
@@ -65,7 +82,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "dbo.NhaCungCap.sql",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/_1504__SQLEXPRESS/QuanLyNguyenLieuMonAn/True/SqlTable/dbo.NhaCungCap.sql",
               "ToolTip": "ViewDataWindow_MSSQL__/_1504__SQLEXPRESS/QuanLyNguyenLieuMonAn/True/SqlTable/dbo.NhaCungCap.sql",
@@ -74,7 +91,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "PurchaseInvoiceDAL.cs",
               "DocumentMoniker": "D:\\Code\\C#\\BTL_LapTrinhTrucQuan\\DAL\\PurchaseInvoiceDAL.cs",
               "RelativeDocumentMoniker": "DAL\\PurchaseInvoiceDAL.cs",
@@ -86,7 +103,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "PurchaseInvoiceDTO.cs",
               "DocumentMoniker": "D:\\Code\\C#\\BTL_LapTrinhTrucQuan\\DTO\\PurchaseInvoiceDTO.cs",
               "RelativeDocumentMoniker": "DTO\\PurchaseInvoiceDTO.cs",
@@ -98,7 +115,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "SupplierDTO.cs",
               "DocumentMoniker": "D:\\Code\\C#\\BTL_LapTrinhTrucQuan\\DTO\\SupplierDTO.cs",
               "RelativeDocumentMoniker": "DTO\\SupplierDTO.cs",
@@ -110,7 +127,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "D:\\Code\\C#\\BTL_LapTrinhTrucQuan\\GUI\\Form1.cs",
               "RelativeDocumentMoniker": "GUI\\Form1.cs",
@@ -121,7 +138,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Class1.cs",
               "DocumentMoniker": "D:\\Code\\C#\\BTL_LapTrinhTrucQuan\\BLL\\Class1.cs",
               "RelativeDocumentMoniker": "BLL\\Class1.cs",
@@ -134,7 +151,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Form1.cs",
               "DocumentMoniker": "D:\\Code\\C#\\BTL_LapTrinhTrucQuan\\GUI\\Form1.cs",
               "RelativeDocumentMoniker": "GUI\\Form1.cs",
@@ -146,7 +163,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "FoodDTO.cs",
               "DocumentMoniker": "D:\\Code\\C#\\BTL_LapTrinhTrucQuan\\DTO\\FoodDTO.cs",
               "RelativeDocumentMoniker": "DTO\\FoodDTO.cs",
@@ -158,7 +175,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Config.cs",
               "DocumentMoniker": "D:\\Code\\C#\\BTL_LapTrinhTrucQuan\\Utilities\\Config.cs",
               "RelativeDocumentMoniker": "Utilities\\Config.cs",
@@ -170,7 +187,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "SqlHelper.cs",
               "DocumentMoniker": "D:\\Code\\C#\\BTL_LapTrinhTrucQuan\\Utilities\\SqlHelper.cs",
               "RelativeDocumentMoniker": "Utilities\\SqlHelper.cs",
