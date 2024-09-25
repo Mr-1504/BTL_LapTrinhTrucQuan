@@ -16,6 +16,12 @@ namespace DAL
             string query = "SELECT COUNT(*) FROM NguyenLieu WHERE MaNguyenLieu LIKE @Prefix + '%'";
             return SqlHelper.ExecuteScalar(query, new object[] { prefix });
         }
+
+        public int IsExistIngerdient(string ingredientId)
+        {
+            string query = "SELECT COUNT(*) FROM NguyenLieu WHERE MaNguyenLieu = @ingredientId";
+            return SqlHelper.ExecuteNonQuery(query, new object[] {ingredientId});
+        }
         public int AddNewIngredient(string prefix, IngredientDTO ingredient)
         {
             string ingredientCount = (GetIngredientCount(prefix) + 1).ToString();
