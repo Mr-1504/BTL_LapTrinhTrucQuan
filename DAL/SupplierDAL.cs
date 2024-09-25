@@ -9,7 +9,7 @@ namespace DAL
         private int GetSupplierCount()
         {
             string query = "SELECT COUNT(*) FROM NhaCungCap";
-            return SqlHelper.ExecuteScalar(query, new object[] { });
+            return SqlHelper.ExecuteScalar(query, null);
         }
 
         public int AddNewSupplier(SupplierDTO supplier)
@@ -40,7 +40,7 @@ namespace DAL
         public DataTable GetSuppliers()
         {
             string query = "SELECT * FROM NhaCungCap";
-            return SqlHelper.ExecuteReader(query, new object[] { });
+            return SqlHelper.ExecuteReader(query, null);
         }
 
         public DataTable GetSupplier(string supplierId)

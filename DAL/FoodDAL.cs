@@ -52,7 +52,7 @@ namespace DAL
         public DataTable GetFoods() 
         {
             string query = "SELECT * FROM MONAN";
-            return SqlHelper.ExecuteReader(query, new object[] { });
+            return SqlHelper.ExecuteReader(query, null);
         }
 
         public DataTable GetFood(Enum @enum, string getValue)

@@ -61,7 +61,7 @@ namespace DAL
         public DataTable GetEmployees()
         {
             string query = "SELECT * FROM NhanVien";
-            return SqlHelper.ExecuteReader(query, new object[] { });
+            return SqlHelper.ExecuteReader(query, null);
         }
 
         // tìm kiếm nhân viên theo thông tin bất kỳ

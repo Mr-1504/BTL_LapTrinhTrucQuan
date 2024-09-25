@@ -9,7 +9,7 @@ namespace DAL
         private int GetOrderCount()
         {
             string query = "SELECT COUNT(*) FROM DonHang";
-            return SqlHelper.ExecuteScalar(query, new object[] {});
+            return SqlHelper.ExecuteScalar(query, null);
         }
 
         public int IsExistOrderId(string orderId)
@@ -47,7 +47,7 @@ namespace DAL
         public DataTable GetOrders()
         {
             string query = "SELECT * FROM DonHang";
-            return SqlHelper.ExecuteReader(query, new object[] { });
+            return SqlHelper.ExecuteReader(query, null);
         }
 
         public DataTable GetOrder(string orderId)

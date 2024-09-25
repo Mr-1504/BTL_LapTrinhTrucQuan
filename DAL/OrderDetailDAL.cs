@@ -29,7 +29,7 @@ namespace DAL
         public DataTable GetOrderDetail()
         {
             string query = "SELECT * FROM ChiTietDonHang";
-            return SqlHelper.ExecuteReader(query, new object[] { });
+            return SqlHelper.ExecuteReader(query, null);
         }
 
     }
