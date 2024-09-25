@@ -12,7 +12,7 @@ namespace BLL
         }
 
         public DataTable GetData() {
-            return new PurchaseInvoiceDAL().GetPurchaseInvoice(purchaseInvoiceId: "0001", supplierId: "0001", employeeId: "QL0002");
+            return new PurchaseInvoiceDAL().GetPurchaseInvoice(purchaseInvoiceId:  "0001", supplierId: "0001", employeeId: "QL0002");
         }
     }
 }
