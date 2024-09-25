@@ -18,8 +18,8 @@ namespace GUI
         {
             InitializeComponent();
 
-            int res = new Class1().IsExist("QL0001");
-            MessageBox.Show(res.ToString(), "thong bao", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //int res = new Class1().IsExist("QL0001");
+            //MessageBox.Show(res.ToString(), "thong bao", MessageBoxButtons.OK, MessageBoxIcon.Error);
             //if (res == 1)
             //{
             //    MessageBox.Show("Thanh cong", "thong bao", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -48,6 +48,11 @@ namespace GUI
         private void Form1_Load(object sender, EventArgs e)
         {
             dataGridView1.DataSource = new Class1().GetData();
+        }
+
+        private void chart1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

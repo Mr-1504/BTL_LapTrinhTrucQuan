@@ -84,10 +84,9 @@ namespace Utilities
                         string[] parameters = query.Split(' ');
                         int i = 0;
                         foreach (string param in parameters)
-                        {   
                             if (param[0] == '@')
                                 cmd.Parameters.AddWithValue(param, objects[i++]);
-                        }
+                            
                         using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
                         {
                             DataTable dt = new DataTable();
