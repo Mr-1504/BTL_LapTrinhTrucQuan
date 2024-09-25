@@ -72,6 +72,13 @@ namespace Utilities
         Gram
     }
 
+    public enum PurchaseInvoice
+    {
+        PurchaseInvoiceId,
+        EmployeeId,
+        SupplierId
+    }
+
     public enum Order
     {
         [Description("Đã thanh toán")]
