@@ -12,7 +12,7 @@ namespace BLL
         }
 
         public DataTable GetData() {
-            return new RecipeDAL().GetRecipe(foodId: "XAO0001", ingredientId: "RAU0001");
+            return new PurchaseInvoiceDAL().GetPurchaseInvoiceTable();
             //return new RecipeDAL().GetRecipes();
         }
     }
