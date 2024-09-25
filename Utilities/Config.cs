@@ -80,6 +80,17 @@ namespace Utilities
         [Description("Chưa thanh toán")]
         unpaid
     }
+
+    public enum Recipe
+    {
+        [Description("MaMonAn")]
+        FoodId,
+
+        [Description("MaNguyenLieu")]
+        Ingredient,
+
+        Orther
+    }
     public static class Config
     {
         public static string GetEnumDescription(this Enum value)
