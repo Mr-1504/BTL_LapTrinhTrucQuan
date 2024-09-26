@@ -28,6 +28,18 @@ namespace Utilities
         NumberPhone
     }
 
+    public enum EmployeeStatus
+    {
+        [Description("Đã nghỉ hưu")]
+        Retired,
+
+        [Description("Đã nghỉ việc")]
+        NoLongerWorking,
+
+        [Description("Đang làm việc")]
+        CurrentlyWorking     
+    }
+
     public enum Gender
     {
         [Description("Nam")]
