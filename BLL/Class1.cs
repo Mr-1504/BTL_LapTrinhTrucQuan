@@ -1,5 +1,6 @@
 ﻿using System.Data;
 using DAL;
+using DTO;
 using Utilities;
 namespace BLL
 {
@@ -7,12 +8,12 @@ namespace BLL
     {
         public int IsExist(string userID)
         {
-            return new SupplierDAL().UpdateSupplier(new DTO.SupplierDTO("0002", "Vinaphone", "Nghe an", "0983387388"));
+            return new PurchaseInvoiceDetailDAL().UpdatePurchaseInvoiceDetail(new PurchaseInvoiceDetailDTO("0000000003", "THI0001", 17, 20));
          //   return new RecipeDAL().GetRecipe(Recipe.FoodId, "XAO0001");
         }
 
         public DataTable GetData() {
-            return new PurchaseInvoiceDAL().GetPurchaseInvoiceTable();
+            return new PurchaseInvoiceDetailDAL().GetPurchaseInvoiceDetail(purchaseInvoiceId: "0000000003", ingredientId: "RAU0001");
             //return new RecipeDAL().GetRecipes();
         }
     }
