@@ -8,6 +8,8 @@ BeA Food ăn không ngon thì cút :))</br>
 
  >Nhiệm vụ của mỗi người sẽ được đưa ra trong Issues</br>
  >Không được push trực tiếp lên branch "main"</br>
+ >Commit thường xuyên với các commit nhỏ
+ >Mỗi ngày trước khi làm việc cần pull/rebase code từ main về để hạn chế conflict code
  >Ai làm nhiệm vụ gì thì tạo 1 branch với tên của nhiệm vụ đấy hoặc tạo trực tiếp từ issues đề ra.
 
 **Hướng dẫn tạo branch từ Issues**</br>
