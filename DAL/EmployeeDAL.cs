@@ -8,17 +8,17 @@ namespace DAL
     public class EmployeeDAL
     {
         // Lấy số lượng nhân viên đang giữ chức vụ bất kỳ
-        private int GetEmployeeCount(string prefix)
+        private int GetEmployeeCount(string prefix, string year)
         {
-            string query = "SELECT COUNT(*) FROM NhanVien WHERE MaNhanVien LIKE @Prefix + '%'";
-            return SqlHelper.ExecuteScalar(query, new object[] { prefix });
+            string query = "SELECT COUNT(*) FROM NhanVien WHERE MaNhanVien LIKE @Prefix + @year + '%'";
+            return SqlHelper.ExecuteScalar(query, new object[] { prefix, year });
         }
 
         // Kiểm tra xem có nhân viên không
         public int IsExistEmployeeId(string employeeId)
         {
             string query = "SELECT COUNT(*) FROM NhanVien WHERE MaNhanVien = @employeeId";
-            return SqlHelper.ExecuteScalar(query, new object[] {employeeId});
+            return SqlHelper.ExecuteScalar(query, new object[] { employeeId });
         }
 
         public int IsExistEmployeeName(string employeeName)
@@ -30,20 +30,21 @@ namespace DAL
         // Thêm một nhân viên
         public int AddNewEmployee(string prefix, EmployeeDTO employee)
         {
-            string employeeCount = (GetEmployeeCount(prefix) + 1).ToString();
-            employeeCount = new string('0', 4 - employeeCount.Length) + employeeCount;
-            string employeeId = prefix + employeeCount;
-            string query = "INSERT INTO NhanVien (MaNhanVien, TenNhanVien, GioiTinh, NamSinh, QueQuan, DiaChi, DienThoai) " +
-                           "VALUES ( @EMPLOYEEID , @NAME , @GENDER , @BIRTH , @HOMETOWN , @ADDRESS , @NUMBERPHONE )";
-            return SqlHelper.ExecuteNonQuery(query, new object[] {employeeId, employee.Name, employee.Gender.GetEnumDescription(), employee.Birth, 
-                    employee.Hometown, employee.Address, employee.NumberPhone});
+            string year = DateTime.Now.Year.ToString();
+            string employeeCount = (GetEmployeeCount(prefix, year) + 1).ToString();
+            employeeCount = new string('0', 8 - employeeCount.Length - year.Length) + employeeCount;
+            string employeeId = prefix + year + employeeCount;
+            string query = "INSERT INTO NhanVien (MaNhanVien, TenNhanVien, GioiTinh, NamSinh, QueQuan, DiaChi, DienThoai, TrangThai) " +
+                           "VALUES ( @EMPLOYEEID , @NAME , @GENDER , @BIRTH , @HOMETOWN , @ADDRESS , @NUMBERPHONE , @TRANGTHAI )";
+            return SqlHelper.ExecuteNonQuery(query, new object[] {employeeId, employee.Name, employee.Gender.GetEnumDescription(), employee.Birth,
+                    employee.Hometown, employee.Address, employee.NumberPhone, employee.Status.GetEnumDescription()});
         }
 
         // xóa nhân viên
-        public int RemoveEmployee(string employeeId)
+        public int ChangeEmployeeStatus(string employeeId, EmployeeStatus status)
         {
-            string query = "DELETE FROM NhanVien WHERE MaNhanVien = @employeeId";
-            return SqlHelper.ExecuteNonQuery(query, new object[] { employeeId });
+            string query = "UPDATE NhanVien SET TrangThai = @status WHERE MaNhanVien = @employeeId";
+            return SqlHelper.ExecuteNonQuery(query, new object[] { status.GetEnumDescription(), employeeId });
         }
 
 
@@ -65,7 +66,7 @@ namespace DAL
         }
 
         // tìm kiếm nhân viên theo thông tin bất kỳ
-        public DataTable GetEmployee(Enum @enum, string getValue) 
+        public DataTable GetEmployee(Enum @enum, string getValue)
         {
             if (Config.IsValidEnum<Employee>(@enum.ToString()))
             {
