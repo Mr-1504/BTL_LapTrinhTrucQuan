@@ -48,6 +48,7 @@
     <Compile Include="OrderDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AccountDTO.cs" />
+    <Compile Include="PurchaseInvoiceDetailDTO.cs" />
     <Compile Include="PurchaseInvoiceDTO.cs" />
     <Compile Include="RecipeDTO.cs" />
     <Compile Include="SupplierDTO.cs" />
