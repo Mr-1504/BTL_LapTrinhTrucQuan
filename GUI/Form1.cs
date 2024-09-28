@@ -38,7 +38,7 @@ namespace GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Close();
+            Application.Exit();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
