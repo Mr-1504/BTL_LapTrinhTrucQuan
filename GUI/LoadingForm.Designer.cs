@@ -45,12 +45,14 @@
             // labelLoading
             // 
             this.labelLoading.AutoSize = true;
+            this.labelLoading.BackColor = System.Drawing.Color.White;
             this.labelLoading.Font = new System.Drawing.Font("Microsoft JhengHei UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLoading.Location = new System.Drawing.Point(277, 141);
+            this.labelLoading.Location = new System.Drawing.Point(6, 273);
             this.labelLoading.Name = "labelLoading";
-            this.labelLoading.Size = new System.Drawing.Size(256, 60);
+            this.labelLoading.Size = new System.Drawing.Size(244, 60);
             this.labelLoading.TabIndex = 1;
-            this.labelLoading.Text = "Loading ...";
+            this.labelLoading.Text = "Loading...";
+            this.labelLoading.Click += new System.EventHandler(this.labelLoading_Click);
             // 
             // pnProcessBar
             // 
@@ -73,9 +75,10 @@
             // logoBEA
             // 
             this.logoBEA.Image = ((System.Drawing.Image)(resources.GetObject("logoBEA.Image")));
-            this.logoBEA.Location = new System.Drawing.Point(229, 0);
+            this.logoBEA.Location = new System.Drawing.Point(132, 117);
             this.logoBEA.Name = "logoBEA";
-            this.logoBEA.Size = new System.Drawing.Size(447, 67);
+            this.logoBEA.Size = new System.Drawing.Size(479, 70);
+            this.logoBEA.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.logoBEA.TabIndex = 3;
             this.logoBEA.TabStop = false;
             this.logoBEA.Click += new System.EventHandler(this.logoBEA_Click);
@@ -83,10 +86,11 @@
             // pnHeader
             // 
             this.pnHeader.BackColor = System.Drawing.Color.White;
+            this.pnHeader.Controls.Add(this.labelLoading);
             this.pnHeader.Controls.Add(this.logoBEA);
             this.pnHeader.Location = new System.Drawing.Point(12, 12);
             this.pnHeader.Name = "pnHeader";
-            this.pnHeader.Size = new System.Drawing.Size(776, 95);
+            this.pnHeader.Size = new System.Drawing.Size(776, 342);
             this.pnHeader.TabIndex = 4;
             this.pnHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.pnHeader_Paint);
             // 
@@ -114,7 +118,6 @@
             this.Controls.Add(this.lbProcessPercent);
             this.Controls.Add(this.pnHeader);
             this.Controls.Add(this.pnProcessBar);
-            this.Controls.Add(this.labelLoading);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LoadingForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -124,6 +127,7 @@
             this.pnProcessBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logoBEA)).EndInit();
             this.pnHeader.ResumeLayout(false);
+            this.pnHeader.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

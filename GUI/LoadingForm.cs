@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -92,7 +93,7 @@ namespace GUI
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            pnProcessBar2.Width += 3;
+            pnProcessBar2.Width += 2;
             lbProcessPercent.Text = ((pnProcessBar2.Width * 100) / pnProcessBar.Width).ToString() + "%";
             if (pnProcessBar2.Width >= pnProcessBar.Width)
             {
@@ -101,6 +102,11 @@ namespace GUI
                 form1.Show();
                 this.Hide();
             }
+        }
+
+        private void labelLoading_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
