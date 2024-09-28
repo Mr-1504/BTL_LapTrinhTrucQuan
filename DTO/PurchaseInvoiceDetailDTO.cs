@@ -1,5 +1,6 @@
 ﻿namespace DTO
 {
+    
     public class PurchaseInvoiceDetailDTO
     {
         private string _purchaseInvoiceId;
