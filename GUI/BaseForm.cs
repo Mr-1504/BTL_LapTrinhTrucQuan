@@ -71,8 +71,8 @@ namespace GUI
             MainPanel.Region = new Region(path);
 
             //Vẽ viền với Pen
-            Pen borderPen = new Pen(Color.Red, 2);  // Màu đỏ, độ dày 2px
-            e.Graphics.DrawPath(borderPen, path);
+            //Pen borderPen = new Pen(Color.Red, 2);  // Màu đỏ, độ dày 2px
+            //e.Graphics.DrawPath(borderPen, path);
 
             // Đổ màu cho Panel (tuỳ chọn)
             Brush fillBrush = new SolidBrush(Color.Silver); // Màu nền trắng
@@ -245,13 +245,13 @@ namespace GUI
 
         private void textBox1_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "";
+            txtSearch.Text = "";
 
         }
 
         private void textBox1_Leave(object sender, EventArgs e)
         {
-            textBox1.Text = "tìm";
+            txtSearch.Text = "tìm";
         }
 
         private void btnHome_Click(object sender, EventArgs e)
