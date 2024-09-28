@@ -9,3 +9,14 @@ D:\Code\C#\BTL_LapTrinhTrucQuan\DAL\obj\Debug\DAL.dll
 D:\Code\C#\BTL_LapTrinhTrucQuan\DAL\obj\Debug\DAL.pdb
 D:\Code\C#\BTL_LapTrinhTrucQuan\DAL\bin\Debug\Utilities.dll
 D:\Code\C#\BTL_LapTrinhTrucQuan\DAL\bin\Debug\Utilities.pdb
+D:\BTL_LapTrinhTrucQuan\DAL\bin\Debug\DAL.dll
+D:\BTL_LapTrinhTrucQuan\DAL\bin\Debug\DAL.pdb
+D:\BTL_LapTrinhTrucQuan\DAL\bin\Debug\DTO.dll
+D:\BTL_LapTrinhTrucQuan\DAL\bin\Debug\Utilities.dll
+D:\BTL_LapTrinhTrucQuan\DAL\bin\Debug\DTO.pdb
+D:\BTL_LapTrinhTrucQuan\DAL\bin\Debug\Utilities.pdb
+D:\BTL_LapTrinhTrucQuan\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+D:\BTL_LapTrinhTrucQuan\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\BTL_LapTrinhTrucQuan\DAL\obj\Debug\DAL.csproj.Up2Date
+D:\BTL_LapTrinhTrucQuan\DAL\obj\Debug\DAL.dll
+D:\BTL_LapTrinhTrucQuan\DAL\obj\Debug\DAL.pdb
