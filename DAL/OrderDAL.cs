@@ -52,7 +52,7 @@ namespace DAL
 
         public DataTable GetOrder(string orderId)
         {
-            string query = "SELECT * FROM DonHang WHERE MaDon = @orderId";
+            string query = "SELECT * FROM DonHang WHERE MaDon LIKE @orderId + '%'";
             return SqlHelper.ExecuteReader(query, new object[] { orderId});
         }
     }

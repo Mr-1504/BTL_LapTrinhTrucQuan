@@ -1,6 +1,4 @@
 ﻿using DTO;
-using System;
-using System.Collections.Generic;
 using System.Data;
 using Utilities;
 namespace DAL
@@ -38,16 +36,16 @@ namespace DAL
             if (foodId != "" || ingredientId != "")
                 query += " WHERE ";
             if (foodId != ""){
-                query += Recipe.FoodId.GetEnumDescription() + " = @foodId";
+                query += Recipe.FoodId.GetEnumDescription() + " LIKE @foodId + '%'";
                 objects[0] = foodId;
             }
             if (ingredientId != "" && foodId != "")
             {
-                query += " AND " + Recipe.Ingredient.GetEnumDescription() + " = @ingredient";
+                query += " AND " + Recipe.Ingredient.GetEnumDescription() + " LIKE @ingredient + '%'";
                 objects[1] = ingredientId;
             } else if(ingredientId != "")
             {
-                query += Recipe.Ingredient.GetEnumDescription() + " = @ingredient";
+                query += Recipe.Ingredient.GetEnumDescription() + " LIKE @ingredient + '%'";
                 objects[0] = ingredientId;
             }
             return SqlHelper.ExecuteReader(query, objects);

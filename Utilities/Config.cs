@@ -4,6 +4,55 @@ using System.Reflection;
 
 namespace Utilities
 {
+    public enum Status
+    {
+        NoUse,
+        Use
+    }
+    public enum FoodType
+    {
+        [Description("AP")]
+        Appetizer,
+
+        [Description("MN")]
+        MainCourse,
+
+        [Description("DS")]
+        Dessert
+    }
+
+    public enum EmployeeType
+    {
+        [Description("LT")]
+        Receptionist,
+
+        [Description("QL")]
+        Manager,
+
+        [Description("KH")]
+        Warehouse,
+
+        [Description("AD")]
+        Admin
+    }
+
+    public enum SupplierType
+    {
+        [Description("TH")]
+        Meat,
+
+        [Description("RA")]
+        Vegetable,
+
+        [Description("GA")]
+        Spice,
+
+        [Description("HA")]
+        Seafood,
+
+        [Description("DA")]
+        DryFood
+    }
     public enum Employee
     {
         [Description("MaNhanVien")]
