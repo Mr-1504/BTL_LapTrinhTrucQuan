@@ -8,10 +8,10 @@ namespace DAL
     public class EmployeeDAL
     {
         // Lấy số lượng nhân viên đang giữ chức vụ bất kỳ
-        private int GetEmployeeCount(string prefix, string year)
+        private int GetEmployeeCount(EmployeeType prefix, string year)
         {
             string query = "SELECT COUNT(*) FROM NhanVien WHERE MaNhanVien LIKE @Prefix + @year + '%'";
-            return SqlHelper.ExecuteScalar(query, new object[] { prefix, year });
+            return SqlHelper.ExecuteScalar(query, new object[] { prefix.ToString(), year });
         }
 
         // Kiểm tra xem có nhân viên không
@@ -28,12 +28,14 @@ namespace DAL
         }
 
         // Thêm một nhân viên
-        public int AddNewEmployee(string prefix, EmployeeDTO employee)
+        public int AddNewEmployee(EmployeeType prefix, EmployeeDTO employee)
         {
             string year = DateTime.Now.Year.ToString();
-            string employeeCount = (GetEmployeeCount(prefix, year) + 1).ToString();
-            employeeCount = new string('0', 8 - employeeCount.Length - year.Length) + employeeCount;
-            string employeeId = prefix + year + employeeCount;
+            int count = GetEmployeeCount(prefix, year) + 1;
+            if (count == 0)
+                return -1;
+            string employeeCount = new string('0', 8 - count.ToString().Length - year.Length) + count.ToString();
+            string employeeId = prefix.GetEnumDescription() + year + employeeCount;
             string query = "INSERT INTO NhanVien (MaNhanVien, TenNhanVien, GioiTinh, NamSinh, QueQuan, DiaChi, DienThoai, TrangThai) " +
                            "VALUES ( @EMPLOYEEID , @NAME , @GENDER , @BIRTH , @HOMETOWN , @ADDRESS , @NUMBERPHONE , @TRANGTHAI )";
             return SqlHelper.ExecuteNonQuery(query, new object[] {employeeId, employee.Name, employee.Gender.GetEnumDescription(), employee.Birth,
@@ -61,20 +63,15 @@ namespace DAL
         // lấy danh sách nhân viên
         public DataTable GetEmployees()
         {
-            string query = "SELECT * FROM NhanVien";
+            string query = $"SELECT * FROM NhanVien WHERE TrangThai = N'{EmployeeStatus.CurrentlyWorking.GetEnumDescription()}'";
             return SqlHelper.ExecuteReader(query, new object[] { });
         }
 
         // tìm kiếm nhân viên theo thông tin bất kỳ
-        public DataTable GetEmployee(Enum @enum, string getValue)
+        public DataTable GetEmployee(Employee @enum, string getValue)
         {
-            if (Config.IsValidEnum<Employee>(@enum.ToString()))
-            {
-                string query = "SELECT * FROM NhanVien WHERE " + @enum.GetEnumDescription() + " = @getValue";
-                Console.WriteLine(query);
-                return SqlHelper.ExecuteReader(query, new object[] { getValue });
-            }
-            return null;
+            string query = "SELECT * FROM NhanVien WHERE " + @enum.GetEnumDescription() + $" LIKE @getValue + '%' AND TrangThai = N'{EmployeeStatus.CurrentlyWorking.GetEnumDescription()}'";
+            return SqlHelper.ExecuteReader(query, new object[] { getValue });
         }
     }
 }
