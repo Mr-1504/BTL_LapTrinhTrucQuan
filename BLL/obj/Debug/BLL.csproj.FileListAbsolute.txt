@@ -11,3 +11,16 @@ D:\Code\C#\BTL_LapTrinhTrucQuan\BLL\obj\Debug\BLL.dll
 D:\Code\C#\BTL_LapTrinhTrucQuan\BLL\obj\Debug\BLL.pdb
 D:\Code\C#\BTL_LapTrinhTrucQuan\BLL\bin\Debug\Utilities.dll
 D:\Code\C#\BTL_LapTrinhTrucQuan\BLL\bin\Debug\Utilities.pdb
+D:\BTL_LapTrinhTrucQuan\BLL\bin\Debug\BLL.dll
+D:\BTL_LapTrinhTrucQuan\BLL\bin\Debug\BLL.pdb
+D:\BTL_LapTrinhTrucQuan\BLL\bin\Debug\DAL.dll
+D:\BTL_LapTrinhTrucQuan\BLL\bin\Debug\DTO.dll
+D:\BTL_LapTrinhTrucQuan\BLL\bin\Debug\Utilities.dll
+D:\BTL_LapTrinhTrucQuan\BLL\bin\Debug\DAL.pdb
+D:\BTL_LapTrinhTrucQuan\BLL\bin\Debug\DTO.pdb
+D:\BTL_LapTrinhTrucQuan\BLL\bin\Debug\Utilities.pdb
+D:\BTL_LapTrinhTrucQuan\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+D:\BTL_LapTrinhTrucQuan\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+D:\BTL_LapTrinhTrucQuan\BLL\obj\Debug\BLL.csproj.Up2Date
+D:\BTL_LapTrinhTrucQuan\BLL\obj\Debug\BLL.dll
+D:\BTL_LapTrinhTrucQuan\BLL\obj\Debug\BLL.pdb
