@@ -100,8 +100,8 @@ namespace GUI
             {
                 timer1.Stop();
                 BaseForm baseForm = new BaseForm();
-                baseForm.ShowDialog();
-                this.Close();
+                Hide();
+                baseForm.Show();
             }
         }
 
