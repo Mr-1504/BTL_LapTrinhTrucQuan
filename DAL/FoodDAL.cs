@@ -7,22 +7,22 @@ namespace DAL
 {
     public class FoodDAL
     {
-        private int GetFoodCount(string prefix)
+        private int GetFoodCount(FoodType prefix)
         {
             string query = "SELECT COUNT(*) FROM MonAn WHERE MaMonAn LIKE @Prefix + '%'";
-            return SqlHelper.ExecuteScalar(query, new object[] { prefix });
+            return SqlHelper.ExecuteScalar(query, new object[] { prefix.GetEnumDescription() });
         }
 
-        public int AddNewFood(string prefix, FoodDTO food)
+        public int AddNewFood(FoodType prefix, FoodDTO food)
         {
-            string foodCount = (GetFoodCount(prefix) + 1).ToString();
-            foodCount = new string('0', 4 -  foodCount.Length) + foodCount;
+            int count = GetFoodCount(prefix) + 1;
+            if (count == 0)
+                return -1;
 
-            string foodId = prefix + foodCount;
-            string query = "INSERT INTO MonAn (MaMonAn, TenMonAn, CachLam, DonGia) VALUES ( @foodId , @foodName , @foodMakeing , @foodUnitPrice )";
+            string foodId = prefix.GetEnumDescription() +  new string('0', 4 - count.ToString().Length) + count.ToString();
+            string query = "INSERT INTO MonAn (MaMonAn, TenMonAn, CachLam, DonGia, TrangThai) VALUES ( @foodId , @foodName , @foodMakeing , @foodUnitPrice , @status )";
 
-
-            return SqlHelper.ExecuteNonQuery(query, new object[] { foodId, food.FoodName, food.FoodMaking, food.FoodUnitPrice });
+            return SqlHelper.ExecuteNonQuery(query, new object[] { foodId, food.FoodName, food.FoodMaking, food.FoodUnitPrice, (int)food.Status });
         }
 
         public int IsExistFoodId(string foodId)
@@ -40,18 +40,18 @@ namespace DAL
         public int UpdateFood(FoodDTO food)
         {
             string query = "UPDATE MonAn SET TenMonAn = @foodName , CachLam = @foodMaking , Dongia = @foodUnitPrice WHERE MaMonAn = @foodId";
-            return SqlHelper.ExecuteNonQuery(query, new object[] {food.FoodName, food.FoodMaking, food.FoodUnitPrice, food.FoodId});
+            return SqlHelper.ExecuteNonQuery(query, new object[] { food.FoodName, food.FoodMaking, food.FoodUnitPrice, food.FoodId });
         }
 
-        public int RemoveFood(string foodId) 
+        public int ChangeFoodStatus(string foodId, Status status)
         {
-            string query = "DELETE FROM MonAn WHERE MaMonAn = @foodId";
-            return SqlHelper.ExecuteNonQuery(query, new object[] {foodId});
+            string query = "UPDATE MonAn SET TrangThai = @status WHERE MaMonAn = @foodId";
+            return SqlHelper.ExecuteNonQuery(query, new object[] {(int)status, foodId });
         }
 
-        public DataTable GetFoods() 
+        public DataTable GetFoods()
         {
-            string query = "SELECT * FROM MONAN";
+            string query = "SELECT * FROM MONAN WHERE TrangThai = 1";
             return SqlHelper.ExecuteReader(query, new object[] { });
         }
 
@@ -59,7 +59,7 @@ namespace DAL
         {
             if (Config.IsValidEnum<Food>(@enum.ToString()))
             {
-                string query = "SELECT * FROM MonAn WHERE " + @enum.GetEnumDescription() + " = @getValue";
+                string query = "SELECT * FROM MonAn WHERE " + @enum.GetEnumDescription() + " Like @getValue + '%' AND TrangThai = 1";
                 return SqlHelper.ExecuteReader(query, new object[] { getValue });
             }
             return null;

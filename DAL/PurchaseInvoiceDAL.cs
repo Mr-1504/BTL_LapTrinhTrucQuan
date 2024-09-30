@@ -41,43 +41,43 @@ namespace DAL
             object[] objects = new object[3];
             if (purchaseInvoiceId != "" && employeeId != "" && supplierId != "")
             {
-                query += "MaHoaDonNhap = @purchaseInvoiceId" +
-                    " AND MaNhanVien = @employeeId AND MaNhaCungCap = @supplierId";
+                query += "MaHoaDonNhap LIKE @purchaseInvoiceId + '%'" +
+                    " AND MaNhanVien LIKE @employeeId + '%' AND MaNhaCungCap LIKE @supplierId + '%'";
                 objects[0] = purchaseInvoiceId;
                 objects[1] = employeeId;
                 objects[2] = supplierId;
             }
             else if (purchaseInvoiceId != "" && employeeId != "" && supplierId == "")
             {
-                query += "MaHoaDonNhap = @purchaseInvoiceId AND MaNhanVien = @employeeId";
+                query += "MaHoaDonNhap LIKE @purchaseInvoiceId + '%' AND MaNhanVien LIKE @employeeId + '%'";
                 objects[0] = purchaseInvoiceId;
                 objects[1] = employeeId;
             }
             else if (purchaseInvoiceId != "" && employeeId == "" && supplierId != "")
             {
-                query += "MaHoaDonNhap = @purchaseInvoiceId AND MaNhaCungCap = @supplierId";
+                query += "MaHoaDonNhap LIKE @purchaseInvoiceId + '%' AND MaNhaCungCap LIKE @supplierId + '%'";
                 objects[0] = purchaseInvoiceId;
                 objects[1] = supplierId;
             }
             else if (purchaseInvoiceId == "" && employeeId != "" && supplierId != "")
             {
-                query += "MaNhanVien = @employeeId AND MaNhaCungCap = @supplierId";
+                query += "MaNhanVien LIKE @employeeId + '%' AND MaNhaCungCap LIKE @supplierId + '%'";
                 objects[0] = employeeId;
                 objects[1] = supplierId;
             }
             else if (purchaseInvoiceId != "" && employeeId == "" && supplierId == "")
             {
-                query += "MaHoaDonNhap = @purchaseInvoiceId";
+                query += "MaHoaDonNhap LIKE @purchaseInvoiceId + '%'";
                 objects[0] = purchaseInvoiceId;
             }
             else if (purchaseInvoiceId == "" && employeeId != "" && supplierId == "")
             {
-                query += "MaNhanVien = @employeeId";
+                query += "MaNhanVien LIKE @employeeId + '%'";
                 objects[0] = employeeId;
             }
             else if (purchaseInvoiceId == "" && employeeId == "" && supplierId != "")
             {
-                query += "MaNhaCungCap = @supplierId";
+                query += "MaNhaCungCap LIKE @supplierId + '%'";
                 objects[0] = supplierId;
             }
             return SqlHelper.ExecuteReader(query, objects);

@@ -38,18 +38,18 @@ namespace DAL
             object[] objects = new object[2];
             if (purchaseInvoiceId != "" && ingredientId != "")
             {
-                query += "MaHoaDonNhap = @PurchaseInvoiceId AND MaNguyenLieu = @ingredientId";
+                query += "MaHoaDonNhap LIKE @PurchaseInvoiceId + '%' AND MaNguyenLieu LIKE @ingredientId + '%'";
                 objects[0] = purchaseInvoiceId;
                 objects[1] = ingredientId;
             }
             else if (purchaseInvoiceId != "" && ingredientId == "")
             {
-                query += "MaHoaDonNhap = @PurchaseInvoiceId";
+                query += "MaHoaDonNhap LIKE @PurchaseInvoiceId + '%'";
                 objects[0] = purchaseInvoiceId;
             }
             else if (purchaseInvoiceId == "" && ingredientId != "")
             {
-                query += "MaNguyenLieu = @ingredientId";
+                query += "MaNguyenLieu LIKE @ingredientId + '%'";
                 objects[0] = ingredientId;
             }    
             return SqlHelper.ExecuteReader(query, objects);
