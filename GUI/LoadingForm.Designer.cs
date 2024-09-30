@@ -58,7 +58,7 @@
             // 
             this.pnProcessBar.BackColor = System.Drawing.Color.White;
             this.pnProcessBar.Controls.Add(this.pnProcessBar2);
-            this.pnProcessBar.Location = new System.Drawing.Point(28, 379);
+            this.pnProcessBar.Location = new System.Drawing.Point(28, 400);
             this.pnProcessBar.Name = "pnProcessBar";
             this.pnProcessBar.Size = new System.Drawing.Size(746, 24);
             this.pnProcessBar.TabIndex = 2;
@@ -97,11 +97,12 @@
             // lbProcessPercent
             // 
             this.lbProcessPercent.AutoSize = true;
-            this.lbProcessPercent.Location = new System.Drawing.Point(727, 357);
+            this.lbProcessPercent.Location = new System.Drawing.Point(730, 372);
             this.lbProcessPercent.Name = "lbProcessPercent";
             this.lbProcessPercent.Size = new System.Drawing.Size(44, 16);
             this.lbProcessPercent.TabIndex = 5;
             this.lbProcessPercent.Text = "label1";
+            this.lbProcessPercent.Click += new System.EventHandler(this.lbProcessPercent_Click);
             // 
             // timer1
             // 
