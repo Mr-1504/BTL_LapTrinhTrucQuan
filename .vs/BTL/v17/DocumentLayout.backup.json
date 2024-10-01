@@ -1,26 +1,46 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Code\\C#\\BTL_LapTrinhTrucQuan\\",
+  "WorkspaceRootPath": "C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|d:\\code\\c#\\btl_laptrinhtrucquan\\gui\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|solutionrelative:gui\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|c:\\users\\pc\\onedrive\\desktop\\github\\btl_laptrinhtrucquan\\gui\\homemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|solutionrelative:gui\\homemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|d:\\code\\c#\\btl_laptrinhtrucquan\\gui\\loadingform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|solutionrelative:gui\\loadingform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|c:\\users\\pc\\onedrive\\desktop\\github\\btl_laptrinhtrucquan\\gui\\homemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|solutionrelative:gui\\homemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|d:\\code\\c#\\btl_laptrinhtrucquan\\gui\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|solutionrelative:gui\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|c:\\users\\pc\\onedrive\\desktop\\github\\btl_laptrinhtrucquan\\gui\\homemanager.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|solutionrelative:gui\\homemanager.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|d:\\code\\c#\\btl_laptrinhtrucquan\\gui\\loadingform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|solutionrelative:gui\\loadingform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\GUI\\BaseForm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|solutionrelative:GUI\\BaseForm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|D:\\Code\\C#\\BTL_LapTrinhTrucQuan\\gui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|solutionrelative:gui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6C78B2C5-58E5-4A8E-9115-60919BD57607}|Utilities\\Utilities.csproj|C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\utilities\\config.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C78B2C5-58E5-4A8E-9115-60919BD57607}|Utilities\\Utilities.csproj|solutionrelative:utilities\\config.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9026DC2D-E94F-49DF-BF0C-54D73B03B58D}|DAL\\DAL.csproj|C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\dal\\accountdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9026DC2D-E94F-49DF-BF0C-54D73B03B58D}|DAL\\DAL.csproj|solutionrelative:dal\\accountdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C78B2C5-58E5-4A8E-9115-60919BD57607}|Utilities\\Utilities.csproj|C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\utilities\\sqlhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C78B2C5-58E5-4A8E-9115-60919BD57607}|Utilities\\Utilities.csproj|solutionrelative:utilities\\sqlhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A98CE691-036E-4910-B622-BE13025F8E24}|DTO\\DTO.csproj|C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\dto\\accountdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A98CE691-036E-4910-B622-BE13025F8E24}|DTO\\DTO.csproj|solutionrelative:dto\\accountdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\GUI\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|solutionrelative:GUI\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\gui\\baseform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|solutionrelative:gui\\baseform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +50,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,66 +62,126 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "frmLogin.cs",
-              "DocumentMoniker": "D:\\Code\\C#\\BTL_LapTrinhTrucQuan\\GUI\\frmLogin.cs",
-              "RelativeDocumentMoniker": "GUI\\frmLogin.cs",
-              "ToolTip": "D:\\Code\\C#\\BTL_LapTrinhTrucQuan\\GUI\\frmLogin.cs",
-              "RelativeToolTip": "GUI\\frmLogin.cs",
-              "ViewState": "AgIAANEAAAAAAAAAAADwv98AAAA9AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-01T08:12:42.158Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "frmLogin.cs [Design]",
-              "DocumentMoniker": "D:\\Code\\C#\\BTL_LapTrinhTrucQuan\\GUI\\frmLogin.cs",
-              "RelativeDocumentMoniker": "GUI\\frmLogin.cs",
-              "ToolTip": "D:\\Code\\C#\\BTL_LapTrinhTrucQuan\\GUI\\frmLogin.cs [Design]",
-              "RelativeToolTip": "GUI\\frmLogin.cs [Design]",
+              "Title": "HomeManager.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\GUI\\HomeManager.Designer.cs",
+              "RelativeDocumentMoniker": "GUI\\HomeManager.Designer.cs",
+              "ToolTip": "C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\GUI\\HomeManager.Designer.cs",
+              "RelativeToolTip": "GUI\\HomeManager.Designer.cs",
+              "ViewState": "AgIAAGcAAAAAAAAAAAApwHsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-01T08:12:38.968Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-10-01T13:03:03.667Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "LoadingForm.cs",
-              "DocumentMoniker": "D:\\Code\\C#\\BTL_LapTrinhTrucQuan\\GUI\\LoadingForm.cs",
-              "RelativeDocumentMoniker": "GUI\\LoadingForm.cs",
-              "ToolTip": "D:\\Code\\C#\\BTL_LapTrinhTrucQuan\\GUI\\LoadingForm.cs",
-              "RelativeToolTip": "GUI\\LoadingForm.cs",
-              "ViewState": "AgIAAFAAAAAAAAAAAAAuwGkAAABIAAAAAAAAAA==",
+              "Title": "HomeManager.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\GUI\\HomeManager.cs",
+              "RelativeDocumentMoniker": "GUI\\HomeManager.cs",
+              "ToolTip": "C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\GUI\\HomeManager.cs",
+              "RelativeToolTip": "GUI\\HomeManager.cs",
+              "ViewState": "AgIAAL0AAAAAAAAAAAAgwM0AAABXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-01T08:11:01.717Z",
+              "WhenOpened": "2024-10-01T13:02:32.985Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "LoadingForm.cs [Design]",
-              "DocumentMoniker": "D:\\Code\\C#\\BTL_LapTrinhTrucQuan\\GUI\\LoadingForm.cs",
-              "RelativeDocumentMoniker": "GUI\\LoadingForm.cs",
-              "ToolTip": "D:\\Code\\C#\\BTL_LapTrinhTrucQuan\\GUI\\LoadingForm.cs [Design]",
-              "RelativeToolTip": "GUI\\LoadingForm.cs [Design]",
+              "DocumentIndex": 0,
+              "Title": "HomeManager.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\GUI\\HomeManager.cs",
+              "RelativeDocumentMoniker": "GUI\\HomeManager.cs",
+              "ToolTip": "C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\GUI\\HomeManager.cs [Design]",
+              "RelativeToolTip": "GUI\\HomeManager.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-01T08:10:58.793Z",
+              "WhenOpened": "2024-10-01T13:02:28.472Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Code\\C#\\BTL_LapTrinhTrucQuan\\GUI\\Program.cs",
-              "RelativeDocumentMoniker": "GUI\\Program.cs",
-              "ToolTip": "D:\\Code\\C#\\BTL_LapTrinhTrucQuan\\GUI\\Program.cs",
-              "RelativeToolTip": "GUI\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAArAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "BaseForm.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\GUI\\BaseForm.cs",
+              "RelativeDocumentMoniker": "GUI\\BaseForm.cs",
+              "ToolTip": "C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\GUI\\BaseForm.cs",
+              "RelativeToolTip": "GUI\\BaseForm.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAwwE4AAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-01T02:10:17.477Z",
+              "WhenOpened": "2024-10-01T11:45:50.175Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AccountDTO.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\DTO\\AccountDTO.cs",
+              "RelativeDocumentMoniker": "DTO\\AccountDTO.cs",
+              "ToolTip": "C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\DTO\\AccountDTO.cs",
+              "RelativeToolTip": "DTO\\AccountDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-28T01:41:00.45Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\GUI\\Program.cs",
+              "RelativeDocumentMoniker": "GUI\\Program.cs",
+              "ToolTip": "C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\GUI\\Program.cs",
+              "RelativeToolTip": "GUI\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-01T11:45:51.996Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "BaseForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\GUI\\BaseForm.cs",
+              "RelativeDocumentMoniker": "GUI\\BaseForm.cs",
+              "ToolTip": "C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\GUI\\BaseForm.cs [Design]",
+              "RelativeToolTip": "GUI\\BaseForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-01T11:45:52.014Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AccountDAL.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\DAL\\AccountDAL.cs",
+              "RelativeDocumentMoniker": "DAL\\AccountDAL.cs",
+              "ToolTip": "C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\DAL\\AccountDAL.cs",
+              "RelativeToolTip": "DAL\\AccountDAL.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-28T01:41:06.098Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SqlHelper.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\Utilities\\SqlHelper.cs",
+              "RelativeDocumentMoniker": "Utilities\\SqlHelper.cs",
+              "ToolTip": "C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\Utilities\\SqlHelper.cs",
+              "RelativeToolTip": "Utilities\\SqlHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-28T01:42:16.748Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Config.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\Utilities\\Config.cs",
+              "RelativeDocumentMoniker": "Utilities\\Config.cs",
+              "ToolTip": "C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\Utilities\\Config.cs",
+              "RelativeToolTip": "Utilities\\Config.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-28T01:42:34.403Z"
             }
           ]
         }
