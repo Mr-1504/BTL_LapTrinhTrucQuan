@@ -7,3 +7,12 @@ D:\Code\C#\BTL_LapTrinhTrucQuan\DTO\obj\Debug\DTO.pdb
 D:\Code\C#\BTL_LapTrinhTrucQuan\DTO\bin\Debug\Utilities.dll
 D:\Code\C#\BTL_LapTrinhTrucQuan\DTO\bin\Debug\Utilities.pdb
 D:\Code\C#\BTL_LapTrinhTrucQuan\DTO\obj\Debug\DTO.csproj.Up2Date
+D:\BTL_LapTrinhTrucQuan\DTO\bin\Debug\DTO.dll
+D:\BTL_LapTrinhTrucQuan\DTO\bin\Debug\DTO.pdb
+D:\BTL_LapTrinhTrucQuan\DTO\bin\Debug\Utilities.dll
+D:\BTL_LapTrinhTrucQuan\DTO\bin\Debug\Utilities.pdb
+D:\BTL_LapTrinhTrucQuan\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+D:\BTL_LapTrinhTrucQuan\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+D:\BTL_LapTrinhTrucQuan\DTO\obj\Debug\DTO.csproj.Up2Date
+D:\BTL_LapTrinhTrucQuan\DTO\obj\Debug\DTO.dll
+D:\BTL_LapTrinhTrucQuan\DTO\obj\Debug\DTO.pdb

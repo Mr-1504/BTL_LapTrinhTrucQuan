@@ -26,6 +26,7 @@ namespace GUI
 
         private void LoadingForm_Load(object sender, EventArgs e)
         {
+
         }
 
         private void pnProcessBar_Paint(object sender, PaintEventArgs e)
@@ -98,13 +99,20 @@ namespace GUI
             if (pnProcessBar2.Width >= pnProcessBar.Width)
             {
                 timer1.Stop();
-                Form1 form1 = new Form1();
-                form1.Show();
-                this.Hide();
+                Hide();
+                frmLogin frmLogin = new frmLogin();
+                frmLogin.Show();
+
+                frmLogin.FormClosed += (s, args) => Application.Exit(); 
             }
         }
 
         private void labelLoading_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbProcessPercent_Click(object sender, EventArgs e)
         {
 
         }
