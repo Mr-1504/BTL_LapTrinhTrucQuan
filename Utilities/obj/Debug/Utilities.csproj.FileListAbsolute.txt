@@ -16,3 +16,12 @@ D:\BTL_LapTrinhTrucQuan\Utilities\obj\Debug\Utilities.csproj.CoreCompileInputs.c
 D:\BTL_LapTrinhTrucQuan\Utilities\obj\Debug\Utilities.csproj.Up2Date
 D:\BTL_LapTrinhTrucQuan\Utilities\obj\Debug\Utilities.dll
 D:\BTL_LapTrinhTrucQuan\Utilities\obj\Debug\Utilities.pdb
+C:\Users\PC\OneDrive\Desktop\Github\BTL_LapTrinhTrucQuan\Utilities\bin\Debug\Utilities.dll
+C:\Users\PC\OneDrive\Desktop\Github\BTL_LapTrinhTrucQuan\Utilities\bin\Debug\Utilities.pdb
+C:\Users\PC\OneDrive\Desktop\Github\BTL_LapTrinhTrucQuan\Utilities\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\PC\OneDrive\Desktop\Github\BTL_LapTrinhTrucQuan\Utilities\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\PC\OneDrive\Desktop\Github\BTL_LapTrinhTrucQuan\Utilities\obj\Debug\Utilities.csproj.AssemblyReference.cache
+C:\Users\PC\OneDrive\Desktop\Github\BTL_LapTrinhTrucQuan\Utilities\obj\Debug\Utilities.csproj.CoreCompileInputs.cache
+C:\Users\PC\OneDrive\Desktop\Github\BTL_LapTrinhTrucQuan\Utilities\obj\Debug\Utilities.csproj.Up2Date
+C:\Users\PC\OneDrive\Desktop\Github\BTL_LapTrinhTrucQuan\Utilities\obj\Debug\Utilities.dll
+C:\Users\PC\OneDrive\Desktop\Github\BTL_LapTrinhTrucQuan\Utilities\obj\Debug\Utilities.pdb

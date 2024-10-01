@@ -54,6 +54,12 @@
     <Compile Include="BaseForm.Designer.cs">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="HomeManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomeManager.Designer.cs">
+      <DependentUpon>HomeManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoadingForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +70,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeManager.resx">
+      <DependentUpon>HomeManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoadingForm.resx">
       <DependentUpon>LoadingForm.cs</DependentUpon>
@@ -149,6 +158,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Account1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\mnicon1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
