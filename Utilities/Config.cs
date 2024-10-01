@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.ComponentModel;
 using System.Reflection;
+
 
 namespace Utilities
 {
@@ -154,6 +156,8 @@ namespace Utilities
     }
     public static class Config
     {
+        public static readonly string PROJECT_PATH = System.IO.Directory.GetParent(System.IO.Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.FullName).FullName;
+
         public static string GetEnumDescription(this Enum value)
         {
             FieldInfo field = value.GetType().GetField(value.ToString());
@@ -171,6 +175,20 @@ namespace Utilities
         public static bool IsValidEnum<TEnum>(string value) where TEnum : struct, Enum
         {
             return Enum.IsDefined(typeof(TEnum), value) && Enum.TryParse<TEnum>(value, true, out var _);
+        }
+
+        public static bool IsSystemInDarkMode()
+        {
+            var key = Registry.CurrentUser.OpenSubKey(@"Software\Microsoft\Windows\CurrentVersion\Themes\Personalize");
+            if (key != null)
+            {
+                var value = key.GetValue("AppsUseLightTheme");
+                if (value != null && (int)value == 0)
+                {
+                    return true; // Dark mode
+                }
+            }
+            return false; // Light mode
         }
     }
 }
