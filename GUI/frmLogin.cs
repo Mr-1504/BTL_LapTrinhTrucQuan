@@ -1,22 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
+﻿using BLL;
+using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Drawing.Drawing2D;
 using System.Windows.Forms;
-using Utilities;
 
 namespace GUI
 {
     public partial class frmLogin : Form
     {
+        private float angle;
         private bool isNameUp;
         private bool isPasswordUp;
         private bool seen;
+        private Image image;
+        private AccountBLL acc = new AccountBLL();
         //private ListBookForm listBookForm;
         public frmLogin()
         {
@@ -26,8 +23,13 @@ namespace GUI
             InitializeComponent();
             lblName.Cursor = Cursors.IBeam;
             lblPassword.Cursor = Cursors.IBeam;
+            foreach (Control control in Controls)
+                control.Click += Control_Click;
+            Click += Control_Click;
+            angle = 0f;
+            image = Properties.Resources.load;
         }
-        
+
 
         private void timerNameMove_Tick(object sender, EventArgs e)
         {
@@ -38,7 +40,7 @@ namespace GUI
                 }
                 else
                 {
-                    timerNameMove.Stop();
+                    tmrNameMove.Stop();
                     isNameUp = true;
                     lblName.Cursor = Cursors.Default;
                 }
@@ -51,7 +53,7 @@ namespace GUI
             {
                 lblName.AutoSize = false;
                 lblName.Size = new Size(234, 15);
-                timerNameMove.Stop();
+                tmrNameMove.Stop();
                 isNameUp = false;
                 lblName.Cursor = Cursors.IBeam;
             }
@@ -66,7 +68,7 @@ namespace GUI
                 }
                 else
                 {
-                    timerPassMove.Stop();
+                    tmrPassMove.Stop();
                     isPasswordUp = true;
                     lblPassword.Cursor = Cursors.Default;
                 }
@@ -79,7 +81,7 @@ namespace GUI
             {
                 lblPassword.AutoSize = false;
                 lblPassword.Size = new Size(234, 15);
-                timerPassMove.Stop();
+                tmrPassMove.Stop();
                 isPasswordUp = false;
                 lblPassword.Cursor = Cursors.Default;
             }
@@ -92,7 +94,7 @@ namespace GUI
                 lblName.Text = "Mã nhân viên";
                 lblName.ForeColor = Color.Black;
                 txtUsername.Focus();
-                timerNameMove.Start();
+                tmrNameMove.Start();
             }
         }
 
@@ -100,7 +102,8 @@ namespace GUI
         {
             if (txtUsername.Text == "")
             {
-                timerNameMove.Start();
+                txtUsername.ForeColor = Color.Black;
+                tmrNameMove.Start();
                 lblName.Text = "Mã nhân viên";
                 lblName.ForeColor = Color.Black;
             }
@@ -114,7 +117,7 @@ namespace GUI
                 lblPassword.AutoSize = true;
                 lblPassword.Text = "Mật khẩu";
                 lblPassword.ForeColor = Color.Black;
-                timerPassMove.Start();
+                tmrPassMove.Start();
             }
         }
 
@@ -122,8 +125,9 @@ namespace GUI
         {
             if (txtPassword.Text == "")
             {
+                txtPassword.ForeColor = Color.Black;
                 txtPassword.UseSystemPasswordChar = true;
-                timerPassMove.Start();
+                tmrPassMove.Start();
             }
         }
 
@@ -149,76 +153,99 @@ namespace GUI
 
             if (seen)
             {
-                Image image = Image.FromFile("..\\Resources\\Seen.png");
-                btnSeen.BackgroundImage = image;
+                btnSeen.BackgroundImage = Properties.Resources.Seen;
             }
             else
             {
-                Image image = Image.FromFile("..\\Resources\\UnSeen.png");
-                btnSeen.BackgroundImage = image;
+                btnSeen.BackgroundImage = Properties.Resources.UnSeen;
             }
             seen = !seen;
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (this.txtUsername.Text == "")
-            {
-                lblName.Text = "Nhập đủ thông tin";
-                lblName.ForeColor = Color.Red;
-                return;
-            }
-            if (this.txtPassword.Text == "")
-            {
-                lblPassword.Text = "Nhập đủ thông tin";
-                lblPassword.ForeColor = Color.Red;
-                return;
-            }
-           // Login();
+            Login();
         }
-        //private void Login()
-        //{
-        //    try
-        //    {
-        //        SqlHelper sqlHelper = new SqlHelper();
-        //        List<string> informationLogin = sqlHelper.GetLogin(this.txtUsername.Text);
-        //        if (informationLogin == null || informationLogin.Count < 2)
-        //        {
-        //            lblName.AutoSize = true;
-        //            lblName.Text = "Tên người dùng không đúng";
-        //            lblName.ForeColor = Color.Red;
-        //            lblName.AutoSize = false;
-        //            return;
-        //        }
-        //        if (this.IsPasswordValid(this.txtPassword.Text, informationLogin[1]))
-        //        {
-        //            MessageBox.Show("Đăng nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //            this.txtPassword.Text = "";
-        //            this.txtUsername.Text = "";
-        //            timerNameMove.Start();
-        //            timerPassMove.Start();
-        //            this.seen = false;
-        //            this.txtPassword.UseSystemPasswordChar = false;
-        //            return;
-        //        }
-        //        else
-        //        {
-        //            lblPassword.AutoSize = true;
-        //            lblPassword.Text = "Mật khẩu không đúng";
-        //            lblPassword.ForeColor = Color.Red;
-        //            lblPassword.AutoSize = false;
-        //            return;
-        //        }
-        //    }
-        //    catch (SqlException)
-        //    {
-        //        MessageBox.Show("Lỗi kết nối cơ sở dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //    }
-        //}
 
-        private void picTitle_Click(object sender, EventArgs e)
+        private void Login()
         {
+            string res = acc.Login(txtUsername.Text, txtPassword.Text);
+            string[] result = res.Split(',');
+            if (result[0] == "W")
+            {
+                lblName.ForeColor = Color.Black;
+                lblPassword.ForeColor = Color.Black;
+                MessageBox.Show(result[1], "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (result[0] == "E")
+            {
+                lblName.ForeColor = Color.Red;
+                lblName.Text = result[1];
+            }
+            else if (result[0] == "P")
+            {
+                lblName.ForeColor = Color.Black;
+                lblPassword.ForeColor = Color.Red;
+                lblPassword.Text = result[1];
+            }
+            else
+            {
+                lblName.ForeColor = Color.Black;
+                lblPassword.ForeColor = Color.Black;
+                txtUsername.Text = "";
+                txtPassword.Text = "";
+                foreach (Control control in Controls)
+                    control.Visible = false;
+                picLoad.Visible = true;
+                tmrLoad.Start();
+            }
+        }
 
+        private void Control_Click(object sender, EventArgs e)
+        {
+            if (ActiveControl is TextBox)
+            {
+                ActiveControl = null;
+            }
+        }
+
+        private void btnLogin_MouseEnter(object sender, EventArgs e)
+        {
+            btnLogin.BackgroundImage = Properties.Resources.BBlueButton;
+            btnLogin.ForeColor = ColorTranslator.FromHtml("#083c78");
+        }
+
+        private void btnLogin_MouseLeave(object sender, EventArgs e)
+        {
+            btnLogin.BackgroundImage = Properties.Resources.BlueButton;
+            btnLogin.ForeColor = ColorTranslator.FromHtml("#1961b2");
+        }
+
+        private void tmrLoad_Tick(object sender, EventArgs e)
+        {
+            picLoad.Visible = false;
+            Hide();
+            BaseForm baseForm = new BaseForm();
+            baseForm.Show();
+            tmrLoad.Stop();
+
+            baseForm.FormClosed += (s, args) => Application.Exit();
+        }
+
+        private void txtUsername_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                txtPassword.Focus();
+            }
+        }
+
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                txtPassword.Focus();
+            }
         }
     }
 }
