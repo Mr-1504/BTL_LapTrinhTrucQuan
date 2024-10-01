@@ -171,5 +171,26 @@
   <ItemGroup>
     <None Include="Resources\textbox.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\password.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BlueButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BBlueButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Seen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UnSeen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\load.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\load.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
