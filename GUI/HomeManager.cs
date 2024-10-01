@@ -20,7 +20,7 @@ namespace GUI
 
         private void HomeManager_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -102,7 +102,7 @@ namespace GUI
 
         private void PanelOrder_Paint(object sender, PaintEventArgs e)
         {
-            
+
             int radius = 20;
 
             // Tạo GraphicsPath để vẽ hình chữ nhật bo góc
@@ -120,7 +120,7 @@ namespace GUI
 
         private void PanelTable_Paint(object sender, PaintEventArgs e)
         {
-            
+
             int radius = 20;
 
             // Tạo GraphicsPath để vẽ hình chữ nhật bo góc
@@ -155,7 +155,7 @@ namespace GUI
 
         private void PanelWarehouse_Paint(object sender, PaintEventArgs e)
         {
-            
+
             int radius = 30;
 
             // Tạo GraphicsPath để vẽ hình chữ nhật bo góc
