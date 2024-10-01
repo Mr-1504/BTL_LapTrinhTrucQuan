@@ -24,3 +24,16 @@ D:\BTL_LapTrinhTrucQuan\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
 D:\BTL_LapTrinhTrucQuan\BLL\obj\Debug\BLL.csproj.Up2Date
 D:\BTL_LapTrinhTrucQuan\BLL\obj\Debug\BLL.dll
 D:\BTL_LapTrinhTrucQuan\BLL\obj\Debug\BLL.pdb
+E:\Software\Programing_Projects\Github_Repo\BTL_LapTrinhTrucQuan\BLL\bin\Debug\BLL.dll
+E:\Software\Programing_Projects\Github_Repo\BTL_LapTrinhTrucQuan\BLL\bin\Debug\BLL.pdb
+E:\Software\Programing_Projects\Github_Repo\BTL_LapTrinhTrucQuan\BLL\bin\Debug\DAL.dll
+E:\Software\Programing_Projects\Github_Repo\BTL_LapTrinhTrucQuan\BLL\bin\Debug\DTO.dll
+E:\Software\Programing_Projects\Github_Repo\BTL_LapTrinhTrucQuan\BLL\bin\Debug\Utilities.dll
+E:\Software\Programing_Projects\Github_Repo\BTL_LapTrinhTrucQuan\BLL\bin\Debug\DAL.pdb
+E:\Software\Programing_Projects\Github_Repo\BTL_LapTrinhTrucQuan\BLL\bin\Debug\DTO.pdb
+E:\Software\Programing_Projects\Github_Repo\BTL_LapTrinhTrucQuan\BLL\bin\Debug\Utilities.pdb
+E:\Software\Programing_Projects\Github_Repo\BTL_LapTrinhTrucQuan\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+E:\Software\Programing_Projects\Github_Repo\BTL_LapTrinhTrucQuan\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+E:\Software\Programing_Projects\Github_Repo\BTL_LapTrinhTrucQuan\BLL\obj\Debug\BLL.csproj.Up2Date
+E:\Software\Programing_Projects\Github_Repo\BTL_LapTrinhTrucQuan\BLL\obj\Debug\BLL.dll
+E:\Software\Programing_Projects\Github_Repo\BTL_LapTrinhTrucQuan\BLL\obj\Debug\BLL.pdb
