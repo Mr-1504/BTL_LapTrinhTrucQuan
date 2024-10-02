@@ -15,10 +15,10 @@ namespace DAL
         }
 
         //kiểm tra đã có tài khoản chưa bằng mã nhân viên, có trả về 1, không có trả về 0, trả về -1 khi không mở được csdl
-        public int IsExist(string userId)
+        public int IsExist(string employeeId)
         {
             string query = "SELECT COUNT(*) FROM Account WHERE MaNhanVien = @userID";
-            return SqlHelper.ExecuteScalar(query, new object[] {userId});
+            return SqlHelper.ExecuteScalar(query, new object[] { employeeId });
         }
 
         //thêm tài khoản cho mã nhân viên, thêm được trả về 1, thêm lỗi trả về 0, trả về -1 khi không mở được csdl
@@ -30,10 +30,16 @@ namespace DAL
 
         //xóa tài khoản theo mã nhân viên, xóa được trả về 1, xóa lỗi trả về 0, trả về -1 khi k mở được csdl
 
-        public int RemoveAccount(string userId)
+        public int RemoveAccount(string employeeId)
         {
             string query = "DELETE FROM Account WHERE MaNhanVien = @userID";
-            return SqlHelper.ExecuteNonQuery(query, new object[] {userId});
+            return SqlHelper.ExecuteNonQuery(query, new object[] { employeeId });
+        }
+
+        public string GetPasswordHash(string employeeId)
+        {
+            string query = "SELECT Password FROM Account WHERE MaNhanVien = @employeeId";
+            return SqlHelper.ExecuteReader(query, new object[] { employeeId }).Rows[0][0].ToString();
         }
     }
 

@@ -99,9 +99,11 @@ namespace GUI
             if (pnProcessBar2.Width >= pnProcessBar.Width)
             {
                 timer1.Stop();
-                BaseForm baseForm = new BaseForm();
-                baseForm.ShowDialog();
-                this.Close();
+                Hide();
+                frmLogin frmLogin = new frmLogin();
+                frmLogin.Show();
+
+                frmLogin.FormClosed += (s, args) => Application.Exit(); 
             }
         }
 
