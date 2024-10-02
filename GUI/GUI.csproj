@@ -201,5 +201,11 @@
   <ItemGroup>
     <None Include="Resources\load.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sortBigger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sortSmaller.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
