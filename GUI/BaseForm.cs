@@ -279,5 +279,10 @@ namespace GUI
             //Pen borderPen = new Pen(Color.Red, 2);  // Màu đỏ, độ dày 2px
             //e.Graphics.DrawPath(borderPen, path);
         }
+
+        private void Home_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }   
 }
