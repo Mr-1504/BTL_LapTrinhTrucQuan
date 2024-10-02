@@ -195,5 +195,35 @@
   <ItemGroup>
     <None Include="Resources\warehouseGray.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picHomeBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picEmployeeGray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picFoodGray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picWarehouseGray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picImportGray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picEmployeeBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picFoodBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picImportBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picWarehouseBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picHomeGray.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
