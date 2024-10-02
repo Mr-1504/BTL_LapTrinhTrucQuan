@@ -24,8 +24,9 @@ namespace GUI
             foreach(Control control in this.Controls)
                 control.Click += Control_Click;
             
-            foreach (Control control in pnlMenu.Controls)
-                control.MouseEnter += Menu_Enter;
+            foreach (Control control in pnlMenu.Controls){
+                control.MouseEnter += Menu_MouseEnter;
+            }
             foreach (Control control in this.Controls)
             {
                 foreach (Control control_ in pnlMenu.Controls)
@@ -38,7 +39,7 @@ namespace GUI
             pnlMenu.MouseEnter += Menu_MouseLeave;
         }
 
-        private void Menu_Enter(object sender, EventArgs e)
+        private void Menu_MouseEnter(object sender, EventArgs e)
         {
             Panel panel = new Panel();
             if (sender is Panel)
@@ -53,7 +54,25 @@ namespace GUI
                 PictureBox pictureBox = sender as PictureBox;
                 panel = pictureBox.Parent as Panel;
             }
-            if(_itemName != panel.Name)
+            if (panel != null)
+            {
+                foreach (Control control in panel.Controls)
+                {
+                    if (control is PictureBox)
+                    {
+                        PictureBox pic = control as PictureBox;
+                        string name = pic.Name + "Blue";
+                        var imgResource = Properties.Resources.ResourceManager.GetObject(name) as Image;
+
+                        if (imgResource != null)
+                        {
+                            pic.Image = imgResource;
+                            Console.WriteLine("hhhhhh");
+                        }
+                    }
+                }
+            }
+            if (_itemName != panel.Name)
             {
                 _itemName = panel.Name;
                 _y = panel.Location.Y + 11;
@@ -81,8 +100,6 @@ namespace GUI
             {
                 if (picHover.Location.Y < _y){
                     picHover.Location = new Point(0, picHover.Location.Y + 7);
-                    Console.WriteLine(picHover.Location.Y.ToString() + " h");
-
                 }
                 else
                     tmrHover.Stop();
@@ -96,9 +113,10 @@ namespace GUI
             }
         }
 
-        private void Menu_MouseMove(object sender, MouseEventArgs e)
+        private void Menu_MouseEnter(object sender, MouseEventArgs e)
         {
-            Panel panel = new Panel();
+            Panel panel = null;
+
             if (sender is Panel)
             {
                 panel = sender as Panel;
@@ -113,8 +131,37 @@ namespace GUI
                 PictureBox pictureBox = sender as PictureBox;
                 panel = pictureBox.Parent as Panel;
             }
-            picHover.Location = new Point(picHover.Location.X, panel.Location.Y + e.Y + 11);
-            Console.WriteLine("...");
+
+            if (panel != null)
+            {
+                foreach (Control control in panel.Controls)
+                {
+                    if (control is PictureBox)
+                    {
+                        PictureBox pic = control as PictureBox;
+                        string name = pic.Name + "Blue";
+                        var imgResource = Properties.Resources.ResourceManager.GetObject(name) as Image;
+
+                        if (imgResource != null)
+                        {
+                            pic.Image = imgResource;
+                        }
+                    }
+                    if (control is Label)
+                    {
+                        Label lbl = control as Label;
+                        lbl.ForeColor = ColorTranslator.FromHtml(Config.BLUE);
+                        lbl.Font = new Font(lbl.Font, FontStyle.Bold);
+                        Console.WriteLine("hhhhhh");
+
+                    }
+                }
+
+                foreach (Panel panel_ in pnlMenu.Controls)
+                {
+
+                }
+            }
         }
 
         private void Menu_MouseLeave(object sender, EventArgs e)
