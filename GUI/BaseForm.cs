@@ -168,5 +168,10 @@ namespace GUI
         {
             picHover.Visible = false;
         }
+
+        private void Home_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }   
 }
