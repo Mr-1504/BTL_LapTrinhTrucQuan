@@ -78,8 +78,8 @@ namespace GUI
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.PanelRight = new System.Windows.Forms.Panel();
-            this.label18 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label18 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.InPanelManager1.SuspendLayout();
             this.PanelIngredient.SuspendLayout();
@@ -171,28 +171,28 @@ namespace GUI
             // 
             this.textBox4.Location = new System.Drawing.Point(295, 212);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(148, 40);
+            this.textBox4.Size = new System.Drawing.Size(148, 20);
             this.textBox4.TabIndex = 21;
             // 
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(295, 161);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(148, 40);
+            this.textBox5.Size = new System.Drawing.Size(148, 20);
             this.textBox5.TabIndex = 20;
             // 
             // textBox6
             // 
             this.textBox6.Location = new System.Drawing.Point(295, 109);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(148, 40);
+            this.textBox6.Size = new System.Drawing.Size(148, 20);
             this.textBox6.TabIndex = 19;
             // 
             // textBox7
             // 
             this.textBox7.Location = new System.Drawing.Point(295, 58);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(148, 40);
+            this.textBox7.Size = new System.Drawing.Size(148, 20);
             this.textBox7.TabIndex = 18;
             // 
             // label14
@@ -282,28 +282,28 @@ namespace GUI
             // 
             this.textBox3.Location = new System.Drawing.Point(243, 212);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(148, 40);
+            this.textBox3.Size = new System.Drawing.Size(148, 20);
             this.textBox3.TabIndex = 13;
             // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(243, 161);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(148, 40);
+            this.textBox2.Size = new System.Drawing.Size(148, 20);
             this.textBox2.TabIndex = 12;
             // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(243, 109);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(148, 40);
+            this.textBox1.Size = new System.Drawing.Size(148, 20);
             this.textBox1.TabIndex = 11;
             // 
             // textSoNguyenLieuSapHet
             // 
             this.textSoNguyenLieuSapHet.Location = new System.Drawing.Point(243, 58);
             this.textSoNguyenLieuSapHet.Name = "textSoNguyenLieuSapHet";
-            this.textSoNguyenLieuSapHet.Size = new System.Drawing.Size(148, 40);
+            this.textSoNguyenLieuSapHet.Size = new System.Drawing.Size(148, 20);
             this.textSoNguyenLieuSapHet.TabIndex = 10;
             // 
             // label13
@@ -576,6 +576,14 @@ namespace GUI
             this.PanelRight.TabIndex = 3;
             this.PanelRight.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelRight_Paint);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(143, 13);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 7;
+            // 
             // label18
             // 
             this.label18.AutoSize = true;
@@ -587,14 +595,6 @@ namespace GUI
             this.label18.Size = new System.Drawing.Size(106, 24);
             this.label18.TabIndex = 6;
             this.label18.Text = "Hoạt động";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(143, 13);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 7;
             // 
             // HomeManager
             // 
