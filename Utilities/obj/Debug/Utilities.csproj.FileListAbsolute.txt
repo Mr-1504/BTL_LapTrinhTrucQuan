@@ -31,3 +31,6 @@ D:\Code\C#\BTL_LapTrinhTrucQuan\Utilities\bin\Debug\System.Drawing.Common.dll
 D:\Code\C#\BTL_LapTrinhTrucQuan\Utilities\bin\Debug\System.Drawing.Common.pdb
 D:\Code\C#\BTL_LapTrinhTrucQuan\Utilities\bin\Debug\System.Drawing.Common.xml
 >>>>>>> develop
+C:\Users\PC\OneDrive\Desktop\Github\BTL_LapTrinhTrucQuan\Utilities\bin\Debug\System.Drawing.Common.dll
+C:\Users\PC\OneDrive\Desktop\Github\BTL_LapTrinhTrucQuan\Utilities\bin\Debug\System.Drawing.Common.pdb
+C:\Users\PC\OneDrive\Desktop\Github\BTL_LapTrinhTrucQuan\Utilities\bin\Debug\System.Drawing.Common.xml

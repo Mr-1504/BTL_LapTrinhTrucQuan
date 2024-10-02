@@ -54,6 +54,12 @@
     <Compile Include="BaseForm.Designer.cs">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="EmployManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployManager.Designer.cs">
+      <DependentUpon>EmployManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="HomeManager.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +82,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployManager.resx">
+      <DependentUpon>EmployManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomeManager.resx">
       <DependentUpon>HomeManager.cs</DependentUpon>
