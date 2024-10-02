@@ -118,21 +118,6 @@
     <None Include="Resources\logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\home.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\home1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\home2.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Home3.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Home4.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\logo3.png" />
   </ItemGroup>
   <ItemGroup>
@@ -140,18 +125,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\hihi.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\btnSetting.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\btnInform.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Home6.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\iconHome.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Account.jpg" />
@@ -191,6 +164,36 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\load.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SearchPanel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnSetting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnNotification.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lblButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnHome.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lblButtonGray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnEmployee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lblHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lblFood.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warehouseGray.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
