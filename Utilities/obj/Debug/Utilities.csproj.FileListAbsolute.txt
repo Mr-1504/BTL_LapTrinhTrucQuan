@@ -16,3 +16,15 @@ D:\BTL_LapTrinhTrucQuan\Utilities\obj\Debug\Utilities.csproj.CoreCompileInputs.c
 D:\BTL_LapTrinhTrucQuan\Utilities\obj\Debug\Utilities.csproj.Up2Date
 D:\BTL_LapTrinhTrucQuan\Utilities\obj\Debug\Utilities.dll
 D:\BTL_LapTrinhTrucQuan\Utilities\obj\Debug\Utilities.pdb
+D:\code\LLTQ\BTL_LapTrinhTrucQuan\Utilities\bin\Debug\Utilities.dll
+D:\code\LLTQ\BTL_LapTrinhTrucQuan\Utilities\bin\Debug\Utilities.pdb
+D:\code\LLTQ\BTL_LapTrinhTrucQuan\Utilities\bin\Debug\System.Configuration.ConfigurationManager.dll
+D:\code\LLTQ\BTL_LapTrinhTrucQuan\Utilities\bin\Debug\System.Drawing.Common.dll
+D:\code\LLTQ\BTL_LapTrinhTrucQuan\Utilities\bin\Debug\System.Configuration.ConfigurationManager.xml
+D:\code\LLTQ\BTL_LapTrinhTrucQuan\Utilities\bin\Debug\System.Drawing.Common.pdb
+D:\code\LLTQ\BTL_LapTrinhTrucQuan\Utilities\bin\Debug\System.Drawing.Common.xml
+D:\code\LLTQ\BTL_LapTrinhTrucQuan\Utilities\obj\Debug\Utilities.csproj.AssemblyReference.cache
+D:\code\LLTQ\BTL_LapTrinhTrucQuan\Utilities\obj\Debug\Utilities.csproj.CoreCompileInputs.cache
+D:\code\LLTQ\BTL_LapTrinhTrucQuan\Utilities\obj\Debug\Utilities.csproj.Up2Date
+D:\code\LLTQ\BTL_LapTrinhTrucQuan\Utilities\obj\Debug\Utilities.dll
+D:\code\LLTQ\BTL_LapTrinhTrucQuan\Utilities\obj\Debug\Utilities.pdb
