@@ -90,14 +90,19 @@ namespace GUI
         {
             if (!isNameUp)
             {
+                txtUsername.Focus();
+            }
+        }
+        private void txtUsername_Enter(object sender, EventArgs e)
+        {
+            if (!isNameUp)
+            {
                 lblName.AutoSize = true;
                 lblName.Text = "Mã nhân viên";
                 lblName.ForeColor = Color.Black;
-                txtUsername.Focus();
                 tmrNameMove.Start();
             }
         }
-
         private void TxtUsername_Leave(object sender, EventArgs e)
         {
             if (txtUsername.Text == "")
@@ -120,7 +125,16 @@ namespace GUI
                 tmrPassMove.Start();
             }
         }
-
+        private void txtPassword_Enter(object sender, EventArgs e)
+        {
+            if (!isPasswordUp)
+            {
+                lblPassword.AutoSize = true;
+                lblPassword.Text = "Mật khẩu";
+                lblPassword.ForeColor = Color.Black;
+                tmrPassMove.Start();
+            }
+        }
         private void txtPassword_Leave(object sender, EventArgs e)
         {
             if (txtPassword.Text == "")
@@ -227,6 +241,7 @@ namespace GUI
             Hide();
             BaseForm baseForm = new BaseForm();
             baseForm.Show();
+            baseForm.Close();
             tmrLoad.Stop();
 
             baseForm.FormClosed += (s, args) => Application.Exit();
@@ -236,6 +251,7 @@ namespace GUI
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
+                e.Handled = true;
                 txtPassword.Focus();
             }
         }
@@ -244,7 +260,8 @@ namespace GUI
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
-                txtPassword.Focus();
+                e.Handled = true;
+                Login();
             }
         }
     }
