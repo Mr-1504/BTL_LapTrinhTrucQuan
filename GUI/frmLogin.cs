@@ -241,7 +241,6 @@ namespace GUI
             Hide();
             BaseForm baseForm = new BaseForm();
             baseForm.Show();
-            baseForm.Close();
             tmrLoad.Stop();
 
             baseForm.FormClosed += (s, args) => Application.Exit();
