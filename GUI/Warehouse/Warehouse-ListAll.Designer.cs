@@ -43,6 +43,7 @@
             this.dgvTable = new System.Windows.Forms.DataGridView();
             this.lab7070Cube = new System.Windows.Forms.Panel();
             this.lbControlTitle = new System.Windows.Forms.Label();
+            this.lsb_lbHint = new System.Windows.Forms.Label();
             this.pnBackground.SuspendLayout();
             this.pnOrdering.SuspendLayout();
             this.pnLocalSearchBar.SuspendLayout();
@@ -104,6 +105,7 @@
             // 
             this.pnLocalSearchBar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnLocalSearchBar.BackgroundImage")));
             this.pnLocalSearchBar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnLocalSearchBar.Controls.Add(this.lsb_lbHint);
             this.pnLocalSearchBar.Controls.Add(this.lsb_txbSearchbox);
             this.pnLocalSearchBar.Location = new System.Drawing.Point(27, 14);
             this.pnLocalSearchBar.Name = "pnLocalSearchBar";
@@ -119,9 +121,9 @@
             this.lsb_txbSearchbox.Name = "lsb_txbSearchbox";
             this.lsb_txbSearchbox.Size = new System.Drawing.Size(340, 22);
             this.lsb_txbSearchbox.TabIndex = 0;
-            this.lsb_txbSearchbox.Text = "Tìm kiếm";
-            this.lsb_txbSearchbox.Enter += new System.EventHandler(this.lsb_txbSearchbox_EnterFocus);
-            this.lsb_txbSearchbox.Leave += new System.EventHandler(this.lsb_txbSearchbox_LeaveFocus);
+            this.lsb_txbSearchbox.Enter += new System.EventHandler(this.lsb_txbSearchbox_Enter);
+            this.lsb_txbSearchbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lsb_txbSearchbox_KeyDown);
+            this.lsb_txbSearchbox.Leave += new System.EventHandler(this.lsb_txbSearchbox_Leave);
             // 
             // pnTabDishCal
             // 
@@ -156,9 +158,10 @@
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTable.ColumnHeadersHeight = 32;
+            this.dgvTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
@@ -172,9 +175,10 @@
             this.dgvTable.Name = "dgvTable";
             this.dgvTable.ReadOnly = true;
             this.dgvTable.RowTemplate.Height = 32;
-            this.dgvTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvTable.Size = new System.Drawing.Size(1370, 675);
             this.dgvTable.TabIndex = 2;
+            this.dgvTable.SelectionChanged += new System.EventHandler(this.dgvTable_SelectionChanged);
             // 
             // lab7070Cube
             // 
@@ -196,6 +200,19 @@
             this.lbControlTitle.TabIndex = 0;
             this.lbControlTitle.Text = "Danh sách nguyên liệu";
             this.lbControlTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lsb_lbHint
+            // 
+            this.lsb_lbHint.AutoSize = true;
+            this.lsb_lbHint.BackColor = System.Drawing.Color.Transparent;
+            this.lsb_lbHint.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lsb_lbHint.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.lsb_lbHint.Location = new System.Drawing.Point(45, 11);
+            this.lsb_lbHint.Name = "lsb_lbHint";
+            this.lsb_lbHint.Size = new System.Drawing.Size(91, 21);
+            this.lsb_lbHint.TabIndex = 7;
+            this.lsb_lbHint.Text = "placeholder";
+            this.lsb_lbHint.Click += new System.EventHandler(this.lsb_lbHint_Click);
             // 
             // Warehouse_ListAll
             // 
@@ -230,5 +247,6 @@
         private System.Windows.Forms.Panel pnOrdering;
         private System.Windows.Forms.ComboBox odr_cbbChooseTable;
         private System.Windows.Forms.Button odr_btnSortUpDown;
+        private System.Windows.Forms.Label lsb_lbHint;
     }
 }

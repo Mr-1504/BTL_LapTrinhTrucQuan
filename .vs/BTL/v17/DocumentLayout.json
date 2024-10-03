@@ -3,28 +3,12 @@
   "WorkspaceRootPath": "E:\\Software\\Programing_Projects\\Github_Repo\\BTL_LapTrinhTrucQuan\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|E:\\Software\\Programing_Projects\\Github_Repo\\BTL_LapTrinhTrucQuan\\gui\\warehouse\\warehouse-listall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|solutionrelative:gui\\warehouse\\warehouse-listall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|E:\\Software\\Programing_Projects\\Github_Repo\\BTL_LapTrinhTrucQuan\\gui\\warehouse\\warehouse-listall.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|solutionrelative:gui\\warehouse\\warehouse-listall.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|e:\\software\\programing_projects\\github_repo\\btl_laptrinhtrucquan\\gui\\warehouse\\warehouse-listall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|solutionrelative:gui\\warehouse\\warehouse-listall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{27A08745-FB46-46B9-A4DB-0A068EF1C32C}|BLL\\BLL.csproj|e:\\software\\programing_projects\\github_repo\\btl_laptrinhtrucquan\\bll\\warehousebll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{27A08745-FB46-46B9-A4DB-0A068EF1C32C}|BLL\\BLL.csproj|solutionrelative:bll\\warehousebll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6C78B2C5-58E5-4A8E-9115-60919BD57607}|Utilities\\Utilities.csproj|E:\\Software\\Programing_Projects\\Github_Repo\\BTL_LapTrinhTrucQuan\\utilities\\sqlhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6C78B2C5-58E5-4A8E-9115-60919BD57607}|Utilities\\Utilities.csproj|solutionrelative:utilities\\sqlhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|E:\\Software\\Programing_Projects\\Github_Repo\\BTL_LapTrinhTrucQuan\\gui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|solutionrelative:gui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|e:\\software\\programing_projects\\github_repo\\btl_laptrinhtrucquan\\gui\\warehouse\\warehouse-listall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|solutionrelative:gui\\warehouse\\warehouse-listall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,78 +30,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "WarehouseBLL.cs",
-              "DocumentMoniker": "E:\\Software\\Programing_Projects\\Github_Repo\\BTL_LapTrinhTrucQuan\\BLL\\WarehouseBLL.cs",
-              "RelativeDocumentMoniker": "BLL\\WarehouseBLL.cs",
-              "ToolTip": "E:\\Software\\Programing_Projects\\Github_Repo\\BTL_LapTrinhTrucQuan\\BLL\\WarehouseBLL.cs",
-              "RelativeToolTip": "BLL\\WarehouseBLL.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Warehouse-ListAll.cs",
+              "DocumentMoniker": "E:\\Software\\Programing_Projects\\Github_Repo\\BTL_LapTrinhTrucQuan\\GUI\\Warehouse\\Warehouse-ListAll.cs",
+              "RelativeDocumentMoniker": "GUI\\Warehouse\\Warehouse-ListAll.cs",
+              "ToolTip": "E:\\Software\\Programing_Projects\\Github_Repo\\BTL_LapTrinhTrucQuan\\GUI\\Warehouse\\Warehouse-ListAll.cs",
+              "RelativeToolTip": "GUI\\Warehouse\\Warehouse-ListAll.cs",
+              "ViewState": "AgIAAGQAAAAAAAAAAAAAAH0AAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-02T09:57:30.095Z",
+              "WhenOpened": "2024-10-03T02:54:03.205Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Warehouse-ListAll.cs [Design]",
               "DocumentMoniker": "E:\\Software\\Programing_Projects\\Github_Repo\\BTL_LapTrinhTrucQuan\\GUI\\Warehouse\\Warehouse-ListAll.cs",
               "RelativeDocumentMoniker": "GUI\\Warehouse\\Warehouse-ListAll.cs",
               "ToolTip": "E:\\Software\\Programing_Projects\\Github_Repo\\BTL_LapTrinhTrucQuan\\GUI\\Warehouse\\Warehouse-ListAll.cs [Design]",
               "RelativeToolTip": "GUI\\Warehouse\\Warehouse-ListAll.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-02T01:59:53.176Z",
+              "WhenOpened": "2024-10-03T02:53:53.546Z",
               "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Warehouse-ListAll.cs",
-              "DocumentMoniker": "E:\\Software\\Programing_Projects\\Github_Repo\\BTL_LapTrinhTrucQuan\\GUI\\Warehouse\\Warehouse-ListAll.cs",
-              "RelativeDocumentMoniker": "GUI\\Warehouse\\Warehouse-ListAll.cs",
-              "ToolTip": "E:\\Software\\Programing_Projects\\Github_Repo\\BTL_LapTrinhTrucQuan\\GUI\\Warehouse\\Warehouse-ListAll.cs",
-              "RelativeToolTip": "GUI\\Warehouse\\Warehouse-ListAll.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAA1wB4AAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-02T01:56:37.342Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Warehouse-ListAll.Designer.cs",
-              "DocumentMoniker": "E:\\Software\\Programing_Projects\\Github_Repo\\BTL_LapTrinhTrucQuan\\GUI\\Warehouse\\Warehouse-ListAll.Designer.cs",
-              "RelativeDocumentMoniker": "GUI\\Warehouse\\Warehouse-ListAll.Designer.cs",
-              "ToolTip": "E:\\Software\\Programing_Projects\\Github_Repo\\BTL_LapTrinhTrucQuan\\GUI\\Warehouse\\Warehouse-ListAll.Designer.cs",
-              "RelativeToolTip": "GUI\\Warehouse\\Warehouse-ListAll.Designer.cs",
-              "ViewState": "AgIAAJwAAAAAAAAAAAAAAJAAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-02T02:48:35.739Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "SqlHelper.cs",
-              "DocumentMoniker": "E:\\Software\\Programing_Projects\\Github_Repo\\BTL_LapTrinhTrucQuan\\Utilities\\SqlHelper.cs",
-              "RelativeDocumentMoniker": "Utilities\\SqlHelper.cs",
-              "ToolTip": "E:\\Software\\Programing_Projects\\Github_Repo\\BTL_LapTrinhTrucQuan\\Utilities\\SqlHelper.cs",
-              "RelativeToolTip": "Utilities\\SqlHelper.cs",
-              "ViewState": "AgIAAEQAAAAAAAAAAAAwwEsAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-01T09:38:20.178Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Program.cs",
-              "DocumentMoniker": "E:\\Software\\Programing_Projects\\Github_Repo\\BTL_LapTrinhTrucQuan\\GUI\\Program.cs",
-              "RelativeDocumentMoniker": "GUI\\Program.cs",
-              "ToolTip": "E:\\Software\\Programing_Projects\\Github_Repo\\BTL_LapTrinhTrucQuan\\GUI\\Program.cs",
-              "RelativeToolTip": "GUI\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-01T02:10:17.477Z"
             }
           ]
         }

@@ -60,3 +60,7 @@ E:\Software\Programing_Projects\Github_Repo\BTL_LapTrinhTrucQuan\GUI\obj\Debug\G
 E:\Software\Programing_Projects\Github_Repo\BTL_LapTrinhTrucQuan\GUI\obj\Debug\GUI.exe
 E:\Software\Programing_Projects\Github_Repo\BTL_LapTrinhTrucQuan\GUI\obj\Debug\GUI.pdb
 E:\Software\Programing_Projects\Github_Repo\BTL_LapTrinhTrucQuan\GUI\obj\Debug\GUI.Warehouse_ListAll.resources
+E:\Software\Programing_Projects\Github_Repo\BTL_LapTrinhTrucQuan\GUI\obj\Debug\GUI.SettingForm.resources
+E:\Software\Programing_Projects\Github_Repo\BTL_LapTrinhTrucQuan\GUI\obj\Debug\GUI.SettingFormEditProfile.resources
+E:\Software\Programing_Projects\Github_Repo\BTL_LapTrinhTrucQuan\GUI\obj\Debug\GUI.SettingFormOption.resources
+E:\Software\Programing_Projects\Github_Repo\BTL_LapTrinhTrucQuan\GUI\obj\Debug\GUI.SettingFormSecurity.resources
