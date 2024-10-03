@@ -38,3 +38,7 @@ D:\BTL_LapTrinhTrucQuan\GUI\obj\Debug\GUI.BaseForm.resources
 D:\Code\C#\BTL_LapTrinhTrucQuan\GUI\obj\Debug\GUI.BaseForm.resources
 D:\Code\C#\BTL_LapTrinhTrucQuan\GUI\obj\Debug\GUI.LoadingForm.resources
 D:\Code\C#\BTL_LapTrinhTrucQuan\GUI\obj\Debug\GUI.frmLogin.resources
+D:\Code\C#\BTL_LapTrinhTrucQuan\GUI\obj\Debug\GUI.SettingForm.resources
+D:\Code\C#\BTL_LapTrinhTrucQuan\GUI\obj\Debug\GUI.SettingFormEditProfile.resources
+D:\Code\C#\BTL_LapTrinhTrucQuan\GUI\obj\Debug\GUI.SettingFormOption.resources
+D:\Code\C#\BTL_LapTrinhTrucQuan\GUI\obj\Debug\GUI.SettingFormSecurity.resources
