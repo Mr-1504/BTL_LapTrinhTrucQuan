@@ -20,6 +20,7 @@
             base.Dispose(disposing);
         }
 
+        
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -29,10 +30,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Warehouse_ListAll));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnBackground = new System.Windows.Forms.Panel();
-            this.dgvTable = new System.Windows.Forms.DataGridView();
-            this.lab7070Cube = new System.Windows.Forms.Panel();
-            this.lbControlTitle = new System.Windows.Forms.Label();
             this.pnOrdering = new System.Windows.Forms.Panel();
             this.odr_btnSortUpDown = new System.Windows.Forms.Button();
             this.odr_cbbChooseTable = new System.Windows.Forms.ComboBox();
@@ -40,10 +40,13 @@
             this.lsb_txbSearchbox = new System.Windows.Forms.TextBox();
             this.pnTabDishCal = new System.Windows.Forms.Panel();
             this.pnTabListAll = new System.Windows.Forms.Panel();
+            this.dgvTable = new System.Windows.Forms.DataGridView();
+            this.lab7070Cube = new System.Windows.Forms.Panel();
+            this.lbControlTitle = new System.Windows.Forms.Label();
             this.pnBackground.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTable)).BeginInit();
             this.pnOrdering.SuspendLayout();
             this.pnLocalSearchBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTable)).BeginInit();
             this.SuspendLayout();
             // 
             // pnBackground
@@ -60,40 +63,6 @@
             this.pnBackground.Name = "pnBackground";
             this.pnBackground.Size = new System.Drawing.Size(1370, 815);
             this.pnBackground.TabIndex = 0;
-            // 
-            // dgvTable
-            // 
-            this.dgvTable.AllowUserToAddRows = false;
-            this.dgvTable.AllowUserToDeleteRows = false;
-            this.dgvTable.BackgroundColor = System.Drawing.Color.White;
-            this.dgvTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTable.Location = new System.Drawing.Point(0, 70);
-            this.dgvTable.Name = "dgvTable";
-            this.dgvTable.ReadOnly = true;
-            this.dgvTable.Size = new System.Drawing.Size(1370, 675);
-            this.dgvTable.TabIndex = 2;
-            // 
-            // lab7070Cube
-            // 
-            this.lab7070Cube.BackColor = System.Drawing.Color.Fuchsia;
-            this.lab7070Cube.Location = new System.Drawing.Point(1194, 745);
-            this.lab7070Cube.Name = "lab7070Cube";
-            this.lab7070Cube.Size = new System.Drawing.Size(70, 70);
-            this.lab7070Cube.TabIndex = 1;
-            this.lab7070Cube.Visible = false;
-            // 
-            // lbControlTitle
-            // 
-            this.lbControlTitle.AutoSize = true;
-            this.lbControlTitle.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbControlTitle.Location = new System.Drawing.Point(549, 767);
-            this.lbControlTitle.Margin = new System.Windows.Forms.Padding(0);
-            this.lbControlTitle.Name = "lbControlTitle";
-            this.lbControlTitle.Size = new System.Drawing.Size(273, 32);
-            this.lbControlTitle.TabIndex = 0;
-            this.lbControlTitle.Text = "Danh sách nguyên liệu";
-            this.lbControlTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnOrdering
             // 
@@ -172,6 +141,62 @@
             this.pnTabListAll.Size = new System.Drawing.Size(48, 48);
             this.pnTabListAll.TabIndex = 3;
             // 
+            // dgvTable
+            // 
+            this.dgvTable.AllowUserToAddRows = false;
+            this.dgvTable.AllowUserToDeleteRows = false;
+            this.dgvTable.AllowUserToResizeColumns = false;
+            this.dgvTable.AllowUserToResizeRows = false;
+            this.dgvTable.BackgroundColor = System.Drawing.Color.White;
+            this.dgvTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTable.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvTable.Location = new System.Drawing.Point(0, 70);
+            this.dgvTable.MultiSelect = false;
+            this.dgvTable.Name = "dgvTable";
+            this.dgvTable.ReadOnly = true;
+            this.dgvTable.RowTemplate.Height = 32;
+            this.dgvTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvTable.Size = new System.Drawing.Size(1370, 675);
+            this.dgvTable.TabIndex = 2;
+            // 
+            // lab7070Cube
+            // 
+            this.lab7070Cube.BackColor = System.Drawing.Color.Fuchsia;
+            this.lab7070Cube.Location = new System.Drawing.Point(1194, 745);
+            this.lab7070Cube.Name = "lab7070Cube";
+            this.lab7070Cube.Size = new System.Drawing.Size(70, 70);
+            this.lab7070Cube.TabIndex = 1;
+            this.lab7070Cube.Visible = false;
+            // 
+            // lbControlTitle
+            // 
+            this.lbControlTitle.AutoSize = true;
+            this.lbControlTitle.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbControlTitle.Location = new System.Drawing.Point(549, 767);
+            this.lbControlTitle.Margin = new System.Windows.Forms.Padding(0);
+            this.lbControlTitle.Name = "lbControlTitle";
+            this.lbControlTitle.Size = new System.Drawing.Size(273, 32);
+            this.lbControlTitle.TabIndex = 0;
+            this.lbControlTitle.Text = "Danh sách nguyên liệu";
+            this.lbControlTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Warehouse_ListAll
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -184,10 +209,10 @@
             this.Load += new System.EventHandler(this.Warehouse_ListAll_Load);
             this.pnBackground.ResumeLayout(false);
             this.pnBackground.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTable)).EndInit();
             this.pnOrdering.ResumeLayout(false);
             this.pnLocalSearchBar.ResumeLayout(false);
             this.pnLocalSearchBar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTable)).EndInit();
             this.ResumeLayout(false);
 
         }
