@@ -13,8 +13,10 @@ namespace GUI
         private bool seen;
         private Image image;
         private AccountBLL acc = new AccountBLL();
+        private string id;
         public frmLogin()
         {
+            id = "";
             seen = false;
             isNameUp = false;
             isPasswordUp = false;
@@ -203,6 +205,7 @@ namespace GUI
             {
                 lblName.ForeColor = Color.Black;
                 lblPassword.ForeColor = Color.Black;
+                id = txtUsername.Text;
                 txtUsername.Text = "";
                 txtPassword.Text = "";
                 foreach (Control control in Controls)
@@ -236,7 +239,7 @@ namespace GUI
         {
             picLoad.Visible = false;
             Hide();
-            BaseForm baseForm = new BaseForm();
+            BaseForm baseForm = new BaseForm(id);
             baseForm.Show();
             tmrLoad.Stop();
 
