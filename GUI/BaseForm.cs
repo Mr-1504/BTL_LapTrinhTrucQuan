@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BLL;
+using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using Utilities;
@@ -8,17 +10,25 @@ namespace GUI
     public partial class BaseForm : Form
     {
         private string _itemName;
+        private string _id;
+        private string _action;
         private int _distance;
+        private int _change;
         private int _y;
         private Panel _pnl;
         private Panel _choosePnl;
-        public BaseForm()
+        public BaseForm(string employeeId)
         {
+            _id = employeeId;
+            Console.WriteLine("id: " + _id);
             _y = 0;
             _distance = 0;
+            _change = 0;
             _itemName = "Home";
             InitializeComponent();
-            foreach (Control control in this.Controls)
+            _action = pnlHome.Name.Substring(3);
+            _choosePnl = pnlHome;
+            foreach (Control control in Controls)
                 control.Click += Control_Click;
 
             foreach (Control control in pnlMenu.Controls)
@@ -38,8 +48,27 @@ namespace GUI
                 control.MouseEnter += Menu_MouseLeave;
             }
             pnlMenu.MouseEnter += Menu_MouseLeave;
+            LoadMenu(employeeId);
         }
 
+        private void LoadMenu(string employeeId)
+        {
+            int y = 72;
+            Console.WriteLine(employeeId + " hihi");
+            List<string> list = new RoleBLL().GetOption(employeeId);
+            foreach (string item in list)
+            {
+                foreach (Control control in pnlMenu.Controls)
+                {
+                    if (control is Panel && control.Name == item)
+                    {
+                        control.Location = new Point(5, y);
+                        control.Visible = true;
+                        y += 72;
+                    }
+                }
+            }
+        }
 
         private void Menu_MouseEnter(object sender, EventArgs e)
         {
@@ -60,7 +89,6 @@ namespace GUI
                         foreach (Control control_ in pnl.Controls)
                         {
                             Control_Hover(control_, false);
-
                         }
                     }
                 }
@@ -74,6 +102,10 @@ namespace GUI
                 picHover.Visible = true;
 
                 _distance = _y - picHover.Location.Y;
+                if (Math.Abs(_distance) >= 72 * 4)
+                    _change = 11;
+                else
+                    _change = 7;
                 tmrHover.Start();
             }
             picHover.Visible = true;
@@ -83,7 +115,7 @@ namespace GUI
         {
             if (ActiveControl is TextBox)
             {
-                this.ActiveControl = null;
+                ActiveControl = null;
             }
         }
 
@@ -93,24 +125,23 @@ namespace GUI
             {
                 if (picHover.Location.Y < _y)
                 {
-                    picHover.Location = new Point(0, picHover.Location.Y + 7);
+                    picHover.Location = new Point(0, picHover.Location.Y + _change);
                 }
                 else
                 {
                     tmrHover.Stop();
                     picHover.Location = new Point(0, _pnl.Location.Y + 11);
-
                 }
             }
             else if (_distance < 0)
             {
-                if (picHover.Location.Y > _y)
-                    picHover.Location = new Point(0, picHover.Location.Y - 7);
+                if (picHover.Location.Y > _y){
+                    picHover.Location = new Point(0, picHover.Location.Y - _change);
+                }
                 else
                 {
                     tmrHover.Stop();
                     picHover.Location = new Point(0, _pnl.Location.Y + 11);
-
                 }
             }
         }
@@ -132,6 +163,10 @@ namespace GUI
         private void Menu_Click(object sender, EventArgs e)
         {
             _choosePnl = GetParentsPanel(sender, e);
+            if (_action == _choosePnl.Name.Substring(3))
+                return;
+            else
+                _action = _choosePnl.Name.Substring(3);
             picChoose.Location = new Point(0, _choosePnl.Location.Y + 11);
             picChoose.Visible = true;
             Control_Hover(_choosePnl, true);
@@ -143,10 +178,11 @@ namespace GUI
                     foreach (Control control_ in pnl.Controls)
                     {
                         Control_Hover(control_, false);
-
                     }
                 }
             }
+            SettingForm settingForm = new SettingForm();
+            OpenComponent(settingForm);
         }
 
         private void Control_Hover(Control control, bool hover)
@@ -164,6 +200,7 @@ namespace GUI
                 if (imgResource != null)
                 {
                     pic.Image = imgResource;
+                    Console.WriteLine(name + "co");
                 }
             }
 
@@ -196,6 +233,33 @@ namespace GUI
                 panel = pictureBox.Parent as Panel;
             }
             return panel;
+        }
+
+        private void btnSetting_Click(object sender, EventArgs e)
+        {
+            if (_action == btnSetting.Name.Substring(3)){
+                return;
+            }
+            else
+                _action = btnSetting.Name.Substring(3);
+            foreach(Control control in _choosePnl.Controls)
+                Control_Hover(control, false);
+            Console.WriteLine(_choosePnl.Name);
+            picChoose.Visible = false;
+            SettingForm settingForm = new SettingForm();
+            OpenComponent(settingForm);
+        }
+
+        private void OpenComponent(Form form)
+        {
+            form.MouseEnter += Menu_MouseLeave;
+            foreach (Control control in form.Controls){
+                control.MouseEnter += Menu_MouseLeave;
+            }
+            form.TopLevel = false;
+            pnlContent.Controls.Clear();
+            pnlContent.Controls.Add(form);
+            form.Show();
         }
     }
 }
