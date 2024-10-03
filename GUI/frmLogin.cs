@@ -8,13 +8,11 @@ namespace GUI
 {
     public partial class frmLogin : Form
     {
-        private float angle;
         private bool isNameUp;
         private bool isPasswordUp;
         private bool seen;
         private Image image;
         private AccountBLL acc = new AccountBLL();
-        //private ListBookForm listBookForm;
         public frmLogin()
         {
             seen = false;
@@ -26,7 +24,6 @@ namespace GUI
             foreach (Control control in Controls)
                 control.Click += Control_Click;
             Click += Control_Click;
-            angle = 0f;
             image = Properties.Resources.load;
         }
 
