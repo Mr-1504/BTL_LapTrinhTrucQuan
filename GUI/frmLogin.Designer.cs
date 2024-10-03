@@ -155,6 +155,7 @@
             this.txtUsername.TabStop = false;
             this.txtUsername.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsername_KeyPress);
             this.txtUsername.Leave += new System.EventHandler(this.TxtUsername_Leave);
+            this.txtUsername.Enter += new System.EventHandler(this.txtUsername_Enter);
             // 
             // pnlPass
             // 
@@ -231,6 +232,7 @@
             this.txtPassword.TextChanged += new System.EventHandler(this.TxtPassword_TextChanged);
             this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
             this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
+            this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
             // 
             // picLogo
             // 

@@ -163,21 +163,6 @@
     <None Include="Resources\logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\home.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\home1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\home2.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Home3.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Home4.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\logo3.png" />
   </ItemGroup>
   <ItemGroup>
@@ -185,18 +170,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\hihi.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\btnSetting.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\btnInform.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Home6.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\iconHome.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Account.jpg" />
@@ -236,6 +209,84 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\load.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SearchPanel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnSetting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnNotification.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lblButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnHome.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lblButtonGray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnEmployee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lblHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lblFood.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warehouseGray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picHomeBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picEmployeeGray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picFoodGray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picWarehouseGray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picImportGray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picEmployeeBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picFoodBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picImportBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picWarehouseBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picHomeGray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picOrderGray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picOrderBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picOrderListBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picOrderListGray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picEditInformationBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picEditInformationGray.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

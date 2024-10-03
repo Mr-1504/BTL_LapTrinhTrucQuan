@@ -32,6 +32,7 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.slidePanel1 = new System.Windows.Forms.Panel();
             this.pnallsettring = new System.Windows.Forms.Panel();
+            this.pnItems = new System.Windows.Forms.Panel();
             this.pnLine = new System.Windows.Forms.Panel();
             this.pnoption3 = new System.Windows.Forms.Panel();
             this.btnSecurity = new System.Windows.Forms.Button();
@@ -39,7 +40,6 @@
             this.pnoption2 = new System.Windows.Forms.Panel();
             this.btnOption = new System.Windows.Forms.Button();
             this.slidePanel2 = new System.Windows.Forms.Panel();
-            this.pnItems = new System.Windows.Forms.Panel();
             this.pnoption1.SuspendLayout();
             this.pnallsettring.SuspendLayout();
             this.pnoption3.SuspendLayout();
@@ -98,6 +98,13 @@
             this.pnallsettring.Size = new System.Drawing.Size(721, 559);
             this.pnallsettring.TabIndex = 2;
             this.pnallsettring.Paint += new System.Windows.Forms.PaintEventHandler(this.pnallsettring_Paint);
+            // 
+            // pnItems
+            // 
+            this.pnItems.Location = new System.Drawing.Point(12, 93);
+            this.pnItems.Name = "pnItems";
+            this.pnItems.Size = new System.Drawing.Size(694, 463);
+            this.pnItems.TabIndex = 7;
             // 
             // pnLine
             // 
@@ -184,13 +191,6 @@
             this.slidePanel2.Visible = false;
             this.slidePanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.slidePanel2_Paint);
             // 
-            // pnItems
-            // 
-            this.pnItems.Location = new System.Drawing.Point(12, 93);
-            this.pnItems.Name = "pnItems";
-            this.pnItems.Size = new System.Drawing.Size(694, 463);
-            this.pnItems.TabIndex = 7;
-            // 
             // SettingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -200,6 +200,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SettingForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "SettingForm";
             this.Load += new System.EventHandler(this.SettingForm_Load);
             this.pnoption1.ResumeLayout(false);
