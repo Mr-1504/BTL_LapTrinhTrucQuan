@@ -189,6 +189,7 @@
             this.Home.Name = "Home";
             this.Home.Size = new System.Drawing.Size(231, 94);
             this.Home.TabIndex = 0;
+            this.Home.Paint += new System.Windows.Forms.PaintEventHandler(this.Home_Paint);
             this.Home.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Component_MouseClick);
             this.Home.MouseEnter += new System.EventHandler(this.Component_MouseEnter);
             this.Home.MouseLeave += new System.EventHandler(this.Component_MouseLeave);
@@ -280,7 +281,7 @@
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.Location = new System.Drawing.Point(3, 3);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(790, 25);
+            this.txtSearch.Size = new System.Drawing.Size(790, 22);
             this.txtSearch.TabIndex = 3;
             this.txtSearch.Text = "tìm";
             this.txtSearch.Click += new System.EventHandler(this.textBox1_Click);
@@ -337,6 +338,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "BaseForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.panel3.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -348,8 +350,8 @@
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.SearchBar.ResumeLayout(false);
+            this.SearchBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.ResumeLayout(false);
 
         }
