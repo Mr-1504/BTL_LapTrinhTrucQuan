@@ -80,6 +80,36 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SettingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingForm.Designer.cs">
+      <DependentUpon>SettingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SettingFormEditProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingFormEditProfile.Designer.cs">
+      <DependentUpon>SettingFormEditProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SettingFormOption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingFormOption.Designer.cs">
+      <DependentUpon>SettingFormOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SettingFormSecurity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingFormSecurity.Designer.cs">
+      <DependentUpon>SettingFormSecurity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Warehouse\Warehouse-ListAll.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Warehouse\Warehouse-ListAll.Designer.cs">
+      <DependentUpon>Warehouse-ListAll.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -99,6 +129,21 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingForm.resx">
+      <DependentUpon>SettingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingFormEditProfile.resx">
+      <DependentUpon>SettingFormEditProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingFormOption.resx">
+      <DependentUpon>SettingFormOption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingFormSecurity.resx">
+      <DependentUpon>SettingFormSecurity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Warehouse\Warehouse-ListAll.resx">
+      <DependentUpon>Warehouse-ListAll.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
