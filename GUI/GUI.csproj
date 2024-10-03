@@ -261,5 +261,23 @@
   <ItemGroup>
     <None Include="Resources\picHomeGray.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picOrderGray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picOrderBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picOrderListBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picOrderListGray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picEditInformationBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picEditInformationGray.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

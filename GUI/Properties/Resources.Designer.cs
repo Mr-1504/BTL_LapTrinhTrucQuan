@@ -233,6 +233,26 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap picEditInformationBlue {
+            get {
+                object obj = ResourceManager.GetObject("picEditInformationBlue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap picEditInformationGray {
+            get {
+                object obj = ResourceManager.GetObject("picEditInformationGray", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap picEmployeeBlue {
             get {
                 object obj = ResourceManager.GetObject("picEmployeeBlue", resourceCulture);
@@ -306,6 +326,46 @@ namespace GUI.Properties {
         internal static System.Drawing.Bitmap picImportGray {
             get {
                 object obj = ResourceManager.GetObject("picImportGray", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap picOrderBlue {
+            get {
+                object obj = ResourceManager.GetObject("picOrderBlue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap picOrderGray {
+            get {
+                object obj = ResourceManager.GetObject("picOrderGray", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap picOrderListBlue {
+            get {
+                object obj = ResourceManager.GetObject("picOrderListBlue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap picOrderListGray {
+            get {
+                object obj = ResourceManager.GetObject("picOrderListGray", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
