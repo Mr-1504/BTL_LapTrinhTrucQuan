@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class frmLogin : Form
+    public partial class LoginForm : Form
     {
         private bool isNameUp;
         private bool isPasswordUp;
@@ -14,7 +14,7 @@ namespace GUI
         private Image image;
         private AccountBLL acc = new AccountBLL();
         private string id;
-        public frmLogin()
+        public LoginForm()
         {
             id = "";
             seen = false;

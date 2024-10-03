@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class frmLogin
+    partial class LoginForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.tmrNameMove = new System.Windows.Forms.Timer(this.components);
             this.tmrPassMove = new System.Windows.Forms.Timer(this.components);
             this.tmrLoad = new System.Windows.Forms.Timer(this.components);

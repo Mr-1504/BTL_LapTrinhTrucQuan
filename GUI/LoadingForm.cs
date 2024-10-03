@@ -99,7 +99,7 @@ namespace GUI
             {
                 timer1.Stop();
                 Hide();
-                frmLogin frmLogin = new frmLogin();
+                LoginForm frmLogin = new LoginForm();
                 frmLogin.Show();
 
                 frmLogin.FormClosed += (s, args) => Application.Exit(); 

@@ -49,12 +49,13 @@ namespace GUI
             }
             pnlMenu.MouseEnter += Menu_MouseLeave;
             LoadMenu(employeeId);
+
+            ActiveControl = picLogo;
         }
 
         private void LoadMenu(string employeeId)
         {
             int y = 72;
-            Console.WriteLine(employeeId + " hihi");
             List<string> list = new RoleBLL().GetOption(employeeId);
             foreach (string item in list)
             {
@@ -260,6 +261,16 @@ namespace GUI
             pnlContent.Controls.Clear();
             pnlContent.Controls.Add(form);
             form.Show();
+        }
+
+        private void txtSearch_Enter(object sender, EventArgs e)
+        {
+            txtSearch.Text = txtSearch.Text == "Tìm kiếm" ? "" : txtSearch.Text;
+        }
+
+        private void txtSearch_Leave(object sender, EventArgs e)
+        {
+            txtSearch.Text = txtSearch.Text.Length == 0 ? "Tìm kiếm" : txtSearch.Text;
         }
     }
 }
