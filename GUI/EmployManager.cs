@@ -16,6 +16,24 @@ namespace GUI
         public EmployManager()
         {
             InitializeComponent();
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.ReadOnly = true;  // Không cho phép chỉnh sửa
+            //Chinh hang tieu de
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Blue;
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView1.ColumnHeadersHeight = 50;
+            // Khóa không cho phép kéo dãn cột
+            dataGridView1.AllowUserToResizeColumns = false;
+
+            // Khóa không cho phép kéo dãn hàng
+            dataGridView1.AllowUserToResizeRows = false;
+
+        }
+
+        private void dataGridView1_ColumnHeaderCellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+             
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -30,19 +48,7 @@ namespace GUI
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            int radius = 20;
-
-            // Tạo GraphicsPath để vẽ hình chữ nhật bo góc
-            GraphicsPath path = new GraphicsPath();
-            Rectangle rect = new Rectangle(0, 0, panel1.Width - 1, panel1.Height - 1);
-
-            // Thêm hình chữ nhật bo góc vào GraphicsPath
-            path.AddArc(rect.X, rect.Y, radius, radius, 180, 90);
-            path.AddArc(rect.X + rect.Width - radius, rect.Y, radius, radius, 270, 90);
-            path.AddArc(rect.X + rect.Width - radius, rect.Y + rect.Height - radius, radius, radius, 0, 90);
-            path.AddArc(rect.X, rect.Y + rect.Height - radius, radius, radius, 90, 90);
-            path.CloseFigure();
-            panel1.Region = new Region(path);
+            
         }
     }
 }
