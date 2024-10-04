@@ -39,7 +39,7 @@
             // picArrowRight
             // 
             this.picArrowRight.Image = global::GUI.Properties.Resources.arrowRight;
-            this.picArrowRight.Location = new System.Drawing.Point(670, 38);
+            this.picArrowRight.Location = new System.Drawing.Point(670, 30);
             this.picArrowRight.Name = "picArrowRight";
             this.picArrowRight.Size = new System.Drawing.Size(28, 28);
             this.picArrowRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -49,7 +49,7 @@
             // picStep2Status
             // 
             this.picStep2Status.Image = global::GUI.Properties.Resources.step2;
-            this.picStep2Status.Location = new System.Drawing.Point(888, 16);
+            this.picStep2Status.Location = new System.Drawing.Point(888, 8);
             this.picStep2Status.Name = "picStep2Status";
             this.picStep2Status.Size = new System.Drawing.Size(320, 73);
             this.picStep2Status.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -59,7 +59,7 @@
             // picStep1Status
             // 
             this.picStep1Status.Image = global::GUI.Properties.Resources.step1Wait;
-            this.picStep1Status.Location = new System.Drawing.Point(161, 16);
+            this.picStep1Status.Location = new System.Drawing.Point(161, 8);
             this.picStep1Status.Name = "picStep1Status";
             this.picStep1Status.Size = new System.Drawing.Size(320, 73);
             this.picStep1Status.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

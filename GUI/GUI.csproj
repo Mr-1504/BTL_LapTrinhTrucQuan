@@ -339,5 +339,20 @@
   <ItemGroup>
     <None Include="Resources\btnConfirmInputHover.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pnltext.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bgQuantityIngredientInput.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cmbSupplierName.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cmbIngredientImput.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ListIngrdient.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

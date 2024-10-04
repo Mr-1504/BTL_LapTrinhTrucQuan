@@ -93,6 +93,26 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bgQuantityIngredientInput {
+            get {
+                object obj = ResourceManager.GetObject("bgQuantityIngredientInput", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bgQuantityIngredientInput1 {
+            get {
+                object obj = ResourceManager.GetObject("bgQuantityIngredientInput1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bgResetInput {
             get {
                 object obj = ResourceManager.GetObject("bgResetInput", resourceCulture);
@@ -156,6 +176,26 @@ namespace GUI.Properties {
         internal static System.Drawing.Bitmap btnSetting1 {
             get {
                 object obj = ResourceManager.GetObject("btnSetting1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cmbIngredientImput {
+            get {
+                object obj = ResourceManager.GetObject("cmbIngredientImput", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cmbSupplierName {
+            get {
+                object obj = ResourceManager.GetObject("cmbSupplierName", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -236,6 +276,16 @@ namespace GUI.Properties {
         internal static System.Drawing.Bitmap lblHover {
             get {
                 object obj = ResourceManager.GetObject("lblHover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ListIngrdient {
+            get {
+                object obj = ResourceManager.GetObject("ListIngrdient", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -446,6 +496,16 @@ namespace GUI.Properties {
         internal static System.Drawing.Bitmap picWarehouseGray {
             get {
                 object obj = ResourceManager.GetObject("picWarehouseGray", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pnltext {
+            get {
+                object obj = ResourceManager.GetObject("pnltext", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
