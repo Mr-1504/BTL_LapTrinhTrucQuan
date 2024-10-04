@@ -43,3 +43,5 @@ D:\Code\C#\BTL_LapTrinhTrucQuan\GUI\obj\Debug\GUI.SettingFormOption.resources
 D:\Code\C#\BTL_LapTrinhTrucQuan\GUI\obj\Debug\GUI.SettingFormSecurity.resources
 D:\Code\C#\BTL_LapTrinhTrucQuan\GUI\obj\Debug\GUI.LoginForm.resources
 D:\Code\C#\BTL_LapTrinhTrucQuan\GUI\obj\Debug\GUI.Warehouse_ListAll.resources
+D:\Code\C#\BTL_LapTrinhTrucQuan\GUI\obj\Debug\GUI.PurchasedIngredient.DetailPurchaseedIngredient.resources
+D:\Code\C#\BTL_LapTrinhTrucQuan\GUI\obj\Debug\GUI.PurchasedIngredient.InputDetail.resources
