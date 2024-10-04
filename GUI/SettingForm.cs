@@ -161,7 +161,7 @@ namespace GUI
             slidePanel2.Visible = false;
             slidePanel3.Visible = true;
             // Tạo instance của form con SettingFormSecurity
-            SettingFormSecurity securityForm = new SettingFormSecurity();
+            SettingFormSecurity securityForm = new SettingFormSecurity(_employeeId);
 
             // Gọi hàm LoadChildForm để nhúng form con vào panel
             LoadChildForm(securityForm);

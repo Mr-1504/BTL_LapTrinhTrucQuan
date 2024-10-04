@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingFormSecurity));
             this.pnEditPassword = new System.Windows.Forms.Panel();
             this.grbEditPassword = new System.Windows.Forms.GroupBox();
+            this.btnbtnChangePassword = new System.Windows.Forms.Button();
             this.pnNewPass = new System.Windows.Forms.Panel();
             this.picSeen2 = new System.Windows.Forms.PictureBox();
             this.txtNewPass = new System.Windows.Forms.TextBox();
@@ -39,13 +40,18 @@
             this.txtCrPass = new System.Windows.Forms.TextBox();
             this.lbNewPass = new System.Windows.Forms.Label();
             this.lbCrPass = new System.Windows.Forms.Label();
-            this.btnSave = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtConfirmPass = new System.Windows.Forms.TextBox();
+            this.lbConfirmPass = new System.Windows.Forms.Label();
             this.pnEditPassword.SuspendLayout();
             this.grbEditPassword.SuspendLayout();
             this.pnNewPass.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSeen2)).BeginInit();
             this.pnCrPass.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSeen1)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnEditPassword
@@ -59,7 +65,9 @@
             // 
             // grbEditPassword
             // 
-            this.grbEditPassword.Controls.Add(this.btnSave);
+            this.grbEditPassword.Controls.Add(this.panel1);
+            this.grbEditPassword.Controls.Add(this.lbConfirmPass);
+            this.grbEditPassword.Controls.Add(this.btnbtnChangePassword);
             this.grbEditPassword.Controls.Add(this.pnNewPass);
             this.grbEditPassword.Controls.Add(this.pnCrPass);
             this.grbEditPassword.Controls.Add(this.lbNewPass);
@@ -71,6 +79,19 @@
             this.grbEditPassword.TabIndex = 0;
             this.grbEditPassword.TabStop = false;
             this.grbEditPassword.Text = "Đổi mật khẩu";
+            // 
+            // btnbtnChangePassword
+            // 
+            this.btnbtnChangePassword.BackColor = System.Drawing.Color.Blue;
+            this.btnbtnChangePassword.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnbtnChangePassword.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnbtnChangePassword.Location = new System.Drawing.Point(1026, 433);
+            this.btnbtnChangePassword.Name = "btnbtnChangePassword";
+            this.btnbtnChangePassword.Size = new System.Drawing.Size(168, 50);
+            this.btnbtnChangePassword.TabIndex = 22;
+            this.btnbtnChangePassword.Text = "Change";
+            this.btnbtnChangePassword.UseVisualStyleBackColor = false;
+            this.btnbtnChangePassword.Click += new System.EventHandler(this.btnbtnChangePassword_Click);
             // 
             // pnNewPass
             // 
@@ -169,17 +190,52 @@
             this.lbCrPass.TabIndex = 14;
             this.lbCrPass.Text = "Mật khẩu hiện tại";
             // 
-            // btnSave
+            // panel1
             // 
-            this.btnSave.BackColor = System.Drawing.Color.Blue;
-            this.btnSave.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSave.Location = new System.Drawing.Point(1026, 433);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(168, 50);
-            this.btnSave.TabIndex = 22;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = false;
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.txtConfirmPass);
+            this.panel1.Location = new System.Drawing.Point(118, 386);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(338, 50);
+            this.panel1.TabIndex = 24;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = global::GUI.Properties.Resources.Seen;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pictureBox1.Location = new System.Drawing.Point(291, 9);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(34, 28);
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
+            // 
+            // txtConfirmPass
+            // 
+            this.txtConfirmPass.BackColor = System.Drawing.Color.White;
+            this.txtConfirmPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtConfirmPass.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConfirmPass.Location = new System.Drawing.Point(22, 14);
+            this.txtConfirmPass.MaxLength = 20;
+            this.txtConfirmPass.Name = "txtConfirmPass";
+            this.txtConfirmPass.Size = new System.Drawing.Size(298, 22);
+            this.txtConfirmPass.TabIndex = 6;
+            this.txtConfirmPass.TabStop = false;
+            // 
+            // lbConfirmPass
+            // 
+            this.lbConfirmPass.AutoSize = true;
+            this.lbConfirmPass.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbConfirmPass.Location = new System.Drawing.Point(113, 356);
+            this.lbConfirmPass.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbConfirmPass.Name = "lbConfirmPass";
+            this.lbConfirmPass.Size = new System.Drawing.Size(188, 27);
+            this.lbConfirmPass.TabIndex = 23;
+            this.lbConfirmPass.Text = "Nhập lại mật khẩu";
             // 
             // SettingFormSecurity
             // 
@@ -190,6 +246,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SettingFormSecurity";
             this.Text = "SettingFormOption";
+            this.Load += new System.EventHandler(this.SettingFormSecurity_Load);
             this.pnEditPassword.ResumeLayout(false);
             this.grbEditPassword.ResumeLayout(false);
             this.grbEditPassword.PerformLayout();
@@ -199,6 +256,9 @@
             this.pnCrPass.ResumeLayout(false);
             this.pnCrPass.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSeen1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -215,6 +275,10 @@
         private System.Windows.Forms.TextBox txtNewPass;
         private System.Windows.Forms.Panel pnCrPass;
         private System.Windows.Forms.TextBox txtCrPass;
-        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnbtnChangePassword;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox txtConfirmPass;
+        private System.Windows.Forms.Label lbConfirmPass;
     }
 }
