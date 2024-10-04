@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using Utilities;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace GUI
 {
@@ -22,7 +21,6 @@ namespace GUI
         public BaseForm(string employeeId)
         {
             _id = employeeId;
-            Console.WriteLine("id: " + _id);
             _y = 0;
             _distance = 0;
             _change = 0;
@@ -230,7 +228,6 @@ namespace GUI
                 if (imgResource != null)
                 {
                     pic.Image = imgResource;
-                    Console.WriteLine(name + "co");
                 }
             }
 
