@@ -7,10 +7,10 @@ namespace BLL
 {
     public class SupplierBLL
     {
-        public List<SupplierDTO> GetSuppliers()
+        public List<SupplierDTO> GetSuppliers(string search = "")
         {
+            DataTable data = search == "" ? new SupplierDAL().GetSuppliers() : new SupplierDAL().GetSuppliers(search);
             List<SupplierDTO> suppliers = new List<SupplierDTO>();
-            DataTable data = new SupplierDAL().GetSuppliers();
             foreach (DataRow row in data.Rows)
             {
                 if (row != null)
