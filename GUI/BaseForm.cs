@@ -1,9 +1,11 @@
 ﻿using BLL;
+using GUI.PurchasedIngredient;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using Utilities;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace GUI
 {
@@ -182,8 +184,35 @@ namespace GUI
                     }
                 }
             }
-            SettingForm settingForm = new SettingForm();
-            OpenComponent(settingForm);
+
+            switch (_action)
+            {
+                case "Home":
+                    
+                    break;
+                case "Employee":
+                    
+                    break;
+                case "Food":
+                    
+                    break;
+                case "Warehouse":
+
+                    break;
+                case "Import":
+                    DetailPurchaseedIngredient detail = new DetailPurchaseedIngredient();
+                    OpenComponent( detail );
+                    break;
+                case "Order":
+
+                    break;
+                case "OrderList":
+
+                    break;
+                case "EditInformation":
+
+                    break;
+            }
         }
 
         private void Control_Hover(Control control, bool hover)
@@ -245,7 +274,6 @@ namespace GUI
                 _action = btnSetting.Name.Substring(3);
             foreach(Control control in _choosePnl.Controls)
                 Control_Hover(control, false);
-            Console.WriteLine(_choosePnl.Name);
             picChoose.Visible = false;
             SettingForm settingForm = new SettingForm();
             OpenComponent(settingForm);
