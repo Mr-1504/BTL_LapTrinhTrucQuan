@@ -7,23 +7,27 @@
       "RelativeMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|solutionrelative:gui\\settingformsecurity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|d:\\code\\lltq\\btl_laptrinhtrucquan\\gui\\settingformsecurity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|D:\\code\\LLTQ\\BTL_LapTrinhTrucQuan\\gui\\settingformsecurity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|solutionrelative:gui\\settingformsecurity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9026DC2D-E94F-49DF-BF0C-54D73B03B58D}|DAL\\DAL.csproj|d:\\code\\lltq\\btl_laptrinhtrucquan\\dal\\accountdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|d:\\code\\lltq\\btl_laptrinhtrucquan\\gui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|solutionrelative:gui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9026DC2D-E94F-49DF-BF0C-54D73B03B58D}|DAL\\DAL.csproj|D:\\code\\LLTQ\\BTL_LapTrinhTrucQuan\\dal\\accountdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9026DC2D-E94F-49DF-BF0C-54D73B03B58D}|DAL\\DAL.csproj|solutionrelative:dal\\accountdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|d:\\code\\lltq\\btl_laptrinhtrucquan\\gui\\settingform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|D:\\code\\LLTQ\\BTL_LapTrinhTrucQuan\\gui\\settingform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|solutionrelative:gui\\settingform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|d:\\code\\lltq\\btl_laptrinhtrucquan\\gui\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|D:\\code\\LLTQ\\BTL_LapTrinhTrucQuan\\gui\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|solutionrelative:gui\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|d:\\code\\lltq\\btl_laptrinhtrucquan\\gui\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|D:\\code\\LLTQ\\BTL_LapTrinhTrucQuan\\gui\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|solutionrelative:gui\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -46,7 +50,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -66,13 +70,26 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\code\\LLTQ\\BTL_LapTrinhTrucQuan\\GUI\\Program.cs",
+              "RelativeDocumentMoniker": "GUI\\Program.cs",
+              "ToolTip": "D:\\code\\LLTQ\\BTL_LapTrinhTrucQuan\\GUI\\Program.cs",
+              "RelativeToolTip": "GUI\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T09:31:53.621Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "SettingFormSecurity.cs",
               "DocumentMoniker": "D:\\code\\LLTQ\\BTL_LapTrinhTrucQuan\\GUI\\SettingFormSecurity.cs",
               "RelativeDocumentMoniker": "GUI\\SettingFormSecurity.cs",
               "ToolTip": "D:\\code\\LLTQ\\BTL_LapTrinhTrucQuan\\GUI\\SettingFormSecurity.cs",
               "RelativeToolTip": "GUI\\SettingFormSecurity.cs",
-              "ViewState": "AgIAAEoAAAAAAAAAAIAwwE8AAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAAGIAAAAAAAAAAAAAwGcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-04T09:18:36.813Z",
               "EditorCaption": ""
@@ -91,7 +108,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "LoginForm.cs",
               "DocumentMoniker": "D:\\code\\LLTQ\\BTL_LapTrinhTrucQuan\\GUI\\LoginForm.cs",
               "RelativeDocumentMoniker": "GUI\\LoginForm.cs",
@@ -99,24 +116,22 @@
               "RelativeToolTip": "GUI\\LoginForm.cs",
               "ViewState": "AgIAALEAAAAAAAAAAIA4wLgAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-04T09:14:16.933Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-04T09:14:16.933Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "LoginForm.cs [Design]",
               "DocumentMoniker": "D:\\code\\LLTQ\\BTL_LapTrinhTrucQuan\\GUI\\LoginForm.cs",
               "RelativeDocumentMoniker": "GUI\\LoginForm.cs",
               "ToolTip": "D:\\code\\LLTQ\\BTL_LapTrinhTrucQuan\\GUI\\LoginForm.cs [Design]",
               "RelativeToolTip": "GUI\\LoginForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-04T09:13:57.648Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-10-04T09:13:57.648Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "AccountDAL.cs",
               "DocumentMoniker": "D:\\code\\LLTQ\\BTL_LapTrinhTrucQuan\\DAL\\AccountDAL.cs",
               "RelativeDocumentMoniker": "DAL\\AccountDAL.cs",
@@ -124,12 +139,11 @@
               "RelativeToolTip": "DAL\\AccountDAL.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAQwCYAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-04T09:12:17.228Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-04T09:12:17.228Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "SettingForm.cs",
               "DocumentMoniker": "D:\\code\\LLTQ\\BTL_LapTrinhTrucQuan\\GUI\\SettingForm.cs",
               "RelativeDocumentMoniker": "GUI\\SettingForm.cs",
@@ -137,24 +151,22 @@
               "RelativeToolTip": "GUI\\SettingForm.cs",
               "ViewState": "AgIAAI0AAAAAAAAAAAAwwKMAAABSAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-04T08:53:05.783Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-04T08:53:05.783Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "SettingForm.cs [Design]",
               "DocumentMoniker": "D:\\code\\LLTQ\\BTL_LapTrinhTrucQuan\\GUI\\SettingForm.cs",
               "RelativeDocumentMoniker": "GUI\\SettingForm.cs",
               "ToolTip": "D:\\code\\LLTQ\\BTL_LapTrinhTrucQuan\\GUI\\SettingForm.cs [Design]",
               "RelativeToolTip": "GUI\\SettingForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-04T08:51:11.094Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-10-04T08:51:11.094Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "BaseForm.cs",
               "DocumentMoniker": "D:\\code\\LLTQ\\BTL_LapTrinhTrucQuan\\GUI\\BaseForm.cs",
               "RelativeDocumentMoniker": "GUI\\BaseForm.cs",
@@ -166,7 +178,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "BaseForm.cs [Design]",
               "DocumentMoniker": "D:\\code\\LLTQ\\BTL_LapTrinhTrucQuan\\GUI\\BaseForm.cs",
               "RelativeDocumentMoniker": "GUI\\BaseForm.cs",

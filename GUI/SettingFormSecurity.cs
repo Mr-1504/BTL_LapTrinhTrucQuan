@@ -20,6 +20,7 @@ namespace GUI
         private bool _seen1;
         private AccountDAL _account = new AccountDAL();
         private string _employeeId;
+        private int _loginCout=0;
         public SettingFormSecurity(string employeeId)
         {
             InitializeComponent();
@@ -85,10 +86,22 @@ namespace GUI
 
             // Kiểm tra mật khẩu hiện tại
             string storedPasswordHash = _account.GetPasswordHash(_employeeId);
-            if (storedPasswordHash != HashPassword(currentPassword))
+            if ((storedPasswordHash != HashPassword(currentPassword)))
             {
+                //_loginCout++;
+                //if (_loginCout <= 3)
+                //{
+                //    MessageBox.Show("Current password is incorrect.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //    return;
+                //}
+                //else
+                //{
+                //    MessageBox.Show("You have entered the wrong password 3 times, please try again later", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //    this.Close();
+                //}
                 MessageBox.Show("Current password is incorrect.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
+
             }
 
             // Kiểm tra mật khẩu mới và xác nhận mật khẩu
