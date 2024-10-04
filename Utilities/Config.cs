@@ -173,12 +173,33 @@ namespace Utilities
             }
             return value.ToString();
         }
-
+        public static T GetEnumValueFromDescription<T>(string description) where T : Enum
+        {
+            foreach (var field in typeof(T).GetFields())
+            {
+                var attribute = (DescriptionAttribute)Attribute.GetCustomAttribute(field, typeof(DescriptionAttribute));
+                if (attribute != null && attribute.Description == description)
+                {
+                    return (T)field.GetValue(null);
+                }
+            }
+            throw new ArgumentException($"No enum value found for description '{description}'", nameof(description));
+        }
         public static bool IsValidEnum<TEnum>(string value) where TEnum : struct, Enum
         {
             return Enum.IsDefined(typeof(TEnum), value) && Enum.TryParse<TEnum>(value, true, out var _);
         }
-
+        public static T GetEnumValueFromName<T>(string name) where T : struct, Enum
+        {
+            if (Enum.TryParse<T>(name, out var result))
+            {
+                return result; 
+            }
+            else
+            {
+                throw new ArgumentException($"Không tìm thấy giá trị enum cho tên '{name}'", nameof(name));
+            }
+        }
         public static bool IsSystemInDarkMode()
         {
             var key = Registry.CurrentUser.OpenSubKey(@"Software\Microsoft\Windows\CurrentVersion\Themes\Personalize");
