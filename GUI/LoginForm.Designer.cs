@@ -153,9 +153,9 @@
             this.txtUsername.Size = new System.Drawing.Size(250, 14);
             this.txtUsername.TabIndex = 6;
             this.txtUsername.TabStop = false;
+            this.txtUsername.Enter += new System.EventHandler(this.txtUsername_Enter);
             this.txtUsername.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsername_KeyPress);
             this.txtUsername.Leave += new System.EventHandler(this.TxtUsername_Leave);
-            this.txtUsername.Enter += new System.EventHandler(this.txtUsername_Enter);
             // 
             // pnlPass
             // 
@@ -230,9 +230,9 @@
             this.txtPassword.TabIndex = 6;
             this.txtPassword.TabStop = false;
             this.txtPassword.TextChanged += new System.EventHandler(this.TxtPassword_TextChanged);
+            this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
             this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
             this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
-            this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
             // 
             // picLogo
             // 
@@ -267,7 +267,7 @@
             this.btnLogin.MouseEnter += new System.EventHandler(this.btnLogin_MouseEnter);
             this.btnLogin.MouseLeave += new System.EventHandler(this.btnLogin_MouseLeave);
             // 
-            // frmLogin
+            // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -281,9 +281,10 @@
             this.Controls.Add(this.btnLogin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
-            this.Name = "frmLogin";
+            this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";
+            this.Load += new System.EventHandler(this.LoginForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picLoad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTitle)).EndInit();
             this.pnlUser.ResumeLayout(false);
