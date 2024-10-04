@@ -459,6 +459,7 @@ namespace GUI
             this.lblHome.Size = new System.Drawing.Size(75, 18);
             this.lblHome.TabIndex = 2;
             this.lblHome.Text = "Trang chủ";
+            this.lblHome.Click += new System.EventHandler(this.lblHome_Click);
             // 
             // picHome
             // 
@@ -513,6 +514,7 @@ namespace GUI
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.pnlHeader.ResumeLayout(false);
             this.pnlSearch.ResumeLayout(false);
+            this.pnlSearch.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.pnlMenu.ResumeLayout(false);

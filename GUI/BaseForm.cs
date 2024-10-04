@@ -182,7 +182,7 @@ namespace GUI
                     }
                 }
             }
-            SettingForm settingForm = new SettingForm();
+            SettingForm settingForm = new SettingForm(_id);
             OpenComponent(settingForm);
         }
 
@@ -247,7 +247,7 @@ namespace GUI
                 Control_Hover(control, false);
             Console.WriteLine(_choosePnl.Name);
             picChoose.Visible = false;
-            SettingForm settingForm = new SettingForm();
+            SettingForm settingForm = new SettingForm(_id);
             OpenComponent(settingForm);
         }
 
@@ -271,6 +271,11 @@ namespace GUI
         private void txtSearch_Leave(object sender, EventArgs e)
         {
             txtSearch.Text = txtSearch.Text.Length == 0 ? "Tìm kiếm" : txtSearch.Text;
+        }
+
+        private void lblHome_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
