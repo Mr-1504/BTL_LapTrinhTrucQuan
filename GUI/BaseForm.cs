@@ -272,7 +272,7 @@ namespace GUI
             foreach(Control control in _choosePnl.Controls)
                 Control_Hover(control, false);
             picChoose.Visible = false;
-            SettingForm settingForm = new SettingForm();
+            SettingForm settingForm = new SettingForm(_id);
             OpenComponent(settingForm);
         }
 
