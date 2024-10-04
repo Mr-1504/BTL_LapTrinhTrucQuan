@@ -56,5 +56,10 @@ namespace DAL
             string query = "SELECT * FROM NhaCungCap WHERE MaNhaCungCap = @supplierId AND TrangThai = 1";
             return SqlHelper.ExecuteReader(query, new object[] { supplierId });
         }
+        public DataTable GetSuppliers(string supplierName)
+        {
+            string query = "SELECT * FROM NhaCungCap WHERE MaNhaCungCap like @supplierId + '%' AND TrangThai = 1";
+            return SqlHelper.ExecuteReader(query, new object[] { supplierName });
+        }
     }
 }
