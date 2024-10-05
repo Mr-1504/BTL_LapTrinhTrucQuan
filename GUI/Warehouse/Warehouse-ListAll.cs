@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GUI.Warehouse;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -125,6 +126,11 @@ namespace GUI
         {
             selectedCell = dgvTable.CurrentCell;
             if (selectedCell != null) lsb_lbHint_DisplayCurrentActiveColumn();
+        }
+
+        private void pnTabDishCal_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("To Warehouse_ServingPrecal");
         }
     }
 }

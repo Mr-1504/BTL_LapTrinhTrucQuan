@@ -37,13 +37,13 @@
             this.odr_btnSortUpDown = new System.Windows.Forms.Button();
             this.odr_cbbChooseTable = new System.Windows.Forms.ComboBox();
             this.pnLocalSearchBar = new System.Windows.Forms.Panel();
+            this.lsb_lbHint = new System.Windows.Forms.Label();
             this.lsb_txbSearchbox = new System.Windows.Forms.TextBox();
             this.pnTabDishCal = new System.Windows.Forms.Panel();
             this.pnTabListAll = new System.Windows.Forms.Panel();
             this.dgvTable = new System.Windows.Forms.DataGridView();
             this.lab7070Cube = new System.Windows.Forms.Panel();
             this.lbControlTitle = new System.Windows.Forms.Label();
-            this.lsb_lbHint = new System.Windows.Forms.Label();
             this.pnBackground.SuspendLayout();
             this.pnOrdering.SuspendLayout();
             this.pnLocalSearchBar.SuspendLayout();
@@ -113,6 +113,19 @@
             this.pnLocalSearchBar.TabIndex = 5;
             this.pnLocalSearchBar.Click += new System.EventHandler(this.pnLocalSearchBar_Click);
             // 
+            // lsb_lbHint
+            // 
+            this.lsb_lbHint.AutoSize = true;
+            this.lsb_lbHint.BackColor = System.Drawing.Color.Transparent;
+            this.lsb_lbHint.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lsb_lbHint.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.lsb_lbHint.Location = new System.Drawing.Point(45, 11);
+            this.lsb_lbHint.Name = "lsb_lbHint";
+            this.lsb_lbHint.Size = new System.Drawing.Size(91, 21);
+            this.lsb_lbHint.TabIndex = 7;
+            this.lsb_lbHint.Text = "placeholder";
+            this.lsb_lbHint.Click += new System.EventHandler(this.lsb_lbHint_Click);
+            // 
             // lsb_txbSearchbox
             // 
             this.lsb_txbSearchbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -133,6 +146,7 @@
             this.pnTabDishCal.Name = "pnTabDishCal";
             this.pnTabDishCal.Size = new System.Drawing.Size(48, 48);
             this.pnTabDishCal.TabIndex = 4;
+            this.pnTabDishCal.Click += new System.EventHandler(this.pnTabDishCal_Click);
             // 
             // pnTabListAll
             // 
@@ -151,21 +165,24 @@
             this.dgvTable.AllowUserToResizeRows = false;
             this.dgvTable.BackgroundColor = System.Drawing.Color.White;
             this.dgvTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvTable.ColumnHeadersHeight = 32;
+            this.dgvTable.ColumnHeadersHeight = 48;
             this.dgvTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 5);
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -174,7 +191,7 @@
             this.dgvTable.MultiSelect = false;
             this.dgvTable.Name = "dgvTable";
             this.dgvTable.ReadOnly = true;
-            this.dgvTable.RowTemplate.Height = 32;
+            this.dgvTable.RowTemplate.Height = 48;
             this.dgvTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvTable.Size = new System.Drawing.Size(1370, 675);
             this.dgvTable.TabIndex = 2;
@@ -200,19 +217,6 @@
             this.lbControlTitle.TabIndex = 0;
             this.lbControlTitle.Text = "Danh sách nguyên liệu";
             this.lbControlTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lsb_lbHint
-            // 
-            this.lsb_lbHint.AutoSize = true;
-            this.lsb_lbHint.BackColor = System.Drawing.Color.Transparent;
-            this.lsb_lbHint.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lsb_lbHint.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.lsb_lbHint.Location = new System.Drawing.Point(45, 11);
-            this.lsb_lbHint.Name = "lsb_lbHint";
-            this.lsb_lbHint.Size = new System.Drawing.Size(91, 21);
-            this.lsb_lbHint.TabIndex = 7;
-            this.lsb_lbHint.Text = "placeholder";
-            this.lsb_lbHint.Click += new System.EventHandler(this.lsb_lbHint_Click);
             // 
             // Warehouse_ListAll
             // 
