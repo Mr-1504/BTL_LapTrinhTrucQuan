@@ -86,7 +86,7 @@
             this.odr_btnSortUpDown.Name = "odr_btnSortUpDown";
             this.odr_btnSortUpDown.Size = new System.Drawing.Size(30, 30);
             this.odr_btnSortUpDown.TabIndex = 1;
-            this.odr_btnSortUpDown.Tag = "nowSortBigger";
+            this.odr_btnSortUpDown.Tag = "doDecend";
             this.odr_btnSortUpDown.UseVisualStyleBackColor = true;
             this.odr_btnSortUpDown.Click += new System.EventHandler(this.odr_btnSortUpDown_Click);
             // 
@@ -176,7 +176,7 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvTable.ColumnHeadersHeight = 48;
+            this.dgvTable.ColumnHeadersHeight = 32;
             this.dgvTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -191,7 +191,7 @@
             this.dgvTable.MultiSelect = false;
             this.dgvTable.Name = "dgvTable";
             this.dgvTable.ReadOnly = true;
-            this.dgvTable.RowTemplate.Height = 48;
+            this.dgvTable.RowTemplate.Height = 32;
             this.dgvTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvTable.Size = new System.Drawing.Size(1370, 675);
             this.dgvTable.TabIndex = 2;

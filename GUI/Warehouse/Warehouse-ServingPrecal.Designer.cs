@@ -38,13 +38,13 @@
             this.pnTabListAll = new System.Windows.Forms.Panel();
             this.lbControlTitle = new System.Windows.Forms.Label();
             this.pnMenuListing = new System.Windows.Forms.Panel();
-            this.ml_lbTitle = new System.Windows.Forms.Label();
-            this.ml_dgvMenu = new System.Windows.Forms.DataGridView();
             this.ml_lbUsageHint = new System.Windows.Forms.Label();
+            this.ml_dgvMenu = new System.Windows.Forms.DataGridView();
+            this.ml_lbTitle = new System.Windows.Forms.Label();
             this.pnPrecal = new System.Windows.Forms.Panel();
-            this.pc_lbTitle = new System.Windows.Forms.Label();
-            this.pc_dgvPrecal = new System.Windows.Forms.DataGridView();
             this.pc_lbUsageHint = new System.Windows.Forms.Label();
+            this.pc_dgvPrecal = new System.Windows.Forms.DataGridView();
+            this.pc_lbTitle = new System.Windows.Forms.Label();
             this.pnMenuListing.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ml_dgvMenu)).BeginInit();
             this.pnPrecal.SuspendLayout();
@@ -103,16 +103,16 @@
             this.pnMenuListing.Size = new System.Drawing.Size(480, 715);
             this.pnMenuListing.TabIndex = 7;
             // 
-            // ml_lbTitle
+            // ml_lbUsageHint
             // 
-            this.ml_lbTitle.AutoSize = true;
-            this.ml_lbTitle.BackColor = System.Drawing.Color.Transparent;
-            this.ml_lbTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ml_lbTitle.Location = new System.Drawing.Point(20, 20);
-            this.ml_lbTitle.Name = "ml_lbTitle";
-            this.ml_lbTitle.Size = new System.Drawing.Size(217, 32);
-            this.ml_lbTitle.TabIndex = 0;
-            this.ml_lbTitle.Text = "Danh sách món ăn";
+            this.ml_lbUsageHint.AutoSize = true;
+            this.ml_lbUsageHint.BackColor = System.Drawing.Color.Transparent;
+            this.ml_lbUsageHint.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ml_lbUsageHint.Location = new System.Drawing.Point(27, 679);
+            this.ml_lbUsageHint.Name = "ml_lbUsageHint";
+            this.ml_lbUsageHint.Size = new System.Drawing.Size(246, 13);
+            this.ml_lbUsageHint.TabIndex = 9;
+            this.ml_lbUsageHint.Text = "ⓘ Nhấp đôi chuột để thêm món vào bảng tính";
             // 
             // ml_dgvMenu
             // 
@@ -133,7 +133,7 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.ml_dgvMenu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.ml_dgvMenu.ColumnHeadersHeight = 48;
+            this.ml_dgvMenu.ColumnHeadersHeight = 32;
             this.ml_dgvMenu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -148,21 +148,21 @@
             this.ml_dgvMenu.MultiSelect = false;
             this.ml_dgvMenu.Name = "ml_dgvMenu";
             this.ml_dgvMenu.ReadOnly = true;
-            this.ml_dgvMenu.RowTemplate.Height = 48;
+            this.ml_dgvMenu.RowTemplate.Height = 32;
             this.ml_dgvMenu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.ml_dgvMenu.Size = new System.Drawing.Size(470, 590);
             this.ml_dgvMenu.TabIndex = 8;
             // 
-            // ml_lbUsageHint
+            // ml_lbTitle
             // 
-            this.ml_lbUsageHint.AutoSize = true;
-            this.ml_lbUsageHint.BackColor = System.Drawing.Color.Transparent;
-            this.ml_lbUsageHint.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ml_lbUsageHint.Location = new System.Drawing.Point(27, 679);
-            this.ml_lbUsageHint.Name = "ml_lbUsageHint";
-            this.ml_lbUsageHint.Size = new System.Drawing.Size(246, 13);
-            this.ml_lbUsageHint.TabIndex = 9;
-            this.ml_lbUsageHint.Text = "ⓘ Nhấp đôi chuột để thêm món vào bảng tính";
+            this.ml_lbTitle.AutoSize = true;
+            this.ml_lbTitle.BackColor = System.Drawing.Color.Transparent;
+            this.ml_lbTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ml_lbTitle.Location = new System.Drawing.Point(20, 20);
+            this.ml_lbTitle.Name = "ml_lbTitle";
+            this.ml_lbTitle.Size = new System.Drawing.Size(217, 32);
+            this.ml_lbTitle.TabIndex = 0;
+            this.ml_lbTitle.Text = "Danh sách món ăn";
             // 
             // pnPrecal
             // 
@@ -176,16 +176,16 @@
             this.pnPrecal.Size = new System.Drawing.Size(820, 715);
             this.pnPrecal.TabIndex = 8;
             // 
-            // pc_lbTitle
+            // pc_lbUsageHint
             // 
-            this.pc_lbTitle.AutoSize = true;
-            this.pc_lbTitle.BackColor = System.Drawing.Color.Transparent;
-            this.pc_lbTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pc_lbTitle.Location = new System.Drawing.Point(20, 20);
-            this.pc_lbTitle.Name = "pc_lbTitle";
-            this.pc_lbTitle.Size = new System.Drawing.Size(156, 32);
-            this.pc_lbTitle.TabIndex = 10;
-            this.pc_lbTitle.Text = "Bảng dự tính";
+            this.pc_lbUsageHint.AutoSize = true;
+            this.pc_lbUsageHint.BackColor = System.Drawing.Color.Transparent;
+            this.pc_lbUsageHint.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pc_lbUsageHint.Location = new System.Drawing.Point(23, 679);
+            this.pc_lbUsageHint.Name = "pc_lbUsageHint";
+            this.pc_lbUsageHint.Size = new System.Drawing.Size(243, 13);
+            this.pc_lbUsageHint.TabIndex = 10;
+            this.pc_lbUsageHint.Text = "ⓘ Nhấp đôi chuột để xoá món khỏi bảng tính";
             // 
             // pc_dgvPrecal
             // 
@@ -206,7 +206,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.pc_dgvPrecal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.pc_dgvPrecal.ColumnHeadersHeight = 48;
+            this.pc_dgvPrecal.ColumnHeadersHeight = 32;
             this.pc_dgvPrecal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
@@ -221,21 +221,21 @@
             this.pc_dgvPrecal.MultiSelect = false;
             this.pc_dgvPrecal.Name = "pc_dgvPrecal";
             this.pc_dgvPrecal.ReadOnly = true;
-            this.pc_dgvPrecal.RowTemplate.Height = 48;
+            this.pc_dgvPrecal.RowTemplate.Height = 32;
             this.pc_dgvPrecal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.pc_dgvPrecal.Size = new System.Drawing.Size(810, 590);
             this.pc_dgvPrecal.TabIndex = 10;
             // 
-            // pc_lbUsageHint
+            // pc_lbTitle
             // 
-            this.pc_lbUsageHint.AutoSize = true;
-            this.pc_lbUsageHint.BackColor = System.Drawing.Color.Transparent;
-            this.pc_lbUsageHint.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pc_lbUsageHint.Location = new System.Drawing.Point(23, 679);
-            this.pc_lbUsageHint.Name = "pc_lbUsageHint";
-            this.pc_lbUsageHint.Size = new System.Drawing.Size(243, 13);
-            this.pc_lbUsageHint.TabIndex = 10;
-            this.pc_lbUsageHint.Text = "ⓘ Nhấp đôi chuột để xoá món khỏi bảng tính";
+            this.pc_lbTitle.AutoSize = true;
+            this.pc_lbTitle.BackColor = System.Drawing.Color.Transparent;
+            this.pc_lbTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pc_lbTitle.Location = new System.Drawing.Point(20, 20);
+            this.pc_lbTitle.Name = "pc_lbTitle";
+            this.pc_lbTitle.Size = new System.Drawing.Size(156, 32);
+            this.pc_lbTitle.TabIndex = 10;
+            this.pc_lbTitle.Text = "Bảng dự tính";
             // 
             // Warehouse_ServingPrecal
             // 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,7 @@ namespace GUI.Warehouse
             InitializeComponent();
         }
 
+        //  todo: thêm lệnh mở ListAll
         private void pnTabListAll_Click(object sender, EventArgs e)
         {
             MessageBox.Show("To Warehouse_ListAll");

@@ -1,13 +1,5 @@
-﻿using GUI.Warehouse;
+﻿using static BLL.WarehouseBLL.ListAll;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Resources;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Utilities;
 
@@ -27,57 +19,42 @@ namespace GUI
 
         private void dgvTable_PreparingForDisplay()
         {
-            dgvTable_ShowDefault();
-            //dgvTable.DataSource = SqlHelper.ExecuteReader("select MaNguyenLieu N'Mã nguyên liệu', TenNguyenLieu N'Tên nguyên liệu', DonViTinh N'Đơn vị tính', Soluong N'Số lượng' from NguyenLieu", new object[] { });
+            dgvTable_ShowData();
             foreach (DataGridViewColumn it in dgvTable.Columns)
             {
                 it.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             }
             dgvTable.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
             dgvTable.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
-            //dgvTable.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            //dgvTable.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
-        private void dgvTable_ShowDefault()
+        private void dgvTable_ShowData()
         {
-            dgvTable.DataSource = SqlHelper.ExecuteReader("select MaNguyenLieu, TenNguyenLieu, DonViTinh, Soluong from NguyenLieu", new object[] { });
+            dgvTable.DataSource = BLL_GetTable();
         }
 
         private void dgvTable_SearchInColumn(string colName, string keyword)
         {
-            dgvTable.DataSource = SqlHelper.ExecuteReader($"select MaNguyenLieu, TenNguyenLieu, DonViTinh, Soluong from NguyenLieu where {colName} like N'%{keyword}%'", new object[] { });
+            dgvTable.DataSource = BLL_SearchKeywordInColumn(colName, keyword);
         }
 
         private void odr_btnSortUpDown_Click(object sender, EventArgs e)
         {
-            if (odr_btnSortUpDown.Tag.ToString() == "nowSortBigger")
+            if (odr_btnSortUpDown.Tag.ToString() == "doDecend")
             {
                 odr_btnSortUpDown.BackgroundImage = GUI.Properties.Resources.sortBigger;
-                odr_btnSortUpDown.Tag = "nowSortSmaller";
+                odr_btnSortUpDown.Tag = "doAscend";
             }
-            else if (odr_btnSortUpDown.Tag.ToString() == "nowSortSmaller")
+            else if (odr_btnSortUpDown.Tag.ToString() == "doAscend")
             {
                 odr_btnSortUpDown.BackgroundImage = GUI.Properties.Resources.sortSmaller;
-                odr_btnSortUpDown.Tag = "nowSortBigger";
+                odr_btnSortUpDown.Tag = "doDecend";
             }
         }
 
         private DataGridViewCell selectedCell = null;
 
-        private void lsb_func_Searching()
-        {
-            if (!string.IsNullOrEmpty(lsb_txbSearchbox.Text))
-            {
-                string colName = dgvTable.Columns[selectedCell.ColumnIndex].Name;
-                string keyword = lsb_txbSearchbox.Text;
-                dgvTable_SearchInColumn(colName, keyword);
-            }
-            else
-            {
-                dgvTable_ShowDefault();
-            }
-        }
+        //  chưa có BLL để tìm kiếm (không cấp bách)
 
         private void lsb_func_EnterKeyword()
         {
@@ -108,12 +85,11 @@ namespace GUI
         private void lsb_txbSearchbox_Leave(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(lsb_txbSearchbox.Text)) lsb_lbHint_DisplayCurrentActiveColumn();
-            else lsb_func_Searching();
         }
 
         private void lsb_txbSearchbox_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter) lsb_func_Searching();
+            if (e.KeyCode == Keys.Enter) ;
         }
 
         private void lsb_lbHint_DisplayCurrentActiveColumn()
@@ -128,6 +104,7 @@ namespace GUI
             if (selectedCell != null) lsb_lbHint_DisplayCurrentActiveColumn();
         }
 
+        //  todo: thêm lệnh mở ServingPrecal
         private void pnTabDishCal_Click(object sender, EventArgs e)
         {
             MessageBox.Show("To Warehouse_ServingPrecal");
