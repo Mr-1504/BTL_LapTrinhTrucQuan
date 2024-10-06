@@ -1,19 +1,18 @@
 ﻿using BLL;
 using DTO;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace GUI.PurchasedIngredient
 {
     public partial class InputDetail : UserControl
     {
-        bool _res;
+        List<IngredientDTO> _ingredients;
         public InputDetail()
         {
             InitializeComponent();
-            _res = true;
         }
 
         private void InputDetail_Load(object sender, EventArgs e)
@@ -24,21 +23,21 @@ namespace GUI.PurchasedIngredient
 
         private void AddSuppliers(string search = "")
         {
-            _res = false;
             foreach (SupplierDTO supplier in new SupplierBLL().GetSuppliers(search))
             {
                 cmbSupplierName.Items.Add(supplier.SupplierName);
-                _res = true;
             }
+
         }
 
-        private void AddIngredients()
+        private void AddIngredients(string search = "")
         {
-
-            foreach (IngredientDTO ingredient in new IngredientBLL().GetIngredients())
+            _ingredients = new IngredientBLL().GetIngredients();
+            foreach (IngredientDTO ingredient in _ingredients)
             {
                 cmbIngredientName.Items.Add(ingredient.IngredientName);
             }
+
         }
         private void cmbSupplierName_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -68,6 +67,9 @@ namespace GUI.PurchasedIngredient
         private void cmbIngredientName_SelectedIndexChanged(object sender, EventArgs e)
         {
             lblIngredient.Focus();
+            int index = cmbIngredientName.SelectedIndex;
+            if (index >= 0)
+                txtUnit.Text = _ingredients[index].IngredientUnit.ToString();
         }
 
         private void txtPriceUnit_KeyDown(object sender, KeyEventArgs e)
@@ -75,7 +77,7 @@ namespace GUI.PurchasedIngredient
             if (e.KeyCode == Keys.Enter)
             {
                 e.Handled = true;
-                e.SuppressKeyPress = true;
+                txtQuantity.Focus();
             }
         }
 
@@ -97,27 +99,55 @@ namespace GUI.PurchasedIngredient
 
         }
 
-        private void dgvList_Paint(object sender, PaintEventArgs e)
+        private void cmbSupplierName_Leave(object sender, EventArgs e)
         {
-            //e.Graphics.DrawImage(Properties.Resources.ListIngrdient, dgvList.ClientRectangle);
-        }
-
-        private void cmbSupplierName_TextChanged(object sender, EventArgs e)
-        {
-            cmbSupplierName.Items.Clear();
             if (cmbSupplierName.Text == "")
             {
                 AddSuppliers();
-                cmbSupplierName.DroppedDown = false;
             }
-            else
-            {
-                string s = cmbSupplierName.Text;
-                AddSuppliers(cmbSupplierName.Text);
-                cmbSupplierName.DroppedDown = _res;
-                cmbSupplierName.Text = s;
-                cmbSupplierName.SelectionStart = cmbSupplierName.Text.Length;
-            }
+            cmbSupplierName.DroppedDown = false;
+        }
+
+        private void cmbSupplierName_TextUpdate(object sender, EventArgs e)
+        {
+            string s = cmbSupplierName.Text;
+            int cursorPosition = cmbSupplierName.SelectionStart;
+
+            cmbSupplierName.SelectedIndexChanged -= cmbSupplierName_SelectedIndexChanged;
+
+            cmbSupplierName.Items.Clear();
+            AddSuppliers(s); 
+
+            cmbSupplierName.SelectedIndex = -1;
+            cmbSupplierName.DroppedDown = true;
+
+            cmbSupplierName.Text = s;
+            cmbSupplierName.SelectionStart = cursorPosition;
+            cmbSupplierName.SelectionLength = 0;
+
+
+            cmbSupplierName.SelectedIndexChanged += cmbSupplierName_SelectedIndexChanged;
+
+        }
+
+        private void cmbIngredientName_TextUpdate(object sender, EventArgs e)
+        {
+            string s = cmbIngredientName.Text;
+            int cursorPosition = cmbIngredientName.SelectionStart;
+
+            cmbIngredientName.SelectedIndexChanged -= cmbIngredientName_SelectedIndexChanged;
+
+            cmbIngredientName.Items.Clear();
+            AddIngredients(s);
+
+            cmbIngredientName.SelectedIndex = -1;
+            cmbIngredientName.DroppedDown = true;
+
+            cmbIngredientName.Text = s;
+            cmbIngredientName.SelectionStart = cursorPosition;
+            cmbSupplierName.SelectionLength = 0;
+
+            cmbIngredientName.SelectedIndexChanged += cmbIngredientName_SelectedIndexChanged;
         }
     }
 }
