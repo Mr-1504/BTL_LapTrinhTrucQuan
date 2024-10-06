@@ -37,3 +37,16 @@ D:\code\LLTQ\BTL_LapTrinhTrucQuan\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cac
 D:\code\LLTQ\BTL_LapTrinhTrucQuan\BLL\obj\Debug\BLL.csproj.Up2Date
 D:\code\LLTQ\BTL_LapTrinhTrucQuan\BLL\obj\Debug\BLL.dll
 D:\code\LLTQ\BTL_LapTrinhTrucQuan\BLL\obj\Debug\BLL.pdb
+C:\Users\PC\OneDrive\Desktop\Github\BTL_LapTrinhTrucQuan\BLL\bin\Debug\BLL.dll
+C:\Users\PC\OneDrive\Desktop\Github\BTL_LapTrinhTrucQuan\BLL\bin\Debug\BLL.pdb
+C:\Users\PC\OneDrive\Desktop\Github\BTL_LapTrinhTrucQuan\BLL\bin\Debug\DAL.dll
+C:\Users\PC\OneDrive\Desktop\Github\BTL_LapTrinhTrucQuan\BLL\bin\Debug\DTO.dll
+C:\Users\PC\OneDrive\Desktop\Github\BTL_LapTrinhTrucQuan\BLL\bin\Debug\Utilities.dll
+C:\Users\PC\OneDrive\Desktop\Github\BTL_LapTrinhTrucQuan\BLL\bin\Debug\DAL.pdb
+C:\Users\PC\OneDrive\Desktop\Github\BTL_LapTrinhTrucQuan\BLL\bin\Debug\DTO.pdb
+C:\Users\PC\OneDrive\Desktop\Github\BTL_LapTrinhTrucQuan\BLL\bin\Debug\Utilities.pdb
+C:\Users\PC\OneDrive\Desktop\Github\BTL_LapTrinhTrucQuan\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+C:\Users\PC\OneDrive\Desktop\Github\BTL_LapTrinhTrucQuan\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\PC\OneDrive\Desktop\Github\BTL_LapTrinhTrucQuan\BLL\obj\Debug\BLL.csproj.Up2Date
+C:\Users\PC\OneDrive\Desktop\Github\BTL_LapTrinhTrucQuan\BLL\obj\Debug\BLL.dll
+C:\Users\PC\OneDrive\Desktop\Github\BTL_LapTrinhTrucQuan\BLL\obj\Debug\BLL.pdb

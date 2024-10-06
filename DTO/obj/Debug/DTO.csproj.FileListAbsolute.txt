@@ -25,3 +25,12 @@ D:\code\LLTQ\BTL_LapTrinhTrucQuan\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cac
 D:\code\LLTQ\BTL_LapTrinhTrucQuan\DTO\obj\Debug\DTO.csproj.Up2Date
 D:\code\LLTQ\BTL_LapTrinhTrucQuan\DTO\obj\Debug\DTO.dll
 D:\code\LLTQ\BTL_LapTrinhTrucQuan\DTO\obj\Debug\DTO.pdb
+C:\Users\PC\OneDrive\Desktop\Github\BTL_LapTrinhTrucQuan\DTO\bin\Debug\DTO.dll
+C:\Users\PC\OneDrive\Desktop\Github\BTL_LapTrinhTrucQuan\DTO\bin\Debug\DTO.pdb
+C:\Users\PC\OneDrive\Desktop\Github\BTL_LapTrinhTrucQuan\DTO\bin\Debug\Utilities.dll
+C:\Users\PC\OneDrive\Desktop\Github\BTL_LapTrinhTrucQuan\DTO\bin\Debug\Utilities.pdb
+C:\Users\PC\OneDrive\Desktop\Github\BTL_LapTrinhTrucQuan\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+C:\Users\PC\OneDrive\Desktop\Github\BTL_LapTrinhTrucQuan\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Users\PC\OneDrive\Desktop\Github\BTL_LapTrinhTrucQuan\DTO\obj\Debug\DTO.csproj.Up2Date
+C:\Users\PC\OneDrive\Desktop\Github\BTL_LapTrinhTrucQuan\DTO\obj\Debug\DTO.dll
+C:\Users\PC\OneDrive\Desktop\Github\BTL_LapTrinhTrucQuan\DTO\obj\Debug\DTO.pdb

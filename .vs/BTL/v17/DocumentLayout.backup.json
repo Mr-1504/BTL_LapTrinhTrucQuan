@@ -1,14 +1,54 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\Software\\Programing_Projects\\Github_Repo\\BTL_LapTrinhTrucQuan\\",
+  "WorkspaceRootPath": "C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|e:\\software\\programing_projects\\github_repo\\btl_laptrinhtrucquan\\gui\\warehouse\\warehouse-listall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|solutionrelative:gui\\warehouse\\warehouse-listall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\gui\\employmanager2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|solutionrelative:gui\\employmanager2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|e:\\software\\programing_projects\\github_repo\\btl_laptrinhtrucquan\\gui\\warehouse\\warehouse-listall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|solutionrelative:gui\\warehouse\\warehouse-listall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{6C78B2C5-58E5-4A8E-9115-60919BD57607}|Utilities\\Utilities.csproj|c:\\users\\pc\\onedrive\\desktop\\github\\btl_laptrinhtrucquan\\utilities\\config.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C78B2C5-58E5-4A8E-9115-60919BD57607}|Utilities\\Utilities.csproj|solutionrelative:utilities\\config.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\gui\\employmanager2.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|solutionrelative:gui\\employmanager2.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\gui\\employmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|solutionrelative:gui\\employmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|c:\\users\\pc\\onedrive\\desktop\\github\\btl_laptrinhtrucquan\\gui\\employmanager2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|solutionrelative:gui\\employmanager2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27A08745-FB46-46B9-A4DB-0A068EF1C32C}|BLL\\BLL.csproj|c:\\users\\pc\\onedrive\\desktop\\github\\btl_laptrinhtrucquan\\bll\\employmanager2bll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27A08745-FB46-46B9-A4DB-0A068EF1C32C}|BLL\\BLL.csproj|solutionrelative:bll\\employmanager2bll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9026DC2D-E94F-49DF-BF0C-54D73B03B58D}|DAL\\DAL.csproj|c:\\users\\pc\\onedrive\\desktop\\github\\btl_laptrinhtrucquan\\dal\\employeedal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9026DC2D-E94F-49DF-BF0C-54D73B03B58D}|DAL\\DAL.csproj|solutionrelative:dal\\employeedal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27A08745-FB46-46B9-A4DB-0A068EF1C32C}|BLL\\BLL.csproj|C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\bll\\employmanagerbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27A08745-FB46-46B9-A4DB-0A068EF1C32C}|BLL\\BLL.csproj|solutionrelative:bll\\employmanagerbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A98CE691-036E-4910-B622-BE13025F8E24}|DTO\\DTO.csproj|C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\dto\\employeedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A98CE691-036E-4910-B622-BE13025F8E24}|DTO\\DTO.csproj|solutionrelative:dto\\employeedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\gui\\homemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|solutionrelative:gui\\homemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\gui\\employmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|solutionrelative:gui\\employmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\gui\\homemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|solutionrelative:gui\\homemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,40 +58,168 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 5,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Warehouse-ListAll.cs",
-              "DocumentMoniker": "E:\\Software\\Programing_Projects\\Github_Repo\\BTL_LapTrinhTrucQuan\\GUI\\Warehouse\\Warehouse-ListAll.cs",
-              "RelativeDocumentMoniker": "GUI\\Warehouse\\Warehouse-ListAll.cs",
-              "ToolTip": "E:\\Software\\Programing_Projects\\Github_Repo\\BTL_LapTrinhTrucQuan\\GUI\\Warehouse\\Warehouse-ListAll.cs",
-              "RelativeToolTip": "GUI\\Warehouse\\Warehouse-ListAll.cs",
-              "ViewState": "AgIAAG4AAAAAAAAAAAAgwIEAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T02:54:03.205Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Warehouse-ListAll.cs [Design]",
-              "DocumentMoniker": "E:\\Software\\Programing_Projects\\Github_Repo\\BTL_LapTrinhTrucQuan\\GUI\\Warehouse\\Warehouse-ListAll.cs",
-              "RelativeDocumentMoniker": "GUI\\Warehouse\\Warehouse-ListAll.cs",
-              "ToolTip": "E:\\Software\\Programing_Projects\\Github_Repo\\BTL_LapTrinhTrucQuan\\GUI\\Warehouse\\Warehouse-ListAll.cs [Design]",
-              "RelativeToolTip": "GUI\\Warehouse\\Warehouse-ListAll.cs [Design]",
+              "Title": "Config.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\Utilities\\Config.cs",
+              "RelativeDocumentMoniker": "Utilities\\Config.cs",
+              "ToolTip": "C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\Utilities\\Config.cs",
+              "RelativeToolTip": "Utilities\\Config.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAwwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T02:53:53.546Z",
+              "WhenOpened": "2024-10-05T20:40:01.951Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EmployManager2BLL.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\BLL\\EmployManager2BLL.cs",
+              "RelativeDocumentMoniker": "BLL\\EmployManager2BLL.cs",
+              "ToolTip": "C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\BLL\\EmployManager2BLL.cs",
+              "RelativeToolTip": "BLL\\EmployManager2BLL.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-05T20:03:21.595Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "EmployeeDAL.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\DAL\\EmployeeDAL.cs",
+              "RelativeDocumentMoniker": "DAL\\EmployeeDAL.cs",
+              "ToolTip": "C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\DAL\\EmployeeDAL.cs",
+              "RelativeToolTip": "DAL\\EmployeeDAL.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAcwEwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-05T12:54:27.506Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EmployManager2.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\GUI\\EmployManager2.cs",
+              "RelativeDocumentMoniker": "GUI\\EmployManager2.cs",
+              "ToolTip": "C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\GUI\\EmployManager2.cs",
+              "RelativeToolTip": "GUI\\EmployManager2.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAqwDEAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T12:50:23.191Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EmployManager2.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\GUI\\EmployManager2.Designer.cs",
+              "RelativeDocumentMoniker": "GUI\\EmployManager2.Designer.cs",
+              "ToolTip": "C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\GUI\\EmployManager2.Designer.cs",
+              "RelativeToolTip": "GUI\\EmployManager2.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T12:50:34.565Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "EmployManager2.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\GUI\\EmployManager2.cs",
+              "RelativeDocumentMoniker": "GUI\\EmployManager2.cs",
+              "ToolTip": "C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\GUI\\EmployManager2.cs [Design]",
+              "RelativeToolTip": "GUI\\EmployManager2.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T12:09:20.451Z",
               "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "EmployManager.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\GUI\\EmployManager.cs",
+              "RelativeDocumentMoniker": "GUI\\EmployManager.cs",
+              "ToolTip": "C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\GUI\\EmployManager.cs",
+              "RelativeToolTip": "GUI\\EmployManager.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAQwA0AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T09:38:24.569Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "EmployManagerBLL.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\BLL\\EmployManagerBLL.cs",
+              "RelativeDocumentMoniker": "BLL\\EmployManagerBLL.cs",
+              "ToolTip": "C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\BLL\\EmployManagerBLL.cs",
+              "RelativeToolTip": "BLL\\EmployManagerBLL.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T02:53:15.446Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "EmployManager.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\GUI\\EmployManager.cs",
+              "RelativeDocumentMoniker": "GUI\\EmployManager.cs",
+              "ToolTip": "C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\GUI\\EmployManager.cs [Design]",
+              "RelativeToolTip": "GUI\\EmployManager.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T18:43:14.204Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "EmployeeDTO.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\DTO\\EmployeeDTO.cs",
+              "RelativeDocumentMoniker": "DTO\\EmployeeDTO.cs",
+              "ToolTip": "C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\DTO\\EmployeeDTO.cs",
+              "RelativeToolTip": "DTO\\EmployeeDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T09:41:08.387Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "HomeManager.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\GUI\\HomeManager.cs",
+              "RelativeDocumentMoniker": "GUI\\HomeManager.cs",
+              "ToolTip": "C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\GUI\\HomeManager.cs [Design]",
+              "RelativeToolTip": "GUI\\HomeManager.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T13:08:47.998Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "HomeManager.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\GUI\\HomeManager.cs",
+              "RelativeDocumentMoniker": "GUI\\HomeManager.cs",
+              "ToolTip": "C:\\Users\\PC\\OneDrive\\Desktop\\Github\\BTL_LapTrinhTrucQuan\\GUI\\HomeManager.cs",
+              "RelativeToolTip": "GUI\\HomeManager.cs",
+              "ViewState": "AgIAAJMAAAAAAAAAAAAkwKoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T19:16:49.487Z",
+              "EditorCaption": ""
             }
           ]
         }

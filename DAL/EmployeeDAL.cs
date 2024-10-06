@@ -67,6 +67,7 @@ namespace DAL
             return SqlHelper.ExecuteReader(query, new object[] { });
         }
 
+        
         // tìm kiếm nhân viên theo thông tin bất kỳ
         public DataTable GetEmployee(Employee @enum, string getValue)
         {
