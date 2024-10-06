@@ -53,7 +53,7 @@ namespace DAL
             return SqlHelper.ExecuteReader(query, new object[] { });
         }
 
-        public DataTable GetIngredient(Ingredient @enum, string getValue)
+        public DataTable GetIngredients(Ingredient @enum, string getValue)
         {
             string query = "SELECT * FROM NguyenLieu WHERE " + @enum.GetEnumDescription() + " LIKE @getValue + '%'";
             return SqlHelper.ExecuteReader(query, new object[] { getValue });

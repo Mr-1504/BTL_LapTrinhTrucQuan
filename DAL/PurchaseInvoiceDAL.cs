@@ -1,19 +1,23 @@
 ﻿using DTO;
+using System;
 using System.Data;
 using Utilities;
 namespace DAL
 {
     public class PurchaseInvoiceDAL
     {
-        private int GetPurchaseInvoiceCount()
+        private int GetPurchaseInvoiceCount(string day, string month, string year)
         {
-            string query = "SELECT COUNT(*) FROM HoaDonNhap";
+            string query = "SELECT COUNT(*) FROM HoaDonNhap WHERE MaHoaDonNhap LIKE 'HDN" + day + month + year + "%'";
             return SqlHelper.ExecuteScalar(query, null);
         }
         public int AddNewPurchaseInvoice(PurchaseInvoiceDTO purchaseInvoiceDTO)
         {
-            string purchaseInvoiceId = (GetPurchaseInvoiceCount() + 1).ToString();
-            purchaseInvoiceId = new string('0', 10 - purchaseInvoiceId.Length) + purchaseInvoiceId;
+            string year = DateTime.Now.Year.ToString().Substring(2);
+            string month = new string('0', 2 - DateTime.Now.Month.ToString().Length) + DateTime.Now.Month.ToString();
+            string day = new string('0', 2 - DateTime.Now.Day.ToString().Length) + DateTime.Now.Day.ToString();
+            string purchaseInvoiceId = (GetPurchaseInvoiceCount(day, month, year) + 1).ToString();
+            purchaseInvoiceId = "HDN" + day + month + year + new string('0', 3 - purchaseInvoiceId.Length) + purchaseInvoiceId;
             string query = "INSERT INTO HoaDonNhap (MaHoaDonNhap, MaNhanVien, MaNhaCungCap, NgayNhap)" +
                 " VALUES ( @purchaseInvoiceId , @employeeId , @supplier , @dateOfPurchase )";
             return SqlHelper.ExecuteNonQuery(query, new object[]
