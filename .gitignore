@@ -1,0 +1,33 @@
+# Ignore Visual Studio temporary files, build results, and
+# folder-based project outputs
+
+## Ignore Visual Studio temporary files
+.vscode/
+.vs/
+*.vsidx
+*.vscode
+
+## Build results
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+
+# Auto-generated files
+*.log
+*.tmp
+*.cache
+
+# NuGet packages
+packages/
+*.nupkg
+
+# Ignore debug files
+*.pdb
+
+# Other files
+*.dbmdl
+*.cache
+*.ide
