@@ -157,6 +157,8 @@ namespace Utilities
     public static class Config
     {
         public static readonly string PROJECT_PATH = System.IO.Directory.GetParent(System.IO.Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.FullName).FullName;
+        public static readonly string BLUE = "#2D60FF";
+        public static readonly string GRAY = "#B1B1B1";
 
         public static string GetEnumDescription(this Enum value)
         {

@@ -95,12 +95,11 @@ namespace GUI
         private void timer1_Tick(object sender, EventArgs e)
         {
             pnProcessBar2.Width += 4;
-            lbProcessPercent.Text = ((pnProcessBar2.Width * 100) / pnProcessBar.Width).ToString() + "%";
             if (pnProcessBar2.Width >= pnProcessBar.Width)
             {
                 timer1.Stop();
                 Hide();
-                frmLogin frmLogin = new frmLogin();
+                LoginForm frmLogin = new LoginForm();
                 frmLogin.Show();
 
                 frmLogin.FormClosed += (s, args) => Application.Exit(); 

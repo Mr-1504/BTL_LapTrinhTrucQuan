@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,15 +14,42 @@ namespace GUI
 {
     public partial class SettingForm : Form
     {
-        public SettingForm()
+        private string _employeeId;
+        public SettingForm(string employeeId)
         {
+            _employeeId = employeeId;
             InitializeComponent();
+            btnEdit.MouseEnter += new EventHandler(Button_MouseEnter);
+            btnEdit.MouseLeave += new EventHandler(Button_MouseLeave);
+
+            btnOption.MouseEnter += new EventHandler(Button_MouseEnter);
+            btnOption.MouseLeave += new EventHandler(Button_MouseLeave);
+
+            btnSecurity.MouseEnter += new EventHandler(Button_MouseEnter);
+            btnSecurity.MouseLeave += new EventHandler(Button_MouseLeave);
+        }
+        private void Button_MouseEnter(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            if (button != null)
+            {
+                button.ForeColor = Color.FromArgb(45, 96, 255);
+            }
+        }
+
+        private void Button_MouseLeave(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            if (button != null)
+            {
+                button.ForeColor = Color.Black;
+            }
         }
 
         private void SettingForm_Load(object sender, EventArgs e)
         {
             // Tạo instance của form con SettingFormEditProfile
-            SettingFormEditProfile editProfileForm = new SettingFormEditProfile();
+            SettingFormEditProfile editProfileForm = new SettingFormEditProfile(_employeeId);
 
             // Gọi hàm LoadChildForm để nhúng form con vào panel
             LoadChildForm(editProfileForm);
@@ -122,7 +150,7 @@ namespace GUI
             slidePanel2.Visible = false;
             slidePanel3.Visible = false;
             // Tạo instance của form con SettingFormSecurity
-            SettingFormEditProfile editProfileForm = new SettingFormEditProfile();
+            SettingFormEditProfile editProfileForm = new SettingFormEditProfile(_employeeId);
 
             // Gọi hàm LoadChildForm để nhúng form con vào panel
             LoadChildForm(editProfileForm);
@@ -133,7 +161,7 @@ namespace GUI
             slidePanel2.Visible = false;
             slidePanel3.Visible = true;
             // Tạo instance của form con SettingFormSecurity
-            SettingFormSecurity securityForm = new SettingFormSecurity();
+            SettingFormSecurity securityForm = new SettingFormSecurity(_employeeId);
 
             // Gọi hàm LoadChildForm để nhúng form con vào panel
             LoadChildForm(securityForm);

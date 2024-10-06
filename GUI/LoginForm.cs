@@ -6,17 +6,17 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class frmLogin : Form
+    public partial class LoginForm : Form
     {
-        private float angle;
         private bool isNameUp;
         private bool isPasswordUp;
         private bool seen;
         private Image image;
         private AccountBLL acc = new AccountBLL();
-        //private ListBookForm listBookForm;
-        public frmLogin()
+        private string id;
+        public LoginForm()
         {
+            id = "";
             seen = false;
             isNameUp = false;
             isPasswordUp = false;
@@ -26,7 +26,6 @@ namespace GUI
             foreach (Control control in Controls)
                 control.Click += Control_Click;
             Click += Control_Click;
-            angle = 0f;
             image = Properties.Resources.load;
         }
 
@@ -90,14 +89,19 @@ namespace GUI
         {
             if (!isNameUp)
             {
+                txtUsername.Focus();
+            }
+        }
+        private void txtUsername_Enter(object sender, EventArgs e)
+        {
+            if (!isNameUp)
+            {
                 lblName.AutoSize = true;
                 lblName.Text = "Mã nhân viên";
                 lblName.ForeColor = Color.Black;
-                txtUsername.Focus();
                 tmrNameMove.Start();
             }
         }
-
         private void TxtUsername_Leave(object sender, EventArgs e)
         {
             if (txtUsername.Text == "")
@@ -120,7 +124,16 @@ namespace GUI
                 tmrPassMove.Start();
             }
         }
-
+        private void txtPassword_Enter(object sender, EventArgs e)
+        {
+            if (!isPasswordUp)
+            {
+                lblPassword.AutoSize = true;
+                lblPassword.Text = "Mật khẩu";
+                lblPassword.ForeColor = Color.Black;
+                tmrPassMove.Start();
+            }
+        }
         private void txtPassword_Leave(object sender, EventArgs e)
         {
             if (txtPassword.Text == "")
@@ -192,6 +205,7 @@ namespace GUI
             {
                 lblName.ForeColor = Color.Black;
                 lblPassword.ForeColor = Color.Black;
+                id = txtUsername.Text;
                 txtUsername.Text = "";
                 txtPassword.Text = "";
                 foreach (Control control in Controls)
@@ -225,7 +239,7 @@ namespace GUI
         {
             picLoad.Visible = false;
             Hide();
-            BaseForm baseForm = new BaseForm();
+            BaseForm baseForm = new BaseForm(id);
             baseForm.Show();
             tmrLoad.Stop();
 
@@ -236,6 +250,7 @@ namespace GUI
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
+                e.Handled = true;
                 txtPassword.Focus();
             }
         }
@@ -244,8 +259,14 @@ namespace GUI
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
-                txtPassword.Focus();
+                e.Handled = true;
+                Login();
             }
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

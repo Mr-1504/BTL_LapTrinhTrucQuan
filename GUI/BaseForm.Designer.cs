@@ -1,4 +1,7 @@
-﻿namespace GUI
+﻿using System.Drawing;
+using Utilities;
+
+namespace GUI
 {
     partial class BaseForm
     {
@@ -28,330 +31,518 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.slidePanel3 = new System.Windows.Forms.Panel();
-            this.Account = new System.Windows.Forms.Panel();
-            this.btnAccount = new System.Windows.Forms.Button();
-            this.picAccount = new System.Windows.Forms.PictureBox();
-            this.slidePanel2 = new System.Windows.Forms.Panel();
-            this.Home = new System.Windows.Forms.Panel();
-            this.btnHome = new System.Windows.Forms.Button();
-            this.picHome = new System.Windows.Forms.PictureBox();
-            this.slidePanel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.SearchBar = new System.Windows.Forms.FlowLayoutPanel();
+            this.components = new System.ComponentModel.Container();
+            this.pnlHeader = new System.Windows.Forms.Panel();
+            this.btnAvatar = new System.Windows.Forms.Button();
+            this.btnNotification = new System.Windows.Forms.Button();
+            this.pnlSearch = new System.Windows.Forms.Panel();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.MainPanel = new System.Windows.Forms.Panel();
-            this.panel3.SuspendLayout();
-            this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            this.Account.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picAccount)).BeginInit();
-            this.Home.SuspendLayout();
+            this.picSearch = new System.Windows.Forms.PictureBox();
+            this.picLogo = new System.Windows.Forms.PictureBox();
+            this.pnlMenu = new System.Windows.Forms.Panel();
+            this.pnlEditInformation = new System.Windows.Forms.Panel();
+            this.lblEditInformation = new System.Windows.Forms.Label();
+            this.picEditInformation = new System.Windows.Forms.PictureBox();
+            this.pnlOrderList = new System.Windows.Forms.Panel();
+            this.lblOrderList = new System.Windows.Forms.Label();
+            this.picOrderList = new System.Windows.Forms.PictureBox();
+            this.pnlOrder = new System.Windows.Forms.Panel();
+            this.lblOrder = new System.Windows.Forms.Label();
+            this.picOrder = new System.Windows.Forms.PictureBox();
+            this.pnlImport = new System.Windows.Forms.Panel();
+            this.lblImport = new System.Windows.Forms.Label();
+            this.picImport = new System.Windows.Forms.PictureBox();
+            this.pnlWarehouse = new System.Windows.Forms.Panel();
+            this.lblWarehouse = new System.Windows.Forms.Label();
+            this.picWarehouse = new System.Windows.Forms.PictureBox();
+            this.pnlFood = new System.Windows.Forms.Panel();
+            this.lblFood = new System.Windows.Forms.Label();
+            this.picFood = new System.Windows.Forms.PictureBox();
+            this.picChoose = new System.Windows.Forms.PictureBox();
+            this.picHover = new System.Windows.Forms.PictureBox();
+            this.pnlEmployee = new System.Windows.Forms.Panel();
+            this.lblEmployee = new System.Windows.Forms.Label();
+            this.picEmployee = new System.Windows.Forms.PictureBox();
+            this.pnlHome = new System.Windows.Forms.Panel();
+            this.lblHome = new System.Windows.Forms.Label();
+            this.picHome = new System.Windows.Forms.PictureBox();
+            this.pnlContent = new System.Windows.Forms.Panel();
+            this.tmrHover = new System.Windows.Forms.Timer(this.components);
+            this.btnSetting = new System.Windows.Forms.Button();
+            this.pnlHeader.SuspendLayout();
+            this.pnlSearch.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picSearch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
+            this.pnlMenu.SuspendLayout();
+            this.pnlEditInformation.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picEditInformation)).BeginInit();
+            this.pnlOrderList.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picOrderList)).BeginInit();
+            this.pnlOrder.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picOrder)).BeginInit();
+            this.pnlImport.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picImport)).BeginInit();
+            this.pnlWarehouse.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picWarehouse)).BeginInit();
+            this.pnlFood.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picFood)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picChoose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picHover)).BeginInit();
+            this.pnlEmployee.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picEmployee)).BeginInit();
+            this.pnlHome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picHome)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel6.SuspendLayout();
-            this.SearchBar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel3
+            // pnlHeader
             // 
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.panel7);
-            this.panel3.Controls.Add(this.Account);
-            this.panel3.Controls.Add(this.Home);
-            this.panel3.Controls.Add(this.pictureBox1);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(231, 861);
-            this.panel3.TabIndex = 0;
+            this.pnlHeader.Controls.Add(this.btnAvatar);
+            this.pnlHeader.Controls.Add(this.btnNotification);
+            this.pnlHeader.Controls.Add(this.pnlSearch);
+            this.pnlHeader.Controls.Add(this.picLogo);
+            this.pnlHeader.Location = new System.Drawing.Point(0, 0);
+            this.pnlHeader.Name = "pnlHeader";
+            this.pnlHeader.Size = new System.Drawing.Size(1600, 85);
+            this.pnlHeader.TabIndex = 0;
             // 
-            // panel7
+            // btnAvatar
             // 
-            this.panel7.Controls.Add(this.button4);
-            this.panel7.Controls.Add(this.pictureBox5);
-            this.panel7.Controls.Add(this.slidePanel3);
-            this.panel7.Location = new System.Drawing.Point(0, 273);
-            this.panel7.Margin = new System.Windows.Forms.Padding(0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(231, 94);
-            this.panel7.TabIndex = 4;
+            this.btnAvatar.BackgroundImage = global::GUI.Properties.Resources.hihi1;
+            this.btnAvatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAvatar.FlatAppearance.BorderSize = 0;
+            this.btnAvatar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnAvatar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnAvatar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAvatar.Location = new System.Drawing.Point(1525, 21);
+            this.btnAvatar.Name = "btnAvatar";
+            this.btnAvatar.Size = new System.Drawing.Size(45, 45);
+            this.btnAvatar.TabIndex = 4;
+            this.btnAvatar.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnNotification
             // 
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(67, 22);
-            this.button4.Margin = new System.Windows.Forms.Padding(0);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(161, 56);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Home Page";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnNotification.BackgroundImage = global::GUI.Properties.Resources.btnNotification;
+            this.btnNotification.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnNotification.FlatAppearance.BorderSize = 0;
+            this.btnNotification.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnNotification.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnNotification.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNotification.Location = new System.Drawing.Point(1445, 24);
+            this.btnNotification.Name = "btnNotification";
+            this.btnNotification.Size = new System.Drawing.Size(40, 40);
+            this.btnNotification.TabIndex = 2;
+            this.btnNotification.UseVisualStyleBackColor = true;
             // 
-            // pictureBox5
+            // pnlSearch
             // 
-            this.pictureBox5.Image = global::GUI.Properties.Resources.iconHome;
-            this.pictureBox5.Location = new System.Drawing.Point(31, 32);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 2;
-            this.pictureBox5.TabStop = false;
-            // 
-            // slidePanel3
-            // 
-            this.slidePanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(95)))), ((int)(((byte)(255)))));
-            this.slidePanel3.Location = new System.Drawing.Point(0, 22);
-            this.slidePanel3.Margin = new System.Windows.Forms.Padding(0);
-            this.slidePanel3.Name = "slidePanel3";
-            this.slidePanel3.Size = new System.Drawing.Size(10, 56);
-            this.slidePanel3.TabIndex = 1;
-            this.slidePanel3.Visible = false;
-            this.slidePanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.slidePanel3_Paint);
-            // 
-            // Account
-            // 
-            this.Account.Controls.Add(this.btnAccount);
-            this.Account.Controls.Add(this.picAccount);
-            this.Account.Controls.Add(this.slidePanel2);
-            this.Account.Location = new System.Drawing.Point(0, 179);
-            this.Account.Margin = new System.Windows.Forms.Padding(0);
-            this.Account.Name = "Account";
-            this.Account.Size = new System.Drawing.Size(231, 94);
-            this.Account.TabIndex = 4;
-            this.Account.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Component_MouseClick);
-            this.Account.MouseEnter += new System.EventHandler(this.Component_MouseEnter);
-            this.Account.MouseLeave += new System.EventHandler(this.Component_MouseLeave);
-            // 
-            // btnAccount
-            // 
-            this.btnAccount.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnAccount.FlatAppearance.BorderSize = 0;
-            this.btnAccount.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnAccount.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.btnAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAccount.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAccount.Location = new System.Drawing.Point(67, 22);
-            this.btnAccount.Name = "btnAccount";
-            this.btnAccount.Size = new System.Drawing.Size(161, 56);
-            this.btnAccount.TabIndex = 3;
-            this.btnAccount.Text = "Account";
-            this.btnAccount.UseVisualStyleBackColor = true;
-            this.btnAccount.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Component_MouseClick);
-            this.btnAccount.MouseEnter += new System.EventHandler(this.Component_MouseEnter);
-            this.btnAccount.MouseLeave += new System.EventHandler(this.Component_MouseLeave);
-            // 
-            // picAccount
-            // 
-            this.picAccount.Image = global::GUI.Properties.Resources.Account;
-            this.picAccount.Location = new System.Drawing.Point(31, 32);
-            this.picAccount.Name = "picAccount";
-            this.picAccount.Size = new System.Drawing.Size(30, 30);
-            this.picAccount.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picAccount.TabIndex = 2;
-            this.picAccount.TabStop = false;
-            this.picAccount.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Component_MouseClick);
-            this.picAccount.MouseEnter += new System.EventHandler(this.Component_MouseEnter);
-            this.picAccount.MouseLeave += new System.EventHandler(this.Component_MouseLeave);
-            // 
-            // slidePanel2
-            // 
-            this.slidePanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(95)))), ((int)(((byte)(255)))));
-            this.slidePanel2.Location = new System.Drawing.Point(0, 22);
-            this.slidePanel2.Margin = new System.Windows.Forms.Padding(0);
-            this.slidePanel2.Name = "slidePanel2";
-            this.slidePanel2.Size = new System.Drawing.Size(10, 56);
-            this.slidePanel2.TabIndex = 1;
-            this.slidePanel2.Visible = false;
-            this.slidePanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.slidePanel2_Paint);
-            // 
-            // Home
-            // 
-            this.Home.Controls.Add(this.btnHome);
-            this.Home.Controls.Add(this.picHome);
-            this.Home.Controls.Add(this.slidePanel1);
-            this.Home.Location = new System.Drawing.Point(0, 85);
-            this.Home.Margin = new System.Windows.Forms.Padding(0);
-            this.Home.Name = "Home";
-            this.Home.Size = new System.Drawing.Size(231, 94);
-            this.Home.TabIndex = 0;
-            this.Home.Paint += new System.Windows.Forms.PaintEventHandler(this.Home_Paint);
-            this.Home.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Component_MouseClick);
-            this.Home.MouseEnter += new System.EventHandler(this.Component_MouseEnter);
-            this.Home.MouseLeave += new System.EventHandler(this.Component_MouseLeave);
-            // 
-            // btnHome
-            // 
-            this.btnHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnHome.FlatAppearance.BorderSize = 0;
-            this.btnHome.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnHome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHome.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHome.Location = new System.Drawing.Point(67, 22);
-            this.btnHome.Margin = new System.Windows.Forms.Padding(0);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(161, 56);
-            this.btnHome.TabIndex = 3;
-            this.btnHome.Text = "Home Page";
-            this.btnHome.UseVisualStyleBackColor = true;
-            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
-            this.btnHome.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Component_MouseClick);
-            this.btnHome.MouseEnter += new System.EventHandler(this.Component_MouseEnter);
-            this.btnHome.MouseLeave += new System.EventHandler(this.Component_MouseLeave);
-            // 
-            // picHome
-            // 
-            this.picHome.Image = global::GUI.Properties.Resources.Home;
-            this.picHome.Location = new System.Drawing.Point(31, 32);
-            this.picHome.Name = "picHome";
-            this.picHome.Size = new System.Drawing.Size(30, 30);
-            this.picHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picHome.TabIndex = 2;
-            this.picHome.TabStop = false;
-            this.picHome.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Component_MouseClick);
-            this.picHome.MouseEnter += new System.EventHandler(this.Component_MouseEnter);
-            this.picHome.MouseLeave += new System.EventHandler(this.Component_MouseLeave);
-            // 
-            // slidePanel1
-            // 
-            this.slidePanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(95)))), ((int)(((byte)(255)))));
-            this.slidePanel1.Location = new System.Drawing.Point(0, 22);
-            this.slidePanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.slidePanel1.Name = "slidePanel1";
-            this.slidePanel1.Size = new System.Drawing.Size(10, 56);
-            this.slidePanel1.TabIndex = 1;
-            this.slidePanel1.Visible = false;
-            this.slidePanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.slidePanel1_Paint);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::GUI.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(231, 85);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.White;
-            this.panel6.Controls.Add(this.SearchBar);
-            this.panel6.Controls.Add(this.button1);
-            this.panel6.Controls.Add(this.pictureBox2);
-            this.panel6.Controls.Add(this.label1);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(231, 0);
-            this.panel6.Margin = new System.Windows.Forms.Padding(0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1353, 85);
-            this.panel6.TabIndex = 1;
-            // 
-            // SearchBar
-            // 
-            this.SearchBar.BackColor = System.Drawing.Color.LightGray;
-            this.SearchBar.Controls.Add(this.txtSearch);
-            this.SearchBar.Location = new System.Drawing.Point(237, 35);
-            this.SearchBar.Margin = new System.Windows.Forms.Padding(0);
-            this.SearchBar.Name = "SearchBar";
-            this.SearchBar.Size = new System.Drawing.Size(797, 24);
-            this.SearchBar.TabIndex = 4;
-            this.SearchBar.Paint += new System.Windows.Forms.PaintEventHandler(this.SearchBar_Paint);
+            this.pnlSearch.BackgroundImage = global::GUI.Properties.Resources.SearchPanel;
+            this.pnlSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pnlSearch.Controls.Add(this.txtSearch);
+            this.pnlSearch.Controls.Add(this.picSearch);
+            this.pnlSearch.Location = new System.Drawing.Point(395, 24);
+            this.pnlSearch.Name = "pnlSearch";
+            this.pnlSearch.Size = new System.Drawing.Size(974, 40);
+            this.pnlSearch.TabIndex = 1;
             // 
             // txtSearch
             // 
-            this.txtSearch.BackColor = System.Drawing.Color.LightGray;
+            this.txtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(3, 3);
+            this.txtSearch.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(163)))), ((int)(((byte)(203)))));
+            this.txtSearch.Location = new System.Drawing.Point(55, 13);
+            this.txtSearch.MaxLength = 72;
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(790, 22);
-            this.txtSearch.TabIndex = 3;
-            this.txtSearch.Text = "tìm";
-            this.txtSearch.Click += new System.EventHandler(this.textBox1_Click);
-            this.txtSearch.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            this.txtSearch.Leave += new System.EventHandler(this.textBox1_Leave);
+            this.txtSearch.Size = new System.Drawing.Size(879, 15);
+            this.txtSearch.TabIndex = 0;
+            this.txtSearch.Text = "Tìm kiếm";
+            this.txtSearch.Enter += new System.EventHandler(this.txtSearch_Enter);
+            this.txtSearch.Leave += new System.EventHandler(this.txtSearch_Leave);
             // 
-            // button1
+            // picSearch
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.Image = global::GUI.Properties.Resources.btnSetting;
-            this.button1.Location = new System.Drawing.Point(1135, 20);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(40, 43);
-            this.button1.TabIndex = 2;
-            this.button1.UseVisualStyleBackColor = true;
+            this.picSearch.Image = global::GUI.Properties.Resources.Search;
+            this.picSearch.Location = new System.Drawing.Point(29, 13);
+            this.picSearch.Name = "picSearch";
+            this.picSearch.Size = new System.Drawing.Size(16, 16);
+            this.picSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picSearch.TabIndex = 0;
+            this.picSearch.TabStop = false;
             // 
-            // pictureBox2
+            // picLogo
             // 
-            this.pictureBox2.Image = global::GUI.Properties.Resources.hihi;
-            this.pictureBox2.Location = new System.Drawing.Point(1269, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(60, 80);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
+            this.picLogo.Image = global::GUI.Properties.Resources.logo;
+            this.picLogo.Location = new System.Drawing.Point(23, 18);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(158, 52);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picLogo.TabIndex = 0;
+            this.picLogo.TabStop = false;
             // 
-            // label1
+            // pnlMenu
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(22, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(147, 40);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Overview";
+            this.pnlMenu.Controls.Add(this.pnlEditInformation);
+            this.pnlMenu.Controls.Add(this.pnlOrderList);
+            this.pnlMenu.Controls.Add(this.pnlOrder);
+            this.pnlMenu.Controls.Add(this.pnlImport);
+            this.pnlMenu.Controls.Add(this.pnlWarehouse);
+            this.pnlMenu.Controls.Add(this.pnlFood);
+            this.pnlMenu.Controls.Add(this.picChoose);
+            this.pnlMenu.Controls.Add(this.picHover);
+            this.pnlMenu.Controls.Add(this.pnlEmployee);
+            this.pnlMenu.Controls.Add(this.pnlHome);
+            this.pnlMenu.Location = new System.Drawing.Point(0, 86);
+            this.pnlMenu.Name = "pnlMenu";
+            this.pnlMenu.Size = new System.Drawing.Size(231, 814);
+            this.pnlMenu.TabIndex = 2;
             // 
-            // MainPanel
+            // pnlEditInformation
             // 
-            this.MainPanel.BackColor = System.Drawing.Color.Silver;
-            this.MainPanel.Location = new System.Drawing.Point(238, 91);
-            this.MainPanel.Margin = new System.Windows.Forms.Padding(0);
-            this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(1337, 770);
-            this.MainPanel.TabIndex = 2;
-            this.MainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.MainPanel_Paint);
+            this.pnlEditInformation.BackColor = System.Drawing.Color.Transparent;
+            this.pnlEditInformation.Controls.Add(this.lblEditInformation);
+            this.pnlEditInformation.Controls.Add(this.picEditInformation);
+            this.pnlEditInformation.Location = new System.Drawing.Point(5, 504);
+            this.pnlEditInformation.Name = "pnlEditInformation";
+            this.pnlEditInformation.Size = new System.Drawing.Size(226, 72);
+            this.pnlEditInformation.TabIndex = 8;
+            this.pnlEditInformation.Visible = false;
+            // 
+            // lblEditInformation
+            // 
+            this.lblEditInformation.AutoSize = true;
+            this.lblEditInformation.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEditInformation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            this.lblEditInformation.Location = new System.Drawing.Point(71, 27);
+            this.lblEditInformation.Name = "lblEditInformation";
+            this.lblEditInformation.Size = new System.Drawing.Size(101, 18);
+            this.lblEditInformation.TabIndex = 2;
+            this.lblEditInformation.Text = "Sửa thông tin";
+            // 
+            // picEditInformation
+            // 
+            this.picEditInformation.Image = global::GUI.Properties.Resources.picEditInformationGray;
+            this.picEditInformation.Location = new System.Drawing.Point(30, 26);
+            this.picEditInformation.Name = "picEditInformation";
+            this.picEditInformation.Size = new System.Drawing.Size(20, 20);
+            this.picEditInformation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picEditInformation.TabIndex = 1;
+            this.picEditInformation.TabStop = false;
+            // 
+            // pnlOrderList
+            // 
+            this.pnlOrderList.BackColor = System.Drawing.Color.Transparent;
+            this.pnlOrderList.Controls.Add(this.lblOrderList);
+            this.pnlOrderList.Controls.Add(this.picOrderList);
+            this.pnlOrderList.Location = new System.Drawing.Point(5, 432);
+            this.pnlOrderList.Name = "pnlOrderList";
+            this.pnlOrderList.Size = new System.Drawing.Size(226, 72);
+            this.pnlOrderList.TabIndex = 7;
+            this.pnlOrderList.Visible = false;
+            // 
+            // lblOrderList
+            // 
+            this.lblOrderList.AutoSize = true;
+            this.lblOrderList.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOrderList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            this.lblOrderList.Location = new System.Drawing.Point(71, 27);
+            this.lblOrderList.Name = "lblOrderList";
+            this.lblOrderList.Size = new System.Drawing.Size(99, 18);
+            this.lblOrderList.TabIndex = 2;
+            this.lblOrderList.Text = "Hóa đơn bán";
+            // 
+            // picOrderList
+            // 
+            this.picOrderList.Image = global::GUI.Properties.Resources.picOrderListGray;
+            this.picOrderList.Location = new System.Drawing.Point(30, 26);
+            this.picOrderList.Name = "picOrderList";
+            this.picOrderList.Size = new System.Drawing.Size(20, 20);
+            this.picOrderList.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picOrderList.TabIndex = 1;
+            this.picOrderList.TabStop = false;
+            // 
+            // pnlOrder
+            // 
+            this.pnlOrder.BackColor = System.Drawing.Color.Transparent;
+            this.pnlOrder.Controls.Add(this.lblOrder);
+            this.pnlOrder.Controls.Add(this.picOrder);
+            this.pnlOrder.Location = new System.Drawing.Point(5, 360);
+            this.pnlOrder.Name = "pnlOrder";
+            this.pnlOrder.Size = new System.Drawing.Size(226, 72);
+            this.pnlOrder.TabIndex = 6;
+            this.pnlOrder.Visible = false;
+            // 
+            // lblOrder
+            // 
+            this.lblOrder.AutoSize = true;
+            this.lblOrder.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOrder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            this.lblOrder.Location = new System.Drawing.Point(71, 27);
+            this.lblOrder.Name = "lblOrder";
+            this.lblOrder.Size = new System.Drawing.Size(67, 18);
+            this.lblOrder.TabIndex = 2;
+            this.lblOrder.Text = "Đặt món";
+            // 
+            // picOrder
+            // 
+            this.picOrder.Image = global::GUI.Properties.Resources.picOrderGray;
+            this.picOrder.Location = new System.Drawing.Point(30, 26);
+            this.picOrder.Name = "picOrder";
+            this.picOrder.Size = new System.Drawing.Size(20, 20);
+            this.picOrder.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picOrder.TabIndex = 1;
+            this.picOrder.TabStop = false;
+            // 
+            // pnlImport
+            // 
+            this.pnlImport.BackColor = System.Drawing.Color.Transparent;
+            this.pnlImport.Controls.Add(this.lblImport);
+            this.pnlImport.Controls.Add(this.picImport);
+            this.pnlImport.Location = new System.Drawing.Point(5, 288);
+            this.pnlImport.Name = "pnlImport";
+            this.pnlImport.Size = new System.Drawing.Size(226, 72);
+            this.pnlImport.TabIndex = 5;
+            this.pnlImport.Visible = false;
+            // 
+            // lblImport
+            // 
+            this.lblImport.AutoSize = true;
+            this.lblImport.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblImport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            this.lblImport.Location = new System.Drawing.Point(71, 27);
+            this.lblImport.Name = "lblImport";
+            this.lblImport.Size = new System.Drawing.Size(83, 18);
+            this.lblImport.TabIndex = 2;
+            this.lblImport.Text = "Nhập hàng";
+            // 
+            // picImport
+            // 
+            this.picImport.Image = global::GUI.Properties.Resources.picImportGray;
+            this.picImport.Location = new System.Drawing.Point(30, 26);
+            this.picImport.Name = "picImport";
+            this.picImport.Size = new System.Drawing.Size(20, 20);
+            this.picImport.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picImport.TabIndex = 1;
+            this.picImport.TabStop = false;
+            // 
+            // pnlWarehouse
+            // 
+            this.pnlWarehouse.BackColor = System.Drawing.Color.Transparent;
+            this.pnlWarehouse.Controls.Add(this.lblWarehouse);
+            this.pnlWarehouse.Controls.Add(this.picWarehouse);
+            this.pnlWarehouse.Location = new System.Drawing.Point(5, 216);
+            this.pnlWarehouse.Name = "pnlWarehouse";
+            this.pnlWarehouse.Size = new System.Drawing.Size(226, 72);
+            this.pnlWarehouse.TabIndex = 4;
+            this.pnlWarehouse.Visible = false;
+            // 
+            // lblWarehouse
+            // 
+            this.lblWarehouse.AutoSize = true;
+            this.lblWarehouse.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWarehouse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            this.lblWarehouse.Location = new System.Drawing.Point(71, 27);
+            this.lblWarehouse.Name = "lblWarehouse";
+            this.lblWarehouse.Size = new System.Drawing.Size(105, 18);
+            this.lblWarehouse.TabIndex = 2;
+            this.lblWarehouse.Text = "Trạng thái kho";
+            // 
+            // picWarehouse
+            // 
+            this.picWarehouse.Image = global::GUI.Properties.Resources.picWarehouseGray;
+            this.picWarehouse.Location = new System.Drawing.Point(30, 26);
+            this.picWarehouse.Name = "picWarehouse";
+            this.picWarehouse.Size = new System.Drawing.Size(20, 20);
+            this.picWarehouse.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picWarehouse.TabIndex = 1;
+            this.picWarehouse.TabStop = false;
+            // 
+            // pnlFood
+            // 
+            this.pnlFood.BackColor = System.Drawing.Color.Transparent;
+            this.pnlFood.Controls.Add(this.lblFood);
+            this.pnlFood.Controls.Add(this.picFood);
+            this.pnlFood.Location = new System.Drawing.Point(5, 144);
+            this.pnlFood.Name = "pnlFood";
+            this.pnlFood.Size = new System.Drawing.Size(226, 72);
+            this.pnlFood.TabIndex = 4;
+            this.pnlFood.Visible = false;
+            // 
+            // lblFood
+            // 
+            this.lblFood.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFood.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            this.lblFood.Location = new System.Drawing.Point(71, 27);
+            this.lblFood.Name = "lblFood";
+            this.lblFood.Size = new System.Drawing.Size(86, 19);
+            this.lblFood.TabIndex = 2;
+            this.lblFood.Text = "Món ăn";
+            // 
+            // picFood
+            // 
+            this.picFood.Image = global::GUI.Properties.Resources.picFoodGray;
+            this.picFood.Location = new System.Drawing.Point(30, 26);
+            this.picFood.Name = "picFood";
+            this.picFood.Size = new System.Drawing.Size(20, 20);
+            this.picFood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picFood.TabIndex = 1;
+            this.picFood.TabStop = false;
+            // 
+            // picChoose
+            // 
+            this.picChoose.Image = global::GUI.Properties.Resources.lblButton;
+            this.picChoose.Location = new System.Drawing.Point(0, 11);
+            this.picChoose.Name = "picChoose";
+            this.picChoose.Size = new System.Drawing.Size(5, 50);
+            this.picChoose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picChoose.TabIndex = 0;
+            this.picChoose.TabStop = false;
+            // 
+            // picHover
+            // 
+            this.picHover.Image = global::GUI.Properties.Resources.lblHover;
+            this.picHover.Location = new System.Drawing.Point(0, 11);
+            this.picHover.Name = "picHover";
+            this.picHover.Size = new System.Drawing.Size(5, 50);
+            this.picHover.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picHover.TabIndex = 0;
+            this.picHover.TabStop = false;
+            // 
+            // pnlEmployee
+            // 
+            this.pnlEmployee.BackColor = System.Drawing.Color.Transparent;
+            this.pnlEmployee.Controls.Add(this.lblEmployee);
+            this.pnlEmployee.Controls.Add(this.picEmployee);
+            this.pnlEmployee.Location = new System.Drawing.Point(5, 72);
+            this.pnlEmployee.Name = "pnlEmployee";
+            this.pnlEmployee.Size = new System.Drawing.Size(226, 72);
+            this.pnlEmployee.TabIndex = 3;
+            this.pnlEmployee.Visible = false;
+            // 
+            // lblEmployee
+            // 
+            this.lblEmployee.AutoSize = true;
+            this.lblEmployee.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmployee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            this.lblEmployee.Location = new System.Drawing.Point(71, 27);
+            this.lblEmployee.Name = "lblEmployee";
+            this.lblEmployee.Size = new System.Drawing.Size(76, 18);
+            this.lblEmployee.TabIndex = 2;
+            this.lblEmployee.Text = "Nhân viên";
+            // 
+            // picEmployee
+            // 
+            this.picEmployee.Image = global::GUI.Properties.Resources.picEmployeeGray;
+            this.picEmployee.Location = new System.Drawing.Point(30, 26);
+            this.picEmployee.Name = "picEmployee";
+            this.picEmployee.Size = new System.Drawing.Size(20, 20);
+            this.picEmployee.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picEmployee.TabIndex = 1;
+            this.picEmployee.TabStop = false;
+            // 
+            // pnlHome
+            // 
+            this.pnlHome.BackColor = System.Drawing.Color.Transparent;
+            this.pnlHome.Controls.Add(this.lblHome);
+            this.pnlHome.Controls.Add(this.picHome);
+            this.pnlHome.Location = new System.Drawing.Point(5, 0);
+            this.pnlHome.Name = "pnlHome";
+            this.pnlHome.Size = new System.Drawing.Size(226, 72);
+            this.pnlHome.TabIndex = 0;
+            // 
+            // lblHome
+            // 
+            this.lblHome.AutoSize = true;
+            this.lblHome.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(96)))), ((int)(((byte)(255)))));
+            this.lblHome.Location = new System.Drawing.Point(70, 27);
+            this.lblHome.Name = "lblHome";
+            this.lblHome.Size = new System.Drawing.Size(75, 18);
+            this.lblHome.TabIndex = 2;
+            this.lblHome.Text = "Trang chủ";
+            this.lblHome.Click += new System.EventHandler(this.lblHome_Click);
+            // 
+            // picHome
+            // 
+            this.picHome.Image = global::GUI.Properties.Resources.picHomeBlue;
+            this.picHome.Location = new System.Drawing.Point(30, 26);
+            this.picHome.Name = "picHome";
+            this.picHome.Size = new System.Drawing.Size(20, 20);
+            this.picHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picHome.TabIndex = 1;
+            this.picHome.TabStop = false;
+            // 
+            // pnlContent
+            // 
+            this.pnlContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
+            this.pnlContent.Location = new System.Drawing.Point(231, 86);
+            this.pnlContent.Name = "pnlContent";
+            this.pnlContent.Size = new System.Drawing.Size(1369, 814);
+            this.pnlContent.TabIndex = 3;
+            // 
+            // tmrHover
+            // 
+            this.tmrHover.Interval = 1;
+            this.tmrHover.Tick += new System.EventHandler(this.tmrHover_Tick);
+            // 
+            // btnSetting
+            // 
+            this.btnSetting.BackgroundImage = global::GUI.Properties.Resources.btnSetting1;
+            this.btnSetting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSetting.FlatAppearance.BorderSize = 0;
+            this.btnSetting.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnSetting.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSetting.Location = new System.Drawing.Point(1385, 26);
+            this.btnSetting.Name = "btnSetting";
+            this.btnSetting.Size = new System.Drawing.Size(40, 40);
+            this.btnSetting.TabIndex = 1;
+            this.btnSetting.UseVisualStyleBackColor = true;
+            this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
             // 
             // BaseForm
             // 
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1584, 861);
-            this.Controls.Add(this.MainPanel);
-            this.Controls.Add(this.panel6);
-            this.Controls.Add(this.panel3);
+            this.ClientSize = new System.Drawing.Size(1600, 900);
+            this.Controls.Add(this.pnlContent);
+            this.Controls.Add(this.pnlMenu);
+            this.Controls.Add(this.btnSetting);
+            this.Controls.Add(this.pnlHeader);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "BaseForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.panel3.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            this.Account.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picAccount)).EndInit();
-            this.Home.ResumeLayout(false);
+            this.pnlHeader.ResumeLayout(false);
+            this.pnlSearch.ResumeLayout(false);
+            this.pnlSearch.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picSearch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
+            this.pnlMenu.ResumeLayout(false);
+            this.pnlEditInformation.ResumeLayout(false);
+            this.pnlEditInformation.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picEditInformation)).EndInit();
+            this.pnlOrderList.ResumeLayout(false);
+            this.pnlOrderList.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picOrderList)).EndInit();
+            this.pnlOrder.ResumeLayout(false);
+            this.pnlOrder.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picOrder)).EndInit();
+            this.pnlImport.ResumeLayout(false);
+            this.pnlImport.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picImport)).EndInit();
+            this.pnlWarehouse.ResumeLayout(false);
+            this.pnlWarehouse.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picWarehouse)).EndInit();
+            this.pnlFood.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picFood)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picChoose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picHover)).EndInit();
+            this.pnlEmployee.ResumeLayout(false);
+            this.pnlEmployee.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picEmployee)).EndInit();
+            this.pnlHome.ResumeLayout(false);
+            this.pnlHome.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picHome)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            this.SearchBar.ResumeLayout(false);
-            this.SearchBar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -362,29 +553,43 @@
 
         
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.Panel panel2;
-    
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Panel MainPanel;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Panel Home;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Panel slidePanel1;
-        private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.Button btnHome;
+        private System.Windows.Forms.Panel pnlHeader;
+        private System.Windows.Forms.PictureBox picLogo;
+        private System.Windows.Forms.Panel pnlSearch;
+        private System.Windows.Forms.Button btnSetting;
+        private System.Windows.Forms.Button btnNotification;
+        private System.Windows.Forms.Panel pnlMenu;
+        private System.Windows.Forms.Panel pnlContent;
+        private System.Windows.Forms.Button btnAvatar;
+        private System.Windows.Forms.Panel pnlHome;
+        private System.Windows.Forms.PictureBox picChoose;
         private System.Windows.Forms.PictureBox picHome;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Panel slidePanel3;
-        private System.Windows.Forms.Panel Account;
-        private System.Windows.Forms.Button btnAccount;
-        private System.Windows.Forms.PictureBox picAccount;
-        private System.Windows.Forms.Panel slidePanel2;
-        private System.Windows.Forms.FlowLayoutPanel SearchBar;
+        private System.Windows.Forms.Label lblHome;
+        private System.Windows.Forms.Panel pnlEmployee;
+        private System.Windows.Forms.Label lblEmployee;
+        private System.Windows.Forms.PictureBox picEmployee;
+        private System.Windows.Forms.PictureBox picHover;
+        private System.Windows.Forms.Panel pnlFood;
+        private System.Windows.Forms.Label lblFood;
+        private System.Windows.Forms.PictureBox picFood;
+        private System.Windows.Forms.Panel pnlWarehouse;
+        private System.Windows.Forms.Label lblWarehouse;
+        private System.Windows.Forms.PictureBox picWarehouse;
+        private System.Windows.Forms.Timer tmrHover;
+        private System.Windows.Forms.Panel pnlImport;
+        private System.Windows.Forms.Label lblImport;
+        private System.Windows.Forms.PictureBox picImport;
+        private System.Windows.Forms.Panel pnlOrder;
+        private System.Windows.Forms.Label lblOrder;
+        private System.Windows.Forms.PictureBox picOrder;
+        private System.Windows.Forms.Panel pnlOrderList;
+        private System.Windows.Forms.Label lblOrderList;
+        private System.Windows.Forms.PictureBox picOrderList;
+        private System.Windows.Forms.Panel pnlEditInformation;
+        private System.Windows.Forms.Label lblEditInformation;
+        private System.Windows.Forms.PictureBox picEditInformation;
+        private System.Windows.Forms.PictureBox picSearch;
+        private System.Windows.Forms.TextBox txtSearch;
     }
 }
 

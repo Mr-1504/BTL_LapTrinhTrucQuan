@@ -32,6 +32,7 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.slidePanel1 = new System.Windows.Forms.Panel();
             this.pnallsettring = new System.Windows.Forms.Panel();
+            this.pnItems = new System.Windows.Forms.Panel();
             this.pnLine = new System.Windows.Forms.Panel();
             this.pnoption3 = new System.Windows.Forms.Panel();
             this.btnSecurity = new System.Windows.Forms.Button();
@@ -39,7 +40,6 @@
             this.pnoption2 = new System.Windows.Forms.Panel();
             this.btnOption = new System.Windows.Forms.Button();
             this.slidePanel2 = new System.Windows.Forms.Panel();
-            this.pnItems = new System.Windows.Forms.Panel();
             this.pnoption1.SuspendLayout();
             this.pnallsettring.SuspendLayout();
             this.pnoption3.SuspendLayout();
@@ -86,7 +86,7 @@
             // 
             // pnallsettring
             // 
-            this.pnallsettring.BackColor = System.Drawing.Color.White;
+            this.pnallsettring.BackColor = System.Drawing.SystemColors.Control;
             this.pnallsettring.Controls.Add(this.pnItems);
             this.pnallsettring.Controls.Add(this.pnLine);
             this.pnallsettring.Controls.Add(this.pnoption3);
@@ -95,9 +95,16 @@
             this.pnallsettring.Location = new System.Drawing.Point(9, 10);
             this.pnallsettring.Margin = new System.Windows.Forms.Padding(2);
             this.pnallsettring.Name = "pnallsettring";
-            this.pnallsettring.Size = new System.Drawing.Size(721, 559);
+            this.pnallsettring.Size = new System.Drawing.Size(1350, 794);
             this.pnallsettring.TabIndex = 2;
             this.pnallsettring.Paint += new System.Windows.Forms.PaintEventHandler(this.pnallsettring_Paint);
+            // 
+            // pnItems
+            // 
+            this.pnItems.Location = new System.Drawing.Point(12, 93);
+            this.pnItems.Name = "pnItems";
+            this.pnItems.Size = new System.Drawing.Size(1316, 684);
+            this.pnItems.TabIndex = 7;
             // 
             // pnLine
             // 
@@ -105,7 +112,7 @@
             this.pnLine.Location = new System.Drawing.Point(12, 85);
             this.pnLine.Margin = new System.Windows.Forms.Padding(2);
             this.pnLine.Name = "pnLine";
-            this.pnLine.Size = new System.Drawing.Size(694, 2);
+            this.pnLine.Size = new System.Drawing.Size(1315, 2);
             this.pnLine.TabIndex = 6;
             // 
             // pnoption3
@@ -122,8 +129,8 @@
             // 
             this.btnSecurity.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnSecurity.FlatAppearance.BorderSize = 0;
-            this.btnSecurity.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnSecurity.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnSecurity.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnSecurity.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnSecurity.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSecurity.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSecurity.Location = new System.Drawing.Point(5, 11);
@@ -160,8 +167,8 @@
             // 
             this.btnOption.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnOption.FlatAppearance.BorderSize = 0;
-            this.btnOption.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnOption.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnOption.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnOption.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnOption.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOption.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOption.Location = new System.Drawing.Point(5, 11);
@@ -184,22 +191,17 @@
             this.slidePanel2.Visible = false;
             this.slidePanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.slidePanel2_Paint);
             // 
-            // pnItems
-            // 
-            this.pnItems.Location = new System.Drawing.Point(12, 93);
-            this.pnItems.Name = "pnItems";
-            this.pnItems.Size = new System.Drawing.Size(694, 463);
-            this.pnItems.TabIndex = 7;
-            // 
             // SettingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(739, 578);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1370, 815);
             this.Controls.Add(this.pnallsettring);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SettingForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "SettingForm";
             this.Load += new System.EventHandler(this.SettingForm_Load);
             this.pnoption1.ResumeLayout(false);

@@ -78,11 +78,11 @@
     <Compile Include="LoadingForm.Designer.cs">
       <DependentUpon>LoadingForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmLogin.cs">
+    <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLogin.Designer.cs">
-      <DependentUpon>frmLogin.cs</DependentUpon>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -131,8 +131,8 @@
     <EmbeddedResource Include="LoadingForm.resx">
       <DependentUpon>LoadingForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmLogin.resx">
-      <DependentUpon>frmLogin.cs</DependentUpon>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -177,6 +177,10 @@
       <Project>{27a08745-fb46-46b9-a4db-0a068ef1c32c}</Project>
       <Name>BLL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{9026DC2D-E94F-49DF-BF0C-54D73B03B58D}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DTO\DTO.csproj">
       <Project>{a98ce691-036e-4910-b622-be13025f8e24}</Project>
       <Name>DTO</Name>
@@ -190,21 +194,6 @@
     <None Include="Resources\logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\home.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\home1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\home2.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Home3.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Home4.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\logo3.png" />
   </ItemGroup>
   <ItemGroup>
@@ -212,18 +201,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\hihi.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\btnSetting.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\btnInform.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Home6.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\iconHome.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Account.jpg" />
@@ -263,6 +240,87 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\load.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SearchPanel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnSetting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnNotification.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lblButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnHome.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lblButtonGray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnEmployee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lblHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lblFood.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warehouseGray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picHomeBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picEmployeeGray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picFoodGray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picWarehouseGray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picImportGray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picEmployeeBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picFoodBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picImportBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picWarehouseBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picHomeGray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picOrderGray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picOrderBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picOrderListBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picOrderListGray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picEditInformationBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picEditInformationGray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
