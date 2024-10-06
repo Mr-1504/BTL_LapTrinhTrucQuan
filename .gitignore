@@ -1,0 +1,25 @@
+# Ignore Visual Studio temporary files
+.vs/
+*.user
+*.suo
+
+# Build results
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+
+# User-specific files
+*.log
+*.tmp
+*.cache
+
+# NuGet packages
+packages/
+*.nupkg
+
+# Other files
+*.dbmdl
+*.cache
+*.ide
