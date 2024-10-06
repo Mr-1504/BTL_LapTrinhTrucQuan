@@ -3,7 +3,11 @@
   "WorkspaceRootPath": "D:\\BTL_LapTrinhTrucQuan\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|D:\\BTL_LapTrinhTrucQuan\\gui\\frmorders.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6C78B2C5-58E5-4A8E-9115-60919BD57607}|Utilities\\Utilities.csproj|D:\\BTL_LapTrinhTrucQuan\\utilities\\sqlhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6C78B2C5-58E5-4A8E-9115-60919BD57607}|Utilities\\Utilities.csproj|solutionrelative:utilities\\sqlhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|d:\\btl_laptrinhtrucquan\\gui\\frmorders.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|solutionrelative:gui\\frmorders.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -11,7 +15,7 @@
       "RelativeMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|solutionrelative:gui\\ucfood.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|d:\\btl_laptrinhtrucquan\\gui\\frmorders.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|D:\\BTL_LapTrinhTrucQuan\\gui\\frmorders.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|solutionrelative:gui\\frmorders.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -47,10 +51,6 @@
       "RelativeMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|solutionrelative:gui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6C78B2C5-58E5-4A8E-9115-60919BD57607}|Utilities\\Utilities.csproj|D:\\BTL_LapTrinhTrucQuan\\utilities\\sqlhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6C78B2C5-58E5-4A8E-9115-60919BD57607}|Utilities\\Utilities.csproj|solutionrelative:utilities\\sqlhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|D:\\BTL_LapTrinhTrucQuan\\gui\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C343E518-6875-4D3A-A30A-B941ECCDF7EB}|GUI\\GUI.csproj|solutionrelative:gui\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -66,7 +66,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 12,
           "Children": [
             {
               "$type": "Bookmark",
@@ -78,7 +78,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "FoodBLL.cs",
               "DocumentMoniker": "D:\\BTL_LapTrinhTrucQuan\\BLL\\FoodBLL.cs",
               "RelativeDocumentMoniker": "BLL\\FoodBLL.cs",
@@ -86,12 +86,11 @@
               "RelativeToolTip": "BLL\\FoodBLL.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-05T15:31:37.907Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-05T15:31:37.907Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "FoodDTO.cs",
               "DocumentMoniker": "D:\\BTL_LapTrinhTrucQuan\\DTO\\FoodDTO.cs",
               "RelativeDocumentMoniker": "DTO\\FoodDTO.cs",
@@ -99,12 +98,11 @@
               "RelativeToolTip": "DTO\\FoodDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-05T10:52:23.447Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-05T10:52:23.447Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "FoodDAL.cs",
               "DocumentMoniker": "D:\\BTL_LapTrinhTrucQuan\\DAL\\FoodDAL.cs",
               "RelativeDocumentMoniker": "DAL\\FoodDAL.cs",
@@ -112,12 +110,11 @@
               "RelativeToolTip": "DAL\\FoodDAL.cs",
               "ViewState": "AgIAABgAAAAAAAAAAAAUwDIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-05T10:27:36.935Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-05T10:27:36.935Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "AccountBLL.cs",
               "DocumentMoniker": "D:\\BTL_LapTrinhTrucQuan\\BLL\\AccountBLL.cs",
               "RelativeDocumentMoniker": "BLL\\AccountBLL.cs",
@@ -125,12 +122,11 @@
               "RelativeToolTip": "BLL\\AccountBLL.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-05T10:16:58.193Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-05T10:16:58.193Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "FoodUpdatedEventArgs.cs",
               "DocumentMoniker": "D:\\BTL_LapTrinhTrucQuan\\GUI\\FoodUpdatedEventArgs.cs",
               "RelativeDocumentMoniker": "GUI\\FoodUpdatedEventArgs.cs",
@@ -138,12 +134,11 @@
               "RelativeToolTip": "GUI\\FoodUpdatedEventArgs.cs",
               "ViewState": "AgIAAAQAAAAAAAAAAAAWwAoAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T17:13:58.81Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-03T17:13:58.81Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "frmOrders.Designer.cs",
               "DocumentMoniker": "D:\\BTL_LapTrinhTrucQuan\\GUI\\frmOrders.Designer.cs",
               "RelativeDocumentMoniker": "GUI\\frmOrders.Designer.cs",
@@ -151,12 +146,11 @@
               "RelativeToolTip": "GUI\\frmOrders.Designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T10:08:13.448Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-03T10:08:13.448Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "frmOrders.cs",
               "DocumentMoniker": "D:\\BTL_LapTrinhTrucQuan\\GUI\\frmOrders.cs",
               "RelativeDocumentMoniker": "GUI\\frmOrders.cs",
@@ -169,7 +163,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "ucFood.cs",
               "DocumentMoniker": "D:\\BTL_LapTrinhTrucQuan\\GUI\\ucFood.cs",
               "RelativeDocumentMoniker": "GUI\\ucFood.cs",
@@ -177,42 +171,39 @@
               "RelativeToolTip": "GUI\\ucFood.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAgwEsAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T04:59:15.224Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-03T04:59:15.224Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ucFood.cs [Design]",
               "DocumentMoniker": "D:\\BTL_LapTrinhTrucQuan\\GUI\\ucFood.cs",
               "RelativeDocumentMoniker": "GUI\\ucFood.cs",
               "ToolTip": "D:\\BTL_LapTrinhTrucQuan\\GUI\\ucFood.cs [Design]",
               "RelativeToolTip": "GUI\\ucFood.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T04:57:45.15Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-10-03T04:57:45.15Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "frmOrders.cs [Design]",
               "DocumentMoniker": "D:\\BTL_LapTrinhTrucQuan\\GUI\\frmOrders.cs",
               "RelativeDocumentMoniker": "GUI\\frmOrders.cs",
               "ToolTip": "D:\\BTL_LapTrinhTrucQuan\\GUI\\frmOrders.cs [Design]",
               "RelativeToolTip": "GUI\\frmOrders.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T04:29:38.106Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-10-03T04:29:38.106Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 0,
               "Title": "SqlHelper.cs",
               "DocumentMoniker": "D:\\BTL_LapTrinhTrucQuan\\Utilities\\SqlHelper.cs",
               "RelativeDocumentMoniker": "Utilities\\SqlHelper.cs",
               "ToolTip": "D:\\BTL_LapTrinhTrucQuan\\Utilities\\SqlHelper.cs",
               "RelativeToolTip": "Utilities\\SqlHelper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABpAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-01T11:33:34.938Z",
               "EditorCaption": ""
@@ -227,8 +218,7 @@
               "RelativeToolTip": "DAL\\AccountDAL.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-01T11:05:43.491Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-01T11:05:43.491Z"
             },
             {
               "$type": "Document",
@@ -240,12 +230,11 @@
               "RelativeToolTip": "GUI\\frmLogin.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAKsAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-01T08:12:42.158Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-01T08:12:42.158Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\BTL_LapTrinhTrucQuan\\GUI\\Program.cs",
               "RelativeDocumentMoniker": "GUI\\Program.cs",
@@ -253,8 +242,7 @@
               "RelativeToolTip": "GUI\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-01T02:10:17.477Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-01T02:10:17.477Z"
             }
           ]
         }
