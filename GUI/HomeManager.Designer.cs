@@ -38,10 +38,10 @@ namespace GUI
             this.label1 = new System.Windows.Forms.Label();
             this.InPanelManager1 = new System.Windows.Forms.Panel();
             this.PanelIngredient = new System.Windows.Forms.Panel();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textSoNguyenLieuMoi = new System.Windows.Forms.TextBox();
+            this.textSoNguyenLieuChuaPhanLoai = new System.Windows.Forms.TextBox();
+            this.textSoTienNLMoiNhap = new System.Windows.Forms.TextBox();
+            this.textSoLoaiNguyenLieu = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -49,9 +49,9 @@ namespace GUI
             this.label9 = new System.Windows.Forms.Label();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.PanelWarehouse = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textTongChiKho = new System.Windows.Forms.TextBox();
+            this.textSoNhanVienKho = new System.Windows.Forms.TextBox();
+            this.textSoNhaCungCap = new System.Windows.Forms.TextBox();
             this.textSoNguyenLieuSapHet = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -63,7 +63,7 @@ namespace GUI
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.PanelChart = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chartSale = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label5 = new System.Windows.Forms.Label();
             this.PanelStaff = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -78,8 +78,16 @@ namespace GUI
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.PanelRight = new System.Windows.Forms.Panel();
+            this.textDT_DHRight = new System.Windows.Forms.TextBox();
+            this.textSoDonHangRight = new System.Windows.Forms.TextBox();
+            this.textLaiGopRight = new System.Windows.Forms.TextBox();
+            this.textDoanhThuRight = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label20 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.InPanelManager1.SuspendLayout();
             this.PanelIngredient.SuspendLayout();
@@ -88,7 +96,7 @@ namespace GUI
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.PanelChart.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartSale)).BeginInit();
             this.PanelStaff.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.PanelTable.SuspendLayout();
@@ -151,10 +159,10 @@ namespace GUI
             // PanelIngredient
             // 
             this.PanelIngredient.BackColor = System.Drawing.Color.LightGray;
-            this.PanelIngredient.Controls.Add(this.textBox4);
-            this.PanelIngredient.Controls.Add(this.textBox5);
-            this.PanelIngredient.Controls.Add(this.textBox6);
-            this.PanelIngredient.Controls.Add(this.textBox7);
+            this.PanelIngredient.Controls.Add(this.textSoNguyenLieuMoi);
+            this.PanelIngredient.Controls.Add(this.textSoNguyenLieuChuaPhanLoai);
+            this.PanelIngredient.Controls.Add(this.textSoTienNLMoiNhap);
+            this.PanelIngredient.Controls.Add(this.textSoLoaiNguyenLieu);
             this.PanelIngredient.Controls.Add(this.label14);
             this.PanelIngredient.Controls.Add(this.label15);
             this.PanelIngredient.Controls.Add(this.label16);
@@ -167,33 +175,45 @@ namespace GUI
             this.PanelIngredient.TabIndex = 13;
             this.PanelIngredient.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelIngredient_Paint);
             // 
-            // textBox4
+            // textSoNguyenLieuMoi
             // 
-            this.textBox4.Location = new System.Drawing.Point(295, 212);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(148, 20);
-            this.textBox4.TabIndex = 21;
+            this.textSoNguyenLieuMoi.AutoSize = false;
+            this.textSoNguyenLieuMoi.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textSoNguyenLieuMoi.Location = new System.Drawing.Point(295, 212);
+            this.textSoNguyenLieuMoi.Name = "textSoNguyenLieuMoi";
+            this.textSoNguyenLieuMoi.ReadOnly = true;
+            this.textSoNguyenLieuMoi.Size = new System.Drawing.Size(148, 32);
+            this.textSoNguyenLieuMoi.TabIndex = 21;
             // 
-            // textBox5
+            // textSoNguyenLieuChuaPhanLoai
             // 
-            this.textBox5.Location = new System.Drawing.Point(295, 161);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(148, 20);
-            this.textBox5.TabIndex = 20;
+            this.textSoNguyenLieuChuaPhanLoai.AutoSize = false;
+            this.textSoNguyenLieuChuaPhanLoai.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textSoNguyenLieuChuaPhanLoai.Location = new System.Drawing.Point(295, 161);
+            this.textSoNguyenLieuChuaPhanLoai.Name = "textSoNguyenLieuChuaPhanLoai";
+            this.textSoNguyenLieuChuaPhanLoai.ReadOnly = true;
+            this.textSoNguyenLieuChuaPhanLoai.Size = new System.Drawing.Size(148, 32);
+            this.textSoNguyenLieuChuaPhanLoai.TabIndex = 20;
             // 
-            // textBox6
+            // textSoTienNLMoiNhap
             // 
-            this.textBox6.Location = new System.Drawing.Point(295, 109);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(148, 20);
-            this.textBox6.TabIndex = 19;
+            this.textSoTienNLMoiNhap.AutoSize = false;
+            this.textSoTienNLMoiNhap.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textSoTienNLMoiNhap.Location = new System.Drawing.Point(295, 109);
+            this.textSoTienNLMoiNhap.Name = "textSoTienNLMoiNhap";
+            this.textSoTienNLMoiNhap.ReadOnly = true;
+            this.textSoTienNLMoiNhap.Size = new System.Drawing.Size(148, 32);
+            this.textSoTienNLMoiNhap.TabIndex = 19;
             // 
-            // textBox7
+            // textSoLoaiNguyenLieu
             // 
-            this.textBox7.Location = new System.Drawing.Point(295, 58);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(148, 20);
-            this.textBox7.TabIndex = 18;
+            this.textSoLoaiNguyenLieu.AutoSize = false;
+            this.textSoLoaiNguyenLieu.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textSoLoaiNguyenLieu.Location = new System.Drawing.Point(295, 58);
+            this.textSoLoaiNguyenLieu.Name = "textSoLoaiNguyenLieu";
+            this.textSoLoaiNguyenLieu.ReadOnly = true;
+            this.textSoLoaiNguyenLieu.Size = new System.Drawing.Size(148, 32);
+            this.textSoLoaiNguyenLieu.TabIndex = 18;
             // 
             // label14
             // 
@@ -262,9 +282,9 @@ namespace GUI
             // PanelWarehouse
             // 
             this.PanelWarehouse.BackColor = System.Drawing.Color.LightGray;
-            this.PanelWarehouse.Controls.Add(this.textBox3);
-            this.PanelWarehouse.Controls.Add(this.textBox2);
-            this.PanelWarehouse.Controls.Add(this.textBox1);
+            this.PanelWarehouse.Controls.Add(this.textTongChiKho);
+            this.PanelWarehouse.Controls.Add(this.textSoNhanVienKho);
+            this.PanelWarehouse.Controls.Add(this.textSoNhaCungCap);
             this.PanelWarehouse.Controls.Add(this.textSoNguyenLieuSapHet);
             this.PanelWarehouse.Controls.Add(this.label13);
             this.PanelWarehouse.Controls.Add(this.label12);
@@ -278,32 +298,44 @@ namespace GUI
             this.PanelWarehouse.TabIndex = 12;
             this.PanelWarehouse.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelWarehouse_Paint);
             // 
-            // textBox3
+            // textTongChiKho
             // 
-            this.textBox3.Location = new System.Drawing.Point(243, 212);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(148, 20);
-            this.textBox3.TabIndex = 13;
+            this.textTongChiKho.AutoSize = false;
+            this.textTongChiKho.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textTongChiKho.Location = new System.Drawing.Point(243, 212);
+            this.textTongChiKho.Name = "textTongChiKho";
+            this.textTongChiKho.ReadOnly = true;
+            this.textTongChiKho.Size = new System.Drawing.Size(148, 32);
+            this.textTongChiKho.TabIndex = 13;
             // 
-            // textBox2
+            // textSoNhanVienKho
             // 
-            this.textBox2.Location = new System.Drawing.Point(243, 161);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(148, 20);
-            this.textBox2.TabIndex = 12;
+            this.textSoNhanVienKho.AutoSize = false;
+            this.textSoNhanVienKho.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textSoNhanVienKho.Location = new System.Drawing.Point(243, 161);
+            this.textSoNhanVienKho.Name = "textSoNhanVienKho";
+            this.textSoNhanVienKho.ReadOnly = true;
+            this.textSoNhanVienKho.Size = new System.Drawing.Size(148, 32);
+            this.textSoNhanVienKho.TabIndex = 12;
             // 
-            // textBox1
+            // textSoNhaCungCap
             // 
-            this.textBox1.Location = new System.Drawing.Point(243, 109);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(148, 20);
-            this.textBox1.TabIndex = 11;
+            this.textSoNhaCungCap.AutoSize = false;
+            this.textSoNhaCungCap.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textSoNhaCungCap.Location = new System.Drawing.Point(243, 109);
+            this.textSoNhaCungCap.Name = "textSoNhaCungCap";
+            this.textSoNhaCungCap.ReadOnly = true;
+            this.textSoNhaCungCap.Size = new System.Drawing.Size(148, 32);
+            this.textSoNhaCungCap.TabIndex = 11;
             // 
             // textSoNguyenLieuSapHet
             // 
+            this.textSoNguyenLieuSapHet.AutoSize = false;
+            this.textSoNguyenLieuSapHet.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textSoNguyenLieuSapHet.Location = new System.Drawing.Point(243, 58);
             this.textSoNguyenLieuSapHet.Name = "textSoNguyenLieuSapHet";
-            this.textSoNguyenLieuSapHet.Size = new System.Drawing.Size(148, 20);
+            this.textSoNguyenLieuSapHet.ReadOnly = true;
+            this.textSoNguyenLieuSapHet.Size = new System.Drawing.Size(148, 32);
             this.textSoNguyenLieuSapHet.TabIndex = 10;
             // 
             // label13
@@ -395,7 +427,7 @@ namespace GUI
             // 
             this.PanelChart.BackColor = System.Drawing.Color.LightGray;
             this.PanelChart.Controls.Add(this.label7);
-            this.PanelChart.Controls.Add(this.chart1);
+            this.PanelChart.Controls.Add(this.chartSale);
             this.PanelChart.Location = new System.Drawing.Point(30, 206);
             this.PanelChart.Name = "PanelChart";
             this.PanelChart.Size = new System.Drawing.Size(1020, 320);
@@ -412,22 +444,22 @@ namespace GUI
             this.label7.TabIndex = 1;
             this.label7.Text = "Biểu đồ doanh thu theo tháng của năm";
             // 
-            // chart1
+            // chartSale
             // 
             chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
+            this.chartSale.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(122, 3);
-            this.chart1.Name = "chart1";
+            this.chartSale.Legends.Add(legend1);
+            this.chartSale.Location = new System.Drawing.Point(122, 3);
+            this.chartSale.Name = "chartSale";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(777, 255);
-            this.chart1.TabIndex = 0;
-            this.chart1.Text = "chart1";
-            this.chart1.Click += new System.EventHandler(this.chart1_Click);
+            this.chartSale.Series.Add(series1);
+            this.chartSale.Size = new System.Drawing.Size(777, 255);
+            this.chartSale.TabIndex = 0;
+            this.chartSale.Text = "chart1";
+            this.chartSale.Click += new System.EventHandler(this.chart1_Click);
             // 
             // label5
             // 
@@ -568,13 +600,71 @@ namespace GUI
             // PanelRight
             // 
             this.PanelRight.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.PanelRight.Controls.Add(this.textDT_DHRight);
+            this.PanelRight.Controls.Add(this.textSoDonHangRight);
+            this.PanelRight.Controls.Add(this.textLaiGopRight);
+            this.PanelRight.Controls.Add(this.textDoanhThuRight);
+            this.PanelRight.Controls.Add(this.label19);
             this.PanelRight.Controls.Add(this.comboBox1);
+            this.PanelRight.Controls.Add(this.label20);
             this.PanelRight.Controls.Add(this.label18);
+            this.PanelRight.Controls.Add(this.label21);
+            this.PanelRight.Controls.Add(this.label22);
             this.PanelRight.Location = new System.Drawing.Point(1092, 6);
             this.PanelRight.Name = "PanelRight";
             this.PanelRight.Size = new System.Drawing.Size(273, 800);
             this.PanelRight.TabIndex = 3;
             this.PanelRight.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelRight_Paint);
+            // 
+            // textDT_DHRight
+            // 
+            this.textDT_DHRight.AutoSize = false;
+            this.textDT_DHRight.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textDT_DHRight.Location = new System.Drawing.Point(22, 287);
+            this.textDT_DHRight.Name = "textDT_DHRight";
+            this.textDT_DHRight.ReadOnly = true;
+            this.textDT_DHRight.Size = new System.Drawing.Size(148, 30);
+            this.textDT_DHRight.TabIndex = 25;
+            // 
+            // textSoDonHangRight
+            // 
+            this.textSoDonHangRight.AutoSize = false;
+            this.textSoDonHangRight.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textSoDonHangRight.Location = new System.Drawing.Point(22, 222);
+            this.textSoDonHangRight.Name = "textSoDonHangRight";
+            this.textSoDonHangRight.ReadOnly = true;
+            this.textSoDonHangRight.Size = new System.Drawing.Size(148, 30);
+            this.textSoDonHangRight.TabIndex = 24;
+            // 
+            // textLaiGopRight
+            // 
+            this.textLaiGopRight.AutoSize = false;
+            this.textLaiGopRight.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textLaiGopRight.Location = new System.Drawing.Point(22, 161);
+            this.textLaiGopRight.Name = "textLaiGopRight";
+            this.textLaiGopRight.ReadOnly = true;
+            this.textLaiGopRight.Size = new System.Drawing.Size(148, 30);
+            this.textLaiGopRight.TabIndex = 23;
+            // 
+            // textDoanhThuRight
+            // 
+            this.textDoanhThuRight.AutoSize = false;
+            this.textDoanhThuRight.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textDoanhThuRight.Location = new System.Drawing.Point(22, 99);
+            this.textDoanhThuRight.Name = "textDoanhThuRight";
+            this.textDoanhThuRight.ReadOnly = true;
+            this.textDoanhThuRight.Size = new System.Drawing.Size(148, 30);
+            this.textDoanhThuRight.TabIndex = 22;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(18, 258);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(179, 19);
+            this.label19.TabIndex = 17;
+            this.label19.Text = "Doanh thu/Đơn hàng: ";
             // 
             // comboBox1
             // 
@@ -583,6 +673,16 @@ namespace GUI
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 7;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(18, 198);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(114, 19);
+            this.label20.TabIndex = 16;
+            this.label20.Text = "Số đơn hàng:";
             // 
             // label18
             // 
@@ -595,6 +695,26 @@ namespace GUI
             this.label18.Size = new System.Drawing.Size(106, 24);
             this.label18.TabIndex = 6;
             this.label18.Text = "Hoạt động";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(18, 136);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(72, 19);
+            this.label21.TabIndex = 15;
+            this.label21.Text = "Lãi góp:";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(18, 74);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(95, 19);
+            this.label22.TabIndex = 14;
+            this.label22.Text = "Doanh thu:";
             // 
             // HomeManager
             // 
@@ -620,7 +740,7 @@ namespace GUI
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.PanelChart.ResumeLayout(false);
             this.PanelChart.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartSale)).EndInit();
             this.PanelStaff.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.PanelTable.ResumeLayout(false);
@@ -659,7 +779,7 @@ namespace GUI
         private System.Windows.Forms.Panel PanelWarehouse;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartSale;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox pictureBox8;
@@ -670,18 +790,26 @@ namespace GUI
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textTongChiKho;
+        private System.Windows.Forms.TextBox textSoNhanVienKho;
+        private System.Windows.Forms.TextBox textSoNhaCungCap;
+        private System.Windows.Forms.TextBox textSoNguyenLieuMoi;
+        private System.Windows.Forms.TextBox textSoNguyenLieuChuaPhanLoai;
+        private System.Windows.Forms.TextBox textSoTienNLMoiNhap;
+        private System.Windows.Forms.TextBox textSoLoaiNguyenLieu;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.TextBox textDT_DHRight;
+        private System.Windows.Forms.TextBox textSoDonHangRight;
+        private System.Windows.Forms.TextBox textLaiGopRight;
+        private System.Windows.Forms.TextBox textDoanhThuRight;
     }
 }
