@@ -8,10 +8,10 @@ namespace BLL
 {
     public class IngredientBLL
     {
-        public List<IngredientDTO> GetIngredients()
+        public List<IngredientDTO> GetIngredients(string search = "")
         {
             List<IngredientDTO> ingredients= new List<IngredientDTO>();
-            DataTable data = new IngredientDAL().GetIngredients();
+            DataTable data = search == "" ? new IngredientDAL().GetIngredients() : new IngredientDAL().GetIngredients(Ingredient.IngredientName, search);
             foreach (DataRow row in data.Rows)
             {
                 if (row != null)
