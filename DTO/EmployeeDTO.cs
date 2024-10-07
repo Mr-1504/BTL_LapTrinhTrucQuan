@@ -45,5 +45,16 @@ namespace DTO
             NumberPhone = numberPhone;
             Status = status;
         }
+        public EmployeeDTO(string id, string name, Gender gender, DateTime birth, string hometown, string address, string numberPhone)
+        {
+            EmployeeId = id;
+            Name = name;
+            Gender = gender;
+            Birth = birth;
+            Hometown = hometown;
+            NumberPhone = numberPhone;
+            Address = address;
+        }
+
     }
 }

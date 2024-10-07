@@ -29,38 +29,36 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployManager2));
-            this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.employID = new System.Windows.Forms.TextBox();
             this.numberPhone = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.address = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.hometown = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.birthday = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.gender = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.gender = new System.Windows.Forms.ComboBox();
+            this.dateTimeBirthDay = new System.Windows.Forms.DateTimePicker();
             this.btnSave = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.employID = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.name = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.Location = new System.Drawing.Point(12, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(43, 44);
-            this.button1.TabIndex = 0;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            this.button1.Paint += new System.Windows.Forms.PaintEventHandler(this.Button_Paint);
             // 
             // label1
             // 
@@ -74,14 +72,6 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Chi tiết nhân viên";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(29, 36);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(251, 216);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -92,19 +82,14 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Mã nhân viên";
             // 
-            // employID
-            // 
-            this.employID.Location = new System.Drawing.Point(576, 32);
-            this.employID.Name = "employID";
-            this.employID.Size = new System.Drawing.Size(237, 32);
-            this.employID.TabIndex = 5;
-            this.employID.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
             // numberPhone
             // 
-            this.numberPhone.Location = new System.Drawing.Point(576, 109);
+            this.numberPhone.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.numberPhone.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.numberPhone.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numberPhone.Location = new System.Drawing.Point(8, 6);
             this.numberPhone.Name = "numberPhone";
-            this.numberPhone.Size = new System.Drawing.Size(237, 32);
+            this.numberPhone.Size = new System.Drawing.Size(237, 22);
             this.numberPhone.TabIndex = 7;
             // 
             // label3
@@ -119,9 +104,11 @@
             // 
             // address
             // 
-            this.address.Location = new System.Drawing.Point(576, 281);
+            this.address.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.address.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.address.Location = new System.Drawing.Point(576, 285);
             this.address.Name = "address";
-            this.address.Size = new System.Drawing.Size(237, 32);
+            this.address.Size = new System.Drawing.Size(288, 22);
             this.address.TabIndex = 9;
             // 
             // label4
@@ -136,9 +123,12 @@
             // 
             // hometown
             // 
-            this.hometown.Location = new System.Drawing.Point(576, 371);
+            this.hometown.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.hometown.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.hometown.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hometown.Location = new System.Drawing.Point(9, 6);
             this.hometown.Name = "hometown";
-            this.hometown.Size = new System.Drawing.Size(237, 32);
+            this.hometown.Size = new System.Drawing.Size(237, 22);
             this.hometown.TabIndex = 11;
             // 
             // label5
@@ -151,13 +141,6 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "Quê quán";
             // 
-            // birthday
-            // 
-            this.birthday.Location = new System.Drawing.Point(576, 468);
-            this.birthday.Name = "birthday";
-            this.birthday.Size = new System.Drawing.Size(237, 32);
-            this.birthday.TabIndex = 13;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -167,13 +150,6 @@
             this.label6.Size = new System.Drawing.Size(102, 22);
             this.label6.TabIndex = 12;
             this.label6.Text = "Ngày sinh";
-            // 
-            // gender
-            // 
-            this.gender.Location = new System.Drawing.Point(576, 185);
-            this.gender.Name = "gender";
-            this.gender.Size = new System.Drawing.Size(237, 32);
-            this.gender.TabIndex = 19;
             // 
             // label7
             // 
@@ -188,17 +164,19 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel1.Controls.Add(this.panel5);
+            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.gender);
+            this.panel1.Controls.Add(this.dateTimeBirthDay);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.birthday);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.hometown);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.address);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.numberPhone);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.employID);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(26, 66);
@@ -207,9 +185,47 @@
             this.panel1.TabIndex = 20;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(120, 275);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(67, 16);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "Họ và tên";
+            // 
+            // gender
+            // 
+            this.gender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.gender.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gender.FormattingEnabled = true;
+            this.gender.Location = new System.Drawing.Point(576, 186);
+            this.gender.Name = "gender";
+            this.gender.Size = new System.Drawing.Size(136, 27);
+            this.gender.TabIndex = 22;
+            // 
+            // dateTimeBirthDay
+            // 
+            this.dateTimeBirthDay.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dateTimeBirthDay.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimeBirthDay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimeBirthDay.Location = new System.Drawing.Point(576, 474);
+            this.dateTimeBirthDay.Name = "dateTimeBirthDay";
+            this.dateTimeBirthDay.Size = new System.Drawing.Size(136, 27);
+            this.dateTimeBirthDay.TabIndex = 21;
+            // 
             // btnSave
             // 
-            this.btnSave.BackColor = System.Drawing.Color.MediumBlue;
+            this.btnSave.BackColor = System.Drawing.Color.Transparent;
+            this.btnSave.BackgroundImage = global::GUI.Properties.Resources.btn;
+            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnSave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnSave.Location = new System.Drawing.Point(1170, 743);
@@ -219,6 +235,101 @@
             this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.button4_Click);
+            this.btnSave.MouseEnter += new System.EventHandler(this.btnSave_MouseEnter);
+            this.btnSave.MouseLeave += new System.EventHandler(this.btnSave_MouseLeave);
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.BackgroundImage = global::GUI.Properties.Resources.idPanel;
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel3.Controls.Add(this.employID);
+            this.panel3.Location = new System.Drawing.Point(568, 30);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(254, 35);
+            this.panel3.TabIndex = 25;
+            // 
+            // employID
+            // 
+            this.employID.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.employID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.employID.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.employID.Location = new System.Drawing.Point(8, 7);
+            this.employID.Name = "employID";
+            this.employID.ReadOnly = true;
+            this.employID.Size = new System.Drawing.Size(237, 22);
+            this.employID.TabIndex = 5;
+            this.employID.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.BackgroundImage = global::GUI.Properties.Resources.namePanel;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel2.Controls.Add(this.name);
+            this.panel2.Location = new System.Drawing.Point(24, 296);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(262, 33);
+            this.panel2.TabIndex = 24;
+            // 
+            // name
+            // 
+            this.name.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.name.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.name.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.name.Location = new System.Drawing.Point(8, 6);
+            this.name.Name = "name";
+            this.name.Size = new System.Drawing.Size(245, 22);
+            this.name.TabIndex = 20;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(29, 36);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(251, 216);
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(12, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(43, 44);
+            this.button1.TabIndex = 0;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Paint += new System.Windows.Forms.PaintEventHandler(this.Button_Paint);
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Transparent;
+            this.panel4.BackgroundImage = global::GUI.Properties.Resources.idPanel;
+            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel4.Controls.Add(this.hometown);
+            this.panel4.Location = new System.Drawing.Point(572, 367);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(254, 35);
+            this.panel4.TabIndex = 26;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.Transparent;
+            this.panel5.BackgroundImage = global::GUI.Properties.Resources.idPanel;
+            this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel5.Controls.Add(this.numberPhone);
+            this.panel5.Location = new System.Drawing.Point(569, 106);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(254, 35);
+            this.panel5.TabIndex = 27;
             // 
             // EmployManager2
             // 
@@ -232,9 +343,17 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EmployManager2";
             this.Text = "EmployManager2";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -253,11 +372,17 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox hometown;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox birthday;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox gender;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.TextBox name;
+        private System.Windows.Forms.DateTimePicker dateTimeBirthDay;
+        private System.Windows.Forms.ComboBox gender;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel4;
     }
 }

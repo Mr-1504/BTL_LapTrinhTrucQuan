@@ -322,5 +322,20 @@
   <ItemGroup>
     <None Include="Resources\Search.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\enter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\namePanel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\idPanel.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

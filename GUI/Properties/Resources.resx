@@ -124,6 +124,9 @@
   <data name="lblHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\lblHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="picFoodGray" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\picFoodGray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="hehe" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hehe.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -135,6 +138,9 @@
   </data>
   <data name="GrayQuit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GrayQuit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="enter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\enter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="panelLogin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\panelLogin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -178,9 +184,6 @@
   <data name="hihi" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hihi.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="picWarehouseGray" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\picWarehouseGray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="picOrderListGray" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\picOrderListGray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -193,8 +196,14 @@
   <data name="picHomeBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\picHomeBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="btn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="lblButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\lblButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="namePanel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\namePanel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="textbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\textbox.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -226,11 +235,17 @@
   <data name="sortSmaller" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sortSmaller.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Search" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="picOrderBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\picOrderBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="picFoodGray" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\picFoodGray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="picWarehouseGray" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\picWarehouseGray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="SearchPanel" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SearchPanel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -241,7 +256,7 @@
   <data name="sortBigger" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sortBigger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Search" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="idPanel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\idPanel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

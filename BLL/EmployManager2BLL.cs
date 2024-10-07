@@ -17,9 +17,14 @@ namespace BLL
             EmployeeDAL employeeDAL = new EmployeeDAL();
             return employeeDAL.GetEmployee(@enum, employName);
         }
-        public void UpdateEmployee(EmployeeDTO employee)
+        public int UpdateEmployee(EmployeeDTO employee)
         {
-            employeeDAL.UpdateEmployee(employee);
+            Console.WriteLine(Employee.Gender.GetEnumDescription());
+            return employeeDAL.UpdateEmployee(employee);
+        }
+        public int AddEmployee(EmployeeType prefix, EmployeeDTO employee)
+        {
+            return employeeDAL.AddNewEmployee(prefix, employee);
         }
     }
 }
