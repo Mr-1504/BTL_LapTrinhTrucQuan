@@ -12,10 +12,15 @@ namespace DAL
             return SqlHelper.ExecuteScalar(query, new object[] { prefix });
         }
 
-        public int IsExistIngerdient(string ingredientId)
+        public int IsExistIngerdientId(string ingredientId)
         {
             string query = "SELECT COUNT(*) FROM NguyenLieu WHERE MaNguyenLieu = @ingredientId";
-            return SqlHelper.ExecuteNonQuery(query, new object[] { ingredientId });
+            return SqlHelper.ExecuteScalar(query, new object[] { ingredientId });
+        }
+        public int IsExistIngerdientName(string ingredientName)
+        {
+            string query = "SELECT COUNT(*) FROM NguyenLieu WHERE TenNguyenLieu = @ingredientName";
+            return SqlHelper.ExecuteScalar(query, new object[] { ingredientName });
         }
         public int AddNewIngredient(string prefix, IngredientDTO ingredient)
         {
