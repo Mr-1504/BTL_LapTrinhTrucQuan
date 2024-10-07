@@ -15,12 +15,12 @@ namespace GUI
         private string _employeeId ;
         private DataTable _dt = new DataTable();
         //path ảnh
-        string imagePath;
+        private string _imagePath;
         public SettingFormEditProfile(string employeeId)
         {
             _employeeId = employeeId;
             _dt = _employeeDAL.GetEmployee(Employee.EmployeeId, _employeeId);
-            imagePath = $@"..\..\Resources\AvatarImage\{_employeeId}.JPG";
+            _imagePath = $@"..\..\Resources\AvatarImage\{_employeeId}.JPG";
             InitializeComponent();
             picEditImage.MouseEnter += new EventHandler(Picture_MouseEnter);
             picEditImage.MouseLeave += new EventHandler(Picture_MouseLeave);
@@ -72,9 +72,9 @@ namespace GUI
                 {
                     txtDateofBirth.Text = "Invalid Date";
                 }// Set the Image property of picAvatar
-                if (System.IO.File.Exists(imagePath))
+                if (System.IO.File.Exists(_imagePath))
                 {
-                    picAvatar.Image = Image.FromFile(imagePath);
+                    picAvatar.Image = Image.FromFile(_imagePath);
                     
                 }
                 else
@@ -193,6 +193,7 @@ namespace GUI
                         {
                             picAvatar.Image.Dispose();
                             picAvatar.Image = null;
+                            
                         }
 
                         // copy file vào project

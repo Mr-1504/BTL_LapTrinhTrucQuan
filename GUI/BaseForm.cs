@@ -17,6 +17,8 @@ namespace GUI
         private int _y;
         private Panel _pnl;
         private Panel _choosePnl;
+        //đổi btnAvatar
+        private string _imagePath;
         public BaseForm(string employeeId)
         {
             _id = employeeId;
@@ -51,8 +53,10 @@ namespace GUI
             LoadMenu(employeeId);
 
             ActiveControl = picLogo;
-        }
 
+            _imagePath = $@"..\..\Resources\AvatarImage\{_id}.JPG";
+            btnAvatar.BackgroundImage = Image.FromFile(_imagePath);
+        }
         private void LoadMenu(string employeeId)
         {
             int y = 72;
