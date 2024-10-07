@@ -28,13 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.btnReturn = new System.Windows.Forms.Button();
             this.picArrowRight = new System.Windows.Forms.PictureBox();
             this.picStep2Status = new System.Windows.Forms.PictureBox();
             this.picStep1Status = new System.Windows.Forms.PictureBox();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnContinue = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picArrowRight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picStep2Status)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picStep1Status)).BeginInit();
             this.SuspendLayout();
+            // 
+            // btnReturn
+            // 
+            this.btnReturn.BackColor = System.Drawing.Color.Transparent;
+            this.btnReturn.BackgroundImage = global::GUI.Properties.Resources.btnReturn;
+            this.btnReturn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnReturn.FlatAppearance.BorderSize = 0;
+            this.btnReturn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnReturn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReturn.Location = new System.Drawing.Point(36, 728);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(200, 50);
+            this.btnReturn.TabIndex = 3;
+            this.btnReturn.UseVisualStyleBackColor = false;
+            this.btnReturn.Visible = false;
             // 
             // picArrowRight
             // 
@@ -66,12 +85,47 @@
             this.picStep1Status.TabIndex = 0;
             this.picStep1Status.TabStop = false;
             // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.Transparent;
+            this.btnCancel.BackgroundImage = global::GUI.Properties.Resources.btnCancel;
+            this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Location = new System.Drawing.Point(281, 728);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(200, 50);
+            this.btnCancel.TabIndex = 4;
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Visible = false;
+            // 
+            // btnContinue
+            // 
+            this.btnContinue.BackColor = System.Drawing.Color.Transparent;
+            this.btnContinue.BackgroundImage = global::GUI.Properties.Resources.btnContinue;
+            this.btnContinue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnContinue.FlatAppearance.BorderSize = 0;
+            this.btnContinue.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnContinue.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnContinue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnContinue.Location = new System.Drawing.Point(1127, 728);
+            this.btnContinue.Name = "btnContinue";
+            this.btnContinue.Size = new System.Drawing.Size(200, 50);
+            this.btnContinue.TabIndex = 5;
+            this.btnContinue.UseVisualStyleBackColor = false;
+            this.btnContinue.Click += new System.EventHandler(this.btnContinue_Click);
+            // 
             // DetailPurchaseedIngredient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
             this.ClientSize = new System.Drawing.Size(1369, 814);
+            this.Controls.Add(this.btnContinue);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.picArrowRight);
             this.Controls.Add(this.picStep2Status);
             this.Controls.Add(this.picStep1Status);
@@ -90,5 +144,8 @@
         private System.Windows.Forms.PictureBox picStep1Status;
         private System.Windows.Forms.PictureBox picStep2Status;
         private System.Windows.Forms.PictureBox picArrowRight;
+        private System.Windows.Forms.Button btnReturn;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnContinue;
     }
 }
