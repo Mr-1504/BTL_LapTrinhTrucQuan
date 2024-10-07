@@ -32,7 +32,16 @@ namespace DAL
             return SqlHelper.ExecuteNonQuery(query,
                 new object[] { purchaseInvoiceDTO.DateOfPurchase, purchaseInvoiceDTO.PurchaseInvoiceId, purchaseInvoiceDTO.EmployeeId, purchaseInvoiceDTO.SupplierId });
         }
-
+        public DataTable GetNewestPurchaseInvoice()
+        {
+            string year = DateTime.Now.Year.ToString().Substring(2);
+            string month = new string('0', 2 - DateTime.Now.Month.ToString().Length) + DateTime.Now.Month.ToString();
+            string day = new string('0', 2 - DateTime.Now.Day.ToString().Length) + DateTime.Now.Day.ToString();
+            string purchaseInvoiceId = GetPurchaseInvoiceCount(day, month, year).ToString();
+            purchaseInvoiceId = "HDN" + day + month + year + new string('0', 3 - purchaseInvoiceId.Length) + purchaseInvoiceId;
+            string query = "SELECT * FROM HoaDonNhap WHERE MaHoaDonNhap = @purchaseInvoiceId";
+            return SqlHelper.ExecuteReader(query, new object[] { purchaseInvoiceId });
+        }
         public DataTable GetPurchaseInvoiceTable()
         {
             string query = "SELECT * FROM HoaDonNhap";
