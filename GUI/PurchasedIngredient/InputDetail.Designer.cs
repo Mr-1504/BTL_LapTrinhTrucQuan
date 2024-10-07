@@ -32,7 +32,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlList = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnlData = new System.Windows.Forms.Panel();
+            this.pnlDataHeader = new System.Windows.Forms.Panel();
             this.dgvList = new System.Windows.Forms.DataGridView();
             this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,6 +41,7 @@
             this.colQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblList = new System.Windows.Forms.Label();
             this.pnlInformation = new System.Windows.Forms.Panel();
+            this.lblError = new System.Windows.Forms.Label();
             this.pnlIngredient = new System.Windows.Forms.Panel();
             this.cmbIngredientName = new System.Windows.Forms.ComboBox();
             this.pnlSupplier = new System.Windows.Forms.Panel();
@@ -59,8 +61,13 @@
             this.lblIngredient = new System.Windows.Forms.Label();
             this.lblSupplierName = new System.Windows.Forms.Label();
             this.lblSupplier = new System.Windows.Forms.Label();
+            this.lblDataName = new System.Windows.Forms.Label();
+            this.lblDataUnit = new System.Windows.Forms.Label();
+            this.lblDataPriceUnit = new System.Windows.Forms.Label();
+            this.lblDataQuantity = new System.Windows.Forms.Label();
             this.pnlList.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.pnlData.SuspendLayout();
+            this.pnlDataHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             this.pnlInformation.SuspendLayout();
             this.pnlIngredient.SuspendLayout();
@@ -75,27 +82,42 @@
             this.pnlList.BackColor = System.Drawing.Color.Transparent;
             this.pnlList.BackgroundImage = global::GUI.Properties.Resources.bgImport;
             this.pnlList.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pnlList.Controls.Add(this.panel2);
+            this.pnlList.Controls.Add(this.pnlData);
             this.pnlList.Controls.Add(this.lblList);
             this.pnlList.Location = new System.Drawing.Point(692, 7);
             this.pnlList.Name = "pnlList";
             this.pnlList.Size = new System.Drawing.Size(649, 611);
             this.pnlList.TabIndex = 6;
             // 
-            // panel2
+            // pnlData
             // 
-            this.panel2.BackgroundImage = global::GUI.Properties.Resources.ListIngrdient;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel2.Controls.Add(this.dgvList);
-            this.panel2.Location = new System.Drawing.Point(40, 77);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(569, 487);
-            this.panel2.TabIndex = 18;
+            this.pnlData.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlData.Controls.Add(this.pnlDataHeader);
+            this.pnlData.Controls.Add(this.dgvList);
+            this.pnlData.Location = new System.Drawing.Point(40, 77);
+            this.pnlData.Name = "pnlData";
+            this.pnlData.Size = new System.Drawing.Size(569, 487);
+            this.pnlData.TabIndex = 18;
+            // 
+            // pnlDataHeader
+            // 
+            this.pnlDataHeader.BackgroundImage = global::GUI.Properties.Resources.ListIngrdient1;
+            this.pnlDataHeader.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pnlDataHeader.Controls.Add(this.lblDataQuantity);
+            this.pnlDataHeader.Controls.Add(this.lblDataPriceUnit);
+            this.pnlDataHeader.Controls.Add(this.lblDataUnit);
+            this.pnlDataHeader.Controls.Add(this.lblDataName);
+            this.pnlDataHeader.Location = new System.Drawing.Point(0, 0);
+            this.pnlDataHeader.Name = "pnlDataHeader";
+            this.pnlDataHeader.Size = new System.Drawing.Size(569, 46);
+            this.pnlDataHeader.TabIndex = 20;
             // 
             // dgvList
             // 
             this.dgvList.AllowUserToAddRows = false;
             this.dgvList.AllowUserToDeleteRows = false;
+            this.dgvList.AllowUserToResizeColumns = false;
+            this.dgvList.AllowUserToResizeRows = false;
             this.dgvList.BackgroundColor = System.Drawing.Color.White;
             this.dgvList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -126,17 +148,21 @@
             this.dgvList.GridColor = System.Drawing.Color.White;
             this.dgvList.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.dgvList.Location = new System.Drawing.Point(0, 0);
+            this.dgvList.MultiSelect = false;
             this.dgvList.Name = "dgvList";
             this.dgvList.ReadOnly = true;
             this.dgvList.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvList.RowHeadersVisible = false;
             this.dgvList.RowHeadersWidth = 50;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvList.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvList.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dgvList.RowTemplate.Height = 40;
+            this.dgvList.RowTemplate.ReadOnly = true;
             this.dgvList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvList.Size = new System.Drawing.Size(569, 487);
             this.dgvList.TabIndex = 19;
@@ -192,6 +218,7 @@
             this.pnlInformation.BackColor = System.Drawing.Color.Transparent;
             this.pnlInformation.BackgroundImage = global::GUI.Properties.Resources.bgImport;
             this.pnlInformation.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pnlInformation.Controls.Add(this.lblError);
             this.pnlInformation.Controls.Add(this.pnlIngredient);
             this.pnlInformation.Controls.Add(this.pnlSupplier);
             this.pnlInformation.Controls.Add(this.panel1);
@@ -210,6 +237,18 @@
             this.pnlInformation.Name = "pnlInformation";
             this.pnlInformation.Size = new System.Drawing.Size(649, 611);
             this.pnlInformation.TabIndex = 5;
+            // 
+            // lblError
+            // 
+            this.lblError.AutoSize = true;
+            this.lblError.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblError.ForeColor = System.Drawing.Color.Red;
+            this.lblError.Location = new System.Drawing.Point(67, 470);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(81, 18);
+            this.lblError.TabIndex = 17;
+            this.lblError.Text = "Tên đơn vị";
+            this.lblError.Visible = false;
             // 
             // pnlIngredient
             // 
@@ -235,6 +274,7 @@
             this.cmbIngredientName.TabIndex = 4;
             this.cmbIngredientName.SelectedIndexChanged += new System.EventHandler(this.cmbIngredientName_SelectedIndexChanged);
             this.cmbIngredientName.TextUpdate += new System.EventHandler(this.cmbIngredientName_TextUpdate);
+            this.cmbIngredientName.Leave += new System.EventHandler(this.cmbIngredientName_Leave);
             // 
             // pnlSupplier
             // 
@@ -346,6 +386,7 @@
             this.btnConfirm.TabIndex = 10;
             this.btnConfirm.Text = "Đồng ý";
             this.btnConfirm.UseVisualStyleBackColor = true;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             this.btnConfirm.MouseEnter += new System.EventHandler(this.btnConfirm_MouseEnter);
             this.btnConfirm.MouseLeave += new System.EventHandler(this.btnConfirm_MouseLeave);
             // 
@@ -438,6 +479,46 @@
             this.lblSupplier.TabIndex = 0;
             this.lblSupplier.Text = "Đơn vị cung cấp";
             // 
+            // lblDataName
+            // 
+            this.lblDataName.AutoSize = true;
+            this.lblDataName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDataName.Location = new System.Drawing.Point(28, 16);
+            this.lblDataName.Name = "lblDataName";
+            this.lblDataName.Size = new System.Drawing.Size(115, 18);
+            this.lblDataName.TabIndex = 21;
+            this.lblDataName.Text = "Tên nguyên liệu";
+            // 
+            // lblDataUnit
+            // 
+            this.lblDataUnit.AutoSize = true;
+            this.lblDataUnit.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDataUnit.Location = new System.Drawing.Point(205, 16);
+            this.lblDataUnit.Name = "lblDataUnit";
+            this.lblDataUnit.Size = new System.Drawing.Size(54, 18);
+            this.lblDataUnit.TabIndex = 22;
+            this.lblDataUnit.Text = "Đơn vị";
+            // 
+            // lblDataPriceUnit
+            // 
+            this.lblDataPriceUnit.AutoSize = true;
+            this.lblDataPriceUnit.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDataPriceUnit.Location = new System.Drawing.Point(311, 16);
+            this.lblDataPriceUnit.Name = "lblDataPriceUnit";
+            this.lblDataPriceUnit.Size = new System.Drawing.Size(65, 18);
+            this.lblDataPriceUnit.TabIndex = 23;
+            this.lblDataPriceUnit.Text = "Đơn giá";
+            // 
+            // lblDataQuantity
+            // 
+            this.lblDataQuantity.AutoSize = true;
+            this.lblDataQuantity.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDataQuantity.Location = new System.Drawing.Point(452, 16);
+            this.lblDataQuantity.Name = "lblDataQuantity";
+            this.lblDataQuantity.Size = new System.Drawing.Size(74, 18);
+            this.lblDataQuantity.TabIndex = 24;
+            this.lblDataQuantity.Text = "Số lượng";
+            // 
             // InputDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -450,7 +531,9 @@
             this.Load += new System.EventHandler(this.InputDetail_Load);
             this.pnlList.ResumeLayout(false);
             this.pnlList.PerformLayout();
-            this.panel2.ResumeLayout(false);
+            this.pnlData.ResumeLayout(false);
+            this.pnlDataHeader.ResumeLayout(false);
+            this.pnlDataHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
             this.pnlInformation.ResumeLayout(false);
             this.pnlInformation.PerformLayout();
@@ -490,11 +573,17 @@
         private System.Windows.Forms.Panel pnlIngredient;
         private System.Windows.Forms.ComboBox cmbIngredientName;
         private System.Windows.Forms.Label lblList;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel pnlData;
         private System.Windows.Forms.DataGridView dgvList;
         private System.Windows.Forms.DataGridViewTextBoxColumn colName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colUnit;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPriceUnit;
         private System.Windows.Forms.DataGridViewTextBoxColumn colQuantity;
+        private System.Windows.Forms.Label lblError;
+        private System.Windows.Forms.Panel pnlDataHeader;
+        private System.Windows.Forms.Label lblDataQuantity;
+        private System.Windows.Forms.Label lblDataPriceUnit;
+        private System.Windows.Forms.Label lblDataUnit;
+        private System.Windows.Forms.Label lblDataName;
     }
 }
