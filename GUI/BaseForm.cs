@@ -198,7 +198,7 @@ namespace GUI
 
                     break;
                 case "Import":
-                    DetailPurchaseedIngredient detail = new DetailPurchaseedIngredient();
+                    DetailPurchaseedIngredient detail = new DetailPurchaseedIngredient(_id);
                     OpenComponent( detail );
                     break;
                 case "Order":
