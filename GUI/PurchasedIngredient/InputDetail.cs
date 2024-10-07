@@ -4,15 +4,25 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using Utilities;
 
 namespace GUI.PurchasedIngredient
 {
     public partial class InputDetail : UserControl
     {
-        List<IngredientDTO> _ingredients;
-        public InputDetail()
+        private Timer debounceTimerSupplier;
+        private Timer debounceTimerIngredient;
+        private List<IngredientDTO> _ingredients;
+        private List<SupplierDTO> _suppliers;
+        private List<PurchaseInvoiceDetailDTO> _invoiceDetail;
+        private SupplierDTO _supplier;
+        private string _id;
+        public InputDetail(string employeeId)
         {
             InitializeComponent();
+            _invoiceDetail = new List<PurchaseInvoiceDetailDTO>();
+            _supplier = null;
+            _id = employeeId;
         }
 
         private void InputDetail_Load(object sender, EventArgs e)
@@ -23,7 +33,8 @@ namespace GUI.PurchasedIngredient
 
         private void AddSuppliers(string search = "")
         {
-            foreach (SupplierDTO supplier in new SupplierBLL().GetSuppliers(search))
+            _suppliers = new SupplierBLL().GetSuppliers(search);
+            foreach (SupplierDTO supplier in _suppliers)
             {
                 cmbSupplierName.Items.Add(supplier.SupplierName);
             }
@@ -96,7 +107,8 @@ namespace GUI.PurchasedIngredient
             cmbSupplierName.SelectedIndex = -1;
             txtPriceUnit.Text = "";
             txtUnit.Text = "";
-
+            txtQuantity.Text = "";
+            lblError.Visible = false;
         }
 
         private void cmbSupplierName_Leave(object sender, EventArgs e)
@@ -108,7 +120,48 @@ namespace GUI.PurchasedIngredient
             cmbSupplierName.DroppedDown = false;
         }
 
+
         private void cmbSupplierName_TextUpdate(object sender, EventArgs e)
+        {
+            if (debounceTimerSupplier != null)
+            {
+                debounceTimerSupplier.Stop();
+            }
+            else
+            {
+                debounceTimerSupplier = new Timer();
+                debounceTimerSupplier.Interval = 300;
+                debounceTimerSupplier.Tick += (s, args) =>
+                {
+                    debounceTimerSupplier.Stop();
+                    UpdateSupplier();
+                };
+            }
+
+            debounceTimerSupplier.Start();
+        }
+
+        private void cmbIngredientName_TextUpdate(object sender, EventArgs e)
+        {
+            if (debounceTimerIngredient != null)
+            {
+                debounceTimerIngredient.Stop();
+            }
+            else
+            {
+                debounceTimerIngredient = new Timer();
+                debounceTimerIngredient.Interval = 300;
+                debounceTimerIngredient.Tick += (s, args) =>
+                {
+                    debounceTimerIngredient.Stop();
+                    UpdateIngredient();
+                };
+            }
+
+            debounceTimerIngredient.Start();
+        }
+
+        private void UpdateSupplier()
         {
             string s = cmbSupplierName.Text;
             int cursorPosition = cmbSupplierName.SelectionStart;
@@ -116,7 +169,7 @@ namespace GUI.PurchasedIngredient
             cmbSupplierName.SelectedIndexChanged -= cmbSupplierName_SelectedIndexChanged;
 
             cmbSupplierName.Items.Clear();
-            AddSuppliers(s); 
+            AddSuppliers(s);
 
             cmbSupplierName.SelectedIndex = -1;
             cmbSupplierName.DroppedDown = true;
@@ -125,12 +178,10 @@ namespace GUI.PurchasedIngredient
             cmbSupplierName.SelectionStart = cursorPosition;
             cmbSupplierName.SelectionLength = 0;
 
-
             cmbSupplierName.SelectedIndexChanged += cmbSupplierName_SelectedIndexChanged;
-
         }
 
-        private void cmbIngredientName_TextUpdate(object sender, EventArgs e)
+        private void UpdateIngredient()
         {
             string s = cmbIngredientName.Text;
             int cursorPosition = cmbIngredientName.SelectionStart;
@@ -148,6 +199,122 @@ namespace GUI.PurchasedIngredient
             cmbSupplierName.SelectionLength = 0;
 
             cmbIngredientName.SelectedIndexChanged += cmbIngredientName_SelectedIndexChanged;
+
+            if (cmbIngredientName.Text == "")
+            {
+                txtUnit.Text = "";
+            }
+            else if (cmbIngredientName.Text == cmbIngredientName.Items[0].ToString())
+            {
+                txtUnit.Text = _ingredients[0].IngredientUnit.ToString();
+            }
+        }
+
+        private void cmbIngredientName_Leave(object sender, EventArgs e)
+        {
+            if (cmbIngredientName.Text == "")
+            {
+                AddIngredients();
+            }
+        }
+
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
+            int priceUnit = 0;
+            int quantity = 0;
+            if (new SupplierBLL().IsExist(cmbSupplierName.Text) < 1)
+            {
+                lblError.Text = "Nhà cung cấp không hợp lệ";
+                lblError.Visible = true;
+                return;
+            }
+            else if (_supplier != null && _supplier.SupplierName != cmbSupplierName.Text)
+            {
+                lblError.Text = "Chỉ nhập từ 1 nhà cung cấp";
+                lblError.Visible = true;
+                return;
+            }
+            else
+            {
+                _supplier = new SupplierBLL().GetSupplierByName(cmbSupplierName.Text);
+            }
+            if (new IngredientBLL().IsExistIngredientName(cmbIngredientName.Text) < 1)
+            {
+                lblError.Text = "Nguyên liệu không hợp lệ" + cmbIngredientName.Text;
+                lblError.Visible = true;
+                return;
+            }
+            if (txtPriceUnit.Text == "")
+            {
+                lblError.Text = "Nhập đơn giá!";
+                lblError.Visible = true;
+                return;
+            }
+            else
+            {
+                try
+                {
+                    priceUnit = int.Parse(txtPriceUnit.Text);
+                    if (priceUnit < 0)
+                    {
+                        lblError.Text = "Đơn giá không hợp lệ";
+                        lblError.Visible = true;
+                        return;
+                    }
+                }
+                catch (FormatException)
+                {
+                    lblError.Text = "Đơn giá không đúng định dạng";
+                    lblError.Visible = true;
+                    return;
+                }
+            }
+            if (txtQuantity.Text == "")
+            {
+                lblError.Text = "Nhập số lượng!";
+                lblError.Visible = true;
+                return;
+            }
+            else
+            {
+                try
+                {
+                    quantity = int.Parse(txtQuantity.Text);
+                    if (quantity < 0)
+                    {
+                        lblError.Text = "Số lượng không hợp lệ";
+                        lblError.Visible = true;
+                        return;
+                    }
+                }
+                catch (FormatException)
+                {
+                    lblError.Text = "Số lượng không đúng định dạng";
+                    lblError.Visible = true;
+                    return;
+                }
+            }
+
+            DataGridViewRow newIngredient = new DataGridViewRow();
+            List<IngredientDTO> res = new IngredientBLL().GetIngredient(Ingredient.IngredientName, cmbIngredientName.Text);
+            txtUnit.Text = res[0].IngredientUnit.ToString();
+            dgvList.Rows.Add("  " + cmbIngredientName.Text, "  " + txtUnit.Text, "  " + priceUnit, "  " + quantity);
+            dgvList.Rows.Add(newIngredient);
+            lblError.Visible = false;
+            _invoiceDetail.Add(new PurchaseInvoiceDetailDTO(res[0].IngredientId, quantity, priceUnit));
+        }
+
+        public bool IsCorrect()
+        {
+            return _supplier != null && dgvList.Rows.Count > 0;
+        }
+        public PurchaseInvoiceDTO GetInvoice()
+        {
+            return new PurchaseInvoiceDTO(_id, _supplier.SupplierId, DateTime.Now);
+        }
+        public List<PurchaseInvoiceDetailDTO> GetInvoiceDetail()
+        {
+            return _invoiceDetail;
         }
     }
 }
