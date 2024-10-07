@@ -32,5 +32,35 @@ namespace BLL
             }
             return ingredients;
         }
+
+        public List<IngredientDTO> GetIngredient(Ingredient type, string value)
+        {
+            List<IngredientDTO> ingredients = new List<IngredientDTO>();
+            DataTable data = new IngredientDAL().GetIngredients(type, value);
+            foreach (DataRow row in data.Rows)
+            {
+                if (row != null)
+                {
+                    int quantity;
+                    try
+                    {
+                        quantity = int.Parse(row[6].ToString());
+                    }
+                    catch
+                    {
+                        quantity = 0;
+                    }
+                    ingredients.Add(new IngredientDTO(row[0].ToString(), row[1].ToString(),
+                        Config.GetEnumValueFromName<Unit>(row[2].ToString()), row[3].ToString(),
+                        row[4].ToString(), row[5].ToString(), quantity, Status.Use));
+                }
+            }
+            return ingredients;
+        }
+
+        public int IsExistIngredientName(string name)
+        {
+            return new IngredientDAL().IsExistIngerdientName(name);
+        }
     }
 }
