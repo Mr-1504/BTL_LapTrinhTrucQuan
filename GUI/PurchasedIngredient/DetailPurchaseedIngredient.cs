@@ -14,13 +14,27 @@ namespace GUI.PurchasedIngredient
     public partial class DetailPurchaseedIngredient : Form
     {
         private InputDetail inputDetail;
-        public DetailPurchaseedIngredient()
+        private InvoiceDtail invoice;
+        public DetailPurchaseedIngredient(string employeeId)
         {
             InitializeComponent();
-            inputDetail = new InputDetail();
+            inputDetail = new InputDetail(employeeId);
 
             inputDetail.Location = new Point(0, 90);
             Controls.Add(inputDetail);
+        }
+
+        private void btnContinue_Click(object sender, EventArgs e)
+        {
+            if (inputDetail.IsCorrect())
+            {
+                picStep1Status.Image = Properties.Resources.step1Complete;
+                picStep2Status.Image = Properties.Resources.step2Wait;  
+                invoice = new InvoiceDtail(inputDetail.GetInvoice(), inputDetail.GetInvoiceDetail());
+                invoice.Location = new Point(0, 90);
+                Controls.Remove(inputDetail);
+                Controls.Add(invoice);
+            }
         }
     }
 }
