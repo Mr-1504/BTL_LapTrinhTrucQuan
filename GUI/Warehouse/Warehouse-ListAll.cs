@@ -15,9 +15,12 @@ namespace GUI
         private void Warehouse_ListAll_Load(object sender, EventArgs e)
         {
             dgvTable_PreparingForDisplay();
+            lsb_Update();
+            odb_Update();
         }
 
         //  >> table operation section start
+        private string selectedColumnName = string.Empty;
         private void dgvTable_PreparingForDisplay()
         {
             dgvTable_ShowData();
@@ -27,6 +30,8 @@ namespace GUI
             }
             dgvTable.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
             dgvTable.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+
+            lsb_HintDisplay();
         }
         private void dgvTable_ShowData()
         {
@@ -36,36 +41,61 @@ namespace GUI
         {
             dgvTable.DataSource = BLL_SearchKeywordInColumn(colName, keyword);
         }
-        private void dgvTable_SelectionChanged(object sender, EventArgs e)
+        private void dgvTable_MouseClick(object sender, MouseEventArgs e)
         {
-            selectedCell = dgvTable.CurrentCell;
-            if (selectedCell != null) lsb_lbHint_DisplayCurrentActiveColumn();
+            selectedColumnName = dgvTable.SelectedCells.Count > 0 ? dgvTable.Columns[dgvTable.SelectedCells[0].ColumnIndex].Name : string.Empty;
+            lsb_Update();
+            odb_Update();
         }
         //  ^^ table operation section end
 
         //  >> column ordering's section start
-        private void odr_btnSortUpDown_Click(object sender, EventArgs e)
+        private void odb_Update()
         {
-            if (odr_btnSortUpDown.Tag.ToString() == "doDecend")
+            odb_HintDisplay();
+            odb_btnSortUpDown.Enabled = !string.IsNullOrEmpty(selectedColumnName);
+        }
+        private void odb_HintDisplay()
+        {
+            orb_lbHint.Text = "Sắp xếp " + selectedColumnName;
+        }
+        private void odb_btnSortUpDown_Click(object sender, EventArgs e)
+        {
+            if (odb_btnSortUpDown.Tag.ToString() == "doDecend")
             {
-                odr_btnSortUpDown.BackgroundImage = GUI.Properties.Resources.sortBigger;
-                odr_btnSortUpDown.Tag = "doAscend";
+                BLL_OrderByColumn(selectedColumnName, false);
+                odb_btnSortUpDown.BackgroundImage = GUI.Properties.Resources.sortBigger;
+                odb_btnSortUpDown.Tag = "doAscend";
             }
-            else if (odr_btnSortUpDown.Tag.ToString() == "doAscend")
+            else if (odb_btnSortUpDown.Tag.ToString() == "doAscend")
             {
-                odr_btnSortUpDown.BackgroundImage = GUI.Properties.Resources.sortSmaller;
-                odr_btnSortUpDown.Tag = "doDecend";
+                BLL_OrderByColumn(selectedColumnName, true);
+                odb_btnSortUpDown.BackgroundImage = GUI.Properties.Resources.sortSmaller;
+                odb_btnSortUpDown.Tag = "doDecend";
             }
+            dgvTable_ShowData();
         }
         //  ^^ column ordering's section end
 
         //  >> column search's section start
-        private DataGridViewCell selectedCell = null;
-            //  chưa có BLL để tìm kiếm (không cấp bách)
+        private void lsb_Update()
+        {
+            lsb_HintDisplay();
+        }
+        private void lsb_HintDisplay()
+        {
+            lsb_lbHint.Visible = string.IsNullOrEmpty(lsb_txbSearchbox.Text);
+            lsb_lbHint.Text = "Tìm kiếm " + selectedColumnName;
+        }
         private void lsb_func_EnterKeyword()
         {
-            lsb_lbHint.Text = string.Empty;
+            lsb_lbHint.Visible = false;
             lsb_txbSearchbox.Focus();
+        }
+        private void lsb_txbSearchbox_TextChanged(object sender, EventArgs e)
+        {
+            BLL_SearchKeywordInColumn(selectedColumnName, lsb_txbSearchbox.Text);
+            dgvTable_ShowData();
         }
         private void pnLocalSearchBar_Click(object sender, EventArgs e)
         {
@@ -77,20 +107,11 @@ namespace GUI
         }
         private void lsb_txbSearchbox_Enter(object sender, EventArgs e)
         {
-            lsb_lbHint.Text = string.Empty;
+            lsb_func_EnterKeyword();
         }
         private void lsb_txbSearchbox_Leave(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(lsb_txbSearchbox.Text)) lsb_lbHint_DisplayCurrentActiveColumn();
-        }
-        private void lsb_txbSearchbox_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter) ;
-        }
-        private void lsb_lbHint_DisplayCurrentActiveColumn()
-        {
-            lsb_lbHint.Visible = string.IsNullOrEmpty(lsb_txbSearchbox.Text);
-            lsb_lbHint.Text = "Tìm kiếm " + dgvTable.Columns[selectedCell.ColumnIndex].Name;
+            lsb_HintDisplay();
         }
         //  ^^ column search's section end
 

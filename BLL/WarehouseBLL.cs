@@ -10,23 +10,26 @@ namespace BLL
     {
         public static class ListAll
         {
-            private static string TableQuery = "select MaNguyenLieu, TenNguyenLieu, DonViTinh, Soluong from NguyenLieu ";
+            private static string TableQuery = "select MaNguyenLieu, TenNguyenLieu, DonViTinh, Soluong from NguyenLieu";
             private static string SearchQuery = string.Empty;
             private static string OrderQuery = string.Empty;
 
             public static void BLL_SetValueDefault()
             {
-                TableQuery = "select MaNguyenLieu, TenNguyenLieu, DonViTinh, Soluong from NguyenLieu ";
+                TableQuery = "select MaNguyenLieu, TenNguyenLieu, DonViTinh, Soluong from NguyenLieu";
                 SearchQuery = string.Empty;
                 OrderQuery = string.Empty;
             }
 
-            public static DataTable BLL_GetTable() { return SqlHelper.ExecuteReader(TableQuery + SearchQuery + OrderQuery, new object[] { }); }
+            public static DataTable BLL_GetTable() 
+            { 
+                return SqlHelper.ExecuteReader(TableQuery + SearchQuery + OrderQuery, new object[] { }); 
+            }
             public static DataTable BLL_SearchKeywordInColumn(string colName = "", string keyword = "")
             {
                 if (!string.IsNullOrEmpty(colName) && !string.IsNullOrEmpty(keyword))
                 {
-                    SearchQuery = $"where {colName} like '%{keyword}%'";
+                    SearchQuery = $" where {colName} like N'%{keyword}%'";
                 }
                 else
                 {
@@ -36,7 +39,7 @@ namespace BLL
             }
             public static DataTable BLL_OrderByColumn(string colName, Boolean ascend)
             {
-                OrderQuery = $"order by {colName} {(ascend ? "ASC" : "DESC")}";
+                OrderQuery = $" order by {colName} {(ascend ? "ASC" : "DESC")}";
                 return BLL_GetTable();
             }
         }
