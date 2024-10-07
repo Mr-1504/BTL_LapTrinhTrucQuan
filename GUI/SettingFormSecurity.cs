@@ -108,7 +108,7 @@ namespace GUI
             string storedPasswordHash = _account.GetPasswordHash(_employeeId);
             if ((storedPasswordHash != HashPassword(currentPassword)))
             {
-                MessageBox.Show("Mật khẩu hiện tại không chính xác.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 _loginCout++;
                 if (_loginCout > 3)
                 {
@@ -116,6 +116,7 @@ namespace GUI
                     Application.Exit();
                     return;
                 }
+                MessageBox.Show("Mật khẩu hiện tại không chính xác.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
 
             }

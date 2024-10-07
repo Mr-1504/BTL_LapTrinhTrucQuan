@@ -295,5 +295,10 @@
   <ItemGroup>
     <None Include="Resources\Search.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\AvatarImage\QL20240001.JPG" />
+    <Content Include="Resources\AvatarImage\KH20240001.JPG" />
+    <Content Include="Resources\AvatarImage\LT20240001.JPG" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
