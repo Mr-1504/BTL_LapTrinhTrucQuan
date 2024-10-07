@@ -3,7 +3,9 @@ using DTO;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using Utilities;
 namespace GUI
 {
@@ -12,11 +14,33 @@ namespace GUI
         private EmployeeDAL _employeeDAL = new EmployeeDAL();
         private string _employeeId ;
         private DataTable _dt = new DataTable();
+        //path ảnh
+        string imagePath;
         public SettingFormEditProfile(string employeeId)
         {
             _employeeId = employeeId;
             _dt = _employeeDAL.GetEmployee(Employee.EmployeeId, _employeeId);
+            imagePath = $@"..\..\Resources\AvatarImage\{_employeeId}.JPG";
             InitializeComponent();
+            picEditImage.MouseEnter += new EventHandler(Picture_MouseEnter);
+            picEditImage.MouseLeave += new EventHandler(Picture_MouseLeave);
+        }
+        private void Picture_MouseEnter(object sender, EventArgs e)
+        {
+            PictureBox pic = sender as PictureBox;
+            if (pic != null)
+            {
+                pic.Image = Properties.Resources.ResourceManager.GetObject("picEditInformationBlue") as Image;
+            }
+        }
+
+        private void Picture_MouseLeave(object sender, EventArgs e)
+        {
+            PictureBox pic = sender as PictureBox;
+            if (pic != null)
+            {
+                pic.Image = Properties.Resources.ResourceManager.GetObject("picEditInformationGray") as Image;
+            }
         }
 
         private void txtName_TextChanged(object sender, EventArgs e)
@@ -47,13 +71,22 @@ namespace GUI
                 else
                 {
                     txtDateofBirth.Text = "Invalid Date";
+                }// Set the Image property of picAvatar
+                if (System.IO.File.Exists(imagePath))
+                {
+                    picAvatar.Image = Image.FromFile(imagePath);
+                    
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi không tìm thấy ảnh.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
-                
+
             }
             else
             {
-                MessageBox.Show("No data found for the specified employee.","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Không load được data.","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 
@@ -72,7 +105,7 @@ namespace GUI
                 Gender gender;
                 if (!genderMapping.TryGetValue(txtGender.Text, out gender))
                 {
-                    MessageBox.Show("Invalid gender value. Please enter 'Nam', 'Nữ', or 'Khác'.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Lỗi giới tính. Nhập 'Nam', 'Nữ', or 'Khác'.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 EmployeeDTO employee = new EmployeeDTO(_employeeId,
@@ -111,7 +144,7 @@ namespace GUI
             DateTime dateOfBirth;
             if (!DateTime.TryParseExact(txtDateofBirth.Text, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out dateOfBirth))
             {
-                MessageBox.Show("Invalid date format. Please use dd/MM/yyyy.");
+                MessageBox.Show("Lỗi định dạng. Sử dụng dd/MM/yyyy.");
                 return false;
             }
             if (string.IsNullOrWhiteSpace(txtCountry.Text))
@@ -121,16 +154,61 @@ namespace GUI
             }
             if (string.IsNullOrWhiteSpace(txtPhone.Text))
             {
-                MessageBox.Show("Phone number cannot be empty.");
+                MessageBox.Show("Số điện thoại không được để trống.");
                 return false;
             }
             if ((txtPhone.Text).Length <8)
             {
-                MessageBox.Show("Phone number có hơn 8 kí tự.");
+                MessageBox.Show("Số điện thoại có hơn 8 kí tự.");
                 return false;
             }
             return true;
         }
 
+        private void picAvatar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void picEditImage_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.png) | *.jpg; *.jpeg; *.png";
+                openFileDialog.FilterIndex = 1;
+                openFileDialog.RestoreDirectory = true;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    //lấy đường đãn file
+                    string selectedFilePath = openFileDialog.FileName;
+
+                    //  đường dẫn mặc định
+                    string targetPath = $@"..\..\Resources\AvatarImage\{_employeeId}.JPG";
+
+                    try
+                    {
+                        // Dispose the current image to release the file
+                        if (picAvatar.Image != null)
+                        {
+                            picAvatar.Image.Dispose();
+                            picAvatar.Image = null;
+                        }
+
+                        // copy file vào project
+                        System.IO.File.Copy(selectedFilePath, targetPath, true);
+
+                        picAvatar.Image = Image.FromFile(targetPath);
+
+                        MessageBox.Show("Thay đổi ảnh thành công.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Lỗi cập nhật ảnh: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                }
+            }
+        }
     }
 }

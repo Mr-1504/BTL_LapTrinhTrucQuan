@@ -45,12 +45,17 @@
             this.lbDateofBirth = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.lbname = new System.Windows.Forms.Label();
+            this.picEditImage = new System.Windows.Forms.PictureBox();
+            this.pnLine = new System.Windows.Forms.Panel();
             this.pnEditProfile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEditImage)).BeginInit();
             this.SuspendLayout();
             // 
             // pnEditProfile
             // 
+            this.pnEditProfile.Controls.Add(this.pnLine);
+            this.pnEditProfile.Controls.Add(this.picEditImage);
             this.pnEditProfile.Controls.Add(this.btnSave);
             this.pnEditProfile.Controls.Add(this.picAvatar);
             this.pnEditProfile.Controls.Add(this.txtGender);
@@ -88,6 +93,7 @@
             // 
             // picAvatar
             // 
+            this.picAvatar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picAvatar.Image = global::GUI.Properties.Resources.logo;
             this.picAvatar.Location = new System.Drawing.Point(62, 28);
             this.picAvatar.Margin = new System.Windows.Forms.Padding(2);
@@ -96,6 +102,7 @@
             this.picAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picAvatar.TabIndex = 14;
             this.picAvatar.TabStop = false;
+            this.picAvatar.Click += new System.EventHandler(this.picAvatar_Click);
             // 
             // txtGender
             // 
@@ -238,6 +245,27 @@
             this.lbname.TabIndex = 0;
             this.lbname.Text = "Họ và tên";
             // 
+            // picEditImage
+            // 
+            this.picEditImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picEditImage.Image = global::GUI.Properties.Resources.picEditInformationGray;
+            this.picEditImage.Location = new System.Drawing.Point(199, 221);
+            this.picEditImage.Name = "picEditImage";
+            this.picEditImage.Size = new System.Drawing.Size(30, 30);
+            this.picEditImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picEditImage.TabIndex = 16;
+            this.picEditImage.TabStop = false;
+            this.picEditImage.Click += new System.EventHandler(this.picEditImage_Click);
+            // 
+            // pnLine
+            // 
+            this.pnLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.pnLine.Location = new System.Drawing.Point(288, -20);
+            this.pnLine.Margin = new System.Windows.Forms.Padding(2);
+            this.pnLine.Name = "pnLine";
+            this.pnLine.Size = new System.Drawing.Size(2, 650);
+            this.pnLine.TabIndex = 17;
+            // 
             // SettingFormEditProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -251,6 +279,7 @@
             this.pnEditProfile.ResumeLayout(false);
             this.pnEditProfile.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEditImage)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -274,5 +303,7 @@
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label lbname;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.PictureBox picEditImage;
+        private System.Windows.Forms.Panel pnLine;
     }
 }
