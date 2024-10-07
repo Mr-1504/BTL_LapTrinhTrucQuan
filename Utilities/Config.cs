@@ -32,10 +32,7 @@ namespace Utilities
         Manager,
 
         [Description("KH")]
-        Warehouse,
-
-        [Description("AD")]
-        Admin
+        Warehouse
     }
 
     public enum SupplierType
