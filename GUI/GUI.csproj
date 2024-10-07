@@ -66,6 +66,12 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MessageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageForm.Designer.cs">
+      <DependentUpon>MessageForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PurchasedIngredient\DetailPurchaseedIngredient.cs">
@@ -79,6 +85,12 @@
     </Compile>
     <Compile Include="PurchasedIngredient\InputDetail.Designer.cs">
       <DependentUpon>InputDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PurchasedIngredient\InvoiceDtail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PurchasedIngredient\InvoiceDtail.Designer.cs">
+      <DependentUpon>InvoiceDtail.cs</DependentUpon>
     </Compile>
     <Compile Include="SettingForm.cs">
       <SubType>Form</SubType>
@@ -119,6 +131,9 @@
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MessageForm.resx">
+      <DependentUpon>MessageForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -129,6 +144,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PurchasedIngredient\InputDetail.resx">
       <DependentUpon>InputDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PurchasedIngredient\InvoiceDtail.resx">
+      <DependentUpon>InvoiceDtail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SettingForm.resx">
       <DependentUpon>SettingForm.cs</DependentUpon>
@@ -357,6 +375,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ListIngrdient.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnCancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnContinue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnReturn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\No.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Yes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pnlInvoice.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
