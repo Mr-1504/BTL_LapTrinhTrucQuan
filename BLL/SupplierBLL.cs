@@ -20,5 +20,15 @@ namespace BLL
             }
             return suppliers;
         }
+
+        public int IsExist(string value)
+        {
+            return new SupplierDAL().IsExist(value);
+        }
+        public SupplierDTO GetSupplierByName(string name)
+        {
+            DataTable data = new SupplierDAL().GetSupplierByName(name);
+            return new SupplierDTO(data.Rows[0][0].ToString(), data.Rows[0][1].ToString(), data.Rows[0][2].ToString(), data.Rows[0][3].ToString(), Status.Use);
+        }
     }
 }
