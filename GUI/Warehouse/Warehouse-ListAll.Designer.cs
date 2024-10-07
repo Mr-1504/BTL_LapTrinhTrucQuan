@@ -164,12 +164,12 @@
             this.dgvTable.AllowUserToDeleteRows = false;
             this.dgvTable.AllowUserToResizeColumns = false;
             this.dgvTable.AllowUserToResizeRows = false;
-            this.dgvTable.BackgroundColor = System.Drawing.Color.White;
+            this.dgvTable.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
@@ -179,8 +179,9 @@
             this.dgvTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvTable.ColumnHeadersHeight = 32;
             this.dgvTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvTable.Cursor = System.Windows.Forms.Cursors.Cross;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 5);
@@ -188,13 +189,14 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvTable.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvTable.Location = new System.Drawing.Point(0, 70);
+            this.dgvTable.Location = new System.Drawing.Point(27, 70);
             this.dgvTable.MultiSelect = false;
             this.dgvTable.Name = "dgvTable";
             this.dgvTable.ReadOnly = true;
+            this.dgvTable.RowHeadersVisible = false;
             this.dgvTable.RowTemplate.Height = 32;
             this.dgvTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvTable.Size = new System.Drawing.Size(1370, 675);
+            this.dgvTable.Size = new System.Drawing.Size(1323, 675);
             this.dgvTable.TabIndex = 2;
             this.dgvTable.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvTable_MouseClick);
             // 

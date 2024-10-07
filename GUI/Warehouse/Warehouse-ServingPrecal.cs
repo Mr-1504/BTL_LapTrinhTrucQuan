@@ -23,5 +23,16 @@ namespace GUI.Warehouse
         {
             MessageBox.Show("To Warehouse_ListAll");
         }
+
+        private void Warehouse_ServingPrecal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        //  >> MenuList section start
+        //  ^^ MenuList section end
+
+        //  >> Precal section start
+        //  ^^ Precal section end
     }
 }

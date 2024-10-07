@@ -252,6 +252,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Warehouse_ServingPrecal";
             this.Text = "Warehouse_ServingPrecal";
+            this.Load += new System.EventHandler(this.Warehouse_ServingPrecal_Load);
             this.pnMenuListing.ResumeLayout(false);
             this.pnMenuListing.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ml_dgvMenu)).EndInit();
