@@ -18,6 +18,7 @@ namespace GUI
     {
         private bool _seen;
         private bool _seen1;
+        private bool _seen2;
         private AccountDAL _account = new AccountDAL();
         private string _employeeId;
         private int _loginCout=0;
@@ -27,6 +28,7 @@ namespace GUI
             _employeeId = employeeId;
             _seen = false;
             _seen1 = false;
+            _seen2 = false;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -63,7 +65,19 @@ namespace GUI
             }
             _seen1 = !_seen1;
         }
-
+        private void picSeen3_Click(object sender, EventArgs e)
+        {
+            txtConfirmPass.UseSystemPasswordChar = !txtConfirmPass.UseSystemPasswordChar;
+            if (_seen2)
+            {
+                picSeen3.BackgroundImage = Properties.Resources.Seen;
+            }
+            else
+            {
+                picSeen3.BackgroundImage = Properties.Resources.UnSeen;
+            }
+            _seen2 = !_seen2;
+        }
         private void lbNewPassbtn_Click(object sender, EventArgs e)
         {
 
@@ -84,30 +98,33 @@ namespace GUI
             string newPassword = txtNewPass.Text;
             string confirmPassword = txtConfirmPass.Text;
 
+            // Kiểm tra nếu các trường mật khẩu trống
+            if (string.IsNullOrWhiteSpace(currentPassword) || string.IsNullOrWhiteSpace(newPassword) || string.IsNullOrWhiteSpace(confirmPassword))
+            {
+                MessageBox.Show("Điền đầy đủ thông tin.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             // Kiểm tra mật khẩu hiện tại
             string storedPasswordHash = _account.GetPasswordHash(_employeeId);
             if ((storedPasswordHash != HashPassword(currentPassword)))
             {
-                //_loginCout++;
-                //if (_loginCout <= 3)
-                //{
-                //    MessageBox.Show("Current password is incorrect.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //    return;
-                //}
-                //else
-                //{
-                //    MessageBox.Show("You have entered the wrong password 3 times, please try again later", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //    this.Close();
-                //}
-                MessageBox.Show("Current password is incorrect.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Mật khẩu hiện tại không chính xác.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                _loginCout++;
+                if (_loginCout > 3)
+                {
+                    MessageBox.Show("Bạn đã nhập quá nhiều lần thử lại sau.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Application.Exit();
+                    return;
+                }
                 return;
 
             }
 
+
             // Kiểm tra mật khẩu mới và xác nhận mật khẩu
             if (newPassword != confirmPassword)
             {
-                MessageBox.Show("New password and confirm password do not match.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Mật khẩu mới không khớp.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -117,11 +134,11 @@ namespace GUI
 
             if (result == 1)
             {
-                MessageBox.Show("Password changed successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Đổi mật khẩu thành công.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Failed to change password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Đổi mật khẩu không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -138,5 +155,7 @@ namespace GUI
                 return builder.ToString();
             }
         }
+
+
     }
 }
