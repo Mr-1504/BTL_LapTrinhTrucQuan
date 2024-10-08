@@ -277,5 +277,10 @@ namespace GUI
         {
 
         }
+
+        private void picHome_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

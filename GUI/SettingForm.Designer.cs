@@ -33,13 +33,13 @@
             this.slidePanel1 = new System.Windows.Forms.Panel();
             this.pnallsettring = new System.Windows.Forms.Panel();
             this.pnItems = new System.Windows.Forms.Panel();
-            this.pnLine = new System.Windows.Forms.Panel();
             this.pnoption3 = new System.Windows.Forms.Panel();
             this.btnSecurity = new System.Windows.Forms.Button();
             this.slidePanel3 = new System.Windows.Forms.Panel();
             this.pnoption2 = new System.Windows.Forms.Panel();
             this.btnOption = new System.Windows.Forms.Button();
             this.slidePanel2 = new System.Windows.Forms.Panel();
+            this.pnLine = new System.Windows.Forms.Panel();
             this.pnoption1.SuspendLayout();
             this.pnallsettring.SuspendLayout();
             this.pnoption3.SuspendLayout();
@@ -105,15 +105,6 @@
             this.pnItems.Name = "pnItems";
             this.pnItems.Size = new System.Drawing.Size(1316, 684);
             this.pnItems.TabIndex = 7;
-            // 
-            // pnLine
-            // 
-            this.pnLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.pnLine.Location = new System.Drawing.Point(12, 85);
-            this.pnLine.Margin = new System.Windows.Forms.Padding(2);
-            this.pnLine.Name = "pnLine";
-            this.pnLine.Size = new System.Drawing.Size(1315, 2);
-            this.pnLine.TabIndex = 6;
             // 
             // pnoption3
             // 
@@ -191,6 +182,15 @@
             this.slidePanel2.Visible = false;
             this.slidePanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.slidePanel2_Paint);
             // 
+            // pnLine
+            // 
+            this.pnLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.pnLine.Location = new System.Drawing.Point(12, 85);
+            this.pnLine.Margin = new System.Windows.Forms.Padding(2);
+            this.pnLine.Name = "pnLine";
+            this.pnLine.Size = new System.Drawing.Size(1315, 2);
+            this.pnLine.TabIndex = 6;
+            // 
             // SettingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -224,7 +224,7 @@
         private System.Windows.Forms.Panel pnoption2;
         private System.Windows.Forms.Button btnOption;
         private System.Windows.Forms.Panel slidePanel2;
-        private System.Windows.Forms.Panel pnLine;
         private System.Windows.Forms.Panel pnItems;
+        private System.Windows.Forms.Panel pnLine;
     }
 }
