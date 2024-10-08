@@ -84,8 +84,32 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MessageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageForm.Designer.cs">
+      <DependentUpon>MessageForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PurchasedIngredient\DetailPurchaseedIngredient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PurchasedIngredient\DetailPurchaseedIngredient.Designer.cs">
+      <DependentUpon>DetailPurchaseedIngredient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PurchasedIngredient\InputDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PurchasedIngredient\InputDetail.Designer.cs">
+      <DependentUpon>InputDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PurchasedIngredient\InvoiceDtail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PurchasedIngredient\InvoiceDtail.Designer.cs">
+      <DependentUpon>InvoiceDtail.cs</DependentUpon>
+    </Compile>
     <Compile Include="SettingForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,10 +158,22 @@
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MessageForm.resx">
+      <DependentUpon>MessageForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PurchasedIngredient\DetailPurchaseedIngredient.resx">
+      <DependentUpon>DetailPurchaseedIngredient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PurchasedIngredient\InputDetail.resx">
+      <DependentUpon>InputDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PurchasedIngredient\InvoiceDtail.resx">
+      <DependentUpon>InvoiceDtail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SettingForm.resx">
       <DependentUpon>SettingForm.cs</DependentUpon>
@@ -323,6 +359,7 @@
     <None Include="Resources\Search.png" />
   </ItemGroup>
   <ItemGroup>
+
     <None Include="Resources\btn.png" />
   </ItemGroup>
   <ItemGroup>
@@ -347,6 +384,72 @@
     <Content Include="Resources\AvatarImage\KH20230001.JPG" />
     <Content Include="Resources\AvatarImage\KH20230002.JPG" />
     <Content Include="Resources\AvatarImage\KH20230003.JPG" />
+
+    <None Include="Resources\step1Wait.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\step1Complete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\step2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\step2Wait.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrowRight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bgImport.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bgResetInput.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bgResetInputHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnConfirmInput.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnConfirmInputHover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pnltext.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bgQuantityIngredientInput.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cmbSupplierName.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cmbIngredientImput.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ListIngrdient.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnCancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnContinue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnReturn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\No.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Yes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pnlInvoice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\AvatarImage\QL20240001.JPG" />
+
     <Content Include="Resources\AvatarImage\KH20240001.JPG" />
     <Content Include="Resources\AvatarImage\LT20240001.JPG" />
     <Content Include="Resources\AvatarImage\QL20240001.JPG" />
