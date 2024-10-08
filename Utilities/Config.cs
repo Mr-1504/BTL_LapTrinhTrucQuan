@@ -1,7 +1,9 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.ComponentModel;
+using System.Data;
 using System.Reflection;
+using System.Windows.Forms;
 
 
 namespace Utilities
@@ -85,7 +87,7 @@ namespace Utilities
         NoLongerWorking,
 
         [Description("Đang làm việc")]
-        CurrentlyWorking     
+        CurrentlyWorking
     }
 
     public enum Gender
@@ -190,7 +192,7 @@ namespace Utilities
         {
             if (Enum.TryParse<T>(name, out var result))
             {
-                return result; 
+                return result;
             }
             else
             {
@@ -209,6 +211,35 @@ namespace Utilities
                 }
             }
             return false; // Light mode
+        }
+
+        public static DataTable ConvertToDataTable(DataGridView dgv)
+        {
+            DataTable dt = new DataTable();
+
+            foreach (DataGridViewColumn column in dgv.Columns)
+            {
+                dt.Columns.Add(column.HeaderText);
+            }
+
+            foreach (DataGridViewRow row in dgv.Rows)
+            {
+                if (row.IsNewRow) continue;
+
+                DataRow newRow = dt.NewRow();
+
+                for (int i = 0; i < dgv.Columns.Count; i++)
+                {
+                    newRow[i] = row.Cells[i].Value;
+                }
+
+                dt.Rows.Add(newRow);
+            }
+            foreach (DataRow row in dt.Rows)
+            {
+                Console.WriteLine(row.ToString());
+            }
+            return dt;
         }
     }
 }
