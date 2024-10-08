@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using System.Windows.Forms;
 using Utilities;
 
@@ -58,11 +59,10 @@ namespace BLL
                 SearchQuery = string.IsNullOrEmpty(keyword) ? string.Empty : $" and (MaMonAn like N'%{keyword}%' or TenMonAn like N'%{keyword}%' or DonGia like N'%{keyword}%')";
                 return BLL_GetMenu();
             }
-            public static void BLL_GetPrecalResult(ref List<string> dishIDs, ref List<int> out_dishCount, ref List<string> out_lowIngredientNames)
+            public static void BLL_GetPrecalResult(List<string> dishIDs, ref List<int> out_dishCount, ref List<string> out_lowIngredientNames)
             {
                 string dishList = MakeStringForSQLQuery(dishIDs);
-                DataGridView temp = new DataGridView();
-                temp.DataSource = SqlHelper.ExecuteReader(
+                DataTable precalTable = SqlHelper.ExecuteReader(
                     "with InStock as (" +
                         "select NguyenLieu.TenNguyenLieu, NguyenLieu.MaNguyenLieu, NguyenLieu.SoLuong as TrongKho " +
                         "from NguyenLieu join NguyenLieuMonAn on NguyenLieu.MaNguyenLieu = NguyenLieuMonAn.MaNguyenLieu " +
@@ -73,11 +73,41 @@ namespace BLL
                        $"where MaMonAn in {dishList} " +
                         "group by MaNguyenLieu " +
                      ") " +
-                     "select TenNguyenLieu, InStock.MaNguyenLieu, cast((TrongKho / CanDung) as int) as Precal " +
+                     "select InStock.MaNguyenLieu, min(cast((TrongKho / CanDung) as int)) as Precal, TenNguyenLieu " +
                      "from InStock join Requiring on InStock.MaNguyenLieu = Requiring.MaNguyenLieu " +
+                     "group by TenNguyenLieu, InStock.MaNguyenLieu " +
                      "order by Precal ASC", new object[] { });
 
-                // todo: xuất tên với số đĩa tính được ra 2 List<> bên trên
+                //  * trong trường hợp precalTable có data == đang có món cần tính
+                /*
+                 * giái thích cách tính:
+                 * precalTable trên tính lượng đĩa có thể phục vụ trên tổng lượng mỗi nguyên liệu cần thiết
+                 * lấy danh sách nguyên liệu trong precalTable làm danh mục tìm kiếm (ingrIDs)
+                 * lập query nguyên liệu cần thiết để nấu món A, kiểm tra xem món A dùng nguyên liệu nào trong ingrIDs, lấy index tìm kiếm và gán giá trị
+                 * thuật toán sử dụng là tham lam, tỉ lệ sử dụng nguyên liệu giữa hai đĩa trùng nguyên liệu là 1:1
+                 */
+                if (precalTable != null)
+                {
+                    int assigningIndex = 0;
+                    foreach (string dishID in dishIDs)
+                    {
+                        //  lấy danh sách nguyên liệu của món
+                        DataTable dishIngrList = SqlHelper.ExecuteReader($"select MaNguyenLieu from NguyenLieuMonAn where MaMonAn = N'{dishID}'", new object[] { });
+                        List<string> dishIngrs = new List<string>();
+                        foreach(DataRow it in dishIngrList.Rows) dishIngrs.Add(it[0].ToString());
+                        
+                        //  kiểm tra sự xuất hiện của nguyên liệu theo thứ tự tham lam
+                        foreach(DataRow it in precalTable.Rows)
+                            if (dishIngrs.Contains(it[0].ToString()))
+                            {
+                                out_dishCount[assigningIndex] = int.Parse(it[1].ToString());
+                                out_lowIngredientNames[assigningIndex] = it[2].ToString();
+                                break;
+                            }
+
+                        assigningIndex++;
+                    }
+                }
             }
         }
 

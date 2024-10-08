@@ -98,9 +98,14 @@ namespace GUI.Warehouse
         }
         private void pc_dgvPrecal_ShowData()
         {
-            List<int> dishCount = new List<int>();
-            List<string> lowIngredientNames = new List<string>();
-            BLL_GetPrecalResult(ref selectedDishIDs, ref dishCount, ref lowIngredientNames);
+            List<int> dishCount = new List<int>(new int[selectedDishIDs.Count]);
+            List<string> lowIngredientNames = new List<string>(new string[selectedDishIDs.Count]);
+            BLL_GetPrecalResult(selectedDishIDs, ref dishCount, ref lowIngredientNames);
+            for(int i=0; i<selectedDishIDs.Count; i++)
+            {
+                pc_dgvPrecal.Rows[i].Cells[2].Value = dishCount[i]; 
+                pc_dgvPrecal.Rows[i].Cells[3].Value = lowIngredientNames[i];
+            }
         }
         private void pc_dgvPrecal_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
