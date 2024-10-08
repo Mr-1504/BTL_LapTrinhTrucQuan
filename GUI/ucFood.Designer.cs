@@ -56,6 +56,7 @@
             this.pnlFoodItem.Controls.Add(this.lblPriceValue);
             this.pnlFoodItem.Controls.Add(this.lblPrice);
             this.pnlFoodItem.Controls.Add(this.picFood);
+            this.pnlFoodItem.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlFoodItem.Location = new System.Drawing.Point(0, 0);
             this.pnlFoodItem.Margin = new System.Windows.Forms.Padding(0);
             this.pnlFoodItem.Name = "pnlFoodItem";
@@ -68,7 +69,7 @@
             this.lblFoodID.AutoSize = true;
             this.lblFoodID.Location = new System.Drawing.Point(10, 18);
             this.lblFoodID.Name = "lblFoodID";
-            this.lblFoodID.Size = new System.Drawing.Size(35, 13);
+            this.lblFoodID.Size = new System.Drawing.Size(31, 15);
             this.lblFoodID.TabIndex = 10;
             this.lblFoodID.Text = "label1";
             // 
@@ -108,36 +109,42 @@
             // lblNameFood
             // 
             this.lblNameFood.AutoSize = true;
+            this.lblNameFood.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNameFood.Location = new System.Drawing.Point(8, 133);
             this.lblNameFood.Name = "lblNameFood";
-            this.lblNameFood.Size = new System.Drawing.Size(47, 13);
+            this.lblNameFood.Size = new System.Drawing.Size(54, 15);
             this.lblNameFood.TabIndex = 4;
             this.lblNameFood.Text = "Vịt Quay";
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.lblName.Location = new System.Drawing.Point(10, 101);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(35, 13);
+            this.lblName.Size = new System.Drawing.Size(32, 15);
             this.lblName.TabIndex = 3;
             this.lblName.Text = "Name";
             // 
             // lblPriceValue
             // 
             this.lblPriceValue.AutoSize = true;
+            this.lblPriceValue.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPriceValue.Location = new System.Drawing.Point(10, 74);
             this.lblPriceValue.Name = "lblPriceValue";
-            this.lblPriceValue.Size = new System.Drawing.Size(25, 13);
+            this.lblPriceValue.Size = new System.Drawing.Size(28, 15);
             this.lblPriceValue.TabIndex = 2;
             this.lblPriceValue.Text = "$52";
             // 
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
+            this.lblPrice.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrice.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.lblPrice.Location = new System.Drawing.Point(10, 50);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(31, 13);
+            this.lblPrice.Size = new System.Drawing.Size(28, 15);
             this.lblPrice.TabIndex = 1;
             this.lblPrice.Text = "Price";
             // 

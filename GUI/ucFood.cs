@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlTypes;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
@@ -22,10 +23,10 @@ namespace GUI
             get => lblFoodID.Text;
             set => lblFoodID.Text = value;
         }
-        public string _FPrice
+        public int _FPrice
         {
-            get => lblPriceValue.Text;
-            set => lblPriceValue.Text = value;
+            get => int.Parse(lblPriceValue.Text);
+            set => lblPriceValue.Text = value.ToString();
         }
         public string _FName
         {
@@ -65,22 +66,24 @@ namespace GUI
                 this._count = 0;
             }
             lblCountFood.Text = _count.ToString();
-            OnFoodUpdated();
+            // OnFoodUpdated();
+            FoodUpdated(this, new FoodUpdatedEventArgs(_idFood, _FName, _FPrice, _count));
         }
 
         private void btnPlus_Click(object sender, EventArgs e)
         {
             _count++;
             lblCountFood.Text = _count.ToString();
-            OnFoodUpdated();
+            //OnFoodUpdated();
+            FoodUpdated(this, new FoodUpdatedEventArgs(_idFood, _FName, _FPrice, _count));
         }
         protected virtual void OnFoodUpdated()
         {
             if (FoodUpdated != null)
             {
-                decimal price = decimal.Parse(_FPrice);
+                decimal price = _FPrice;
                 decimal totalPrice = price * _count;
-                FoodUpdated(this,new FoodUpdatedEventArgs(_idFood,_FName,totalPrice.ToString(),_count));
+                FoodUpdated(this,new FoodUpdatedEventArgs(_idFood,_FName,(int)price,_count));
             }
         }
 

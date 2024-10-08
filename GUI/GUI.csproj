@@ -244,5 +244,17 @@
   <ItemGroup>
     <None Include="Resources\Previous.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dgvHeader.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dgvHearder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dgvHeader1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

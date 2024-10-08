@@ -21,239 +21,60 @@ namespace GUI
         private int _pageSize = 6;
         private int _totalPages = 1;
         private FoodBLL _foodBLL = new FoodBLL();
-        private List<Label> foodNameLabels = new List<Label>();
-        private List<Label> quantityLabels = new List<Label>();
-        private List<Label> priceLabels = new List<Label>();
+
         public frmOrders()
         {
             InitializeComponent();
 
+            this.DoubleBuffered = true;
+            SetupDataGridView();
+
+        }
+        private void SetupDataGridView()
+        {
+            
+            dgvOrders.Columns.Clear();
+
            
 
            
-        }     
+            DataGridViewTextBoxColumn foodNameColumn = new DataGridViewTextBoxColumn();
+            foodNameColumn.HeaderText = "Tên món";
+            foodNameColumn.Name = "FoodName";
+            foodNameColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvOrders.Columns.Add(foodNameColumn);
 
+            
+            DataGridViewTextBoxColumn quantityColumn = new DataGridViewTextBoxColumn();
+            quantityColumn.HeaderText = "Số lượng";
+            quantityColumn.Name = "Quantity";
+            quantityColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill; 
+            dgvOrders.Columns.Add(quantityColumn);
 
-        private void UcFood_FoodUpdated(object sender, FoodUpdatedEventArgs e)
-        {
-            UpdateOrderPanels(e.FoodName, e.Quantity, e.FoodPrice);
+            
+            DataGridViewTextBoxColumn totalPriceColumn = new DataGridViewTextBoxColumn();
+            totalPriceColumn.HeaderText = "Thành tiền";
+            totalPriceColumn.Name = "TotalPrice";
+            totalPriceColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;  
+            dgvOrders.Columns.Add(totalPriceColumn);
+
+            dgvOrders.RowTemplate.Height = 50;
+            dgvOrders.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            dgvOrders.GridColor = Color.White;
+            dgvOrders.RowHeadersVisible = false;
+            dgvOrders.ColumnHeadersVisible = true;
+            dgvOrders.ReadOnly = true;  
         }
 
-        private void UpdateOrderPanels(string foodName, int quantity, string totalPrice)
+        private void CheckColumnWidths()
         {
-
-            // Tìm kiếm món ăn trong danh sách theo tên
-            int index = -1;
-            for (int i = 0; i < foodNameLabels.Count; i++)
+            StringBuilder sb = new StringBuilder();
+            foreach (DataGridViewColumn column in dgvOrders.Columns)
             {
-                if (foodNameLabels[i].Text == foodName)  // Kiểm tra xem món ăn đã có trong danh sách hay chưa
-                {
-                    index = i;
-                    break;
-                }
+                sb.AppendLine($"Tên cột: {column.HeaderText}, Chiều rộng: {column.Width}");
             }
-
-            if (index == -1) // Món ăn chưa có trong danh sách, thêm mới
-            {
-                if (quantity > 0)
-                {
-                    // Tạo Label cho tên món ăn
-                    Label lblFoodName = new Label();
-                    lblFoodName.Text = foodName;
-                    lblFoodName.AutoSize = true;
-                    pnlFoodName.Controls.Add(lblFoodName);
-                    foodNameLabels.Add(lblFoodName); // Lưu Label vào danh sách để quản lý
-
-                    // Tạo Label cho số lượng
-                    Label lblQuantity = new Label();
-                    lblQuantity.Text = quantity.ToString();
-                    lblQuantity.AutoSize = true;
-                    pnlQuantity.Controls.Add(lblQuantity);
-                    quantityLabels.Add(lblQuantity); // Lưu Label vào danh sách để quản lý
-
-                    // Tạo Label cho thành tiền
-                    Label lblPrice = new Label();
-                    lblPrice.Text = totalPrice;
-                    lblPrice.AutoSize = true;
-                    pnlPrice.Controls.Add(lblPrice);
-                    priceLabels.Add(lblPrice); // Lưu Label vào danh sách để quản lý
-                }
-            }
-            else // Món ăn đã tồn tại, chỉ cần cập nhật số lượng và thành tiền
-            {
-                if (quantity > 0)
-                {
-                    // Cập nhật số lượng
-                    quantityLabels[index].Text = quantity.ToString();
-
-                    // Cập nhật thành tiền
-                    priceLabels[index].Text = totalPrice;
-                }
-                else
-                {
-                    // Nếu số lượng là 0, xóa dòng tương ứng
-
-                    // Xóa Label của tên món ăn
-                    pnlFoodName.Controls.Remove(foodNameLabels[index]);
-                    foodNameLabels.RemoveAt(index);
-
-                    // Xóa Label của số lượng
-                    pnlQuantity.Controls.Remove(quantityLabels[index]);
-                    quantityLabels.RemoveAt(index);
-
-                    // Xóa Label của thành tiền
-                    pnlPrice.Controls.Remove(priceLabels[index]);
-                    priceLabels.RemoveAt(index);
-                }
-            }
-
-            // Cập nhật tên món ăn
-            //Label lblFoodName = new Label();
-            //lblFoodName.Text = foodName;
-            //pnlFoodName.Controls.Add(lblFoodName);
-
-            //// Cập nhật số lượng
-            //Label lblQuantity = new Label();
-            //lblQuantity.Text = quantity.ToString();
-            //pnlQuantity.Controls.Add(lblQuantity);
-
-            //// Cập nhật thành tiền (đã được tính sẵn trong ucFood)
-            //Label lblPrice = new Label();
-            //lblPrice.Text = totalPrice; // Giá trị đã được tính toán và truyền qua sự kiện
-            //pnlPrice.Controls.Add(lblPrice);
-            // Sắp xếp lại các label sau khi xóa (nếu cần)
-            ReArrangeLabels();
+            MessageBox.Show(sb.ToString(), "Thông tin kích thước cột");
         }
-
-        private void ReArrangeLabels()
-        {
-            int xPosition = pnlTenMon.Location.X + 50;
-            int yPosition = pnlTenMon.Location.Y + 60;
-            foreach (var lbl in foodNameLabels)
-            {
-                lbl.Location = new Point(xPosition, yPosition);
-                yPosition += lbl.Height + 5; // Cách nhau 5 pixel
-            }
-            xPosition = pnlSoLuong.Location.X + 70;
-            yPosition = pnlSoLuong.Location.Y + 60;
-            foreach (var lbl in quantityLabels)
-            {
-                lbl.Location = new Point(xPosition, yPosition);
-                yPosition += lbl.Height + 5;
-            }
-            xPosition = pnlThanhTien.Location.X + 90;
-            yPosition = pnlThanhTien.Location.Y + 60;
-            foreach (var lbl in priceLabels)
-            {
-                lbl.Location = new Point(xPosition, yPosition);
-                yPosition += lbl.Height + 5;
-            }
-        }
-
-
-
-        private void pnlOrder_Paint(object sender, PaintEventArgs e)
-        {
-            int radius = 50;
-
-            // Tạo GraphicsPath để vẽ hình chữ nhật bo góc
-            GraphicsPath path = new GraphicsPath();
-            Rectangle rect = new Rectangle(0, 0, pnlOrder.Width - 1, pnlOrder.Height - 1);
-
-            // Thêm hình chữ nhật bo góc vào GraphicsPath
-            path.AddArc(rect.X, rect.Y, radius, radius, 180, 90);
-            path.AddArc(rect.X + rect.Width - radius, rect.Y, radius, radius, 270, 90);
-            path.AddArc(rect.X + rect.Width - radius, rect.Y + rect.Height - radius, radius, radius, 0, 90);
-            path.AddArc(rect.X, rect.Y + rect.Height - radius, radius, radius, 90, 90);
-            path.CloseFigure();
-            pnlOrder.Region = new Region(path);
-
-            //Vẽ viền với Pen
-            //Pen borderPen = new Pen(Color.Red, 2);  // Màu đỏ, độ dày 2px
-            //e.Graphics.DrawPath(borderPen, path);
-
-            // Đổ màu cho Panel (tuỳ chọn)
-            Brush fillBrush = new SolidBrush(Color.White); // Màu nền trắng
-            e.Graphics.FillPath(fillBrush, path);
-        }
-
-        private void pnlFoodName_Paint(object sender, PaintEventArgs e)
-        {
-            int radius = 40;
-
-            // Tạo GraphicsPath để vẽ hình chữ nhật bo góc
-            GraphicsPath path = new GraphicsPath();
-            Rectangle rect = new Rectangle(0, 0, pnlQuantity.Width - 1, pnlQuantity.Height - 1);
-
-            // Thêm hình chữ nhật bo góc vào GraphicsPath
-            path.AddArc(rect.X, rect.Y, radius, radius, 180, 90);
-            path.AddArc(rect.X + rect.Width - radius, rect.Y, radius, radius, 270, 90);
-            path.AddArc(rect.X + rect.Width - radius, rect.Y + rect.Height - radius, radius, radius, 0, 90);
-            path.AddArc(rect.X, rect.Y + rect.Height - radius, radius, radius, 90, 90);
-            path.CloseFigure();
-            pnlQuantity.Region = new Region(path);
-
-            //Vẽ viền với Pen
-            //Pen borderPen = new Pen(Color.Gray, 1);  // Màu đỏ, độ dày 2px
-            //e.Graphics.DrawPath(borderPen, path);
-
-            // Đổ màu cho Panel (tuỳ chọn)
-            //Brush fillBrush = new SolidBrush(Color.White); // Màu nền trắng
-            //e.Graphics.FillPath(fillBrush, path);
-
-
-        }
-
-        private void pnlQuantity_Paint(object sender, PaintEventArgs e)
-        {
-            int radius = 40;
-
-            // Tạo GraphicsPath để vẽ hình chữ nhật bo góc
-            GraphicsPath path = new GraphicsPath();
-            Rectangle rect = new Rectangle(0, 0, pnlQuantity.Width - 1, pnlQuantity.Height - 1);
-
-            // Thêm hình chữ nhật bo góc vào GraphicsPath
-            path.AddArc(rect.X, rect.Y, radius, radius, 180, 90);
-            path.AddArc(rect.X + rect.Width - radius, rect.Y, radius, radius, 270, 90);
-            path.AddArc(rect.X + rect.Width - radius, rect.Y + rect.Height - radius, radius, radius, 0, 90);
-            path.AddArc(rect.X, rect.Y + rect.Height - radius, radius, radius, 90, 90);
-            path.CloseFigure();
-            pnlQuantity.Region = new Region(path);
-
-            //Vẽ viền với Pen
-            //Pen borderPen = new Pen(Color.Gray, 1);  // Màu đỏ, độ dày 2px
-            //e.Graphics.DrawPath(borderPen, path);
-
-            // Đổ màu cho Panel (tuỳ chọn)
-            //Brush fillBrush = new SolidBrush(Color.White); // Màu nền trắng
-            //e.Graphics.FillPath(fillBrush, path);
-        }
-
-        private void pnlPrice_Paint(object sender, PaintEventArgs e)
-        {
-            int radius = 40;
-
-            // Tạo GraphicsPath để vẽ hình chữ nhật bo góc
-            GraphicsPath path = new GraphicsPath();
-            Rectangle rect = new Rectangle(0, 0, pnlQuantity.Width - 1, pnlQuantity.Height - 1);
-
-            // Thêm hình chữ nhật bo góc vào GraphicsPath
-            path.AddArc(rect.X, rect.Y, radius, radius, 180, 90);
-            path.AddArc(rect.X + rect.Width - radius, rect.Y, radius, radius, 270, 90);
-            path.AddArc(rect.X + rect.Width - radius, rect.Y + rect.Height - radius, radius, radius, 0, 90);
-            path.AddArc(rect.X, rect.Y + rect.Height - radius, radius, radius, 90, 90);
-            path.CloseFigure();
-            pnlQuantity.Region = new Region(path);
-
-            //Vẽ viền với Pen
-            //Pen borderPen = new Pen(Color.Gray, 1);  // Màu đỏ, độ dày 2px
-            //e.Graphics.DrawPath(borderPen, path);
-
-            // Đổ màu cho Panel (tuỳ chọn)
-            //Brush fillBrush = new SolidBrush(Color.White); // Màu nền trắng
-            //e.Graphics.FillPath(fillBrush, path);
-        }
-
 
         private void btnOrder_Paint(object sender, PaintEventArgs e)
         {
@@ -270,7 +91,7 @@ namespace GUI
             path.AddArc(rect.X, rect.Y + rect.Height - radius, radius, radius, 90, 90);
             path.CloseFigure();
             btnOrder.Region = new Region(path);
-
+    
 
         }
 
@@ -281,6 +102,7 @@ namespace GUI
             fpnlMenu.SuspendLayout();
             LoadFoods(_currentPage);
             fpnlMenu.ResumeLayout();
+            //CheckColumnWidths();
         }
 
         private int CalculateTotalPage()
@@ -302,16 +124,59 @@ namespace GUI
                 ucFood _ucFood = new ucFood();
                 _ucFood._idFood = food.FoodId;
                 _ucFood._FName = food.FoodName;
-                _ucFood._FPrice = $"${food.FoodUnitPrice}";
+                _ucFood._FPrice = food.FoodUnitPrice;
                 _ucFood.Margin = new Padding(10);
+
+                _ucFood.FoodUpdated += UcFood_FoodUpdated;
 
                 fpnlMenu.Controls.Add(_ucFood);
             }
 
             UpdatePagination();
-            fpnlMenu.ResumeLayout();
+           
         }
+        private void UcFood_FoodUpdated(object sender,FoodUpdatedEventArgs e )
+        {
+            AddOrUpdateFoodToGrid(e.FoodName, e.Quantity, e.FoodPrice);
+        }
+        private void AddOrUpdateFoodToGrid(string foodName, int quantity, int price)
+        {
+            bool foodExits = false;
 
+            foreach(DataGridViewRow row in dgvOrders.Rows)
+            {
+                if (row.Cells["FoodName"].Value != null && row.Cells["FoodName"].Value.ToString() == foodName)
+                {
+                    int currentQuantity = 0;
+                    if (row.Cells["Quantity"].Value != null)
+                    {
+                        currentQuantity = int.Parse(row.Cells["Quantity"].Value.ToString());
+                    }
+                    if(quantity == 0)
+                    {
+                        dgvOrders.Rows.Remove(row);
+                    }
+                    else
+                    {
+                        row.Cells["Quantity"].Value = quantity;
+                        row.Cells["TotalPrice"].Value = quantity * price;
+                    }
+
+                    foodExits = true;
+                    break;
+
+
+                    //row.Cells["Quantity"].Value =  quantity;
+                    //row.Cells["TotalPrice"].Value = quantity * price;
+                    //foodExits = true;
+                    //break;
+                }
+            }
+            if(!foodExits)
+            {
+                dgvOrders.Rows.Add(foodName, quantity, price);
+            }
+        }
         private void UpdatePagination()
         {
             btnPrevious.Enabled = _currentPage > 1;
@@ -390,7 +255,7 @@ namespace GUI
             {
                 pageButtons[i].Visible = false;
             }
-
+            
             UpdateButtonColors(currentPage);
             
         }
@@ -434,6 +299,32 @@ namespace GUI
             }
         }
 
-   
+        private void pnlHeaderTable_Paint(object sender, PaintEventArgs e)
+        {
+            //int radius = 20;
+
+            //// Tạo GraphicsPath để vẽ hình chữ nhật bo góc
+            //GraphicsPath path = new GraphicsPath();
+            //Rectangle rect = new Rectangle(0, 0, pnlHeaderTable.Width - 1, pnlHeaderTable.Height - 1);
+
+            //// Thêm hình chữ nhật bo góc vào GraphicsPath
+            //path.AddArc(rect.X, rect.Y, radius, radius, 180, 90); // Bo góc trên bên trái
+            //path.AddArc(rect.X + rect.Width - radius, rect.Y, radius, radius, 270, 90); // Bo góc trên bên phải
+            //path.AddLine(rect.X + rect.Width, rect.Y + radius, rect.X + rect.Width, rect.Y + rect.Height); // Vẽ đường thẳng từ trên xuống dưới bên phải
+            ////path.AddLine(rect.X + rect.Width, rect.Y + rect.Height, rect.X, rect.Y + rect.Height); // Vẽ đường thẳng ngang ở dưới
+            ////path.AddLine(rect.X, rect.Y + rect.Height, rect.X, rect.Y + radius); // Vẽ đường thẳng từ dưới lên trên bên trái
+            //path.CloseFigure();
+            //pnlHeaderTable.Region = new Region(path);
+        }
+
+        
+    }
+    public static class ControlExtensions
+    {
+        public static void DoubleBuffered(this Control control, bool setting)
+        {
+            System.Reflection.PropertyInfo propertyInfo = control.GetType().GetProperty("DoubleBuffered", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic);
+            propertyInfo.SetValue(control, setting, null);
+        }
     }
 }

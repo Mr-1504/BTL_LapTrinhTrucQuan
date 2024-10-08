@@ -1,4 +1,6 @@
-﻿namespace GUI
+﻿using System.Drawing;
+
+namespace GUI
 {
     partial class frmOrders
     {
@@ -28,29 +30,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblMenu = new System.Windows.Forms.Label();
-            this.pnlOrder = new System.Windows.Forms.Panel();
-            this.pnlPrice = new System.Windows.Forms.Panel();
-            this.pnlQuantity = new System.Windows.Forms.Panel();
-            this.pnlFoodName = new System.Windows.Forms.Panel();
             this.lblOrder = new System.Windows.Forms.Label();
             this.fpnlMenu = new System.Windows.Forms.FlowLayoutPanel();
             this.fpnlPagination = new System.Windows.Forms.FlowLayoutPanel();
             this.btnPrevious = new System.Windows.Forms.Button();
-            this.btnNext = new System.Windows.Forms.Button();
-            this.btnOrder = new System.Windows.Forms.Button();
-            this.pnlThanhTien = new System.Windows.Forms.Panel();
-            this.pnlSoLuong = new System.Windows.Forms.Panel();
-            this.pnlTenMon = new System.Windows.Forms.Panel();
             this.btnPage_st = new System.Windows.Forms.Button();
             this.btnPage_nd = new System.Windows.Forms.Button();
             this.btnPage_rd = new System.Windows.Forms.Button();
             this.btnPage_th = new System.Windows.Forms.Button();
-            this.pnlOrder.SuspendLayout();
-            this.pnlPrice.SuspendLayout();
-            this.pnlQuantity.SuspendLayout();
-            this.pnlFoodName.SuspendLayout();
+            this.btnNext = new System.Windows.Forms.Button();
+            this.dgvOrders = new System.Windows.Forms.DataGridView();
+            this.pnlHeaderTable = new System.Windows.Forms.Panel();
+            this.btnOrder = new System.Windows.Forms.Button();
             this.fpnlPagination.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).BeginInit();
             this.SuspendLayout();
             // 
             // lblMenu
@@ -62,45 +57,6 @@
             this.lblMenu.Size = new System.Drawing.Size(62, 25);
             this.lblMenu.TabIndex = 2;
             this.lblMenu.Text = "Menu";
-            // 
-            // pnlOrder
-            // 
-            this.pnlOrder.BackColor = System.Drawing.Color.White;
-            this.pnlOrder.Controls.Add(this.pnlPrice);
-            this.pnlOrder.Controls.Add(this.pnlQuantity);
-            this.pnlOrder.Controls.Add(this.pnlFoodName);
-            this.pnlOrder.Location = new System.Drawing.Point(563, 63);
-            this.pnlOrder.Name = "pnlOrder";
-            this.pnlOrder.Size = new System.Drawing.Size(795, 675);
-            this.pnlOrder.TabIndex = 5;
-            this.pnlOrder.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlOrder_Paint);
-            // 
-            // pnlPrice
-            // 
-            this.pnlPrice.Controls.Add(this.pnlThanhTien);
-            this.pnlPrice.Location = new System.Drawing.Point(551, 18);
-            this.pnlPrice.Name = "pnlPrice";
-            this.pnlPrice.Size = new System.Drawing.Size(219, 632);
-            this.pnlPrice.TabIndex = 1;
-            this.pnlPrice.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlPrice_Paint);
-            // 
-            // pnlQuantity
-            // 
-            this.pnlQuantity.Controls.Add(this.pnlSoLuong);
-            this.pnlQuantity.Location = new System.Drawing.Point(294, 18);
-            this.pnlQuantity.Name = "pnlQuantity";
-            this.pnlQuantity.Size = new System.Drawing.Size(219, 632);
-            this.pnlQuantity.TabIndex = 1;
-            this.pnlQuantity.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlQuantity_Paint);
-            // 
-            // pnlFoodName
-            // 
-            this.pnlFoodName.Controls.Add(this.pnlTenMon);
-            this.pnlFoodName.Location = new System.Drawing.Point(28, 18);
-            this.pnlFoodName.Name = "pnlFoodName";
-            this.pnlFoodName.Size = new System.Drawing.Size(219, 632);
-            this.pnlFoodName.TabIndex = 0;
-            this.pnlFoodName.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlFoodName_Paint);
             // 
             // lblOrder
             // 
@@ -116,7 +72,7 @@
             // 
             this.fpnlMenu.Location = new System.Drawing.Point(12, 63);
             this.fpnlMenu.Name = "fpnlMenu";
-            this.fpnlMenu.Size = new System.Drawing.Size(528, 675);
+            this.fpnlMenu.Size = new System.Drawing.Size(517, 675);
             this.fpnlMenu.TabIndex = 8;
             // 
             // fpnlPagination
@@ -147,56 +103,6 @@
             this.btnPrevious.Text = "< Previous";
             this.btnPrevious.UseVisualStyleBackColor = true;
             this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
-            // 
-            // btnNext
-            // 
-            this.btnNext.FlatAppearance.BorderSize = 0;
-            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNext.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNext.ForeColor = System.Drawing.Color.Blue;
-            this.btnNext.Location = new System.Drawing.Point(222, 3);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(50, 22);
-            this.btnNext.TabIndex = 1;
-            this.btnNext.Text = "Next   >";
-            this.btnNext.UseVisualStyleBackColor = true;
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
-            // 
-            // btnOrder
-            // 
-            this.btnOrder.FlatAppearance.BorderSize = 0;
-            this.btnOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOrder.Image = global::GUI.Properties.Resources.btnOrder;
-            this.btnOrder.Location = new System.Drawing.Point(845, 753);
-            this.btnOrder.Name = "btnOrder";
-            this.btnOrder.Size = new System.Drawing.Size(231, 42);
-            this.btnOrder.TabIndex = 7;
-            this.btnOrder.UseVisualStyleBackColor = true;
-            this.btnOrder.Paint += new System.Windows.Forms.PaintEventHandler(this.btnOrder_Paint);
-            // 
-            // pnlThanhTien
-            // 
-            this.pnlThanhTien.BackgroundImage = global::GUI.Properties.Resources.ThanhTien;
-            this.pnlThanhTien.Location = new System.Drawing.Point(20, 14);
-            this.pnlThanhTien.Name = "pnlThanhTien";
-            this.pnlThanhTien.Size = new System.Drawing.Size(177, 36);
-            this.pnlThanhTien.TabIndex = 0;
-            // 
-            // pnlSoLuong
-            // 
-            this.pnlSoLuong.BackgroundImage = global::GUI.Properties.Resources.SoLuong;
-            this.pnlSoLuong.Location = new System.Drawing.Point(24, 13);
-            this.pnlSoLuong.Name = "pnlSoLuong";
-            this.pnlSoLuong.Size = new System.Drawing.Size(157, 35);
-            this.pnlSoLuong.TabIndex = 0;
-            // 
-            // pnlTenMon
-            // 
-            this.pnlTenMon.BackgroundImage = global::GUI.Properties.Resources.TenMon1;
-            this.pnlTenMon.Location = new System.Drawing.Point(27, 14);
-            this.pnlTenMon.Name = "pnlTenMon";
-            this.pnlTenMon.Size = new System.Drawing.Size(157, 35);
-            this.pnlTenMon.TabIndex = 0;
             // 
             // btnPage_st
             // 
@@ -258,26 +164,79 @@
             this.btnPage_th.Paint += new System.Windows.Forms.PaintEventHandler(this.btnPage_Paint);
             this.btnPage_th.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PageButton_Click);
             // 
+            // btnNext
+            // 
+            this.btnNext.FlatAppearance.BorderSize = 0;
+            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNext.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.ForeColor = System.Drawing.Color.Blue;
+            this.btnNext.Location = new System.Drawing.Point(222, 3);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(50, 22);
+            this.btnNext.TabIndex = 1;
+            this.btnNext.Text = "Next   >";
+            this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
+            // dgvOrders
+            // 
+            this.dgvOrders.BackgroundColor = System.Drawing.Color.White;
+            this.dgvOrders.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvOrders.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvOrders.Location = new System.Drawing.Point(565, 92);
+            this.dgvOrders.Margin = new System.Windows.Forms.Padding(0);
+            this.dgvOrders.Name = "dgvOrders";
+            this.dgvOrders.Size = new System.Drawing.Size(765, 643);
+            this.dgvOrders.TabIndex = 10;
+            // 
+            // pnlHeaderTable
+            // 
+            this.pnlHeaderTable.BackgroundImage = global::GUI.Properties.Resources.dgvHeader1;
+            this.pnlHeaderTable.Location = new System.Drawing.Point(565, 63);
+            this.pnlHeaderTable.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlHeaderTable.Name = "pnlHeaderTable";
+            this.pnlHeaderTable.Size = new System.Drawing.Size(765, 50);
+            this.pnlHeaderTable.TabIndex = 11;
+            this.pnlHeaderTable.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlHeaderTable_Paint);
+            // 
+            // btnOrder
+            // 
+            this.btnOrder.FlatAppearance.BorderSize = 0;
+            this.btnOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOrder.Image = global::GUI.Properties.Resources.btnOrder;
+            this.btnOrder.Location = new System.Drawing.Point(845, 753);
+            this.btnOrder.Name = "btnOrder";
+            this.btnOrder.Size = new System.Drawing.Size(231, 42);
+            this.btnOrder.TabIndex = 7;
+            this.btnOrder.UseVisualStyleBackColor = true;
+            this.btnOrder.Paint += new System.Windows.Forms.PaintEventHandler(this.btnOrder_Paint);
+            // 
             // frmOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
             this.ClientSize = new System.Drawing.Size(1370, 815);
+            this.Controls.Add(this.pnlHeaderTable);
+            this.Controls.Add(this.dgvOrders);
             this.Controls.Add(this.fpnlPagination);
             this.Controls.Add(this.fpnlMenu);
             this.Controls.Add(this.btnOrder);
             this.Controls.Add(this.lblOrder);
-            this.Controls.Add(this.pnlOrder);
             this.Controls.Add(this.lblMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmOrders";
-            this.Text = "frmOrders";
             this.Load += new System.EventHandler(this.frmOrders_Load);
-            this.pnlOrder.ResumeLayout(false);
-            this.pnlPrice.ResumeLayout(false);
-            this.pnlQuantity.ResumeLayout(false);
-            this.pnlFoodName.ResumeLayout(false);
             this.fpnlPagination.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -285,14 +244,7 @@
 
         #endregion
         private System.Windows.Forms.Label lblMenu;
-        private System.Windows.Forms.Panel pnlOrder;
         private System.Windows.Forms.Label lblOrder;
-        private System.Windows.Forms.Panel pnlPrice;
-        private System.Windows.Forms.Panel pnlQuantity;
-        private System.Windows.Forms.Panel pnlFoodName;
-        private System.Windows.Forms.Panel pnlTenMon;
-        private System.Windows.Forms.Panel pnlSoLuong;
-        private System.Windows.Forms.Panel pnlThanhTien;
         private System.Windows.Forms.Button btnOrder;
         private System.Windows.Forms.FlowLayoutPanel fpnlMenu;
         private System.Windows.Forms.FlowLayoutPanel fpnlPagination;
@@ -302,5 +254,7 @@
         private System.Windows.Forms.Button btnPage_nd;
         private System.Windows.Forms.Button btnPage_rd;
         private System.Windows.Forms.Button btnPage_th;
+        private System.Windows.Forms.DataGridView dgvOrders;
+        private System.Windows.Forms.Panel pnlHeaderTable;
     }
 }
