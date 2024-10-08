@@ -88,6 +88,10 @@ namespace GUI
             this.label18 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
+            this.textDoanhThuNgay = new System.Windows.Forms.Label();
+            this.textDonHang = new System.Windows.Forms.Label();
+            this.textSoBan = new System.Windows.Forms.Label();
+            this.textSoNhanVien = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.InPanelManager1.SuspendLayout();
             this.PanelIngredient.SuspendLayout();
@@ -177,8 +181,8 @@ namespace GUI
             // 
             // textSoNguyenLieuMoi
             // 
-            this.textSoNguyenLieuMoi.AutoSize = false;
             this.textSoNguyenLieuMoi.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textSoNguyenLieuMoi.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
             this.textSoNguyenLieuMoi.Location = new System.Drawing.Point(295, 212);
             this.textSoNguyenLieuMoi.Name = "textSoNguyenLieuMoi";
             this.textSoNguyenLieuMoi.ReadOnly = true;
@@ -187,8 +191,8 @@ namespace GUI
             // 
             // textSoNguyenLieuChuaPhanLoai
             // 
-            this.textSoNguyenLieuChuaPhanLoai.AutoSize = false;
             this.textSoNguyenLieuChuaPhanLoai.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textSoNguyenLieuChuaPhanLoai.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
             this.textSoNguyenLieuChuaPhanLoai.Location = new System.Drawing.Point(295, 161);
             this.textSoNguyenLieuChuaPhanLoai.Name = "textSoNguyenLieuChuaPhanLoai";
             this.textSoNguyenLieuChuaPhanLoai.ReadOnly = true;
@@ -197,8 +201,8 @@ namespace GUI
             // 
             // textSoTienNLMoiNhap
             // 
-            this.textSoTienNLMoiNhap.AutoSize = false;
             this.textSoTienNLMoiNhap.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textSoTienNLMoiNhap.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
             this.textSoTienNLMoiNhap.Location = new System.Drawing.Point(295, 109);
             this.textSoTienNLMoiNhap.Name = "textSoTienNLMoiNhap";
             this.textSoTienNLMoiNhap.ReadOnly = true;
@@ -207,8 +211,8 @@ namespace GUI
             // 
             // textSoLoaiNguyenLieu
             // 
-            this.textSoLoaiNguyenLieu.AutoSize = false;
             this.textSoLoaiNguyenLieu.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textSoLoaiNguyenLieu.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
             this.textSoLoaiNguyenLieu.Location = new System.Drawing.Point(295, 58);
             this.textSoLoaiNguyenLieu.Name = "textSoLoaiNguyenLieu";
             this.textSoLoaiNguyenLieu.ReadOnly = true;
@@ -300,8 +304,8 @@ namespace GUI
             // 
             // textTongChiKho
             // 
-            this.textTongChiKho.AutoSize = false;
             this.textTongChiKho.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textTongChiKho.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
             this.textTongChiKho.Location = new System.Drawing.Point(243, 212);
             this.textTongChiKho.Name = "textTongChiKho";
             this.textTongChiKho.ReadOnly = true;
@@ -310,8 +314,8 @@ namespace GUI
             // 
             // textSoNhanVienKho
             // 
-            this.textSoNhanVienKho.AutoSize = false;
             this.textSoNhanVienKho.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textSoNhanVienKho.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
             this.textSoNhanVienKho.Location = new System.Drawing.Point(243, 161);
             this.textSoNhanVienKho.Name = "textSoNhanVienKho";
             this.textSoNhanVienKho.ReadOnly = true;
@@ -320,8 +324,8 @@ namespace GUI
             // 
             // textSoNhaCungCap
             // 
-            this.textSoNhaCungCap.AutoSize = false;
             this.textSoNhaCungCap.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textSoNhaCungCap.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
             this.textSoNhaCungCap.Location = new System.Drawing.Point(243, 109);
             this.textSoNhaCungCap.Name = "textSoNhaCungCap";
             this.textSoNhaCungCap.ReadOnly = true;
@@ -330,8 +334,8 @@ namespace GUI
             // 
             // textSoNguyenLieuSapHet
             // 
-            this.textSoNguyenLieuSapHet.AutoSize = false;
             this.textSoNguyenLieuSapHet.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textSoNguyenLieuSapHet.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textSoNguyenLieuSapHet.Location = new System.Drawing.Point(243, 58);
             this.textSoNguyenLieuSapHet.Name = "textSoNguyenLieuSapHet";
             this.textSoNguyenLieuSapHet.ReadOnly = true;
@@ -476,6 +480,7 @@ namespace GUI
             // PanelStaff
             // 
             this.PanelStaff.BackColor = System.Drawing.Color.Gainsboro;
+            this.PanelStaff.Controls.Add(this.textSoNhanVien);
             this.PanelStaff.Controls.Add(this.pictureBox5);
             this.PanelStaff.Location = new System.Drawing.Point(810, 96);
             this.PanelStaff.Name = "PanelStaff";
@@ -508,6 +513,7 @@ namespace GUI
             // PanelTable
             // 
             this.PanelTable.BackColor = System.Drawing.Color.Gainsboro;
+            this.PanelTable.Controls.Add(this.textSoBan);
             this.PanelTable.Controls.Add(this.pictureBox4);
             this.PanelTable.Location = new System.Drawing.Point(560, 96);
             this.PanelTable.Name = "PanelTable";
@@ -540,6 +546,7 @@ namespace GUI
             // PanelOrder
             // 
             this.PanelOrder.BackColor = System.Drawing.Color.Gainsboro;
+            this.PanelOrder.Controls.Add(this.textDonHang);
             this.PanelOrder.Controls.Add(this.pictureBox3);
             this.PanelOrder.Location = new System.Drawing.Point(310, 96);
             this.PanelOrder.Name = "PanelOrder";
@@ -573,6 +580,7 @@ namespace GUI
             // PanelRevenue
             // 
             this.PanelRevenue.BackColor = System.Drawing.Color.Gainsboro;
+            this.PanelRevenue.Controls.Add(this.textDoanhThuNgay);
             this.PanelRevenue.Controls.Add(this.pictureBox2);
             this.PanelRevenue.Location = new System.Drawing.Point(60, 96);
             this.PanelRevenue.Name = "PanelRevenue";
@@ -618,8 +626,8 @@ namespace GUI
             // 
             // textDT_DHRight
             // 
-            this.textDT_DHRight.AutoSize = false;
             this.textDT_DHRight.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textDT_DHRight.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
             this.textDT_DHRight.Location = new System.Drawing.Point(22, 287);
             this.textDT_DHRight.Name = "textDT_DHRight";
             this.textDT_DHRight.ReadOnly = true;
@@ -628,8 +636,8 @@ namespace GUI
             // 
             // textSoDonHangRight
             // 
-            this.textSoDonHangRight.AutoSize = false;
             this.textSoDonHangRight.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textSoDonHangRight.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
             this.textSoDonHangRight.Location = new System.Drawing.Point(22, 222);
             this.textSoDonHangRight.Name = "textSoDonHangRight";
             this.textSoDonHangRight.ReadOnly = true;
@@ -638,8 +646,8 @@ namespace GUI
             // 
             // textLaiGopRight
             // 
-            this.textLaiGopRight.AutoSize = false;
             this.textLaiGopRight.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textLaiGopRight.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
             this.textLaiGopRight.Location = new System.Drawing.Point(22, 161);
             this.textLaiGopRight.Name = "textLaiGopRight";
             this.textLaiGopRight.ReadOnly = true;
@@ -648,8 +656,8 @@ namespace GUI
             // 
             // textDoanhThuRight
             // 
-            this.textDoanhThuRight.AutoSize = false;
             this.textDoanhThuRight.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textDoanhThuRight.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
             this.textDoanhThuRight.Location = new System.Drawing.Point(22, 99);
             this.textDoanhThuRight.Name = "textDoanhThuRight";
             this.textDoanhThuRight.ReadOnly = true;
@@ -668,10 +676,12 @@ namespace GUI
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(143, 13);
+            this.comboBox1.Location = new System.Drawing.Point(143, 8);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.Size = new System.Drawing.Size(121, 30);
             this.comboBox1.TabIndex = 7;
             // 
             // label20
@@ -716,6 +726,46 @@ namespace GUI
             this.label22.TabIndex = 14;
             this.label22.Text = "Doanh thu:";
             // 
+            // textDoanhThuNgay
+            // 
+            this.textDoanhThuNgay.AutoSize = true;
+            this.textDoanhThuNgay.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
+            this.textDoanhThuNgay.Location = new System.Drawing.Point(56, 15);
+            this.textDoanhThuNgay.Name = "textDoanhThuNgay";
+            this.textDoanhThuNgay.Size = new System.Drawing.Size(21, 22);
+            this.textDoanhThuNgay.TabIndex = 1;
+            this.textDoanhThuNgay.Text = "0";
+            // 
+            // textDonHang
+            // 
+            this.textDonHang.AutoSize = true;
+            this.textDonHang.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
+            this.textDonHang.Location = new System.Drawing.Point(56, 15);
+            this.textDonHang.Name = "textDonHang";
+            this.textDonHang.Size = new System.Drawing.Size(21, 22);
+            this.textDonHang.TabIndex = 2;
+            this.textDonHang.Text = "0";
+            // 
+            // textSoBan
+            // 
+            this.textSoBan.AutoSize = true;
+            this.textSoBan.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
+            this.textSoBan.Location = new System.Drawing.Point(56, 15);
+            this.textSoBan.Name = "textSoBan";
+            this.textSoBan.Size = new System.Drawing.Size(21, 22);
+            this.textSoBan.TabIndex = 2;
+            this.textSoBan.Text = "0";
+            // 
+            // textSoNhanVien
+            // 
+            this.textSoNhanVien.AutoSize = true;
+            this.textSoNhanVien.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
+            this.textSoNhanVien.Location = new System.Drawing.Point(56, 15);
+            this.textSoNhanVien.Name = "textSoNhanVien";
+            this.textSoNhanVien.Size = new System.Drawing.Size(21, 22);
+            this.textSoNhanVien.TabIndex = 2;
+            this.textSoNhanVien.Text = "0";
+            // 
             // HomeManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -742,12 +792,16 @@ namespace GUI
             this.PanelChart.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartSale)).EndInit();
             this.PanelStaff.ResumeLayout(false);
+            this.PanelStaff.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.PanelTable.ResumeLayout(false);
+            this.PanelTable.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.PanelOrder.ResumeLayout(false);
+            this.PanelOrder.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.PanelRevenue.ResumeLayout(false);
+            this.PanelRevenue.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.PanelRight.ResumeLayout(false);
             this.PanelRight.PerformLayout();
@@ -811,5 +865,9 @@ namespace GUI
         private System.Windows.Forms.TextBox textSoDonHangRight;
         private System.Windows.Forms.TextBox textLaiGopRight;
         private System.Windows.Forms.TextBox textDoanhThuRight;
+        private System.Windows.Forms.Label textDoanhThuNgay;
+        private System.Windows.Forms.Label textSoNhanVien;
+        private System.Windows.Forms.Label textSoBan;
+        private System.Windows.Forms.Label textDonHang;
     }
 }

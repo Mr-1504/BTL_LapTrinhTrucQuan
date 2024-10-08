@@ -30,34 +30,40 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployManager2));
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.numberPhone = new System.Windows.Forms.TextBox();
+            this.ma_quyen = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.address = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.hometown = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.btnChaneIm = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.addresspanel = new System.Windows.Forms.Panel();
+            this.address = new System.Windows.Forms.TextBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.numberPhone = new System.Windows.Forms.TextBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.hometown = new System.Windows.Forms.TextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.cbboxChucVu = new System.Windows.Forms.ComboBox();
+            this.employID = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.name = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.gender = new System.Windows.Forms.ComboBox();
             this.dateTimeBirthDay = new System.Windows.Forms.DateTimePicker();
             this.btnSave = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.employID = new System.Windows.Forms.TextBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.name = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.addresspanel.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -72,25 +78,15 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Chi tiết nhân viên";
             // 
-            // label2
+            // ma_quyen
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(396, 36);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(134, 22);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Mã nhân viên";
-            // 
-            // numberPhone
-            // 
-            this.numberPhone.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.numberPhone.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.numberPhone.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numberPhone.Location = new System.Drawing.Point(8, 6);
-            this.numberPhone.Name = "numberPhone";
-            this.numberPhone.Size = new System.Drawing.Size(237, 22);
-            this.numberPhone.TabIndex = 7;
+            this.ma_quyen.AutoSize = true;
+            this.ma_quyen.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ma_quyen.Location = new System.Drawing.Point(396, 36);
+            this.ma_quyen.Name = "ma_quyen";
+            this.ma_quyen.Size = new System.Drawing.Size(134, 22);
+            this.ma_quyen.TabIndex = 4;
+            this.ma_quyen.Text = "Mã nhân viên";
             // 
             // label3
             // 
@@ -102,15 +98,6 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Số điện thoại";
             // 
-            // address
-            // 
-            this.address.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.address.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.address.Location = new System.Drawing.Point(576, 285);
-            this.address.Name = "address";
-            this.address.Size = new System.Drawing.Size(288, 22);
-            this.address.TabIndex = 9;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -120,16 +107,6 @@
             this.label4.Size = new System.Drawing.Size(73, 22);
             this.label4.TabIndex = 8;
             this.label4.Text = "Địa chỉ";
-            // 
-            // hometown
-            // 
-            this.hometown.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.hometown.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.hometown.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hometown.Location = new System.Drawing.Point(9, 6);
-            this.hometown.Name = "hometown";
-            this.hometown.Size = new System.Drawing.Size(237, 22);
-            this.hometown.TabIndex = 11;
             // 
             // label5
             // 
@@ -164,6 +141,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel1.Controls.Add(this.panel6);
+            this.panel1.Controls.Add(this.addresspanel);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel3);
@@ -174,16 +153,176 @@
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.address);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.ma_quyen);
             this.panel1.Location = new System.Drawing.Point(26, 66);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1103, 729);
             this.panel1.TabIndex = 20;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.Transparent;
+            this.panel6.BackgroundImage = global::GUI.Properties.Resources.avatar;
+            this.panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel6.Controls.Add(this.btnChaneIm);
+            this.panel6.Controls.Add(this.pictureBox1);
+            this.panel6.Location = new System.Drawing.Point(18, 30);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(280, 240);
+            this.panel6.TabIndex = 31;
+            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
+            // 
+            // btnChaneIm
+            // 
+            this.btnChaneIm.BackColor = System.Drawing.Color.Transparent;
+            this.btnChaneIm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnChaneIm.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnChaneIm.FlatAppearance.BorderSize = 0;
+            this.btnChaneIm.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnChaneIm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnChaneIm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChaneIm.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChaneIm.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnChaneIm.Location = new System.Drawing.Point(98, 198);
+            this.btnChaneIm.Name = "btnChaneIm";
+            this.btnChaneIm.Size = new System.Drawing.Size(84, 28);
+            this.btnChaneIm.TabIndex = 30;
+            this.btnChaneIm.Text = "Chọn/Đổi ảnh";
+            this.btnChaneIm.UseVisualStyleBackColor = false;
+            this.btnChaneIm.Click += new System.EventHandler(this.btnChangeImage_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(33, 17);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(213, 209);
+            this.pictureBox1.TabIndex = 29;
+            this.pictureBox1.TabStop = false;
+            // 
+            // addresspanel
+            // 
+            this.addresspanel.BackColor = System.Drawing.Color.Transparent;
+            this.addresspanel.BackgroundImage = global::GUI.Properties.Resources.addressPanel1;
+            this.addresspanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.addresspanel.Controls.Add(this.address);
+            this.addresspanel.Location = new System.Drawing.Point(572, 277);
+            this.addresspanel.Name = "addresspanel";
+            this.addresspanel.Size = new System.Drawing.Size(410, 40);
+            this.addresspanel.TabIndex = 28;
+            // 
+            // address
+            // 
+            this.address.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.address.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.address.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
+            this.address.Location = new System.Drawing.Point(10, 9);
+            this.address.Name = "address";
+            this.address.Size = new System.Drawing.Size(389, 22);
+            this.address.TabIndex = 9;
+            this.address.TextChanged += new System.EventHandler(this.address_TextChanged_1);
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.Transparent;
+            this.panel5.BackgroundImage = global::GUI.Properties.Resources.idPanel;
+            this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel5.Controls.Add(this.numberPhone);
+            this.panel5.Location = new System.Drawing.Point(569, 106);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(254, 35);
+            this.panel5.TabIndex = 27;
+            // 
+            // numberPhone
+            // 
+            this.numberPhone.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.numberPhone.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.numberPhone.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
+            this.numberPhone.Location = new System.Drawing.Point(8, 6);
+            this.numberPhone.Name = "numberPhone";
+            this.numberPhone.Size = new System.Drawing.Size(237, 22);
+            this.numberPhone.TabIndex = 7;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Transparent;
+            this.panel4.BackgroundImage = global::GUI.Properties.Resources.idPanel;
+            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel4.Controls.Add(this.hometown);
+            this.panel4.Location = new System.Drawing.Point(572, 367);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(254, 35);
+            this.panel4.TabIndex = 26;
+            // 
+            // hometown
+            // 
+            this.hometown.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.hometown.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.hometown.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
+            this.hometown.Location = new System.Drawing.Point(9, 6);
+            this.hometown.Name = "hometown";
+            this.hometown.Size = new System.Drawing.Size(237, 22);
+            this.hometown.TabIndex = 11;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.BackgroundImage = global::GUI.Properties.Resources.idPanel;
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel3.Controls.Add(this.cbboxChucVu);
+            this.panel3.Controls.Add(this.employID);
+            this.panel3.Location = new System.Drawing.Point(568, 30);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(254, 35);
+            this.panel3.TabIndex = 25;
+            // 
+            // cbboxChucVu
+            // 
+            this.cbboxChucVu.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.cbboxChucVu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbboxChucVu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbboxChucVu.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbboxChucVu.FormattingEnabled = true;
+            this.cbboxChucVu.Location = new System.Drawing.Point(11, 4);
+            this.cbboxChucVu.Name = "cbboxChucVu";
+            this.cbboxChucVu.Size = new System.Drawing.Size(231, 27);
+            this.cbboxChucVu.TabIndex = 31;
+            // 
+            // employID
+            // 
+            this.employID.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.employID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.employID.Enabled = false;
+            this.employID.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
+            this.employID.Location = new System.Drawing.Point(8, 7);
+            this.employID.Name = "employID";
+            this.employID.ReadOnly = true;
+            this.employID.Size = new System.Drawing.Size(237, 22);
+            this.employID.TabIndex = 5;
+            this.employID.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.BackgroundImage = global::GUI.Properties.Resources.namePanel;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel2.Controls.Add(this.name);
+            this.panel2.Location = new System.Drawing.Point(24, 296);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(262, 33);
+            this.panel2.TabIndex = 24;
+            // 
+            // name
+            // 
+            this.name.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.name.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.name.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
+            this.name.Location = new System.Drawing.Point(8, 6);
+            this.name.Name = "name";
+            this.name.Size = new System.Drawing.Size(245, 22);
+            this.name.TabIndex = 20;
             // 
             // label8
             // 
@@ -197,7 +336,9 @@
             // 
             // gender
             // 
+            this.gender.BackColor = System.Drawing.SystemColors.ControlLight;
             this.gender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.gender.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.gender.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gender.FormattingEnabled = true;
             this.gender.Location = new System.Drawing.Point(576, 186);
@@ -210,11 +351,13 @@
             this.dateTimeBirthDay.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimeBirthDay.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimeBirthDay.CalendarMonthBackground = System.Drawing.SystemColors.ControlLight;
+            this.dateTimeBirthDay.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
             this.dateTimeBirthDay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimeBirthDay.Location = new System.Drawing.Point(576, 474);
+            this.dateTimeBirthDay.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.dateTimeBirthDay.Location = new System.Drawing.Point(573, 466);
             this.dateTimeBirthDay.Name = "dateTimeBirthDay";
-            this.dateTimeBirthDay.Size = new System.Drawing.Size(136, 27);
+            this.dateTimeBirthDay.Size = new System.Drawing.Size(136, 29);
             this.dateTimeBirthDay.TabIndex = 21;
             // 
             // btnSave
@@ -238,58 +381,6 @@
             this.btnSave.MouseEnter += new System.EventHandler(this.btnSave_MouseEnter);
             this.btnSave.MouseLeave += new System.EventHandler(this.btnSave_MouseLeave);
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Transparent;
-            this.panel3.BackgroundImage = global::GUI.Properties.Resources.idPanel;
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel3.Controls.Add(this.employID);
-            this.panel3.Location = new System.Drawing.Point(568, 30);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(254, 35);
-            this.panel3.TabIndex = 25;
-            // 
-            // employID
-            // 
-            this.employID.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.employID.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.employID.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.employID.Location = new System.Drawing.Point(8, 7);
-            this.employID.Name = "employID";
-            this.employID.ReadOnly = true;
-            this.employID.Size = new System.Drawing.Size(237, 22);
-            this.employID.TabIndex = 5;
-            this.employID.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.BackgroundImage = global::GUI.Properties.Resources.namePanel;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel2.Controls.Add(this.name);
-            this.panel2.Location = new System.Drawing.Point(24, 296);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(262, 33);
-            this.panel2.TabIndex = 24;
-            // 
-            // name
-            // 
-            this.name.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.name.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.name.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.name.Location = new System.Drawing.Point(8, 6);
-            this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(245, 22);
-            this.name.TabIndex = 20;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(29, 36);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(251, 216);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Transparent;
@@ -309,28 +400,6 @@
             this.button1.Click += new System.EventHandler(this.button1_Click);
             this.button1.Paint += new System.Windows.Forms.PaintEventHandler(this.Button_Paint);
             // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.Transparent;
-            this.panel4.BackgroundImage = global::GUI.Properties.Resources.idPanel;
-            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel4.Controls.Add(this.hometown);
-            this.panel4.Location = new System.Drawing.Point(572, 367);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(254, 35);
-            this.panel4.TabIndex = 26;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.Transparent;
-            this.panel5.BackgroundImage = global::GUI.Properties.Resources.idPanel;
-            this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel5.Controls.Add(this.numberPhone);
-            this.panel5.Location = new System.Drawing.Point(569, 106);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(254, 35);
-            this.panel5.TabIndex = 27;
-            // 
             // EmployManager2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -345,15 +414,18 @@
             this.Text = "EmployManager2";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.addresspanel.ResumeLayout(false);
+            this.addresspanel.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -363,12 +435,10 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label ma_quyen;
         private System.Windows.Forms.TextBox employID;
         private System.Windows.Forms.TextBox numberPhone;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox address;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox hometown;
         private System.Windows.Forms.Label label5;
@@ -384,5 +454,11 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.TextBox address;
+        private System.Windows.Forms.Panel addresspanel;
+        private System.Windows.Forms.ComboBox cbboxChucVu;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnChaneIm;
+        private System.Windows.Forms.Panel panel6;
     }
 }

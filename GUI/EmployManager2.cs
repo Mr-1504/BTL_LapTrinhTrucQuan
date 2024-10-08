@@ -13,6 +13,8 @@ using BLL;
 using Utilities;
 using DTO;
 using System.Xml.Linq;
+using DAL;
+using System.IO;
 namespace GUI
 {
     public partial class EmployManager2 : Form
@@ -20,39 +22,42 @@ namespace GUI
         EmployManager employ;
         bool edit;
         EmployManager2BLL employManager2BLL = new EmployManager2BLL();
+        string employeeID;
         public EmployManager2(EmployManager form)
         {
             InitializeComponent();
             employID.AutoSize = false;
-            employID.Height = 30;
             numberPhone.AutoSize = false;
-            numberPhone.Height = 30;
             gender.AutoSize = false;
-            gender.Height = 30;
             address.AutoSize = false;
-            address.Height = 30;
             hometown.AutoSize = false;
-            hometown.Height = 30;
-            
             edit = false;
+            gender.Items.Clear();
+            gender.Items.Add("Nam");
+            gender.Items.Add("Nữ");
+            ma_quyen.Text = "Chức vụ";
+            cbboxChucVu.Items.Clear();
+            cbboxChucVu.Items.Add("Quản Lý");
+            cbboxChucVu.Items.Add("Lễ Tân");
+            cbboxChucVu.Items.Add("Kho Hàng");
+            employID.Hide();
             employ = form;
+            employeeID = "default.jpg";
+            LoadEmployeeImage(employeeID);
         }
         public EmployManager2(string employID1,EmployManager form)
         {
             InitializeComponent();
             employID.AutoSize = false;
-            employID.Height = 30;
             numberPhone.AutoSize = false;
-            numberPhone.Height = 30;
             gender.AutoSize = false;
-            gender.Height = 30;
             address.AutoSize = false;
-            address.Height = 30;
             hometown.AutoSize = false;
-            hometown.Height = 30;
             gender.Items.Clear();
             gender.Items.Add("Nam");
             gender.Items.Add("Nữ");
+            ma_quyen.Text = "Mã Nhân Viên";
+            cbboxChucVu.Hide();
             employ = form;
             edit = true;
             DataTable editTable  = new DataTable();
@@ -64,6 +69,9 @@ namespace GUI
             hometown.Text = editTable.Rows[0]["QueQuan"].ToString();
             dateTimeBirthDay.Value = Convert.ToDateTime(editTable.Rows[0]["NamSinh"]);
             name.Text = editTable.Rows[0]["TenNhanVien"].ToString();
+            employeeID = employID.Text;
+            LoadEmployeeImage(employID1);
+
         }
         private void Button_Paint(object sender, PaintEventArgs e)
         {
@@ -105,7 +113,7 @@ namespace GUI
             {
                 
                 string s = gender.SelectedItem.ToString();
-                Console.WriteLine(s);
+                
                 if (s==Gender.Female.GetEnumDescription() || s==Gender.Male.GetEnumDescription() )
                 {
                     EmployeeDTO employeeDTO = new EmployeeDTO
@@ -139,7 +147,70 @@ namespace GUI
             }
             else
             {
+                
+                EmployeeStatus status = EmployeeStatus.CurrentlyWorking;
+                string s = gender.SelectedItem.ToString();
+                
+                if (s == Gender.Female.GetEnumDescription() || s == Gender.Male.GetEnumDescription())
+                {
+                    EmployeeDTO employeeDTO = new EmployeeDTO
+                    (
+                        name.Text,
+                        s == Gender.Male.GetEnumDescription() ? Gender.Male : Gender.Female, 
+                        dateTimeBirthDay.Value,
+                        hometown.Text,
+                        address.Text,
+                        numberPhone.Text,
+                        status
+                    );
+                    EmployeeType employeeType = new EmployeeType();
+                    if (cbboxChucVu.SelectedItem != null)
+                    {
+                        string selectedRole = cbboxChucVu.SelectedItem.ToString();
+                        switch (selectedRole)
+                        {
+                            case "Quản Lý":
+                                employeeType = EmployeeType.Manager;
+                                break;
+                            case "Lễ Tân":
+                                employeeType = EmployeeType.Receptionist;
+                                break;
+                            case "Kho Hàng":
+                                employeeType = EmployeeType.Warehouse;
+                                break;
+                        }
 
+                        // Thêm nhân viên mới vào database
+                        int result = employManager2BLL.AddEmployee(employeeType,employeeDTO);
+                        
+
+                        if (result > 0)
+                        {
+                            MessageBox.Show("Thêm nhân viên thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            employ.ShowComponent(true);  // Hiển thị lại form chính
+
+                            this.Close();  // Đóng form hiện tại
+                        }
+                        else if(result == 0)
+                        {
+                            MessageBox.Show("Thêm nhân viên thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("csdl", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Vui lòng chọn chức vụ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Giới tính không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
 
         }
@@ -152,6 +223,90 @@ namespace GUI
         {
             btnSave.BackgroundImage = Properties.Resources.hover;
             btnSave.BackgroundImageLayout = ImageLayout.Zoom;
+        }
+
+        private void address_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void address_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+        private void LoadEmployeeImage(string employeeID)
+        {
+            string resourcePath = $@"..\..\Resources\AvatarImage\";
+            string imagePath = Path.Combine(resourcePath, $"{employeeID}.jpg");
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+
+            // Kiểm tra nếu ảnh tồn tại
+            if (File.Exists(imagePath))
+            {
+                // Giải phóng ảnh trước đó, nếu có
+                if (pictureBox1.Image != null)
+                {
+                    pictureBox1.Image.Dispose();
+                    pictureBox1.Image = null;
+                }
+
+                // Mở tệp ảnh để hiển thị
+                using (FileStream fs = new FileStream(imagePath, FileMode.Open, FileAccess.Read))
+                {
+                    pictureBox1.Image = Image.FromStream(fs);
+                }
+            }
+            else
+            {
+                // Đường dẫn ảnh mặc định nếu không tìm thấy ảnh của nhân viên
+                string defaultImagePath = Path.Combine(resourcePath, "default.jpg");
+
+                // Giải phóng ảnh trước đó, nếu có
+                if (pictureBox1.Image != null)
+                {
+                    pictureBox1.Image.Dispose();
+                    pictureBox1.Image = null;
+                }
+
+                using (FileStream fs = new FileStream(defaultImagePath, FileMode.Open, FileAccess.Read))
+                {
+                    pictureBox1.Image = Image.FromStream(fs);
+                }
+            }
+
+        }
+        private void btnChangeImage_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png";
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    // Lấy đường dẫn ảnh đã chọn
+                    string selectedImagePath = openFileDialog.FileName;
+                    string resourcePath = $@"..\..\Resources\AvatarImage\";
+                    string destinationPath = Path.Combine(resourcePath, $"{employeeID}.jpg");
+
+                    // Giải phóng ảnh hiện tại trong PictureBox trước khi thay đổi
+                    if (pictureBox1.Image != null)
+                    {
+                        pictureBox1.Image.Dispose();
+                        pictureBox1.Image = null;
+                    }
+
+                    // Copy ảnh mới vào thư mục Resources và ghi đè ảnh cũ nếu có
+                    File.Copy(selectedImagePath, destinationPath, true);
+
+                    // Hiển thị lại ảnh mới sau khi thay đổi
+                    LoadEmployeeImage(employeeID);
+                }
+            }
+
+        }
+
+        private void panel6_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -11,7 +11,7 @@ namespace DAL
         private int GetEmployeeCount(EmployeeType prefix, string year)
         {
             string query = "SELECT COUNT(*) FROM NhanVien WHERE MaNhanVien LIKE @Prefix + @year + '%'";
-            return SqlHelper.ExecuteScalar(query, new object[] { prefix.ToString(), year });
+            return SqlHelper.ExecuteScalar(query, new object[] { prefix.GetEnumDescription(), year });
         }
 
         // Kiểm tra xem có nhân viên không
@@ -36,6 +36,7 @@ namespace DAL
                 return -1;
             string employeeCount = new string('0', 8 - count.ToString().Length - year.Length) + count.ToString();
             string employeeId = prefix.GetEnumDescription() + year + employeeCount;
+            Console.WriteLine(employeeId + " SO NGAN VW " + count.ToString());
             string query = "INSERT INTO NhanVien (MaNhanVien, TenNhanVien, GioiTinh, NamSinh, QueQuan, DiaChi, DienThoai, TrangThai) " +
                            "VALUES ( @EMPLOYEEID , @NAME , @GENDER , @BIRTH , @HOMETOWN , @ADDRESS , @NUMBERPHONE , @TRANGTHAI )";
             return SqlHelper.ExecuteNonQuery(query, new object[] {employeeId, employee.Name, employee.Gender.GetEnumDescription(), employee.Birth,
@@ -74,5 +75,17 @@ namespace DAL
             string query = "SELECT * FROM NhanVien WHERE " + @enum.GetEnumDescription() + $" LIKE @getValue + '%' AND TrangThai = N'{EmployeeStatus.CurrentlyWorking.GetEnumDescription()}'";
             return SqlHelper.ExecuteReader(query, new object[] { getValue });
         }
+        public DataTable GetNewesrEmployee(EmployeeType @enum)
+        {
+            string year = DateTime.Now.Year.ToString();
+            int count = GetEmployeeCount(@enum, year);
+            if (count == 0)
+                return null;
+            string employeeCount = new string('0', 8 - count.ToString().Length - year.Length) + count.ToString();
+            string employeeId = @enum.GetEnumDescription() + year + employeeCount;
+            string query = "SELECT * FROM NhanVien WHERE MaNhanVien = @employeeId";
+            return SqlHelper.ExecuteReader(query, new object[] { employeeId });
+        }
+
     }
 }

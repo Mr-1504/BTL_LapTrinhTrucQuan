@@ -55,6 +55,6 @@ namespace DTO
             NumberPhone = numberPhone;
             Address = address;
         }
-
+        
     }
 }

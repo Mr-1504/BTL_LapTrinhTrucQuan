@@ -16,6 +16,18 @@ namespace GUI
         public HomeManager()
         {
             InitializeComponent();
+            textDoanhThuRight.AutoSize = false;
+            textDT_DHRight.AutoSize = false;
+            textLaiGopRight.AutoSize = false;
+            textSoDonHangRight.AutoSize = false;
+            textSoLoaiNguyenLieu.AutoSize = false;
+            textSoNguyenLieuChuaPhanLoai.AutoSize = false;
+            textSoNguyenLieuMoi.AutoSize = false;
+            textSoNguyenLieuSapHet.AutoSize = false;
+            textSoNhaCungCap.AutoSize = false;
+            textSoNhanVienKho.AutoSize = false;
+            textSoTienNLMoiNhap.AutoSize = false;
+            textTongChiKho.AutoSize = false;
         }
 
         private void HomeManager_Load(object sender, EventArgs e)

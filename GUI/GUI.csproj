@@ -337,5 +337,19 @@
   <ItemGroup>
     <None Include="Resources\idPanel.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addressPanel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avatar.png" />
+    <None Include="Resources\avata.png" />
+    <Content Include="Resources\AvatarImage\default.jpg" />
+    <Content Include="Resources\AvatarImage\KH20230001.JPG" />
+    <Content Include="Resources\AvatarImage\KH20230002.JPG" />
+    <Content Include="Resources\AvatarImage\KH20230003.JPG" />
+    <Content Include="Resources\AvatarImage\KH20240001.JPG" />
+    <Content Include="Resources\AvatarImage\LT20240001.JPG" />
+    <Content Include="Resources\AvatarImage\QL20240001.JPG" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

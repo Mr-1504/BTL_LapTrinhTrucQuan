@@ -87,6 +87,7 @@ namespace GUI
             employManager2.TopLevel = false;
             pnlEmployMNG.Controls.Add(employManager2);
             employManager2.Show();
+            employManager2.FormClosed += new FormClosedEventHandler(EmployManager2_FormClosed);
         }
 
         public void ShowComponent(bool show)
