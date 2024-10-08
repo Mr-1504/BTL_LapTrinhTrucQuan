@@ -1,4 +1,4 @@
-﻿using DAL;
+using DAL;
 using DTO;
 using System;
 using System.Collections.Generic;
@@ -74,9 +74,9 @@ namespace GUI
                 {
                     txtDateofBirth.Text = "Invalid Date";
                 }// Set the Image property of picAvatar
-                if (System.IO.File.Exists(imagePath))
+                if (System.IO.File.Exists(_imagePath))
                 {
-                    picAvatar.Image = Image.FromFile(imagePath);
+                    picAvatar.Image = Image.FromFile(_imagePath);
                     
                 }
                 else

@@ -10,6 +10,7 @@ namespace DTO
         private string _supplierNumberPhone;
         private Status _status;
 
+        public SupplierDTO() { }
         public SupplierDTO(string supplierName, string supplierAddress, string supplierNumberPhone, Status status)
         {
             SupplierName = supplierName;

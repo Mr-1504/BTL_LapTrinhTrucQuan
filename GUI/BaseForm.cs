@@ -1,4 +1,5 @@
 ﻿using BLL;
+using GUI.PurchasedIngredient;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -23,7 +24,6 @@ namespace GUI
         public BaseForm(string employeeId)
         {
             _id = employeeId;
-            Console.WriteLine("id: " + _id);
             _y = 0;
             _distance = 0;
             _change = 0;
@@ -74,6 +74,9 @@ namespace GUI
             btnAvatar.BackgroundImage = Image.FromFile(_imagePath);
         }
 
+            _imagePath = $@"..\..\Resources\AvatarImage\{_id}.JPG";
+            btnAvatar.BackgroundImage = Image.FromFile(_imagePath);
+        }
         private void LoadMenu(string employeeId)
         {
             int y = 72;
@@ -206,6 +209,35 @@ namespace GUI
             
             SettingForm settingForm = new SettingForm(_id,_actions);
             OpenComponent(settingForm);
+
+            switch (_action)
+            {
+                case "Home":
+                    
+                    break;
+                case "Employee":
+                    
+                    break;
+                case "Food":
+                    
+                    break;
+                case "Warehouse":
+
+                    break;
+                case "Import":
+                    DetailPurchaseedIngredient detail = new DetailPurchaseedIngredient(_id);
+                    OpenComponent( detail );
+                    break;
+                case "Order":
+
+                    break;
+                case "OrderList":
+
+                    break;
+                case "EditInformation":
+
+                    break;
+            }
         }
 
         private void Control_Hover(Control control, bool hover)
@@ -223,7 +255,6 @@ namespace GUI
                 if (imgResource != null)
                 {
                     pic.Image = imgResource;
-                    Console.WriteLine(name + "co");
                 }
             }
 
@@ -267,7 +298,6 @@ namespace GUI
                 _action = btnSetting.Name.Substring(3);
             foreach(Control control in _choosePnl.Controls)
                 Control_Hover(control, false);
-            Console.WriteLine(_choosePnl.Name);
             picChoose.Visible = false;
             SettingForm settingForm = new SettingForm(_id,_actions);
             OpenComponent(settingForm);
@@ -293,16 +323,6 @@ namespace GUI
         private void txtSearch_Leave(object sender, EventArgs e)
         {
             txtSearch.Text = txtSearch.Text.Length == 0 ? "Tìm kiếm" : txtSearch.Text;
-        }
-
-        private void lblHome_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void picHome_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
