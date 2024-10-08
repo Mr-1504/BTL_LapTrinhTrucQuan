@@ -52,7 +52,7 @@
             // 
             // pnBackground
             // 
-            this.pnBackground.BackColor = System.Drawing.SystemColors.Control;
+            this.pnBackground.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
             this.pnBackground.Controls.Add(this.pnOrdering);
             this.pnBackground.Controls.Add(this.pnLocalSearchBar);
             this.pnBackground.Controls.Add(this.pnTabDishCal);
@@ -67,6 +67,7 @@
             // 
             // pnOrdering
             // 
+            this.pnOrdering.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pnOrdering.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnOrdering.BackgroundImage")));
             this.pnOrdering.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnOrdering.Controls.Add(this.orb_lbHint);
@@ -104,6 +105,7 @@
             // 
             // pnLocalSearchBar
             // 
+            this.pnLocalSearchBar.BackColor = System.Drawing.Color.Transparent;
             this.pnLocalSearchBar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnLocalSearchBar.BackgroundImage")));
             this.pnLocalSearchBar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnLocalSearchBar.Controls.Add(this.lsb_lbHint);
@@ -164,7 +166,7 @@
             this.dgvTable.AllowUserToDeleteRows = false;
             this.dgvTable.AllowUserToResizeColumns = false;
             this.dgvTable.AllowUserToResizeRows = false;
-            this.dgvTable.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvTable.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
             this.dgvTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -177,11 +179,11 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvTable.ColumnHeadersHeight = 32;
+            this.dgvTable.ColumnHeadersHeight = 38;
             this.dgvTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvTable.Cursor = System.Windows.Forms.Cursors.Cross;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 5);

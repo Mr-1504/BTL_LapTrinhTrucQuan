@@ -38,14 +38,21 @@
             this.pnTabListAll = new System.Windows.Forms.Panel();
             this.lbControlTitle = new System.Windows.Forms.Label();
             this.pnMenuListing = new System.Windows.Forms.Panel();
+            this.ml_Searchbar = new System.Windows.Forms.Panel();
+            this.ml_scb_lbHint = new System.Windows.Forms.Label();
+            this.ml_scb_txbSearchbox = new System.Windows.Forms.TextBox();
             this.ml_lbUsageHint = new System.Windows.Forms.Label();
             this.ml_dgvMenu = new System.Windows.Forms.DataGridView();
-            this.ml_lbTitle = new System.Windows.Forms.Label();
             this.pnPrecal = new System.Windows.Forms.Panel();
             this.pc_lbUsageHint = new System.Windows.Forms.Label();
             this.pc_dgvPrecal = new System.Windows.Forms.DataGridView();
             this.pc_lbTitle = new System.Windows.Forms.Label();
+            this.MaMonAn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenMonAn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoPhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NguyenLieuThieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnMenuListing.SuspendLayout();
+            this.ml_Searchbar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ml_dgvMenu)).BeginInit();
             this.pnPrecal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pc_dgvPrecal)).BeginInit();
@@ -95,13 +102,51 @@
             // 
             this.pnMenuListing.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnMenuListing.BackgroundImage")));
             this.pnMenuListing.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnMenuListing.Controls.Add(this.ml_Searchbar);
             this.pnMenuListing.Controls.Add(this.ml_lbUsageHint);
             this.pnMenuListing.Controls.Add(this.ml_dgvMenu);
-            this.pnMenuListing.Controls.Add(this.ml_lbTitle);
             this.pnMenuListing.Location = new System.Drawing.Point(27, 30);
             this.pnMenuListing.Name = "pnMenuListing";
             this.pnMenuListing.Size = new System.Drawing.Size(480, 715);
             this.pnMenuListing.TabIndex = 7;
+            // 
+            // ml_Searchbar
+            // 
+            this.ml_Searchbar.BackColor = System.Drawing.Color.Transparent;
+            this.ml_Searchbar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ml_Searchbar.BackgroundImage")));
+            this.ml_Searchbar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ml_Searchbar.Controls.Add(this.ml_scb_lbHint);
+            this.ml_Searchbar.Controls.Add(this.ml_scb_txbSearchbox);
+            this.ml_Searchbar.Location = new System.Drawing.Point(30, 20);
+            this.ml_Searchbar.Name = "ml_Searchbar";
+            this.ml_Searchbar.Size = new System.Drawing.Size(421, 42);
+            this.ml_Searchbar.TabIndex = 10;
+            this.ml_Searchbar.Click += new System.EventHandler(this.ml_Searchbar_Click);
+            // 
+            // ml_scb_lbHint
+            // 
+            this.ml_scb_lbHint.AutoSize = true;
+            this.ml_scb_lbHint.BackColor = System.Drawing.Color.Transparent;
+            this.ml_scb_lbHint.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ml_scb_lbHint.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.ml_scb_lbHint.Location = new System.Drawing.Point(45, 11);
+            this.ml_scb_lbHint.Name = "ml_scb_lbHint";
+            this.ml_scb_lbHint.Size = new System.Drawing.Size(74, 21);
+            this.ml_scb_lbHint.TabIndex = 7;
+            this.ml_scb_lbHint.Text = "Tìm kiếm";
+            this.ml_scb_lbHint.Click += new System.EventHandler(this.ml_scb_lbHint_Click);
+            // 
+            // ml_scb_txbSearchbox
+            // 
+            this.ml_scb_txbSearchbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ml_scb_txbSearchbox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ml_scb_txbSearchbox.Location = new System.Drawing.Point(45, 11);
+            this.ml_scb_txbSearchbox.Name = "ml_scb_txbSearchbox";
+            this.ml_scb_txbSearchbox.Size = new System.Drawing.Size(361, 22);
+            this.ml_scb_txbSearchbox.TabIndex = 0;
+            this.ml_scb_txbSearchbox.TextChanged += new System.EventHandler(this.ml_scb_txbSearchbox_TextChanged);
+            this.ml_scb_txbSearchbox.Enter += new System.EventHandler(this.ml_scb_txbSearchbox_Enter);
+            this.ml_scb_txbSearchbox.Leave += new System.EventHandler(this.ml_scb_txbSearchbox_Leave);
             // 
             // ml_lbUsageHint
             // 
@@ -133,7 +178,7 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.ml_dgvMenu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.ml_dgvMenu.ColumnHeadersHeight = 32;
+            this.ml_dgvMenu.ColumnHeadersHeight = 38;
             this.ml_dgvMenu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -144,25 +189,16 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.ml_dgvMenu.DefaultCellStyle = dataGridViewCellStyle2;
-            this.ml_dgvMenu.Location = new System.Drawing.Point(5, 70);
+            this.ml_dgvMenu.Location = new System.Drawing.Point(30, 70);
             this.ml_dgvMenu.MultiSelect = false;
             this.ml_dgvMenu.Name = "ml_dgvMenu";
             this.ml_dgvMenu.ReadOnly = true;
+            this.ml_dgvMenu.RowHeadersVisible = false;
             this.ml_dgvMenu.RowTemplate.Height = 32;
-            this.ml_dgvMenu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.ml_dgvMenu.Size = new System.Drawing.Size(470, 590);
+            this.ml_dgvMenu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.ml_dgvMenu.Size = new System.Drawing.Size(421, 590);
             this.ml_dgvMenu.TabIndex = 8;
-            // 
-            // ml_lbTitle
-            // 
-            this.ml_lbTitle.AutoSize = true;
-            this.ml_lbTitle.BackColor = System.Drawing.Color.Transparent;
-            this.ml_lbTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ml_lbTitle.Location = new System.Drawing.Point(20, 20);
-            this.ml_lbTitle.Name = "ml_lbTitle";
-            this.ml_lbTitle.Size = new System.Drawing.Size(217, 32);
-            this.ml_lbTitle.TabIndex = 0;
-            this.ml_lbTitle.Text = "Danh sách món ăn";
+            this.ml_dgvMenu.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ml_dgvMenu_CellDoubleClick);
             // 
             // pnPrecal
             // 
@@ -206,8 +242,13 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.pc_dgvPrecal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.pc_dgvPrecal.ColumnHeadersHeight = 32;
+            this.pc_dgvPrecal.ColumnHeadersHeight = 38;
             this.pc_dgvPrecal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.pc_dgvPrecal.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaMonAn,
+            this.TenMonAn,
+            this.SoPhan,
+            this.NguyenLieuThieu});
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
@@ -217,14 +258,16 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.pc_dgvPrecal.DefaultCellStyle = dataGridViewCellStyle4;
-            this.pc_dgvPrecal.Location = new System.Drawing.Point(5, 70);
+            this.pc_dgvPrecal.Location = new System.Drawing.Point(26, 70);
             this.pc_dgvPrecal.MultiSelect = false;
             this.pc_dgvPrecal.Name = "pc_dgvPrecal";
             this.pc_dgvPrecal.ReadOnly = true;
+            this.pc_dgvPrecal.RowHeadersVisible = false;
             this.pc_dgvPrecal.RowTemplate.Height = 32;
-            this.pc_dgvPrecal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.pc_dgvPrecal.Size = new System.Drawing.Size(810, 590);
+            this.pc_dgvPrecal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.pc_dgvPrecal.Size = new System.Drawing.Size(770, 590);
             this.pc_dgvPrecal.TabIndex = 10;
+            this.pc_dgvPrecal.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.pc_dgvPrecal_CellDoubleClick);
             // 
             // pc_lbTitle
             // 
@@ -237,11 +280,39 @@
             this.pc_lbTitle.TabIndex = 10;
             this.pc_lbTitle.Text = "Bảng dự tính";
             // 
+            // MaMonAn
+            // 
+            this.MaMonAn.HeaderText = "Mã món ăn";
+            this.MaMonAn.Name = "MaMonAn";
+            this.MaMonAn.ReadOnly = true;
+            this.MaMonAn.Width = 193;
+            // 
+            // TenMonAn
+            // 
+            this.TenMonAn.HeaderText = "Tên món";
+            this.TenMonAn.Name = "TenMonAn";
+            this.TenMonAn.ReadOnly = true;
+            this.TenMonAn.Width = 192;
+            // 
+            // SoPhan
+            // 
+            this.SoPhan.HeaderText = "Số phần";
+            this.SoPhan.Name = "SoPhan";
+            this.SoPhan.ReadOnly = true;
+            this.SoPhan.Width = 193;
+            // 
+            // NguyenLieuThieu
+            // 
+            this.NguyenLieuThieu.HeaderText = "Nguyên liệu thiếu";
+            this.NguyenLieuThieu.Name = "NguyenLieuThieu";
+            this.NguyenLieuThieu.ReadOnly = true;
+            this.NguyenLieuThieu.Width = 192;
+            // 
             // Warehouse_ServingPrecal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
             this.ClientSize = new System.Drawing.Size(1370, 815);
             this.Controls.Add(this.pnPrecal);
             this.Controls.Add(this.pnMenuListing);
@@ -255,6 +326,8 @@
             this.Load += new System.EventHandler(this.Warehouse_ServingPrecal_Load);
             this.pnMenuListing.ResumeLayout(false);
             this.pnMenuListing.PerformLayout();
+            this.ml_Searchbar.ResumeLayout(false);
+            this.ml_Searchbar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ml_dgvMenu)).EndInit();
             this.pnPrecal.ResumeLayout(false);
             this.pnPrecal.PerformLayout();
@@ -270,12 +343,18 @@
         private System.Windows.Forms.Panel pnTabListAll;
         private System.Windows.Forms.Label lbControlTitle;
         private System.Windows.Forms.Panel pnMenuListing;
-        private System.Windows.Forms.Label ml_lbTitle;
         private System.Windows.Forms.DataGridView ml_dgvMenu;
         private System.Windows.Forms.Label ml_lbUsageHint;
         private System.Windows.Forms.Panel pnPrecal;
         private System.Windows.Forms.Label pc_lbUsageHint;
         private System.Windows.Forms.DataGridView pc_dgvPrecal;
         private System.Windows.Forms.Label pc_lbTitle;
+        private System.Windows.Forms.Panel ml_Searchbar;
+        private System.Windows.Forms.Label ml_scb_lbHint;
+        private System.Windows.Forms.TextBox ml_scb_txbSearchbox;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaMonAn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenMonAn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoPhan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NguyenLieuThieu;
     }
 }

@@ -43,5 +43,26 @@ namespace BLL
                 return BLL_GetTable();
             }
         }
+        public static class ServingPrecal
+        {
+            private static string MenuQuery = "select MaMonAn, TenMonAn, DonGia from MonAn where TrangThai = 1";
+            private static string SearchQuery = string.Empty;
+
+            public static DataTable BLL_GetMenu()
+            {
+                return SqlHelper.ExecuteReader(MenuQuery + SearchQuery, new object[] { });
+            }
+            public static DataTable BLL_SearchFromMenu(string keyword)
+            {
+                SearchQuery = string.IsNullOrEmpty(keyword) ? string.Empty : $" and (MaMonAn like N'%{keyword}%' or TenMonAn like N'%{keyword}%' or DonGia like N'%{keyword}%')";
+                return BLL_GetMenu();
+            }
+
+            static void test()
+            {
+                DataTable dt = new DataTable();
+                
+            }
+        }
     }
 }

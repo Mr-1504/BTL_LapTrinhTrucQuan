@@ -18,7 +18,8 @@ namespace GUI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new SettingForm("LT20240001"));
-            Application.Run(new Warehouse_ListAll());
+            //Application.Run(new Warehouse_ListAll());
+            Application.Run(new Warehouse_ServingPrecal());
         }
     }
 }
