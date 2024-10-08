@@ -2,41 +2,14 @@
 # folder-based project outputs
 
 ## Ignore Visual Studio temporary files
-
-GUI/.vs/
-GUI/obj/
-
-DTO/.vs/
-DTO/obj/
-
-DAL/.vs/
-DAL/obj/
-
-BLL/.vs/
-BLL/obj/
-
-Utilities/.vs/
-Utilities/obj/
 .vscode/
 .vs/
 *.vsidx
 *.vscode
 
 ## Build results
-GUI/bin/
-GUI/obj/
-
-DTO/bin/
-DTO/obj/
-
-DAL/bin/
-DAL/obj/
-
-BLL/bin/
-BLL/obj/
-
-Utilities/bin/
-Utilities/obj/
+bin/
+obj/
 
 # User-specific files
 *.user

@@ -1,5 +1,4 @@
 ﻿using DTO;
-using System;
 using System.Data;
 using Utilities;
 
@@ -7,9 +6,9 @@ namespace DAL
 {
     public class OrderDAL
     {
-        private int GetOrderCount(string day, string month, string year)
+        private int GetOrderCount()
         {
-            string query = "SELECT COUNT(*) FROM DonHang WHERE MaHoaDonNhap LIKE 'HDB" + day + month + year + "%'";
+            string query = "SELECT COUNT(*) FROM DonHang";
             return SqlHelper.ExecuteScalar(query, new object[] {});
         }
 
@@ -21,11 +20,8 @@ namespace DAL
 
         public int AddnewOrder(OrderDTO order)
         {
-            string year = DateTime.Now.Year.ToString().Substring(2);
-            string month = new string('0', 2 - DateTime.Now.Month.ToString().Length) + DateTime.Now.Month.ToString();
-            string day = new string('0', 2 - DateTime.Now.Day.ToString().Length) + DateTime.Now.Day.ToString();
-            string orderId = (GetOrderCount(day, month, year) + 1).ToString();
-            orderId = "HDB" + day + month + year + new string('0', 3 -  orderId.Length) + orderId;
+            string orderId = (GetOrderCount() + 1).ToString();
+            orderId = new string('0', 4 -  orderId.Length) + orderId;
 
             string query = "INSERT INTO DonHang (MaDon, NgayTao, TongTien, TrangThai ) " +
                 "VALUES ( @orderId , @orderDate , @totalMoney , @orderStatus )";
