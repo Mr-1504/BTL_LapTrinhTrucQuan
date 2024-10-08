@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
 using Utilities;
@@ -57,12 +58,35 @@ namespace BLL
                 SearchQuery = string.IsNullOrEmpty(keyword) ? string.Empty : $" and (MaMonAn like N'%{keyword}%' or TenMonAn like N'%{keyword}%' or DonGia like N'%{keyword}%')";
                 return BLL_GetMenu();
             }
-
-            static void test()
+            public static void BLL_GetPrecalResult(ref List<string> dishIDs, ref List<int> out_dishCount, ref List<string> out_lowIngredientNames)
             {
-                DataTable dt = new DataTable();
-                
+                string dishList = MakeStringForSQLQuery(dishIDs);
+                DataGridView temp = new DataGridView();
+                temp.DataSource = SqlHelper.ExecuteReader(
+                    "with InStock as (" +
+                        "select NguyenLieu.TenNguyenLieu, NguyenLieu.MaNguyenLieu, NguyenLieu.SoLuong as TrongKho " +
+                        "from NguyenLieu join NguyenLieuMonAn on NguyenLieu.MaNguyenLieu = NguyenLieuMonAn.MaNguyenLieu " +
+                       $"where MaMonAn in {dishList} " +
+                    "), Requiring as ( " +
+                        "select MaNguyenLieu, sum(SoLuong) as CanDung " +
+                        "from NguyenLieuMonAn " +
+                       $"where MaMonAn in {dishList} " +
+                        "group by MaNguyenLieu " +
+                     ") " +
+                     "select TenNguyenLieu, InStock.MaNguyenLieu, cast((TrongKho / CanDung) as int) as Precal " +
+                     "from InStock join Requiring on InStock.MaNguyenLieu = Requiring.MaNguyenLieu " +
+                     "order by Precal ASC", new object[] { });
+
+                // todo: xuất tên với số đĩa tính được ra 2 List<> bên trên
             }
+        }
+
+        public static string MakeStringForSQLQuery(List<string> daList)
+        {
+            string res = "(";
+            foreach(string s in daList) res += "'" + s + "',";
+            res = res.Substring(0, res.Length - 1) + ")";
+            return res;
         }
     }
 }

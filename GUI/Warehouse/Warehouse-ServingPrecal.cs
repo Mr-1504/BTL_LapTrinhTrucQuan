@@ -73,17 +73,17 @@ namespace GUI.Warehouse
         //  ^^ end
 
         //  >> Menu-Precal interaction section start
-        private HashSet<string> selectedDishID = new HashSet<string>();
+        private List<string> selectedDishIDs = new List<string>();
 
         private void ml_dgvMenu_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (selectedDishID.Add(ml_dgvMenu.CurrentRow.Cells[0].Value.ToString()))
+            if (!selectedDishIDs.Contains(ml_dgvMenu.CurrentRow.Cells[0].Value))
             {
-                pc_dgvPrecal.Rows.Add(selectedDishID.Last(), ml_dgvMenu.CurrentRow.Cells[1].Value);
+                selectedDishIDs.Add(ml_dgvMenu.CurrentRow.Cells[0].Value.ToString());
+                pc_dgvPrecal.Rows.Add(ml_dgvMenu.CurrentRow.Cells[0].Value, ml_dgvMenu.CurrentRow.Cells[1].Value);
+                pc_dgvPrecal_ShowData();
             }
         }
-
-
         //  ^^ end
 
         //  >> Precal section start
@@ -96,10 +96,18 @@ namespace GUI.Warehouse
             pc_dgvPrecal.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
             pc_dgvPrecal.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
         }
+        private void pc_dgvPrecal_ShowData()
+        {
+            List<int> dishCount = new List<int>();
+            List<string> lowIngredientNames = new List<string>();
+            BLL_GetPrecalResult(ref selectedDishIDs, ref dishCount, ref lowIngredientNames);
+        }
         private void pc_dgvPrecal_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            selectedDishID.Remove(pc_dgvPrecal.SelectedRows[0].Cells[0].Value.ToString());
-            pc_dgvPrecal.Rows.Remove(pc_dgvPrecal.SelectedRows[0]);
+            selectedDishIDs.Remove(pc_dgvPrecal.CurrentRow.Cells[0].Value.ToString());
+            pc_dgvPrecal.Rows.Remove(pc_dgvPrecal.CurrentRow);
+
+            pc_dgvPrecal_ShowData();
         }
         //  ^^ end
     }

@@ -14,7 +14,7 @@ namespace Utilities
             var baseConnectionString = ConfigurationManager.ConnectionStrings["BaseConnectionString"].ConnectionString;
             var databaseName = ConfigurationManager.AppSettings["DatabaseName"];
 
-            return baseConnectionString.Replace("Data Source=;", $"Data Source={deviceName}\\SQLEXPRESS;")
+            return baseConnectionString.Replace("Data Source=;", $"Data Source={deviceName}\\SQLEXPRESS01;")
                                        .Replace("Initial Catalog=;", $"Initial Catalog={databaseName};");
         }
 
