@@ -2,7 +2,9 @@
 using DTO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Drawing;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using Utilities;
 
@@ -25,10 +27,9 @@ namespace GUI.PurchasedIngredient
             _id = employeeId;
         }
 
-        private void InputDetail_Load(object sender, EventArgs e)
+        private async void InputDetail_Load(object sender, EventArgs e)
         {
-            AddSuppliers();
-            AddIngredients();
+            await Task.Run(() => LoadData());
         }
 
         private void AddSuppliers(string search = "")
@@ -40,10 +41,25 @@ namespace GUI.PurchasedIngredient
             }
 
         }
-
+        private void LoadData()
+        {
+            if (cmbSupplierName.InvokeRequired)
+            {
+                cmbSupplierName.Invoke(new Action(() =>
+                {
+                    AddSuppliers();
+                    AddIngredients();
+                }));
+            }
+            else
+            {
+                AddSuppliers();
+                AddIngredients();
+            }
+        }
         private void AddIngredients(string search = "")
         {
-            _ingredients = new IngredientBLL().GetIngredients();
+            _ingredients = new IngredientBLL().GetIngredients(search);
             foreach (IngredientDTO ingredient in _ingredients)
             {
                 cmbIngredientName.Items.Add(ingredient.IngredientName);
@@ -85,10 +101,15 @@ namespace GUI.PurchasedIngredient
 
         private void txtPriceUnit_KeyDown(object sender, KeyEventArgs e)
         {
+            string s = txtPriceUnit.Text;
             if (e.KeyCode == Keys.Enter)
             {
-                e.Handled = true;
+                //e.Handled = true;
+                txtPriceUnit.ForeColor = Color.Black;
+                List<IngredientDTO> res = new IngredientBLL().GetIngredient(Ingredient.IngredientName, cmbIngredientName.Text);
+                txtUnit.Text = res[0].IngredientUnit.ToString();
                 txtQuantity.Focus();
+                txtPriceUnit.Text = s;
             }
         }
 
@@ -204,7 +225,7 @@ namespace GUI.PurchasedIngredient
             {
                 txtUnit.Text = "";
             }
-            else if (cmbIngredientName.Text == cmbIngredientName.Items[0].ToString())
+            else if (cmbIngredientName.Items.Count > 0 && cmbIngredientName.Text == cmbIngredientName.Items[0].ToString())
             {
                 txtUnit.Text = _ingredients[0].IngredientUnit.ToString();
             }
@@ -294,13 +315,35 @@ namespace GUI.PurchasedIngredient
                     return;
                 }
             }
+            AddData(priceUnit, quantity);
 
-            DataGridViewRow newIngredient = new DataGridViewRow();
+        }
+        private void AddData(int priceUnit, int quantity)
+        {
             List<IngredientDTO> res = new IngredientBLL().GetIngredient(Ingredient.IngredientName, cmbIngredientName.Text);
             txtUnit.Text = res[0].IngredientUnit.ToString();
-            dgvList.Rows.Add("  " + cmbIngredientName.Text, "  " + txtUnit.Text, "  " + priceUnit, "  " + quantity);
-            dgvList.Rows.Add(newIngredient);
             lblError.Visible = false;
+
+            for (int i = 0; i < dgvList.Rows.Count; i++)
+            {
+                Console.WriteLine(dgvList.Rows[i].Cells[1].Value.ToString() + "  " + txtUnit.Text);
+                if(dgvList.Rows[i].Cells[0].Value.ToString() == cmbIngredientName.Text)
+                {
+                    MessageBox.Show("ten");
+                }
+                if (dgvList.Rows[i].Cells[1].Value.ToString() == txtUnit.Text)
+                {
+                    MessageBox.Show("donvi");
+                }
+                if (dgvList.Rows[i].Cells[0].Value.ToString().Trim() == cmbIngredientName.Text.Trim()
+                    && dgvList.Rows[i].Cells[1].Value.ToString().Trim() == txtUnit.Text.Trim()
+                    && int.Parse(dgvList.Rows[i].Cells[2].Value.ToString()) == priceUnit)
+                {
+                    dgvList.Rows[i].Cells[3].Value = "  " + (int.Parse(dgvList.Rows[i].Cells[3].Value.ToString()) + quantity).ToString();
+                    return;
+                }
+            }
+            dgvList.Rows.Add("  " + cmbIngredientName.Text, "  " + txtUnit.Text, "  " + priceUnit, "  " + quantity);
             _invoiceDetail.Add(new PurchaseInvoiceDetailDTO(res[0].IngredientId, quantity, priceUnit));
         }
 
@@ -315,6 +358,21 @@ namespace GUI.PurchasedIngredient
         public List<PurchaseInvoiceDetailDTO> GetInvoiceDetail()
         {
             return _invoiceDetail;
+        }
+        public DataGridView GetData()
+        {
+            return dgvList;
+        }
+
+        private void cmbIngredientName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Tab)
+            {
+                List<IngredientDTO> res = new IngredientBLL().GetIngredient(Ingredient.IngredientName, cmbIngredientName.Text);
+                txtUnit.Text = res[0].IngredientUnit.ToString();
+                txtPriceUnit.Focus();
+                e.SuppressKeyPress = true;
+            }
         }
     }
 }
