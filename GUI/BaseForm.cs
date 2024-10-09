@@ -18,6 +18,9 @@ namespace GUI
         private int _y;
         private Panel _pnl;
         private Panel _choosePnl;
+        // change avatar
+        private string _imagePath;
+        private Action[] _actions;
         public BaseForm(string employeeId)
         {
             _id = employeeId;
@@ -51,8 +54,29 @@ namespace GUI
             LoadMenu(employeeId);
 
             ActiveControl = picLogo;
+
+            //
+            _actions = new Action[2] { dispose, loadImage };
+            _imagePath = $@"..\..\Resources\AvatarImage\{_id}.JPG";
+            btnAvatar.BackgroundImage = Image.FromFile(_imagePath);
+        }
+        public void dispose()
+        {
+            if (btnAvatar.BackgroundImage != null)
+            {
+                btnAvatar.BackgroundImage.Dispose();
+                btnAvatar.BackgroundImage = null;
+            }
+
+        }
+        public void loadImage()
+        {
+            btnAvatar.BackgroundImage = Image.FromFile(_imagePath);
         }
 
+            _imagePath = $@"..\..\Resources\AvatarImage\{_id}.JPG";
+            btnAvatar.BackgroundImage = Image.FromFile(_imagePath);
+        }
         private void LoadMenu(string employeeId)
         {
             int y = 72;
@@ -182,6 +206,9 @@ namespace GUI
                     }
                 }
             }
+            
+            SettingForm settingForm = new SettingForm(_id,_actions);
+            OpenComponent(settingForm);
 
             switch (_action)
             {
@@ -272,7 +299,7 @@ namespace GUI
             foreach(Control control in _choosePnl.Controls)
                 Control_Hover(control, false);
             picChoose.Visible = false;
-            SettingForm settingForm = new SettingForm(_id);
+            SettingForm settingForm = new SettingForm(_id,_actions);
             OpenComponent(settingForm);
         }
 
