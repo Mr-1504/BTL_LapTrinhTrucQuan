@@ -1,4 +1,4 @@
-using DAL;
+﻿using DAL;
 using DTO;
 using System;
 using System.Collections.Generic;
@@ -15,14 +15,12 @@ namespace GUI
         private string _employeeId ;
         private DataTable _dt = new DataTable();
         //path ảnh
-        string _imagePath;
-        private Action[] _actions;
-        public SettingFormEditProfile(string employeeId, Action[] actions)
+        string imagePath;
+        public SettingFormEditProfile(string employeeId)
         {
             _employeeId = employeeId;
             _dt = _employeeDAL.GetEmployee(Employee.EmployeeId, _employeeId);
-            _imagePath = $@"..\..\Resources\AvatarImage\{_employeeId}.JPG";
-            _actions = actions;
+            imagePath = $@"..\..\Resources\AvatarImage\{_employeeId}.JPG";
             InitializeComponent();
             picEditImage.MouseEnter += new EventHandler(Picture_MouseEnter);
             picEditImage.MouseLeave += new EventHandler(Picture_MouseLeave);
@@ -74,9 +72,9 @@ namespace GUI
                 {
                     txtDateofBirth.Text = "Invalid Date";
                 }// Set the Image property of picAvatar
-                if (System.IO.File.Exists(_imagePath))
+                if (System.IO.File.Exists(imagePath))
                 {
-                    picAvatar.Image = Image.FromFile(_imagePath);
+                    picAvatar.Image = Image.FromFile(imagePath);
                     
                 }
                 else
@@ -190,19 +188,17 @@ namespace GUI
 
                     try
                     {
+                        // Dispose the current image to release the file
                         if (picAvatar.Image != null)
                         {
                             picAvatar.Image.Dispose();
                             picAvatar.Image = null;
-                            
                         }
-                        _actions[0]();
 
                         // copy file vào project
                         System.IO.File.Copy(selectedFilePath, targetPath, true);
 
                         picAvatar.Image = Image.FromFile(targetPath);
-                        _actions[1]();
 
                         MessageBox.Show("Thay đổi ảnh thành công.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
