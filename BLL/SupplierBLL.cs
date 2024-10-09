@@ -30,5 +30,11 @@ namespace BLL
             DataTable data = new SupplierDAL().GetSupplierByName(name);
             return new SupplierDTO(data.Rows[0][0].ToString(), data.Rows[0][1].ToString(), data.Rows[0][2].ToString(), data.Rows[0][3].ToString(), Status.Use);
         }
+        public SupplierDTO GetSupplierById(string id)
+        {
+            DataTable data = new SupplierDAL().GetSupplierById(id);
+            return new SupplierDTO(data.Rows[0][0].ToString(), data.Rows[0][1].ToString(), data.Rows[0][2].ToString(), data.Rows[0][3].ToString(), Status.Use);
+
+        }
     }
 }
