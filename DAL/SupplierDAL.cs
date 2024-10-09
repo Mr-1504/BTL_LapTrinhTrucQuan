@@ -12,12 +12,6 @@ namespace DAL
             return SqlHelper.ExecuteScalar(query, new object[] { prefix.GetEnumDescription() });
         }
 
-        public int IsExist(string value)
-        {
-            string query = "SELECT COUNT(*) FROM NhaCungCap WHERE TenNhaCungCap = @supplierName";
-            return SqlHelper.ExecuteScalar(query, new object[] { value });
-        }
-
         public int AddNewSupplier(SupplierType prefix, SupplierDTO supplier)
         {
             int count = GetSupplierCount(prefix) + 1;
@@ -57,21 +51,10 @@ namespace DAL
             return SqlHelper.ExecuteReader(query, new object[] { });
         }
 
-        public DataTable GetSupplierById(string supplierId)
+        public DataTable GetSupplier(string supplierId)
         {
             string query = "SELECT * FROM NhaCungCap WHERE MaNhaCungCap = @supplierId AND TrangThai = 1";
             return SqlHelper.ExecuteReader(query, new object[] { supplierId });
-        }
-        public DataTable GetSuppliers(string supplierName)
-        {
-            string query = "SELECT * FROM NhaCungCap WHERE TenNhaCungCap LIKE '%' + @supplierName + '%' AND TrangThai = 1";
-            return SqlHelper.ExecuteReader(query, new object[] { supplierName });
-        }
-
-        public DataTable GetSupplierByName(string supplierName)
-        {
-            string query = "SELECT * FROM NhaCungCap WHERE TenNhaCungCap = @supplierName AND TrangThai = 1";
-            return SqlHelper.ExecuteReader(query, new object[] { supplierName });
         }
     }
 }

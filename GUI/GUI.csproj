@@ -73,17 +73,11 @@
     <Compile Include="LoadingForm.Designer.cs">
       <DependentUpon>LoadingForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginForm.cs">
+    <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.Designer.cs">
-      <DependentUpon>LoginForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MessageForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MessageForm.Designer.cs">
-      <DependentUpon>MessageForm.cs</DependentUpon>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -92,53 +86,6 @@
     </Compile>
     <Compile Include="ucFood.Designer.cs">
       <DependentUpon>ucFood.cs</DependentUpon>
-    <Compile Include="PurchasedIngredient\DetailPurchaseedIngredient.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PurchasedIngredient\DetailPurchaseedIngredient.Designer.cs">
-      <DependentUpon>DetailPurchaseedIngredient.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PurchasedIngredient\InputDetail.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="PurchasedIngredient\InputDetail.Designer.cs">
-      <DependentUpon>InputDetail.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PurchasedIngredient\InvoiceDtail.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="PurchasedIngredient\InvoiceDtail.Designer.cs">
-      <DependentUpon>InvoiceDtail.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SettingForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SettingForm.Designer.cs">
-      <DependentUpon>SettingForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SettingFormEditProfile.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SettingFormEditProfile.Designer.cs">
-      <DependentUpon>SettingFormEditProfile.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SettingFormOption.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SettingFormOption.Designer.cs">
-      <DependentUpon>SettingFormOption.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SettingFormSecurity.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SettingFormSecurity.Designer.cs">
-      <DependentUpon>SettingFormSecurity.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Warehouse\Warehouse-ListAll.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Warehouse\Warehouse-ListAll.Designer.cs">
-      <DependentUpon>Warehouse-ListAll.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
@@ -152,11 +99,8 @@
     <EmbeddedResource Include="LoadingForm.resx">
       <DependentUpon>LoadingForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginForm.resx">
-      <DependentUpon>LoginForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MessageForm.resx">
-      <DependentUpon>MessageForm.cs</DependentUpon>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -165,29 +109,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ucFood.resx">
       <DependentUpon>ucFood.cs</DependentUpon>
-    <EmbeddedResource Include="PurchasedIngredient\DetailPurchaseedIngredient.resx">
-      <DependentUpon>DetailPurchaseedIngredient.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PurchasedIngredient\InputDetail.resx">
-      <DependentUpon>InputDetail.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PurchasedIngredient\InvoiceDtail.resx">
-      <DependentUpon>InvoiceDtail.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SettingForm.resx">
-      <DependentUpon>SettingForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SettingFormEditProfile.resx">
-      <DependentUpon>SettingFormEditProfile.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SettingFormOption.resx">
-      <DependentUpon>SettingFormOption.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SettingFormSecurity.resx">
-      <DependentUpon>SettingFormSecurity.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Warehouse\Warehouse-ListAll.resx">
-      <DependentUpon>Warehouse-ListAll.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -212,10 +133,6 @@
       <Project>{27a08745-fb46-46b9-a4db-0a068ef1c32c}</Project>
       <Name>BLL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DAL\DAL.csproj">
-      <Project>{9026DC2D-E94F-49DF-BF0C-54D73B03B58D}</Project>
-      <Name>DAL</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DTO\DTO.csproj">
       <Project>{a98ce691-036e-4910-b622-be13025f8e24}</Project>
       <Name>DTO</Name>
@@ -229,6 +146,21 @@
     <None Include="Resources\logo.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\home.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Home3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Home4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\logo3.png" />
   </ItemGroup>
   <ItemGroup>
@@ -236,6 +168,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\hihi.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnSetting.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnInform.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Home6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconHome.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Account.jpg" />
@@ -323,153 +267,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\btnThem.jpg" />
-    <None Include="Resources\SearchPanel.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\btnSetting.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\btnNotification.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\lblButton.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\btnHome.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\lblButtonGray.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\btnEmployee.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\lblHover.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\lblFood.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\warehouseGray.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\picHomeBlue.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\picEmployeeGray.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\picFoodGray.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\picWarehouseGray.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\picImportGray.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\picEmployeeBlue.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\picFoodBlue.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\picImportBlue.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\picWarehouseBlue.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\picHomeGray.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\picOrderGray.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\picOrderBlue.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\picOrderListBlue.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\picOrderListGray.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\picEditInformationBlue.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\picEditInformationGray.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Search.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\step1Wait.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\step1Complete.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\step2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\step2Wait.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\arrowRight.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\bgImport.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\bgResetInput.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\bgResetInputHover.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\btnConfirmInput.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\btnConfirmInputHover.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\pnltext.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\bgQuantityIngredientInput.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cmbSupplierName.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cmbIngredientImput.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ListIngrdient.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\btnCancel.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\btnContinue.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\btnReturn.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\No.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Yes.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\pnlInvoice.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Resources\AvatarImage\QL20240001.JPG" />
-    <Content Include="Resources\AvatarImage\KH20240001.JPG" />
-    <Content Include="Resources\AvatarImage\LT20240001.JPG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

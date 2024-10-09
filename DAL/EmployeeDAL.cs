@@ -34,7 +34,7 @@ namespace DAL
             int count = GetEmployeeCount(prefix, year) + 1;
             if (count == 0)
                 return -1;
-            string employeeCount = new string('0', 4 - count.ToString().Length - year.Length) + count.ToString();
+            string employeeCount = new string('0', 8 - count.ToString().Length - year.Length) + count.ToString();
             string employeeId = prefix.GetEnumDescription() + year + employeeCount;
             string query = "INSERT INTO NhanVien (MaNhanVien, TenNhanVien, GioiTinh, NamSinh, QueQuan, DiaChi, DienThoai, TrangThai) " +
                            "VALUES ( @EMPLOYEEID , @NAME , @GENDER , @BIRTH , @HOMETOWN , @ADDRESS , @NUMBERPHONE , @TRANGTHAI )";

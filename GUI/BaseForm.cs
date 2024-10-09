@@ -1,335 +1,283 @@
-﻿using BLL;
-using GUI.PurchasedIngredient;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Drawing;
-using System.Security.Cryptography;
+using System.Drawing.Drawing2D;
+using System.Linq;
+using System.Security.Principal;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using BLL;
 using Utilities;
 
 namespace GUI
 {
     public partial class BaseForm : Form
     {
-        private string _itemName;
-        private string _id;
-        private string _action;
-        private int _distance;
-        private int _change;
-        private int _y;
-        private Panel _pnl;
-        private Panel _choosePnl;
-        // change avatar
-        private string _imagePath;
-        private Action[] _actions;
-        public BaseForm(string employeeId)
+
+        public BaseForm()
         {
-            _id = employeeId;
-            _y = 0;
-            _distance = 0;
-            _change = 0;
-            _itemName = "Home";
             InitializeComponent();
-            _action = pnlHome.Name.Substring(3);
-            _choosePnl = pnlHome;
-            foreach (Control control in Controls)
+
+            //int res = new Class1().IsExist("QL0001");
+            //MessageBox.Show(res.ToString(), "thong bao", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            ////if (res == 1)
+            //{
+            //    MessageBox.Show("Thanh cong", "thong bao", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
+            //else if (res == 0)
+            //{
+            //    MessageBox.Show("k", "thong bao", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            //}else
+            //{
+            //    MessageBox.Show("loi" + res.ToString(), "thong bao", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            //}
+            RoundPictureBox(pictureBox2, 20);
+            foreach(Control control in this.Controls)
                 control.Click += Control_Click;
 
-            foreach (Control control in pnlMenu.Controls)
-            {
-                control.MouseEnter += Menu_MouseEnter;
-                control.Click += Menu_Click;
-                foreach (Control control_ in control.Controls)
-                    control_.Click += Menu_Click;
-            }
-            foreach (Control control in Controls)
-            {
-                foreach (Control control_ in pnlMenu.Controls)
-                    if (control_ == control)
-                    {
-                        continue;
-                    }
-                control.MouseEnter += Menu_MouseLeave;
-            }
-            pnlMenu.MouseEnter += Menu_MouseLeave;
-            LoadMenu(employeeId);
-
-            ActiveControl = picLogo;
-
-            //
-            _actions = new Action[2] { dispose, loadImage };
-            _imagePath = $@"..\..\Resources\AvatarImage\{_id}.JPG";
-            btnAvatar.BackgroundImage = Image.FromFile(_imagePath);
-        }
-        public void dispose()
-        {
-            if (btnAvatar.BackgroundImage != null)
-            {
-                btnAvatar.BackgroundImage.Dispose();
-                btnAvatar.BackgroundImage = null;
-            }
-
-        }
-        public void loadImage()
-        {
-            btnAvatar.BackgroundImage = Image.FromFile(_imagePath);
-
-
-            _imagePath = $@"..\..\Resources\AvatarImage\{_id}.JPG";
-            btnAvatar.BackgroundImage = Image.FromFile(_imagePath);
-        }
-        private void LoadMenu(string employeeId)
-        {
-            int y = 72;
-            List<string> list = new RoleBLL().GetOption(employeeId);
-            foreach (string item in list)
-            {
-                foreach (Control control in pnlMenu.Controls)
-                {
-                    if (control is Panel && control.Name == item)
-                    {
-                        control.Location = new Point(5, y);
-                        control.Visible = true;
-                        y += 72;
-                    }
-                }
-            }
         }
 
-        private void Menu_MouseEnter(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            _pnl = GetParentsPanel(sender, e);
-            if (_pnl != null)
+            Close();
+        }
+
+        
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            MakeButtonCircular(button1);
+        }
+
+        private void MainPanel_Paint(object sender, PaintEventArgs e)
+        {
+            int radius = 50;
+
+            // Tạo GraphicsPath để vẽ hình chữ nhật bo góc
+            GraphicsPath path = new GraphicsPath();
+            Rectangle rect = new Rectangle(0, 0, MainPanel.Width - 1, MainPanel.Height - 1);
+
+            // Thêm hình chữ nhật bo góc vào GraphicsPath
+            path.AddArc(rect.X, rect.Y, radius, radius, 180, 90);
+            path.AddArc(rect.X + rect.Width - radius, rect.Y, radius, radius, 270, 90);
+            path.AddArc(rect.X + rect.Width - radius, rect.Y + rect.Height - radius, radius, radius, 0, 90);
+            path.AddArc(rect.X, rect.Y + rect.Height - radius, radius, radius, 90, 90);
+            path.CloseFigure();
+            MainPanel.Region = new Region(path);
+
+            //Vẽ viền với Pen
+            //Pen borderPen = new Pen(Color.Red, 2);  // Màu đỏ, độ dày 2px
+            //e.Graphics.DrawPath(borderPen, path);
+
+            // Đổ màu cho Panel (tuỳ chọn)
+            Brush fillBrush = new SolidBrush(Color.Silver); // Màu nền trắng
+            e.Graphics.FillPath(fillBrush, path);
+        }
+
+        private void RoundPictureBox(PictureBox picBox, int cornerRadius)
+        {
+            GraphicsPath path = new GraphicsPath();
+            int diameter = cornerRadius * 2;
+            Rectangle rect = new Rectangle(0, 0, picBox.Width, picBox.Height);
+
+            // Các cung tròn ở các góc
+            path.AddArc(rect.X, rect.Y, diameter, diameter, 180, 90); // Góc trên-trái
+            path.AddArc(rect.X + rect.Width - diameter, rect.Y, diameter, diameter, 270, 90); // Góc trên-phải
+            path.AddArc(rect.X + rect.Width - diameter, rect.Y + rect.Height - diameter, diameter, diameter, 0, 90); // Góc dưới-phải
+            path.AddArc(rect.X, rect.Y + rect.Height - diameter, diameter, diameter, 90, 90); // Góc dưới-trái
+
+            // Đóng vùng path (tạo hình chữ nhật bo góc)
+            path.CloseFigure();
+
+            // Gán vùng này làm vùng hiển thị của PictureBox
+            picBox.Region = new Region(path);
+        }
+
+        private void MakeButtonCircular(Button btn)
+        {
+            // Tạo một GraphicsPath với hình tròn
+            GraphicsPath path = new GraphicsPath();
+            path.AddEllipse(0, 0, btn.Width, btn.Height);
+
+            // Đặt vùng hiển thị (Region) của button thành hình tròn
+            btn.Region = new Region(path);
+        }
+
+        private void slidePanel1_Paint(object sender, PaintEventArgs e)
+        {
+            int radius = 8;
+
+            // Tạo GraphicsPath để vẽ hình chữ nhật bo góc
+            GraphicsPath path = new GraphicsPath();
+            Rectangle rect = new Rectangle(0, 0, slidePanel1.Width - 1, slidePanel1.Height - 1);
+
+            // Thêm hình chữ nhật bo góc vào GraphicsPath
+            path.AddArc(rect.X, rect.Y, radius, radius, 180, 90);
+            path.AddArc(rect.X + rect.Width - radius, rect.Y, radius, radius, 270, 90);
+            path.AddArc(rect.X + rect.Width - radius, rect.Y + rect.Height - radius, radius, radius, 0, 90);
+            path.AddArc(rect.X, rect.Y + rect.Height - radius, radius, radius, 90, 90);
+            path.CloseFigure();
+            slidePanel1.Region = new Region(path);
+
+            //Vẽ viền với Pen
+            //Pen borderPen = new Pen(Color.Red, 2);  // Màu đỏ, độ dày 2px
+            //e.Graphics.DrawPath(borderPen, path);
+
+            // Đổ màu cho Panel (tuỳ chọn)
+            //Brush fillBrush = new SolidBrush(Color.Blue); // Màu nền trắng
+            //e.Graphics.FillPath(fillBrush, path);
+        }
+        private void slidePanel2_Paint(object sender, PaintEventArgs e)
+        {
+            int radius = 8;
+
+            // Tạo GraphicsPath để vẽ hình chữ nhật bo góc
+            GraphicsPath path = new GraphicsPath();
+            Rectangle rect = new Rectangle(0, 0, slidePanel2.Width - 1, slidePanel2.Height - 1);
+
+            // Thêm hình chữ nhật bo góc vào GraphicsPath
+            path.AddArc(rect.X, rect.Y, radius, radius, 180, 90);
+            path.AddArc(rect.X + rect.Width - radius, rect.Y, radius, radius, 270, 90);
+            path.AddArc(rect.X + rect.Width - radius, rect.Y + rect.Height - radius, radius, radius, 0, 90);
+            path.AddArc(rect.X, rect.Y + rect.Height - radius, radius, radius, 90, 90);
+            path.CloseFigure();
+            slidePanel2.Region = new Region(path);
+
+            //Vẽ viền với Pen
+            //Pen borderPen = new Pen(Color.Red, 2);  // Màu đỏ, độ dày 2px
+            //e.Graphics.DrawPath(borderPen, path);
+
+            // Đổ màu cho Panel (tuỳ chọn)
+            //Brush fillBrush = new SolidBrush(Color.Blue); // Màu nền trắng
+            //e.Graphics.FillPath(fillBrush, path);
+        }
+        private void slidePanel3_Paint(object sender, PaintEventArgs e)
+        {
+            int radius = 8;
+
+            // Tạo GraphicsPath để vẽ hình chữ nhật bo góc
+            GraphicsPath path = new GraphicsPath();
+            Rectangle rect = new Rectangle(0, 0, slidePanel3.Width - 1, slidePanel3.Height - 1);
+
+            // Thêm hình chữ nhật bo góc vào GraphicsPath
+            path.AddArc(rect.X, rect.Y, radius, radius, 180, 90);
+            path.AddArc(rect.X + rect.Width - radius, rect.Y, radius, radius, 270, 90);
+            path.AddArc(rect.X + rect.Width - radius, rect.Y + rect.Height - radius, radius, radius, 0, 90);
+            path.AddArc(rect.X, rect.Y + rect.Height - radius, radius, radius, 90, 90);
+            path.CloseFigure();
+            slidePanel3.Region = new Region(path);
+
+            //Vẽ viền với Pen
+            //Pen borderPen = new Pen(Color.Red, 2);  // Màu đỏ, độ dày 2px
+            //e.Graphics.DrawPath(borderPen, path);
+
+            // Đổ màu cho Panel (tuỳ chọn)
+            //Brush fillBrush = new SolidBrush(Color.Blue); // Màu nền trắng
+            //e.Graphics.FillPath(fillBrush, path);
+        }
+        
+        // Bời vì không cho ảnh và button mà tạo riêng thành 2 component nên khi mà hover ví dụ như vào panel Home thì khi di chuột đến picHome và
+        // btnHome thì sẽ không thể đổi màu được nên buộc phải add sự kiện cho cả 3 component để cho nhanh thì dùng chung 1 phương thức như bên dưới
+        // ae thêm nhưng cái khác thì dùng tương tự như t còn không thì có thể cho t xin 1 cách khác oke hơn để cả nhóm lm theo
+        private void Component_MouseEnter(object sender, EventArgs e)
+        {
+            if (sender == Home || sender == picHome || sender == btnHome)
             {
-                foreach (Control control in _pnl.Controls)
-                {
-                    Control_Hover(control, true);
-
-                }
-
-                foreach (Control control in pnlMenu.Controls)
-                {
-                    if (control != _pnl && control != picChoose && control != picHover && control is Panel && control != _choosePnl)
-                    {
-                        Panel pnl = control as Panel;
-                        foreach (Control control_ in pnl.Controls)
-                        {
-                            Control_Hover(control_, false);
-                        }
-                    }
-                }
+                picHome.Image = Properties.Resources.home1;
+                btnHome.ForeColor = Color.Blue;
             }
-            if (_itemName != _pnl.Name)
+            else if (sender == Account || sender == picAccount || sender == btnAccount)
             {
-                _itemName = _pnl.Name;
-                _y = _pnl.Location.Y + 11;
-                if (!picHover.Visible)
-                    picHover.Location = new Point(0, _y);
-                picHover.Visible = true;
-
-                _distance = _y - picHover.Location.Y;
-                if (Math.Abs(_distance) >= 72 * 4)
-                    _change = 11;
-                else
-                    _change = 7;
-                tmrHover.Start();
+                picAccount.Image = Properties.Resources.Account1;
+                btnAccount.ForeColor = Color.Blue;
             }
-            picHover.Visible = true;
+            
+        }
+        private void Component_MouseLeave(object sender, EventArgs e)
+        {
+            if (sender == Home || sender == picHome || sender == btnHome)
+            {
+                picHome.Image = Properties.Resources.Home;
+                btnHome.ForeColor = Color.Black;
+            }
+            else if (sender == Account || sender == picAccount || sender == btnAccount)
+            {
+                picAccount.Image = Properties.Resources.Account;
+                btnAccount.ForeColor = Color.Black;
+            }
+            
+        }
+
+        
+
+        private void Component_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (sender == Home || sender == picHome || sender == btnHome)
+            {
+                slidePanel1.Visible = true;
+                slidePanel2.Visible = false;
+                slidePanel3.Visible = false;    
+            }
+            else if(sender == Account || sender == picAccount || sender == btnAccount)
+            {
+                slidePanel1.Visible = false;
+                slidePanel2.Visible = true;
+                slidePanel3.Visible = false;
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
         }
 
         private void Control_Click(object sender, EventArgs e)
         {
-            if (ActiveControl is TextBox)
+            if(ActiveControl is TextBox)
             {
-                ActiveControl = null;
+                this.ActiveControl = null;
             }
         }
 
-        private void tmrHover_Tick(object sender, EventArgs e)
+        private void textBox1_Click(object sender, EventArgs e)
         {
-            if (_distance > 0)
-            {
-                if (picHover.Location.Y < _y)
-                {
-                    picHover.Location = new Point(0, picHover.Location.Y + _change);
-                }
-                else
-                {
-                    tmrHover.Stop();
-                    picHover.Location = new Point(0, _pnl.Location.Y + 11);
-                }
-            }
-            else if (_distance < 0)
-            {
-                if (picHover.Location.Y > _y)
-                {
-                    picHover.Location = new Point(0, picHover.Location.Y - _change);
-                }
-                else
-                {
-                    tmrHover.Stop();
-                    picHover.Location = new Point(0, _pnl.Location.Y + 11);
-                }
-            }
+            txtSearch.Text = "";
+
         }
 
-        public void Menu_MouseLeave(object sender, EventArgs e)
+        private void textBox1_Leave(object sender, EventArgs e)
         {
-            picHover.Visible = false;
-            if (_pnl != null)
-            {
-                foreach (Control control in _pnl.Controls)
-                {
-                    if (_pnl != _choosePnl)
-                        Control_Hover(control, false);
-                }
-
-            }
+            txtSearch.Text = "tìm";
         }
 
-        private void Menu_Click(object sender, EventArgs e)
+        private void btnHome_Click(object sender, EventArgs e)
         {
-            _choosePnl = GetParentsPanel(sender, e);
-            if (_action == _choosePnl.Name.Substring(3))
-                return;
-            else
-                _action = _choosePnl.Name.Substring(3);
-            picChoose.Location = new Point(0, _choosePnl.Location.Y + 11);
-            picChoose.Visible = true;
-            Control_Hover(_choosePnl, true);
-            foreach (Control control in pnlMenu.Controls)
-            {
-                if (control != _pnl && control != picChoose && control != picHover && control is Panel && control != _choosePnl)
-                {
-                    Panel pnl = control as Panel;
-                    foreach (Control control_ in pnl.Controls)
-                    {
-                        Control_Hover(control_, false);
-                    }
-                }
-            }
 
-            SettingForm settingForm = new SettingForm(_id, _actions);
-            OpenComponent(settingForm);
-
-            switch (_action)
-            {
-                case "Home":
-
-                    break;
-                case "Employee":
-
-                    break;
-                case "Food":
-
-                    break;
-                case "Warehouse":
-
-                    break;
-                case "Import":
-                    DetailPurchaseedIngredient detail = new DetailPurchaseedIngredient(_id, this);
-                    OpenComponent(detail);
-                    break;
-                case "Order":
-
-                    break;
-                case "OrderList":
-
-                    break;
-                case "EditInformation":
-
-                    break;
-            }
         }
 
-        private void Control_Hover(Control control, bool hover)
+        private void SearchBar_Paint(object sender, PaintEventArgs e)
         {
-            string color = hover ? "Blue" : "Gray";
-            Color _color = hover ? ColorTranslator.FromHtml(Config.BLUE) : ColorTranslator.FromHtml(Config.GRAY);
-            FontStyle fontStyle = hover ? FontStyle.Bold : FontStyle.Regular;
+            int radius = 20;
 
-            if (control is PictureBox)
-            {
-                PictureBox pic = control as PictureBox;
-                string name = pic.Name + color;
-                var imgResource = Properties.Resources.ResourceManager.GetObject(name) as Image;
+            // Tạo GraphicsPath để vẽ hình chữ nhật bo góc
+            GraphicsPath path = new GraphicsPath();
+            Rectangle rect = new Rectangle(0, 0, SearchBar.Width - 1, SearchBar.Height - 1);
 
-                if (imgResource != null)
-                {
-                    pic.Image = imgResource;
-                }
-            }
+            // Thêm hình chữ nhật bo góc vào GraphicsPath
+            path.AddArc(rect.X, rect.Y, radius, radius, 180, 90);
+            path.AddArc(rect.X + rect.Width - radius, rect.Y, radius, radius, 270, 90);
+            path.AddArc(rect.X + rect.Width - radius, rect.Y + rect.Height - radius, radius, radius, 0, 90);
+            path.AddArc(rect.X, rect.Y + rect.Height - radius, radius, radius, 90, 90);
+            path.CloseFigure();
+            SearchBar.Region = new Region(path);
 
-            if (control is Label)
-            {
-                Label lbl = control as Label;
-                if (lbl != null)
-                {
-                    lbl.ForeColor = _color;
-                    lbl.Font = new Font(lbl.Font, fontStyle);
-                }
-            }
+            //Vẽ viền với Pen
+            //Pen borderPen = new Pen(Color.Red, 2);  // Màu đỏ, độ dày 2px
+            //e.Graphics.DrawPath(borderPen, path);
         }
-
-        private Panel GetParentsPanel(object sender, EventArgs e)
-        {
-            Panel panel = new Panel();
-            if (sender is Panel)
-            {
-                panel = sender as Panel;
-            }
-            else if (sender is Label)
-            {
-                Label label = sender as Label;
-                panel = label.Parent as Panel;
-            }
-            else if (sender is PictureBox)
-            {
-                PictureBox pictureBox = sender as PictureBox;
-                panel = pictureBox.Parent as Panel;
-            }
-            return panel;
-        }
-
-        private void btnSetting_Click(object sender, EventArgs e)
-        {
-            if (_action == btnSetting.Name.Substring(3))
-            {
-                return;
-            }
-            else
-                _action = btnSetting.Name.Substring(3);
-            foreach (Control control in _choosePnl.Controls)
-                Control_Hover(control, false);
-            picChoose.Visible = false;
-            SettingForm settingForm = new SettingForm(_id, _actions);
-            OpenComponent(settingForm);
-        }
-
-        private void OpenComponent(Form form)
-        {
-            pnlContent.SuspendLayout();
-            form.MouseEnter += Menu_MouseLeave;
-            foreach (Control control in form.Controls)
-            {
-                control.MouseEnter += Menu_MouseLeave;
-            }
-            form.TopLevel = false;
-            pnlContent.Controls.Clear();
-            pnlContent.Controls.Add(form);
-            form.Show();
-
-            pnlContent.ResumeLayout();
-        }
-
-        private void txtSearch_Enter(object sender, EventArgs e)
-        {
-            txtSearch.Text = txtSearch.Text == "Tìm kiếm" ? "" : txtSearch.Text;
-        }
-
-        private void txtSearch_Leave(object sender, EventArgs e)
-        {
-            txtSearch.Text = txtSearch.Text.Length == 0 ? "Tìm kiếm" : txtSearch.Text;
-        }
-    }
+    }   
 }

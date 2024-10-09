@@ -126,16 +126,12 @@
   </data>
   <data name="Home" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Home6.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  <data name="picFoodGray" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\picFoodGray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="load1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\load.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="home1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\home1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  <data name="picEmployeeBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\picEmployeeBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="GrayQuit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GrayQuit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -154,35 +150,6 @@
   </data>
   <data name="btnSetting" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnSetting.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  <data name="sortSmaller" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sortSmaller.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ListIngrdient" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ListIngrdient.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="panelLogin" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\panelLogin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="lblFood" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lblFood.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="step1Wait" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\step1Wait.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cmbIngredientImput" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cmbIngredientImput.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="picOrderGray" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\picOrderGray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="picEditInformationGray" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\picEditInformationGray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btnContinue" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnContinue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="picImportBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\picImportBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="RedQuit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RedQuit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -193,9 +160,6 @@
   <data name="Seen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Seen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="picHomeGray" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\picHomeGray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="load" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\load.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -204,8 +168,6 @@
   </data>
   <data name="1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  <data name="bgResetInput" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bgResetInput.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BBlueButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BBlueButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -215,17 +177,6 @@
   </data>
   <data name="hihi" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hihi.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  <data name="bgResetInputHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bgResetInputHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btnConfirmInputHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnConfirmInputHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="picWarehouseGray" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\picWarehouseGray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="picOrderListGray" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\picOrderListGray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="UnSeen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\UnSeen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -235,26 +186,6 @@
   </data>
   <data name="dgvHeader1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dgvHeader1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  <data name="btnSetting1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnSetting.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btnNotification" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnNotification.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="picHomeBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\picHomeBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="lblHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lblHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="hihi" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\hihi.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="step1Complete" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\step1Complete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="lblButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lblButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="textbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\textbox.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -291,41 +222,6 @@
   </data>
   <data name="btnOrder" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnOrder.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  <data name="picFoodBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\picFoodBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="picOrderListBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\picOrderListBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="picEditInformationBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\picEditInformationBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="step2Wait" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\step2Wait.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="picWarehouseBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\picWarehouseBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="arrowRight" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\arrowRight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bgImport" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bgImport.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btnCancel" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnCancel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="GrayQuit1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GrayQuit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bgQuantityIngredientInput" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bgQuantityIngredientInput.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="picImportGray" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\picImportGray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="hihi1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\hihi.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="UnSeen1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\UnSeen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -338,49 +234,5 @@
   </data>
   <data name="btnThem" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnThem.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  <data name="step2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\step2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btnConfirmInput" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnConfirmInput.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Search" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cmbSupplierName" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cmbSupplierName.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="No" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\No.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btnReturn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnReturn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ListIngrdient1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ListIngrdient.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bgQuantityIngredientInput1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bgQuantityIngredientInput.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pnltext" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pnltext.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="SearchPanel" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SearchPanel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="picEmployeeGray" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\picEmployeeGray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="sortBigger" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sortBigger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Yes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Yes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="picOrderBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\picOrderBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pnlInvoice" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pnlInvoice.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

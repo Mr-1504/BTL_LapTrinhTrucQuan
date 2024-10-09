@@ -14,7 +14,6 @@ namespace GUI
 {
     public partial class LoadingForm : Form
     {
-        public LoginForm frmLogin;
         public LoadingForm()
         {
             InitializeComponent();
@@ -95,12 +94,13 @@ namespace GUI
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            pnProcessBar2.Width += 4;
+            pnProcessBar2.Width += 2;
+            lbProcessPercent.Text = ((pnProcessBar2.Width * 100) / pnProcessBar.Width).ToString() + "%";
             if (pnProcessBar2.Width >= pnProcessBar.Width)
             {
                 timer1.Stop();
                 Hide();
-                frmLogin = new LoginForm();
+                frmLogin frmLogin = new frmLogin();
                 frmLogin.Show();
 
                 frmLogin.FormClosed += (s, args) => Application.Exit(); 
