@@ -18,8 +18,11 @@ namespace BLL
         public DataTable GetEmployees() {
             return employeeDAL.GetEmployees(); 
         }
-        
-        
+        public int DeletaEmployee(string employeeId, EmployeeStatus status)
+        {
+            return employeeDAL.ChangeEmployeeStatus(employeeId, status);
+        }
+
     }
     
 }

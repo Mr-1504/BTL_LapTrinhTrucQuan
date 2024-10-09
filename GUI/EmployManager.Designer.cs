@@ -31,21 +31,20 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployManager));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployManager));
             this.dataEmployerMNG = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pnlEmployMNG = new System.Windows.Forms.Panel();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.EmployeeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EmployeeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NumberPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quyen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlEmployMNG = new System.Windows.Forms.Panel();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataEmployerMNG)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -97,6 +96,50 @@
             this.dataEmployerMNG.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataEmployerMNG_CellContentClick);
             this.dataEmployerMNG.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dataGridView1_ColumnHeaderCellPainting);
             // 
+            // EmployeeID
+            // 
+            this.EmployeeID.DataPropertyName = "EmployeeID";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.EmployeeID.DefaultCellStyle = dataGridViewCellStyle2;
+            this.EmployeeID.FillWeight = 150F;
+            this.EmployeeID.HeaderText = "Mã Nhân Viên";
+            this.EmployeeID.Name = "EmployeeID";
+            this.EmployeeID.Width = 150;
+            // 
+            // EmployeeName
+            // 
+            this.EmployeeName.DataPropertyName = "EmployeeName";
+            this.EmployeeName.FillWeight = 200F;
+            this.EmployeeName.HeaderText = "Họ Và Tên";
+            this.EmployeeName.Name = "EmployeeName";
+            this.EmployeeName.Width = 200;
+            // 
+            // NumberPhone
+            // 
+            this.NumberPhone.DataPropertyName = "NumberPhone";
+            this.NumberPhone.FillWeight = 120F;
+            this.NumberPhone.HeaderText = "Số Điện Thoại";
+            this.NumberPhone.Name = "NumberPhone";
+            this.NumberPhone.Width = 120;
+            // 
+            // Address
+            // 
+            this.Address.DataPropertyName = "Address";
+            this.Address.FillWeight = 477F;
+            this.Address.HeaderText = "Địa Chỉ";
+            this.Address.Name = "Address";
+            this.Address.Width = 477;
+            // 
+            // quyen
+            // 
+            this.quyen.DataPropertyName = "quyen";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.quyen.DefaultCellStyle = dataGridViewCellStyle3;
+            this.quyen.FillWeight = 111F;
+            this.quyen.HeaderText = "Chức vụ";
+            this.quyen.Name = "quyen";
+            this.quyen.Width = 111;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.dataEmployerMNG);
@@ -112,25 +155,6 @@
             this.pnlEmployMNG.Name = "pnlEmployMNG";
             this.pnlEmployMNG.Size = new System.Drawing.Size(1370, 815);
             this.pnlEmployMNG.TabIndex = 6;
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.Transparent;
-            this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
-            this.btnSave.FlatAppearance.BorderSize = 0;
-            this.btnSave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnSave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSave.Location = new System.Drawing.Point(1144, 718);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(170, 52);
-            this.btnSave.TabIndex = 4;
-            this.btnSave.Text = "Lưu";
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.MouseEnter += new System.EventHandler(this.btnSave_MouseEnter);
-            this.btnSave.MouseLeave += new System.EventHandler(this.btnSave_MouseLeave);
             // 
             // btnDelete
             // 
@@ -148,6 +172,7 @@
             this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             this.btnDelete.MouseEnter += new System.EventHandler(this.btnDelete_MouseEnter);
             this.btnDelete.MouseLeave += new System.EventHandler(this.btnDelete_MouseLeave);
             // 
@@ -194,57 +219,12 @@
             this.btnAdd.MouseEnter += new System.EventHandler(this.btnAdd_MouseEnter);
             this.btnAdd.MouseLeave += new System.EventHandler(this.btnAdd_MouseLeave);
             // 
-            // EmployeeID
-            // 
-            this.EmployeeID.DataPropertyName = "EmployeeID";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.EmployeeID.DefaultCellStyle = dataGridViewCellStyle2;
-            this.EmployeeID.FillWeight = 150F;
-            this.EmployeeID.HeaderText = "Mã Nhân Viên";
-            this.EmployeeID.Name = "EmployeeID";
-            this.EmployeeID.Width = 150;
-            // 
-            // EmployeeName
-            // 
-            this.EmployeeName.DataPropertyName = "EmployeeName";
-            this.EmployeeName.FillWeight = 200F;
-            this.EmployeeName.HeaderText = "Họ Và Tên";
-            this.EmployeeName.Name = "EmployeeName";
-            this.EmployeeName.Width = 200;
-            // 
-            // NumberPhone
-            // 
-            this.NumberPhone.DataPropertyName = "NumberPhone";
-            this.NumberPhone.FillWeight = 120F;
-            this.NumberPhone.HeaderText = "Số Điện Thoại";
-            this.NumberPhone.Name = "NumberPhone";
-            this.NumberPhone.Width = 120;
-            // 
-            // Address
-            // 
-            this.Address.DataPropertyName = "Address";
-            this.Address.FillWeight = 477F;
-            this.Address.HeaderText = "Địa Chỉ";
-            this.Address.Name = "Address";
-            this.Address.Width = 477;
-            // 
-            // quyen
-            // 
-            this.quyen.DataPropertyName = "quyen";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.quyen.DefaultCellStyle = dataGridViewCellStyle3;
-            this.quyen.FillWeight = 111F;
-            this.quyen.HeaderText = "Chức vụ";
-            this.quyen.Name = "quyen";
-            this.quyen.Width = 111;
-            // 
             // EmployManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 815);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
@@ -265,7 +245,6 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel pnlEmployMNG;
         private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeID;

@@ -101,24 +101,18 @@ namespace GUI
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (dataEmployerMNG.SelectedRows.Count > 0)  // Kiểm tra xem có hàng nào được chọn không
+            if (dataEmployerMNG.SelectedRows.Count > 0) 
             {
-                // Lấy chỉ số hàng được chọn
                 DataGridViewRow selectedRow = dataEmployerMNG.SelectedRows[0];
 
-                
                 if (selectedRow.Cells["EmployeeID"].Value == null || string.IsNullOrEmpty(selectedRow.Cells["EmployeeID"].Value.ToString()))
                 {
                     MessageBox.Show("Vui lòng chọn một hàng có dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return; // Dừng lại nếu không có dữ liệu
+                    return; 
                 }
 
-                // Lấy dữ liệu từ các cột tương ứng
                 string employeeID = selectedRow.Cells["EmployeeID"].Value.ToString();
                 
-                
-
-                // Truyền dữ liệu sang form EmployManager2
                 EmployManager2 employManager2 = new EmployManager2(employeeID, this);
                 ShowComponent(false);
                 employManager2.TopLevel = false;
@@ -131,17 +125,14 @@ namespace GUI
                 MessageBox.Show("Vui lòng chọn một hàng để chỉnh sửa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-        // Sự kiện FormClosed sẽ được gọi khi EmployManager2 đóng lại
         private void EmployManager2_FormClosed(object sender, FormClosedEventArgs e)
         {
-            // Load lại dữ liệu cho DataGridView sau khi form con đóng
             LoadEmployeeData();
         }
 
         // Phương thức load dữ liệu cho DataGridView
         private void LoadEmployeeData()
         {
-            // Giả sử bạn đã có phương thức lấy dữ liệu từ cơ sở dữ liệu để đổ vào DataGridView
             DataTable employeeTable;
             EmployManagerBLL employ1 = new EmployManagerBLL();
             employeeTable = employ1.GetEmployees();
@@ -233,15 +224,43 @@ namespace GUI
             btnDelete.BackgroundImage = Properties.Resources.hover;
             btnDelete.BackgroundImageLayout = ImageLayout.Zoom;
         }
-        private void btnSave_MouseLeave(object sender, EventArgs e)
+        
+
+        private void btnDelete_Click(object sender, EventArgs e)
         {
-            btnSave.BackgroundImage = Properties.Resources.btn;
-            btnSave.BackgroundImageLayout = ImageLayout.Zoom;
+            if (dataEmployerMNG.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectRows = dataEmployerMNG.SelectedRows[0];
+
+                if (selectRows.Cells["EmployeeID"].Value == null || string.IsNullOrEmpty(selectRows.Cells["EmployeeID"].Value.ToString()))
+                {
+                    MessageBox.Show("Vui lòng chọn một hàng có dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return; 
+                }
+
+                string employeeID = selectRows.Cells["EmployeeID"].Value.ToString();
+
+                int result = employ.DeletaEmployee(employeeID, EmployeeStatus.NoLongerWorking);
+                if(result == 0)
+                {
+                    MessageBox.Show("Xóa nhân viên thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show("Xóa nhân viên thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadEmployeeData();
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một hàng để xóa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
-        private void btnSave_MouseEnter(object sender, EventArgs e)
+
+        private void btnSave_Click(object sender, EventArgs e)
         {
-            btnSave.BackgroundImage = Properties.Resources.hover;
-            btnSave.BackgroundImageLayout = ImageLayout.Zoom;
+
         }
     }
 }

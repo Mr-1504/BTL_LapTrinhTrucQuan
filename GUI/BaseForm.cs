@@ -49,7 +49,21 @@ namespace GUI
             }
             pnlMenu.MouseEnter += Menu_MouseLeave;
             LoadMenu(employeeId);
+            string employeeRole = employeeId.Substring(0,2);
+            if(employeeRole == "QL")
+            {
+                HomeManager homeManager = new HomeManager();
+                OpenComponent(homeManager);
+            }
+            else if(employeeRole == "KH")
+            {
 
+            }
+            else if (employeeRole == "LT")
+            {
+
+            }
+            
             ActiveControl = picLogo;
         }
 
@@ -186,10 +200,24 @@ namespace GUI
             switch (_action)
             {
                 case "Home":
-                    
+                    string employeeRole = _id.Substring(0, 2);
+                    if (employeeRole == "QL")
+                    {
+                        HomeManager homeManager = new HomeManager();
+                        OpenComponent(homeManager);
+                    }
+                    else if (employeeRole == "KH")
+                    {
+
+                    }
+                    else if (employeeRole == "LT")
+                    {
+
+                    }
                     break;
                 case "Employee":
-                    
+                    EmployManager employManager = new EmployManager();
+                    OpenComponent(employManager);
                     break;
                 case "Food":
                     

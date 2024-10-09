@@ -66,6 +66,12 @@
     <Compile Include="EmployManager2.Designer.cs">
       <DependentUpon>EmployManager2.cs</DependentUpon>
     </Compile>
+    <Compile Include="FoodManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FoodManager.Designer.cs">
+      <DependentUpon>FoodManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="HomeManager.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EmployManager2.resx">
       <DependentUpon>EmployManager2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FoodManager.resx">
+      <DependentUpon>FoodManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomeManager.resx">
       <DependentUpon>HomeManager.cs</DependentUpon>
@@ -359,7 +368,6 @@
     <None Include="Resources\Search.png" />
   </ItemGroup>
   <ItemGroup>
-
     <None Include="Resources\btn.png" />
   </ItemGroup>
   <ItemGroup>
@@ -378,13 +386,14 @@
     <None Include="Resources\addressPanel.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\panelNumberic2.png" />
+    <None Include="Resources\panelNumberic.png" />
     <None Include="Resources\avatar.png" />
     <None Include="Resources\avata.png" />
     <Content Include="Resources\AvatarImage\default.jpg" />
     <Content Include="Resources\AvatarImage\KH20230001.JPG" />
     <Content Include="Resources\AvatarImage\KH20230002.JPG" />
     <Content Include="Resources\AvatarImage\KH20230003.JPG" />
-
     <None Include="Resources\step1Wait.png" />
   </ItemGroup>
   <ItemGroup>
@@ -449,7 +458,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\AvatarImage\QL20240001.JPG" />
-
     <Content Include="Resources\AvatarImage\KH20240001.JPG" />
     <Content Include="Resources\AvatarImage\LT20240001.JPG" />
     <Content Include="Resources\AvatarImage\QL20240001.JPG" />

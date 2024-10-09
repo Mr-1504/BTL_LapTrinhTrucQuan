@@ -34,24 +34,28 @@ namespace GUI
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.InPanelManager1 = new System.Windows.Forms.Panel();
             this.PanelIngredient = new System.Windows.Forms.Panel();
-            this.textSoNguyenLieuMoi = new System.Windows.Forms.TextBox();
-            this.textSoNguyenLieuChuaPhanLoai = new System.Windows.Forms.TextBox();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.textSoTienNLMoiNhap = new System.Windows.Forms.TextBox();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.textNguyenLieuTrongKhoLau = new System.Windows.Forms.TextBox();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.textSoLoaiNguyenLieu = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.PanelWarehouse = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.textTongChiKho = new System.Windows.Forms.TextBox();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.textSoNhanVienKho = new System.Windows.Forms.TextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.textSoNhaCungCap = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.textSoNguyenLieuSapHet = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -66,37 +70,45 @@ namespace GUI
             this.chartSale = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label5 = new System.Windows.Forms.Label();
             this.PanelStaff = new System.Windows.Forms.Panel();
+            this.textSoNhanVien = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.PanelTable = new System.Windows.Forms.Panel();
+            this.textSoBan = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.PanelOrder = new System.Windows.Forms.Panel();
+            this.textDonHang = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.PanelRevenue = new System.Windows.Forms.Panel();
+            this.textDoanhThuNgay = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PanelRight = new System.Windows.Forms.Panel();
+            this.panel11 = new System.Windows.Forms.Panel();
             this.textDT_DHRight = new System.Windows.Forms.TextBox();
+            this.panel10 = new System.Windows.Forms.Panel();
             this.textSoDonHangRight = new System.Windows.Forms.TextBox();
-            this.textLaiGopRight = new System.Windows.Forms.TextBox();
+            this.panel9 = new System.Windows.Forms.Panel();
             this.textDoanhThuRight = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbbHoatDong = new System.Windows.Forms.ComboBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.textDoanhThuNgay = new System.Windows.Forms.Label();
-            this.textDonHang = new System.Windows.Forms.Label();
-            this.textSoBan = new System.Windows.Forms.Label();
-            this.textSoNhanVien = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.InPanelManager1.SuspendLayout();
             this.PanelIngredient.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.PanelWarehouse.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.PanelChart.SuspendLayout();
@@ -109,18 +121,12 @@ namespace GUI
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.PanelRevenue.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PanelRight.SuspendLayout();
+            this.panel11.SuspendLayout();
+            this.panel10.SuspendLayout();
+            this.panel9.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(18, 11);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -163,12 +169,10 @@ namespace GUI
             // PanelIngredient
             // 
             this.PanelIngredient.BackColor = System.Drawing.Color.LightGray;
-            this.PanelIngredient.Controls.Add(this.textSoNguyenLieuMoi);
-            this.PanelIngredient.Controls.Add(this.textSoNguyenLieuChuaPhanLoai);
-            this.PanelIngredient.Controls.Add(this.textSoTienNLMoiNhap);
-            this.PanelIngredient.Controls.Add(this.textSoLoaiNguyenLieu);
+            this.PanelIngredient.Controls.Add(this.panel8);
+            this.PanelIngredient.Controls.Add(this.panel7);
+            this.PanelIngredient.Controls.Add(this.panel6);
             this.PanelIngredient.Controls.Add(this.label14);
-            this.PanelIngredient.Controls.Add(this.label15);
             this.PanelIngredient.Controls.Add(this.label16);
             this.PanelIngredient.Controls.Add(this.label17);
             this.PanelIngredient.Controls.Add(this.label9);
@@ -179,71 +183,88 @@ namespace GUI
             this.PanelIngredient.TabIndex = 13;
             this.PanelIngredient.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelIngredient_Paint);
             // 
-            // textSoNguyenLieuMoi
+            // panel8
             // 
-            this.textSoNguyenLieuMoi.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textSoNguyenLieuMoi.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textSoNguyenLieuMoi.Location = new System.Drawing.Point(295, 212);
-            this.textSoNguyenLieuMoi.Name = "textSoNguyenLieuMoi";
-            this.textSoNguyenLieuMoi.ReadOnly = true;
-            this.textSoNguyenLieuMoi.Size = new System.Drawing.Size(148, 32);
-            this.textSoNguyenLieuMoi.TabIndex = 21;
-            // 
-            // textSoNguyenLieuChuaPhanLoai
-            // 
-            this.textSoNguyenLieuChuaPhanLoai.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textSoNguyenLieuChuaPhanLoai.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textSoNguyenLieuChuaPhanLoai.Location = new System.Drawing.Point(295, 161);
-            this.textSoNguyenLieuChuaPhanLoai.Name = "textSoNguyenLieuChuaPhanLoai";
-            this.textSoNguyenLieuChuaPhanLoai.ReadOnly = true;
-            this.textSoNguyenLieuChuaPhanLoai.Size = new System.Drawing.Size(148, 32);
-            this.textSoNguyenLieuChuaPhanLoai.TabIndex = 20;
+            this.panel8.BackColor = System.Drawing.Color.Transparent;
+            this.panel8.BackgroundImage = global::GUI.Properties.Resources.panelNumberic;
+            this.panel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel8.Controls.Add(this.textSoTienNLMoiNhap);
+            this.panel8.Location = new System.Drawing.Point(286, 202);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(164, 35);
+            this.panel8.TabIndex = 22;
             // 
             // textSoTienNLMoiNhap
             // 
+            this.textSoTienNLMoiNhap.BackColor = System.Drawing.Color.LightGray;
             this.textSoTienNLMoiNhap.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textSoTienNLMoiNhap.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textSoTienNLMoiNhap.Location = new System.Drawing.Point(295, 109);
+            this.textSoTienNLMoiNhap.Location = new System.Drawing.Point(8, 7);
             this.textSoTienNLMoiNhap.Name = "textSoTienNLMoiNhap";
             this.textSoTienNLMoiNhap.ReadOnly = true;
-            this.textSoTienNLMoiNhap.Size = new System.Drawing.Size(148, 32);
+            this.textSoTienNLMoiNhap.Size = new System.Drawing.Size(148, 22);
             this.textSoTienNLMoiNhap.TabIndex = 19;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.Transparent;
+            this.panel7.BackgroundImage = global::GUI.Properties.Resources.panelNumberic;
+            this.panel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel7.Controls.Add(this.textNguyenLieuTrongKhoLau);
+            this.panel7.Location = new System.Drawing.Point(286, 131);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(164, 35);
+            this.panel7.TabIndex = 27;
+            // 
+            // textNguyenLieuTrongKhoLau
+            // 
+            this.textNguyenLieuTrongKhoLau.BackColor = System.Drawing.Color.LightGray;
+            this.textNguyenLieuTrongKhoLau.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textNguyenLieuTrongKhoLau.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
+            this.textNguyenLieuTrongKhoLau.Location = new System.Drawing.Point(8, 6);
+            this.textNguyenLieuTrongKhoLau.Name = "textNguyenLieuTrongKhoLau";
+            this.textNguyenLieuTrongKhoLau.ReadOnly = true;
+            this.textNguyenLieuTrongKhoLau.Size = new System.Drawing.Size(148, 22);
+            this.textNguyenLieuTrongKhoLau.TabIndex = 21;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.Transparent;
+            this.panel6.BackgroundImage = global::GUI.Properties.Resources.panelNumberic;
+            this.panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel6.Controls.Add(this.textSoLoaiNguyenLieu);
+            this.panel6.Location = new System.Drawing.Point(286, 62);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(164, 35);
+            this.panel6.TabIndex = 26;
             // 
             // textSoLoaiNguyenLieu
             // 
+            this.textSoLoaiNguyenLieu.BackColor = System.Drawing.Color.LightGray;
             this.textSoLoaiNguyenLieu.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textSoLoaiNguyenLieu.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textSoLoaiNguyenLieu.Location = new System.Drawing.Point(295, 58);
+            this.textSoLoaiNguyenLieu.Location = new System.Drawing.Point(8, 6);
             this.textSoLoaiNguyenLieu.Name = "textSoLoaiNguyenLieu";
             this.textSoLoaiNguyenLieu.ReadOnly = true;
-            this.textSoLoaiNguyenLieu.Size = new System.Drawing.Size(148, 32);
+            this.textSoLoaiNguyenLieu.Size = new System.Drawing.Size(148, 22);
             this.textSoLoaiNguyenLieu.TabIndex = 18;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(41, 220);
+            this.label14.Location = new System.Drawing.Point(41, 140);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(193, 19);
+            this.label14.Size = new System.Drawing.Size(249, 19);
             this.label14.TabIndex = 17;
-            this.label14.Text = "Số loại nguyên liệu mới:";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(41, 170);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(247, 19);
-            this.label15.TabIndex = 16;
-            this.label15.Text = "Số nguyên liệu chưa phân loại:";
+            this.label14.Text = "Nguyên liệu trong kho lâu nhất:";
+            this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(41, 120);
+            this.label16.Location = new System.Drawing.Point(41, 210);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(237, 19);
             this.label16.TabIndex = 15;
@@ -286,10 +307,10 @@ namespace GUI
             // PanelWarehouse
             // 
             this.PanelWarehouse.BackColor = System.Drawing.Color.LightGray;
-            this.PanelWarehouse.Controls.Add(this.textTongChiKho);
-            this.PanelWarehouse.Controls.Add(this.textSoNhanVienKho);
-            this.PanelWarehouse.Controls.Add(this.textSoNhaCungCap);
-            this.PanelWarehouse.Controls.Add(this.textSoNguyenLieuSapHet);
+            this.PanelWarehouse.Controls.Add(this.panel5);
+            this.PanelWarehouse.Controls.Add(this.panel4);
+            this.PanelWarehouse.Controls.Add(this.panel3);
+            this.PanelWarehouse.Controls.Add(this.panel2);
             this.PanelWarehouse.Controls.Add(this.label13);
             this.PanelWarehouse.Controls.Add(this.label12);
             this.PanelWarehouse.Controls.Add(this.label11);
@@ -302,44 +323,92 @@ namespace GUI
             this.PanelWarehouse.TabIndex = 12;
             this.PanelWarehouse.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelWarehouse_Paint);
             // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.Transparent;
+            this.panel5.BackgroundImage = global::GUI.Properties.Resources.panelNumberic;
+            this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel5.Controls.Add(this.textTongChiKho);
+            this.panel5.Location = new System.Drawing.Point(236, 215);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(164, 35);
+            this.panel5.TabIndex = 17;
+            // 
             // textTongChiKho
             // 
+            this.textTongChiKho.BackColor = System.Drawing.Color.LightGray;
             this.textTongChiKho.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textTongChiKho.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textTongChiKho.Location = new System.Drawing.Point(243, 212);
+            this.textTongChiKho.Location = new System.Drawing.Point(8, 6);
             this.textTongChiKho.Name = "textTongChiKho";
             this.textTongChiKho.ReadOnly = true;
-            this.textTongChiKho.Size = new System.Drawing.Size(148, 32);
+            this.textTongChiKho.Size = new System.Drawing.Size(148, 22);
             this.textTongChiKho.TabIndex = 13;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Transparent;
+            this.panel4.BackgroundImage = global::GUI.Properties.Resources.panelNumberic;
+            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel4.Controls.Add(this.textSoNhanVienKho);
+            this.panel4.Location = new System.Drawing.Point(236, 164);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(164, 35);
+            this.panel4.TabIndex = 16;
             // 
             // textSoNhanVienKho
             // 
+            this.textSoNhanVienKho.BackColor = System.Drawing.Color.LightGray;
             this.textSoNhanVienKho.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textSoNhanVienKho.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textSoNhanVienKho.Location = new System.Drawing.Point(243, 161);
+            this.textSoNhanVienKho.Location = new System.Drawing.Point(8, 7);
             this.textSoNhanVienKho.Name = "textSoNhanVienKho";
             this.textSoNhanVienKho.ReadOnly = true;
-            this.textSoNhanVienKho.Size = new System.Drawing.Size(148, 32);
+            this.textSoNhanVienKho.Size = new System.Drawing.Size(148, 22);
             this.textSoNhanVienKho.TabIndex = 12;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.BackgroundImage = global::GUI.Properties.Resources.panelNumberic;
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel3.Controls.Add(this.textSoNhaCungCap);
+            this.panel3.Location = new System.Drawing.Point(236, 113);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(164, 35);
+            this.panel3.TabIndex = 15;
             // 
             // textSoNhaCungCap
             // 
+            this.textSoNhaCungCap.BackColor = System.Drawing.Color.LightGray;
             this.textSoNhaCungCap.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textSoNhaCungCap.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textSoNhaCungCap.Location = new System.Drawing.Point(243, 109);
+            this.textSoNhaCungCap.Location = new System.Drawing.Point(8, 7);
             this.textSoNhaCungCap.Name = "textSoNhaCungCap";
             this.textSoNhaCungCap.ReadOnly = true;
-            this.textSoNhaCungCap.Size = new System.Drawing.Size(148, 32);
+            this.textSoNhaCungCap.Size = new System.Drawing.Size(148, 22);
             this.textSoNhaCungCap.TabIndex = 11;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.BackgroundImage = global::GUI.Properties.Resources.panelNumberic;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel2.Controls.Add(this.textSoNguyenLieuSapHet);
+            this.panel2.Location = new System.Drawing.Point(236, 62);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(164, 35);
+            this.panel2.TabIndex = 14;
             // 
             // textSoNguyenLieuSapHet
             // 
+            this.textSoNguyenLieuSapHet.BackColor = System.Drawing.Color.LightGray;
             this.textSoNguyenLieuSapHet.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textSoNguyenLieuSapHet.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textSoNguyenLieuSapHet.Location = new System.Drawing.Point(243, 58);
+            this.textSoNguyenLieuSapHet.Location = new System.Drawing.Point(8, 6);
             this.textSoNguyenLieuSapHet.Name = "textSoNguyenLieuSapHet";
             this.textSoNguyenLieuSapHet.ReadOnly = true;
-            this.textSoNguyenLieuSapHet.Size = new System.Drawing.Size(148, 32);
+            this.textSoNguyenLieuSapHet.Size = new System.Drawing.Size(148, 22);
             this.textSoNguyenLieuSapHet.TabIndex = 10;
             // 
             // label13
@@ -429,7 +498,7 @@ namespace GUI
             // 
             // PanelChart
             // 
-            this.PanelChart.BackColor = System.Drawing.Color.LightGray;
+            this.PanelChart.BackColor = System.Drawing.Color.White;
             this.PanelChart.Controls.Add(this.label7);
             this.PanelChart.Controls.Add(this.chartSale);
             this.PanelChart.Location = new System.Drawing.Point(30, 206);
@@ -450,20 +519,21 @@ namespace GUI
             // 
             // chartSale
             // 
+            this.chartSale.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.chartSale.BorderSkin.BorderWidth = 0;
             chartArea1.Name = "ChartArea1";
             this.chartSale.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chartSale.Legends.Add(legend1);
-            this.chartSale.Location = new System.Drawing.Point(122, 3);
+            this.chartSale.Location = new System.Drawing.Point(0, 0);
             this.chartSale.Name = "chartSale";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chartSale.Series.Add(series1);
-            this.chartSale.Size = new System.Drawing.Size(777, 255);
+            this.chartSale.Size = new System.Drawing.Size(1020, 281);
             this.chartSale.TabIndex = 0;
             this.chartSale.Text = "chart1";
-            this.chartSale.Click += new System.EventHandler(this.chart1_Click);
             // 
             // label5
             // 
@@ -487,6 +557,16 @@ namespace GUI
             this.PanelStaff.Size = new System.Drawing.Size(210, 50);
             this.PanelStaff.TabIndex = 9;
             this.PanelStaff.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelStaff_Paint);
+            // 
+            // textSoNhanVien
+            // 
+            this.textSoNhanVien.AutoSize = true;
+            this.textSoNhanVien.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
+            this.textSoNhanVien.Location = new System.Drawing.Point(56, 15);
+            this.textSoNhanVien.Name = "textSoNhanVien";
+            this.textSoNhanVien.Size = new System.Drawing.Size(21, 22);
+            this.textSoNhanVien.TabIndex = 2;
+            this.textSoNhanVien.Text = "0";
             // 
             // pictureBox5
             // 
@@ -521,6 +601,16 @@ namespace GUI
             this.PanelTable.TabIndex = 7;
             this.PanelTable.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelTable_Paint);
             // 
+            // textSoBan
+            // 
+            this.textSoBan.AutoSize = true;
+            this.textSoBan.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
+            this.textSoBan.Location = new System.Drawing.Point(56, 15);
+            this.textSoBan.Name = "textSoBan";
+            this.textSoBan.Size = new System.Drawing.Size(21, 22);
+            this.textSoBan.TabIndex = 2;
+            this.textSoBan.Text = "0";
+            // 
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
@@ -553,6 +643,16 @@ namespace GUI
             this.PanelOrder.Size = new System.Drawing.Size(210, 50);
             this.PanelOrder.TabIndex = 5;
             this.PanelOrder.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelOrder_Paint);
+            // 
+            // textDonHang
+            // 
+            this.textDonHang.AutoSize = true;
+            this.textDonHang.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
+            this.textDonHang.Location = new System.Drawing.Point(56, 15);
+            this.textDonHang.Name = "textDonHang";
+            this.textDonHang.Size = new System.Drawing.Size(21, 22);
+            this.textDonHang.TabIndex = 2;
+            this.textDonHang.Text = "0";
             // 
             // pictureBox3
             // 
@@ -588,6 +688,16 @@ namespace GUI
             this.PanelRevenue.TabIndex = 3;
             this.PanelRevenue.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
+            // textDoanhThuNgay
+            // 
+            this.textDoanhThuNgay.AutoSize = true;
+            this.textDoanhThuNgay.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
+            this.textDoanhThuNgay.Location = new System.Drawing.Point(56, 15);
+            this.textDoanhThuNgay.Name = "textDoanhThuNgay";
+            this.textDoanhThuNgay.Size = new System.Drawing.Size(21, 22);
+            this.textDoanhThuNgay.TabIndex = 1;
+            this.textDoanhThuNgay.Text = "0";
+            // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
@@ -605,18 +715,26 @@ namespace GUI
             this.panel1.Size = new System.Drawing.Size(283, 800);
             this.panel1.TabIndex = 2;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(18, 11);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // PanelRight
             // 
             this.PanelRight.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.PanelRight.Controls.Add(this.textDT_DHRight);
-            this.PanelRight.Controls.Add(this.textSoDonHangRight);
-            this.PanelRight.Controls.Add(this.textLaiGopRight);
-            this.PanelRight.Controls.Add(this.textDoanhThuRight);
+            this.PanelRight.Controls.Add(this.panel11);
+            this.PanelRight.Controls.Add(this.panel10);
+            this.PanelRight.Controls.Add(this.panel9);
             this.PanelRight.Controls.Add(this.label19);
-            this.PanelRight.Controls.Add(this.comboBox1);
+            this.PanelRight.Controls.Add(this.cbbHoatDong);
             this.PanelRight.Controls.Add(this.label20);
             this.PanelRight.Controls.Add(this.label18);
-            this.PanelRight.Controls.Add(this.label21);
             this.PanelRight.Controls.Add(this.label22);
             this.PanelRight.Location = new System.Drawing.Point(1092, 6);
             this.PanelRight.Name = "PanelRight";
@@ -624,71 +742,98 @@ namespace GUI
             this.PanelRight.TabIndex = 3;
             this.PanelRight.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelRight_Paint);
             // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.Transparent;
+            this.panel11.BackgroundImage = global::GUI.Properties.Resources.panelNumberic2;
+            this.panel11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel11.Controls.Add(this.textDT_DHRight);
+            this.panel11.Location = new System.Drawing.Point(22, 229);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(160, 35);
+            this.panel11.TabIndex = 28;
+            // 
             // textDT_DHRight
             // 
+            this.textDT_DHRight.BackColor = System.Drawing.SystemColors.ControlLight;
             this.textDT_DHRight.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textDT_DHRight.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textDT_DHRight.Location = new System.Drawing.Point(22, 287);
+            this.textDT_DHRight.Location = new System.Drawing.Point(6, 6);
             this.textDT_DHRight.Name = "textDT_DHRight";
             this.textDT_DHRight.ReadOnly = true;
-            this.textDT_DHRight.Size = new System.Drawing.Size(148, 30);
+            this.textDT_DHRight.Size = new System.Drawing.Size(148, 22);
             this.textDT_DHRight.TabIndex = 25;
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.Transparent;
+            this.panel10.BackgroundImage = global::GUI.Properties.Resources.panelNumberic2;
+            this.panel10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel10.Controls.Add(this.textSoDonHangRight);
+            this.panel10.Location = new System.Drawing.Point(22, 162);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(160, 35);
+            this.panel10.TabIndex = 27;
             // 
             // textSoDonHangRight
             // 
+            this.textSoDonHangRight.BackColor = System.Drawing.SystemColors.ControlLight;
             this.textSoDonHangRight.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textSoDonHangRight.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textSoDonHangRight.Location = new System.Drawing.Point(22, 222);
+            this.textSoDonHangRight.Location = new System.Drawing.Point(6, 6);
             this.textSoDonHangRight.Name = "textSoDonHangRight";
             this.textSoDonHangRight.ReadOnly = true;
-            this.textSoDonHangRight.Size = new System.Drawing.Size(148, 30);
+            this.textSoDonHangRight.Size = new System.Drawing.Size(148, 22);
             this.textSoDonHangRight.TabIndex = 24;
             // 
-            // textLaiGopRight
+            // panel9
             // 
-            this.textLaiGopRight.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textLaiGopRight.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textLaiGopRight.Location = new System.Drawing.Point(22, 161);
-            this.textLaiGopRight.Name = "textLaiGopRight";
-            this.textLaiGopRight.ReadOnly = true;
-            this.textLaiGopRight.Size = new System.Drawing.Size(148, 30);
-            this.textLaiGopRight.TabIndex = 23;
+            this.panel9.BackColor = System.Drawing.Color.Transparent;
+            this.panel9.BackgroundImage = global::GUI.Properties.Resources.panelNumberic2;
+            this.panel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel9.Controls.Add(this.textDoanhThuRight);
+            this.panel9.Location = new System.Drawing.Point(22, 96);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(160, 35);
+            this.panel9.TabIndex = 26;
             // 
             // textDoanhThuRight
             // 
+            this.textDoanhThuRight.BackColor = System.Drawing.SystemColors.ControlLight;
             this.textDoanhThuRight.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textDoanhThuRight.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textDoanhThuRight.Location = new System.Drawing.Point(22, 99);
+            this.textDoanhThuRight.Location = new System.Drawing.Point(6, 7);
             this.textDoanhThuRight.Name = "textDoanhThuRight";
             this.textDoanhThuRight.ReadOnly = true;
-            this.textDoanhThuRight.Size = new System.Drawing.Size(148, 30);
+            this.textDoanhThuRight.Size = new System.Drawing.Size(148, 22);
             this.textDoanhThuRight.TabIndex = 22;
             // 
             // label19
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(18, 258);
+            this.label19.Location = new System.Drawing.Point(18, 207);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(179, 19);
             this.label19.TabIndex = 17;
             this.label19.Text = "Doanh thu/Đơn hàng: ";
             // 
-            // comboBox1
+            // cbbHoatDong
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(143, 8);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 30);
-            this.comboBox1.TabIndex = 7;
+            this.cbbHoatDong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbHoatDong.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbHoatDong.FormattingEnabled = true;
+            this.cbbHoatDong.Location = new System.Drawing.Point(143, 8);
+            this.cbbHoatDong.Name = "cbbHoatDong";
+            this.cbbHoatDong.Size = new System.Drawing.Size(121, 30);
+            this.cbbHoatDong.TabIndex = 7;
+            this.cbbHoatDong.SelectedIndexChanged += new System.EventHandler(this.cbbHoatDong_SelectedIndexChanged);
             // 
             // label20
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(18, 198);
+            this.label20.Location = new System.Drawing.Point(18, 141);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(114, 19);
             this.label20.TabIndex = 16;
@@ -706,16 +851,6 @@ namespace GUI
             this.label18.TabIndex = 6;
             this.label18.Text = "Hoạt động";
             // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(18, 136);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(72, 19);
-            this.label21.TabIndex = 15;
-            this.label21.Text = "Lãi góp:";
-            // 
             // label22
             // 
             this.label22.AutoSize = true;
@@ -725,46 +860,6 @@ namespace GUI
             this.label22.Size = new System.Drawing.Size(95, 19);
             this.label22.TabIndex = 14;
             this.label22.Text = "Doanh thu:";
-            // 
-            // textDoanhThuNgay
-            // 
-            this.textDoanhThuNgay.AutoSize = true;
-            this.textDoanhThuNgay.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textDoanhThuNgay.Location = new System.Drawing.Point(56, 15);
-            this.textDoanhThuNgay.Name = "textDoanhThuNgay";
-            this.textDoanhThuNgay.Size = new System.Drawing.Size(21, 22);
-            this.textDoanhThuNgay.TabIndex = 1;
-            this.textDoanhThuNgay.Text = "0";
-            // 
-            // textDonHang
-            // 
-            this.textDonHang.AutoSize = true;
-            this.textDonHang.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textDonHang.Location = new System.Drawing.Point(56, 15);
-            this.textDonHang.Name = "textDonHang";
-            this.textDonHang.Size = new System.Drawing.Size(21, 22);
-            this.textDonHang.TabIndex = 2;
-            this.textDonHang.Text = "0";
-            // 
-            // textSoBan
-            // 
-            this.textSoBan.AutoSize = true;
-            this.textSoBan.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textSoBan.Location = new System.Drawing.Point(56, 15);
-            this.textSoBan.Name = "textSoBan";
-            this.textSoBan.Size = new System.Drawing.Size(21, 22);
-            this.textSoBan.TabIndex = 2;
-            this.textSoBan.Text = "0";
-            // 
-            // textSoNhanVien
-            // 
-            this.textSoNhanVien.AutoSize = true;
-            this.textSoNhanVien.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textSoNhanVien.Location = new System.Drawing.Point(56, 15);
-            this.textSoNhanVien.Name = "textSoNhanVien";
-            this.textSoNhanVien.Size = new System.Drawing.Size(21, 22);
-            this.textSoNhanVien.TabIndex = 2;
-            this.textSoNhanVien.Text = "0";
             // 
             // HomeManager
             // 
@@ -778,14 +873,27 @@ namespace GUI
             this.Name = "HomeManager";
             this.Text = "HomeManager";
             this.Load += new System.EventHandler(this.HomeManager_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.InPanelManager1.ResumeLayout(false);
             this.InPanelManager1.PerformLayout();
             this.PanelIngredient.ResumeLayout(false);
             this.PanelIngredient.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.PanelWarehouse.ResumeLayout(false);
             this.PanelWarehouse.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.PanelChart.ResumeLayout(false);
@@ -803,8 +911,15 @@ namespace GUI
             this.PanelRevenue.ResumeLayout(false);
             this.PanelRevenue.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.PanelRight.ResumeLayout(false);
             this.PanelRight.PerformLayout();
+            this.panel11.ResumeLayout(false);
+            this.panel11.PerformLayout();
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -847,27 +962,33 @@ namespace GUI
         private System.Windows.Forms.TextBox textTongChiKho;
         private System.Windows.Forms.TextBox textSoNhanVienKho;
         private System.Windows.Forms.TextBox textSoNhaCungCap;
-        private System.Windows.Forms.TextBox textSoNguyenLieuMoi;
-        private System.Windows.Forms.TextBox textSoNguyenLieuChuaPhanLoai;
+        private System.Windows.Forms.TextBox textNguyenLieuTrongKhoLau;
         private System.Windows.Forms.TextBox textSoTienNLMoiNhap;
         private System.Windows.Forms.TextBox textSoLoaiNguyenLieu;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbbHoatDong;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TextBox textDT_DHRight;
         private System.Windows.Forms.TextBox textSoDonHangRight;
-        private System.Windows.Forms.TextBox textLaiGopRight;
         private System.Windows.Forms.TextBox textDoanhThuRight;
         private System.Windows.Forms.Label textDoanhThuNgay;
         private System.Windows.Forms.Label textSoNhanVien;
         private System.Windows.Forms.Label textSoBan;
         private System.Windows.Forms.Label textDonHang;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Panel panel10;
     }
 }

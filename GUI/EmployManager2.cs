@@ -22,7 +22,7 @@ namespace GUI
         EmployManager employ;
         bool edit;
         EmployManager2BLL employManager2BLL = new EmployManager2BLL();
-        string employeeID;
+        string employeeID, selectedPath;
         public EmployManager2(EmployManager form)
         {
             InitializeComponent();
@@ -42,7 +42,7 @@ namespace GUI
             cbboxChucVu.Items.Add("Kho Hàng");
             employID.Hide();
             employ = form;
-            employeeID = "default.jpg";
+            employeeID = "AA0000000";
             LoadEmployeeImage(employeeID);
         }
         public EmployManager2(string employID1,EmployManager form)
@@ -188,7 +188,27 @@ namespace GUI
                         {
                             MessageBox.Show("Thêm nhân viên thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             employ.ShowComponent(true);  // Hiển thị lại form chính
+                            EmployeeDTO employee = new EmployManager2BLL().GetNewestEmployee(employeeType);
 
+                            string resourcePath = $@"..\..\Resources\AvatarImage\";
+                            string destinationPath = Path.Combine(resourcePath, $"{employee.EmployeeId}.jpg");
+
+                            // Nếu không có ảnh được chọn, sử dụng ảnh mặc định
+                            if (string.IsNullOrEmpty(selectedPath))
+                            {
+                                string defaultImagePath = Path.Combine(resourcePath, "default.jpg");
+                                File.Copy(defaultImagePath, destinationPath, true);
+                            }
+                            else
+                            {
+                                // Copy ảnh mới vào thư mục Resources và ghi đè ảnh cũ nếu có
+                                File.Copy(selectedPath, destinationPath, true);
+                            }
+                            employeeID = "AA0000000";
+                            destinationPath = Path.Combine(resourcePath, $"{employeeID}.jpg");
+                            File.Delete(destinationPath);
+                            // Reset employeeID về mặc định
+                            LoadEmployeeImage(employeeID); // Hiển thị lại ảnh mặc định
                             this.Close();  // Đóng form hiện tại
                         }
                         else if(result == 0)
@@ -283,6 +303,7 @@ namespace GUI
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     // Lấy đường dẫn ảnh đã chọn
+                    
                     string selectedImagePath = openFileDialog.FileName;
                     string resourcePath = $@"..\..\Resources\AvatarImage\";
                     string destinationPath = Path.Combine(resourcePath, $"{employeeID}.jpg");
@@ -293,7 +314,10 @@ namespace GUI
                         pictureBox1.Image.Dispose();
                         pictureBox1.Image = null;
                     }
-
+                    if (edit == false)
+                    {
+                        selectedPath = selectedImagePath;
+                    }
                     // Copy ảnh mới vào thư mục Resources và ghi đè ảnh cũ nếu có
                     File.Copy(selectedImagePath, destinationPath, true);
 

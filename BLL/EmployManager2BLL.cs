@@ -26,16 +26,32 @@ namespace BLL
         {
             return employeeDAL.AddNewEmployee(prefix, employee);
         }
+        
+
 
         public EmployeeDTO GetNewestEmployee(EmployeeType type)
         {
             DataTable data = new EmployeeDAL().GetNewesrEmployee(type);
+            DateTime date = default;
 
+            try
+            {
+                date = DateTime.Parse(data.Rows[0][3].ToString());
+            }
+            catch
+            {
+                return null;
+            }
             return new EmployeeDTO(
                 data.Rows[0][0].ToString(),
                 data.Rows[0][1].ToString(),
-
+                Config.GetEnumValueFromDescription<Gender>(data.Rows[0][2].ToString()),
+                date,
+                data.Rows[0][4].ToString(),
+                data.Rows[0][5].ToString(),
+                data.Rows[0][6].ToString(),
+                EmployeeStatus.CurrentlyWorking
                 );
-        } 
+        }
     }
 }
