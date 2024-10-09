@@ -87,11 +87,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="ucFood.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ucFood.Designer.cs">
       <DependentUpon>ucFood.cs</DependentUpon>
+    </Compile>
     <Compile Include="PurchasedIngredient\DetailPurchaseedIngredient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -163,8 +169,12 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <Compile Include="ucFood.Designer.cs">
+      <DependentUpon>ucFood.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="ucFood.resx">
       <DependentUpon>ucFood.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PurchasedIngredient\DetailPurchaseedIngredient.resx">
       <DependentUpon>DetailPurchaseedIngredient.cs</DependentUpon>
     </EmbeddedResource>
@@ -193,11 +203,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
