@@ -122,6 +122,12 @@
     <Compile Include="Warehouse\Warehouse-ListAll.Designer.cs">
       <DependentUpon>Warehouse-ListAll.cs</DependentUpon>
     </Compile>
+    <Compile Include="Warehouse\Warehouse-ServingPrecal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Warehouse\Warehouse-ServingPrecal.Designer.cs">
+      <DependentUpon>Warehouse-ServingPrecal.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -162,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Warehouse\Warehouse-ListAll.resx">
       <DependentUpon>Warehouse-ListAll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Warehouse\Warehouse-ServingPrecal.resx">
+      <DependentUpon>Warehouse-ServingPrecal.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
