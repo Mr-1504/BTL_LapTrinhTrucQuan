@@ -2,7 +2,7 @@
 
 namespace GUI
 {
-    partial class frmOrders
+    partial class frmMenuOrder
     {
         /// <summary>
         /// Required designer variable.

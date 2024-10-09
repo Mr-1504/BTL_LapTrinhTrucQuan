@@ -55,11 +55,17 @@
       <DependentUpon>BaseForm.cs</DependentUpon>
     </Compile>
     <Compile Include="FoodUpdatedEventArgs.cs" />
-    <Compile Include="frmOrders.cs">
+    <Compile Include="frmListOrders.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmOrders.Designer.cs">
-      <DependentUpon>frmOrders.cs</DependentUpon>
+    <Compile Include="frmListOrders.Designer.cs">
+      <DependentUpon>frmListOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMenuOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenuOrder.Designer.cs">
+      <DependentUpon>frmMenuOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="LoadingForm.cs">
       <SubType>Form</SubType>
@@ -84,8 +90,11 @@
     <EmbeddedResource Include="BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmOrders.resx">
-      <DependentUpon>frmOrders.cs</DependentUpon>
+    <EmbeddedResource Include="frmListOrders.resx">
+      <DependentUpon>frmListOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenuOrder.resx">
+      <DependentUpon>frmMenuOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoadingForm.resx">
       <DependentUpon>LoadingForm.cs</DependentUpon>
@@ -255,6 +264,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\dgvHeader1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnThem.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -15,14 +15,14 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class frmOrders : Form
+    public partial class frmMenuOrder : Form
     {
         private int _currentPage = 1;
         private int _pageSize = 6;
         private int _totalPages = 1;
         private FoodBLL _foodBLL = new FoodBLL();
 
-        public frmOrders()
+        public frmMenuOrder()
         {
             InitializeComponent();
 
