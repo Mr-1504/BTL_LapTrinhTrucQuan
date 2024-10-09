@@ -8,13 +8,6 @@
         private int _quantity;
         private int _unitPrice;
 
-        public PurchaseInvoiceDetailDTO(string ingredientId, int quantity, int unitPrice)
-        {
-            _ingredientId = ingredientId;
-            _quantity = quantity;
-            _unitPrice = unitPrice;
-        }
-
         public PurchaseInvoiceDetailDTO(string purchaseInvoiceId, string ingredientId, int quantity, int unitPrice)
         {
             PurchaseInvoiceId = purchaseInvoiceId;

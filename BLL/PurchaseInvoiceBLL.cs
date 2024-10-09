@@ -14,7 +14,8 @@ namespace BLL
             try
             {
                 date = DateTime.Parse(data.Rows[0][3].ToString());
-            }catch (Exception ex) { }
+            }
+            catch (Exception ex) { }
             return new PurchaseInvoiceDTO(data.Rows[0][0].ToString(), data.Rows[0][1].ToString(), data.Rows[0][2].ToString(), date);
         }
 

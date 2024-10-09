@@ -14,7 +14,6 @@ namespace GUI
         private Image image;
         private AccountBLL acc = new AccountBLL();
         private string id;
-        public BaseForm baseForm;
         public LoginForm()
         {
             id = "";
@@ -240,7 +239,7 @@ namespace GUI
         {
             picLoad.Visible = false;
             Hide();
-            baseForm = new BaseForm(id);
+            BaseForm baseForm = new BaseForm(id);
             baseForm.Show();
             tmrLoad.Stop();
 

@@ -63,69 +63,9 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap arrowRight {
-            get {
-                object obj = ResourceManager.GetObject("arrowRight", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap BBlueButton {
             get {
                 object obj = ResourceManager.GetObject("BBlueButton", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap bgImport {
-            get {
-                object obj = ResourceManager.GetObject("bgImport", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap bgQuantityIngredientInput {
-            get {
-                object obj = ResourceManager.GetObject("bgQuantityIngredientInput", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap bgQuantityIngredientInput1 {
-            get {
-                object obj = ResourceManager.GetObject("bgQuantityIngredientInput1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap bgResetInput {
-            get {
-                object obj = ResourceManager.GetObject("bgResetInput", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap bgResetInputHover {
-            get {
-                object obj = ResourceManager.GetObject("bgResetInputHover", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,46 +83,6 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap btnCancel {
-            get {
-                object obj = ResourceManager.GetObject("btnCancel", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap btnConfirmInput {
-            get {
-                object obj = ResourceManager.GetObject("btnConfirmInput", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap btnConfirmInputHover {
-            get {
-                object obj = ResourceManager.GetObject("btnConfirmInputHover", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap btnContinue {
-            get {
-                object obj = ResourceManager.GetObject("btnContinue", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap btnNotification {
             get {
                 object obj = ResourceManager.GetObject("btnNotification", resourceCulture);
@@ -193,39 +93,9 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap btnReturn {
-            get {
-                object obj = ResourceManager.GetObject("btnReturn", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap btnSetting1 {
             get {
                 object obj = ResourceManager.GetObject("btnSetting1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap cmbIngredientImput {
-            get {
-                object obj = ResourceManager.GetObject("cmbIngredientImput", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap cmbSupplierName {
-            get {
-                object obj = ResourceManager.GetObject("cmbSupplierName", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -313,26 +183,6 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ListIngrdient {
-            get {
-                object obj = ResourceManager.GetObject("ListIngrdient", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ListIngrdient1 {
-            get {
-                object obj = ResourceManager.GetObject("ListIngrdient1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap load {
             get {
                 object obj = ResourceManager.GetObject("load", resourceCulture);
@@ -356,16 +206,6 @@ namespace GUI.Properties {
         internal static System.Drawing.Bitmap logo {
             get {
                 object obj = ResourceManager.GetObject("logo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap No {
-            get {
-                object obj = ResourceManager.GetObject("No", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -553,26 +393,6 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap pnlInvoice {
-            get {
-                object obj = ResourceManager.GetObject("pnlInvoice", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap pnltext {
-            get {
-                object obj = ResourceManager.GetObject("pnltext", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap RedQuit {
             get {
                 object obj = ResourceManager.GetObject("RedQuit", resourceCulture);
@@ -633,46 +453,6 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap step1Complete {
-            get {
-                object obj = ResourceManager.GetObject("step1Complete", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap step1Wait {
-            get {
-                object obj = ResourceManager.GetObject("step1Wait", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap step2 {
-            get {
-                object obj = ResourceManager.GetObject("step2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap step2Wait {
-            get {
-                object obj = ResourceManager.GetObject("step2Wait", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap textbox {
             get {
                 object obj = ResourceManager.GetObject("textbox", resourceCulture);
@@ -696,16 +476,6 @@ namespace GUI.Properties {
         internal static System.Drawing.Bitmap UnSeen1 {
             get {
                 object obj = ResourceManager.GetObject("UnSeen1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Yes {
-            get {
-                object obj = ResourceManager.GetObject("Yes", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

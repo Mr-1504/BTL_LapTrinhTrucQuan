@@ -15,12 +15,9 @@ namespace GUI
     public partial class SettingForm : Form
     {
         private string _employeeId;
-        private Action[] _action;
-
-        public SettingForm(string employeeId, Action[] action)
+        public SettingForm(string employeeId)
         {
             _employeeId = employeeId;
-            _action = action;
             InitializeComponent();
             btnEdit.MouseEnter += new EventHandler(Button_MouseEnter);
             btnEdit.MouseLeave += new EventHandler(Button_MouseLeave);
@@ -52,7 +49,7 @@ namespace GUI
         private void SettingForm_Load(object sender, EventArgs e)
         {
             // Tạo instance của form con SettingFormEditProfile
-            SettingFormEditProfile editProfileForm = new SettingFormEditProfile(_employeeId,_action);
+            SettingFormEditProfile editProfileForm = new SettingFormEditProfile(_employeeId);
 
             // Gọi hàm LoadChildForm để nhúng form con vào panel
             LoadChildForm(editProfileForm);
@@ -153,7 +150,7 @@ namespace GUI
             slidePanel2.Visible = false;
             slidePanel3.Visible = false;
             // Tạo instance của form con SettingFormSecurity
-            SettingFormEditProfile editProfileForm = new SettingFormEditProfile(_employeeId, _action);
+            SettingFormEditProfile editProfileForm = new SettingFormEditProfile(_employeeId);
 
             // Gọi hàm LoadChildForm để nhúng form con vào panel
             LoadChildForm(editProfileForm);
