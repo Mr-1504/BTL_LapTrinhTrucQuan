@@ -41,6 +41,18 @@ namespace DAL
             string query = "SELECT Password FROM Account WHERE MaNhanVien = @employeeId";
             return SqlHelper.ExecuteReader(query, new object[] { employeeId }).Rows[0][0].ToString();
         }
+
+        public int IsExistAdmin(string adminId)
+        {
+            string query = "SELECT COUNT(*) FROM Admin WHERE AdminId = @adminId";
+            return SqlHelper.ExecuteScalar(query, new object[] { adminId });
+        }
+
+        public string GetAdminPasswordHash(string adminID)
+        {
+            string query = "SELECT Password FROM Admin WHERE AdminId = @adminId";
+            return SqlHelper.ExecuteReader(query, new object[] { adminID }).Rows[0][0].ToString();
+        }
     }
 
 }
