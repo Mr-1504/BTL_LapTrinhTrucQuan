@@ -147,7 +147,7 @@ namespace GUI
             }
         }
 
-        private void Menu_MouseLeave(object sender, EventArgs e)
+        public void Menu_MouseLeave(object sender, EventArgs e)
         {
             picHover.Visible = false;
             if (_pnl != null)
@@ -198,7 +198,7 @@ namespace GUI
 
                     break;
                 case "Import":
-                    DetailPurchaseedIngredient detail = new DetailPurchaseedIngredient(_id);
+                    DetailPurchaseedIngredient detail = new DetailPurchaseedIngredient(_id, this);
                     OpenComponent( detail );
                     break;
                 case "Order":
@@ -278,6 +278,7 @@ namespace GUI
 
         private void OpenComponent(Form form)
         {
+            pnlContent.SuspendLayout();
             form.MouseEnter += Menu_MouseLeave;
             foreach (Control control in form.Controls){
                 control.MouseEnter += Menu_MouseLeave;
@@ -286,6 +287,8 @@ namespace GUI
             pnlContent.Controls.Clear();
             pnlContent.Controls.Add(form);
             form.Show();
+
+            pnlContent.ResumeLayout();
         }
 
         private void txtSearch_Enter(object sender, EventArgs e)
