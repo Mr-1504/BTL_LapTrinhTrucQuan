@@ -14,7 +14,6 @@ namespace GUI
 {
     public partial class LoadingForm : Form
     {
-        public LoginForm frmLogin;
         public LoadingForm()
         {
             InitializeComponent();
@@ -100,7 +99,7 @@ namespace GUI
             {
                 timer1.Stop();
                 Hide();
-                frmLogin = new LoginForm();
+                LoginForm frmLogin = new LoginForm();
                 frmLogin.Show();
 
                 frmLogin.FormClosed += (s, args) => Application.Exit(); 
