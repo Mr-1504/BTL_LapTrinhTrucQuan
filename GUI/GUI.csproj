@@ -116,6 +116,12 @@
     <Compile Include="SettingFormSecurity.Designer.cs">
       <DependentUpon>SettingFormSecurity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Warehouse\Warehouse-EditData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Warehouse\Warehouse-EditData.Designer.cs">
+      <DependentUpon>Warehouse-EditData.cs</DependentUpon>
+    </Compile>
     <Compile Include="Warehouse\Warehouse-ListAll.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +171,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SettingFormSecurity.resx">
       <DependentUpon>SettingFormSecurity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Warehouse\Warehouse-EditData.resx">
+      <DependentUpon>Warehouse-EditData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Warehouse\Warehouse-ListAll.resx">
       <DependentUpon>Warehouse-ListAll.cs</DependentUpon>
