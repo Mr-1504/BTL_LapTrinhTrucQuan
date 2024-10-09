@@ -870,7 +870,7 @@ namespace GUI
 
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
 
-        
+
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.Panel pnlHeader;
         private System.Windows.Forms.PictureBox picLogo;

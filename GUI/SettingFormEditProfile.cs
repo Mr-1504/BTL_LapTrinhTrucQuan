@@ -15,13 +15,13 @@ namespace GUI
         private string _employeeId ;
         private DataTable _dt = new DataTable();
         //path ảnh
-        string imagePath;
+        string _imagePath;
         private Action[] _actions;
         public SettingFormEditProfile(string employeeId, Action[] actions)
         {
             _employeeId = employeeId;
             _dt = _employeeDAL.GetEmployee(Employee.EmployeeId, _employeeId);
-            imagePath = $@"..\..\Resources\AvatarImage\{_employeeId}.JPG";
+            _imagePath = $@"..\..\Resources\AvatarImage\{_employeeId}.JPG";
             _actions = actions;
             InitializeComponent();
             picEditImage.MouseEnter += new EventHandler(Picture_MouseEnter);

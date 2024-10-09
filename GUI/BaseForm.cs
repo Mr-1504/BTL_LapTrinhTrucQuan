@@ -3,6 +3,7 @@ using GUI.PurchasedIngredient;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Security.Cryptography;
 using System.Windows.Forms;
 using Utilities;
 
@@ -72,7 +73,7 @@ namespace GUI
         public void loadImage()
         {
             btnAvatar.BackgroundImage = Image.FromFile(_imagePath);
-        }
+
 
             _imagePath = $@"..\..\Resources\AvatarImage\{_id}.JPG";
             btnAvatar.BackgroundImage = Image.FromFile(_imagePath);
@@ -160,7 +161,8 @@ namespace GUI
             }
             else if (_distance < 0)
             {
-                if (picHover.Location.Y > _y){
+                if (picHover.Location.Y > _y)
+                {
                     picHover.Location = new Point(0, picHover.Location.Y - _change);
                 }
                 else
@@ -171,7 +173,7 @@ namespace GUI
             }
         }
 
-        private void Menu_MouseLeave(object sender, EventArgs e)
+        public void Menu_MouseLeave(object sender, EventArgs e)
         {
             picHover.Visible = false;
             if (_pnl != null)
@@ -206,27 +208,27 @@ namespace GUI
                     }
                 }
             }
-            
-            SettingForm settingForm = new SettingForm(_id,_actions);
+
+            SettingForm settingForm = new SettingForm(_id, _actions);
             OpenComponent(settingForm);
 
             switch (_action)
             {
                 case "Home":
-                    
+
                     break;
                 case "Employee":
-                    
+
                     break;
                 case "Food":
-                    
+
                     break;
                 case "Warehouse":
 
                     break;
                 case "Import":
-                    DetailPurchaseedIngredient detail = new DetailPurchaseedIngredient(_id);
-                    OpenComponent( detail );
+                    DetailPurchaseedIngredient detail = new DetailPurchaseedIngredient(_id, this);
+                    OpenComponent(detail);
                     break;
                 case "Order":
 
@@ -291,28 +293,33 @@ namespace GUI
 
         private void btnSetting_Click(object sender, EventArgs e)
         {
-            if (_action == btnSetting.Name.Substring(3)){
+            if (_action == btnSetting.Name.Substring(3))
+            {
                 return;
             }
             else
                 _action = btnSetting.Name.Substring(3);
-            foreach(Control control in _choosePnl.Controls)
+            foreach (Control control in _choosePnl.Controls)
                 Control_Hover(control, false);
             picChoose.Visible = false;
-            SettingForm settingForm = new SettingForm(_id,_actions);
+            SettingForm settingForm = new SettingForm(_id, _actions);
             OpenComponent(settingForm);
         }
 
         private void OpenComponent(Form form)
         {
+            pnlContent.SuspendLayout();
             form.MouseEnter += Menu_MouseLeave;
-            foreach (Control control in form.Controls){
+            foreach (Control control in form.Controls)
+            {
                 control.MouseEnter += Menu_MouseLeave;
             }
             form.TopLevel = false;
             pnlContent.Controls.Clear();
             pnlContent.Controls.Add(form);
             form.Show();
+
+            pnlContent.ResumeLayout();
         }
 
         private void txtSearch_Enter(object sender, EventArgs e)

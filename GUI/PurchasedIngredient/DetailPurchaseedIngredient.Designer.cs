@@ -48,12 +48,13 @@
             this.btnReturn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnReturn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReturn.Location = new System.Drawing.Point(36, 728);
+            this.btnReturn.Location = new System.Drawing.Point(281, 728);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(200, 50);
             this.btnReturn.TabIndex = 3;
             this.btnReturn.UseVisualStyleBackColor = false;
             this.btnReturn.Visible = false;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
             // picArrowRight
             // 
@@ -94,12 +95,12 @@
             this.btnCancel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Location = new System.Drawing.Point(281, 728);
+            this.btnCancel.Location = new System.Drawing.Point(55, 728);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(200, 50);
             this.btnCancel.TabIndex = 4;
             this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Visible = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnContinue
             // 
