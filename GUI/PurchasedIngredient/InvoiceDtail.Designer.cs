@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblInvoice = new System.Windows.Forms.Label();
             this.pnlTop = new System.Windows.Forms.Panel();
             this.pnlBottom = new System.Windows.Forms.Panel();
@@ -51,12 +52,12 @@
             this.lblAction = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
             this.lblTotalValue = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvList = new System.Windows.Forms.DataGridView();
             this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPriceUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             this.SuspendLayout();
             // 
             // lblInvoice
@@ -153,11 +154,10 @@
             // 
             // lblSupplierAddressValue
             // 
-            this.lblSupplierAddressValue.AutoSize = true;
             this.lblSupplierAddressValue.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSupplierAddressValue.Location = new System.Drawing.Point(173, 239);
             this.lblSupplierAddressValue.Name = "lblSupplierAddressValue";
-            this.lblSupplierAddressValue.Size = new System.Drawing.Size(34, 18);
+            this.lblSupplierAddressValue.Size = new System.Drawing.Size(256, 47);
             this.lblSupplierAddressValue.TabIndex = 10;
             this.lblSupplierAddressValue.Text = "N/A";
             // 
@@ -197,19 +197,18 @@
             this.lblBuyerNameValue.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBuyerNameValue.Location = new System.Drawing.Point(1020, 192);
             this.lblBuyerNameValue.Name = "lblBuyerNameValue";
-            this.lblBuyerNameValue.Size = new System.Drawing.Size(34, 18);
+            this.lblBuyerNameValue.Size = new System.Drawing.Size(148, 18);
             this.lblBuyerNameValue.TabIndex = 18;
-            this.lblBuyerNameValue.Text = "N/A";
+            this.lblBuyerNameValue.Text = "Nhà hàng Bea Food";
             // 
             // lblBuyerAddressValue
             // 
-            this.lblBuyerAddressValue.AutoSize = true;
             this.lblBuyerAddressValue.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBuyerAddressValue.Location = new System.Drawing.Point(996, 239);
             this.lblBuyerAddressValue.Name = "lblBuyerAddressValue";
-            this.lblBuyerAddressValue.Size = new System.Drawing.Size(34, 18);
+            this.lblBuyerAddressValue.Size = new System.Drawing.Size(296, 47);
             this.lblBuyerAddressValue.TabIndex = 17;
-            this.lblBuyerAddressValue.Text = "N/A";
+            this.lblBuyerAddressValue.Text = "One Apple Park Way, Cupertino, CA 95014, Hoa Kỳ";
             // 
             // lblBuyerAddress
             // 
@@ -272,18 +271,18 @@
             this.lblTotalValue.TabIndex = 21;
             this.lblTotalValue.Text = "N/A";
             // 
-            // dataGridView1
+            // dgvList
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvList.AllowUserToAddRows = false;
+            this.dgvList.AllowUserToDeleteRows = false;
+            this.dgvList.AllowUserToResizeColumns = false;
+            this.dgvList.AllowUserToResizeRows = false;
+            this.dgvList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvList.BackgroundColor = System.Drawing.Color.White;
+            this.dgvList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -291,24 +290,32 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeight = 40;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvList.ColumnHeadersHeight = 40;
+            this.dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colName,
             this.colUnit,
             this.colPriceUnit,
             this.colQuantity});
-            this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
-            this.dataGridView1.Location = new System.Drawing.Point(87, 370);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(1226, 150);
-            this.dataGridView1.TabIndex = 22;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvList.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
+            this.dgvList.Location = new System.Drawing.Point(87, 370);
+            this.dgvList.Name = "dgvList";
+            this.dgvList.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvList.RowHeadersVisible = false;
+            this.dgvList.Size = new System.Drawing.Size(1226, 150);
+            this.dgvList.TabIndex = 22;
             // 
             // colName
             // 
-            this.colName.Frozen = true;
+            this.colName.DataPropertyName = "Tên nguyên liệu";
             this.colName.HeaderText = "Tên nguyên liệu";
             this.colName.Name = "colName";
             this.colName.ReadOnly = true;
@@ -316,7 +323,7 @@
             // 
             // colUnit
             // 
-            this.colUnit.Frozen = true;
+            this.colUnit.DataPropertyName = "colUnit";
             this.colUnit.HeaderText = "Đơn vị";
             this.colUnit.Name = "colUnit";
             this.colUnit.ReadOnly = true;
@@ -324,7 +331,6 @@
             // 
             // colPriceUnit
             // 
-            this.colPriceUnit.Frozen = true;
             this.colPriceUnit.HeaderText = "Đơn giá nhập";
             this.colPriceUnit.Name = "colPriceUnit";
             this.colPriceUnit.ReadOnly = true;
@@ -332,11 +338,10 @@
             // 
             // colQuantity
             // 
-            this.colQuantity.Frozen = true;
             this.colQuantity.HeaderText = "Số lượng nhập";
             this.colQuantity.Name = "colQuantity";
             this.colQuantity.ReadOnly = true;
-            this.colQuantity.Width = 312;
+            this.colQuantity.Width = 280;
             // 
             // InvoiceDtail
             // 
@@ -344,7 +349,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvList);
             this.Controls.Add(this.lblTotalValue);
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.lblAction);
@@ -370,7 +375,7 @@
             this.DoubleBuffered = true;
             this.Name = "InvoiceDtail";
             this.Size = new System.Drawing.Size(1369, 625);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -400,7 +405,7 @@
         private System.Windows.Forms.Label lblAction;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label lblTotalValue;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvList;
         private System.Windows.Forms.DataGridViewTextBoxColumn colName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colUnit;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPriceUnit;
