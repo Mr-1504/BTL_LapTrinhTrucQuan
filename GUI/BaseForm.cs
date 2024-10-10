@@ -223,9 +223,6 @@ namespace GUI
                 }
             }
 
-            SettingForm settingForm = new SettingForm(_id, _actions);
-            OpenComponent(settingForm);
-
             switch (_action)
             {
                 case "Home":
@@ -254,7 +251,6 @@ namespace GUI
 
                     break;
                 case "Warehouse":
-
                     break;
                 case "Import":
                     DetailPurchaseedIngredient detail = new DetailPurchaseedIngredient(_id, this);

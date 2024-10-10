@@ -32,16 +32,17 @@ namespace DAL
             string query = "INSERT INTO NguyenLieu(MaNguyenLieu, TenNguyenLieu, DonViTinh, CongDung, YeuCau, ChongChiDinh, Soluong) VALUES " +
                 "( @ingredientId , @ingredientnName , @ingredientUnit , @ingredientUses , @ingredientRequirement , @ingredientContraindication , @ingredientQuantity )";
             return SqlHelper.ExecuteNonQuery(query, new object[] { ingredientId, ingredient.IngredientName,
-                ingredient.IngredientUnit.ToString(), ingredient.IngredientUses, ingredient.IngredientRequirement,
+                ingredient.IngredientUnit.GetEnumDescription(), ingredient.IngredientUses, ingredient.IngredientRequirement,
                 ingredient.IngredientContraindication, ingredient.IngredientQuantity });
         }
 
         public int UpdateIngredient(IngredientDTO ingredient)
         {
-            string query = "UPDATE NguyenLieu SET TenNguyenLieu = @name , DonViTinh = @unit , CongDung = @uses , " +
-                "YeuCau = @repuirement , ChongChiDinh = @contraindication , Soluong = @quantity WHERE MaNguyenLieu = @id";
+            string query = "UPDATE NguyenLieu SET TenNguyenLieu = @ingredientName , DonViTinh = @ingredientUnit , CongDung = @ingredientUses" +
+                " , YeuCau = @ingredientRequirement , ChongChiDinh = @ingredientContraindication ," +
+                " Soluong = @ingredientQuantity WHERE MaNguyenLieu = @ingredientId";
 
-            return SqlHelper.ExecuteNonQuery(query, new object[] {ingredient.IngredientName, ingredient.IngredientUnit.ToString(),
+            return SqlHelper.ExecuteNonQuery(query, new object[] {ingredient.IngredientName, ingredient.IngredientUnit.GetEnumDescription(),
                 ingredient.IngredientUses, ingredient.IngredientRequirement, ingredient.IngredientContraindication,
                 ingredient.IngredientQuantity, ingredient.IngredientId});
         }
