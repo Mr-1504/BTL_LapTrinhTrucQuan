@@ -417,8 +417,10 @@
     <Content Include="Resources\AvatarImage\KH20240001.JPG" />
     <Content Include="Resources\AvatarImage\LT20240001.JPG" />
     <Content Include="Resources\field_multi_editable_420x80.png" />
+    <Content Include="Resources\field_multi_readonly_420x80.png" />
     <Content Include="Resources\field_multi_valuechanged_420x80.png" />
     <Content Include="Resources\field_single_editable_420x40.png" />
+    <Content Include="Resources\field_single_readonly_420x40.png" />
     <Content Include="Resources\field_single_valuechanged_420x40.png" />
     <Content Include="Resources\sortBigger.png" />
     <Content Include="Resources\sortSmaller.png" />

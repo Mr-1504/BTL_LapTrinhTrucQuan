@@ -29,10 +29,25 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Warehouse_EditData));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbControlTitle = new System.Windows.Forms.Label();
             this.pnEditField = new System.Windows.Forms.Panel();
+            this.ef_pnChiTietHoaDonNhap = new System.Windows.Forms.Panel();
+            this.ef_CTHDN_lbInformantNL = new System.Windows.Forms.Label();
+            this.ef_CTHDN_lbInformantDV = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.ef_CTHDN_pnMaHDN = new System.Windows.Forms.Panel();
+            this.ef_CTHDN_txbMaHDN = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.ef_CTHDN_pnSLN = new System.Windows.Forms.Panel();
+            this.ef_CTHDN_txbSLN = new System.Windows.Forms.TextBox();
+            this.ef_CTHDN_pnDG = new System.Windows.Forms.Panel();
+            this.ef_CTHDN_txbDG = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.ef_CTHDN_pnMaNL = new System.Windows.Forms.Panel();
+            this.ef_CTHDN_txbMaNL = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
             this.ef_pnHoaDonNhap = new System.Windows.Forms.Panel();
             this.ef_HDN_dtpNgayNhap = new System.Windows.Forms.DateTimePicker();
             this.ef_HDN_lbInfomantNCC = new System.Windows.Forms.Label();
@@ -92,12 +107,17 @@
             this.ef_btnDelete = new System.Windows.Forms.Button();
             this.pnBrowseField = new System.Windows.Forms.Panel();
             this.bf_pnSearchbar = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
+            this.bf_sb_lbHint = new System.Windows.Forms.Label();
             this.bf_sb_txbSearchbox = new System.Windows.Forms.TextBox();
             this.bf_pnSelectedTable = new System.Windows.Forms.Panel();
             this.bf_st_cbbTableList = new System.Windows.Forms.ComboBox();
             this.bf_dgvTable = new System.Windows.Forms.DataGridView();
             this.pnEditField.SuspendLayout();
+            this.ef_pnChiTietHoaDonNhap.SuspendLayout();
+            this.ef_CTHDN_pnMaHDN.SuspendLayout();
+            this.ef_CTHDN_pnSLN.SuspendLayout();
+            this.ef_CTHDN_pnDG.SuspendLayout();
+            this.ef_CTHDN_pnMaNL.SuspendLayout();
             this.ef_pnHoaDonNhap.SuspendLayout();
             this.ef_HDN_pnMaHD.SuspendLayout();
             this.ef_HDN_pnMaNCC.SuspendLayout();
@@ -138,6 +158,7 @@
             // 
             this.pnEditField.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnEditField.BackgroundImage")));
             this.pnEditField.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnEditField.Controls.Add(this.ef_pnChiTietHoaDonNhap);
             this.pnEditField.Controls.Add(this.ef_pnHoaDonNhap);
             this.pnEditField.Controls.Add(this.ef_pnNhaCungCap);
             this.pnEditField.Controls.Add(this.ef_pnNguyenLieu);
@@ -149,6 +170,169 @@
             this.pnEditField.Name = "pnEditField";
             this.pnEditField.Size = new System.Drawing.Size(640, 715);
             this.pnEditField.TabIndex = 4;
+            // 
+            // ef_pnChiTietHoaDonNhap
+            // 
+            this.ef_pnChiTietHoaDonNhap.BackColor = System.Drawing.Color.White;
+            this.ef_pnChiTietHoaDonNhap.Controls.Add(this.ef_CTHDN_lbInformantNL);
+            this.ef_pnChiTietHoaDonNhap.Controls.Add(this.ef_CTHDN_lbInformantDV);
+            this.ef_pnChiTietHoaDonNhap.Controls.Add(this.label12);
+            this.ef_pnChiTietHoaDonNhap.Controls.Add(this.ef_CTHDN_pnMaHDN);
+            this.ef_pnChiTietHoaDonNhap.Controls.Add(this.label17);
+            this.ef_pnChiTietHoaDonNhap.Controls.Add(this.ef_CTHDN_pnSLN);
+            this.ef_pnChiTietHoaDonNhap.Controls.Add(this.ef_CTHDN_pnDG);
+            this.ef_pnChiTietHoaDonNhap.Controls.Add(this.label22);
+            this.ef_pnChiTietHoaDonNhap.Controls.Add(this.ef_CTHDN_pnMaNL);
+            this.ef_pnChiTietHoaDonNhap.Controls.Add(this.label23);
+            this.ef_pnChiTietHoaDonNhap.Enabled = false;
+            this.ef_pnChiTietHoaDonNhap.Location = new System.Drawing.Point(20, 20);
+            this.ef_pnChiTietHoaDonNhap.Name = "ef_pnChiTietHoaDonNhap";
+            this.ef_pnChiTietHoaDonNhap.Size = new System.Drawing.Size(600, 610);
+            this.ef_pnChiTietHoaDonNhap.TabIndex = 16;
+            // 
+            // ef_CTHDN_lbInformantNL
+            // 
+            this.ef_CTHDN_lbInformantNL.AutoSize = true;
+            this.ef_CTHDN_lbInformantNL.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ef_CTHDN_lbInformantNL.Location = new System.Drawing.Point(181, 114);
+            this.ef_CTHDN_lbInformantNL.Name = "ef_CTHDN_lbInformantNL";
+            this.ef_CTHDN_lbInformantNL.Size = new System.Drawing.Size(45, 13);
+            this.ef_CTHDN_lbInformantNL.TabIndex = 13;
+            this.ef_CTHDN_lbInformantNL.Text = "Thịt voi";
+            // 
+            // ef_CTHDN_lbInformantDV
+            // 
+            this.ef_CTHDN_lbInformantDV.AutoSize = true;
+            this.ef_CTHDN_lbInformantDV.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ef_CTHDN_lbInformantDV.Location = new System.Drawing.Point(181, 184);
+            this.ef_CTHDN_lbInformantDV.Name = "ef_CTHDN_lbInformantDV";
+            this.ef_CTHDN_lbInformantDV.Size = new System.Drawing.Size(20, 13);
+            this.ef_CTHDN_lbInformantDV.TabIndex = 12;
+            this.ef_CTHDN_lbInformantDV.Text = "Kg";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(10, 220);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(65, 21);
+            this.label12.TabIndex = 11;
+            this.label12.Text = "Đơn giá";
+            // 
+            // ef_CTHDN_pnMaHDN
+            // 
+            this.ef_CTHDN_pnMaHDN.BackgroundImage = global::GUI.Properties.Resources.field_single_editable_420x40;
+            this.ef_CTHDN_pnMaHDN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ef_CTHDN_pnMaHDN.Controls.Add(this.ef_CTHDN_txbMaHDN);
+            this.ef_CTHDN_pnMaHDN.Location = new System.Drawing.Point(170, 10);
+            this.ef_CTHDN_pnMaHDN.Name = "ef_CTHDN_pnMaHDN";
+            this.ef_CTHDN_pnMaHDN.Size = new System.Drawing.Size(420, 40);
+            this.ef_CTHDN_pnMaHDN.TabIndex = 4;
+            // 
+            // ef_CTHDN_txbMaHDN
+            // 
+            this.ef_CTHDN_txbMaHDN.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ef_CTHDN_txbMaHDN.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ef_CTHDN_txbMaHDN.Location = new System.Drawing.Point(14, 9);
+            this.ef_CTHDN_txbMaHDN.Name = "ef_CTHDN_txbMaHDN";
+            this.ef_CTHDN_txbMaHDN.Size = new System.Drawing.Size(390, 22);
+            this.ef_CTHDN_txbMaHDN.TabIndex = 3;
+            this.ef_CTHDN_txbMaHDN.Text = "HDN0023";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.BackColor = System.Drawing.Color.Transparent;
+            this.label17.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(10, 150);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(112, 21);
+            this.label17.TabIndex = 9;
+            this.label17.Text = "Số lượng nhập";
+            // 
+            // ef_CTHDN_pnSLN
+            // 
+            this.ef_CTHDN_pnSLN.BackgroundImage = global::GUI.Properties.Resources.field_single_editable_420x40;
+            this.ef_CTHDN_pnSLN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ef_CTHDN_pnSLN.Controls.Add(this.ef_CTHDN_txbSLN);
+            this.ef_CTHDN_pnSLN.Location = new System.Drawing.Point(170, 140);
+            this.ef_CTHDN_pnSLN.Name = "ef_CTHDN_pnSLN";
+            this.ef_CTHDN_pnSLN.Size = new System.Drawing.Size(420, 40);
+            this.ef_CTHDN_pnSLN.TabIndex = 8;
+            // 
+            // ef_CTHDN_txbSLN
+            // 
+            this.ef_CTHDN_txbSLN.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ef_CTHDN_txbSLN.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ef_CTHDN_txbSLN.Location = new System.Drawing.Point(15, 9);
+            this.ef_CTHDN_txbSLN.Name = "ef_CTHDN_txbSLN";
+            this.ef_CTHDN_txbSLN.Size = new System.Drawing.Size(390, 22);
+            this.ef_CTHDN_txbSLN.TabIndex = 1;
+            this.ef_CTHDN_txbSLN.Text = "10.00";
+            // 
+            // ef_CTHDN_pnDG
+            // 
+            this.ef_CTHDN_pnDG.BackgroundImage = global::GUI.Properties.Resources.field_single_editable_420x40;
+            this.ef_CTHDN_pnDG.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ef_CTHDN_pnDG.Controls.Add(this.ef_CTHDN_txbDG);
+            this.ef_CTHDN_pnDG.Location = new System.Drawing.Point(170, 210);
+            this.ef_CTHDN_pnDG.Name = "ef_CTHDN_pnDG";
+            this.ef_CTHDN_pnDG.Size = new System.Drawing.Size(420, 40);
+            this.ef_CTHDN_pnDG.TabIndex = 10;
+            // 
+            // ef_CTHDN_txbDG
+            // 
+            this.ef_CTHDN_txbDG.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ef_CTHDN_txbDG.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ef_CTHDN_txbDG.Location = new System.Drawing.Point(15, 9);
+            this.ef_CTHDN_txbDG.Name = "ef_CTHDN_txbDG";
+            this.ef_CTHDN_txbDG.Size = new System.Drawing.Size(390, 22);
+            this.ef_CTHDN_txbDG.TabIndex = 2;
+            this.ef_CTHDN_txbDG.Text = "1000.00";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.BackColor = System.Drawing.Color.Transparent;
+            this.label22.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(10, 80);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(117, 21);
+            this.label22.TabIndex = 7;
+            this.label22.Text = "Mã nguyên liệu";
+            // 
+            // ef_CTHDN_pnMaNL
+            // 
+            this.ef_CTHDN_pnMaNL.BackgroundImage = global::GUI.Properties.Resources.field_single_editable_420x40;
+            this.ef_CTHDN_pnMaNL.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ef_CTHDN_pnMaNL.Controls.Add(this.ef_CTHDN_txbMaNL);
+            this.ef_CTHDN_pnMaNL.Location = new System.Drawing.Point(170, 70);
+            this.ef_CTHDN_pnMaNL.Name = "ef_CTHDN_pnMaNL";
+            this.ef_CTHDN_pnMaNL.Size = new System.Drawing.Size(420, 40);
+            this.ef_CTHDN_pnMaNL.TabIndex = 6;
+            // 
+            // ef_CTHDN_txbMaNL
+            // 
+            this.ef_CTHDN_txbMaNL.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ef_CTHDN_txbMaNL.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ef_CTHDN_txbMaNL.Location = new System.Drawing.Point(15, 9);
+            this.ef_CTHDN_txbMaNL.Name = "ef_CTHDN_txbMaNL";
+            this.ef_CTHDN_txbMaNL.Size = new System.Drawing.Size(390, 22);
+            this.ef_CTHDN_txbMaNL.TabIndex = 2;
+            this.ef_CTHDN_txbMaNL.Text = "THI0002";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.BackColor = System.Drawing.Color.Transparent;
+            this.label23.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(10, 20);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(133, 21);
+            this.label23.TabIndex = 5;
+            this.label23.Text = "Mã hoá đơn nhập";
             // 
             // ef_pnHoaDonNhap
             // 
@@ -185,9 +369,9 @@
             this.ef_HDN_lbInfomantNCC.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ef_HDN_lbInfomantNCC.Location = new System.Drawing.Point(182, 186);
             this.ef_HDN_lbInfomantNCC.Name = "ef_HDN_lbInfomantNCC";
-            this.ef_HDN_lbInfomantNCC.Size = new System.Drawing.Size(235, 13);
+            this.ef_HDN_lbInfomantNCC.Size = new System.Drawing.Size(163, 13);
             this.ef_HDN_lbInfomantNCC.TabIndex = 13;
-            this.ef_HDN_lbInfomantNCC.Text = "CC20240002 - Nhà vườn EatOnionFullMouth";
+            this.ef_HDN_lbInfomantNCC.Text = "Nhà vườn EatOnionFullMouth";
             // 
             // ef_HDN_lbInfomantNV
             // 
@@ -195,13 +379,13 @@
             this.ef_HDN_lbInfomantNV.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ef_HDN_lbInfomantNV.Location = new System.Drawing.Point(181, 114);
             this.ef_HDN_lbInfomantNV.Name = "ef_HDN_lbInfomantNV";
-            this.ef_HDN_lbInfomantNV.Size = new System.Drawing.Size(171, 13);
+            this.ef_HDN_lbInfomantNV.Size = new System.Drawing.Size(99, 13);
             this.ef_HDN_lbInfomantNV.TabIndex = 12;
-            this.ef_HDN_lbInfomantNV.Text = "KH20240001 - Hùng Đình Toàng";
+            this.ef_HDN_lbInfomantNV.Text = "Hùng Đình Toàng";
             // 
             // ef_HDN_pnMaHD
             // 
-            this.ef_HDN_pnMaHD.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ef_HDN_pnMaHD.BackgroundImage")));
+            this.ef_HDN_pnMaHD.BackgroundImage = global::GUI.Properties.Resources.field_single_readonly_420x40;
             this.ef_HDN_pnMaHD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ef_HDN_pnMaHD.Controls.Add(this.ef_HDN_lbMaHD);
             this.ef_HDN_pnMaHD.Location = new System.Drawing.Point(170, 10);
@@ -216,9 +400,9 @@
             this.ef_HDN_lbMaHD.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ef_HDN_lbMaHD.Location = new System.Drawing.Point(10, 10);
             this.ef_HDN_lbMaHD.Name = "ef_HDN_lbMaHD";
-            this.ef_HDN_lbMaHD.Size = new System.Drawing.Size(69, 21);
+            this.ef_HDN_lbMaHD.Size = new System.Drawing.Size(68, 21);
             this.ef_HDN_lbMaHD.TabIndex = 0;
-            this.ef_HDN_lbMaHD.Text = "THI0002";
+            this.ef_HDN_lbMaHD.Text = "HD0023";
             // 
             // label16
             // 
@@ -249,7 +433,7 @@
             this.ef_HDN_txbMaNCC.Name = "ef_HDN_txbMaNCC";
             this.ef_HDN_txbMaNCC.Size = new System.Drawing.Size(390, 22);
             this.ef_HDN_txbMaNCC.TabIndex = 1;
-            this.ef_HDN_txbMaNCC.Text = "Kg";
+            this.ef_HDN_txbMaNCC.Text = "CC20240002";
             // 
             // label18
             // 
@@ -280,7 +464,7 @@
             this.ef_HDN_txbMaNV.Name = "ef_HDN_txbMaNV";
             this.ef_HDN_txbMaNV.Size = new System.Drawing.Size(390, 22);
             this.ef_HDN_txbMaNV.TabIndex = 0;
-            this.ef_HDN_txbMaNV.Text = "Thịt voi";
+            this.ef_HDN_txbMaNV.Text = "KH20240001";
             // 
             // label19
             // 
@@ -368,7 +552,7 @@
             // 
             // ef_NCC_pnMa
             // 
-            this.ef_NCC_pnMa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ef_NCC_pnMa.BackgroundImage")));
+            this.ef_NCC_pnMa.BackgroundImage = global::GUI.Properties.Resources.field_single_readonly_420x40;
             this.ef_NCC_pnMa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ef_NCC_pnMa.Controls.Add(this.ef_NCC_lbMa);
             this.ef_NCC_pnMa.Location = new System.Drawing.Point(170, 10);
@@ -531,7 +715,7 @@
             // 
             // ef_NL_pnMa
             // 
-            this.ef_NL_pnMa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ef_NL_pnMa.BackgroundImage")));
+            this.ef_NL_pnMa.BackgroundImage = global::GUI.Properties.Resources.field_single_readonly_420x40;
             this.ef_NL_pnMa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ef_NL_pnMa.Controls.Add(this.ef_NL_lbMa);
             this.ef_NL_pnMa.Location = new System.Drawing.Point(170, 10);
@@ -797,23 +981,25 @@
             this.bf_pnSearchbar.BackColor = System.Drawing.Color.Transparent;
             this.bf_pnSearchbar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bf_pnSearchbar.BackgroundImage")));
             this.bf_pnSearchbar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bf_pnSearchbar.Controls.Add(this.label9);
+            this.bf_pnSearchbar.Controls.Add(this.bf_sb_lbHint);
             this.bf_pnSearchbar.Controls.Add(this.bf_sb_txbSearchbox);
             this.bf_pnSearchbar.Location = new System.Drawing.Point(338, 20);
             this.bf_pnSearchbar.Name = "bf_pnSearchbar";
             this.bf_pnSearchbar.Size = new System.Drawing.Size(285, 50);
             this.bf_pnSearchbar.TabIndex = 11;
+            this.bf_pnSearchbar.Click += new System.EventHandler(this.bf_pnSearchbar_Click);
             // 
-            // label9
+            // bf_sb_lbHint
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label9.Location = new System.Drawing.Point(49, 15);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(74, 21);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "Tìm kiếm";
+            this.bf_sb_lbHint.AutoSize = true;
+            this.bf_sb_lbHint.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bf_sb_lbHint.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.bf_sb_lbHint.Location = new System.Drawing.Point(49, 15);
+            this.bf_sb_lbHint.Name = "bf_sb_lbHint";
+            this.bf_sb_lbHint.Size = new System.Drawing.Size(74, 21);
+            this.bf_sb_lbHint.TabIndex = 1;
+            this.bf_sb_lbHint.Text = "Tìm kiếm";
+            this.bf_sb_lbHint.Click += new System.EventHandler(this.bf_sb_lbHint_Click);
             // 
             // bf_sb_txbSearchbox
             // 
@@ -823,6 +1009,8 @@
             this.bf_sb_txbSearchbox.Name = "bf_sb_txbSearchbox";
             this.bf_sb_txbSearchbox.Size = new System.Drawing.Size(215, 22);
             this.bf_sb_txbSearchbox.TabIndex = 0;
+            this.bf_sb_txbSearchbox.Enter += new System.EventHandler(this.bf_sb_txbSearchbox_Enter);
+            this.bf_sb_txbSearchbox.Leave += new System.EventHandler(this.bf_sb_txbSearchbox_Leave);
             // 
             // bf_pnSelectedTable
             // 
@@ -846,7 +1034,7 @@
             "NguyenLieu",
             "NhaCungCap",
             "HoaDonNhap",
-            "ChiTietHoaDonBan"});
+            "ChiTietHoaDonNhap"});
             this.bf_st_cbbTableList.Location = new System.Drawing.Point(51, 11);
             this.bf_st_cbbTableList.Name = "bf_st_cbbTableList";
             this.bf_st_cbbTableList.Size = new System.Drawing.Size(221, 29);
@@ -864,26 +1052,26 @@
             this.bf_dgvTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bf_dgvTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.bf_dgvTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.bf_dgvTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.bf_dgvTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.bf_dgvTable.ColumnHeadersHeight = 38;
             this.bf_dgvTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 5);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.bf_dgvTable.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(10, 0, 0, 5);
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.bf_dgvTable.DefaultCellStyle = dataGridViewCellStyle8;
             this.bf_dgvTable.Location = new System.Drawing.Point(20, 90);
             this.bf_dgvTable.MultiSelect = false;
             this.bf_dgvTable.Name = "bf_dgvTable";
@@ -907,6 +1095,16 @@
             this.Name = "Warehouse_EditData";
             this.Text = "Warehouse_EditData";
             this.pnEditField.ResumeLayout(false);
+            this.ef_pnChiTietHoaDonNhap.ResumeLayout(false);
+            this.ef_pnChiTietHoaDonNhap.PerformLayout();
+            this.ef_CTHDN_pnMaHDN.ResumeLayout(false);
+            this.ef_CTHDN_pnMaHDN.PerformLayout();
+            this.ef_CTHDN_pnSLN.ResumeLayout(false);
+            this.ef_CTHDN_pnSLN.PerformLayout();
+            this.ef_CTHDN_pnDG.ResumeLayout(false);
+            this.ef_CTHDN_pnDG.PerformLayout();
+            this.ef_CTHDN_pnMaNL.ResumeLayout(false);
+            this.ef_CTHDN_pnMaNL.PerformLayout();
             this.ef_pnHoaDonNhap.ResumeLayout(false);
             this.ef_pnHoaDonNhap.PerformLayout();
             this.ef_HDN_pnMaHD.ResumeLayout(false);
@@ -986,7 +1184,7 @@
         private System.Windows.Forms.RichTextBox ef_NL_rtbCCD;
         private System.Windows.Forms.ComboBox bf_st_cbbTableList;
         private System.Windows.Forms.TextBox bf_sb_txbSearchbox;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label bf_sb_lbHint;
         private System.Windows.Forms.Panel ef_pnNhaCungCap;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel ef_NCC_pnDT;
@@ -1018,5 +1216,20 @@
         private System.Windows.Forms.DateTimePicker ef_HDN_dtpNgayNhap;
         private System.Windows.Forms.Label ef_HDN_lbInfomantNCC;
         private System.Windows.Forms.Label ef_HDN_lbInfomantNV;
+        private System.Windows.Forms.Panel ef_pnChiTietHoaDonNhap;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Panel ef_CTHDN_pnMaHDN;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Panel ef_CTHDN_pnSLN;
+        private System.Windows.Forms.TextBox ef_CTHDN_txbSLN;
+        private System.Windows.Forms.Panel ef_CTHDN_pnDG;
+        private System.Windows.Forms.TextBox ef_CTHDN_txbDG;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Panel ef_CTHDN_pnMaNL;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label ef_CTHDN_lbInformantDV;
+        private System.Windows.Forms.Label ef_CTHDN_lbInformantNL;
+        private System.Windows.Forms.TextBox ef_CTHDN_txbMaHDN;
+        private System.Windows.Forms.TextBox ef_CTHDN_txbMaNL;
     }
 }

@@ -35,6 +35,8 @@ namespace GUI.Warehouse
             ef_pnNhaCungCap.Enabled = false;
             ef_pnHoaDonNhap.Visible = false;
             ef_pnHoaDonNhap.Enabled = false;
+            ef_pnChiTietHoaDonNhap.Visible = false;
+            ef_pnChiTietHoaDonNhap.Enabled = false;
         }
         //  ^ end
 
@@ -48,6 +50,29 @@ namespace GUI.Warehouse
             selectedTableName = bf_st_cbbTableList.SelectedItem.ToString();
             Update();
         }
+            //  > searchbar section
+        private void bf_pnSearchbar_funcEnterKeyword()
+        {
+            bf_sb_lbHint.Visible = false;
+            bf_sb_txbSearchbox.Focus();
+        }
+        private void bf_pnSearchbar_Click(object sender, EventArgs e)
+        {
+            bf_pnSearchbar_funcEnterKeyword();
+        }
+        private void bf_sb_lbHint_Click(object sender, EventArgs e)
+        {
+            bf_pnSearchbar_funcEnterKeyword();
+        }
+        private void bf_sb_txbSearchbox_Enter(object sender, EventArgs e)
+        {
+            bf_pnSearchbar_funcEnterKeyword();
+        }
+        private void bf_sb_txbSearchbox_Leave(object sender, EventArgs e)
+        {
+            bf_sb_lbHint.Visible = string.IsNullOrEmpty(bf_sb_txbSearchbox.Text);
+        }
+        //  ^ end
         //  ^ end
 
         //  > editField section
@@ -64,7 +89,7 @@ namespace GUI.Warehouse
                 case "NguyenLieu": ef_funcActivateForm(ef_pnNguyenLieu); break;
                 case "NhaCungCap": ef_funcActivateForm(ef_pnNhaCungCap); break;
                 case "HoaDonNhap": ef_funcActivateForm(ef_pnHoaDonNhap); break;
-                case "ChiTietHoaDonNhap": break;
+                case "ChiTietHoaDonNhap": ef_funcActivateForm(ef_pnChiTietHoaDonNhap);  break;
                 default: break;
             }
         }
