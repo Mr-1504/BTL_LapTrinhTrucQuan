@@ -54,6 +54,12 @@
     <Compile Include="BaseForm.Designer.cs">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="boxFoodManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="boxFoodManager.Designer.cs">
+      <DependentUpon>boxFoodManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="EmployManager.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +154,9 @@
     </Compile>
     <EmbeddedResource Include="BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="boxFoodManager.resx">
+      <DependentUpon>boxFoodManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmployManager.resx">
       <DependentUpon>EmployManager.cs</DependentUpon>
