@@ -9,7 +9,7 @@ namespace GUI.PurchasedIngredient
 {
     public partial class InvoiceDtail : UserControl
     {
-        public InvoiceDtail(PurchaseInvoiceDTO invoice, List<PurchaseInvoiceDetailDTO> invoiceDetail, DataGridView data)
+        public InvoiceDtail(PurchaseInvoiceDTO invoice, List<PurchaseInvoiceDetailDTO> invoiceDetail, DataGridView data, decimal total)
         {
             InitializeComponent();
             lblCreateionTime.Text = invoice.DateOfPurchase.ToString("HH:mm:ss dd/MM/yyyy");
@@ -19,23 +19,8 @@ namespace GUI.PurchasedIngredient
             lblSupplierNameValue.Text = supplier.SupplierName;
             lblSupplierAddressValue.Text = supplier.SupplierAddress;
             dgvList.DataSource = data.DataSource;
-            if(dgvList.DataSource != null)
-            {
-                MessageBox.Show("null");
-            }
-            else
-            {
-                MessageBox.Show(dgvList.Rows.Count.ToString() + " " + data.Rows.Count.ToString());
-            }
-            AddData(data);
-        }
-        private void AddData(DataGridView data)
-        {
-            //foreach (DataGridViewRow row in data.Rows)
-            //{
-            //    DataGridViewRow dataGridViewRow = row;
-            //    dgvList.Rows.Add(dataGridViewRow);
-            //}
+            lblTotalValue.Text = total.ToString("0.00") + " VND";
+            ActiveControl = lblAction;
         }
     }
 }
