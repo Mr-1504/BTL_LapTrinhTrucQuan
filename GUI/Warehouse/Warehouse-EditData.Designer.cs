@@ -87,7 +87,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.ef_btnAdd = new System.Windows.Forms.Button();
-            this.ef_btnUpdate = new System.Windows.Forms.Button();
+            this.ef_btnChange = new System.Windows.Forms.Button();
             this.ef_btnReset = new System.Windows.Forms.Button();
             this.ef_btnDelete = new System.Windows.Forms.Button();
             this.pnBrowseField = new System.Windows.Forms.Panel();
@@ -142,7 +142,7 @@
             this.pnEditField.Controls.Add(this.ef_pnNhaCungCap);
             this.pnEditField.Controls.Add(this.ef_pnNguyenLieu);
             this.pnEditField.Controls.Add(this.ef_btnAdd);
-            this.pnEditField.Controls.Add(this.ef_btnUpdate);
+            this.pnEditField.Controls.Add(this.ef_btnChange);
             this.pnEditField.Controls.Add(this.ef_btnReset);
             this.pnEditField.Controls.Add(this.ef_btnDelete);
             this.pnEditField.Location = new System.Drawing.Point(700, 30);
@@ -353,7 +353,7 @@
             this.ef_NCC_txbDT.Name = "ef_NCC_txbDT";
             this.ef_NCC_txbDT.Size = new System.Drawing.Size(390, 22);
             this.ef_NCC_txbDT.TabIndex = 2;
-            this.ef_NCC_txbDT.Text = "Kg";
+            this.ef_NCC_txbDT.Text = "0123456789";
             // 
             // label8
             // 
@@ -383,9 +383,9 @@
             this.ef_NCC_lbMa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ef_NCC_lbMa.Location = new System.Drawing.Point(10, 10);
             this.ef_NCC_lbMa.Name = "ef_NCC_lbMa";
-            this.ef_NCC_lbMa.Size = new System.Drawing.Size(69, 21);
+            this.ef_NCC_lbMa.Size = new System.Drawing.Size(114, 21);
             this.ef_NCC_lbMa.TabIndex = 0;
-            this.ef_NCC_lbMa.Text = "THI0002";
+            this.ef_NCC_lbMa.Text = "NCC20040002";
             // 
             // label11
             // 
@@ -416,7 +416,7 @@
             this.ef_NCC_txbDC.Name = "ef_NCC_txbDC";
             this.ef_NCC_txbDC.Size = new System.Drawing.Size(390, 22);
             this.ef_NCC_txbDC.TabIndex = 1;
-            this.ef_NCC_txbDC.Text = "Kg";
+            this.ef_NCC_txbDC.Text = "đâu đó";
             // 
             // ef_NCC_pnTT
             // 
@@ -482,7 +482,7 @@
             this.ef_NCC_txbTen.Name = "ef_NCC_txbTen";
             this.ef_NCC_txbTen.Size = new System.Drawing.Size(390, 22);
             this.ef_NCC_txbTen.TabIndex = 0;
-            this.ef_NCC_txbTen.Text = "Thịt voi";
+            this.ef_NCC_txbTen.Text = "Nhà vườn EatOnionFullMouth";
             // 
             // label14
             // 
@@ -747,16 +747,16 @@
             this.ef_btnAdd.TabIndex = 3;
             this.ef_btnAdd.UseVisualStyleBackColor = true;
             // 
-            // ef_btnUpdate
+            // ef_btnChange
             // 
-            this.ef_btnUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ef_btnUpdate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ef_btnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("ef_btnUpdate.Image")));
-            this.ef_btnUpdate.Location = new System.Drawing.Point(376, 641);
-            this.ef_btnUpdate.Name = "ef_btnUpdate";
-            this.ef_btnUpdate.Size = new System.Drawing.Size(50, 50);
-            this.ef_btnUpdate.TabIndex = 2;
-            this.ef_btnUpdate.UseVisualStyleBackColor = true;
+            this.ef_btnChange.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ef_btnChange.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ef_btnChange.Image = ((System.Drawing.Image)(resources.GetObject("ef_btnChange.Image")));
+            this.ef_btnChange.Location = new System.Drawing.Point(376, 641);
+            this.ef_btnChange.Name = "ef_btnChange";
+            this.ef_btnChange.Size = new System.Drawing.Size(50, 50);
+            this.ef_btnChange.TabIndex = 2;
+            this.ef_btnChange.UseVisualStyleBackColor = true;
             // 
             // ef_btnReset
             // 
@@ -845,12 +845,13 @@
             this.bf_st_cbbTableList.Items.AddRange(new object[] {
             "NguyenLieu",
             "NhaCungCap",
-            "HoaDonBan",
+            "HoaDonNhap",
             "ChiTietHoaDonBan"});
             this.bf_st_cbbTableList.Location = new System.Drawing.Point(51, 11);
             this.bf_st_cbbTableList.Name = "bf_st_cbbTableList";
             this.bf_st_cbbTableList.Size = new System.Drawing.Size(221, 29);
             this.bf_st_cbbTableList.TabIndex = 0;
+            this.bf_st_cbbTableList.SelectedIndexChanged += new System.EventHandler(this.bf_st_cbbTableList_SelectedIndexChanged);
             // 
             // bf_dgvTable
             // 
@@ -858,6 +859,7 @@
             this.bf_dgvTable.AllowUserToDeleteRows = false;
             this.bf_dgvTable.AllowUserToResizeColumns = false;
             this.bf_dgvTable.AllowUserToResizeRows = false;
+            this.bf_dgvTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.bf_dgvTable.BackgroundColor = System.Drawing.Color.White;
             this.bf_dgvTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bf_dgvTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -955,7 +957,7 @@
         private System.Windows.Forms.Panel pnEditField;
         private System.Windows.Forms.Button ef_btnDelete;
         private System.Windows.Forms.Button ef_btnAdd;
-        private System.Windows.Forms.Button ef_btnUpdate;
+        private System.Windows.Forms.Button ef_btnChange;
         private System.Windows.Forms.Button ef_btnReset;
         private System.Windows.Forms.DataGridView bf_dgvTable;
         private System.Windows.Forms.Panel bf_pnSearchbar;
