@@ -152,7 +152,6 @@
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(250, 14);
             this.txtUsername.TabIndex = 6;
-            this.txtUsername.TabStop = false;
             this.txtUsername.Enter += new System.EventHandler(this.txtUsername_Enter);
             this.txtUsername.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsername_KeyPress);
             this.txtUsername.Leave += new System.EventHandler(this.TxtUsername_Leave);
@@ -228,7 +227,6 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(230, 14);
             this.txtPassword.TabIndex = 6;
-            this.txtPassword.TabStop = false;
             this.txtPassword.TextChanged += new System.EventHandler(this.TxtPassword_TextChanged);
             this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
             this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
