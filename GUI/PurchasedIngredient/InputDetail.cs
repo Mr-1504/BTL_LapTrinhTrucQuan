@@ -19,17 +19,40 @@ namespace GUI.PurchasedIngredient
         private List<PurchaseInvoiceDetailDTO> _invoiceDetail;
         private SupplierDTO _supplier;
         private string _id;
+        private DataTable _ingradientData;
+        private DataTable _supplierData;
+        private decimal _total;
+        private bool _isEditting = false;
+        public decimal Total { get => _total; }
+        private int _selectedIndex;
         public InputDetail(string employeeId)
         {
             InitializeComponent();
             _invoiceDetail = new List<PurchaseInvoiceDetailDTO>();
             _supplier = null;
             _id = employeeId;
+            _ingradientData = new DataTable();
+            _ingradientData.Columns.Add("colName");
+            _ingradientData.Columns.Add("colUnit");
+            _ingradientData.Columns.Add("colPriceUnit");
+            _ingradientData.Columns.Add("colQuantity");
+            dgvList.DataSource = _ingradientData;
+            _total = 0;
+            _selectedIndex = -1;
+
+            foreach (Control control in dgvList.Controls)
+            {
+                if (control is Button)
+                {
+                    control.Click += (s, e) => { ActiveControl = lblDataName; };
+                }
+            }
         }
 
         private async void InputDetail_Load(object sender, EventArgs e)
         {
             await Task.Run(() => LoadData());
+
         }
 
         private void AddSuppliers(string search = "")
@@ -96,7 +119,7 @@ namespace GUI.PurchasedIngredient
             lblIngredient.Focus();
             int index = cmbIngredientName.SelectedIndex;
             if (index >= 0)
-                txtUnit.Text = _ingredients[index].IngredientUnit.ToString();
+                txtUnit.Text = _ingredients[index].IngredientUnit.GetEnumDescription();
         }
 
         private void txtPriceUnit_KeyDown(object sender, KeyEventArgs e)
@@ -104,12 +127,8 @@ namespace GUI.PurchasedIngredient
             string s = txtPriceUnit.Text;
             if (e.KeyCode == Keys.Enter)
             {
-                //e.Handled = true;
-                txtPriceUnit.ForeColor = Color.Black;
-                List<IngredientDTO> res = new IngredientBLL().GetIngredient(Ingredient.IngredientName, cmbIngredientName.Text);
-                txtUnit.Text = res[0].IngredientUnit.ToString();
-                txtQuantity.Focus();
-                txtPriceUnit.Text = s;
+                e.Handled = true;
+                e.SuppressKeyPress = true;
             }
         }
 
@@ -119,17 +138,24 @@ namespace GUI.PurchasedIngredient
             {
                 e.Handled = true;
                 e.SuppressKeyPress = true;
+                btnConfirm_Click(sender, e);
             }
         }
 
         private void btnReset_Click(object sender, EventArgs e)
         {
             cmbIngredientName.SelectedIndex = -1;
-            cmbSupplierName.SelectedIndex = -1;
+            AddIngredients();
+            cmbIngredientName.Text = "";
             txtPriceUnit.Text = "";
             txtUnit.Text = "";
             txtQuantity.Text = "";
             lblError.Visible = false;
+            if (_isEditting)
+            {
+                _isEditting = false;
+                btnReset.Text = "Đặt lại";
+            }
         }
 
         private void cmbSupplierName_Leave(object sender, EventArgs e)
@@ -227,7 +253,7 @@ namespace GUI.PurchasedIngredient
             }
             else if (cmbIngredientName.Items.Count > 0 && cmbIngredientName.Text == cmbIngredientName.Items[0].ToString())
             {
-                txtUnit.Text = _ingredients[0].IngredientUnit.ToString();
+                txtUnit.Text = _ingredients[0].IngredientUnit.GetEnumDescription();
             }
         }
 
@@ -238,11 +264,10 @@ namespace GUI.PurchasedIngredient
                 AddIngredients();
             }
         }
-
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             int priceUnit = 0;
-            int quantity = 0;
+            decimal quantity = 0;
             if (new SupplierBLL().IsExist(cmbSupplierName.Text) < 1)
             {
                 lblError.Text = "Nhà cung cấp không hợp lệ";
@@ -300,7 +325,7 @@ namespace GUI.PurchasedIngredient
             {
                 try
                 {
-                    quantity = int.Parse(txtQuantity.Text);
+                    quantity = decimal.Parse(txtQuantity.Text);
                     if (quantity < 0)
                     {
                         lblError.Text = "Số lượng không hợp lệ";
@@ -316,18 +341,29 @@ namespace GUI.PurchasedIngredient
                 }
             }
             AddData(priceUnit, quantity);
-
+            btnReset_Click(sender, e);
         }
-        private void AddData(int priceUnit, int quantity)
+        private void AddData(int priceUnit, decimal quantity)
         {
+            _total += priceUnit * quantity;
             List<IngredientDTO> res = new IngredientBLL().GetIngredient(Ingredient.IngredientName, cmbIngredientName.Text);
-            txtUnit.Text = res[0].IngredientUnit.ToString();
+            txtUnit.Text = res[0].IngredientUnit.GetEnumDescription();
             lblError.Visible = false;
+            if (_isEditting)
+            {
+                _ingradientData.Rows[_selectedIndex][0] = "  " + cmbIngredientName.Text;
+                _ingradientData.Rows[_selectedIndex][1] = "  " + txtUnit.Text;
+                _ingradientData.Rows[_selectedIndex][2] = "  " + priceUnit;
+                _ingradientData.Rows[_selectedIndex][3] = "  " + quantity;
+                _isEditting = false;
+                return;
+            }
+            
 
             for (int i = 0; i < dgvList.Rows.Count; i++)
             {
                 Console.WriteLine(dgvList.Rows[i].Cells[1].Value.ToString() + "  " + txtUnit.Text);
-                if(dgvList.Rows[i].Cells[0].Value.ToString() == cmbIngredientName.Text)
+                if (dgvList.Rows[i].Cells[0].Value.ToString() == cmbIngredientName.Text)
                 {
                     MessageBox.Show("ten");
                 }
@@ -339,11 +375,11 @@ namespace GUI.PurchasedIngredient
                     && dgvList.Rows[i].Cells[1].Value.ToString().Trim() == txtUnit.Text.Trim()
                     && int.Parse(dgvList.Rows[i].Cells[2].Value.ToString()) == priceUnit)
                 {
-                    dgvList.Rows[i].Cells[3].Value = "  " + (int.Parse(dgvList.Rows[i].Cells[3].Value.ToString()) + quantity).ToString();
+                    _ingradientData.Rows[i][3] = "  " + (int.Parse(dgvList.Rows[i].Cells[3].Value.ToString()) + quantity).ToString();
                     return;
                 }
             }
-            dgvList.Rows.Add("  " + cmbIngredientName.Text, "  " + txtUnit.Text, "  " + priceUnit, "  " + quantity);
+            _ingradientData.Rows.Add("  " + cmbIngredientName.Text, "  " + txtUnit.Text, "  " + priceUnit, "  " + quantity);
             _invoiceDetail.Add(new PurchaseInvoiceDetailDTO(res[0].IngredientId, quantity, priceUnit));
         }
 
@@ -366,12 +402,74 @@ namespace GUI.PurchasedIngredient
 
         private void cmbIngredientName_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Tab)
+            if (e.KeyCode == Keys.Tab)
             {
-                List<IngredientDTO> res = new IngredientBLL().GetIngredient(Ingredient.IngredientName, cmbIngredientName.Text);
-                txtUnit.Text = res[0].IngredientUnit.ToString();
-                txtPriceUnit.Focus();
-                e.SuppressKeyPress = true;
+                e.Handled = true;
+            }
+        }
+
+        private void txtPriceUnit_Enter(object sender, EventArgs e)
+        {
+            List<IngredientDTO> res = new IngredientBLL().GetIngredient(Ingredient.IngredientName, cmbIngredientName.Text);
+            if (cmbIngredientName.Text != "" && res.Count > 0)
+            {
+                txtUnit.Text = res[0].IngredientUnit.GetEnumDescription();
+            }
+        }
+
+        private void Edit_Click(object sender, EventArgs e)
+        {
+            if (_selectedIndex > -1)
+            {
+                DataRow row = _ingradientData.Rows[_selectedIndex];
+                cmbIngredientName.Text = row[0].ToString().Substring(2);
+                txtUnit.Text = row[1].ToString().Substring(2);
+                txtPriceUnit.Text = row[2].ToString().Substring(2);
+                txtQuantity.Text = row[3].ToString().Substring(2);
+
+                btnReset.Text = "Hủy";
+                btnConfirm.Text = "OK";
+                _isEditting = true;
+            }
+        }
+
+        private void dgvList_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                if (dgvList.Rows.Count > 0)
+                {
+                    var hitTestInfo = dgvList.HitTest(e.X, e.Y);
+
+                    if (hitTestInfo.RowIndex >= 0)
+                    {
+                        dgvList.ClearSelection();
+                        dgvList.Rows[hitTestInfo.RowIndex].Selected = true;
+                        _selectedIndex = hitTestInfo.RowIndex;
+                    }
+                    else
+                    {
+                        _selectedIndex = -1;
+                    }
+                }
+                else
+                {
+                    dgvList.ContextMenuStrip = null;
+                }
+            }
+        }
+
+        private void Delete_Click(object sender, EventArgs e)
+        {
+            if (dgvList.Rows.Count == 0)
+            {
+                return;
+            }
+            DialogResult dialogResult = new MessageForm("Xác nhận xóa?", "Thông báo", 2).DialogResult;
+            if (dialogResult == DialogResult.Yes)
+            {
+                _ingradientData.Rows.RemoveAt(_selectedIndex);
+                _selectedIndex = -1;
             }
         }
     }
