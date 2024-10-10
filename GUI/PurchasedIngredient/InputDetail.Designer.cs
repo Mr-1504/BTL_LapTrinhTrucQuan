@@ -28,11 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlList = new System.Windows.Forms.Panel();
             this.pnlData = new System.Windows.Forms.Panel();
+            this.menuList = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.Edit = new System.Windows.Forms.ToolStripMenuItem();
+            this.Delete = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlDataHeader = new System.Windows.Forms.Panel();
             this.lblDataQuantity = new System.Windows.Forms.Label();
             this.lblDataPriceUnit = new System.Windows.Forms.Label();
@@ -67,6 +71,7 @@
             this.lblSupplier = new System.Windows.Forms.Label();
             this.pnlList.SuspendLayout();
             this.pnlData.SuspendLayout();
+            this.menuList.SuspendLayout();
             this.pnlDataHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             this.pnlInformation.SuspendLayout();
@@ -92,12 +97,38 @@
             // pnlData
             // 
             this.pnlData.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlData.ContextMenuStrip = this.menuList;
             this.pnlData.Controls.Add(this.pnlDataHeader);
             this.pnlData.Controls.Add(this.dgvList);
             this.pnlData.Location = new System.Drawing.Point(40, 77);
             this.pnlData.Name = "pnlData";
             this.pnlData.Size = new System.Drawing.Size(569, 487);
-            this.pnlData.TabIndex = 18;
+            this.pnlData.TabIndex = 0;
+            // 
+            // menuList
+            // 
+            this.menuList.DropShadowEnabled = false;
+            this.menuList.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuList.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Edit,
+            this.Delete});
+            this.menuList.Name = "menuList";
+            this.menuList.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.menuList.Size = new System.Drawing.Size(181, 70);
+            // 
+            // Edit
+            // 
+            this.Edit.Name = "Edit";
+            this.Edit.Size = new System.Drawing.Size(180, 22);
+            this.Edit.Text = "Sửa";
+            this.Edit.Click += new System.EventHandler(this.Edit_Click);
+            // 
+            // Delete
+            // 
+            this.Delete.Name = "Delete";
+            this.Delete.Size = new System.Drawing.Size(180, 22);
+            this.Delete.Text = "Xóa";
+            this.Delete.Click += new System.EventHandler(this.Delete_Click);
             // 
             // pnlDataHeader
             // 
@@ -205,10 +236,13 @@
             this.dgvList.RowTemplate.ReadOnly = true;
             this.dgvList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvList.Size = new System.Drawing.Size(569, 487);
-            this.dgvList.TabIndex = 19;
+            this.dgvList.TabIndex = 0;
+            this.dgvList.TabStop = false;
+            this.dgvList.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgvList_MouseDown);
             // 
             // colName
             // 
+            this.colName.DataPropertyName = "colName";
             this.colName.HeaderText = "Tên nguyên liệu";
             this.colName.Name = "colName";
             this.colName.ReadOnly = true;
@@ -218,6 +252,7 @@
             // 
             // colUnit
             // 
+            this.colUnit.DataPropertyName = "colUnit";
             this.colUnit.HeaderText = "Đơn vị";
             this.colUnit.Name = "colUnit";
             this.colUnit.ReadOnly = true;
@@ -227,6 +262,7 @@
             // 
             // colPriceUnit
             // 
+            this.colPriceUnit.DataPropertyName = "colPriceUnit";
             this.colPriceUnit.HeaderText = "Đơn giá";
             this.colPriceUnit.Name = "colPriceUnit";
             this.colPriceUnit.ReadOnly = true;
@@ -236,6 +272,7 @@
             // 
             // colQuantity
             // 
+            this.colQuantity.DataPropertyName = "colQuantity";
             this.colQuantity.HeaderText = "Số lượng";
             this.colQuantity.Name = "colQuantity";
             this.colQuantity.ReadOnly = true;
@@ -362,7 +399,7 @@
             this.txtQuantity.Multiline = true;
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(505, 20);
-            this.txtQuantity.TabIndex = 0;
+            this.txtQuantity.TabIndex = 6;
             this.txtQuantity.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtQuantity_KeyDown);
             // 
             // pnlUnit
@@ -380,7 +417,7 @@
             this.txtUnit.BackColor = System.Drawing.Color.White;
             this.txtUnit.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUnit.Enabled = false;
-            this.txtUnit.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUnit.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUnit.Location = new System.Drawing.Point(14, 9);
             this.txtUnit.Multiline = true;
             this.txtUnit.Name = "txtUnit";
@@ -408,7 +445,8 @@
             this.txtPriceUnit.Multiline = true;
             this.txtPriceUnit.Name = "txtPriceUnit";
             this.txtPriceUnit.Size = new System.Drawing.Size(203, 20);
-            this.txtPriceUnit.TabIndex = 0;
+            this.txtPriceUnit.TabIndex = 5;
+            this.txtPriceUnit.Enter += new System.EventHandler(this.txtPriceUnit_Enter);
             this.txtPriceUnit.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPriceUnit_KeyDown);
             // 
             // btnConfirm
@@ -425,6 +463,7 @@
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(111, 50);
             this.btnConfirm.TabIndex = 10;
+            this.btnConfirm.TabStop = false;
             this.btnConfirm.Text = "Đồng ý";
             this.btnConfirm.UseVisualStyleBackColor = true;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
@@ -444,6 +483,7 @@
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(111, 50);
             this.btnReset.TabIndex = 9;
+            this.btnReset.TabStop = false;
             this.btnReset.Text = "Đặt lại";
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
@@ -533,6 +573,7 @@
             this.pnlList.ResumeLayout(false);
             this.pnlList.PerformLayout();
             this.pnlData.ResumeLayout(false);
+            this.menuList.ResumeLayout(false);
             this.pnlDataHeader.ResumeLayout(false);
             this.pnlDataHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
@@ -586,5 +627,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colUnit;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPriceUnit;
         private System.Windows.Forms.DataGridViewTextBoxColumn colQuantity;
+        private System.Windows.Forms.ContextMenuStrip menuList;
+        private System.Windows.Forms.ToolStripMenuItem Edit;
+        private System.Windows.Forms.ToolStripMenuItem Delete;
     }
 }
