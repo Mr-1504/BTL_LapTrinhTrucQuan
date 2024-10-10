@@ -128,7 +128,9 @@
     <Compile Include="Warehouse\Warehouse-ListAll.Designer.cs">
       <DependentUpon>Warehouse-ListAll.cs</DependentUpon>
     </Compile>
-    <Compile Include="Warehouse\Warehouse-ServingPrecal.cs" />
+    <Compile Include="Warehouse\Warehouse-ServingPrecal.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Warehouse\Warehouse-ServingPrecal.Designer.cs">
       <DependentUpon>Warehouse-ServingPrecal.cs</DependentUpon>
     </Compile>
@@ -414,6 +416,12 @@
     <Content Include="Resources\AvatarImage\QL20240001.JPG" />
     <Content Include="Resources\AvatarImage\KH20240001.JPG" />
     <Content Include="Resources\AvatarImage\LT20240001.JPG" />
+    <Content Include="Resources\field_multi_editable_420x80.png" />
+    <Content Include="Resources\field_multi_valuechanged_420x80.png" />
+    <Content Include="Resources\field_single_editable_420x40.png" />
+    <Content Include="Resources\field_single_valuechanged_420x40.png" />
+    <Content Include="Resources\sortBigger.png" />
+    <Content Include="Resources\sortSmaller.png" />
     <None Include="Resources\warnning.png" />
     <None Include="Resources\btnComplete.png" />
   </ItemGroup>
