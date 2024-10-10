@@ -1,7 +1,9 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.ComponentModel;
+using System.Data;
 using System.Reflection;
+using System.Windows.Forms;
 
 
 namespace Utilities
@@ -32,10 +34,7 @@ namespace Utilities
         Manager,
 
         [Description("KH")]
-        Warehouse,
-
-        [Description("AD")]
-        Admin
+        Warehouse
     }
 
     public enum SupplierType
@@ -88,7 +87,7 @@ namespace Utilities
         NoLongerWorking,
 
         [Description("Đang làm việc")]
-        CurrentlyWorking     
+        CurrentlyWorking
     }
 
     public enum Gender
@@ -131,8 +130,17 @@ namespace Utilities
     }
     public enum Unit
     {
+        [Description("Kg")]
         Kg,
-        Gram
+
+        [Description("g")]
+        Gram,
+
+        [Description("Gói")]
+        Package,
+
+        [Description("Chai")]
+        Bottle
     }
 
     public enum Order
@@ -157,6 +165,8 @@ namespace Utilities
     public static class Config
     {
         public static readonly string PROJECT_PATH = System.IO.Directory.GetParent(System.IO.Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.FullName).FullName;
+        public static readonly string BLUE = "#2D60FF";
+        public static readonly string GRAY = "#B1B1B1";
 
         public static string GetEnumDescription(this Enum value)
         {
@@ -171,12 +181,33 @@ namespace Utilities
             }
             return value.ToString();
         }
-
+        public static T GetEnumValueFromDescription<T>(string description) where T : Enum
+        {
+            foreach (var field in typeof(T).GetFields())
+            {
+                var attribute = (DescriptionAttribute)Attribute.GetCustomAttribute(field, typeof(DescriptionAttribute));
+                if (attribute != null && attribute.Description == description)
+                {
+                    return (T)field.GetValue(null);
+                }
+            }
+            throw new ArgumentException($"No enum value found for description '{description}'", nameof(description));
+        }
         public static bool IsValidEnum<TEnum>(string value) where TEnum : struct, Enum
         {
             return Enum.IsDefined(typeof(TEnum), value) && Enum.TryParse<TEnum>(value, true, out var _);
         }
-
+        public static T GetEnumValueFromName<T>(string name) where T : struct, Enum
+        {
+            if (Enum.TryParse<T>(name, out var result))
+            {
+                return result;
+            }
+            else
+            {
+                throw new ArgumentException($"Không tìm thấy giá trị enum cho tên '{name}'", nameof(name));
+            }
+        }
         public static bool IsSystemInDarkMode()
         {
             var key = Registry.CurrentUser.OpenSubKey(@"Software\Microsoft\Windows\CurrentVersion\Themes\Personalize");
@@ -189,6 +220,35 @@ namespace Utilities
                 }
             }
             return false; // Light mode
+        }
+
+        public static DataTable ConvertToDataTable(DataGridView dgv)
+        {
+            DataTable dt = new DataTable();
+
+            foreach (DataGridViewColumn column in dgv.Columns)
+            {
+                dt.Columns.Add(column.HeaderText);
+            }
+
+            foreach (DataGridViewRow row in dgv.Rows)
+            {
+                if (row.IsNewRow) continue;
+
+                DataRow newRow = dt.NewRow();
+
+                for (int i = 0; i < dgv.Columns.Count; i++)
+                {
+                    newRow[i] = row.Cells[i].Value;
+                }
+
+                dt.Rows.Add(newRow);
+            }
+            foreach (DataRow row in dt.Rows)
+            {
+                Console.WriteLine(row.ToString());
+            }
+            return dt;
         }
     }
 }
