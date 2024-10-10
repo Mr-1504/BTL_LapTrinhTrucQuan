@@ -416,6 +416,10 @@
     <Content Include="Resources\AvatarImage\QL20240001.JPG" />
     <Content Include="Resources\AvatarImage\KH20240001.JPG" />
     <Content Include="Resources\AvatarImage\LT20240001.JPG" />
+    <None Include="Resources\field_multi_editable_420x80.png" />
+    <None Include="Resources\field_multi_valuechanged_420x80.png" />
+    <None Include="Resources\field_single_valuechanged_420x40.png" />
+    <None Include="Resources\field_single_editable_420x40.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

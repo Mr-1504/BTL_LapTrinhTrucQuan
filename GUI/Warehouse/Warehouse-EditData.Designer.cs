@@ -32,28 +32,94 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbControlTitle = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.pnEditField = new System.Windows.Forms.Panel();
+            this.ef_pnHoaDonNhap = new System.Windows.Forms.Panel();
+            this.ef_HDN_dtpNgayNhap = new System.Windows.Forms.DateTimePicker();
+            this.ef_HDN_lbInfomantNCC = new System.Windows.Forms.Label();
+            this.ef_HDN_lbInfomantNV = new System.Windows.Forms.Label();
+            this.ef_HDN_pnMaHD = new System.Windows.Forms.Panel();
+            this.ef_HDN_lbMaHD = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.ef_HDN_pnMaNCC = new System.Windows.Forms.Panel();
+            this.ef_HDN_txbMaNCC = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.ef_HDN_pnMaNV = new System.Windows.Forms.Panel();
+            this.ef_HDN_txbMaNV = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.ef_pnNhaCungCap = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.ef_NCC_pnDT = new System.Windows.Forms.Panel();
+            this.ef_NCC_txbDT = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.ef_NCC_pnMa = new System.Windows.Forms.Panel();
+            this.ef_NCC_lbMa = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.ef_NCC_pnDC = new System.Windows.Forms.Panel();
+            this.ef_NCC_txbDC = new System.Windows.Forms.TextBox();
+            this.ef_NCC_pnTT = new System.Windows.Forms.Panel();
+            this.ef_NCC_rdbDeactive = new System.Windows.Forms.RadioButton();
+            this.ef_NCC_rdbActive = new System.Windows.Forms.RadioButton();
+            this.label13 = new System.Windows.Forms.Label();
+            this.ef_NCC_pnTen = new System.Windows.Forms.Panel();
+            this.ef_NCC_txbTen = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.ef_pnNguyenLieu = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.ef_NL_pnMa = new System.Windows.Forms.Panel();
+            this.ef_NL_lbMa = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.ef_NL_pnDVT = new System.Windows.Forms.Panel();
+            this.ef_NL_txbDVT = new System.Windows.Forms.TextBox();
+            this.ef_NL_pnCD = new System.Windows.Forms.Panel();
+            this.ef_NL_rtbCD = new System.Windows.Forms.RichTextBox();
+            this.ef_NL_pnSL = new System.Windows.Forms.Panel();
+            this.ef_NL_txbSL = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.ef_NL_pnYC = new System.Windows.Forms.Panel();
+            this.ef_NL_rtbYC = new System.Windows.Forms.RichTextBox();
+            this.ef_NL_pnCCD = new System.Windows.Forms.Panel();
+            this.ef_NL_rtbCCD = new System.Windows.Forms.RichTextBox();
+            this.ef_NL_pnTen = new System.Windows.Forms.Panel();
+            this.ef_NL_txbTen = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.ml_dgvMenu = new System.Windows.Forms.DataGridView();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ml_dgvMenu)).BeginInit();
+            this.label5 = new System.Windows.Forms.Label();
+            this.ef_btnAdd = new System.Windows.Forms.Button();
+            this.ef_btnUpdate = new System.Windows.Forms.Button();
+            this.ef_btnReset = new System.Windows.Forms.Button();
+            this.ef_btnDelete = new System.Windows.Forms.Button();
+            this.pnBrowseField = new System.Windows.Forms.Panel();
+            this.bf_pnSearchbar = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.bf_sb_txbSearchbox = new System.Windows.Forms.TextBox();
+            this.bf_pnSelectedTable = new System.Windows.Forms.Panel();
+            this.bf_st_cbbTableList = new System.Windows.Forms.ComboBox();
+            this.bf_dgvTable = new System.Windows.Forms.DataGridView();
+            this.pnEditField.SuspendLayout();
+            this.ef_pnHoaDonNhap.SuspendLayout();
+            this.ef_HDN_pnMaHD.SuspendLayout();
+            this.ef_HDN_pnMaNCC.SuspendLayout();
+            this.ef_HDN_pnMaNV.SuspendLayout();
+            this.ef_pnNhaCungCap.SuspendLayout();
+            this.ef_NCC_pnDT.SuspendLayout();
+            this.ef_NCC_pnMa.SuspendLayout();
+            this.ef_NCC_pnDC.SuspendLayout();
+            this.ef_NCC_pnTT.SuspendLayout();
+            this.ef_NCC_pnTen.SuspendLayout();
+            this.ef_pnNguyenLieu.SuspendLayout();
+            this.ef_NL_pnMa.SuspendLayout();
+            this.ef_NL_pnDVT.SuspendLayout();
+            this.ef_NL_pnCD.SuspendLayout();
+            this.ef_NL_pnSL.SuspendLayout();
+            this.ef_NL_pnYC.SuspendLayout();
+            this.ef_NL_pnCCD.SuspendLayout();
+            this.ef_NL_pnTen.SuspendLayout();
+            this.pnBrowseField.SuspendLayout();
+            this.bf_pnSearchbar.SuspendLayout();
+            this.bf_pnSelectedTable.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bf_dgvTable)).BeginInit();
             this.SuspendLayout();
             // 
             // lbControlTitle
@@ -68,179 +134,734 @@
             this.lbControlTitle.Text = "Sửa thông tin";
             this.lbControlTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel1
+            // pnEditField
             // 
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.ml_dgvMenu);
-            this.panel1.Controls.Add(this.panel6);
-            this.panel1.Controls.Add(this.panel5);
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Location = new System.Drawing.Point(30, 30);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(640, 715);
-            this.panel1.TabIndex = 3;
+            this.pnEditField.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnEditField.BackgroundImage")));
+            this.pnEditField.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnEditField.Controls.Add(this.ef_pnHoaDonNhap);
+            this.pnEditField.Controls.Add(this.ef_pnNhaCungCap);
+            this.pnEditField.Controls.Add(this.ef_pnNguyenLieu);
+            this.pnEditField.Controls.Add(this.ef_btnAdd);
+            this.pnEditField.Controls.Add(this.ef_btnUpdate);
+            this.pnEditField.Controls.Add(this.ef_btnReset);
+            this.pnEditField.Controls.Add(this.ef_btnDelete);
+            this.pnEditField.Location = new System.Drawing.Point(700, 30);
+            this.pnEditField.Name = "pnEditField";
+            this.pnEditField.Size = new System.Drawing.Size(640, 715);
+            this.pnEditField.TabIndex = 4;
             // 
-            // panel2
+            // ef_pnHoaDonNhap
             // 
-            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Controls.Add(this.button4);
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Location = new System.Drawing.Point(700, 30);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(640, 715);
-            this.panel2.TabIndex = 4;
+            this.ef_pnHoaDonNhap.BackColor = System.Drawing.Color.White;
+            this.ef_pnHoaDonNhap.Controls.Add(this.ef_HDN_dtpNgayNhap);
+            this.ef_pnHoaDonNhap.Controls.Add(this.ef_HDN_lbInfomantNCC);
+            this.ef_pnHoaDonNhap.Controls.Add(this.ef_HDN_lbInfomantNV);
+            this.ef_pnHoaDonNhap.Controls.Add(this.ef_HDN_pnMaHD);
+            this.ef_pnHoaDonNhap.Controls.Add(this.label16);
+            this.ef_pnHoaDonNhap.Controls.Add(this.ef_HDN_pnMaNCC);
+            this.ef_pnHoaDonNhap.Controls.Add(this.label18);
+            this.ef_pnHoaDonNhap.Controls.Add(this.ef_HDN_pnMaNV);
+            this.ef_pnHoaDonNhap.Controls.Add(this.label19);
+            this.ef_pnHoaDonNhap.Controls.Add(this.label20);
+            this.ef_pnHoaDonNhap.Enabled = false;
+            this.ef_pnHoaDonNhap.Location = new System.Drawing.Point(20, 20);
+            this.ef_pnHoaDonNhap.Name = "ef_pnHoaDonNhap";
+            this.ef_pnHoaDonNhap.Size = new System.Drawing.Size(600, 610);
+            this.ef_pnHoaDonNhap.TabIndex = 16;
             // 
-            // button1
+            // ef_HDN_dtpNgayNhap
             // 
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(76, 641);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(50, 50);
-            this.button1.TabIndex = 0;
-            this.button1.UseVisualStyleBackColor = true;
+            this.ef_HDN_dtpNgayNhap.CalendarFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ef_HDN_dtpNgayNhap.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ef_HDN_dtpNgayNhap.Location = new System.Drawing.Point(170, 220);
+            this.ef_HDN_dtpNgayNhap.MaximumSize = new System.Drawing.Size(420, 40);
+            this.ef_HDN_dtpNgayNhap.Name = "ef_HDN_dtpNgayNhap";
+            this.ef_HDN_dtpNgayNhap.Size = new System.Drawing.Size(420, 29);
+            this.ef_HDN_dtpNgayNhap.TabIndex = 0;
             // 
-            // button2
+            // ef_HDN_lbInfomantNCC
             // 
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(226, 641);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(50, 50);
-            this.button2.TabIndex = 1;
-            this.button2.UseVisualStyleBackColor = true;
+            this.ef_HDN_lbInfomantNCC.AutoSize = true;
+            this.ef_HDN_lbInfomantNCC.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ef_HDN_lbInfomantNCC.Location = new System.Drawing.Point(182, 186);
+            this.ef_HDN_lbInfomantNCC.Name = "ef_HDN_lbInfomantNCC";
+            this.ef_HDN_lbInfomantNCC.Size = new System.Drawing.Size(235, 13);
+            this.ef_HDN_lbInfomantNCC.TabIndex = 13;
+            this.ef_HDN_lbInfomantNCC.Text = "CC20240002 - Nhà vườn EatOnionFullMouth";
             // 
-            // button3
+            // ef_HDN_lbInfomantNV
             // 
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(376, 641);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(50, 50);
-            this.button3.TabIndex = 2;
-            this.button3.UseVisualStyleBackColor = true;
+            this.ef_HDN_lbInfomantNV.AutoSize = true;
+            this.ef_HDN_lbInfomantNV.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ef_HDN_lbInfomantNV.Location = new System.Drawing.Point(181, 114);
+            this.ef_HDN_lbInfomantNV.Name = "ef_HDN_lbInfomantNV";
+            this.ef_HDN_lbInfomantNV.Size = new System.Drawing.Size(171, 13);
+            this.ef_HDN_lbInfomantNV.TabIndex = 12;
+            this.ef_HDN_lbInfomantNV.Text = "KH20240001 - Hùng Đình Toàng";
             // 
-            // button4
+            // ef_HDN_pnMaHD
             // 
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(526, 641);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(50, 50);
-            this.button4.TabIndex = 3;
-            this.button4.UseVisualStyleBackColor = true;
+            this.ef_HDN_pnMaHD.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ef_HDN_pnMaHD.BackgroundImage")));
+            this.ef_HDN_pnMaHD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ef_HDN_pnMaHD.Controls.Add(this.ef_HDN_lbMaHD);
+            this.ef_HDN_pnMaHD.Location = new System.Drawing.Point(170, 10);
+            this.ef_HDN_pnMaHD.Name = "ef_HDN_pnMaHD";
+            this.ef_HDN_pnMaHD.Size = new System.Drawing.Size(420, 40);
+            this.ef_HDN_pnMaHD.TabIndex = 4;
             // 
-            // panel3
+            // ef_HDN_lbMaHD
             // 
-            this.panel3.BackColor = System.Drawing.Color.Transparent;
-            this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Location = new System.Drawing.Point(20, 20);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(118, 30);
-            this.panel3.TabIndex = 0;
+            this.ef_HDN_lbMaHD.AutoSize = true;
+            this.ef_HDN_lbMaHD.BackColor = System.Drawing.Color.Transparent;
+            this.ef_HDN_lbMaHD.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ef_HDN_lbMaHD.Location = new System.Drawing.Point(10, 10);
+            this.ef_HDN_lbMaHD.Name = "ef_HDN_lbMaHD";
+            this.ef_HDN_lbMaHD.Size = new System.Drawing.Size(69, 21);
+            this.ef_HDN_lbMaHD.TabIndex = 0;
+            this.ef_HDN_lbMaHD.Text = "THI0002";
             // 
-            // label1
+            // label16
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(12, 5);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 21);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Nguyên liệu";
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.Transparent;
+            this.label16.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(10, 150);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(128, 21);
+            this.label16.TabIndex = 9;
+            this.label16.Text = "Mã nhà cung cấp";
             // 
-            // panel4
+            // ef_HDN_pnMaNCC
             // 
-            this.panel4.BackColor = System.Drawing.Color.Transparent;
-            this.panel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel4.BackgroundImage")));
-            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel4.Controls.Add(this.label2);
-            this.panel4.Location = new System.Drawing.Point(144, 20);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(128, 30);
-            this.panel4.TabIndex = 2;
+            this.ef_HDN_pnMaNCC.BackgroundImage = global::GUI.Properties.Resources.field_single_editable_420x40;
+            this.ef_HDN_pnMaNCC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ef_HDN_pnMaNCC.Controls.Add(this.ef_HDN_txbMaNCC);
+            this.ef_HDN_pnMaNCC.Location = new System.Drawing.Point(170, 140);
+            this.ef_HDN_pnMaNCC.Name = "ef_HDN_pnMaNCC";
+            this.ef_HDN_pnMaNCC.Size = new System.Drawing.Size(420, 40);
+            this.ef_HDN_pnMaNCC.TabIndex = 8;
             // 
-            // label2
+            // ef_HDN_txbMaNCC
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(12, 5);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 21);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Nhà cung cấp";
+            this.ef_HDN_txbMaNCC.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ef_HDN_txbMaNCC.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ef_HDN_txbMaNCC.Location = new System.Drawing.Point(15, 9);
+            this.ef_HDN_txbMaNCC.Name = "ef_HDN_txbMaNCC";
+            this.ef_HDN_txbMaNCC.Size = new System.Drawing.Size(390, 22);
+            this.ef_HDN_txbMaNCC.TabIndex = 1;
+            this.ef_HDN_txbMaNCC.Text = "Kg";
             // 
-            // panel5
+            // label18
             // 
-            this.panel5.BackColor = System.Drawing.Color.Transparent;
-            this.panel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel5.BackgroundImage")));
-            this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel5.Controls.Add(this.label3);
-            this.panel5.Location = new System.Drawing.Point(278, 20);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(130, 30);
-            this.panel5.TabIndex = 3;
+            this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.Color.Transparent;
+            this.label18.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(10, 80);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(104, 21);
+            this.label18.TabIndex = 7;
+            this.label18.Text = "Mã nhân viên";
+            // 
+            // ef_HDN_pnMaNV
+            // 
+            this.ef_HDN_pnMaNV.BackgroundImage = global::GUI.Properties.Resources.field_single_editable_420x40;
+            this.ef_HDN_pnMaNV.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ef_HDN_pnMaNV.Controls.Add(this.ef_HDN_txbMaNV);
+            this.ef_HDN_pnMaNV.Location = new System.Drawing.Point(170, 70);
+            this.ef_HDN_pnMaNV.Name = "ef_HDN_pnMaNV";
+            this.ef_HDN_pnMaNV.Size = new System.Drawing.Size(420, 40);
+            this.ef_HDN_pnMaNV.TabIndex = 6;
+            // 
+            // ef_HDN_txbMaNV
+            // 
+            this.ef_HDN_txbMaNV.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ef_HDN_txbMaNV.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ef_HDN_txbMaNV.Location = new System.Drawing.Point(15, 9);
+            this.ef_HDN_txbMaNV.Name = "ef_HDN_txbMaNV";
+            this.ef_HDN_txbMaNV.Size = new System.Drawing.Size(390, 22);
+            this.ef_HDN_txbMaNV.TabIndex = 0;
+            this.ef_HDN_txbMaNV.Text = "Thịt voi";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.BackColor = System.Drawing.Color.Transparent;
+            this.label19.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(10, 20);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(94, 21);
+            this.label19.TabIndex = 5;
+            this.label19.Text = "Mã hoá đơn";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.BackColor = System.Drawing.Color.Transparent;
+            this.label20.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(11, 220);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(86, 21);
+            this.label20.TabIndex = 11;
+            this.label20.Text = "Ngày nhập";
+            // 
+            // ef_pnNhaCungCap
+            // 
+            this.ef_pnNhaCungCap.BackColor = System.Drawing.Color.White;
+            this.ef_pnNhaCungCap.Controls.Add(this.label10);
+            this.ef_pnNhaCungCap.Controls.Add(this.ef_NCC_pnDT);
+            this.ef_pnNhaCungCap.Controls.Add(this.label8);
+            this.ef_pnNhaCungCap.Controls.Add(this.ef_NCC_pnMa);
+            this.ef_pnNhaCungCap.Controls.Add(this.label11);
+            this.ef_pnNhaCungCap.Controls.Add(this.ef_NCC_pnDC);
+            this.ef_pnNhaCungCap.Controls.Add(this.ef_NCC_pnTT);
+            this.ef_pnNhaCungCap.Controls.Add(this.label13);
+            this.ef_pnNhaCungCap.Controls.Add(this.ef_NCC_pnTen);
+            this.ef_pnNhaCungCap.Controls.Add(this.label14);
+            this.ef_pnNhaCungCap.Enabled = false;
+            this.ef_pnNhaCungCap.Location = new System.Drawing.Point(20, 20);
+            this.ef_pnNhaCungCap.Name = "ef_pnNhaCungCap";
+            this.ef_pnNhaCungCap.Size = new System.Drawing.Size(600, 610);
+            this.ef_pnNhaCungCap.TabIndex = 16;
+            this.ef_pnNhaCungCap.Visible = false;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(10, 200);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(81, 21);
+            this.label10.TabIndex = 13;
+            this.label10.Text = "Điện thoại";
+            // 
+            // ef_NCC_pnDT
+            // 
+            this.ef_NCC_pnDT.BackgroundImage = global::GUI.Properties.Resources.field_single_editable_420x40;
+            this.ef_NCC_pnDT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ef_NCC_pnDT.Controls.Add(this.ef_NCC_txbDT);
+            this.ef_NCC_pnDT.Location = new System.Drawing.Point(170, 190);
+            this.ef_NCC_pnDT.Name = "ef_NCC_pnDT";
+            this.ef_NCC_pnDT.Size = new System.Drawing.Size(420, 40);
+            this.ef_NCC_pnDT.TabIndex = 12;
+            // 
+            // ef_NCC_txbDT
+            // 
+            this.ef_NCC_txbDT.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ef_NCC_txbDT.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ef_NCC_txbDT.Location = new System.Drawing.Point(15, 9);
+            this.ef_NCC_txbDT.Name = "ef_NCC_txbDT";
+            this.ef_NCC_txbDT.Size = new System.Drawing.Size(390, 22);
+            this.ef_NCC_txbDT.TabIndex = 2;
+            this.ef_NCC_txbDT.Text = "Kg";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(10, 260);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(79, 21);
+            this.label8.TabIndex = 11;
+            this.label8.Text = "Trạng thái";
+            // 
+            // ef_NCC_pnMa
+            // 
+            this.ef_NCC_pnMa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ef_NCC_pnMa.BackgroundImage")));
+            this.ef_NCC_pnMa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ef_NCC_pnMa.Controls.Add(this.ef_NCC_lbMa);
+            this.ef_NCC_pnMa.Location = new System.Drawing.Point(170, 10);
+            this.ef_NCC_pnMa.Name = "ef_NCC_pnMa";
+            this.ef_NCC_pnMa.Size = new System.Drawing.Size(420, 40);
+            this.ef_NCC_pnMa.TabIndex = 4;
+            // 
+            // ef_NCC_lbMa
+            // 
+            this.ef_NCC_lbMa.AutoSize = true;
+            this.ef_NCC_lbMa.BackColor = System.Drawing.Color.Transparent;
+            this.ef_NCC_lbMa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ef_NCC_lbMa.Location = new System.Drawing.Point(10, 10);
+            this.ef_NCC_lbMa.Name = "ef_NCC_lbMa";
+            this.ef_NCC_lbMa.Size = new System.Drawing.Size(69, 21);
+            this.ef_NCC_lbMa.TabIndex = 0;
+            this.ef_NCC_lbMa.Text = "THI0002";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(10, 140);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(57, 21);
+            this.label11.TabIndex = 9;
+            this.label11.Text = "Địa chỉ";
+            // 
+            // ef_NCC_pnDC
+            // 
+            this.ef_NCC_pnDC.BackgroundImage = global::GUI.Properties.Resources.field_single_editable_420x40;
+            this.ef_NCC_pnDC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ef_NCC_pnDC.Controls.Add(this.ef_NCC_txbDC);
+            this.ef_NCC_pnDC.Location = new System.Drawing.Point(170, 130);
+            this.ef_NCC_pnDC.Name = "ef_NCC_pnDC";
+            this.ef_NCC_pnDC.Size = new System.Drawing.Size(420, 40);
+            this.ef_NCC_pnDC.TabIndex = 8;
+            // 
+            // ef_NCC_txbDC
+            // 
+            this.ef_NCC_txbDC.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ef_NCC_txbDC.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ef_NCC_txbDC.Location = new System.Drawing.Point(15, 9);
+            this.ef_NCC_txbDC.Name = "ef_NCC_txbDC";
+            this.ef_NCC_txbDC.Size = new System.Drawing.Size(390, 22);
+            this.ef_NCC_txbDC.TabIndex = 1;
+            this.ef_NCC_txbDC.Text = "Kg";
+            // 
+            // ef_NCC_pnTT
+            // 
+            this.ef_NCC_pnTT.BackgroundImage = global::GUI.Properties.Resources.field_single_editable_420x40;
+            this.ef_NCC_pnTT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ef_NCC_pnTT.Controls.Add(this.ef_NCC_rdbDeactive);
+            this.ef_NCC_pnTT.Controls.Add(this.ef_NCC_rdbActive);
+            this.ef_NCC_pnTT.Location = new System.Drawing.Point(170, 250);
+            this.ef_NCC_pnTT.Name = "ef_NCC_pnTT";
+            this.ef_NCC_pnTT.Size = new System.Drawing.Size(420, 40);
+            this.ef_NCC_pnTT.TabIndex = 10;
+            // 
+            // ef_NCC_rdbDeactive
+            // 
+            this.ef_NCC_rdbDeactive.AutoSize = true;
+            this.ef_NCC_rdbDeactive.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ef_NCC_rdbDeactive.Location = new System.Drawing.Point(273, 8);
+            this.ef_NCC_rdbDeactive.Name = "ef_NCC_rdbDeactive";
+            this.ef_NCC_rdbDeactive.Size = new System.Drawing.Size(132, 25);
+            this.ef_NCC_rdbDeactive.TabIndex = 4;
+            this.ef_NCC_rdbDeactive.TabStop = true;
+            this.ef_NCC_rdbDeactive.Text = "Ngừng hợp tác";
+            this.ef_NCC_rdbDeactive.UseVisualStyleBackColor = true;
+            // 
+            // ef_NCC_rdbActive
+            // 
+            this.ef_NCC_rdbActive.AutoSize = true;
+            this.ef_NCC_rdbActive.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ef_NCC_rdbActive.Location = new System.Drawing.Point(15, 8);
+            this.ef_NCC_rdbActive.Name = "ef_NCC_rdbActive";
+            this.ef_NCC_rdbActive.Size = new System.Drawing.Size(101, 25);
+            this.ef_NCC_rdbActive.TabIndex = 3;
+            this.ef_NCC_rdbActive.TabStop = true;
+            this.ef_NCC_rdbActive.Text = "Hoạt động";
+            this.ef_NCC_rdbActive.UseVisualStyleBackColor = true;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(10, 80);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(129, 21);
+            this.label13.TabIndex = 7;
+            this.label13.Text = "Tên nhà cung cấp";
+            // 
+            // ef_NCC_pnTen
+            // 
+            this.ef_NCC_pnTen.BackgroundImage = global::GUI.Properties.Resources.field_single_editable_420x40;
+            this.ef_NCC_pnTen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ef_NCC_pnTen.Controls.Add(this.ef_NCC_txbTen);
+            this.ef_NCC_pnTen.Location = new System.Drawing.Point(170, 70);
+            this.ef_NCC_pnTen.Name = "ef_NCC_pnTen";
+            this.ef_NCC_pnTen.Size = new System.Drawing.Size(420, 40);
+            this.ef_NCC_pnTen.TabIndex = 6;
+            // 
+            // ef_NCC_txbTen
+            // 
+            this.ef_NCC_txbTen.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ef_NCC_txbTen.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ef_NCC_txbTen.Location = new System.Drawing.Point(15, 9);
+            this.ef_NCC_txbTen.Name = "ef_NCC_txbTen";
+            this.ef_NCC_txbTen.Size = new System.Drawing.Size(390, 22);
+            this.ef_NCC_txbTen.TabIndex = 0;
+            this.ef_NCC_txbTen.Text = "Thịt voi";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(10, 20);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(128, 21);
+            this.label14.TabIndex = 5;
+            this.label14.Text = "Mã nhà cung cấp";
+            // 
+            // ef_pnNguyenLieu
+            // 
+            this.ef_pnNguyenLieu.BackColor = System.Drawing.Color.White;
+            this.ef_pnNguyenLieu.Controls.Add(this.label7);
+            this.ef_pnNguyenLieu.Controls.Add(this.ef_NL_pnMa);
+            this.ef_pnNguyenLieu.Controls.Add(this.label3);
+            this.ef_pnNguyenLieu.Controls.Add(this.label6);
+            this.ef_pnNguyenLieu.Controls.Add(this.ef_NL_pnDVT);
+            this.ef_pnNguyenLieu.Controls.Add(this.ef_NL_pnCD);
+            this.ef_pnNguyenLieu.Controls.Add(this.ef_NL_pnSL);
+            this.ef_pnNguyenLieu.Controls.Add(this.label2);
+            this.ef_pnNguyenLieu.Controls.Add(this.ef_NL_pnYC);
+            this.ef_pnNguyenLieu.Controls.Add(this.ef_NL_pnCCD);
+            this.ef_pnNguyenLieu.Controls.Add(this.ef_NL_pnTen);
+            this.ef_pnNguyenLieu.Controls.Add(this.label1);
+            this.ef_pnNguyenLieu.Controls.Add(this.label4);
+            this.ef_pnNguyenLieu.Controls.Add(this.label5);
+            this.ef_pnNguyenLieu.Enabled = false;
+            this.ef_pnNguyenLieu.Location = new System.Drawing.Point(20, 20);
+            this.ef_pnNguyenLieu.Name = "ef_pnNguyenLieu";
+            this.ef_pnNguyenLieu.Size = new System.Drawing.Size(600, 610);
+            this.ef_pnNguyenLieu.TabIndex = 4;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(10, 455);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(73, 21);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Số lượng";
+            // 
+            // ef_NL_pnMa
+            // 
+            this.ef_NL_pnMa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ef_NL_pnMa.BackgroundImage")));
+            this.ef_NL_pnMa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ef_NL_pnMa.Controls.Add(this.ef_NL_lbMa);
+            this.ef_NL_pnMa.Location = new System.Drawing.Point(170, 10);
+            this.ef_NL_pnMa.Name = "ef_NL_pnMa";
+            this.ef_NL_pnMa.Size = new System.Drawing.Size(420, 40);
+            this.ef_NL_pnMa.TabIndex = 4;
+            // 
+            // ef_NL_lbMa
+            // 
+            this.ef_NL_lbMa.AutoSize = true;
+            this.ef_NL_lbMa.BackColor = System.Drawing.Color.Transparent;
+            this.ef_NL_lbMa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ef_NL_lbMa.Location = new System.Drawing.Point(10, 10);
+            this.ef_NL_lbMa.Name = "ef_NL_lbMa";
+            this.ef_NL_lbMa.Size = new System.Drawing.Size(69, 21);
+            this.ef_NL_lbMa.TabIndex = 0;
+            this.ef_NL_lbMa.Text = "THI0002";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.Location = new System.Drawing.Point(12, 5);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(10, 140);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(113, 21);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Hoá đơn nhập";
+            this.label3.Size = new System.Drawing.Size(87, 21);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Đơn vị tính";
             // 
-            // panel6
+            // label6
             // 
-            this.panel6.BackColor = System.Drawing.Color.Transparent;
-            this.panel6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel6.BackgroundImage")));
-            this.panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel6.Controls.Add(this.label4);
-            this.panel6.Location = new System.Drawing.Point(414, 20);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(150, 30);
-            this.panel6.TabIndex = 4;
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(10, 370);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(115, 21);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "Chống chỉ định";
+            // 
+            // ef_NL_pnDVT
+            // 
+            this.ef_NL_pnDVT.BackgroundImage = global::GUI.Properties.Resources.field_single_editable_420x40;
+            this.ef_NL_pnDVT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ef_NL_pnDVT.Controls.Add(this.ef_NL_txbDVT);
+            this.ef_NL_pnDVT.Location = new System.Drawing.Point(170, 130);
+            this.ef_NL_pnDVT.Name = "ef_NL_pnDVT";
+            this.ef_NL_pnDVT.Size = new System.Drawing.Size(420, 40);
+            this.ef_NL_pnDVT.TabIndex = 8;
+            // 
+            // ef_NL_txbDVT
+            // 
+            this.ef_NL_txbDVT.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ef_NL_txbDVT.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ef_NL_txbDVT.Location = new System.Drawing.Point(15, 9);
+            this.ef_NL_txbDVT.Name = "ef_NL_txbDVT";
+            this.ef_NL_txbDVT.Size = new System.Drawing.Size(390, 22);
+            this.ef_NL_txbDVT.TabIndex = 1;
+            this.ef_NL_txbDVT.Text = "Kg";
+            // 
+            // ef_NL_pnCD
+            // 
+            this.ef_NL_pnCD.BackgroundImage = global::GUI.Properties.Resources.field_multi_editable_420x80;
+            this.ef_NL_pnCD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ef_NL_pnCD.Controls.Add(this.ef_NL_rtbCD);
+            this.ef_NL_pnCD.Location = new System.Drawing.Point(170, 190);
+            this.ef_NL_pnCD.Name = "ef_NL_pnCD";
+            this.ef_NL_pnCD.Size = new System.Drawing.Size(420, 65);
+            this.ef_NL_pnCD.TabIndex = 10;
+            // 
+            // ef_NL_rtbCD
+            // 
+            this.ef_NL_rtbCD.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ef_NL_rtbCD.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ef_NL_rtbCD.Location = new System.Drawing.Point(15, 10);
+            this.ef_NL_rtbCD.Name = "ef_NL_rtbCD";
+            this.ef_NL_rtbCD.Size = new System.Drawing.Size(390, 45);
+            this.ef_NL_rtbCD.TabIndex = 0;
+            this.ef_NL_rtbCD.Text = "Ăn được\nlà được";
+            // 
+            // ef_NL_pnSL
+            // 
+            this.ef_NL_pnSL.BackgroundImage = global::GUI.Properties.Resources.field_single_editable_420x40;
+            this.ef_NL_pnSL.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ef_NL_pnSL.Controls.Add(this.ef_NL_txbSL);
+            this.ef_NL_pnSL.Location = new System.Drawing.Point(170, 445);
+            this.ef_NL_pnSL.Name = "ef_NL_pnSL";
+            this.ef_NL_pnSL.Size = new System.Drawing.Size(420, 40);
+            this.ef_NL_pnSL.TabIndex = 10;
+            // 
+            // ef_NL_txbSL
+            // 
+            this.ef_NL_txbSL.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ef_NL_txbSL.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ef_NL_txbSL.Location = new System.Drawing.Point(15, 9);
+            this.ef_NL_txbSL.Name = "ef_NL_txbSL";
+            this.ef_NL_txbSL.Size = new System.Drawing.Size(390, 22);
+            this.ef_NL_txbSL.TabIndex = 2;
+            this.ef_NL_txbSL.Text = "10.00";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(10, 80);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(118, 21);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Tên nguyên liệu";
+            // 
+            // ef_NL_pnYC
+            // 
+            this.ef_NL_pnYC.BackgroundImage = global::GUI.Properties.Resources.field_multi_editable_420x80;
+            this.ef_NL_pnYC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ef_NL_pnYC.Controls.Add(this.ef_NL_rtbYC);
+            this.ef_NL_pnYC.Location = new System.Drawing.Point(170, 275);
+            this.ef_NL_pnYC.Name = "ef_NL_pnYC";
+            this.ef_NL_pnYC.Size = new System.Drawing.Size(420, 65);
+            this.ef_NL_pnYC.TabIndex = 12;
+            // 
+            // ef_NL_rtbYC
+            // 
+            this.ef_NL_rtbYC.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ef_NL_rtbYC.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ef_NL_rtbYC.Location = new System.Drawing.Point(14, 10);
+            this.ef_NL_rtbYC.Name = "ef_NL_rtbYC";
+            this.ef_NL_rtbYC.Size = new System.Drawing.Size(390, 45);
+            this.ef_NL_rtbYC.TabIndex = 1;
+            this.ef_NL_rtbYC.Text = "Không để công an\ntóm được";
+            // 
+            // ef_NL_pnCCD
+            // 
+            this.ef_NL_pnCCD.BackgroundImage = global::GUI.Properties.Resources.field_multi_editable_420x80;
+            this.ef_NL_pnCCD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ef_NL_pnCCD.Controls.Add(this.ef_NL_rtbCCD);
+            this.ef_NL_pnCCD.Location = new System.Drawing.Point(170, 360);
+            this.ef_NL_pnCCD.Name = "ef_NL_pnCCD";
+            this.ef_NL_pnCCD.Size = new System.Drawing.Size(420, 65);
+            this.ef_NL_pnCCD.TabIndex = 14;
+            // 
+            // ef_NL_rtbCCD
+            // 
+            this.ef_NL_rtbCCD.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ef_NL_rtbCCD.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ef_NL_rtbCCD.Location = new System.Drawing.Point(14, 10);
+            this.ef_NL_rtbCCD.Name = "ef_NL_rtbCCD";
+            this.ef_NL_rtbCCD.Size = new System.Drawing.Size(390, 45);
+            this.ef_NL_rtbCCD.TabIndex = 2;
+            this.ef_NL_rtbCCD.Text = "Người sợ bị\nbớ";
+            // 
+            // ef_NL_pnTen
+            // 
+            this.ef_NL_pnTen.BackgroundImage = global::GUI.Properties.Resources.field_single_editable_420x40;
+            this.ef_NL_pnTen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ef_NL_pnTen.Controls.Add(this.ef_NL_txbTen);
+            this.ef_NL_pnTen.Location = new System.Drawing.Point(170, 70);
+            this.ef_NL_pnTen.Name = "ef_NL_pnTen";
+            this.ef_NL_pnTen.Size = new System.Drawing.Size(420, 40);
+            this.ef_NL_pnTen.TabIndex = 6;
+            // 
+            // ef_NL_txbTen
+            // 
+            this.ef_NL_txbTen.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ef_NL_txbTen.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ef_NL_txbTen.Location = new System.Drawing.Point(15, 9);
+            this.ef_NL_txbTen.Name = "ef_NL_txbTen";
+            this.ef_NL_txbTen.Size = new System.Drawing.Size(390, 22);
+            this.ef_NL_txbTen.TabIndex = 0;
+            this.ef_NL_txbTen.Text = "Thịt voi";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(10, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(117, 21);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Mã nguyên liệu";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(12, 5);
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(10, 200);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(126, 21);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Chi tiết hoá đơn";
+            this.label4.Size = new System.Drawing.Size(87, 21);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Công dụng";
             // 
-            // ml_dgvMenu
+            // label5
             // 
-            this.ml_dgvMenu.AllowUserToAddRows = false;
-            this.ml_dgvMenu.AllowUserToDeleteRows = false;
-            this.ml_dgvMenu.AllowUserToResizeColumns = false;
-            this.ml_dgvMenu.AllowUserToResizeRows = false;
-            this.ml_dgvMenu.BackgroundColor = System.Drawing.Color.White;
-            this.ml_dgvMenu.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.ml_dgvMenu.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.ml_dgvMenu.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(10, 285);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(63, 21);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Yêu cầu";
+            // 
+            // ef_btnAdd
+            // 
+            this.ef_btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ef_btnAdd.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ef_btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("ef_btnAdd.Image")));
+            this.ef_btnAdd.Location = new System.Drawing.Point(526, 641);
+            this.ef_btnAdd.Name = "ef_btnAdd";
+            this.ef_btnAdd.Size = new System.Drawing.Size(50, 50);
+            this.ef_btnAdd.TabIndex = 3;
+            this.ef_btnAdd.UseVisualStyleBackColor = true;
+            // 
+            // ef_btnUpdate
+            // 
+            this.ef_btnUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ef_btnUpdate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ef_btnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("ef_btnUpdate.Image")));
+            this.ef_btnUpdate.Location = new System.Drawing.Point(376, 641);
+            this.ef_btnUpdate.Name = "ef_btnUpdate";
+            this.ef_btnUpdate.Size = new System.Drawing.Size(50, 50);
+            this.ef_btnUpdate.TabIndex = 2;
+            this.ef_btnUpdate.UseVisualStyleBackColor = true;
+            // 
+            // ef_btnReset
+            // 
+            this.ef_btnReset.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ef_btnReset.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ef_btnReset.Image = ((System.Drawing.Image)(resources.GetObject("ef_btnReset.Image")));
+            this.ef_btnReset.Location = new System.Drawing.Point(226, 641);
+            this.ef_btnReset.Name = "ef_btnReset";
+            this.ef_btnReset.Size = new System.Drawing.Size(50, 50);
+            this.ef_btnReset.TabIndex = 1;
+            this.ef_btnReset.UseVisualStyleBackColor = true;
+            // 
+            // ef_btnDelete
+            // 
+            this.ef_btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ef_btnDelete.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ef_btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("ef_btnDelete.Image")));
+            this.ef_btnDelete.Location = new System.Drawing.Point(76, 641);
+            this.ef_btnDelete.Name = "ef_btnDelete";
+            this.ef_btnDelete.Size = new System.Drawing.Size(50, 50);
+            this.ef_btnDelete.TabIndex = 0;
+            this.ef_btnDelete.UseVisualStyleBackColor = true;
+            // 
+            // pnBrowseField
+            // 
+            this.pnBrowseField.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnBrowseField.BackgroundImage")));
+            this.pnBrowseField.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnBrowseField.Controls.Add(this.bf_pnSearchbar);
+            this.pnBrowseField.Controls.Add(this.bf_pnSelectedTable);
+            this.pnBrowseField.Controls.Add(this.bf_dgvTable);
+            this.pnBrowseField.Location = new System.Drawing.Point(30, 30);
+            this.pnBrowseField.Name = "pnBrowseField";
+            this.pnBrowseField.Size = new System.Drawing.Size(640, 715);
+            this.pnBrowseField.TabIndex = 3;
+            // 
+            // bf_pnSearchbar
+            // 
+            this.bf_pnSearchbar.BackColor = System.Drawing.Color.Transparent;
+            this.bf_pnSearchbar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bf_pnSearchbar.BackgroundImage")));
+            this.bf_pnSearchbar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bf_pnSearchbar.Controls.Add(this.label9);
+            this.bf_pnSearchbar.Controls.Add(this.bf_sb_txbSearchbox);
+            this.bf_pnSearchbar.Location = new System.Drawing.Point(338, 20);
+            this.bf_pnSearchbar.Name = "bf_pnSearchbar";
+            this.bf_pnSearchbar.Size = new System.Drawing.Size(285, 50);
+            this.bf_pnSearchbar.TabIndex = 11;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label9.Location = new System.Drawing.Point(49, 15);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(74, 21);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "Tìm kiếm";
+            // 
+            // bf_sb_txbSearchbox
+            // 
+            this.bf_sb_txbSearchbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bf_sb_txbSearchbox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bf_sb_txbSearchbox.Location = new System.Drawing.Point(53, 14);
+            this.bf_sb_txbSearchbox.Name = "bf_sb_txbSearchbox";
+            this.bf_sb_txbSearchbox.Size = new System.Drawing.Size(215, 22);
+            this.bf_sb_txbSearchbox.TabIndex = 0;
+            // 
+            // bf_pnSelectedTable
+            // 
+            this.bf_pnSelectedTable.BackColor = System.Drawing.Color.Transparent;
+            this.bf_pnSelectedTable.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bf_pnSelectedTable.BackgroundImage")));
+            this.bf_pnSelectedTable.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bf_pnSelectedTable.Controls.Add(this.bf_st_cbbTableList);
+            this.bf_pnSelectedTable.Location = new System.Drawing.Point(20, 20);
+            this.bf_pnSelectedTable.Name = "bf_pnSelectedTable";
+            this.bf_pnSelectedTable.Size = new System.Drawing.Size(285, 50);
+            this.bf_pnSelectedTable.TabIndex = 10;
+            // 
+            // bf_st_cbbTableList
+            // 
+            this.bf_st_cbbTableList.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.bf_st_cbbTableList.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.bf_st_cbbTableList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bf_st_cbbTableList.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bf_st_cbbTableList.FormattingEnabled = true;
+            this.bf_st_cbbTableList.Items.AddRange(new object[] {
+            "NguyenLieu",
+            "NhaCungCap",
+            "HoaDonBan",
+            "ChiTietHoaDonBan"});
+            this.bf_st_cbbTableList.Location = new System.Drawing.Point(51, 11);
+            this.bf_st_cbbTableList.Name = "bf_st_cbbTableList";
+            this.bf_st_cbbTableList.Size = new System.Drawing.Size(221, 29);
+            this.bf_st_cbbTableList.TabIndex = 0;
+            // 
+            // bf_dgvTable
+            // 
+            this.bf_dgvTable.AllowUserToAddRows = false;
+            this.bf_dgvTable.AllowUserToDeleteRows = false;
+            this.bf_dgvTable.AllowUserToResizeColumns = false;
+            this.bf_dgvTable.AllowUserToResizeRows = false;
+            this.bf_dgvTable.BackgroundColor = System.Drawing.Color.White;
+            this.bf_dgvTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bf_dgvTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.bf_dgvTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -249,9 +870,9 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ml_dgvMenu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.ml_dgvMenu.ColumnHeadersHeight = 38;
-            this.ml_dgvMenu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.bf_dgvTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.bf_dgvTable.ColumnHeadersHeight = 38;
+            this.bf_dgvTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
@@ -260,39 +881,68 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ml_dgvMenu.DefaultCellStyle = dataGridViewCellStyle2;
-            this.ml_dgvMenu.Location = new System.Drawing.Point(20, 68);
-            this.ml_dgvMenu.MultiSelect = false;
-            this.ml_dgvMenu.Name = "ml_dgvMenu";
-            this.ml_dgvMenu.ReadOnly = true;
-            this.ml_dgvMenu.RowHeadersVisible = false;
-            this.ml_dgvMenu.RowTemplate.Height = 32;
-            this.ml_dgvMenu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ml_dgvMenu.Size = new System.Drawing.Size(603, 623);
-            this.ml_dgvMenu.TabIndex = 9;
+            this.bf_dgvTable.DefaultCellStyle = dataGridViewCellStyle2;
+            this.bf_dgvTable.Location = new System.Drawing.Point(20, 90);
+            this.bf_dgvTable.MultiSelect = false;
+            this.bf_dgvTable.Name = "bf_dgvTable";
+            this.bf_dgvTable.ReadOnly = true;
+            this.bf_dgvTable.RowHeadersVisible = false;
+            this.bf_dgvTable.RowTemplate.Height = 32;
+            this.bf_dgvTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.bf_dgvTable.Size = new System.Drawing.Size(603, 601);
+            this.bf_dgvTable.TabIndex = 9;
             // 
             // Warehouse_EditData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
             this.ClientSize = new System.Drawing.Size(1370, 815);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnEditField);
+            this.Controls.Add(this.pnBrowseField);
             this.Controls.Add(this.lbControlTitle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Warehouse_EditData";
             this.Text = "Warehouse_EditData";
-            this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ml_dgvMenu)).EndInit();
+            this.pnEditField.ResumeLayout(false);
+            this.ef_pnHoaDonNhap.ResumeLayout(false);
+            this.ef_pnHoaDonNhap.PerformLayout();
+            this.ef_HDN_pnMaHD.ResumeLayout(false);
+            this.ef_HDN_pnMaHD.PerformLayout();
+            this.ef_HDN_pnMaNCC.ResumeLayout(false);
+            this.ef_HDN_pnMaNCC.PerformLayout();
+            this.ef_HDN_pnMaNV.ResumeLayout(false);
+            this.ef_HDN_pnMaNV.PerformLayout();
+            this.ef_pnNhaCungCap.ResumeLayout(false);
+            this.ef_pnNhaCungCap.PerformLayout();
+            this.ef_NCC_pnDT.ResumeLayout(false);
+            this.ef_NCC_pnDT.PerformLayout();
+            this.ef_NCC_pnMa.ResumeLayout(false);
+            this.ef_NCC_pnMa.PerformLayout();
+            this.ef_NCC_pnDC.ResumeLayout(false);
+            this.ef_NCC_pnDC.PerformLayout();
+            this.ef_NCC_pnTT.ResumeLayout(false);
+            this.ef_NCC_pnTT.PerformLayout();
+            this.ef_NCC_pnTen.ResumeLayout(false);
+            this.ef_NCC_pnTen.PerformLayout();
+            this.ef_pnNguyenLieu.ResumeLayout(false);
+            this.ef_pnNguyenLieu.PerformLayout();
+            this.ef_NL_pnMa.ResumeLayout(false);
+            this.ef_NL_pnMa.PerformLayout();
+            this.ef_NL_pnDVT.ResumeLayout(false);
+            this.ef_NL_pnDVT.PerformLayout();
+            this.ef_NL_pnCD.ResumeLayout(false);
+            this.ef_NL_pnSL.ResumeLayout(false);
+            this.ef_NL_pnSL.PerformLayout();
+            this.ef_NL_pnYC.ResumeLayout(false);
+            this.ef_NL_pnCCD.ResumeLayout(false);
+            this.ef_NL_pnTen.ResumeLayout(false);
+            this.ef_NL_pnTen.PerformLayout();
+            this.pnBrowseField.ResumeLayout(false);
+            this.bf_pnSearchbar.ResumeLayout(false);
+            this.bf_pnSearchbar.PerformLayout();
+            this.bf_pnSelectedTable.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bf_dgvTable)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -301,20 +951,70 @@
         #endregion
 
         private System.Windows.Forms.Label lbControlTitle;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Panel pnBrowseField;
+        private System.Windows.Forms.Panel pnEditField;
+        private System.Windows.Forms.Button ef_btnDelete;
+        private System.Windows.Forms.Button ef_btnAdd;
+        private System.Windows.Forms.Button ef_btnUpdate;
+        private System.Windows.Forms.Button ef_btnReset;
+        private System.Windows.Forms.DataGridView bf_dgvTable;
+        private System.Windows.Forms.Panel bf_pnSearchbar;
+        private System.Windows.Forms.Panel bf_pnSelectedTable;
+        private System.Windows.Forms.Panel ef_NL_pnMa;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel ef_NL_pnTen;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel ef_NL_pnSL;
+        private System.Windows.Forms.Panel ef_NL_pnCCD;
+        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel ef_NL_pnYC;
+        private System.Windows.Forms.Panel ef_NL_pnCD;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView ml_dgvMenu;
+        private System.Windows.Forms.Panel ef_NL_pnDVT;
+        private System.Windows.Forms.Panel ef_pnNguyenLieu;
+        private System.Windows.Forms.Label ef_NL_lbMa;
+        private System.Windows.Forms.TextBox ef_NL_txbDVT;
+        private System.Windows.Forms.RichTextBox ef_NL_rtbCD;
+        private System.Windows.Forms.TextBox ef_NL_txbSL;
+        private System.Windows.Forms.TextBox ef_NL_txbTen;
+        private System.Windows.Forms.RichTextBox ef_NL_rtbYC;
+        private System.Windows.Forms.RichTextBox ef_NL_rtbCCD;
+        private System.Windows.Forms.ComboBox bf_st_cbbTableList;
+        private System.Windows.Forms.TextBox bf_sb_txbSearchbox;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Panel ef_pnNhaCungCap;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Panel ef_NCC_pnDT;
+        private System.Windows.Forms.TextBox ef_NCC_txbDT;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Panel ef_NCC_pnMa;
+        private System.Windows.Forms.Label ef_NCC_lbMa;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Panel ef_NCC_pnDC;
+        private System.Windows.Forms.TextBox ef_NCC_txbDC;
+        private System.Windows.Forms.Panel ef_NCC_pnTT;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Panel ef_NCC_pnTen;
+        private System.Windows.Forms.TextBox ef_NCC_txbTen;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.RadioButton ef_NCC_rdbDeactive;
+        private System.Windows.Forms.RadioButton ef_NCC_rdbActive;
+        private System.Windows.Forms.Panel ef_pnHoaDonNhap;
+        private System.Windows.Forms.Panel ef_HDN_pnMaHD;
+        private System.Windows.Forms.Label ef_HDN_lbMaHD;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Panel ef_HDN_pnMaNCC;
+        private System.Windows.Forms.TextBox ef_HDN_txbMaNCC;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Panel ef_HDN_pnMaNV;
+        private System.Windows.Forms.TextBox ef_HDN_txbMaNV;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.DateTimePicker ef_HDN_dtpNgayNhap;
+        private System.Windows.Forms.Label ef_HDN_lbInfomantNCC;
+        private System.Windows.Forms.Label ef_HDN_lbInfomantNV;
     }
 }
