@@ -86,8 +86,6 @@ namespace GUI
         {
             DataTable orderTabel = _orderBLL.GetOrders();
 
-           
-
             dgvListOrders.DataSource = orderTabel;
 
             dgvListOrders.Columns["IDOrder"].DataPropertyName = "MaDon";
