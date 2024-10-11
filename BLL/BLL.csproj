@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountBLL.cs" />
+    <Compile Include="FoodBLL.cs" />
+    <Compile Include="OrderBLL.cs" />
     <Compile Include="EmployeeBLL.cs" />
     <Compile Include="IngredientBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
