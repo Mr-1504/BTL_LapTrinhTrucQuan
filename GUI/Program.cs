@@ -1,5 +1,4 @@
-﻿using GUI.Warehouse;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -17,8 +16,7 @@ namespace GUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new SettingForm("LT20240001"));
-            Application.Run(new Warehouse_EditData());
+            Application.Run(new FoodManager());
         }
     }
 }

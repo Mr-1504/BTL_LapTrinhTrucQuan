@@ -53,6 +53,7 @@
     <Compile Include="PurchaseInvoiceDetailDAL.cs" />
     <Compile Include="RecipeDAL.cs" />
     <Compile Include="RoleDAL.cs" />
+    <Compile Include="SaleDAL.cs" />
     <Compile Include="SupplierDAL.cs" />
     <Compile Include="WarehouseDAL.cs" />
   </ItemGroup>
