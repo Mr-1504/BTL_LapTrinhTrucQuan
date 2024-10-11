@@ -952,6 +952,7 @@
             this.ef_btnReset.Size = new System.Drawing.Size(50, 50);
             this.ef_btnReset.TabIndex = 1;
             this.ef_btnReset.UseVisualStyleBackColor = true;
+            this.ef_btnReset.Click += new System.EventHandler(this.ef_btnReset_Click);
             // 
             // ef_btnDelete
             // 
@@ -1082,6 +1083,7 @@
             this.bf_dgvTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.bf_dgvTable.Size = new System.Drawing.Size(603, 601);
             this.bf_dgvTable.TabIndex = 9;
+            this.bf_dgvTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bf_dgvTable_CellClick);
             // 
             // Warehouse_EditData
             // 
