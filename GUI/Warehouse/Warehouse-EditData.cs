@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using static BLL.WarehouseBLL.EditData;
 using Utilities;
 
 namespace GUI.Warehouse
@@ -21,6 +15,7 @@ namespace GUI.Warehouse
 
         //  > local global section
         private string selectedTableName = string.Empty;
+
 
         private void Update()
         {
@@ -43,7 +38,7 @@ namespace GUI.Warehouse
         //  > browseField section
         private void bf_funcUpdate()
         {
-            bf_dgvTable.DataSource = SqlHelper.ExecuteReader($"select * from {selectedTableName}", new object[] {});
+            bf_dgvTable.DataSource = BLL_GetTable(selectedTableName);
         }
         private void bf_st_cbbTableList_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -55,6 +50,11 @@ namespace GUI.Warehouse
         {
             bf_sb_lbHint.Visible = false;
             bf_sb_txbSearchbox.Focus();
+        }
+        private void bf_sb_txbSearchbox_TextChanged(object sender, EventArgs e)
+        {
+            BLL_SearchInTable(bf_sb_txbSearchbox.Text);
+            bf_funcUpdate();
         }
         private void bf_pnSearchbar_Click(object sender, EventArgs e)
         {
@@ -93,6 +93,7 @@ namespace GUI.Warehouse
                 default: break;
             }
         }
+
         //  ^ end
     }
 }

@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Net;
+using System.Runtime.CompilerServices;
+using System.Windows.Forms;
 using Utilities;
 
 namespace DAL
@@ -58,7 +61,7 @@ namespace DAL
             }
             public static DataTable DAL_GetPrecalResult(List<string> dishIDs)
             {
-                string dishList = MakeStringForSQLQuery(dishIDs);
+                string dishList = MakeSQLStringOfList(dishIDs);
                 return SqlHelper.ExecuteReader(
                     "with InStock as (" +
                         "select NguyenLieu.TenNguyenLieu, NguyenLieu.MaNguyenLieu, NguyenLieu.SoLuong as TrongKho " +
@@ -77,12 +80,66 @@ namespace DAL
             }
         }
 
-        public static string MakeStringForSQLQuery(List<string> daList)
+        private static string MakeSQLStringOfList(List<string> daList)
         {
             string res = "(";
             foreach (string s in daList) res += "'" + s + "',";
             res = res.Substring(0, res.Length - 1) + ")";
             return res;
+        }
+
+        public static class EditData
+        {
+            private static string TableQuery = string.Empty;
+            private static string SearchQuery = string.Empty;
+            private static string tableName = string.Empty;
+            private static List<string> tableColNames = new List<string>();
+
+            private static DataTable DAL_GetTable() {
+                if (!string.IsNullOrEmpty(TableQuery)) return SqlHelper.ExecuteReader(TableQuery + SearchQuery, new object[] { });
+                else return null;
+            }
+            public static DataTable DAL_GetTable(string tableName)
+            {
+                EditData.tableName = tableName;
+                TableQuery = $"select * from {tableName}";
+                return DAL_GetTable();
+            }
+            private static List<string> GetCurrentTableColumnNamesList()
+            {
+                DataTable tb = DAL_GetTable();
+                if (tb != null)
+                {
+                    List<string> res = new List<string>();
+                    res.Add(tableName);
+                    foreach(DataColumn it in tb.Columns)
+                    {
+                        res.Add(it.ColumnName);
+                    }
+                    return res;
+                }
+                else return null;
+            }
+            private static void UpdateColNames()
+            {
+                tableColNames = GetCurrentTableColumnNamesList();
+            }
+            public static DataTable DAL_SearchInTable(string keyword)
+            {
+                if (string.IsNullOrEmpty(tableName)) return null;
+                if (string.IsNullOrEmpty(keyword))
+                {
+                    SearchQuery = string.Empty;
+                }
+                else
+                {
+                    if (tableColNames.Count == 0 || tableColNames[0] != tableName) UpdateColNames();
+                    SearchQuery = " where ";
+                    for (int i = 1; i < tableColNames.Count - 1; i++) SearchQuery += $"{tableColNames[i]} like N'%{keyword}%' or ";
+                    SearchQuery += $"{tableColNames[tableColNames.Count - 1]} like N'%{keyword}%'";
+                }
+                return DAL_GetTable();
+            }
         }
     }
 }

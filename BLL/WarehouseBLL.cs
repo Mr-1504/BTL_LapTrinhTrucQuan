@@ -71,5 +71,17 @@ namespace BLL
                 }
             }
         }
+        public static class EditData
+        {
+            public static DataTable BLL_GetTable(string tableName)
+            {
+                if (string.IsNullOrEmpty(tableName)) return null;
+                return WarehouseDAL.EditData.DAL_GetTable(tableName);
+            }
+            public static DataTable BLL_SearchInTable(string keyword)
+            {
+                return WarehouseDAL.EditData.DAL_SearchInTable(keyword);
+            }
+        }
     }
 }
