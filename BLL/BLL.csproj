@@ -47,6 +47,8 @@
     <Compile Include="FoodManagerBLL.cs" />
     <Compile Include="FoodManagerBLL2.cs" />
     <Compile Include="HomeManagerBLL.cs" />
+    <Compile Include="FoodBLL.cs" />
+    <Compile Include="OrderBLL.cs" />
     <Compile Include="EmployeeBLL.cs" />
     <Compile Include="IngredientBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
