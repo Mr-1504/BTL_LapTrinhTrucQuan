@@ -130,8 +130,17 @@ namespace Utilities
     }
     public enum Unit
     {
+        [Description("Kg")]
         Kg,
-        Gram
+
+        [Description("g")]
+        Gram,
+
+        [Description("Gói")]
+        Package,
+
+        [Description("Chai")]
+        Bottle
     }
 
     public enum Order

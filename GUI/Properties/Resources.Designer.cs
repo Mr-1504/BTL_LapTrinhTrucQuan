@@ -163,6 +163,16 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap btnComplete {
+            get {
+                object obj = ResourceManager.GetObject("btnComplete", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap btnConfirmInput {
             get {
                 object obj = ResourceManager.GetObject("btnConfirmInput", resourceCulture);
@@ -863,9 +873,17 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap VitQuay {
-            get {
+        internal static System.Drawing.Bitmap VitQuay
+        {
+            get
+            {
                 object obj = ResourceManager.GetObject("VitQuay", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        internal static System.Drawing.Bitmap warnning {
+            get {
+                object obj = ResourceManager.GetObject("warnning", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

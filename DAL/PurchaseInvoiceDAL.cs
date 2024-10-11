@@ -95,5 +95,10 @@ namespace DAL
             }
             return SqlHelper.ExecuteReader(query, objects);
         }
+        public int RemovePurchaseInvoice(string purchaseInvoiceId)
+        {
+            string query = "DELETE FROM HoaDonNhap WHERE MaHoaDonNhap = @purchaseInvoiceId";
+            return SqlHelper.ExecuteNonQuery(query, new object[] { purchaseInvoiceId });
+        }
     }
 }

@@ -476,6 +476,8 @@
     <Content Include="Resources\AvatarImage\KH20240001.JPG" />
     <Content Include="Resources\AvatarImage\LT20240001.JPG" />
     <None Include="Resources\pnlHeaderListOrder.png" />
+    <None Include="Resources\warnning.png" />
+    <None Include="Resources\btnComplete.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
