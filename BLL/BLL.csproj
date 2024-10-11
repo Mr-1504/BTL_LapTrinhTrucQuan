@@ -44,6 +44,8 @@
     <Compile Include="AccountBLL.cs" />
     <Compile Include="EmployManager2BLL.cs" />
     <Compile Include="EmployManagerBLL.cs" />
+    <Compile Include="FoodManagerBLL.cs" />
+    <Compile Include="FoodManagerBLL2.cs" />
     <Compile Include="HomeManagerBLL.cs" />
     <Compile Include="EmployeeBLL.cs" />
     <Compile Include="IngredientBLL.cs" />

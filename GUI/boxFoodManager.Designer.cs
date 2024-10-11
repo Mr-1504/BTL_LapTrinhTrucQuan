@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.pnlFoodItem = new System.Windows.Forms.Panel();
-            this.lblNameFood = new System.Windows.Forms.Label();
+            this.textNameFood = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
-            this.lblPriceValue = new System.Windows.Forms.Label();
+            this.textPriceValue = new System.Windows.Forms.Label();
             this.lblPrice = new System.Windows.Forms.Label();
             this.picFood = new System.Windows.Forms.PictureBox();
             this.pnlFoodItem.SuspendLayout();
@@ -41,9 +41,9 @@
             // pnlFoodItem
             // 
             this.pnlFoodItem.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pnlFoodItem.Controls.Add(this.lblNameFood);
+            this.pnlFoodItem.Controls.Add(this.textNameFood);
             this.pnlFoodItem.Controls.Add(this.lblName);
-            this.pnlFoodItem.Controls.Add(this.lblPriceValue);
+            this.pnlFoodItem.Controls.Add(this.textPriceValue);
             this.pnlFoodItem.Controls.Add(this.lblPrice);
             this.pnlFoodItem.Controls.Add(this.picFood);
             this.pnlFoodItem.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -55,16 +55,16 @@
             this.pnlFoodItem.TabIndex = 0;
             this.pnlFoodItem.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlFoodItem_Paint);
             // 
-            // lblNameFood
+            // textNameFood
             // 
-            this.lblNameFood.AutoSize = true;
-            this.lblNameFood.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNameFood.Location = new System.Drawing.Point(19, 155);
-            this.lblNameFood.Name = "lblNameFood";
-            this.lblNameFood.Size = new System.Drawing.Size(66, 18);
-            this.lblNameFood.TabIndex = 4;
-            this.lblNameFood.Text = "Vịt Quay";
-            this.lblNameFood.Click += new System.EventHandler(this.lblNameFood_Click);
+            this.textNameFood.AutoSize = true;
+            this.textNameFood.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textNameFood.Location = new System.Drawing.Point(19, 155);
+            this.textNameFood.Name = "textNameFood";
+            this.textNameFood.Size = new System.Drawing.Size(66, 18);
+            this.textNameFood.TabIndex = 4;
+            this.textNameFood.Text = "Vịt Quay";
+            this.textNameFood.Click += new System.EventHandler(this.lblNameFood_Click);
             // 
             // lblName
             // 
@@ -73,19 +73,19 @@
             this.lblName.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.lblName.Location = new System.Drawing.Point(18, 122);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(43, 20);
+            this.lblName.Size = new System.Drawing.Size(32, 20);
             this.lblName.TabIndex = 3;
-            this.lblName.Text = "Name";
+            this.lblName.Text = "Tên";
             // 
-            // lblPriceValue
+            // textPriceValue
             // 
-            this.lblPriceValue.AutoSize = true;
-            this.lblPriceValue.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPriceValue.Location = new System.Drawing.Point(19, 64);
-            this.lblPriceValue.Name = "lblPriceValue";
-            this.lblPriceValue.Size = new System.Drawing.Size(32, 18);
-            this.lblPriceValue.TabIndex = 2;
-            this.lblPriceValue.Text = "$52";
+            this.textPriceValue.AutoSize = true;
+            this.textPriceValue.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textPriceValue.Location = new System.Drawing.Point(19, 64);
+            this.textPriceValue.Name = "textPriceValue";
+            this.textPriceValue.Size = new System.Drawing.Size(32, 18);
+            this.textPriceValue.TabIndex = 2;
+            this.textPriceValue.Text = "$52";
             // 
             // lblPrice
             // 
@@ -94,9 +94,9 @@
             this.lblPrice.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.lblPrice.Location = new System.Drawing.Point(18, 34);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(38, 20);
+            this.lblPrice.Size = new System.Drawing.Size(29, 20);
             this.lblPrice.TabIndex = 1;
-            this.lblPrice.Text = "Price";
+            this.lblPrice.Text = "Giá";
             // 
             // picFood
             // 
@@ -112,10 +112,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(265, 195);
             this.Controls.Add(this.pnlFoodItem);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "boxFoodManager";
+            this.Size = new System.Drawing.Size(265, 195);
             this.pnlFoodItem.ResumeLayout(false);
             this.pnlFoodItem.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picFood)).EndInit();
@@ -125,11 +124,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel pnlFoodItem;
-        private System.Windows.Forms.PictureBox picFood;
-        private System.Windows.Forms.Label lblPrice;
-        private System.Windows.Forms.Label lblNameFood;
-        private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.Label lblPriceValue;
+        public System.Windows.Forms.Panel pnlFoodItem;
+        public System.Windows.Forms.PictureBox picFood;
+        public System.Windows.Forms.Label lblPrice;
+        public System.Windows.Forms.Label textNameFood;
+        public System.Windows.Forms.Label lblName;
+        public System.Windows.Forms.Label textPriceValue;
     }
 }

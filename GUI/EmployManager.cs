@@ -113,8 +113,16 @@ namespace GUI
 
                 string employeeID = selectedRow.Cells["EmployeeID"].Value.ToString();
                 
-                EmployManager2 employManager2 = new EmployManager2(employeeID, this);
                 ShowComponent(false);
+                foreach (Control control in Controls)
+                {
+                    if(control is EmployManager2)
+                    {
+                        control.BringToFront();
+                        return;
+                    }
+                }
+                EmployManager2 employManager2 = new EmployManager2(employeeID, this);
                 employManager2.TopLevel = false;
                 pnlEmployMNG.Controls.Add(employManager2);
                 employManager2.Show();

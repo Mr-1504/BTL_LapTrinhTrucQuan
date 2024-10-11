@@ -55,7 +55,7 @@
       <DependentUpon>BaseForm.cs</DependentUpon>
     </Compile>
     <Compile Include="boxFoodManager.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="boxFoodManager.Designer.cs">
       <DependentUpon>boxFoodManager.cs</DependentUpon>
@@ -77,6 +77,12 @@
     </Compile>
     <Compile Include="FoodManager.Designer.cs">
       <DependentUpon>FoodManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FoodManager2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FoodManager2.Designer.cs">
+      <DependentUpon>FoodManager2.cs</DependentUpon>
     </Compile>
     <Compile Include="HomeManager.cs">
       <SubType>Form</SubType>
@@ -104,6 +110,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="PurchasedIngredient\DetailPurchaseedIngredient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +178,9 @@
     <EmbeddedResource Include="FoodManager.resx">
       <DependentUpon>FoodManager.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FoodManager2.resx">
+      <DependentUpon>FoodManager2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HomeManager.resx">
       <DependentUpon>HomeManager.cs</DependentUpon>
     </EmbeddedResource>
@@ -212,11 +226,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -395,6 +404,10 @@
     <None Include="Resources\addressPanel.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\ImageFood\AP0006.JPG" />
+    <Content Include="Resources\ImageFood\default .jpg" />
+    <Content Include="Resources\ImageFood\default.jpg" />
+    <Content Include="Resources\ImageFood\MN0010.jpg" />
     <None Include="Resources\panelNumberic2.png" />
     <None Include="Resources\panelNumberic.png" />
     <None Include="Resources\avatar.png" />
@@ -472,7 +485,7 @@
     <Content Include="Resources\AvatarImage\QL20240001.JPG" />
     <None Include="Resources\warnning.png" />
     <None Include="Resources\btnComplete.png" />
-
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

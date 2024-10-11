@@ -37,10 +37,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.gender = new System.Windows.Forms.ComboBox();
-            this.dateTimeBirthDay = new System.Windows.Forms.DateTimePicker();
-            this.btnSave = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnChaneIm = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -55,6 +51,10 @@
             this.employID = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.name = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.gender = new System.Windows.Forms.ComboBox();
+            this.dateTimeBirthDay = new System.Windows.Forms.DateTimePicker();
+            this.btnSave = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -161,63 +161,6 @@
             this.panel1.Size = new System.Drawing.Size(1103, 729);
             this.panel1.TabIndex = 20;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(120, 275);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(67, 16);
-            this.label8.TabIndex = 23;
-            this.label8.Text = "Họ và tên";
-            // 
-            // gender
-            // 
-            this.gender.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.gender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.gender.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gender.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gender.FormattingEnabled = true;
-            this.gender.Location = new System.Drawing.Point(576, 186);
-            this.gender.Name = "gender";
-            this.gender.Size = new System.Drawing.Size(136, 27);
-            this.gender.TabIndex = 22;
-            // 
-            // dateTimeBirthDay
-            // 
-            this.dateTimeBirthDay.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimeBirthDay.CalendarMonthBackground = System.Drawing.SystemColors.ControlLight;
-            this.dateTimeBirthDay.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
-            this.dateTimeBirthDay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimeBirthDay.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dateTimeBirthDay.Location = new System.Drawing.Point(573, 466);
-            this.dateTimeBirthDay.Name = "dateTimeBirthDay";
-            this.dateTimeBirthDay.Size = new System.Drawing.Size(136, 29);
-            this.dateTimeBirthDay.TabIndex = 21;
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.Transparent;
-            this.btnSave.BackgroundImage = global::GUI.Properties.Resources.btn;
-            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnSave.FlatAppearance.BorderSize = 0;
-            this.btnSave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnSave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSave.Location = new System.Drawing.Point(1170, 743);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(170, 52);
-            this.btnSave.TabIndex = 21;
-            this.btnSave.Text = "Lưu";
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.button4_Click);
-            this.btnSave.MouseEnter += new System.EventHandler(this.btnSave_MouseEnter);
-            this.btnSave.MouseLeave += new System.EventHandler(this.btnSave_MouseLeave);
             // 
             // panel6
             // 
@@ -382,6 +325,64 @@
             this.name.Name = "name";
             this.name.Size = new System.Drawing.Size(245, 22);
             this.name.TabIndex = 20;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(120, 275);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(67, 16);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "Họ và tên";
+            // 
+            // gender
+            // 
+            this.gender.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.gender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.gender.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gender.Font = new System.Drawing.Font("Arial", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gender.FormattingEnabled = true;
+            this.gender.Location = new System.Drawing.Point(576, 186);
+            this.gender.Name = "gender";
+            this.gender.Size = new System.Drawing.Size(136, 27);
+            this.gender.TabIndex = 22;
+            // 
+            // dateTimeBirthDay
+            // 
+            this.dateTimeBirthDay.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dateTimeBirthDay.CalendarMonthBackground = System.Drawing.SystemColors.ControlLight;
+            this.dateTimeBirthDay.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
+            this.dateTimeBirthDay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimeBirthDay.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.dateTimeBirthDay.Location = new System.Drawing.Point(573, 466);
+            this.dateTimeBirthDay.Name = "dateTimeBirthDay";
+            this.dateTimeBirthDay.Size = new System.Drawing.Size(136, 29);
+            this.dateTimeBirthDay.TabIndex = 21;
+            this.dateTimeBirthDay.ValueChanged += new System.EventHandler(this.dateTimeBirthDay_ValueChanged);
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.Transparent;
+            this.btnSave.BackgroundImage = global::GUI.Properties.Resources.btn;
+            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnSave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnSave.Location = new System.Drawing.Point(1170, 743);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(170, 52);
+            this.btnSave.TabIndex = 21;
+            this.btnSave.Text = "Lưu";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.button4_Click);
+            this.btnSave.MouseEnter += new System.EventHandler(this.btnSave_MouseEnter);
+            this.btnSave.MouseLeave += new System.EventHandler(this.btnSave_MouseLeave);
             // 
             // button1
             // 

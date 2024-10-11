@@ -11,13 +11,16 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class boxFoodManager : Form
+    public partial class boxFoodManager : UserControl
     {
+        public bool isSelected = false;
+        string idFood;
         public boxFoodManager()
         {
             InitializeComponent();
         }
-
+        
+       
         private void lblFoodID_Click(object sender, EventArgs e)
         {
 
@@ -44,5 +47,9 @@ namespace GUI
             path.CloseFigure();
             pnlFoodItem.Region = new Region(path);
         }
+        public string IdFood {  get=> idFood; set=> idFood = value; }
+        public string Title { get=> textNameFood.Text; set=> textNameFood.Text = value; }
+        public string Cost { get => textPriceValue.Text;set=> textPriceValue.Text = value; }
+        public Image Icon { get => picFood.Image; set => picFood.Image = value; }
     }
 }
