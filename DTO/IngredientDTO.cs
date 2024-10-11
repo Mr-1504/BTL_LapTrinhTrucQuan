@@ -9,12 +9,12 @@ namespace DTO
         private string _ingredientUses;
         private string _ingredientRequirement;
         private string _ingredientContraindication;
-        private int _ingredientQuantity;
+        private decimal _ingredientQuantity;
         private Unit _ingredientUnit;
         private Status _ingredientStatus;
 
         public IngredientDTO(string ingredientName, Unit unit, string ingredientUses, string ingredientRequirement,
-                string ingredientContraindication, int ingredientQuantity, Status status)
+                string ingredientContraindication, decimal ingredientQuantity, Status status)
         {
             IngredientName = ingredientName;
             IngredientUses = ingredientUses;
@@ -26,7 +26,7 @@ namespace DTO
         }
 
         public IngredientDTO(string ingredientId, string ingredientName, Unit unit, string ingredientUses, 
-            string ingredientRequirement, string ingredientContraindication, int ingredientQuantity, Status status)
+            string ingredientRequirement, string ingredientContraindication, decimal ingredientQuantity, Status status)
             : this(ingredientName, unit, ingredientUses, ingredientRequirement, ingredientContraindication, ingredientQuantity, status)
         {
             IngredientId = ingredientId;
@@ -37,7 +37,7 @@ namespace DTO
         public string IngredientUses { get => _ingredientUses; set => _ingredientUses = value; }
         public string IngredientRequirement { get => _ingredientRequirement; set => _ingredientRequirement = value; }
         public string IngredientContraindication { get => _ingredientContraindication; set => _ingredientContraindication = value; }
-        public int IngredientQuantity { get => _ingredientQuantity; set => _ingredientQuantity = value; }
+        public decimal IngredientQuantity { get => _ingredientQuantity; set => _ingredientQuantity = value; }
         public Unit IngredientUnit { get => _ingredientUnit; set => _ingredientUnit = value; }
         public Status IngredientStatus { get => _ingredientStatus; set => _ingredientStatus = value; }
     }
