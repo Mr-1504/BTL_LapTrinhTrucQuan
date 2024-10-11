@@ -89,6 +89,7 @@
     </Compile>
     <Compile Include="HomeManager.Designer.cs">
       <DependentUpon>HomeManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="FoodUpdatedEventArgs.cs" />
     <Compile Include="frmListOrders.cs">
       <SubType>Form</SubType>
@@ -201,6 +202,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HomeManager.resx">
       <DependentUpon>HomeManager.cs</DependentUpon>
+    </EmbeddedResource> 
     <EmbeddedResource Include="frmListOrders.resx">
       <DependentUpon>frmListOrders.cs</DependentUpon>
     </EmbeddedResource>
