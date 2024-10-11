@@ -16,9 +16,7 @@ namespace GUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new SettingForm("LT20240001"));
-            Application.Run(new frmListOrders());
-            //Application.Run(new frmMenuOrder()); ;
+            Application.Run(new FoodManager());
         }
     }
 }
