@@ -160,7 +160,7 @@ namespace DAL
                     :
                         $"select NgayNhap from HoaDonNhap where MaHoaDonNhap = N'{key}'";
                 DataTable dt = SqlHelper.ExecuteReader(query, new object[] { });
-                return dt != null ? dt.Rows[0][0].ToString() : string.Empty;
+                return (dt != null && dt.Rows.Count > 0) ? dt.Rows[0][0].ToString() : string.Empty;
             }
         }
     }

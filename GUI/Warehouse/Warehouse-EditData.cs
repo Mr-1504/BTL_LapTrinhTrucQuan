@@ -5,6 +5,8 @@ using Utilities;
 using System.Data;
 using System.Configuration;
 using System.Linq;
+using System.Runtime.InteropServices;
+using System.Collections.Generic;
 
 namespace GUI.Warehouse
 {
@@ -116,6 +118,12 @@ namespace GUI.Warehouse
                 default: return null;
             }
         }
+        private void ef_evtFieldValueChange(object sender, EventArgs e) // when EF field have its value changed
+        {
+            ef_funcVisualizeFieldValueChange(sender);
+            ef_funcInformantUpdate();
+        }
+            //  > text-driven start
         private void ef_funcSelectingRow(DataGridViewRow selectedRow)
         {
             switch (selectedTableName)
@@ -141,35 +149,41 @@ namespace GUI.Warehouse
                     ef_HDN_txbMaNV.Text = selectedRow.Cells[1].Value.ToString();
                     ef_HDN_txbMaNCC.Text = selectedRow.Cells[2].Value.ToString();
                     ef_HDN_dtpNgayNhap.Value = (DateTime)selectedRow.Cells[3].Value;
-                    ef_funcInformantUpdate();
+                    ef_HDN_lbInformantNV.Text = BLL_InformantCheck(ef_HDN_txbMaNV.Text, IFM_NHANVIEN);
+                    ef_HDN_lbInformantNCC.Text = BLL_InformantCheck(ef_HDN_txbMaNCC.Text, IFM_NHACUNGCAP);
                     break;
                 case "ChiTietHoaDonNhap":
                     ef_CTHDN_txbMaHDN.Text = selectedRow.Cells[0].Value.ToString();
                     ef_CTHDN_txbMaNL.Text = selectedRow.Cells[1].Value.ToString();
                     ef_CTHDN_txbSLN.Text = selectedRow.Cells[2].Value.ToString();
                     ef_CTHDN_txbDG.Text = selectedRow.Cells[3].Value.ToString();
-                    ef_funcInformantUpdate();
+                    ef_CTHDN_lbInformantNL.Text = BLL_InformantCheck(ef_CTHDN_txbMaNL.Text, IFM_NGUYENLIEU);
+                    ef_CTHDN_lbInformantDV.Text = BLL_InformantCheck(ef_CTHDN_txbMaNL.Text, IFM_DONVI);
+                    ef_CTHDN_lbInformantNN.Text = BLL_InformantCheck(ef_CTHDN_txbMaHDN.Text, IFM_NGAYNHAP);
                     break;
             }
             ef_funcVisualReset();
         }
-        private void ef_funcInformantUpdate()
+            // informant section (tf so dumb, optimize code if needed)
+        private void ef_funcInformantUpdate() // update informant value on panel
         {
-            if (selectedTableName == "HoaDonNhap")
+            switch (selectedTableName)
             {
-                ef_HDN_lbInformantNV.Text = BLL_InformantCheck(ef_HDN_txbMaNV.Text, IFM_NHANVIEN);
-                ef_HDN_lbInformantNCC.Text = BLL_InformantCheck(ef_HDN_txbMaNCC.Text, IFM_NHACUNGCAP);
-            }
-            else
-            {
-                ef_CTHDN_lbInformantNL.Text = BLL_InformantCheck(ef_CTHDN_txbMaNL.Text, IFM_NGUYENLIEU);
-                ef_CTHDN_lbInformantDV.Text = BLL_InformantCheck(ef_CTHDN_txbMaNL.Text, IFM_DONVI);
-                ef_CTHDN_lbInformantNN.Text = BLL_InformantCheck(ef_CTHDN_txbMaHDN.Text, IFM_NGAYNHAP);
+                case "HoaDonNhap": 
+                    ef_HDN_lbInformantNV.Text = BLL_InformantCheck(ef_HDN_txbMaNV.Text, IFM_NHANVIEN);
+                    ef_HDN_lbInformantNCC.Text = BLL_InformantCheck(ef_HDN_txbMaNCC.Text, IFM_NHACUNGCAP); 
+                    break;
+                case "ChiTietHoaDonNhap": 
+                    ef_CTHDN_lbInformantNL.Text = BLL_InformantCheck(ef_CTHDN_txbMaNL.Text, IFM_NGUYENLIEU);
+                    ef_CTHDN_lbInformantDV.Text = BLL_InformantCheck(ef_CTHDN_txbMaNL.Text, IFM_DONVI);
+                    ef_CTHDN_lbInformantNN.Text = BLL_InformantCheck(ef_CTHDN_txbMaHDN.Text, IFM_NGAYNHAP);
+                    break;
             }
         }
-        private void ef_eventFieldChangedValue(object sender, EventArgs e)
+            //  > visual-driven start
+        private void ef_funcVisualizeFieldValueChange(object changedField)
         {
-            Panel parentPn = ((Control)sender).Parent as Panel;
+            Panel parentPn = ((Control)changedField).Parent as Panel;
             if (parentPn.BackgroundImage.Height == 80)
                 parentPn.BackgroundImage = Properties.Resources.field_multi_valuechanged_420x80;
             else
@@ -177,11 +191,11 @@ namespace GUI.Warehouse
         }
         private void ef_funcVisualReset()
         {
-            foreach(Control ctr in ef_funcGetCurrentActiveForm().Controls)
+            foreach (Control ctr in ef_funcGetCurrentActiveForm().Controls)
             {
                 if (ctr is Panel && ctr.Tag == null)
                 {
-                    if (ctr.BackgroundImage.Height == 40) 
+                    if (ctr.BackgroundImage.Height < 80)
                         ctr.BackgroundImage = Properties.Resources.field_single_editable_420x40;
                     else
                         ctr.BackgroundImage = Properties.Resources.field_multi_editable_420x80;
@@ -215,21 +229,26 @@ namespace GUI.Warehouse
                     ef_HDN_txbMaNV.Text = string.Empty;
                     ef_HDN_txbMaNCC.Text = string.Empty;
                     ef_HDN_dtpNgayNhap.Value = DateTime.Parse("1-1-1900");
-                    //  them phan cho Informant
+                    ef_HDN_lbInformantNV.Text = string.Empty;
+                    ef_HDN_lbInformantNCC.Text = string.Empty;
                     break;
                 case "ChiTietHoaDonNhap":
                     ef_CTHDN_txbMaHDN.Text = string.Empty;
                     ef_CTHDN_txbMaNL.Text = string.Empty;
                     ef_CTHDN_txbSLN.Text = string.Empty;
                     ef_CTHDN_txbDG.Text = string.Empty;
-                    //  them phan cho Informant
+                    ef_CTHDN_lbInformantDV.Text = string.Empty;
+                    ef_CTHDN_lbInformantNL.Text = string.Empty;
+                    ef_CTHDN_lbInformantNN.Text = string.Empty;
                     break;
             }
         }
         private void ef_btnReset_Click(object sender, EventArgs e)
         {
             ef_funcFieldTextReset();
+            ef_funcVisualReset();
         }
+
         //  ^ end
 
 
