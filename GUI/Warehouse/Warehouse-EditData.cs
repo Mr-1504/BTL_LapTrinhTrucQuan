@@ -3,6 +3,8 @@ using System.Windows.Forms;
 using static BLL.WarehouseBLL.EditData;
 using Utilities;
 using System.Data;
+using System.Configuration;
+using System.Linq;
 
 namespace GUI.Warehouse
 {
@@ -100,7 +102,18 @@ namespace GUI.Warehouse
                 default: break;
             }
         }
-        //  part to show data to panel
+        //  part to control panel's text/graphics
+        private Panel ef_funcGetCurrentActiveForm()
+        {
+            switch (selectedTableName)
+            {
+                case "NguyenLieu": return ef_pnNguyenLieu;
+                case "NhaCungCap": return ef_pnNhaCungCap;
+                case "HoaDonNhap": return ef_pnHoaDonNhap;
+                case "ChiTietHoaDonNhap": return ef_pnChiTietHoaDonNhap;
+                default: return null;
+            }
+        }
         private void ef_funcSelectingRow(DataGridViewRow selectedRow)
         {
             switch (selectedTableName)
@@ -136,6 +149,7 @@ namespace GUI.Warehouse
                     ef_funcInformantUpdate();
                     break;
             }
+            ef_funcVisualReset();
         }
         private void ef_funcInformantUpdate()
         {
@@ -152,9 +166,25 @@ namespace GUI.Warehouse
         }
         private void ef_eventFieldChangedValue(object sender, EventArgs e)
         {
-            // do this bitch
+            Panel parentPn = ((Control)sender).Parent as Panel;
+            if (parentPn.BackgroundImage.Height == 80)
+                parentPn.BackgroundImage = Properties.Resources.field_multi_valuechanged_420x80;
+            else
+                parentPn.BackgroundImage = Properties.Resources.field_single_valuechanged_420x40;
         }
-
+        private void ef_funcVisualReset()
+        {
+            foreach(Control ctr in ef_funcGetCurrentActiveForm().Controls)
+            {
+                if (ctr is Panel && ctr.Tag == null)
+                {
+                    if (ctr.BackgroundImage.Height == 40) 
+                        ctr.BackgroundImage = Properties.Resources.field_single_editable_420x40;
+                    else
+                        ctr.BackgroundImage = Properties.Resources.field_multi_editable_420x80;
+                }
+            }
+        }
         //  > button pushed section
         private void ef_btnReset_Click(object sender, EventArgs e)
         {

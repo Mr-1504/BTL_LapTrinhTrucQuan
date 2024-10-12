@@ -240,6 +240,7 @@
             this.ef_CTHDN_txbMaHDN.Size = new System.Drawing.Size(390, 22);
             this.ef_CTHDN_txbMaHDN.TabIndex = 3;
             this.ef_CTHDN_txbMaHDN.Text = "HDN0023";
+            this.ef_CTHDN_txbMaHDN.TextChanged += new System.EventHandler(this.ef_eventFieldChangedValue);
             // 
             // label17
             // 
@@ -271,6 +272,7 @@
             this.ef_CTHDN_txbSLN.Size = new System.Drawing.Size(390, 22);
             this.ef_CTHDN_txbSLN.TabIndex = 1;
             this.ef_CTHDN_txbSLN.Text = "10.00";
+            this.ef_CTHDN_txbSLN.TextChanged += new System.EventHandler(this.ef_eventFieldChangedValue);
             // 
             // ef_CTHDN_pnDG
             // 
@@ -291,6 +293,7 @@
             this.ef_CTHDN_txbDG.Size = new System.Drawing.Size(390, 22);
             this.ef_CTHDN_txbDG.TabIndex = 2;
             this.ef_CTHDN_txbDG.Text = "1000.00";
+            this.ef_CTHDN_txbDG.TextChanged += new System.EventHandler(this.ef_eventFieldChangedValue);
             // 
             // label22
             // 
@@ -322,6 +325,7 @@
             this.ef_CTHDN_txbMaNL.Size = new System.Drawing.Size(390, 22);
             this.ef_CTHDN_txbMaNL.TabIndex = 2;
             this.ef_CTHDN_txbMaNL.Text = "THI0002";
+            this.ef_CTHDN_txbMaNL.TextChanged += new System.EventHandler(this.ef_eventFieldChangedValue);
             // 
             // label23
             // 
@@ -392,6 +396,7 @@
             this.ef_HDN_pnMaHD.Name = "ef_HDN_pnMaHD";
             this.ef_HDN_pnMaHD.Size = new System.Drawing.Size(420, 40);
             this.ef_HDN_pnMaHD.TabIndex = 4;
+            this.ef_HDN_pnMaHD.Tag = "readonly";
             // 
             // ef_HDN_lbMaHD
             // 
@@ -434,6 +439,7 @@
             this.ef_HDN_txbMaNCC.Size = new System.Drawing.Size(390, 22);
             this.ef_HDN_txbMaNCC.TabIndex = 1;
             this.ef_HDN_txbMaNCC.Text = "CC20240002";
+            this.ef_HDN_txbMaNCC.TextChanged += new System.EventHandler(this.ef_eventFieldChangedValue);
             // 
             // label18
             // 
@@ -465,6 +471,7 @@
             this.ef_HDN_txbMaNV.Size = new System.Drawing.Size(390, 22);
             this.ef_HDN_txbMaNV.TabIndex = 0;
             this.ef_HDN_txbMaNV.Text = "KH20240001";
+            this.ef_HDN_txbMaNV.TextChanged += new System.EventHandler(this.ef_eventFieldChangedValue);
             // 
             // label19
             // 
@@ -538,6 +545,7 @@
             this.ef_NCC_txbDT.Size = new System.Drawing.Size(390, 22);
             this.ef_NCC_txbDT.TabIndex = 2;
             this.ef_NCC_txbDT.Text = "0123456789";
+            this.ef_NCC_txbDT.TextChanged += new System.EventHandler(this.ef_eventFieldChangedValue);
             // 
             // label8
             // 
@@ -559,6 +567,7 @@
             this.ef_NCC_pnMa.Name = "ef_NCC_pnMa";
             this.ef_NCC_pnMa.Size = new System.Drawing.Size(420, 40);
             this.ef_NCC_pnMa.TabIndex = 4;
+            this.ef_NCC_pnMa.Tag = "readonly";
             // 
             // ef_NCC_lbMa
             // 
@@ -601,6 +610,7 @@
             this.ef_NCC_txbDC.Size = new System.Drawing.Size(390, 22);
             this.ef_NCC_txbDC.TabIndex = 1;
             this.ef_NCC_txbDC.Text = "đâu đó";
+            this.ef_NCC_txbDC.TextChanged += new System.EventHandler(this.ef_eventFieldChangedValue);
             // 
             // ef_NCC_pnTT
             // 
@@ -624,6 +634,7 @@
             this.ef_NCC_rdbDeactive.TabStop = true;
             this.ef_NCC_rdbDeactive.Text = "Ngừng hợp tác";
             this.ef_NCC_rdbDeactive.UseVisualStyleBackColor = true;
+            this.ef_NCC_rdbDeactive.CheckedChanged += new System.EventHandler(this.ef_eventFieldChangedValue);
             // 
             // ef_NCC_rdbActive
             // 
@@ -636,6 +647,7 @@
             this.ef_NCC_rdbActive.TabStop = true;
             this.ef_NCC_rdbActive.Text = "Hoạt động";
             this.ef_NCC_rdbActive.UseVisualStyleBackColor = true;
+            this.ef_NCC_rdbActive.CheckedChanged += new System.EventHandler(this.ef_eventFieldChangedValue);
             // 
             // label13
             // 
@@ -667,6 +679,7 @@
             this.ef_NCC_txbTen.Size = new System.Drawing.Size(390, 22);
             this.ef_NCC_txbTen.TabIndex = 0;
             this.ef_NCC_txbTen.Text = "Nhà vườn EatOnionFullMouth";
+            this.ef_NCC_txbTen.TextChanged += new System.EventHandler(this.ef_eventFieldChangedValue);
             // 
             // label14
             // 
@@ -722,6 +735,7 @@
             this.ef_NL_pnMa.Name = "ef_NL_pnMa";
             this.ef_NL_pnMa.Size = new System.Drawing.Size(420, 40);
             this.ef_NL_pnMa.TabIndex = 4;
+            this.ef_NL_pnMa.Tag = "readonly";
             // 
             // ef_NL_lbMa
             // 
@@ -775,6 +789,7 @@
             this.ef_NL_txbDVT.Size = new System.Drawing.Size(390, 22);
             this.ef_NL_txbDVT.TabIndex = 1;
             this.ef_NL_txbDVT.Text = "Kg";
+            this.ef_NL_txbDVT.TextChanged += new System.EventHandler(this.ef_eventFieldChangedValue);
             // 
             // ef_NL_pnCD
             // 
@@ -795,6 +810,7 @@
             this.ef_NL_rtbCD.Size = new System.Drawing.Size(390, 45);
             this.ef_NL_rtbCD.TabIndex = 0;
             this.ef_NL_rtbCD.Text = "Ăn được\nlà được";
+            this.ef_NL_rtbCD.TextChanged += new System.EventHandler(this.ef_eventFieldChangedValue);
             // 
             // ef_NL_pnSL
             // 
@@ -815,6 +831,7 @@
             this.ef_NL_txbSL.Size = new System.Drawing.Size(390, 22);
             this.ef_NL_txbSL.TabIndex = 2;
             this.ef_NL_txbSL.Text = "10.00";
+            this.ef_NL_txbSL.TextChanged += new System.EventHandler(this.ef_eventFieldChangedValue);
             // 
             // label2
             // 
@@ -846,6 +863,7 @@
             this.ef_NL_rtbYC.Size = new System.Drawing.Size(390, 45);
             this.ef_NL_rtbYC.TabIndex = 1;
             this.ef_NL_rtbYC.Text = "Không để công an\ntóm được";
+            this.ef_NL_rtbYC.TextChanged += new System.EventHandler(this.ef_eventFieldChangedValue);
             // 
             // ef_NL_pnCCD
             // 
@@ -866,6 +884,7 @@
             this.ef_NL_rtbCCD.Size = new System.Drawing.Size(390, 45);
             this.ef_NL_rtbCCD.TabIndex = 2;
             this.ef_NL_rtbCCD.Text = "Người sợ bị\nbớ";
+            this.ef_NL_rtbCCD.TextChanged += new System.EventHandler(this.ef_eventFieldChangedValue);
             // 
             // ef_NL_pnTen
             // 
@@ -885,7 +904,7 @@
             this.ef_NL_txbTen.Name = "ef_NL_txbTen";
             this.ef_NL_txbTen.Size = new System.Drawing.Size(390, 22);
             this.ef_NL_txbTen.TabIndex = 0;
-            this.ef_NL_txbTen.Text = "Thịt voi";
+            this.ef_NL_txbTen.TextChanged += new System.EventHandler(this.ef_eventFieldChangedValue);
             // 
             // label1
             // 
