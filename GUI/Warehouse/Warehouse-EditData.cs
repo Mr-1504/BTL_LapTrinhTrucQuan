@@ -126,16 +126,33 @@ namespace GUI.Warehouse
                     ef_HDN_txbMaNV.Text = selectedRow.Cells[1].Value.ToString();
                     ef_HDN_txbMaNCC.Text = selectedRow.Cells[2].Value.ToString();
                     ef_HDN_dtpNgayNhap.Value = (DateTime)selectedRow.Cells[3].Value;
-                    //  them phan cho Informant
+                    ef_funcInformantUpdate();
                     break;
                 case "ChiTietHoaDonNhap":
                     ef_CTHDN_txbMaHDN.Text = selectedRow.Cells[0].Value.ToString();
                     ef_CTHDN_txbMaNL.Text = selectedRow.Cells[1].Value.ToString();
                     ef_CTHDN_txbSLN.Text = selectedRow.Cells[2].Value.ToString();
                     ef_CTHDN_txbDG.Text = selectedRow.Cells[3].Value.ToString();
-                    //  them phan cho Informant
+                    ef_funcInformantUpdate();
                     break;
             }
+        }
+        private void ef_funcInformantUpdate()
+        {
+            if (selectedTableName == "HoaDonNhap")
+            {
+                ef_HDN_lbInformantNV.Text = BLL_InformantCheck(ef_HDN_txbMaNV.Text, IFM_NHANVIEN);
+                ef_HDN_lbInformantNCC.Text = BLL_InformantCheck(ef_HDN_txbMaNCC.Text, IFM_NHACUNGCAP);
+            }
+            else
+            {
+                ef_CTHDN_lbInformantNL.Text = BLL_InformantCheck(ef_CTHDN_txbMaNL.Text, IFM_NGUYENLIEU);
+                ef_CTHDN_lbInformantDV.Text = BLL_InformantCheck(ef_CTHDN_txbMaNL.Text, IFM_DONVI);
+            }
+        }
+        private void ef_eventFieldChangedValue(object sender, EventArgs e)
+        {
+            // do this bitch
         }
 
         //  > button pushed section

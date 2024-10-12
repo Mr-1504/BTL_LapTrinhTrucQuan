@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using static DAL.WarehouseDAL;
-using Utilities;
 using DAL;
+using Utilities;
 
 namespace BLL
 {
@@ -81,6 +80,15 @@ namespace BLL
             public static DataTable BLL_SearchInTable(string keyword)
             {
                 return WarehouseDAL.EditData.DAL_SearchInTable(keyword);
+            }
+
+            public const int IFM_NHANVIEN = 0;
+            public const int IFM_NHACUNGCAP = 1;
+            public const int IFM_NGUYENLIEU = 2;
+            public const int IFM_DONVI = 3;
+            public static string BLL_InformantCheck(string key, int informantValue)
+            {
+                return WarehouseDAL.EditData.DAL_InformantCheck(key, informantValue);
             }
         }
     }

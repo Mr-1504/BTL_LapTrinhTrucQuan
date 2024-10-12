@@ -50,8 +50,8 @@
             this.label23 = new System.Windows.Forms.Label();
             this.ef_pnHoaDonNhap = new System.Windows.Forms.Panel();
             this.ef_HDN_dtpNgayNhap = new System.Windows.Forms.DateTimePicker();
-            this.ef_HDN_lbInfomantNCC = new System.Windows.Forms.Label();
-            this.ef_HDN_lbInfomantNV = new System.Windows.Forms.Label();
+            this.ef_HDN_lbInformantNCC = new System.Windows.Forms.Label();
+            this.ef_HDN_lbInformantNV = new System.Windows.Forms.Label();
             this.ef_HDN_pnMaHD = new System.Windows.Forms.Panel();
             this.ef_HDN_lbMaHD = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -338,8 +338,8 @@
             // 
             this.ef_pnHoaDonNhap.BackColor = System.Drawing.Color.White;
             this.ef_pnHoaDonNhap.Controls.Add(this.ef_HDN_dtpNgayNhap);
-            this.ef_pnHoaDonNhap.Controls.Add(this.ef_HDN_lbInfomantNCC);
-            this.ef_pnHoaDonNhap.Controls.Add(this.ef_HDN_lbInfomantNV);
+            this.ef_pnHoaDonNhap.Controls.Add(this.ef_HDN_lbInformantNCC);
+            this.ef_pnHoaDonNhap.Controls.Add(this.ef_HDN_lbInformantNV);
             this.ef_pnHoaDonNhap.Controls.Add(this.ef_HDN_pnMaHD);
             this.ef_pnHoaDonNhap.Controls.Add(this.label16);
             this.ef_pnHoaDonNhap.Controls.Add(this.ef_HDN_pnMaNCC);
@@ -363,25 +363,25 @@
             this.ef_HDN_dtpNgayNhap.Size = new System.Drawing.Size(420, 29);
             this.ef_HDN_dtpNgayNhap.TabIndex = 0;
             // 
-            // ef_HDN_lbInfomantNCC
+            // ef_HDN_lbInformantNCC
             // 
-            this.ef_HDN_lbInfomantNCC.AutoSize = true;
-            this.ef_HDN_lbInfomantNCC.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ef_HDN_lbInfomantNCC.Location = new System.Drawing.Point(182, 186);
-            this.ef_HDN_lbInfomantNCC.Name = "ef_HDN_lbInfomantNCC";
-            this.ef_HDN_lbInfomantNCC.Size = new System.Drawing.Size(163, 13);
-            this.ef_HDN_lbInfomantNCC.TabIndex = 13;
-            this.ef_HDN_lbInfomantNCC.Text = "Nhà vườn EatOnionFullMouth";
+            this.ef_HDN_lbInformantNCC.AutoSize = true;
+            this.ef_HDN_lbInformantNCC.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ef_HDN_lbInformantNCC.Location = new System.Drawing.Point(182, 186);
+            this.ef_HDN_lbInformantNCC.Name = "ef_HDN_lbInformantNCC";
+            this.ef_HDN_lbInformantNCC.Size = new System.Drawing.Size(163, 13);
+            this.ef_HDN_lbInformantNCC.TabIndex = 13;
+            this.ef_HDN_lbInformantNCC.Text = "Nhà vườn EatOnionFullMouth";
             // 
-            // ef_HDN_lbInfomantNV
+            // ef_HDN_lbInformantNV
             // 
-            this.ef_HDN_lbInfomantNV.AutoSize = true;
-            this.ef_HDN_lbInfomantNV.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ef_HDN_lbInfomantNV.Location = new System.Drawing.Point(181, 114);
-            this.ef_HDN_lbInfomantNV.Name = "ef_HDN_lbInfomantNV";
-            this.ef_HDN_lbInfomantNV.Size = new System.Drawing.Size(99, 13);
-            this.ef_HDN_lbInfomantNV.TabIndex = 12;
-            this.ef_HDN_lbInfomantNV.Text = "Hùng Đình Toàng";
+            this.ef_HDN_lbInformantNV.AutoSize = true;
+            this.ef_HDN_lbInformantNV.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ef_HDN_lbInformantNV.Location = new System.Drawing.Point(181, 114);
+            this.ef_HDN_lbInformantNV.Name = "ef_HDN_lbInformantNV";
+            this.ef_HDN_lbInformantNV.Size = new System.Drawing.Size(99, 13);
+            this.ef_HDN_lbInformantNV.TabIndex = 12;
+            this.ef_HDN_lbInformantNV.Text = "Hùng Đình Toàng";
             // 
             // ef_HDN_pnMaHD
             // 
@@ -1217,8 +1217,8 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.DateTimePicker ef_HDN_dtpNgayNhap;
-        private System.Windows.Forms.Label ef_HDN_lbInfomantNCC;
-        private System.Windows.Forms.Label ef_HDN_lbInfomantNV;
+        private System.Windows.Forms.Label ef_HDN_lbInformantNCC;
+        private System.Windows.Forms.Label ef_HDN_lbInformantNV;
         private System.Windows.Forms.Panel ef_pnChiTietHoaDonNhap;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel ef_CTHDN_pnMaHDN;
