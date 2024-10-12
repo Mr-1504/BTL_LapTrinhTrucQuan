@@ -10,8 +10,9 @@ namespace GUI.PurchasedIngredient
         private InputDetail inputDetail;
         private InvoiceDtail invoice;
         private BaseForm form;
+        private PurchasedList _purchasedList;
         private bool status;
-        public DetailPurchaseedIngredient(string employeeId, BaseForm baseForm)
+        public DetailPurchaseedIngredient(string employeeId, BaseForm baseForm, PurchasedList purchasedList)
         {
             InitializeComponent();
             inputDetail = new InputDetail(employeeId);
@@ -24,7 +25,13 @@ namespace GUI.PurchasedIngredient
             ResumeLayout();
 
             form = baseForm;
+            _purchasedList = purchasedList;
             status = false;
+        }
+        private void Reset()
+        {
+            inputDetail.Reset();
+            btnReturn_Click(btnReturn, new EventArgs());
         }
 
         private void btnContinue_Click(object sender, EventArgs e)
@@ -38,13 +45,14 @@ namespace GUI.PurchasedIngredient
                     picStep2Status.Image = Properties.Resources.step2Wait;
                     btnContinue.BackgroundImage = Properties.Resources.btnComplete;
                     btnReturn.Visible = true;
-                    invoice = new InvoiceDtail(inputDetail.GetInvoice(), inputDetail.GetInvoiceDetail(), inputDetail.GetData(), inputDetail.Total);
+                    invoice = new InvoiceDtail(inputDetail.GetInvoice(), inputDetail.GetInvoiceDetail(), inputDetail.GetData());
                     foreach (Control control in invoice.Controls)
                     {
                         control.MouseEnter += form.Menu_MouseLeave;
                     }
                     invoice.Location = new Point(0, 90);
                     Controls.Add(invoice);
+                    invoice.SetTotal();
                     invoice.BringToFront();
                     picWarnning.Visible = true ;
                     status = true;
@@ -75,6 +83,11 @@ namespace GUI.PurchasedIngredient
         {
             picArrowRight.Focus();
             DialogResult result = new MessageForm("Bạn chắc chắn hủy yêu cầu thao tác thêm đơn bán, hành động sẽ không thể hoàn tác?", "Xác nhận", 2).DialogResult;
+            if (result == DialogResult.Yes)
+            {
+                Reset();   
+                _purchasedList.BringToFront();
+            }
         }
 
         private void btnReturn_Click(object sender, EventArgs e)
