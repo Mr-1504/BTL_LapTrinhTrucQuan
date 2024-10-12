@@ -93,6 +93,8 @@ namespace GUI.Warehouse
         private void ef_funcUpdate()
         {
             MakeDefaultDisplayProperties();
+            ef_funcFieldTextReset();
+            ef_funcVisualReset();
             switch (selectedTableName)
             {
                 case "NguyenLieu": ef_funcActivateForm(ef_pnNguyenLieu); break;
@@ -187,7 +189,7 @@ namespace GUI.Warehouse
             }
         }
         //  > button pushed section
-        private void ef_btnReset_Click(object sender, EventArgs e)
+        private void ef_funcFieldTextReset()
         {
             switch (selectedTableName)
             {
@@ -223,6 +225,10 @@ namespace GUI.Warehouse
                     //  them phan cho Informant
                     break;
             }
+        }
+        private void ef_btnReset_Click(object sender, EventArgs e)
+        {
+            ef_funcFieldTextReset();
         }
         //  ^ end
 

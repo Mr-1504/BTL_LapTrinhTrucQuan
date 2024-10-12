@@ -241,7 +241,6 @@
             this.ef_CTHDN_txbMaHDN.Name = "ef_CTHDN_txbMaHDN";
             this.ef_CTHDN_txbMaHDN.Size = new System.Drawing.Size(390, 22);
             this.ef_CTHDN_txbMaHDN.TabIndex = 3;
-            this.ef_CTHDN_txbMaHDN.Text = "HDN0023";
             this.ef_CTHDN_txbMaHDN.TextChanged += new System.EventHandler(this.ef_eventFieldChangedValue);
             // 
             // label17
@@ -273,7 +272,6 @@
             this.ef_CTHDN_txbSLN.Name = "ef_CTHDN_txbSLN";
             this.ef_CTHDN_txbSLN.Size = new System.Drawing.Size(390, 22);
             this.ef_CTHDN_txbSLN.TabIndex = 1;
-            this.ef_CTHDN_txbSLN.Text = "10.00";
             this.ef_CTHDN_txbSLN.TextChanged += new System.EventHandler(this.ef_eventFieldChangedValue);
             // 
             // ef_CTHDN_pnDG
@@ -294,7 +292,6 @@
             this.ef_CTHDN_txbDG.Name = "ef_CTHDN_txbDG";
             this.ef_CTHDN_txbDG.Size = new System.Drawing.Size(390, 22);
             this.ef_CTHDN_txbDG.TabIndex = 2;
-            this.ef_CTHDN_txbDG.Text = "1000.00";
             this.ef_CTHDN_txbDG.TextChanged += new System.EventHandler(this.ef_eventFieldChangedValue);
             // 
             // label22
@@ -326,7 +323,6 @@
             this.ef_CTHDN_txbMaNL.Name = "ef_CTHDN_txbMaNL";
             this.ef_CTHDN_txbMaNL.Size = new System.Drawing.Size(390, 22);
             this.ef_CTHDN_txbMaNL.TabIndex = 2;
-            this.ef_CTHDN_txbMaNL.Text = "THI0002";
             this.ef_CTHDN_txbMaNL.TextChanged += new System.EventHandler(this.ef_eventFieldChangedValue);
             // 
             // label23
@@ -375,9 +371,8 @@
             this.ef_HDN_lbInformantNCC.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ef_HDN_lbInformantNCC.Location = new System.Drawing.Point(182, 186);
             this.ef_HDN_lbInformantNCC.Name = "ef_HDN_lbInformantNCC";
-            this.ef_HDN_lbInformantNCC.Size = new System.Drawing.Size(163, 13);
+            this.ef_HDN_lbInformantNCC.Size = new System.Drawing.Size(0, 13);
             this.ef_HDN_lbInformantNCC.TabIndex = 13;
-            this.ef_HDN_lbInformantNCC.Text = "Nhà vườn EatOnionFullMouth";
             // 
             // ef_HDN_lbInformantNV
             // 
@@ -385,9 +380,8 @@
             this.ef_HDN_lbInformantNV.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ef_HDN_lbInformantNV.Location = new System.Drawing.Point(181, 114);
             this.ef_HDN_lbInformantNV.Name = "ef_HDN_lbInformantNV";
-            this.ef_HDN_lbInformantNV.Size = new System.Drawing.Size(99, 13);
+            this.ef_HDN_lbInformantNV.Size = new System.Drawing.Size(0, 13);
             this.ef_HDN_lbInformantNV.TabIndex = 12;
-            this.ef_HDN_lbInformantNV.Text = "Hùng Đình Toàng";
             // 
             // ef_HDN_pnMaHD
             // 
@@ -407,9 +401,8 @@
             this.ef_HDN_lbMaHD.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ef_HDN_lbMaHD.Location = new System.Drawing.Point(10, 10);
             this.ef_HDN_lbMaHD.Name = "ef_HDN_lbMaHD";
-            this.ef_HDN_lbMaHD.Size = new System.Drawing.Size(68, 21);
+            this.ef_HDN_lbMaHD.Size = new System.Drawing.Size(0, 21);
             this.ef_HDN_lbMaHD.TabIndex = 0;
-            this.ef_HDN_lbMaHD.Text = "HD0023";
             // 
             // label16
             // 
@@ -440,7 +433,6 @@
             this.ef_HDN_txbMaNCC.Name = "ef_HDN_txbMaNCC";
             this.ef_HDN_txbMaNCC.Size = new System.Drawing.Size(390, 22);
             this.ef_HDN_txbMaNCC.TabIndex = 1;
-            this.ef_HDN_txbMaNCC.Text = "CC20240002";
             this.ef_HDN_txbMaNCC.TextChanged += new System.EventHandler(this.ef_eventFieldChangedValue);
             // 
             // label18
@@ -472,7 +464,6 @@
             this.ef_HDN_txbMaNV.Name = "ef_HDN_txbMaNV";
             this.ef_HDN_txbMaNV.Size = new System.Drawing.Size(390, 22);
             this.ef_HDN_txbMaNV.TabIndex = 0;
-            this.ef_HDN_txbMaNV.Text = "KH20240001";
             this.ef_HDN_txbMaNV.TextChanged += new System.EventHandler(this.ef_eventFieldChangedValue);
             // 
             // label19
@@ -546,7 +537,6 @@
             this.ef_NCC_txbDT.Name = "ef_NCC_txbDT";
             this.ef_NCC_txbDT.Size = new System.Drawing.Size(390, 22);
             this.ef_NCC_txbDT.TabIndex = 2;
-            this.ef_NCC_txbDT.Text = "0123456789";
             this.ef_NCC_txbDT.TextChanged += new System.EventHandler(this.ef_eventFieldChangedValue);
             // 
             // label8
@@ -578,9 +568,8 @@
             this.ef_NCC_lbMa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ef_NCC_lbMa.Location = new System.Drawing.Point(10, 10);
             this.ef_NCC_lbMa.Name = "ef_NCC_lbMa";
-            this.ef_NCC_lbMa.Size = new System.Drawing.Size(114, 21);
+            this.ef_NCC_lbMa.Size = new System.Drawing.Size(0, 21);
             this.ef_NCC_lbMa.TabIndex = 0;
-            this.ef_NCC_lbMa.Text = "NCC20040002";
             // 
             // label11
             // 
@@ -611,7 +600,6 @@
             this.ef_NCC_txbDC.Name = "ef_NCC_txbDC";
             this.ef_NCC_txbDC.Size = new System.Drawing.Size(390, 22);
             this.ef_NCC_txbDC.TabIndex = 1;
-            this.ef_NCC_txbDC.Text = "đâu đó";
             this.ef_NCC_txbDC.TextChanged += new System.EventHandler(this.ef_eventFieldChangedValue);
             // 
             // ef_NCC_pnTT
@@ -680,7 +668,6 @@
             this.ef_NCC_txbTen.Name = "ef_NCC_txbTen";
             this.ef_NCC_txbTen.Size = new System.Drawing.Size(390, 22);
             this.ef_NCC_txbTen.TabIndex = 0;
-            this.ef_NCC_txbTen.Text = "Nhà vườn EatOnionFullMouth";
             this.ef_NCC_txbTen.TextChanged += new System.EventHandler(this.ef_eventFieldChangedValue);
             // 
             // label14
@@ -746,9 +733,8 @@
             this.ef_NL_lbMa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ef_NL_lbMa.Location = new System.Drawing.Point(10, 10);
             this.ef_NL_lbMa.Name = "ef_NL_lbMa";
-            this.ef_NL_lbMa.Size = new System.Drawing.Size(69, 21);
+            this.ef_NL_lbMa.Size = new System.Drawing.Size(0, 21);
             this.ef_NL_lbMa.TabIndex = 0;
-            this.ef_NL_lbMa.Text = "THI0002";
             // 
             // label3
             // 
@@ -790,7 +776,6 @@
             this.ef_NL_txbDVT.Name = "ef_NL_txbDVT";
             this.ef_NL_txbDVT.Size = new System.Drawing.Size(390, 22);
             this.ef_NL_txbDVT.TabIndex = 1;
-            this.ef_NL_txbDVT.Text = "Kg";
             this.ef_NL_txbDVT.TextChanged += new System.EventHandler(this.ef_eventFieldChangedValue);
             // 
             // ef_NL_pnCD
@@ -811,7 +796,7 @@
             this.ef_NL_rtbCD.Name = "ef_NL_rtbCD";
             this.ef_NL_rtbCD.Size = new System.Drawing.Size(390, 45);
             this.ef_NL_rtbCD.TabIndex = 0;
-            this.ef_NL_rtbCD.Text = "Ăn được\nlà được";
+            this.ef_NL_rtbCD.Text = "";
             this.ef_NL_rtbCD.TextChanged += new System.EventHandler(this.ef_eventFieldChangedValue);
             // 
             // ef_NL_pnSL
@@ -863,7 +848,7 @@
             this.ef_NL_rtbYC.Name = "ef_NL_rtbYC";
             this.ef_NL_rtbYC.Size = new System.Drawing.Size(390, 45);
             this.ef_NL_rtbYC.TabIndex = 1;
-            this.ef_NL_rtbYC.Text = "Không để công an\ntóm được";
+            this.ef_NL_rtbYC.Text = "";
             this.ef_NL_rtbYC.TextChanged += new System.EventHandler(this.ef_eventFieldChangedValue);
             // 
             // ef_NL_pnCCD
@@ -884,7 +869,7 @@
             this.ef_NL_rtbCCD.Name = "ef_NL_rtbCCD";
             this.ef_NL_rtbCCD.Size = new System.Drawing.Size(390, 45);
             this.ef_NL_rtbCCD.TabIndex = 2;
-            this.ef_NL_rtbCCD.Text = "Người sợ bị\nbớ";
+            this.ef_NL_rtbCCD.Text = "";
             this.ef_NL_rtbCCD.TextChanged += new System.EventHandler(this.ef_eventFieldChangedValue);
             // 
             // ef_NL_pnTen
@@ -1112,9 +1097,8 @@
             this.ef_CTHDN_lbInformantNN.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ef_CTHDN_lbInformantNN.Location = new System.Drawing.Point(181, 54);
             this.ef_CTHDN_lbInformantNN.Name = "ef_CTHDN_lbInformantNN";
-            this.ef_CTHDN_lbInformantNN.Size = new System.Drawing.Size(63, 13);
+            this.ef_CTHDN_lbInformantNN.Size = new System.Drawing.Size(0, 13);
             this.ef_CTHDN_lbInformantNN.TabIndex = 14;
-            this.ef_CTHDN_lbInformantNN.Text = "10-10-1010";
             // 
             // Warehouse_EditData
             // 
