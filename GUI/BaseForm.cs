@@ -253,8 +253,8 @@ namespace GUI
                 case "Warehouse":
                     break;
                 case "Import":
-                    DetailPurchaseedIngredient detail = new DetailPurchaseedIngredient(_id, this);
-                    OpenComponent(detail);
+                    PurchasedList purchasedList = new PurchasedList(_id, this);
+                    OpenComponent(purchasedList);
                     break;
                 case "Order":
 
