@@ -357,5 +357,19 @@ namespace GUI
         {
             txtSearch.Text = txtSearch.Text.Length == 0 ? "Tìm kiếm" : txtSearch.Text;
         }
+        public void AddIntoPanel(Form form)
+        {
+            pnlContent.SuspendLayout();
+            form.MouseEnter += Menu_MouseLeave;
+            foreach (Control control in form.Controls)
+            {
+                control.MouseEnter += Menu_MouseLeave;
+            }
+            form.TopLevel = false;
+            pnlContent.Controls.Add(form);
+            form.Show();
+
+            pnlContent.ResumeLayout();
+        }
     }
 }
