@@ -112,6 +112,7 @@
             this.bf_pnSelectedTable = new System.Windows.Forms.Panel();
             this.bf_st_cbbTableList = new System.Windows.Forms.ComboBox();
             this.bf_dgvTable = new System.Windows.Forms.DataGridView();
+            this.ef_CTHDN_lbInformantNN = new System.Windows.Forms.Label();
             this.pnEditField.SuspendLayout();
             this.ef_pnChiTietHoaDonNhap.SuspendLayout();
             this.ef_CTHDN_pnMaHDN.SuspendLayout();
@@ -174,6 +175,7 @@
             // ef_pnChiTietHoaDonNhap
             // 
             this.ef_pnChiTietHoaDonNhap.BackColor = System.Drawing.Color.White;
+            this.ef_pnChiTietHoaDonNhap.Controls.Add(this.ef_CTHDN_lbInformantNN);
             this.ef_pnChiTietHoaDonNhap.Controls.Add(this.ef_CTHDN_lbInformantNL);
             this.ef_pnChiTietHoaDonNhap.Controls.Add(this.ef_CTHDN_lbInformantDV);
             this.ef_pnChiTietHoaDonNhap.Controls.Add(this.label12);
@@ -194,7 +196,7 @@
             // 
             this.ef_CTHDN_lbInformantNL.AutoSize = true;
             this.ef_CTHDN_lbInformantNL.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ef_CTHDN_lbInformantNL.Location = new System.Drawing.Point(181, 114);
+            this.ef_CTHDN_lbInformantNL.Location = new System.Drawing.Point(181, 124);
             this.ef_CTHDN_lbInformantNL.Name = "ef_CTHDN_lbInformantNL";
             this.ef_CTHDN_lbInformantNL.Size = new System.Drawing.Size(45, 13);
             this.ef_CTHDN_lbInformantNL.TabIndex = 13;
@@ -204,7 +206,7 @@
             // 
             this.ef_CTHDN_lbInformantDV.AutoSize = true;
             this.ef_CTHDN_lbInformantDV.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ef_CTHDN_lbInformantDV.Location = new System.Drawing.Point(181, 184);
+            this.ef_CTHDN_lbInformantDV.Location = new System.Drawing.Point(181, 194);
             this.ef_CTHDN_lbInformantDV.Name = "ef_CTHDN_lbInformantDV";
             this.ef_CTHDN_lbInformantDV.Size = new System.Drawing.Size(20, 13);
             this.ef_CTHDN_lbInformantDV.TabIndex = 12;
@@ -215,7 +217,7 @@
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(10, 220);
+            this.label12.Location = new System.Drawing.Point(10, 230);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(65, 21);
             this.label12.TabIndex = 11;
@@ -247,7 +249,7 @@
             this.label17.AutoSize = true;
             this.label17.BackColor = System.Drawing.Color.Transparent;
             this.label17.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(10, 150);
+            this.label17.Location = new System.Drawing.Point(10, 160);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(112, 21);
             this.label17.TabIndex = 9;
@@ -258,7 +260,7 @@
             this.ef_CTHDN_pnSLN.BackgroundImage = global::GUI.Properties.Resources.field_single_editable_420x40;
             this.ef_CTHDN_pnSLN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ef_CTHDN_pnSLN.Controls.Add(this.ef_CTHDN_txbSLN);
-            this.ef_CTHDN_pnSLN.Location = new System.Drawing.Point(170, 140);
+            this.ef_CTHDN_pnSLN.Location = new System.Drawing.Point(170, 150);
             this.ef_CTHDN_pnSLN.Name = "ef_CTHDN_pnSLN";
             this.ef_CTHDN_pnSLN.Size = new System.Drawing.Size(420, 40);
             this.ef_CTHDN_pnSLN.TabIndex = 8;
@@ -279,7 +281,7 @@
             this.ef_CTHDN_pnDG.BackgroundImage = global::GUI.Properties.Resources.field_single_editable_420x40;
             this.ef_CTHDN_pnDG.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ef_CTHDN_pnDG.Controls.Add(this.ef_CTHDN_txbDG);
-            this.ef_CTHDN_pnDG.Location = new System.Drawing.Point(170, 210);
+            this.ef_CTHDN_pnDG.Location = new System.Drawing.Point(170, 220);
             this.ef_CTHDN_pnDG.Name = "ef_CTHDN_pnDG";
             this.ef_CTHDN_pnDG.Size = new System.Drawing.Size(420, 40);
             this.ef_CTHDN_pnDG.TabIndex = 10;
@@ -300,7 +302,7 @@
             this.label22.AutoSize = true;
             this.label22.BackColor = System.Drawing.Color.Transparent;
             this.label22.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(10, 80);
+            this.label22.Location = new System.Drawing.Point(10, 90);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(117, 21);
             this.label22.TabIndex = 7;
@@ -311,7 +313,7 @@
             this.ef_CTHDN_pnMaNL.BackgroundImage = global::GUI.Properties.Resources.field_single_editable_420x40;
             this.ef_CTHDN_pnMaNL.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ef_CTHDN_pnMaNL.Controls.Add(this.ef_CTHDN_txbMaNL);
-            this.ef_CTHDN_pnMaNL.Location = new System.Drawing.Point(170, 70);
+            this.ef_CTHDN_pnMaNL.Location = new System.Drawing.Point(170, 80);
             this.ef_CTHDN_pnMaNL.Name = "ef_CTHDN_pnMaNL";
             this.ef_CTHDN_pnMaNL.Size = new System.Drawing.Size(420, 40);
             this.ef_CTHDN_pnMaNL.TabIndex = 6;
@@ -830,7 +832,6 @@
             this.ef_NL_txbSL.Name = "ef_NL_txbSL";
             this.ef_NL_txbSL.Size = new System.Drawing.Size(390, 22);
             this.ef_NL_txbSL.TabIndex = 2;
-            this.ef_NL_txbSL.Text = "10.00";
             this.ef_NL_txbSL.TextChanged += new System.EventHandler(this.ef_eventFieldChangedValue);
             // 
             // label2
@@ -1104,6 +1105,17 @@
             this.bf_dgvTable.TabIndex = 9;
             this.bf_dgvTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bf_dgvTable_CellClick);
             // 
+            // ef_CTHDN_lbInformantNN
+            // 
+            this.ef_CTHDN_lbInformantNN.AutoSize = true;
+            this.ef_CTHDN_lbInformantNN.BackColor = System.Drawing.Color.Transparent;
+            this.ef_CTHDN_lbInformantNN.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ef_CTHDN_lbInformantNN.Location = new System.Drawing.Point(181, 54);
+            this.ef_CTHDN_lbInformantNN.Name = "ef_CTHDN_lbInformantNN";
+            this.ef_CTHDN_lbInformantNN.Size = new System.Drawing.Size(63, 13);
+            this.ef_CTHDN_lbInformantNN.TabIndex = 14;
+            this.ef_CTHDN_lbInformantNN.Text = "10-10-1010";
+            // 
             // Warehouse_EditData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1253,5 +1265,6 @@
         private System.Windows.Forms.Label ef_CTHDN_lbInformantNL;
         private System.Windows.Forms.TextBox ef_CTHDN_txbMaHDN;
         private System.Windows.Forms.TextBox ef_CTHDN_txbMaNL;
+        private System.Windows.Forms.Label ef_CTHDN_lbInformantNN;
     }
 }

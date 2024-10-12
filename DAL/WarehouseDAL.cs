@@ -145,6 +145,7 @@ namespace DAL
             public const int IFM_NHACUNGCAP = 1;
             public const int IFM_NGUYENLIEU = 2;
             public const int IFM_DONVI = 3;
+            public const int IFM_NGAYNHAP = 4;
             public static string DAL_InformantCheck(string key, int informantValue)
             {
                 string query =
@@ -154,8 +155,10 @@ namespace DAL
                         $"select TenNhaCungCap from NhaCungCap where MaNhaCungCap = N'{key}'"
                     : informantValue == IFM_NGUYENLIEU ?
                         $"select TenNguyenLieu from NguyenLieu where MaNguyenLieu = N'{key}'"
-                    : 
-                        $"select DonViTinh from NguyenLieu where MaNguyenLieu = N'{key}'";
+                    : informantValue == IFM_DONVI ?
+                        $"select DonViTinh from NguyenLieu where MaNguyenLieu = N'{key}'"
+                    :
+                        $"select NgayNhap from HoaDonNhap where MaHoaDonNhap = N'{key}'";
                 DataTable dt = SqlHelper.ExecuteReader(query, new object[] { });
                 return dt != null ? dt.Rows[0][0].ToString() : string.Empty;
             }

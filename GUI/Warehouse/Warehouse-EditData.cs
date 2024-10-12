@@ -162,6 +162,7 @@ namespace GUI.Warehouse
             {
                 ef_CTHDN_lbInformantNL.Text = BLL_InformantCheck(ef_CTHDN_txbMaNL.Text, IFM_NGUYENLIEU);
                 ef_CTHDN_lbInformantDV.Text = BLL_InformantCheck(ef_CTHDN_txbMaNL.Text, IFM_DONVI);
+                ef_CTHDN_lbInformantNN.Text = BLL_InformantCheck(ef_CTHDN_txbMaHDN.Text, IFM_NGAYNHAP);
             }
         }
         private void ef_eventFieldChangedValue(object sender, EventArgs e)

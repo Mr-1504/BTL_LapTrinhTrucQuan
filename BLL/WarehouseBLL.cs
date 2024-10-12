@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Windows.Forms;
 using DAL;
 using Utilities;
 
@@ -86,6 +87,7 @@ namespace BLL
             public const int IFM_NHACUNGCAP = 1;
             public const int IFM_NGUYENLIEU = 2;
             public const int IFM_DONVI = 3;
+            public const int IFM_NGAYNHAP = 4;
             public static string BLL_InformantCheck(string key, int informantValue)
             {
                 return WarehouseDAL.EditData.DAL_InformantCheck(key, informantValue);
