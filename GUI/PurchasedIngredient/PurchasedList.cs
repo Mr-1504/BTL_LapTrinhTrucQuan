@@ -15,9 +15,9 @@ namespace GUI.PurchasedIngredient
 
         private void btnAdd_Click(object sender, System.EventArgs e)
         {
-            DetailPurchaseedIngredient detail = new DetailPurchaseedIngredient(_id, _baseForm);
+            DetailPurchaseedIngredient detail = new DetailPurchaseedIngredient(_id, _baseForm, this);
+            _baseForm.AddIntoPanel(detail);
             detail.Location = new System.Drawing.Point(0, 0);
-            detail.Show();
             this.SendToBack();
         }
     }
