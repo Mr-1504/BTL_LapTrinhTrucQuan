@@ -61,7 +61,8 @@ namespace GUI
             }
             else if(employeeRole == "KH")
             {
-
+                Warehouse_ListAll warehouse_ListAll = new Warehouse_ListAll();
+                OpenComponent(warehouse_ListAll);
             }
             else if (employeeRole == "LT")
             {
@@ -86,9 +87,6 @@ namespace GUI
         }
         public void loadImage()
         {
-            btnAvatar.BackgroundImage = Image.FromFile(_imagePath);
-
-
             _imagePath = $@"..\..\Resources\AvatarImage\{_id}.JPG";
             btnAvatar.BackgroundImage = Image.FromFile(_imagePath);
         }
@@ -235,7 +233,8 @@ namespace GUI
                     }
                     else if (employeeRole == "KH")
                     {
-
+                        Warehouse_ListAll warehouse_ListAll = new Warehouse_ListAll();
+                        OpenComponent(warehouse_ListAll);
                     }
                     else if (employeeRole == "LT")
                     {
