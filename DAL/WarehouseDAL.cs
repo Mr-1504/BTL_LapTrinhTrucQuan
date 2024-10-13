@@ -194,15 +194,8 @@ namespace DAL
                                    $"where MaHoaDonNhap = N'{formData["MaHoaDonNhap"]}'";
                         break;
                     case "ChiTietHoaDonNhap":
-                        //  to update this, delete the old one and add the new one
-                        //  fix after done delete and add field
-                        command = "update ChiTietHoaDonNhap set " +
-                                   $"MaHoaDonNhap = N'{formData["MaHoaDonNhap"]}', " +
-                                   $"MaNguyenLieu = N'{formData["MaNguyenLieu"]}', " +
-                                   $"SoLuong = {float.Parse(formData["SoLuong"])}, " +
-                                   $"DonGia = {float.Parse(formData["DonGia"])} " +
-                                   $"where MaHoaDonNhap = N'{formData["old_MaHoaDonNhap"]}' and MaNguyenLieu = N'{formData["old_MaNguyenLieu"]}'";
-                        break;
+                        DAL_DeleteField(formData);
+                        return DAL_AddField(formData);
                 }
                 return SqlHelper.ExecuteNonQuery(command, new object[] { });
             }
@@ -221,10 +214,86 @@ namespace DAL
                         command = $"delete from HoaDonNhap where MaHoaDonNhap = N'{formData["MaHoaDonNhap"]}'";
                         break;
                     case "ChiTietHoaDonNhap":
-                        command = $"delete from ChiTietHoaDonNhap where MaHoaDonNhap = N'{formData["MaHoaDonNhap"]}' and MaNguyenLieu = N'{formData["MaNguyenLieu"]}'";
+                        command = $"delete from ChiTietHoaDonNhap where MaHoaDonNhap = N'{formData["old_MaHoaDonNhap"]}' and MaNguyenLieu = N'{formData["old_MaNguyenLieu"]}'";
                         break;
                 }
                 return SqlHelper.ExecuteNonQuery(command, new object[] { });
+            }
+
+            private const int GID_SIZEOFNL = 4;
+            private const int GID_SIZEOFNCC = 4;
+            private const int GID_SIZEOFHDN = 6;
+            private static string GenerateNextID(string tableName)
+            {
+                string res = string.Empty;
+                DataTable tempQuery = null;
+                switch (tableName)
+                {
+                    case "NguyenLieu":
+                        res = "NL";
+                        tempQuery = SqlHelper.ExecuteReader("select top 1 MaNguyenLieu from NguyenLieu where MaNguyenLieu like N'NL%' order by MaNguyenLieu DESC", new object[] { });
+                        if (tempQuery != null && tempQuery.Rows.Count > 0)
+                        {
+                            string numStr = tempQuery.Rows[0][0].ToString().Substring(2);
+                            int numInt = -1;
+                            int.TryParse(numStr, out numInt);
+                            numInt += 1;
+                            res += (new string('0', GID_SIZEOFNL - numInt.ToString().Length)) + numInt.ToString();
+                        }
+                        else res += "0001";
+                        break;
+                    case "NhaCungCap":
+                        res = "NCC";
+                        tempQuery = SqlHelper.ExecuteReader("select top 1 MaNhaCungCap from NhaCungCap where MaNhaCungCap like N'NCC%' order by MaNhaCungCap DESC", new object[] { });
+                        if (tempQuery != null && tempQuery.Rows.Count > 0)
+                        {
+                            string numStr = tempQuery.Rows[0][0].ToString().Substring(4);
+                            int numInt = -1;
+                            int.TryParse(numStr, out numInt);
+                            numInt += 1;
+                            res += (new string('0', GID_SIZEOFNCC - numInt.ToString().Length)) + numInt.ToString();
+                        }
+                        else res += "0001";
+                        break;
+                    case "HoaDonNhap":
+                        res = "HDN";
+                        tempQuery = SqlHelper.ExecuteReader("select top 1 MaHoaDonNhap from HoaDonNhap where MaHoaDonNhap like N'HDN%' order by MaHoaDonNhap DESC", new object[] { });
+                        if (tempQuery != null && tempQuery.Rows.Count > 0)
+                        {
+                            string numStr = tempQuery.Rows[0][0].ToString().Substring(4);
+                            int numInt = -1;
+                            int.TryParse(numStr, out numInt);
+                            numInt += 1;
+                            res += (new string('0', GID_SIZEOFHDN - numInt.ToString().Length)) + numInt.ToString();
+                        }
+                        else res += "000001";
+                        break;
+                }
+                return res;
+            }
+            public static int DAL_AddField(Dictionary<string, string> formData)
+            {
+                string command = string.Empty;
+                switch (formData["tableName"])
+                {
+                    case "NguyenLieu":
+                        command = "insert into NguyenLieu(MaNguyenLieu, TenNguyenLieu, DonViTinh, CongDung, YeuCau, ChongChiDinh, Soluong) values " +
+                                   $"(N'{GenerateNextID("NguyenLieu")}', N'{formData["TenNguyenLieu"]}', N'{formData["DonViTinh"]}', N'{formData["CongDung"]}', N'{formData["YeuCau"]}', N'{formData["ChongChiDinh"]}', {float.Parse(formData["Soluong"])})";
+                        break;
+                    case "NhaCungCap":
+                        command = "insert into NhaCungCap(MaNhaCungCap, TenNhaCungCap, DiaChi, DienThoai, TrangThai) values " +
+                                   $"(N'{GenerateNextID("NhaCungCap")}', N'{formData["TenNhaCungCap"]}', N'{formData["DiaChi"]}', N'{formData["DienThoai"]}', {int.Parse(formData["TrangThai"])})";
+                        break;
+                    case "HoaDonNhap":
+                        command = "insert into HoaDonNhap(MaHoaDonNhap, MaNhanVien, MaNhaCungCap, NgayNhap) values " +
+                                   $"(N'{GenerateNextID("HoaDonNhap")}', N'{formData["MaNhanVien"]}', N'{formData["MaNhaCungCap"]}', '{formData["NgayNhap"]}')";
+                        break;
+                    case "ChiTietHoaDonNhap":
+                        command = "insert into ChiTietHoaDonNhap(MaHoaDonNhap, MaNguyenLieu, SoLuong, DonGia) values " +
+                                   $"(N'{formData["MaHoaDonNhap"]}', N'{formData["MaNguyenLieu"]}', {float.Parse(formData["SoLuong"])}, {float.Parse(formData["DonGia"])})";
+                        break;
+                }
+                return SqlHelper.ExecuteNonQuery(command, new object[] {});
             }
         }
     }

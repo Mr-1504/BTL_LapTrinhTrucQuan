@@ -943,6 +943,7 @@
             this.ef_btnAdd.Size = new System.Drawing.Size(50, 50);
             this.ef_btnAdd.TabIndex = 3;
             this.ef_btnAdd.UseVisualStyleBackColor = true;
+            this.ef_btnAdd.Click += new System.EventHandler(this.ef_btnAdd_Click);
             // 
             // ef_btnUpdate
             // 

@@ -16,6 +16,7 @@ namespace GUI.Warehouse
         {
             InitializeComponent();
             MakeDefaultDisplayProperties();
+            ControllingActionButtons(false);
         }
 
         //  > local global section
@@ -37,6 +38,13 @@ namespace GUI.Warehouse
             ef_pnChiTietHoaDonNhap.Visible = false;
             ef_pnChiTietHoaDonNhap.Enabled = false;
         }
+        private void ControllingActionButtons(bool activate)
+        {
+            ef_btnAdd.Enabled = activate;
+            ef_btnClear.Enabled = activate;
+            ef_btnDelete.Enabled = activate;
+            ef_btnUpdate.Enabled = activate;
+        }
         //  ^ end
 
         //  > browseField section
@@ -46,6 +54,7 @@ namespace GUI.Warehouse
         }
         private void bf_st_cbbTableList_SelectedIndexChanged(object sender, EventArgs e)
         {
+            ControllingActionButtons(true);
             selectedTableName = bf_st_cbbTableList.SelectedItem.ToString();
             Update();
         }
@@ -226,7 +235,7 @@ namespace GUI.Warehouse
             {
                 case "NguyenLieu":
                     res["tableName"] = "NguyenLieu";
-                    res["MaNguyenLieu"] = ef_NL_lbMa.Text;
+                    res["MaNguyenLieu"] = ef_NL_lbMa.Text.ToUpper();
                     res["TenNguyenLieu"] = ef_NL_txbTen.Text;
                     res["DonViTinh"] = ef_NL_txbDVT.Text;
                     res["CongDung"] = ef_NL_rtbCD.Text;
@@ -236,7 +245,7 @@ namespace GUI.Warehouse
                     break;
                 case "NhaCungCap":
                     res["tableName"] = "NhaCungCap";
-                    res["MaNhaCungCap"] = ef_NCC_lbMa.Text;
+                    res["MaNhaCungCap"] = ef_NCC_lbMa.Text.ToUpper();
                     res["TenNhaCungCap"] = ef_NCC_txbTen.Text;
                     res["DiaChi"] = ef_NCC_txbDC.Text;
                     res["DienThoai"] = ef_NCC_txbDT.Text;
@@ -244,17 +253,17 @@ namespace GUI.Warehouse
                     break;
                 case "HoaDonNhap":
                     res["tableName"] = "HoaDonNhap";
-                    res["MaHoaDonNhap"] = ef_HDN_lbMaHD.Text;
+                    res["MaHoaDonNhap"] = ef_HDN_lbMaHD.Text.ToUpper();
                     res["MaNhanVien"] = ef_HDN_txbMaNV.Text;
                     res["MaNhaCungCap"] = ef_HDN_txbMaNCC.Text;
                     res["NgayNhap"] = ef_HDN_dtpNgayNhap.Value.ToString();
                     break;
                 case "ChiTietHoaDonNhap":
                     res["tableName"] = "ChiTietHoaDonNhap";
-                    res["old_MaHoaDonNhap"] = bf_dgvTable.SelectedRows[0].Cells[0].ToString();
-                    res["old_MaNguyenLieu"] = bf_dgvTable.SelectedRows[0].Cells[1].ToString();
-                    res["MaHoaDonNhap"] = ef_CTHDN_txbMaHDN.Text;
-                    res["MaNguyenLieu"] = ef_CTHDN_txbMaNL.Text;
+                    res["old_MaHoaDonNhap"] = bf_dgvTable.SelectedRows[0].Cells[0].Value.ToString().ToUpper();
+                    res["old_MaNguyenLieu"] = bf_dgvTable.SelectedRows[0].Cells[1].Value.ToString().ToUpper();
+                    res["MaHoaDonNhap"] = ef_CTHDN_txbMaHDN.Text.ToUpper();
+                    res["MaNguyenLieu"] = ef_CTHDN_txbMaNL.Text.ToUpper();
                     res["SoLuong"] = ef_CTHDN_txbSLN.Text;
                     res["DonGia"] = ef_CTHDN_txbDG.Text;
                     break;
@@ -290,6 +299,7 @@ namespace GUI.Warehouse
             ef_funcVisualReset();
         }
 
+        //success -> reset, not -> keep
         private void ef_btnUpdate_Click(object sender, EventArgs e)
         {
             MessageBox.Show(
@@ -304,7 +314,7 @@ namespace GUI.Warehouse
                 BLL_UpdateField(ef_funcSynthFieldValue()) == ERR_IDNONEXIST ?
                     "khoa chinh khong ton tai" :
                     "loi khong xac dinh");
-            Update();
+            bf_funcUpdate();
         }
 
         private void ef_btnDelete_Click(object sender, EventArgs e)
@@ -314,7 +324,17 @@ namespace GUI.Warehouse
                 (status == ERR_NOERROR ?
                     "thanh cong" :
                     "loi khong xac dinh"));
-            Update();
+            bf_funcUpdate();
+        }
+
+        private void ef_btnAdd_Click(object sender, EventArgs e)
+        {
+            int status = BLL_AddField(ef_funcSynthFieldValue());
+            MessageBox.Show(status.ToString() + "\n" +
+                (status == ERR_NOERROR ?
+                    "thanh cong" :
+                    "loi khong xac dinh"));
+            bf_funcUpdate();
         }
 
         //  ^ end
