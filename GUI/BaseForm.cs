@@ -87,9 +87,6 @@ namespace GUI
         }
         public void loadImage()
         {
-            btnAvatar.BackgroundImage = Image.FromFile(_imagePath);
-
-
             _imagePath = $@"..\..\Resources\AvatarImage\{_id}.JPG";
             btnAvatar.BackgroundImage = Image.FromFile(_imagePath);
         }
