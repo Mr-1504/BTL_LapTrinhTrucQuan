@@ -53,7 +53,21 @@ namespace GUI
             }
             pnlMenu.MouseEnter += Menu_MouseLeave;
             LoadMenu(employeeId);
+            string employeeRole = employeeId.Substring(0,2).ToUpper();
+            if(employeeRole == "QL")
+            {
+                HomeManager homeManager = new HomeManager();
+                OpenComponent(homeManager);
+            }
+            else if(employeeRole == "KH")
+            {
 
+            }
+            else if (employeeRole == "LT")
+            {
+
+            }
+            
             ActiveControl = picLogo;
 
             //
@@ -213,8 +227,24 @@ namespace GUI
             {
                 case "Home":
 
+                    string employeeRole = _id.Substring(0, 2).ToUpper();
+                    if (employeeRole == "QL")
+                    {
+                        HomeManager homeManager = new HomeManager();
+                        OpenComponent(homeManager);
+                    }
+                    else if (employeeRole == "KH")
+                    {
+
+                    }
+                    else if (employeeRole == "LT")
+                    {
+
+                    }
                     break;
                 case "Employee":
+                    EmployManager employManager = new EmployManager();
+                    OpenComponent(employManager);
 
                     break;
                 case "Food":
@@ -223,8 +253,8 @@ namespace GUI
                 case "Warehouse":
                     break;
                 case "Import":
-                    DetailPurchaseedIngredient detail = new DetailPurchaseedIngredient(_id, this);
-                    OpenComponent(detail);
+                    PurchasedList purchasedList = new PurchasedList(_id, this);
+                    OpenComponent(purchasedList);
                     break;
                 case "Order":
 
@@ -326,6 +356,20 @@ namespace GUI
         private void txtSearch_Leave(object sender, EventArgs e)
         {
             txtSearch.Text = txtSearch.Text.Length == 0 ? "Tìm kiếm" : txtSearch.Text;
+        }
+        public void AddIntoPanel(Form form)
+        {
+            pnlContent.SuspendLayout();
+            form.MouseEnter += Menu_MouseLeave;
+            foreach (Control control in form.Controls)
+            {
+                control.MouseEnter += Menu_MouseLeave;
+            }
+            form.TopLevel = false;
+            pnlContent.Controls.Add(form);
+            form.Show();
+
+            pnlContent.ResumeLayout();
         }
     }
 }

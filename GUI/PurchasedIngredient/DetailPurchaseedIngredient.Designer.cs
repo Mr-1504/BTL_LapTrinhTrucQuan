@@ -139,6 +139,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1369, 814);
             this.Controls.Add(this.picWarnning);
             this.Controls.Add(this.btnContinue);
@@ -147,6 +148,7 @@
             this.Controls.Add(this.picArrowRight);
             this.Controls.Add(this.picStep2Status);
             this.Controls.Add(this.picStep1Status);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DetailPurchaseedIngredient";
             this.Text = "DetailPurchaseedIngredient";

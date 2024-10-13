@@ -54,6 +54,55 @@
     <Compile Include="BaseForm.Designer.cs">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="boxFoodManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="boxFoodManager.Designer.cs">
+      <DependentUpon>boxFoodManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployManager.Designer.cs">
+      <DependentUpon>EmployManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployManager2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployManager2.Designer.cs">
+      <DependentUpon>EmployManager2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FoodManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FoodManager.Designer.cs">
+      <DependentUpon>FoodManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FoodManager2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FoodManager2.Designer.cs">
+      <DependentUpon>FoodManager2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomeManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomeManager.Designer.cs">
+      <DependentUpon>HomeManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FoodUpdatedEventArgs.cs" />
+    <Compile Include="frmListOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListOrders.Designer.cs">
+      <DependentUpon>frmListOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMenuOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenuOrder.Designer.cs">
+      <DependentUpon>frmMenuOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoadingForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +123,29 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="PurchasedIngredient\DetailInvoice.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PurchasedIngredient\DetailInvoice.Designer.cs">
+      <DependentUpon>DetailInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PurchasedIngredient\PurchasedList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PurchasedIngredient\PurchasedList.Designer.cs">
+      <DependentUpon>PurchasedList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucFood.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucFood.Designer.cs">
+      <DependentUpon>ucFood.cs</DependentUpon>
+    </Compile>
     <Compile Include="PurchasedIngredient\DetailPurchaseedIngredient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +197,30 @@
     <EmbeddedResource Include="BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="boxFoodManager.resx">
+      <DependentUpon>boxFoodManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployManager.resx">
+      <DependentUpon>EmployManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployManager2.resx">
+      <DependentUpon>EmployManager2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FoodManager.resx">
+      <DependentUpon>FoodManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FoodManager2.resx">
+      <DependentUpon>FoodManager2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeManager.resx">
+      <DependentUpon>HomeManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListOrders.resx">
+      <DependentUpon>frmListOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenuOrder.resx">
+      <DependentUpon>frmMenuOrder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoadingForm.resx">
       <DependentUpon>LoadingForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -138,6 +234,18 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="ucFood.Designer.cs">
+      <DependentUpon>ucFood.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="PurchasedIngredient\DetailInvoice.resx">
+      <DependentUpon>DetailInvoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PurchasedIngredient\PurchasedList.resx">
+      <DependentUpon>PurchasedList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucFood.resx">
+      <DependentUpon>ucFood.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PurchasedIngredient\DetailPurchaseedIngredient.resx">
       <DependentUpon>DetailPurchaseedIngredient.cs</DependentUpon>
@@ -167,11 +275,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -251,6 +354,52 @@
     <None Include="Resources\load.gif" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\VitQuay.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Minus.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Plus.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Minus1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TenMon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TenMon1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SoLuong.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ThanhTien.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnOrder.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Next.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Previous.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dgvHeader.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dgvHearder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dgvHeader1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnThem.jpg" />
     <None Include="Resources\SearchPanel.png" />
   </ItemGroup>
   <ItemGroup>
@@ -332,6 +481,39 @@
     <None Include="Resources\Search.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\btn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\enter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\namePanel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\idPanel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addressPanel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bgPurchasedList.png" />
+    <None Include="Resources\btnAdd.png" />
+    <None Include="Resources\btnBack.png" />
+    <Content Include="Resources\ImageFood\AP0006.JPG" />
+    <Content Include="Resources\ImageFood\default .jpg" />
+    <Content Include="Resources\ImageFood\default.jpg" />
+    <Content Include="Resources\ImageFood\MN0010.jpg" />
+    <None Include="Resources\panelNumberic2.png" />
+    <None Include="Resources\panelNumberic.png" />
+    <None Include="Resources\avatar.png" />
+    <None Include="Resources\avata.png" />
+    <Content Include="Resources\AvatarImage\default.jpg" />
+    <Content Include="Resources\AvatarImage\KH20230001.JPG" />
+    <Content Include="Resources\AvatarImage\KH20230002.JPG" />
+    <Content Include="Resources\AvatarImage\KH20230003.JPG" />
     <None Include="Resources\step1Wait.png" />
   </ItemGroup>
   <ItemGroup>
@@ -398,8 +580,11 @@
     <Content Include="Resources\AvatarImage\QL20240001.JPG" />
     <Content Include="Resources\AvatarImage\KH20240001.JPG" />
     <Content Include="Resources\AvatarImage\LT20240001.JPG" />
+    <Content Include="Resources\AvatarImage\QL20240001.JPG" />
+    <None Include="Resources\pnlHeaderListOrder.png" />
     <None Include="Resources\warnning.png" />
     <None Include="Resources\btnComplete.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
