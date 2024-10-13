@@ -17,6 +17,7 @@ namespace Utilities
 
             //return baseConnectionString.Replace("Data Source=;", $"Data Source={deviceName}\\SQLEXPRESS;")
             //                           .Replace("Initial Catalog=;", $"Initial Catalog={databaseName};");
+
         }
 
         public static int ExecuteNonQuery(string query, object[] objects)
