@@ -307,6 +307,16 @@ namespace GUI.Warehouse
             Update();
         }
 
+        private void ef_btnDelete_Click(object sender, EventArgs e)
+        {
+            int status = BLL_DeleteField(ef_funcSynthFieldValue());
+            MessageBox.Show( status.ToString() + "\n" + 
+                (status == ERR_NOERROR ?
+                    "thanh cong" :
+                    "loi khong xac dinh"));
+            Update();
+        }
+
         //  ^ end
 
 

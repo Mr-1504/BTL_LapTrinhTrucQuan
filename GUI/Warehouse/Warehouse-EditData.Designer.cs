@@ -978,6 +978,7 @@
             this.ef_btnDelete.Size = new System.Drawing.Size(50, 50);
             this.ef_btnDelete.TabIndex = 0;
             this.ef_btnDelete.UseVisualStyleBackColor = true;
+            this.ef_btnDelete.Click += new System.EventHandler(this.ef_btnDelete_Click);
             // 
             // pnBrowseField
             // 

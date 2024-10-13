@@ -94,11 +94,10 @@ namespace BLL
             }
 
             public const int ERR_NOERROR = 1;
-            public const int ERR_EXCEPTIONS = 0;
-            public const int ERR_FIELDVALUENULL = -1;
-            public const int ERR_DEPENDENTNULL = -2;
-            public const int ERR_NUMBERFORMAT = -3;
-            public const int ERR_IDNONEXIST = -4;
+            public const int ERR_FIELDVALUENULL = -2;
+            public const int ERR_DEPENDENTNULL = -3;
+            public const int ERR_NUMBERFORMAT = -4;
+            public const int ERR_IDNONEXIST = -5;
             public static int BLL_FieldValueLegitimateCheck(Dictionary<string, string> formData) // covers only standard check
             {
                 //  first check: all field need to have data
@@ -159,7 +158,16 @@ namespace BLL
                 }
                 if (status == ERR_NOERROR)
                 {
-                    WarehouseDAL.EditData.DAL_UpdateField(formData);
+                    status = WarehouseDAL.EditData.DAL_UpdateField(formData);
+                }
+                return status;
+            }
+            public static int BLL_DeleteField(Dictionary<string, string> formData)
+            {
+                int status = BLL_FieldValueLegitimateCheck(formData);
+                if (status == ERR_NOERROR)
+                {
+                    status = WarehouseDAL.EditData.DAL_DeleteField(formData);
                 }
                 return status;
             }

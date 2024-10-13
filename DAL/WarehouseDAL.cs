@@ -206,6 +206,26 @@ namespace DAL
                 }
                 return SqlHelper.ExecuteNonQuery(command, new object[] { });
             }
+            public static int DAL_DeleteField(Dictionary<string, string> formData)
+            {
+                string command = string.Empty;
+                switch (formData["tableName"])
+                {
+                    case "NguyenLieu":
+                        command = $"delete from NguyenLieu where MaNguyenLieu = N'{formData["MaNguyenLieu"]}'";
+                        break;
+                    case "NhaCungCap":
+                        command = $"delete from NhaCungCap where MaNhaCungCap = N'{formData["MaNhaCungCap"]}'";
+                        break;
+                    case "HoaDonNhap":
+                        command = $"delete from HoaDonNhap where MaHoaDonNhap = N'{formData["MaHoaDonNhap"]}'";
+                        break;
+                    case "ChiTietHoaDonNhap":
+                        command = $"delete from ChiTietHoaDonNhap where MaHoaDonNhap = N'{formData["MaHoaDonNhap"]}' and MaNguyenLieu = N'{formData["MaNguyenLieu"]}'";
+                        break;
+                }
+                return SqlHelper.ExecuteNonQuery(command, new object[] { });
+            }
         }
     }
 }
