@@ -260,8 +260,15 @@ namespace GUI.Warehouse
                     break;
                 case "ChiTietHoaDonNhap":
                     res["tableName"] = "ChiTietHoaDonNhap";
-                    res["old_MaHoaDonNhap"] = bf_dgvTable.SelectedRows[0].Cells[0].Value.ToString().ToUpper();
-                    res["old_MaNguyenLieu"] = bf_dgvTable.SelectedRows[0].Cells[1].Value.ToString().ToUpper();
+                    if (bf_dgvTable.SelectedRows.Count > 0)
+                    {
+                        res["old_MaHoaDonNhap"] = bf_dgvTable.SelectedRows[0].Cells[0].Value.ToString().ToUpper();
+                        res["old_MaNguyenLieu"] = bf_dgvTable.SelectedRows[0].Cells[1].Value.ToString().ToUpper();
+                    } else
+                    {
+                        res["old_MaHoaDonNhap"] = ef_CTHDN_txbMaHDN.Text.ToUpper();
+                        res["old_MaNguyenLieu"] = ef_CTHDN_txbMaNL.Text.ToUpper();
+                    }
                     res["MaHoaDonNhap"] = ef_CTHDN_txbMaHDN.Text.ToUpper();
                     res["MaNguyenLieu"] = ef_CTHDN_txbMaNL.Text.ToUpper();
                     res["SoLuong"] = ef_CTHDN_txbSLN.Text;
@@ -293,48 +300,51 @@ namespace GUI.Warehouse
             }
         }
         //  > button pushed section
+        private int ef_funcActionNotify(int errCode, string successMsg)
+        {
+            switch (errCode)
+            {
+                case ERR_NOERROR:
+                    MessageBox.Show(successMsg, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                case ERR_FIELDVALUENULL:
+                    MessageBox.Show("Hãy kiểm tra lại và điền đầy đủ các trường", "Lỗi: Trường trống", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    break;
+                case ERR_DEPENDENTNULL:
+                    MessageBox.Show("Hãy kiểm tra lại các trường liên kết đến bảng khác", "Lỗi: Trường liên kết không tồn tại", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    break;
+                case ERR_NUMBERFORMAT:
+                    MessageBox.Show("Hãy kiểm tra lại các trường có giá trị số", "Lỗi: Kiểu số không hợp lệ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    break;
+                case ERR_IDNONEXIST:
+                    MessageBox.Show("Nhấp vào dòng cần tác động trước khi thực hiện hành động này", "Lỗi: Khoá không tồn tại", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    break;
+                default:
+                    MessageBox.Show("Liên hệ đơn vị quản lý để giải quyết vấn đề", "Lỗi: KHÔNG XÁC ĐỊNH", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
+            }
+            return errCode;
+        }
+
         private void ef_btnClear_Click(object sender, EventArgs e)
         {
             ef_funcFieldTextReset();
             ef_funcVisualReset();
         }
 
-        //success -> reset, not -> keep
         private void ef_btnUpdate_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(
-                BLL_UpdateField(ef_funcSynthFieldValue()) == ERR_NOERROR ?
-                    "thanh cong" :
-                BLL_UpdateField(ef_funcSynthFieldValue()) == ERR_FIELDVALUENULL ?
-                    "truong de trong" :
-                BLL_UpdateField(ef_funcSynthFieldValue()) == ERR_DEPENDENTNULL ? 
-                    "truong phu thuoc khong ton tai" :
-                BLL_UpdateField(ef_funcSynthFieldValue()) == ERR_NUMBERFORMAT ?
-                    "nhap sai kieu du lieu" :
-                BLL_UpdateField(ef_funcSynthFieldValue()) == ERR_IDNONEXIST ?
-                    "khoa chinh khong ton tai" :
-                    "loi khong xac dinh");
-            bf_funcUpdate();
+            if (ef_funcActionNotify(BLL_UpdateField(ef_funcSynthFieldValue()), "Cập nhật thành công") == ERR_NOERROR) Update();
         }
 
         private void ef_btnDelete_Click(object sender, EventArgs e)
         {
-            int status = BLL_DeleteField(ef_funcSynthFieldValue());
-            MessageBox.Show( status.ToString() + "\n" + 
-                (status == ERR_NOERROR ?
-                    "thanh cong" :
-                    "loi khong xac dinh"));
-            bf_funcUpdate();
+            if (ef_funcActionNotify(BLL_DeleteField(ef_funcSynthFieldValue()), "Xoá thành công") == ERR_NOERROR) Update();
         }
 
         private void ef_btnAdd_Click(object sender, EventArgs e)
         {
-            int status = BLL_AddField(ef_funcSynthFieldValue());
-            MessageBox.Show(status.ToString() + "\n" +
-                (status == ERR_NOERROR ?
-                    "thanh cong" :
-                    "loi khong xac dinh"));
-            bf_funcUpdate();
+            if (ef_funcActionNotify(BLL_AddField(ef_funcSynthFieldValue()), "Thêm thành công") == ERR_NOERROR) Update();
         }
 
         //  ^ end

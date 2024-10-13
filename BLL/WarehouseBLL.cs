@@ -98,30 +98,13 @@ namespace BLL
             public const int ERR_DEPENDENTNULL = -3;
             public const int ERR_NUMBERFORMAT = -4;
             public const int ERR_IDNONEXIST = -5;
-            private static int BLL_FieldValueLegitimateCheck(Dictionary<string, string> formData) // covers only standard check
+            private static int BLL_FieldValueStandardCheck(Dictionary<string, string> formData)
             {
                 //  first check: all field need to have data
                 foreach (var it in formData) if (string.IsNullOrEmpty(it.Value))
                     {
                         return ERR_FIELDVALUENULL;
                     }
-
-                //  second check: dependents in existance
-                switch (formData["tableName"])
-                {
-                    case "HoaDonNhap":
-                        if (
-                            string.IsNullOrEmpty(BLL_InformantCheck(formData["MaNhanVien"], IFM_NHANVIEN)) ||
-                            string.IsNullOrEmpty(BLL_InformantCheck(formData["MaNhaCungCap"], IFM_NHACUNGCAP)) )
-                            return ERR_DEPENDENTNULL;
-                        break;
-                    case "ChiTietHoaDonNhap":
-                        if (
-                            string.IsNullOrEmpty(BLL_InformantCheck(formData["MaHoaDonNhap"], IFM_NGAYNHAP)) ||
-                            string.IsNullOrEmpty(BLL_InformantCheck(formData["MaNguyenLieu"], IFM_NGUYENLIEU)) )
-                            return ERR_DEPENDENTNULL;
-                        break;
-                }
 
                 //  third check: number format check
                 switch (formData["tableName"])
@@ -137,25 +120,51 @@ namespace BLL
 
                 return ERR_NOERROR;
             }
+            private static int BLL_FieldValueDependancyCheck(Dictionary<string, string> formData)
+            {
+                //  second check: dependents in existance
+                switch (formData["tableName"])
+                {
+                    case "HoaDonNhap":
+                        if (
+                            string.IsNullOrEmpty(BLL_InformantCheck(formData["MaNhanVien"], IFM_NHANVIEN)) ||
+                            string.IsNullOrEmpty(BLL_InformantCheck(formData["MaNhaCungCap"], IFM_NHACUNGCAP)))
+                            return ERR_DEPENDENTNULL;
+                        break;
+                    case "ChiTietHoaDonNhap":
+                        if (
+                            string.IsNullOrEmpty(BLL_InformantCheck(formData["MaHoaDonNhap"], IFM_NGAYNHAP)) ||
+                            string.IsNullOrEmpty(BLL_InformantCheck(formData["MaNguyenLieu"], IFM_NGUYENLIEU)))
+                            return ERR_DEPENDENTNULL;
+                        break;
+                }
+                return ERR_NOERROR;
+            }
+            private static int BLL_FieldValueExistanceCheck(Dictionary<string, string> formData)
+            {
+                switch (formData["tableName"])
+                {
+                    case "NguyenLieu":
+                        if (string.IsNullOrEmpty(BLL_InformantCheck(formData["MaNguyenLieu"], IFM_NGUYENLIEU))) return ERR_IDNONEXIST;
+                        break;
+                    case "NhaCungCap":
+                        if (string.IsNullOrEmpty(BLL_InformantCheck(formData["MaNhaCungCap"], IFM_NHACUNGCAP))) return ERR_IDNONEXIST;
+                        break;
+                    case "HoaDonNhap":
+                        if (string.IsNullOrEmpty(BLL_InformantCheck(formData["MaHoaDonNhap"], IFM_NGAYNHAP))) return ERR_IDNONEXIST;
+                        break;
+                    case "ChiTietHoaDonNhap":
+                        if (string.IsNullOrEmpty(BLL_InformantCheck(formData["MaHoaDonNhap"], IFM_NGAYNHAP))) return ERR_IDNONEXIST;
+                        if (string.IsNullOrEmpty(BLL_InformantCheck(formData["MaNguyenLieu"], IFM_NGUYENLIEU))) return ERR_IDNONEXIST;
+                        break;
+                }
+                return ERR_NOERROR;
+            }
             public static int BLL_UpdateField(Dictionary<string, string> formData)
             {
-                int status = BLL_FieldValueLegitimateCheck(formData);
-                if (status == ERR_NOERROR)
-                {
-                    switch (formData["tableName"])
-                    {
-                        case "NguyenLieu":
-                            if (string.IsNullOrEmpty(BLL_InformantCheck(formData["MaNguyenLieu"], IFM_NGUYENLIEU))) return ERR_IDNONEXIST;
-                            break;
-                        case "NhaCungCap":
-                            if (string.IsNullOrEmpty(BLL_InformantCheck(formData["MaNhaCungCap"], IFM_NHACUNGCAP))) return ERR_IDNONEXIST;
-                            break;
-                        case "HoaDonNhap":
-                            if (string.IsNullOrEmpty(BLL_InformantCheck(formData["MaHoaDonNhap"], IFM_NGAYNHAP))) return ERR_IDNONEXIST;
-                            if (string.IsNullOrEmpty(BLL_InformantCheck(formData["MaNguyenLieu"], IFM_NGUYENLIEU))) return ERR_IDNONEXIST;
-                            break;
-                    }
-                }
+                int status = BLL_FieldValueStandardCheck(formData);
+                if (status == ERR_NOERROR) status = BLL_FieldValueDependancyCheck(formData);
+                if (status == ERR_NOERROR) status = BLL_FieldValueExistanceCheck(formData);
                 if (status == ERR_NOERROR)
                 {
                     status = WarehouseDAL.EditData.DAL_UpdateField(formData);
@@ -164,7 +173,8 @@ namespace BLL
             }
             public static int BLL_DeleteField(Dictionary<string, string> formData)
             {
-                int status = BLL_FieldValueLegitimateCheck(formData);
+                int status = BLL_FieldValueStandardCheck(formData);
+                if (status == ERR_NOERROR) status = BLL_FieldValueExistanceCheck(formData);
                 if (status == ERR_NOERROR)
                 {
                     status = WarehouseDAL.EditData.DAL_DeleteField(formData);
@@ -173,7 +183,8 @@ namespace BLL
             }
             public static int BLL_AddField(Dictionary<string, string> formData)
             {
-                int status = BLL_FieldValueLegitimateCheck(formData);
+                int status = BLL_FieldValueStandardCheck(formData);
+                if (status == ERR_NOERROR) status = BLL_FieldValueDependancyCheck(formData);
                 if (status == ERR_NOERROR)
                 {
                     status = WarehouseDAL.EditData.DAL_AddField(formData);
