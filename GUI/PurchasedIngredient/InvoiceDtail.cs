@@ -34,7 +34,8 @@ namespace GUI.PurchasedIngredient
                 }
                 catch (FormatException) { }
             }
-            lblTotalValue.Text = total.ToString("0.00") + " VND";
+            lblTotalValue.Text = total.ToString("#,##0", new System.Globalization.CultureInfo("vi-VN"))
+                + " VND" + "( " + new PurchaseInvoiceBLL().ReadNumberToWords(total).ToUpper() +")";
         }
     }
 }
