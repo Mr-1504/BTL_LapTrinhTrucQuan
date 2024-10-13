@@ -202,9 +202,9 @@
             this.lblBuyerNameValue.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBuyerNameValue.Location = new System.Drawing.Point(1020, 192);
             this.lblBuyerNameValue.Name = "lblBuyerNameValue";
-            this.lblBuyerNameValue.Size = new System.Drawing.Size(148, 18);
+            this.lblBuyerNameValue.Size = new System.Drawing.Size(149, 18);
             this.lblBuyerNameValue.TabIndex = 18;
-            this.lblBuyerNameValue.Text = "Nhà hàng Bea Food";
+            this.lblBuyerNameValue.Text = "Nhà hàng BeA Food";
             // 
             // lblBuyerAddressValue
             // 
