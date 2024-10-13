@@ -164,7 +164,6 @@ namespace GUI.Warehouse
             }
             ef_funcVisualReset();
         }
-            // informant section (tf so dumb, optimize code if needed)
         private void ef_funcInformantUpdate() // update informant value on panel
         {
             switch (selectedTableName)
