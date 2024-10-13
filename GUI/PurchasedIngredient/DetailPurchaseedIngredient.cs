@@ -1,4 +1,5 @@
 ﻿using BLL;
+using DTO;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -12,12 +13,12 @@ namespace GUI.PurchasedIngredient
         private BaseForm form;
         private PurchasedList _purchasedList;
         private bool status;
-        public DetailPurchaseedIngredient(string employeeId, BaseForm baseForm, PurchasedList purchasedList)
+        private Action<PurchaseInvoiceDTO> _action;
+        public DetailPurchaseedIngredient(string employeeId, BaseForm baseForm, PurchasedList purchasedList, Action<PurchaseInvoiceDTO> action)
         {
             InitializeComponent();
+            _action = action;
             inputDetail = new InputDetail(employeeId);
-
-
             inputDetail.Location = new Point(0, 90);
 
             SuspendLayout();
@@ -71,6 +72,10 @@ namespace GUI.PurchasedIngredient
                     if (res == 1)
                     {
                         new MessageForm("Thêm thành công", "Thông báo", 1);
+                        PurchaseInvoiceDTO invoiceDTO = new PurchaseInvoiceBLL().GetNewestPurchaseInvoice();
+                        _action(invoiceDTO);
+                        Reset();
+                        SendToBack();
                     }
                     else
                     {
