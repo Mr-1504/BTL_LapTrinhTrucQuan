@@ -383,9 +383,22 @@ namespace GUI.PurchasedIngredient
         {
             return _supplier != null && dgvList.Rows.Count > 0;
         }
+        public decimal GetTotal()
+        {
+            decimal total = 0;
+            foreach (DataGridViewRow row in dgvList.Rows)
+            {
+                try
+                {
+                    total += int.Parse(row.Cells[2].Value.ToString()) * decimal.Parse(row.Cells[3].Value.ToString());
+                }
+                catch (FormatException) { }
+            }
+            return total;
+        }
         public PurchaseInvoiceDTO GetInvoice()
         {
-            return new PurchaseInvoiceDTO(_id, _supplier.SupplierId, DateTime.Now);
+            return new PurchaseInvoiceDTO(_id, _supplier.SupplierId, DateTime.Now, GetTotal());
         }
         public List<PurchaseInvoiceDetailDTO> GetInvoiceDetail()
         {
