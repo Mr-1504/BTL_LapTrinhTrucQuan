@@ -162,6 +162,50 @@ namespace DAL
                 DataTable dt = SqlHelper.ExecuteReader(query, new object[] { });
                 return (dt != null && dt.Rows.Count > 0) ? dt.Rows[0][0].ToString() : string.Empty;
             }
+
+            public static int DAL_UpdateField(Dictionary<string, string> formData)
+            {
+                string command = string.Empty;
+                switch (formData["tableName"])
+                {
+                    case "NguyenLieu":
+                        command = "update NguyenLieu set " +
+                                   $"TenNguyenLieu = N'{formData["TenNguyenLieu"]}', " +
+                                   $"DonViTinh = N'{formData["DonViTinh"]}', " +
+                                   $"CongDung = N'{formData["CongDung"]}', " +
+                                   $"YeuCau = N'{formData["YeuCau"]}', " +
+                                   $"ChongChiDinh = N'{formData["ChongChiDinh"]}', " +
+                                   $"Soluong = {float.Parse(formData["Soluong"])} " +
+                                   $"where MaNguyenLieu = N'{formData["MaNguyenLieu"]}'";
+                        break;
+                    case "NhaCungCap":
+                        command = "update NhaCungCap set " +
+                                   $"TenNhaCungCap = N'{formData["TenNhaCungCap"]}', " +
+                                   $"DiaChi = N'{formData["DiaChi"]}', " +
+                                   $"DienThoai = N'{formData["DienThoai"]}', " +
+                                   $"TrangThai = N'{formData["TrangThai"]}' " +
+                                   $"where MaNhaCungCap = N'{formData["MaNhaCungCap"]}'";
+                        break;
+                    case "HoaDonNhap":
+                        command = "update HoaDonNhap set " +
+                                   $"MaNhanVien = N'{formData["MaNhanVien"]}', " +
+                                   $"MaNhaCungCap = N'{formData["MaNhaCungCap"]}', " +
+                                   $"NgayNhap = '{formData["NgayNhap"]}' " +
+                                   $"where MaHoaDonNhap = N'{formData["MaHoaDonNhap"]}'";
+                        break;
+                    case "ChiTietHoaDonNhap":
+                        //  to update this, delete the old one and add the new one
+                        //  fix after done delete and add field
+                        command = "update ChiTietHoaDonNhap set " +
+                                   $"MaHoaDonNhap = N'{formData["MaHoaDonNhap"]}', " +
+                                   $"MaNguyenLieu = N'{formData["MaNguyenLieu"]}', " +
+                                   $"SoLuong = {float.Parse(formData["SoLuong"])}, " +
+                                   $"DonGia = {float.Parse(formData["DonGia"])} " +
+                                   $"where MaHoaDonNhap = N'{formData["old_MaHoaDonNhap"]}' and MaNguyenLieu = N'{formData["old_MaNguyenLieu"]}'";
+                        break;
+                }
+                return SqlHelper.ExecuteNonQuery(command, new object[] { });
+            }
         }
     }
 }

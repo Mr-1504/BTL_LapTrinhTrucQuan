@@ -92,6 +92,77 @@ namespace BLL
             {
                 return WarehouseDAL.EditData.DAL_InformantCheck(key, informantValue);
             }
+
+            public const int ERR_NOERROR = 1;
+            public const int ERR_EXCEPTIONS = 0;
+            public const int ERR_FIELDVALUENULL = -1;
+            public const int ERR_DEPENDENTNULL = -2;
+            public const int ERR_NUMBERFORMAT = -3;
+            public const int ERR_IDNONEXIST = -4;
+            public static int BLL_FieldValueLegitimateCheck(Dictionary<string, string> formData) // covers only standard check
+            {
+                //  first check: all field need to have data
+                foreach (var it in formData) if (string.IsNullOrEmpty(it.Value))
+                    {
+                        return ERR_FIELDVALUENULL;
+                    }
+
+                //  second check: dependents in existance
+                switch (formData["tableName"])
+                {
+                    case "HoaDonNhap":
+                        if (
+                            string.IsNullOrEmpty(BLL_InformantCheck(formData["MaNhanVien"], IFM_NHANVIEN)) ||
+                            string.IsNullOrEmpty(BLL_InformantCheck(formData["MaNhaCungCap"], IFM_NHACUNGCAP)) )
+                            return ERR_DEPENDENTNULL;
+                        break;
+                    case "ChiTietHoaDonNhap":
+                        if (
+                            string.IsNullOrEmpty(BLL_InformantCheck(formData["MaHoaDonNhap"], IFM_NGAYNHAP)) ||
+                            string.IsNullOrEmpty(BLL_InformantCheck(formData["MaNguyenLieu"], IFM_NGUYENLIEU)) )
+                            return ERR_DEPENDENTNULL;
+                        break;
+                }
+
+                //  third check: number format check
+                switch (formData["tableName"])
+                {
+                    case "NguyenLieu":
+                        if (!float.TryParse(formData["Soluong"], out float tempF)) return ERR_NUMBERFORMAT;
+                        break;
+                    case "ChiTietHoaDonNhap":
+                        if (!float.TryParse(formData["SoLuong"], out tempF)) return ERR_NUMBERFORMAT;
+                        if (!float.TryParse(formData["DonGia"], out tempF)) return ERR_NUMBERFORMAT;
+                        break;
+                }
+
+                return ERR_NOERROR;
+            }
+            public static int BLL_UpdateField(Dictionary<string, string> formData)
+            {
+                int status = BLL_FieldValueLegitimateCheck(formData);
+                if (status == ERR_NOERROR)
+                {
+                    switch (formData["tableName"])
+                    {
+                        case "NguyenLieu":
+                            if (string.IsNullOrEmpty(BLL_InformantCheck(formData["MaNguyenLieu"], IFM_NGUYENLIEU))) return ERR_IDNONEXIST;
+                            break;
+                        case "NhaCungCap":
+                            if (string.IsNullOrEmpty(BLL_InformantCheck(formData["MaNhaCungCap"], IFM_NHACUNGCAP))) return ERR_IDNONEXIST;
+                            break;
+                        case "HoaDonNhap":
+                            if (string.IsNullOrEmpty(BLL_InformantCheck(formData["MaHoaDonNhap"], IFM_NGAYNHAP))) return ERR_IDNONEXIST;
+                            if (string.IsNullOrEmpty(BLL_InformantCheck(formData["MaNguyenLieu"], IFM_NGUYENLIEU))) return ERR_IDNONEXIST;
+                            break;
+                    }
+                }
+                if (status == ERR_NOERROR)
+                {
+                    WarehouseDAL.EditData.DAL_UpdateField(formData);
+                }
+                return status;
+            }
         }
     }
 }

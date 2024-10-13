@@ -211,7 +211,7 @@
         QmCC
 </value>
   </data>
-  <data name="ef_btnChange.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ef_btnUpdate.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAA39JREFUaEPt
         mstqFEEUhgNCfAU33vGCGxcKLnwKrxtdiOANvK4EQRB3utVHEBEcvAbFFzCJEY0BUVGT0USjJiZxcjEz
@@ -232,7 +232,7 @@
         SUVORK5CYII=
 </value>
   </data>
-  <data name="ef_btnReset.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ef_btnClear.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAU/SURBVGhD3Zr7bxRVFMdJTPBfwFc0Go34iq/EZ0IIvk00KD7xBx8/oImPEIn8gEYTfzAYSUhE

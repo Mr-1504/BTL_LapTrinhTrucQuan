@@ -106,7 +106,7 @@ namespace GUI.Warehouse
                 default: break;
             }
         }
-        //  part to control panel's text/graphics
+        //  EF's text/graphics functions section
         private Panel ef_funcGetCurrentActiveForm()
         {
             switch (selectedTableName)
@@ -118,7 +118,7 @@ namespace GUI.Warehouse
                 default: return null;
             }
         }
-        private void ef_evtFieldValueChange(object sender, EventArgs e) // when EF field have its value changed
+        private void ef_evtFieldValueChange(object sender, EventArgs e) // when EF fields has its value changed
         {
             ef_funcVisualizeFieldValueChange(sender);
             ef_funcInformantUpdate();
@@ -164,6 +164,46 @@ namespace GUI.Warehouse
             }
             ef_funcVisualReset();
         }
+        private void ef_funcFieldTextReset()
+        {
+            switch (selectedTableName)
+            {
+                case "NguyenLieu":
+                    ef_NL_lbMa.Text = "NL";
+                    ef_NL_txbTen.Text = string.Empty;
+                    ef_NL_txbDVT.Text = string.Empty;
+                    ef_NL_rtbCD.Text = string.Empty;
+                    ef_NL_rtbYC.Text = string.Empty;
+                    ef_NL_rtbCCD.Text = string.Empty;
+                    ef_NL_txbSL.Text = string.Empty;
+                    break;
+                case "NhaCungCap":
+                    ef_NCC_lbMa.Text = "NCC";
+                    ef_NCC_txbTen.Text = string.Empty;
+                    ef_NCC_txbDC.Text = string.Empty;
+                    ef_NCC_txbDT.Text = string.Empty;
+                    ef_NCC_rdbActive.Checked = false;
+                    ef_NCC_rdbDeactive.Checked = false;
+                    break;
+                case "HoaDonNhap":
+                    ef_HDN_lbMaHD.Text = "HDN";
+                    ef_HDN_txbMaNV.Text = string.Empty;
+                    ef_HDN_txbMaNCC.Text = string.Empty;
+                    ef_HDN_dtpNgayNhap.Value = DateTime.Parse("1-1-1900");
+                    ef_HDN_lbInformantNV.Text = string.Empty;
+                    ef_HDN_lbInformantNCC.Text = string.Empty;
+                    break;
+                case "ChiTietHoaDonNhap":
+                    ef_CTHDN_txbMaHDN.Text = string.Empty;
+                    ef_CTHDN_txbMaNL.Text = string.Empty;
+                    ef_CTHDN_txbSLN.Text = string.Empty;
+                    ef_CTHDN_txbDG.Text = string.Empty;
+                    ef_CTHDN_lbInformantDV.Text = string.Empty;
+                    ef_CTHDN_lbInformantNL.Text = string.Empty;
+                    ef_CTHDN_lbInformantNN.Text = string.Empty;
+                    break;
+            }
+        }
         private void ef_funcInformantUpdate() // update informant value on panel
         {
             switch (selectedTableName)
@@ -178,6 +218,48 @@ namespace GUI.Warehouse
                     ef_CTHDN_lbInformantNN.Text = BLL_InformantCheck(ef_CTHDN_txbMaHDN.Text, IFM_NGAYNHAP);
                     break;
             }
+        }
+        private Dictionary<string, string> ef_funcSynthFieldValue()
+        {
+            Dictionary<string, string> res = new Dictionary<string, string>();
+            switch(selectedTableName)
+            {
+                case "NguyenLieu":
+                    res["tableName"] = "NguyenLieu";
+                    res["MaNguyenLieu"] = ef_NL_lbMa.Text;
+                    res["TenNguyenLieu"] = ef_NL_txbTen.Text;
+                    res["DonViTinh"] = ef_NL_txbDVT.Text;
+                    res["CongDung"] = ef_NL_rtbCD.Text;
+                    res["YeuCau"] = ef_NL_rtbYC.Text;
+                    res["ChongChiDinh"] = ef_NL_rtbCCD.Text;
+                    res["Soluong"] = ef_NL_txbSL.Text;
+                    break;
+                case "NhaCungCap":
+                    res["tableName"] = "NhaCungCap";
+                    res["MaNhaCungCap"] = ef_NCC_lbMa.Text;
+                    res["TenNhaCungCap"] = ef_NCC_txbTen.Text;
+                    res["DiaChi"] = ef_NCC_txbDC.Text;
+                    res["DienThoai"] = ef_NCC_txbDT.Text;
+                    res["TrangThai"] = ef_NCC_rdbActive.Checked ? "1" : ef_NCC_rdbDeactive.Checked ? "0" : null;
+                    break;
+                case "HoaDonNhap":
+                    res["tableName"] = "HoaDonNhap";
+                    res["MaHoaDonNhap"] = ef_HDN_lbMaHD.Text;
+                    res["MaNhanVien"] = ef_HDN_txbMaNV.Text;
+                    res["MaNhaCungCap"] = ef_HDN_txbMaNCC.Text;
+                    res["NgayNhap"] = ef_HDN_dtpNgayNhap.Value.ToString();
+                    break;
+                case "ChiTietHoaDonNhap":
+                    res["tableName"] = "ChiTietHoaDonNhap";
+                    res["old_MaHoaDonNhap"] = bf_dgvTable.SelectedRows[0].Cells[0].ToString();
+                    res["old_MaNguyenLieu"] = bf_dgvTable.SelectedRows[0].Cells[1].ToString();
+                    res["MaHoaDonNhap"] = ef_CTHDN_txbMaHDN.Text;
+                    res["MaNguyenLieu"] = ef_CTHDN_txbMaNL.Text;
+                    res["SoLuong"] = ef_CTHDN_txbSLN.Text;
+                    res["DonGia"] = ef_CTHDN_txbDG.Text;
+                    break;
+            }
+            return res;
         }
             //  > visual-driven start
         private void ef_funcVisualizeFieldValueChange(object changedField)
@@ -202,50 +284,27 @@ namespace GUI.Warehouse
             }
         }
         //  > button pushed section
-        private void ef_funcFieldTextReset()
-        {
-            switch (selectedTableName)
-            {
-                case "NguyenLieu":
-                    ef_NL_lbMa.Text = string.Empty;
-                    ef_NL_txbTen.Text = string.Empty;
-                    ef_NL_txbDVT.Text = string.Empty;
-                    ef_NL_rtbCD.Text = string.Empty;
-                    ef_NL_rtbYC.Text = string.Empty;
-                    ef_NL_rtbCCD.Text = string.Empty;
-                    ef_NL_txbSL.Text = string.Empty;
-                    break;
-                case "NhaCungCap":
-                    ef_NCC_lbMa.Text = string.Empty;
-                    ef_NCC_txbTen.Text = string.Empty;
-                    ef_NCC_txbDC.Text = string.Empty;
-                    ef_NCC_txbDT.Text = string.Empty;
-                    ef_NCC_rdbActive.Checked = false;
-                    ef_NCC_rdbDeactive.Checked = false;
-                    break;
-                case "HoaDonNhap":
-                    ef_HDN_lbMaHD.Text = string.Empty;
-                    ef_HDN_txbMaNV.Text = string.Empty;
-                    ef_HDN_txbMaNCC.Text = string.Empty;
-                    ef_HDN_dtpNgayNhap.Value = DateTime.Parse("1-1-1900");
-                    ef_HDN_lbInformantNV.Text = string.Empty;
-                    ef_HDN_lbInformantNCC.Text = string.Empty;
-                    break;
-                case "ChiTietHoaDonNhap":
-                    ef_CTHDN_txbMaHDN.Text = string.Empty;
-                    ef_CTHDN_txbMaNL.Text = string.Empty;
-                    ef_CTHDN_txbSLN.Text = string.Empty;
-                    ef_CTHDN_txbDG.Text = string.Empty;
-                    ef_CTHDN_lbInformantDV.Text = string.Empty;
-                    ef_CTHDN_lbInformantNL.Text = string.Empty;
-                    ef_CTHDN_lbInformantNN.Text = string.Empty;
-                    break;
-            }
-        }
-        private void ef_btnReset_Click(object sender, EventArgs e)
+        private void ef_btnClear_Click(object sender, EventArgs e)
         {
             ef_funcFieldTextReset();
             ef_funcVisualReset();
+        }
+
+        private void ef_btnUpdate_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(
+                BLL_UpdateField(ef_funcSynthFieldValue()) == ERR_NOERROR ?
+                    "thanh cong" :
+                BLL_UpdateField(ef_funcSynthFieldValue()) == ERR_FIELDVALUENULL ?
+                    "truong de trong" :
+                BLL_UpdateField(ef_funcSynthFieldValue()) == ERR_DEPENDENTNULL ? 
+                    "truong phu thuoc khong ton tai" :
+                BLL_UpdateField(ef_funcSynthFieldValue()) == ERR_NUMBERFORMAT ?
+                    "nhap sai kieu du lieu" :
+                BLL_UpdateField(ef_funcSynthFieldValue()) == ERR_IDNONEXIST ?
+                    "khoa chinh khong ton tai" :
+                    "loi khong xac dinh");
+            Update();
         }
 
         //  ^ end

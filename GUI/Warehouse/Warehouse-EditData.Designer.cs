@@ -103,8 +103,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.ef_btnAdd = new System.Windows.Forms.Button();
-            this.ef_btnChange = new System.Windows.Forms.Button();
-            this.ef_btnReset = new System.Windows.Forms.Button();
+            this.ef_btnUpdate = new System.Windows.Forms.Button();
+            this.ef_btnClear = new System.Windows.Forms.Button();
             this.ef_btnDelete = new System.Windows.Forms.Button();
             this.pnBrowseField = new System.Windows.Forms.Panel();
             this.bf_pnSearchbar = new System.Windows.Forms.Panel();
@@ -164,8 +164,8 @@
             this.pnEditField.Controls.Add(this.ef_pnNhaCungCap);
             this.pnEditField.Controls.Add(this.ef_pnNguyenLieu);
             this.pnEditField.Controls.Add(this.ef_btnAdd);
-            this.pnEditField.Controls.Add(this.ef_btnChange);
-            this.pnEditField.Controls.Add(this.ef_btnReset);
+            this.pnEditField.Controls.Add(this.ef_btnUpdate);
+            this.pnEditField.Controls.Add(this.ef_btnClear);
             this.pnEditField.Controls.Add(this.ef_btnDelete);
             this.pnEditField.Location = new System.Drawing.Point(700, 30);
             this.pnEditField.Name = "pnEditField";
@@ -944,28 +944,29 @@
             this.ef_btnAdd.TabIndex = 3;
             this.ef_btnAdd.UseVisualStyleBackColor = true;
             // 
-            // ef_btnChange
+            // ef_btnUpdate
             // 
-            this.ef_btnChange.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ef_btnChange.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ef_btnChange.Image = ((System.Drawing.Image)(resources.GetObject("ef_btnChange.Image")));
-            this.ef_btnChange.Location = new System.Drawing.Point(376, 641);
-            this.ef_btnChange.Name = "ef_btnChange";
-            this.ef_btnChange.Size = new System.Drawing.Size(50, 50);
-            this.ef_btnChange.TabIndex = 2;
-            this.ef_btnChange.UseVisualStyleBackColor = true;
+            this.ef_btnUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ef_btnUpdate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ef_btnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("ef_btnUpdate.Image")));
+            this.ef_btnUpdate.Location = new System.Drawing.Point(376, 641);
+            this.ef_btnUpdate.Name = "ef_btnUpdate";
+            this.ef_btnUpdate.Size = new System.Drawing.Size(50, 50);
+            this.ef_btnUpdate.TabIndex = 2;
+            this.ef_btnUpdate.UseVisualStyleBackColor = true;
+            this.ef_btnUpdate.Click += new System.EventHandler(this.ef_btnUpdate_Click);
             // 
-            // ef_btnReset
+            // ef_btnClear
             // 
-            this.ef_btnReset.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ef_btnReset.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ef_btnReset.Image = ((System.Drawing.Image)(resources.GetObject("ef_btnReset.Image")));
-            this.ef_btnReset.Location = new System.Drawing.Point(226, 641);
-            this.ef_btnReset.Name = "ef_btnReset";
-            this.ef_btnReset.Size = new System.Drawing.Size(50, 50);
-            this.ef_btnReset.TabIndex = 1;
-            this.ef_btnReset.UseVisualStyleBackColor = true;
-            this.ef_btnReset.Click += new System.EventHandler(this.ef_btnReset_Click);
+            this.ef_btnClear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ef_btnClear.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ef_btnClear.Image = ((System.Drawing.Image)(resources.GetObject("ef_btnClear.Image")));
+            this.ef_btnClear.Location = new System.Drawing.Point(226, 641);
+            this.ef_btnClear.Name = "ef_btnClear";
+            this.ef_btnClear.Size = new System.Drawing.Size(50, 50);
+            this.ef_btnClear.TabIndex = 1;
+            this.ef_btnClear.UseVisualStyleBackColor = true;
+            this.ef_btnClear.Click += new System.EventHandler(this.ef_btnClear_Click);
             // 
             // ef_btnDelete
             // 
@@ -1171,8 +1172,8 @@
         private System.Windows.Forms.Panel pnEditField;
         private System.Windows.Forms.Button ef_btnDelete;
         private System.Windows.Forms.Button ef_btnAdd;
-        private System.Windows.Forms.Button ef_btnChange;
-        private System.Windows.Forms.Button ef_btnReset;
+        private System.Windows.Forms.Button ef_btnUpdate;
+        private System.Windows.Forms.Button ef_btnClear;
         private System.Windows.Forms.DataGridView bf_dgvTable;
         private System.Windows.Forms.Panel bf_pnSearchbar;
         private System.Windows.Forms.Panel bf_pnSelectedTable;
