@@ -146,7 +146,7 @@ namespace DAL
             public const int IFM_NGUYENLIEU = 2;
             public const int IFM_DONVI = 3;
             public const int IFM_NGAYNHAP = 4;
-            public static string DAL_InformantCheck(string key, int informantValue)
+            public static string DAL_CheckInformant(string key, int informantValue)
             {
                 string query =
                     informantValue == IFM_NHANVIEN ?

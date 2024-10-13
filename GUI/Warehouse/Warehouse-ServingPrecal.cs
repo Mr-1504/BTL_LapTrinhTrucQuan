@@ -73,13 +73,13 @@ namespace GUI.Warehouse
         //  ^^ end
 
         //  >> Menu-Precal interaction section start
-        private List<string> selectedDishIDs = new List<string>();
+        private List<string> _selectedDishIDs = new List<string>();
 
         private void ml_dgvMenu_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (!selectedDishIDs.Contains(ml_dgvMenu.CurrentRow.Cells[0].Value))
+            if (!_selectedDishIDs.Contains(ml_dgvMenu.CurrentRow.Cells[0].Value))
             {
-                selectedDishIDs.Add(ml_dgvMenu.CurrentRow.Cells[0].Value.ToString());
+                _selectedDishIDs.Add(ml_dgvMenu.CurrentRow.Cells[0].Value.ToString());
                 pc_dgvPrecal.Rows.Add(ml_dgvMenu.CurrentRow.Cells[0].Value, ml_dgvMenu.CurrentRow.Cells[1].Value);
                 pc_dgvPrecal_ShowData();
             }
@@ -98,10 +98,10 @@ namespace GUI.Warehouse
         }
         private void pc_dgvPrecal_ShowData()
         {
-            List<int> dishCount = new List<int>(new int[selectedDishIDs.Count]);
-            List<string> lowIngredientNames = new List<string>(new string[selectedDishIDs.Count]);
-            BLL_GetPrecalResult(selectedDishIDs, ref dishCount, ref lowIngredientNames);
-            for(int i=0; i<selectedDishIDs.Count; i++)
+            List<int> dishCount = new List<int>(new int[_selectedDishIDs.Count]);
+            List<string> lowIngredientNames = new List<string>(new string[_selectedDishIDs.Count]);
+            BLL_GetPrecalResult(_selectedDishIDs, ref dishCount, ref lowIngredientNames);
+            for(int i=0; i<_selectedDishIDs.Count; i++)
             {
                 pc_dgvPrecal.Rows[i].Cells[2].Value = dishCount[i]; 
                 pc_dgvPrecal.Rows[i].Cells[3].Value = lowIngredientNames[i];
@@ -109,7 +109,7 @@ namespace GUI.Warehouse
         }
         private void pc_dgvPrecal_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            selectedDishIDs.Remove(pc_dgvPrecal.CurrentRow.Cells[0].Value.ToString());
+            _selectedDishIDs.Remove(pc_dgvPrecal.CurrentRow.Cells[0].Value.ToString());
             pc_dgvPrecal.Rows.Remove(pc_dgvPrecal.CurrentRow);
 
             pc_dgvPrecal_ShowData();

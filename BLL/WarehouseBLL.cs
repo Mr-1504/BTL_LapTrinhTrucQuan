@@ -88,9 +88,9 @@ namespace BLL
             public const int IFM_NGUYENLIEU = 2;
             public const int IFM_DONVI = 3;
             public const int IFM_NGAYNHAP = 4;
-            public static string BLL_InformantCheck(string key, int informantValue)
+            public static string BLL_CheckInformant(string key, int informantValue)
             {
-                return WarehouseDAL.EditData.DAL_InformantCheck(key, informantValue);
+                return WarehouseDAL.EditData.DAL_CheckInformant(key, informantValue);
             }
 
             public const int ERR_NOERROR = 1;
@@ -98,7 +98,7 @@ namespace BLL
             public const int ERR_DEPENDENTNULL = -3;
             public const int ERR_NUMBERFORMAT = -4;
             public const int ERR_IDNONEXIST = -5;
-            private static int BLL_FieldValueStandardCheck(Dictionary<string, string> formData)
+            private static int BLL_CheckFieldValueStandard(Dictionary<string, string> formData)
             {
                 //  first check: all field need to have data
                 foreach (var it in formData) if (string.IsNullOrEmpty(it.Value))
@@ -120,51 +120,51 @@ namespace BLL
 
                 return ERR_NOERROR;
             }
-            private static int BLL_FieldValueDependancyCheck(Dictionary<string, string> formData)
+            private static int BLL_CheckFieldValueDependancy(Dictionary<string, string> formData)
             {
                 //  second check: dependents in existance
                 switch (formData["tableName"])
                 {
                     case "HoaDonNhap":
                         if (
-                            string.IsNullOrEmpty(BLL_InformantCheck(formData["MaNhanVien"], IFM_NHANVIEN)) ||
-                            string.IsNullOrEmpty(BLL_InformantCheck(formData["MaNhaCungCap"], IFM_NHACUNGCAP)))
+                            string.IsNullOrEmpty(BLL_CheckInformant(formData["MaNhanVien"], IFM_NHANVIEN)) ||
+                            string.IsNullOrEmpty(BLL_CheckInformant(formData["MaNhaCungCap"], IFM_NHACUNGCAP)))
                             return ERR_DEPENDENTNULL;
                         break;
                     case "ChiTietHoaDonNhap":
                         if (
-                            string.IsNullOrEmpty(BLL_InformantCheck(formData["MaHoaDonNhap"], IFM_NGAYNHAP)) ||
-                            string.IsNullOrEmpty(BLL_InformantCheck(formData["MaNguyenLieu"], IFM_NGUYENLIEU)))
+                            string.IsNullOrEmpty(BLL_CheckInformant(formData["MaHoaDonNhap"], IFM_NGAYNHAP)) ||
+                            string.IsNullOrEmpty(BLL_CheckInformant(formData["MaNguyenLieu"], IFM_NGUYENLIEU)))
                             return ERR_DEPENDENTNULL;
                         break;
                 }
                 return ERR_NOERROR;
             }
-            private static int BLL_FieldValueExistanceCheck(Dictionary<string, string> formData)
+            private static int BLL_CheckFieldValueExistance(Dictionary<string, string> formData)
             {
                 switch (formData["tableName"])
                 {
                     case "NguyenLieu":
-                        if (string.IsNullOrEmpty(BLL_InformantCheck(formData["MaNguyenLieu"], IFM_NGUYENLIEU))) return ERR_IDNONEXIST;
+                        if (string.IsNullOrEmpty(BLL_CheckInformant(formData["MaNguyenLieu"], IFM_NGUYENLIEU))) return ERR_IDNONEXIST;
                         break;
                     case "NhaCungCap":
-                        if (string.IsNullOrEmpty(BLL_InformantCheck(formData["MaNhaCungCap"], IFM_NHACUNGCAP))) return ERR_IDNONEXIST;
+                        if (string.IsNullOrEmpty(BLL_CheckInformant(formData["MaNhaCungCap"], IFM_NHACUNGCAP))) return ERR_IDNONEXIST;
                         break;
                     case "HoaDonNhap":
-                        if (string.IsNullOrEmpty(BLL_InformantCheck(formData["MaHoaDonNhap"], IFM_NGAYNHAP))) return ERR_IDNONEXIST;
+                        if (string.IsNullOrEmpty(BLL_CheckInformant(formData["MaHoaDonNhap"], IFM_NGAYNHAP))) return ERR_IDNONEXIST;
                         break;
                     case "ChiTietHoaDonNhap":
-                        if (string.IsNullOrEmpty(BLL_InformantCheck(formData["MaHoaDonNhap"], IFM_NGAYNHAP))) return ERR_IDNONEXIST;
-                        if (string.IsNullOrEmpty(BLL_InformantCheck(formData["MaNguyenLieu"], IFM_NGUYENLIEU))) return ERR_IDNONEXIST;
+                        if (string.IsNullOrEmpty(BLL_CheckInformant(formData["MaHoaDonNhap"], IFM_NGAYNHAP))) return ERR_IDNONEXIST;
+                        if (string.IsNullOrEmpty(BLL_CheckInformant(formData["MaNguyenLieu"], IFM_NGUYENLIEU))) return ERR_IDNONEXIST;
                         break;
                 }
                 return ERR_NOERROR;
             }
             public static int BLL_UpdateField(Dictionary<string, string> formData)
             {
-                int status = BLL_FieldValueStandardCheck(formData);
-                if (status == ERR_NOERROR) status = BLL_FieldValueDependancyCheck(formData);
-                if (status == ERR_NOERROR) status = BLL_FieldValueExistanceCheck(formData);
+                int status = BLL_CheckFieldValueStandard(formData);
+                if (status == ERR_NOERROR) status = BLL_CheckFieldValueDependancy(formData);
+                if (status == ERR_NOERROR) status = BLL_CheckFieldValueExistance(formData);
                 if (status == ERR_NOERROR)
                 {
                     status = WarehouseDAL.EditData.DAL_UpdateField(formData);
@@ -173,8 +173,8 @@ namespace BLL
             }
             public static int BLL_DeleteField(Dictionary<string, string> formData)
             {
-                int status = BLL_FieldValueStandardCheck(formData);
-                if (status == ERR_NOERROR) status = BLL_FieldValueExistanceCheck(formData);
+                int status = BLL_CheckFieldValueStandard(formData);
+                if (status == ERR_NOERROR) status = BLL_CheckFieldValueExistance(formData);
                 if (status == ERR_NOERROR)
                 {
                     status = WarehouseDAL.EditData.DAL_DeleteField(formData);
@@ -183,8 +183,8 @@ namespace BLL
             }
             public static int BLL_AddField(Dictionary<string, string> formData)
             {
-                int status = BLL_FieldValueStandardCheck(formData);
-                if (status == ERR_NOERROR) status = BLL_FieldValueDependancyCheck(formData);
+                int status = BLL_CheckFieldValueStandard(formData);
+                if (status == ERR_NOERROR) status = BLL_CheckFieldValueDependancy(formData);
                 if (status == ERR_NOERROR)
                 {
                     status = WarehouseDAL.EditData.DAL_AddField(formData);

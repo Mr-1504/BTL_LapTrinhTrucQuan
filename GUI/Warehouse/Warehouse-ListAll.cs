@@ -20,7 +20,7 @@ namespace GUI
         }
 
         //  >> table operation section start
-        private string selectedColumnName = string.Empty;
+        private string _selectedColumnName = string.Empty;
         private void dgvTable_PreparingForDisplay()
         {
             dgvTable_ShowData();
@@ -43,7 +43,7 @@ namespace GUI
         }
         private void dgvTable_MouseClick(object sender, MouseEventArgs e)
         {
-            selectedColumnName = dgvTable.SelectedCells.Count > 0 ? dgvTable.Columns[dgvTable.SelectedCells[0].ColumnIndex].Name : string.Empty;
+            _selectedColumnName = dgvTable.SelectedCells.Count > 0 ? dgvTable.Columns[dgvTable.SelectedCells[0].ColumnIndex].Name : string.Empty;
             lsb_Update();
             odb_Update();
         }
@@ -53,23 +53,23 @@ namespace GUI
         private void odb_Update()
         {
             odb_HintDisplay();
-            odb_btnSortUpDown.Enabled = !string.IsNullOrEmpty(selectedColumnName);
+            odb_btnSortUpDown.Enabled = !string.IsNullOrEmpty(_selectedColumnName);
         }
         private void odb_HintDisplay()
         {
-            orb_lbHint.Text = "Sắp xếp " + selectedColumnName;
+            orb_lbHint.Text = "Sắp xếp " + _selectedColumnName;
         }
         private void odb_btnSortUpDown_Click(object sender, EventArgs e)
         {
             if (odb_btnSortUpDown.Tag.ToString() == "doDecend")
             {
-                BLL_OrderByColumn(selectedColumnName, false);
+                BLL_OrderByColumn(_selectedColumnName, false);
                 odb_btnSortUpDown.BackgroundImage = GUI.Properties.Resources.sortBigger;
                 odb_btnSortUpDown.Tag = "doAscend";
             }
             else if (odb_btnSortUpDown.Tag.ToString() == "doAscend")
             {
-                BLL_OrderByColumn(selectedColumnName, true);
+                BLL_OrderByColumn(_selectedColumnName, true);
                 odb_btnSortUpDown.BackgroundImage = GUI.Properties.Resources.sortSmaller;
                 odb_btnSortUpDown.Tag = "doDecend";
             }
@@ -85,7 +85,7 @@ namespace GUI
         private void lsb_HintDisplay()
         {
             lsb_lbHint.Visible = string.IsNullOrEmpty(lsb_txbSearchbox.Text);
-            lsb_lbHint.Text = "Tìm kiếm " + selectedColumnName;
+            lsb_lbHint.Text = "Tìm kiếm " + _selectedColumnName;
         }
         private void lsb_func_EnterKeyword()
         {
@@ -94,7 +94,7 @@ namespace GUI
         }
         private void lsb_txbSearchbox_TextChanged(object sender, EventArgs e)
         {
-            BLL_SearchKeywordInColumn(selectedColumnName, lsb_txbSearchbox.Text);
+            BLL_SearchKeywordInColumn(_selectedColumnName, lsb_txbSearchbox.Text);
             dgvTable_ShowData();
         }
         private void pnLocalSearchBar_Click(object sender, EventArgs e)
