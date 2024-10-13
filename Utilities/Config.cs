@@ -3,11 +3,13 @@ using System;
 using System.ComponentModel;
 using System.Data;
 using System.Reflection;
+using System.Windows;
 using System.Windows.Forms;
 
 
 namespace Utilities
 {
+    
     public enum Status
     {
         NoUse,
@@ -130,8 +132,17 @@ namespace Utilities
     }
     public enum Unit
     {
+        [Description("Kg")]
         Kg,
-        Gram
+
+        [Description("g")]
+        Gram,
+
+        [Description("Gói")]
+        Package,
+
+        [Description("Chai")]
+        Bottle
     }
 
     public enum Order

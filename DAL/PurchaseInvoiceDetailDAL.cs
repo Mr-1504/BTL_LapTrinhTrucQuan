@@ -26,10 +26,10 @@ namespace DAL
             });
         }
 
-        public DataTable GetPurchaseInvoiceDetail()
+        public DataTable GetPurchaseInvoiceDetails(string invoiceId)
         {
-            string query = "SELECT * FROM ChiTietHoaDonNhap";
-            return SqlHelper.ExecuteReader(query, null);
+            string query = "SELECT * FROM ChiTietHoaDonNhap WHERE MaHoaDonNhap = @invoiceId";
+            return SqlHelper.ExecuteReader(query, new object[] {invoiceId});
         }
 
         public DataTable GetPurchaseInvoiceDetail(string purchaseInvoiceId = "", string ingredientId = "")
@@ -53,6 +53,12 @@ namespace DAL
                 objects[0] = ingredientId;
             }    
             return SqlHelper.ExecuteReader(query, objects);
+        }
+
+        public int RemovePurchaseInvoiceDetail(string purchaseInvoiceId)
+        {
+            string query = "DELETE FROM ChiTietHoaDonNhap WHERE MaHoaDonNhap = @purchaseInvoiceId";
+            return SqlHelper.ExecuteNonQuery(query, new object[] { purchaseInvoiceId });
         }
     }
 }

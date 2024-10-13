@@ -3,6 +3,7 @@ using GUI.PurchasedIngredient;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Security.Cryptography;
 using System.Windows.Forms;
 using Utilities;
 
@@ -52,7 +53,21 @@ namespace GUI
             }
             pnlMenu.MouseEnter += Menu_MouseLeave;
             LoadMenu(employeeId);
+            string employeeRole = employeeId.Substring(0,2).ToUpper();
+            if(employeeRole == "QL")
+            {
+                HomeManager homeManager = new HomeManager();
+                OpenComponent(homeManager);
+            }
+            else if(employeeRole == "KH")
+            {
 
+            }
+            else if (employeeRole == "LT")
+            {
+
+            }
+            
             ActiveControl = picLogo;
 
             //
@@ -71,6 +86,7 @@ namespace GUI
         }
         public void loadImage()
         {
+            _imagePath = $@"..\..\Resources\AvatarImage\{_id}.JPG";
             btnAvatar.BackgroundImage = Image.FromFile(_imagePath);
         }
         private void LoadMenu(string employeeId)
@@ -168,7 +184,7 @@ namespace GUI
             }
         }
 
-        private void Menu_MouseLeave(object sender, EventArgs e)
+        public void Menu_MouseLeave(object sender, EventArgs e)
         {
             picHover.Visible = false;
             if (_pnl != null)
@@ -204,26 +220,38 @@ namespace GUI
                 }
             }
 
-            SettingForm settingForm = new SettingForm(_id, _actions);
-            OpenComponent(settingForm);
-
             switch (_action)
             {
                 case "Home":
 
+                    string employeeRole = _id.Substring(0, 2).ToUpper();
+                    if (employeeRole == "QL")
+                    {
+                        HomeManager homeManager = new HomeManager();
+                        OpenComponent(homeManager);
+                    }
+                    else if (employeeRole == "KH")
+                    {
+
+                    }
+                    else if (employeeRole == "LT")
+                    {
+
+                    }
                     break;
                 case "Employee":
+                    EmployManager employManager = new EmployManager();
+                    OpenComponent(employManager);
 
                     break;
                 case "Food":
 
                     break;
                 case "Warehouse":
-
                     break;
                 case "Import":
-                    DetailPurchaseedIngredient detail = new DetailPurchaseedIngredient(_id);
-                    OpenComponent(detail);
+                    PurchasedList purchasedList = new PurchasedList(_id, this);
+                    OpenComponent(purchasedList);
                     break;
                 case "Order":
 
@@ -303,6 +331,7 @@ namespace GUI
 
         private void OpenComponent(Form form)
         {
+            pnlContent.SuspendLayout();
             form.MouseEnter += Menu_MouseLeave;
             foreach (Control control in form.Controls)
             {
@@ -312,6 +341,8 @@ namespace GUI
             pnlContent.Controls.Clear();
             pnlContent.Controls.Add(form);
             form.Show();
+
+            pnlContent.ResumeLayout();
         }
 
         private void txtSearch_Enter(object sender, EventArgs e)
@@ -322,6 +353,20 @@ namespace GUI
         private void txtSearch_Leave(object sender, EventArgs e)
         {
             txtSearch.Text = txtSearch.Text.Length == 0 ? "Tìm kiếm" : txtSearch.Text;
+        }
+        public void AddIntoPanel(Form form)
+        {
+            pnlContent.SuspendLayout();
+            form.MouseEnter += Menu_MouseLeave;
+            foreach (Control control in form.Controls)
+            {
+                control.MouseEnter += Menu_MouseLeave;
+            }
+            form.TopLevel = false;
+            pnlContent.Controls.Add(form);
+            form.Show();
+
+            pnlContent.ResumeLayout();
         }
     }
 }

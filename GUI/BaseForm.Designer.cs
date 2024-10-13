@@ -820,6 +820,7 @@ namespace GUI
 
             // BaseForm
             // 
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1600, 900);
             this.Controls.Add(this.pnlContent);
@@ -870,7 +871,7 @@ namespace GUI
 
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
 
-        
+
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.Panel pnlHeader;
         private System.Windows.Forms.PictureBox picLogo;

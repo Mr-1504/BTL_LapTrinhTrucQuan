@@ -18,11 +18,11 @@ namespace DAL
             string day = new string('0', 2 - DateTime.Now.Day.ToString().Length) + DateTime.Now.Day.ToString();
             string purchaseInvoiceId = (GetPurchaseInvoiceCount(day, month, year) + 1).ToString();
             purchaseInvoiceId = "HDN" + day + month + year + new string('0', 3 - purchaseInvoiceId.Length) + purchaseInvoiceId;
-            string query = "INSERT INTO HoaDonNhap (MaHoaDonNhap, MaNhanVien, MaNhaCungCap, NgayNhap)" +
-                " VALUES ( @purchaseInvoiceId , @employeeId , @supplier , @dateOfPurchase )";
+            string query = "INSERT INTO HoaDonNhap (MaHoaDonNhap, MaNhanVien, MaNhaCungCap, NgayNhap, ThanhTien)" +
+                " VALUES ( @purchaseInvoiceId , @employeeId , @supplier , @dateOfPurchase , @total )";
             return SqlHelper.ExecuteNonQuery(query, new object[]
                  { purchaseInvoiceId, purchaseInvoiceDTO.EmployeeId,
-                 purchaseInvoiceDTO.SupplierId, purchaseInvoiceDTO.DateOfPurchase });
+                 purchaseInvoiceDTO.SupplierId, purchaseInvoiceDTO.DateOfPurchase, purchaseInvoiceDTO.Total });
         }
 
         public int UpdatePurchaseInvoice(PurchaseInvoiceDTO purchaseInvoiceDTO)
@@ -94,6 +94,11 @@ namespace DAL
                 objects[0] = supplierId;
             }
             return SqlHelper.ExecuteReader(query, objects);
+        }
+        public int RemovePurchaseInvoice(string purchaseInvoiceId)
+        {
+            string query = "DELETE FROM HoaDonNhap WHERE MaHoaDonNhap = @purchaseInvoiceId";
+            return SqlHelper.ExecuteNonQuery(query, new object[] { purchaseInvoiceId });
         }
     }
 }

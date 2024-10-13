@@ -28,12 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlList = new System.Windows.Forms.Panel();
             this.pnlData = new System.Windows.Forms.Panel();
+            this.menuList = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.Edit = new System.Windows.Forms.ToolStripMenuItem();
+            this.Delete = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlDataHeader = new System.Windows.Forms.Panel();
+            this.lblDataQuantity = new System.Windows.Forms.Label();
+            this.lblDataPriceUnit = new System.Windows.Forms.Label();
+            this.lblDataUnit = new System.Windows.Forms.Label();
+            this.lblDataName = new System.Windows.Forms.Label();
             this.dgvList = new System.Windows.Forms.DataGridView();
             this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,7 +54,7 @@
             this.cmbIngredientName = new System.Windows.Forms.ComboBox();
             this.pnlSupplier = new System.Windows.Forms.Panel();
             this.cmbSupplierName = new System.Windows.Forms.ComboBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlQuantity = new System.Windows.Forms.Panel();
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.pnlUnit = new System.Windows.Forms.Panel();
             this.txtUnit = new System.Windows.Forms.TextBox();
@@ -61,18 +69,15 @@
             this.lblIngredient = new System.Windows.Forms.Label();
             this.lblSupplierName = new System.Windows.Forms.Label();
             this.lblSupplier = new System.Windows.Forms.Label();
-            this.lblDataName = new System.Windows.Forms.Label();
-            this.lblDataUnit = new System.Windows.Forms.Label();
-            this.lblDataPriceUnit = new System.Windows.Forms.Label();
-            this.lblDataQuantity = new System.Windows.Forms.Label();
             this.pnlList.SuspendLayout();
             this.pnlData.SuspendLayout();
+            this.menuList.SuspendLayout();
             this.pnlDataHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             this.pnlInformation.SuspendLayout();
             this.pnlIngredient.SuspendLayout();
             this.pnlSupplier.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.pnlQuantity.SuspendLayout();
             this.pnlUnit.SuspendLayout();
             this.pnlPriceUnit.SuspendLayout();
             this.SuspendLayout();
@@ -92,12 +97,38 @@
             // pnlData
             // 
             this.pnlData.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlData.ContextMenuStrip = this.menuList;
             this.pnlData.Controls.Add(this.pnlDataHeader);
             this.pnlData.Controls.Add(this.dgvList);
             this.pnlData.Location = new System.Drawing.Point(40, 77);
             this.pnlData.Name = "pnlData";
             this.pnlData.Size = new System.Drawing.Size(569, 487);
-            this.pnlData.TabIndex = 18;
+            this.pnlData.TabIndex = 0;
+            // 
+            // menuList
+            // 
+            this.menuList.DropShadowEnabled = false;
+            this.menuList.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuList.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Edit,
+            this.Delete});
+            this.menuList.Name = "menuList";
+            this.menuList.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.menuList.Size = new System.Drawing.Size(181, 70);
+            // 
+            // Edit
+            // 
+            this.Edit.Name = "Edit";
+            this.Edit.Size = new System.Drawing.Size(180, 22);
+            this.Edit.Text = "Sửa";
+            this.Edit.Click += new System.EventHandler(this.Edit_Click);
+            // 
+            // Delete
+            // 
+            this.Delete.Name = "Delete";
+            this.Delete.Size = new System.Drawing.Size(180, 22);
+            this.Delete.Text = "Xóa";
+            this.Delete.Click += new System.EventHandler(this.Delete_Click);
             // 
             // pnlDataHeader
             // 
@@ -111,6 +142,46 @@
             this.pnlDataHeader.Name = "pnlDataHeader";
             this.pnlDataHeader.Size = new System.Drawing.Size(569, 46);
             this.pnlDataHeader.TabIndex = 20;
+            // 
+            // lblDataQuantity
+            // 
+            this.lblDataQuantity.AutoSize = true;
+            this.lblDataQuantity.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDataQuantity.Location = new System.Drawing.Point(452, 16);
+            this.lblDataQuantity.Name = "lblDataQuantity";
+            this.lblDataQuantity.Size = new System.Drawing.Size(74, 18);
+            this.lblDataQuantity.TabIndex = 24;
+            this.lblDataQuantity.Text = "Số lượng";
+            // 
+            // lblDataPriceUnit
+            // 
+            this.lblDataPriceUnit.AutoSize = true;
+            this.lblDataPriceUnit.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDataPriceUnit.Location = new System.Drawing.Point(311, 16);
+            this.lblDataPriceUnit.Name = "lblDataPriceUnit";
+            this.lblDataPriceUnit.Size = new System.Drawing.Size(65, 18);
+            this.lblDataPriceUnit.TabIndex = 23;
+            this.lblDataPriceUnit.Text = "Đơn giá";
+            // 
+            // lblDataUnit
+            // 
+            this.lblDataUnit.AutoSize = true;
+            this.lblDataUnit.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDataUnit.Location = new System.Drawing.Point(205, 16);
+            this.lblDataUnit.Name = "lblDataUnit";
+            this.lblDataUnit.Size = new System.Drawing.Size(54, 18);
+            this.lblDataUnit.TabIndex = 22;
+            this.lblDataUnit.Text = "Đơn vị";
+            // 
+            // lblDataName
+            // 
+            this.lblDataName.AutoSize = true;
+            this.lblDataName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDataName.Location = new System.Drawing.Point(28, 16);
+            this.lblDataName.Name = "lblDataName";
+            this.lblDataName.Size = new System.Drawing.Size(115, 18);
+            this.lblDataName.TabIndex = 21;
+            this.lblDataName.Text = "Tên nguyên liệu";
             // 
             // dgvList
             // 
@@ -161,14 +232,17 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvList.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvList.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.dgvList.RowTemplate.Height = 40;
+            this.dgvList.RowTemplate.Height = 30;
             this.dgvList.RowTemplate.ReadOnly = true;
             this.dgvList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvList.Size = new System.Drawing.Size(569, 487);
-            this.dgvList.TabIndex = 19;
+            this.dgvList.TabIndex = 0;
+            this.dgvList.TabStop = false;
+            this.dgvList.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgvList_MouseDown);
             // 
             // colName
             // 
+            this.colName.DataPropertyName = "colName";
             this.colName.HeaderText = "Tên nguyên liệu";
             this.colName.Name = "colName";
             this.colName.ReadOnly = true;
@@ -178,6 +252,7 @@
             // 
             // colUnit
             // 
+            this.colUnit.DataPropertyName = "colUnit";
             this.colUnit.HeaderText = "Đơn vị";
             this.colUnit.Name = "colUnit";
             this.colUnit.ReadOnly = true;
@@ -187,6 +262,7 @@
             // 
             // colPriceUnit
             // 
+            this.colPriceUnit.DataPropertyName = "colPriceUnit";
             this.colPriceUnit.HeaderText = "Đơn giá";
             this.colPriceUnit.Name = "colPriceUnit";
             this.colPriceUnit.ReadOnly = true;
@@ -196,6 +272,7 @@
             // 
             // colQuantity
             // 
+            this.colQuantity.DataPropertyName = "colQuantity";
             this.colQuantity.HeaderText = "Số lượng";
             this.colQuantity.Name = "colQuantity";
             this.colQuantity.ReadOnly = true;
@@ -221,7 +298,7 @@
             this.pnlInformation.Controls.Add(this.lblError);
             this.pnlInformation.Controls.Add(this.pnlIngredient);
             this.pnlInformation.Controls.Add(this.pnlSupplier);
-            this.pnlInformation.Controls.Add(this.panel1);
+            this.pnlInformation.Controls.Add(this.pnlQuantity);
             this.pnlInformation.Controls.Add(this.pnlUnit);
             this.pnlInformation.Controls.Add(this.pnlPriceUnit);
             this.pnlInformation.Controls.Add(this.btnConfirm);
@@ -274,6 +351,7 @@
             this.cmbIngredientName.TabIndex = 4;
             this.cmbIngredientName.SelectedIndexChanged += new System.EventHandler(this.cmbIngredientName_SelectedIndexChanged);
             this.cmbIngredientName.TextUpdate += new System.EventHandler(this.cmbIngredientName_TextUpdate);
+            this.cmbIngredientName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbIngredientName_KeyDown);
             this.cmbIngredientName.Leave += new System.EventHandler(this.cmbIngredientName_Leave);
             // 
             // pnlSupplier
@@ -302,15 +380,15 @@
             this.cmbSupplierName.TextUpdate += new System.EventHandler(this.cmbSupplierName_TextUpdate);
             this.cmbSupplierName.Leave += new System.EventHandler(this.cmbSupplierName_Leave);
             // 
-            // panel1
+            // pnlQuantity
             // 
-            this.panel1.BackgroundImage = global::GUI.Properties.Resources.bgQuantityIngredientInput;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel1.Controls.Add(this.txtQuantity);
-            this.panel1.Location = new System.Drawing.Point(70, 413);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(528, 39);
-            this.panel1.TabIndex = 14;
+            this.pnlQuantity.BackgroundImage = global::GUI.Properties.Resources.bgQuantityIngredientInput;
+            this.pnlQuantity.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pnlQuantity.Controls.Add(this.txtQuantity);
+            this.pnlQuantity.Location = new System.Drawing.Point(70, 413);
+            this.pnlQuantity.Name = "pnlQuantity";
+            this.pnlQuantity.Size = new System.Drawing.Size(528, 39);
+            this.pnlQuantity.TabIndex = 14;
             // 
             // txtQuantity
             // 
@@ -321,7 +399,7 @@
             this.txtQuantity.Multiline = true;
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(505, 20);
-            this.txtQuantity.TabIndex = 0;
+            this.txtQuantity.TabIndex = 6;
             this.txtQuantity.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtQuantity_KeyDown);
             // 
             // pnlUnit
@@ -339,7 +417,7 @@
             this.txtUnit.BackColor = System.Drawing.Color.White;
             this.txtUnit.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUnit.Enabled = false;
-            this.txtUnit.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUnit.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUnit.Location = new System.Drawing.Point(14, 9);
             this.txtUnit.Multiline = true;
             this.txtUnit.Name = "txtUnit";
@@ -367,7 +445,8 @@
             this.txtPriceUnit.Multiline = true;
             this.txtPriceUnit.Name = "txtPriceUnit";
             this.txtPriceUnit.Size = new System.Drawing.Size(203, 20);
-            this.txtPriceUnit.TabIndex = 0;
+            this.txtPriceUnit.TabIndex = 5;
+            this.txtPriceUnit.Enter += new System.EventHandler(this.txtPriceUnit_Enter);
             this.txtPriceUnit.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPriceUnit_KeyDown);
             // 
             // btnConfirm
@@ -384,6 +463,7 @@
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(111, 50);
             this.btnConfirm.TabIndex = 10;
+            this.btnConfirm.TabStop = false;
             this.btnConfirm.Text = "Đồng ý";
             this.btnConfirm.UseVisualStyleBackColor = true;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
@@ -403,6 +483,7 @@
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(111, 50);
             this.btnReset.TabIndex = 9;
+            this.btnReset.TabStop = false;
             this.btnReset.Text = "Đặt lại";
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
@@ -479,46 +560,6 @@
             this.lblSupplier.TabIndex = 0;
             this.lblSupplier.Text = "Đơn vị cung cấp";
             // 
-            // lblDataName
-            // 
-            this.lblDataName.AutoSize = true;
-            this.lblDataName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDataName.Location = new System.Drawing.Point(28, 16);
-            this.lblDataName.Name = "lblDataName";
-            this.lblDataName.Size = new System.Drawing.Size(115, 18);
-            this.lblDataName.TabIndex = 21;
-            this.lblDataName.Text = "Tên nguyên liệu";
-            // 
-            // lblDataUnit
-            // 
-            this.lblDataUnit.AutoSize = true;
-            this.lblDataUnit.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDataUnit.Location = new System.Drawing.Point(205, 16);
-            this.lblDataUnit.Name = "lblDataUnit";
-            this.lblDataUnit.Size = new System.Drawing.Size(54, 18);
-            this.lblDataUnit.TabIndex = 22;
-            this.lblDataUnit.Text = "Đơn vị";
-            // 
-            // lblDataPriceUnit
-            // 
-            this.lblDataPriceUnit.AutoSize = true;
-            this.lblDataPriceUnit.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDataPriceUnit.Location = new System.Drawing.Point(311, 16);
-            this.lblDataPriceUnit.Name = "lblDataPriceUnit";
-            this.lblDataPriceUnit.Size = new System.Drawing.Size(65, 18);
-            this.lblDataPriceUnit.TabIndex = 23;
-            this.lblDataPriceUnit.Text = "Đơn giá";
-            // 
-            // lblDataQuantity
-            // 
-            this.lblDataQuantity.AutoSize = true;
-            this.lblDataQuantity.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDataQuantity.Location = new System.Drawing.Point(452, 16);
-            this.lblDataQuantity.Name = "lblDataQuantity";
-            this.lblDataQuantity.Size = new System.Drawing.Size(74, 18);
-            this.lblDataQuantity.TabIndex = 24;
-            this.lblDataQuantity.Text = "Số lượng";
-            // 
             // InputDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -532,6 +573,7 @@
             this.pnlList.ResumeLayout(false);
             this.pnlList.PerformLayout();
             this.pnlData.ResumeLayout(false);
+            this.menuList.ResumeLayout(false);
             this.pnlDataHeader.ResumeLayout(false);
             this.pnlDataHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
@@ -539,8 +581,8 @@
             this.pnlInformation.PerformLayout();
             this.pnlIngredient.ResumeLayout(false);
             this.pnlSupplier.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlQuantity.ResumeLayout(false);
+            this.pnlQuantity.PerformLayout();
             this.pnlUnit.ResumeLayout(false);
             this.pnlUnit.PerformLayout();
             this.pnlPriceUnit.ResumeLayout(false);
@@ -567,23 +609,26 @@
         private System.Windows.Forms.Panel pnlUnit;
         private System.Windows.Forms.TextBox txtPriceUnit;
         private System.Windows.Forms.TextBox txtUnit;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlQuantity;
         private System.Windows.Forms.TextBox txtQuantity;
         private System.Windows.Forms.Panel pnlSupplier;
         private System.Windows.Forms.Panel pnlIngredient;
         private System.Windows.Forms.ComboBox cmbIngredientName;
         private System.Windows.Forms.Label lblList;
-        private System.Windows.Forms.Panel pnlData;
-        private System.Windows.Forms.DataGridView dgvList;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colUnit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPriceUnit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colQuantity;
         private System.Windows.Forms.Label lblError;
+        private System.Windows.Forms.Panel pnlData;
         private System.Windows.Forms.Panel pnlDataHeader;
         private System.Windows.Forms.Label lblDataQuantity;
         private System.Windows.Forms.Label lblDataPriceUnit;
         private System.Windows.Forms.Label lblDataUnit;
         private System.Windows.Forms.Label lblDataName;
+        private System.Windows.Forms.DataGridView dgvList;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colUnit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPriceUnit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colQuantity;
+        private System.Windows.Forms.ContextMenuStrip menuList;
+        private System.Windows.Forms.ToolStripMenuItem Edit;
+        private System.Windows.Forms.ToolStripMenuItem Delete;
     }
 }
