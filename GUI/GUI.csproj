@@ -517,6 +517,12 @@
     <None Include="Resources\addressPanel.png" />
   </ItemGroup>
   <ItemGroup>
+
+    <None Include="Resources\btnPage.png" />
+    <Content Include="Resources\ImageFood\AP0001.jpg" />
+    <Content Include="Resources\ImageFood\AP0002.jpg" />
+    <Content Include="Resources\ImageFood\AP0003.jpg" />
+
     <None Include="Resources\field_multi_editable_420x80.png" />
     <None Include="Resources\field_multi_readonly_420x80.png" />
     <None Include="Resources\field_multi_valuechanged_420x80.png" />
@@ -528,8 +534,8 @@
     <None Include="Resources\btnBack.png" />
     <Content Include="Resources\ImageFood\AP0006.JPG" />
     <Content Include="Resources\ImageFood\default .jpg" />
+
     <Content Include="Resources\ImageFood\default.jpg" />
-    <Content Include="Resources\ImageFood\MN0010.jpg" />
     <None Include="Resources\panelNumberic2.png" />
     <None Include="Resources\panelNumberic.png" />
     <None Include="Resources\avatar.png" />
