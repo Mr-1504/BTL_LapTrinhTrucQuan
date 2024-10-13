@@ -21,14 +21,21 @@ namespace GUI
         private int _pageSize = 6;
         private int _totalPages = 1;
         private FoodBLL _foodBLL = new FoodBLL();
+        private frmOrderDetail _orderDetail;
+        public event Action<DataTable> OrderCompleted;
+        public static DataTable SelectedFoodItems;
 
-        public frmMenuOrder()
+        public frmMenuOrder(frmOrderDetail orderDetail)
         {
             InitializeComponent();
 
             this.DoubleBuffered = true;
             SetupDataGridView();
+            _orderDetail = orderDetail;
 
+            SharedDataTable.FoodItems.Columns.Add("FoodName");
+            SharedDataTable.FoodItems.Columns.Add("Quantity");
+            SharedDataTable.FoodItems.Columns.Add("Price");
         }
         private void SetupDataGridView()
         {
@@ -317,7 +324,10 @@ namespace GUI
             //pnlHeaderTable.Region = new Region(path);
         }
 
-        
+        private void btnOrder_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
     public static class ControlExtensions
     {

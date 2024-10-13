@@ -32,5 +32,10 @@ namespace DAL
             return SqlHelper.ExecuteReader(query, new object[] { });
         }
 
+        public DataTable GetOrderDetailByOrderID(string orderId)
+        {
+            string query = "SELECT MonAn.TenMonAn, ChiTietDonHang.SoLuong, ChiTietDonHang.SoLuong * MonAn.DonGia as ThanhTien FROM ChiTietDonHang JOIN MonAn ON ChiTietDonHang.MaMonAn = MonAn.MaMonAn where ChiTietDonHang.MaDon = @OrderID";
+            return SqlHelper.ExecuteReader(query, new object[] { orderId });
+        }
     }
 }

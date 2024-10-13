@@ -1,4 +1,6 @@
 ﻿using BLL;
+using DAL;
+using DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,12 +11,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Utilities;
 
 namespace GUI
 {
     public partial class frmListOrders : Form
     {
         private OrderBLL _orderBLL = new OrderBLL();
+        private bool _isSearching = false;
         public frmListOrders()
         {
             InitializeComponent();
@@ -70,24 +74,37 @@ namespace GUI
             printButtonColumn.Text = "In";
             //printButtonColumn.FlatStyle = FlatStyle.Flat;
             printButtonColumn.UseColumnTextForButtonValue = true;
+            printButtonColumn.Width = 50;
             printButtonColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dgvListOrders.Columns.Add(printButtonColumn);
 
+            dgvListOrders.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 12F, FontStyle.Bold);
 
             dgvListOrders.RowTemplate.Height = 50;
             dgvListOrders.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            dgvListOrders.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvListOrders.GridColor = Color.White;
-            dgvListOrders.RowHeadersVisible = false;
+            dgvListOrders.RowHeadersVisible =  false;
             dgvListOrders.ColumnHeadersVisible = true;
             dgvListOrders.ReadOnly = true;
         }
 
-        private void LoadOrderData()
+        public void LoadOrderData(string search="")
         {
-            DataTable orderTabel = _orderBLL.GetOrders();
+            DataTable orderTabel;
 
+            if (string.IsNullOrEmpty(search) || search == "Đơn hàng cần tìm ?")
+            {
+                orderTabel =  _orderBLL.GetOrders(search);
+            }
+            else
+            {
+                orderTabel = _orderBLL.GetOrders(search);
+            }
+           
             dgvListOrders.DataSource = orderTabel;
 
+            dgvListOrders.Columns["IdTable"].DataPropertyName = "SoBan";
             dgvListOrders.Columns["IDOrder"].DataPropertyName = "MaDon";
             dgvListOrders.Columns["StatusPayment"].DataPropertyName = "TrangThai";
             dgvListOrders.Columns["TimePayment"].DataPropertyName = "NgayTao";
@@ -123,12 +140,26 @@ namespace GUI
 
         private void dgvListOrders_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
+            //if (e.ColumnIndex == dgvListOrders.Columns["PrintInvoice"].Index && e.RowIndex >= 0)
+            //{
+            //    e.PaintBackground(e.ClipBounds, true);
+
+            //    // Tạo hình chữ nhật cho nút
+            //    Rectangle buttonRect = e.CellBounds;
+
+            //    // Vẽ nội dung chữ "In" với màu xanh
+            //    TextRenderer.DrawText(e.Graphics, "In", e.CellStyle.Font,
+            //        buttonRect, Color.Blue, TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
+
+            //    // Đánh dấu đã vẽ xong để tránh vẽ thêm
+            //    e.Handled = true;
+            //}
             if (e.ColumnIndex == dgvListOrders.Columns["PrintInvoice"].Index && e.RowIndex >= 0)
             {
                 e.PaintBackground(e.ClipBounds, true);
 
-                // Tạo hình chữ nhật cho nút
-                Rectangle buttonRect = e.CellBounds;
+                // Tạo hình chữ nhật cho nút với kích thước nhỏ hơn
+                Rectangle buttonRect = new Rectangle(e.CellBounds.X + 5, e.CellBounds.Y + 5, e.CellBounds.Width - 10, e.CellBounds.Height - 10); // Kích thước nhỏ hơn
 
                 // Vẽ nội dung chữ "In" với màu xanh
                 TextRenderer.DrawText(e.Graphics, "In", e.CellStyle.Font,
@@ -137,6 +168,7 @@ namespace GUI
                 // Đánh dấu đã vẽ xong để tránh vẽ thêm
                 e.Handled = true;
             }
+
         }
 
         private void btnThemDonHang_Paint(object sender, PaintEventArgs e)
@@ -154,6 +186,104 @@ namespace GUI
             path.AddArc(rect.X, rect.Y + rect.Height - radius, radius, radius, 90, 90);
             path.CloseFigure();
             btnThemDonHang.Region = new Region(path);
+        }
+
+        private void dgvListOrders_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                string orderID = dgvListOrders.Rows[e.RowIndex].Cells["IDOrder"].Value.ToString();
+                DateTime orderDate = Convert.ToDateTime(dgvListOrders.Rows[e.RowIndex].Cells["TimePayment"].Value);
+                string status = dgvListOrders.Rows[e.RowIndex].Cells["StatusPayment"].Value.ToString();
+                Order orderStaus = Config.GetEnumValueFromDescription<Order>(status);
+                int totalPrice = Convert.ToInt32(dgvListOrders.Rows[e.RowIndex].Cells["TotalPrice"].Value);
+                int tableNumber = Convert.ToInt32(dgvListOrders.Rows[e.RowIndex].Cells["IdTable"].Value);
+                this.Hide();
+                frmOrderDetail orderDetail = new frmOrderDetail(this,orderID,orderDate, orderStaus, totalPrice, tableNumber);
+                
+                orderDetail.FormClosed += (s, args) => this.Show();
+
+                orderDetail.Show();
+            }
+        }
+
+        private void pnlSearchBarOrder_Paint(object sender, PaintEventArgs e)
+        {
+            int radius = 30;
+
+            // Tạo GraphicsPath để vẽ hình chữ nhật bo góc
+            GraphicsPath path = new GraphicsPath();
+            Rectangle rect = new Rectangle(0, 0, pnlSearchBarOrder.Width - 1, pnlSearchBarOrder.Height - 1);
+
+            // Thêm hình chữ nhật bo góc vào GraphicsPath
+            path.AddArc(rect.X, rect.Y, radius, radius, 180, 90);
+            path.AddArc(rect.X + rect.Width - radius, rect.Y, radius, radius, 270, 90);
+            path.AddArc(rect.X + rect.Width - radius, rect.Y + rect.Height - radius, radius, radius, 0, 90);
+            path.AddArc(rect.X, rect.Y + rect.Height - radius, radius, radius, 90, 90);
+            path.CloseFigure();
+            pnlSearchBarOrder.Region = new Region(path);
+        }
+
+        private void txtSearchBarOrder_MouseEnter(object sender, EventArgs e)
+        {
+            txtSearchBarOrder.Text = txtSearchBarOrder.Text == "Đơn hàng cần tìm ?" ? "" : txtSearchBarOrder.Text;
+        }
+
+        private void txtSearchBarOrder_MouseLeave(object sender, EventArgs e)
+        {
+            txtSearchBarOrder.Text = txtSearchBarOrder.Text.Length == 0 ? "Đơn hàng cần tìm ?" : txtSearchBarOrder.Text;
+        }
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+
+            if(keyData == Keys.Enter)
+            {
+                string searchValue = txtSearchBarOrder.Text.Trim();
+                if (searchValue == "" || searchValue == "Đơn hàng cần tìm ?")
+                {
+                    LoadOrderData();
+                    _isSearching = false;
+                }
+                else
+                {
+                    LoadOrderData(searchValue);
+                    txtSearchBarOrder.Text = "";
+                    _isSearching=true;
+                }
+                return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
+
+        private void btnThemDonHang_Click(object sender, EventArgs e)
+        {
+            OrderDTO newOrder = new OrderDTO(DateTime.Now, 0, Order.unpaid);
+            
+
+            //OrderDTO newOrder = new OrderDTO();
+            OrderBLL _orderBLL = new OrderBLL();
+
+            bool isSuccess = _orderBLL.AddNewOrder(newOrder);
+            
+            if(isSuccess)
+            {
+                string orderID = _orderBLL.GetLastIDOrder();
+
+                OrderDetailDTO orderDetailDTO = new OrderDetailDTO
+                {
+                    OrderId = orderID,
+                };
+
+                frmOrderDetail _frmOrderDetail = new frmOrderDetail(this,orderID, newOrder.OrderDate, newOrder.OrderStatus, newOrder.TotalMoney, newOrder.TableNumber);
+                _frmOrderDetail.Show();
+
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Thêm đơn hàng thất bại. Vui lòng thử lại");
+            }
+
         }
     }
 }

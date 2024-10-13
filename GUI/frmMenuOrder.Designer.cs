@@ -217,9 +217,10 @@ namespace GUI
             this.btnOrder.Size = new System.Drawing.Size(231, 42);
             this.btnOrder.TabIndex = 7;
             this.btnOrder.UseVisualStyleBackColor = true;
+            this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click);
             this.btnOrder.Paint += new System.Windows.Forms.PaintEventHandler(this.btnOrder_Paint);
             // 
-            // frmOrders
+            // frmMenuOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -233,7 +234,7 @@ namespace GUI
             this.Controls.Add(this.lblOrder);
             this.Controls.Add(this.lblMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmOrders";
+            this.Name = "frmMenuOrder";
             this.Load += new System.EventHandler(this.frmOrders_Load);
             this.fpnlPagination.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).EndInit();
