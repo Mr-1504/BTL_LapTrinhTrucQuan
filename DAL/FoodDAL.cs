@@ -64,5 +64,10 @@ namespace DAL
             }
             return null;
         }
+        // lấy nguyên liệu theo món ăn
+        public DataTable GetFoodIngredient(string foodID) {
+            string query = "Select nl.MaNguyenLieu,TenNguyenLieu,nm.SoLuong,DonViTinh from MonAn as ma join NguyenLieuMonAn as nm on ma.MaMonAn=nm.MaMonAn join NguyenLieu as nl on nm.MaNguyenLieu=nl.MaNguyenLieu where ma.MaMonAn = @foodID";
+            return SqlHelper.ExecuteReader(query, new object[] { foodID });
+        }
     }
 }
