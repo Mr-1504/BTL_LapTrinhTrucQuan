@@ -413,7 +413,6 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-
         internal static System.Drawing.Bitmap field_multi_editable_420x80 {
             get {
                 object obj = ResourceManager.GetObject("field_multi_editable_420x80", resourceCulture);
@@ -474,7 +473,6 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-
         internal static System.Drawing.Bitmap GrayQuit {
             get {
                 object obj = ResourceManager.GetObject("GrayQuit", resourceCulture);

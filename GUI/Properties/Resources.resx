@@ -476,9 +476,9 @@
     <value>..\Resources\btnThem.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 
-  <data name="btnPage" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnPage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-
+	<data name="btnPage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+		<value>..\Resources\btnPage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+	</data>
   <data name="field_multi_editable_420x80" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\field_multi_editable_420x80.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
