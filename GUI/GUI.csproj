@@ -128,6 +128,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="PurchasedIngredient\DetailInvoice.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PurchasedIngredient\DetailInvoice.Designer.cs">
+      <DependentUpon>DetailInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PurchasedIngredient\PurchasedList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PurchasedIngredient\PurchasedList.Designer.cs">
+      <DependentUpon>PurchasedList.cs</DependentUpon>
+    </Compile>
     <Compile Include="ucFood.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -202,7 +214,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HomeManager.resx">
       <DependentUpon>HomeManager.cs</DependentUpon>
-    </EmbeddedResource> 
+    </EmbeddedResource>
     <EmbeddedResource Include="frmListOrders.resx">
       <DependentUpon>frmListOrders.cs</DependentUpon>
     </EmbeddedResource>
@@ -226,6 +238,12 @@
     <Compile Include="ucFood.Designer.cs">
       <DependentUpon>ucFood.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="PurchasedIngredient\DetailInvoice.resx">
+      <DependentUpon>DetailInvoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PurchasedIngredient\PurchasedList.resx">
+      <DependentUpon>PurchasedList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ucFood.resx">
       <DependentUpon>ucFood.cs</DependentUpon>
     </EmbeddedResource>
@@ -481,6 +499,9 @@
     <None Include="Resources\addressPanel.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\bgPurchasedList.png" />
+    <None Include="Resources\btnAdd.png" />
+    <None Include="Resources\btnBack.png" />
     <Content Include="Resources\ImageFood\AP0006.JPG" />
     <Content Include="Resources\ImageFood\default .jpg" />
     <Content Include="Resources\ImageFood\default.jpg" />
