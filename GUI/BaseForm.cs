@@ -61,7 +61,8 @@ namespace GUI
             }
             else if(employeeRole == "KH")
             {
-
+                Warehouse_ListAll warehouse_ListAll = new Warehouse_ListAll();
+                OpenComponent(warehouse_ListAll);
             }
             else if (employeeRole == "LT")
             {
@@ -235,7 +236,8 @@ namespace GUI
                     }
                     else if (employeeRole == "KH")
                     {
-
+                        Warehouse_ListAll warehouse_ListAll = new Warehouse_ListAll();
+                        OpenComponent(warehouse_ListAll);
                     }
                     else if (employeeRole == "LT")
                     {

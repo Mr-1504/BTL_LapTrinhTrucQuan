@@ -1110,7 +1110,7 @@
             this.Controls.Add(this.pnEditField);
             this.Controls.Add(this.pnBrowseField);
             this.Controls.Add(this.lbControlTitle);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Warehouse_EditData";
             this.Text = "Warehouse_EditData";
             this.pnEditField.ResumeLayout(false);

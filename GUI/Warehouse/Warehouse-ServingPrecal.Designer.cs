@@ -46,11 +46,11 @@
             this.pnPrecal = new System.Windows.Forms.Panel();
             this.pc_lbUsageHint = new System.Windows.Forms.Label();
             this.pc_dgvPrecal = new System.Windows.Forms.DataGridView();
-            this.pc_lbTitle = new System.Windows.Forms.Label();
             this.MaMonAn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenMonAn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoPhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NguyenLieuThieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pc_lbTitle = new System.Windows.Forms.Label();
             this.pnMenuListing.SuspendLayout();
             this.ml_Searchbar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ml_dgvMenu)).BeginInit();
@@ -269,17 +269,6 @@
             this.pc_dgvPrecal.TabIndex = 10;
             this.pc_dgvPrecal.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.pc_dgvPrecal_CellDoubleClick);
             // 
-            // pc_lbTitle
-            // 
-            this.pc_lbTitle.AutoSize = true;
-            this.pc_lbTitle.BackColor = System.Drawing.Color.Transparent;
-            this.pc_lbTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pc_lbTitle.Location = new System.Drawing.Point(20, 20);
-            this.pc_lbTitle.Name = "pc_lbTitle";
-            this.pc_lbTitle.Size = new System.Drawing.Size(156, 32);
-            this.pc_lbTitle.TabIndex = 10;
-            this.pc_lbTitle.Text = "Bảng dự tính";
-            // 
             // MaMonAn
             // 
             this.MaMonAn.HeaderText = "Mã món ăn";
@@ -308,6 +297,17 @@
             this.NguyenLieuThieu.ReadOnly = true;
             this.NguyenLieuThieu.Width = 192;
             // 
+            // pc_lbTitle
+            // 
+            this.pc_lbTitle.AutoSize = true;
+            this.pc_lbTitle.BackColor = System.Drawing.Color.Transparent;
+            this.pc_lbTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pc_lbTitle.Location = new System.Drawing.Point(20, 20);
+            this.pc_lbTitle.Name = "pc_lbTitle";
+            this.pc_lbTitle.Size = new System.Drawing.Size(156, 32);
+            this.pc_lbTitle.TabIndex = 10;
+            this.pc_lbTitle.Text = "Bảng dự tính";
+            // 
             // Warehouse_ServingPrecal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -320,7 +320,7 @@
             this.Controls.Add(this.pnTabDishCal);
             this.Controls.Add(this.pnTabListAll);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Warehouse_ServingPrecal";
             this.Text = "Warehouse_ServingPrecal";
             this.Load += new System.EventHandler(this.Warehouse_ServingPrecal_Load);
