@@ -1,5 +1,6 @@
 ﻿using BLL;
 using GUI.PurchasedIngredient;
+using GUI.Warehouse;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -247,9 +248,12 @@ namespace GUI
 
                     break;
                 case "Food":
-                    
+                    FoodManager foodManager = new FoodManager();
+                    OpenComponent(foodManager);
                     break;
                 case "Warehouse":
+                    Warehouse_ServingPrecal warehouse_ServingPrecal = new Warehouse_ServingPrecal();
+                    OpenComponent(warehouse_ServingPrecal);
                     break;
                 case "Import":
                     PurchasedList purchasedList = new PurchasedList(_id, this);
@@ -262,7 +266,8 @@ namespace GUI
 
                     break;
                 case "EditInformation":
-
+                    Warehouse_EditData warehouse = new Warehouse_EditData();
+                    OpenComponent(warehouse);
                     break;
             }
         }
