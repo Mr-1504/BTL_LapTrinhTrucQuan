@@ -118,9 +118,9 @@ namespace GUI
                 {
                     EmployeeDTO employeeDTO = new EmployeeDTO
                     (
-                        employID.Text,  // Sử dụng giá trị từ TextBox
+                        employID.Text,  
                         name.Text,
-                        s == Gender.Male.GetEnumDescription() ? Gender.Male : Gender.Female,  // Gán giá trị enum đã chuyển đổi
+                        s == Gender.Male.GetEnumDescription() ? Gender.Male : Gender.Female,  
                         dateTimeBirthDay.Value,
                         hometown.Text,
                         address.Text,

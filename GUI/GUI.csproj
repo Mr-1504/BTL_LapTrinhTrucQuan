@@ -202,7 +202,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HomeManager.resx">
       <DependentUpon>HomeManager.cs</DependentUpon>
-    </EmbeddedResource> 
+    </EmbeddedResource>
     <EmbeddedResource Include="frmListOrders.resx">
       <DependentUpon>frmListOrders.cs</DependentUpon>
     </EmbeddedResource>
@@ -481,10 +481,11 @@
     <None Include="Resources\addressPanel.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\ImageFood\AP0006.JPG" />
-    <Content Include="Resources\ImageFood\default .jpg" />
+    <None Include="Resources\btnPage.png" />
+    <Content Include="Resources\ImageFood\AP0001.jpg" />
+    <Content Include="Resources\ImageFood\AP0002.jpg" />
+    <Content Include="Resources\ImageFood\AP0003.jpg" />
     <Content Include="Resources\ImageFood\default.jpg" />
-    <Content Include="Resources\ImageFood\MN0010.jpg" />
     <None Include="Resources\panelNumberic2.png" />
     <None Include="Resources\panelNumberic.png" />
     <None Include="Resources\avatar.png" />

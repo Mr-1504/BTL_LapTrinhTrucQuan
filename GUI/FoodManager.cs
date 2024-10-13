@@ -19,10 +19,24 @@ namespace GUI
         private boxFoodManager selectedFoodBox = null;
         string selectedFoodId=null;
         FoodManager2 foodManager2 = null;
+        private int currentPage = 1;
+        private int itemsPerPage = 6;
+        private int totalPages = 1;
+        
         public FoodManager()
         {
             InitializeComponent();
+            btnPrevious.Enabled = false;
+            this.DoubleBuffered(true);
+            CustomizeFlowLayoutPanel();
         }
+        private void CustomizeFlowLayoutPanel()
+        {
+            flowLayoutPanelFood.FlowDirection = FlowDirection.LeftToRight;
+            flowLayoutPanelFood.Padding = new Padding(20);
+            flowLayoutPanelFood.WrapContents = true;
+        }
+
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -42,20 +56,24 @@ namespace GUI
         }
         public void AddFood(string id, string name,string price,string imageFileName)
         {
-            string imagePath = $@"..\..\Resources\ImageFood\{imageFileName}.JPG"; 
+            string imagePath = $@"..\..\Resources\ImageFood\{imageFileName}.JPG";
             Image icon = null;
-            
+
             try
             {
-                
-                icon = Image.FromFile(imagePath);
-
+                using (FileStream fs = new FileStream(imagePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                {
+                    icon = Image.FromStream(fs);
+                }
             }
             catch (Exception)
             {
-                
-                icon = Image.FromFile($@"..\..\Resources\ImageFood\default.jpg"); 
+                using (FileStream fs = new FileStream($@"..\..\Resources\ImageFood\default.jpg", FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                {
+                    icon = Image.FromStream(fs);
+                }
             }
+
             boxFoodManager foodBox = new boxFoodManager
             {
                 IdFood = id,
@@ -63,8 +81,7 @@ namespace GUI
                 Cost = price,
                 Icon = icon
             };
-            selectFood( foodBox );
-
+            selectFood(foodBox);
             flowLayoutPanelFood.Controls.Add(foodBox);
         }
         private void selectFood(boxFoodManager foodBox)
@@ -133,8 +150,21 @@ namespace GUI
 
         private void FoodManager_Shown(object sender, EventArgs e)
         {
+            LoadFoodItems();
+            CustomizeFlowLayoutPanel();
+
+        }
+        private void LoadFoodItems()
+        {
             DataTable data = foodManagerBLL.GetFoods();
-            for (int i = 0; i < data.Rows.Count; i++)
+            int totalItems = data.Rows.Count;
+
+            totalPages = (totalItems + itemsPerPage - 1) / itemsPerPage;
+            flowLayoutPanelFood.Controls.Clear();
+            int startItem = (currentPage - 1) * itemsPerPage;
+            int endItem = Math.Min(startItem + itemsPerPage, totalItems);
+
+            for (int i = startItem; i < endItem; i++)
             {
                 DataRow row = data.Rows[i];
                 string id = row["MaMonAn"].ToString();
@@ -144,12 +174,119 @@ namespace GUI
                 AddFood(id, name, price, imageFileName);
             }
 
+            UpdatePagination();
+        }
+        
+        private void UpdatePagination()
+        {
+            btnPrevious.Enabled = currentPage > 1;
+            btnNext.Enabled = currentPage < totalPages;
+            UpdatePageButtons(totalPages, currentPage); 
+        }
+        private void UpdatePageButtons(int totalPages, int currentPage)
+        {
+            Button[] pageButtons = { btnPage_st, btnPage_nd, btnPage_rd, btnPage_th };
+            int buttonsToShow = Math.Min(totalPages, 4); 
+            int startPage, endPage;
+            
+            if (totalPages <= 4)
+            {
+                startPage = 1;
+                endPage = totalPages;
+            }
+            else
+            {
+                if (currentPage <= 2)
+                {
+                    startPage = 1;
+                    endPage = 4;
+                }
+                else if (currentPage >= totalPages - 1)
+                {
+                    startPage = totalPages - 3;
+                    endPage = totalPages;
+                }
+                else
+                {
+                    startPage = currentPage - 1;
+                    endPage = currentPage + 2;
+                }
+            }
+
+            for (int i = 0; i < buttonsToShow; i++)
+            {
+                pageButtons[i].Text = (startPage + i).ToString();
+                pageButtons[i].Visible = true;
+            }
+
+            for (int i = buttonsToShow; i < pageButtons.Length; i++)
+            {
+                pageButtons[i].Visible = false;
+            }
+            UpdateButtonColors(currentPage);
+            btnPage_st.Click += PageButton_Click;
+            btnPage_nd.Click += PageButton_Click;
+            btnPage_rd.Click += PageButton_Click;
+            btnPage_th.Click += PageButton_Click;
+        }
+        private void PageButton_Click(object sender, EventArgs e)
+        {
+            Button clickedButton = sender as Button;
+            if (clickedButton != null && int.TryParse(clickedButton.Text, out int selectedPage))
+            {
+                if (selectedPage != currentPage)
+                {
+                    currentPage = selectedPage; 
+                    LoadFoodItems();            
+                    UpdatePageButtons(totalPages, currentPage);  
+                }
+            }
+        }
+
+        private void UpdateButtonColors(int currentPage)
+        {
+            Button[] pageButtons = { btnPage_st, btnPage_nd, btnPage_rd, btnPage_th };
+            foreach (var button in pageButtons)
+            {
+                if (int.TryParse(button.Text, out int pageNumber))
+                {
+                    if (pageNumber == currentPage)
+                    {
+                        button.BackColor = Color.Blue;
+                        button.ForeColor = Color.White;
+                    }
+                    else
+                    {
+                        button.BackColor = SystemColors.Control;
+                        button.ForeColor = Color.Blue;
+                    }
+                }
+            }
+        }
+
+        private void HandleEventClickButton(Button button)
+        {
+            int selectedPage = int.Parse(button.Text);
+            if (selectedPage != currentPage)
+            {
+                currentPage = selectedPage;
+                LoadFoodItems();
+                UpdatePageButtons(totalPages, currentPage);
+            }
+        }
+
+        private void PageButton_Click(object sender, MouseEventArgs e)
+        {
+            if (sender == btnPage_st || sender == btnPage_nd || sender == btnPage_rd || sender == btnPage_th)
+            {
+                HandleEventClickButton((Button)sender);
+            }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             FoodManager2 foodManager2 = new FoodManager2(this);
-
+            foodManager2.FormClosed += FoodManager2_FormClosed;
             ShowComponent(false);
             foodManager2.TopLevel = false;
             foodManager2.BringToFront();
@@ -185,6 +322,7 @@ namespace GUI
             else
             {
                 FoodManager2 foodManager2 = new FoodManager2(this, selectedFoodId);
+                foodManager2.FormClosed += FoodManager2_FormClosed;
                 ShowComponent(false);
                 foodManager2.TopLevel = false;
                 foodManager2.BringToFront();
@@ -194,10 +332,32 @@ namespace GUI
             }
             
         }
+        private void btnPrevious_Click(object sender, EventArgs e)
+        {
+            if (currentPage > 1)
+            {
+                currentPage--;
+                LoadFoodItems();
+            }
+        }
 
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            if (currentPage < totalPages)
+            {
+                currentPage++;
+                LoadFoodItems();
+            }
+        }
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            selectedFoodId=null;
 
+        }
+        private void FoodManager2_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            LoadFoodItems();
+            ShowComponent(true);
         }
     }
 }

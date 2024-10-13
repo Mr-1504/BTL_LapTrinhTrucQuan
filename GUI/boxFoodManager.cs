@@ -15,6 +15,8 @@ namespace GUI
     {
         public bool isSelected = false;
         string idFood;
+        internal ContentAlignment TextAlign;
+
         public boxFoodManager()
         {
             InitializeComponent();
@@ -51,5 +53,10 @@ namespace GUI
         public string Title { get=> textNameFood.Text; set=> textNameFood.Text = value; }
         public string Cost { get => textPriceValue.Text;set=> textPriceValue.Text = value; }
         public Image Icon { get => picFood.Image; set => picFood.Image = value; }
+
+        private void lblName_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

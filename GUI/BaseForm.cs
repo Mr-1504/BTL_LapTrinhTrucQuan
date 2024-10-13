@@ -248,7 +248,7 @@ namespace GUI
 
                     break;
                 case "Food":
-
+                    
                     break;
                 case "Warehouse":
                     break;
