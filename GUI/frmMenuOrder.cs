@@ -22,14 +22,21 @@ namespace GUI
         private int _totalPages = 1;
         private FoodBLL _foodBLL = new FoodBLL();
         private frmOrderDetail _orderDetail;
-        public static DataTable SelectedFoodItems;
+        private DataTable _selectedFoodItems;
+        private List<FoodUpdatedEventArgs> _selectedFoodList;
 
-        public frmMenuOrder()
+        public frmMenuOrder(frmOrderDetail orderDetail)
         {
             InitializeComponent();
 
             SetupDataGridView();
-            //_orderDetail = orderDetail;
+            _selectedFoodItems = new DataTable();
+            _selectedFoodItems.Columns.Add("FoodName");
+            _selectedFoodItems.Columns.Add("Quantity");
+            _selectedFoodItems.Columns.Add("TotalPrice");
+            _selectedFoodList = new List<FoodUpdatedEventArgs>();
+            _orderDetail = orderDetail;
+            dgvOrders.DataSource = _selectedFoodItems;
 
         }
         private void SetupDataGridView()
@@ -40,6 +47,7 @@ namespace GUI
             DataGridViewTextBoxColumn foodNameColumn = new DataGridViewTextBoxColumn();
             foodNameColumn.HeaderText = "Tên món";
             foodNameColumn.Name = "FoodName";
+            foodNameColumn.DataPropertyName = "FoodName";
             foodNameColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dgvOrders.Columns.Add(foodNameColumn);
 
@@ -47,6 +55,7 @@ namespace GUI
             DataGridViewTextBoxColumn quantityColumn = new DataGridViewTextBoxColumn();
             quantityColumn.HeaderText = "Số lượng";
             quantityColumn.Name = "Quantity";
+            quantityColumn.DataPropertyName = "Quantity";
             quantityColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill; 
             dgvOrders.Columns.Add(quantityColumn);
 
@@ -54,6 +63,7 @@ namespace GUI
             DataGridViewTextBoxColumn totalPriceColumn = new DataGridViewTextBoxColumn();
             totalPriceColumn.HeaderText = "Thành tiền";
             totalPriceColumn.Name = "TotalPrice";
+            totalPriceColumn.DataPropertyName = "TotalPrice";
             totalPriceColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;  
             dgvOrders.Columns.Add(totalPriceColumn);
 
@@ -62,6 +72,7 @@ namespace GUI
             dgvOrders.GridColor = Color.White;
             dgvOrders.RowHeadersVisible = false;
             dgvOrders.ColumnHeadersVisible = true;
+            dgvOrders.DataSource = _selectedFoodItems;
             dgvOrders.ReadOnly = true;  
         }
 
@@ -136,29 +147,33 @@ namespace GUI
         }
         private void UcFood_FoodUpdated(object sender,FoodUpdatedEventArgs e )
         {
-            AddOrUpdateFoodToGrid(e.FoodName, e.Quantity, e.FoodPrice);
+            AddOrUpdateFoodToGrid(e);
         }
-        private void AddOrUpdateFoodToGrid(string foodName, int quantity, int price)
+        private void AddOrUpdateFoodToGrid(FoodUpdatedEventArgs e)
         {
             bool foodExits = false;
 
-            foreach(DataGridViewRow row in dgvOrders.Rows)
+            int i = 0;
+            foreach(DataRow row in _selectedFoodItems.Rows)
             {
-                if (row.Cells["FoodName"].Value != null && row.Cells["FoodName"].Value.ToString() == foodName)
+                if (row["FoodName"] != null && row["FoodName"].ToString() == e.FoodName)
                 {
                     int currentQuantity = 0;
-                    if (row.Cells["Quantity"].Value != null)
+                    if (row["Quantity"] != null)
                     {
-                        currentQuantity = int.Parse(row.Cells["Quantity"].Value.ToString());
+                        currentQuantity = int.Parse(row["Quantity"].ToString());
                     }
-                    if(quantity == 0)
+                    if(e.Quantity == 0)
                     {
-                        dgvOrders.Rows.Remove(row);
+                        _selectedFoodList.RemoveAt(i);
+                        _selectedFoodItems.Rows.Remove(row);
                     }
                     else
                     {
-                        row.Cells["Quantity"].Value = quantity;
-                        row.Cells["TotalPrice"].Value = quantity * price;
+                        row["Quantity"] = e.Quantity;
+                        row["TotalPrice"] = e.Quantity * e.FoodPrice;
+                        _selectedFoodList[i].Quantity = e.Quantity;
+                        _selectedFoodList[i].FoodPrice = e.FoodPrice;
                     }
 
                     foodExits = true;
@@ -168,7 +183,8 @@ namespace GUI
             }
             if(!foodExits)
             {
-                dgvOrders.Rows.Add(foodName, quantity, price);
+                _selectedFoodItems.Rows.Add(e.FoodName, e.Quantity, e.FoodPrice);
+                _selectedFoodList.Add(e);
             }
         }
         private void UpdatePagination()
@@ -346,7 +362,9 @@ namespace GUI
 
         private void btnOrder_Click(object sender, EventArgs e)
         {
-            
+            SendToBack();
+            _orderDetail.SetData(_selectedFoodList);
+            _orderDetail.BringToFront();
         }
 
         
