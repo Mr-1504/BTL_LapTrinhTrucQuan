@@ -17,7 +17,7 @@ namespace Utilities
 
 
             return baseConnectionString.Replace("Data Source=;", $"Data Source={deviceName}\\SQLEXPRESS;")
-                                      .Replace("Initial Catalog=;", $"Initial Catalog={databaseName};");
+                                   .Replace("Initial Catalog=;", $"Initial Catalog={databaseName};");
 
 
         }
