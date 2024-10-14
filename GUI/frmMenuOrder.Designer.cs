@@ -44,6 +44,7 @@ namespace GUI
             this.dgvOrders = new System.Windows.Forms.DataGridView();
             this.pnlHeaderTable = new System.Windows.Forms.Panel();
             this.btnOrder = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.fpnlPagination.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).BeginInit();
             this.SuspendLayout();
@@ -205,7 +206,6 @@ namespace GUI
             this.pnlHeaderTable.Name = "pnlHeaderTable";
             this.pnlHeaderTable.Size = new System.Drawing.Size(765, 50);
             this.pnlHeaderTable.TabIndex = 11;
-            this.pnlHeaderTable.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlHeaderTable_Paint);
             // 
             // btnOrder
             // 
@@ -220,12 +220,20 @@ namespace GUI
             this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click);
             this.btnOrder.Paint += new System.Windows.Forms.PaintEventHandler(this.btnOrder_Paint);
             // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(161, 28);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(289, 20);
+            this.txtSearch.TabIndex = 12;
+            // 
             // frmMenuOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
             this.ClientSize = new System.Drawing.Size(1370, 815);
+            this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.pnlHeaderTable);
             this.Controls.Add(this.dgvOrders);
             this.Controls.Add(this.fpnlPagination);
@@ -257,5 +265,6 @@ namespace GUI
         private System.Windows.Forms.Button btnPage_th;
         private System.Windows.Forms.DataGridView dgvOrders;
         private System.Windows.Forms.Panel pnlHeaderTable;
+        private System.Windows.Forms.TextBox txtSearch;
     }
 }

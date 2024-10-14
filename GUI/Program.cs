@@ -16,7 +16,9 @@ namespace GUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new BaseForm("KH20240001"));
+            //Application.Run(new BaseForm("KH20240001"));
+            //Application.Run(new frmListOrders());
+            Application.Run(new frmMenuOrder());
         }
     }
 }

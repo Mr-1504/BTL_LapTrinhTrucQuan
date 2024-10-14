@@ -21,7 +21,7 @@ namespace GUI
         private int _totalPrice;
         private int _tableNumer;
         private frmListOrders _frmListOrders;
-        
+        private BindingSource foodItemsBindingSource;        
         public frmOrderDetail(frmListOrders listOrders,string orderID, DateTime orderDate, Order orderStatus, int totalPrice, int tableNumber )
         {
             InitializeComponent();
@@ -37,11 +37,12 @@ namespace GUI
             lblTotalPrice.Text = totalPrice.ToString();
             txtIdTable.Text = tableNumber.ToString();
 
+
             IntitializeOrderStatus();
             SetUpDataGridView();
             LoadOrderDetails(orderID);
 
-            //LoadSharedFoodItems();
+
            
         }
 
@@ -169,25 +170,21 @@ namespace GUI
         {
             if(_orderStatus == Order.paid)
             {
-                MessageBox.Show("Đơn hàng đã được thành toán. Vui lòng không thêm món mới!", "Thông báo", MessageBoxButtons.OK);
+                new MessageForm("Đơn hàng đã dược thanh toán. Vui lòng không đặt thêm món!", "Thông báo", 1);
                 return;
             }
 
-            frmMenuOrder menuOrder = new frmMenuOrder(this);
-            
-            this.Hide();
+            frmMenuOrder menuOrder = new frmMenuOrder();
             menuOrder.Show();
+
+
         }
 
         
-        private void LoadSharedFoodItems()
-        {
-            
-            foreach(DataRow row in SharedDataTable.FoodItems.Rows)
-            {
-                dgvListFood.Rows.Add(row.ItemArray);
-            }
-        }
+
+
+
+        
 
         
     }
