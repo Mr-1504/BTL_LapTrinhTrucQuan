@@ -114,6 +114,7 @@ namespace GUI
             // Đóng form hiện tại
             LoginForm loginForm = new LoginForm();
             loginForm.Show();
+            loginForm.FormClosed += (s, args) => Application.Exit();
             _action[2]();
 
             // Mở form đăng nhập
