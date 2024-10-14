@@ -140,20 +140,6 @@ namespace GUI
 
         private void dgvListOrders_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-            //if (e.ColumnIndex == dgvListOrders.Columns["PrintInvoice"].Index && e.RowIndex >= 0)
-            //{
-            //    e.PaintBackground(e.ClipBounds, true);
-
-            //    // Tạo hình chữ nhật cho nút
-            //    Rectangle buttonRect = e.CellBounds;
-
-            //    // Vẽ nội dung chữ "In" với màu xanh
-            //    TextRenderer.DrawText(e.Graphics, "In", e.CellStyle.Font,
-            //        buttonRect, Color.Blue, TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
-
-            //    // Đánh dấu đã vẽ xong để tránh vẽ thêm
-            //    e.Handled = true;
-            //}
             if (e.ColumnIndex == dgvListOrders.Columns["PrintInvoice"].Index && e.RowIndex >= 0)
             {
                 e.PaintBackground(e.ClipBounds, true);
@@ -275,15 +261,21 @@ namespace GUI
                 };
 
                 frmOrderDetail _frmOrderDetail = new frmOrderDetail(this,orderID, newOrder.OrderDate, newOrder.OrderStatus, newOrder.TotalMoney, newOrder.TableNumber);
-                _frmOrderDetail.Show();
-
-                this.Hide();
+                Add(_frmOrderDetail);
+                _frmOrderDetail.BringToFront();
             }
             else
             {
                 MessageBox.Show("Thêm đơn hàng thất bại. Vui lòng thử lại");
             }
-
+        }
+        public void Add(Form frm)
+        {
+            frm.TopLevel = false;
+            Controls.Add(frm);
+            frm.Location = new Point(0, 0);
+            frm.Show();
+            frm.SendToBack();
         }
     }
 }
