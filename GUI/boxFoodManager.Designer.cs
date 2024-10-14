@@ -40,7 +40,7 @@
             // 
             // pnlFoodItem
             // 
-            this.pnlFoodItem.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlFoodItem.BackColor = System.Drawing.Color.Transparent;
             this.pnlFoodItem.Controls.Add(this.textNameFood);
             this.pnlFoodItem.Controls.Add(this.lblName);
             this.pnlFoodItem.Controls.Add(this.textPriceValue);
@@ -51,17 +51,17 @@
             this.pnlFoodItem.Location = new System.Drawing.Point(0, 0);
             this.pnlFoodItem.Margin = new System.Windows.Forms.Padding(0);
             this.pnlFoodItem.Name = "pnlFoodItem";
-            this.pnlFoodItem.Size = new System.Drawing.Size(265, 195);
+            this.pnlFoodItem.Size = new System.Drawing.Size(460, 200);
             this.pnlFoodItem.TabIndex = 0;
             this.pnlFoodItem.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlFoodItem_Paint);
             // 
             // textNameFood
             // 
             this.textNameFood.AutoSize = true;
-            this.textNameFood.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textNameFood.Location = new System.Drawing.Point(19, 155);
+            this.textNameFood.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textNameFood.Location = new System.Drawing.Point(37, 150);
             this.textNameFood.Name = "textNameFood";
-            this.textNameFood.Size = new System.Drawing.Size(66, 18);
+            this.textNameFood.Size = new System.Drawing.Size(73, 19);
             this.textNameFood.TabIndex = 4;
             this.textNameFood.Text = "Vịt Quay";
             this.textNameFood.Click += new System.EventHandler(this.lblNameFood_Click);
@@ -69,40 +69,41 @@
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.lblName.Location = new System.Drawing.Point(18, 122);
+            this.lblName.Location = new System.Drawing.Point(38, 111);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(32, 20);
+            this.lblName.Size = new System.Drawing.Size(37, 23);
             this.lblName.TabIndex = 3;
             this.lblName.Text = "Tên";
+            this.lblName.Click += new System.EventHandler(this.lblName_Click);
             // 
             // textPriceValue
             // 
             this.textPriceValue.AutoSize = true;
-            this.textPriceValue.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textPriceValue.Location = new System.Drawing.Point(19, 64);
+            this.textPriceValue.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textPriceValue.Location = new System.Drawing.Point(38, 67);
             this.textPriceValue.Name = "textPriceValue";
-            this.textPriceValue.Size = new System.Drawing.Size(32, 18);
+            this.textPriceValue.Size = new System.Drawing.Size(36, 19);
             this.textPriceValue.TabIndex = 2;
             this.textPriceValue.Text = "$52";
             // 
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
-            this.lblPrice.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrice.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrice.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.lblPrice.Location = new System.Drawing.Point(18, 34);
+            this.lblPrice.Location = new System.Drawing.Point(37, 31);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(29, 20);
+            this.lblPrice.Size = new System.Drawing.Size(34, 23);
             this.lblPrice.TabIndex = 1;
             this.lblPrice.Text = "Giá";
             // 
             // picFood
             // 
-            this.picFood.Location = new System.Drawing.Point(101, 22);
+            this.picFood.Location = new System.Drawing.Point(236, 24);
             this.picFood.Name = "picFood";
-            this.picFood.Size = new System.Drawing.Size(152, 117);
+            this.picFood.Size = new System.Drawing.Size(178, 149);
             this.picFood.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picFood.TabIndex = 0;
             this.picFood.TabStop = false;
@@ -114,7 +115,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.Controls.Add(this.pnlFoodItem);
             this.Name = "boxFoodManager";
-            this.Size = new System.Drawing.Size(265, 195);
+            this.Size = new System.Drawing.Size(460, 200);
             this.pnlFoodItem.ResumeLayout(false);
             this.pnlFoodItem.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picFood)).EndInit();

@@ -21,13 +21,22 @@ namespace GUI
         private int _pageSize = 6;
         private int _totalPages = 1;
         private FoodBLL _foodBLL = new FoodBLL();
+        private frmOrderDetail _orderDetail;
+        private DataTable _selectedFoodItems;
+        private List<FoodUpdatedEventArgs> _selectedFoodList;
 
-        public frmMenuOrder()
+        public frmMenuOrder(frmOrderDetail orderDetail)
         {
             InitializeComponent();
 
-            this.DoubleBuffered = true;
             SetupDataGridView();
+            _selectedFoodItems = new DataTable();
+            _selectedFoodItems.Columns.Add("FoodName");
+            _selectedFoodItems.Columns.Add("Quantity");
+            _selectedFoodItems.Columns.Add("TotalPrice");
+            _selectedFoodList = new List<FoodUpdatedEventArgs>();
+            _orderDetail = orderDetail;
+            dgvOrders.DataSource = _selectedFoodItems;
 
         }
         private void SetupDataGridView()
@@ -35,12 +44,10 @@ namespace GUI
             
             dgvOrders.Columns.Clear();
 
-           
-
-           
             DataGridViewTextBoxColumn foodNameColumn = new DataGridViewTextBoxColumn();
             foodNameColumn.HeaderText = "Tên món";
             foodNameColumn.Name = "FoodName";
+            foodNameColumn.DataPropertyName = "FoodName";
             foodNameColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dgvOrders.Columns.Add(foodNameColumn);
 
@@ -48,6 +55,7 @@ namespace GUI
             DataGridViewTextBoxColumn quantityColumn = new DataGridViewTextBoxColumn();
             quantityColumn.HeaderText = "Số lượng";
             quantityColumn.Name = "Quantity";
+            quantityColumn.DataPropertyName = "Quantity";
             quantityColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill; 
             dgvOrders.Columns.Add(quantityColumn);
 
@@ -55,6 +63,7 @@ namespace GUI
             DataGridViewTextBoxColumn totalPriceColumn = new DataGridViewTextBoxColumn();
             totalPriceColumn.HeaderText = "Thành tiền";
             totalPriceColumn.Name = "TotalPrice";
+            totalPriceColumn.DataPropertyName = "TotalPrice";
             totalPriceColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;  
             dgvOrders.Columns.Add(totalPriceColumn);
 
@@ -63,6 +72,7 @@ namespace GUI
             dgvOrders.GridColor = Color.White;
             dgvOrders.RowHeadersVisible = false;
             dgvOrders.ColumnHeadersVisible = true;
+            dgvOrders.DataSource = _selectedFoodItems;
             dgvOrders.ReadOnly = true;  
         }
 
@@ -102,7 +112,7 @@ namespace GUI
             fpnlMenu.SuspendLayout();
             LoadFoods(_currentPage);
             fpnlMenu.ResumeLayout();
-            //CheckColumnWidths();
+            UpdateButtonColors(_currentPage);
         }
 
         private int CalculateTotalPage()
@@ -137,44 +147,44 @@ namespace GUI
         }
         private void UcFood_FoodUpdated(object sender,FoodUpdatedEventArgs e )
         {
-            AddOrUpdateFoodToGrid(e.FoodName, e.Quantity, e.FoodPrice);
+            AddOrUpdateFoodToGrid(e);
         }
-        private void AddOrUpdateFoodToGrid(string foodName, int quantity, int price)
+        private void AddOrUpdateFoodToGrid(FoodUpdatedEventArgs e)
         {
             bool foodExits = false;
 
-            foreach(DataGridViewRow row in dgvOrders.Rows)
+            int i = 0;
+            foreach(DataRow row in _selectedFoodItems.Rows)
             {
-                if (row.Cells["FoodName"].Value != null && row.Cells["FoodName"].Value.ToString() == foodName)
+                if (row["FoodName"] != null && row["FoodName"].ToString() == e.FoodName)
                 {
                     int currentQuantity = 0;
-                    if (row.Cells["Quantity"].Value != null)
+                    if (row["Quantity"] != null)
                     {
-                        currentQuantity = int.Parse(row.Cells["Quantity"].Value.ToString());
+                        currentQuantity = int.Parse(row["Quantity"].ToString());
                     }
-                    if(quantity == 0)
+                    if(e.Quantity == 0)
                     {
-                        dgvOrders.Rows.Remove(row);
+                        _selectedFoodList.RemoveAt(i);
+                        _selectedFoodItems.Rows.Remove(row);
                     }
                     else
                     {
-                        row.Cells["Quantity"].Value = quantity;
-                        row.Cells["TotalPrice"].Value = quantity * price;
+                        row["Quantity"] = e.Quantity;
+                        row["TotalPrice"] = e.Quantity * e.FoodPrice;
+                        _selectedFoodList[i].Quantity = e.Quantity;
+                        _selectedFoodList[i].FoodPrice = e.FoodPrice;
                     }
 
                     foodExits = true;
                     break;
 
-
-                    //row.Cells["Quantity"].Value =  quantity;
-                    //row.Cells["TotalPrice"].Value = quantity * price;
-                    //foodExits = true;
-                    //break;
                 }
             }
             if(!foodExits)
             {
-                dgvOrders.Rows.Add(foodName, quantity, price);
+                _selectedFoodItems.Rows.Add(e.FoodName, e.Quantity, e.FoodPrice);
+                _selectedFoodList.Add(e);
             }
         }
         private void UpdatePagination()
@@ -299,32 +309,64 @@ namespace GUI
             }
         }
 
-        private void pnlHeaderTable_Paint(object sender, PaintEventArgs e)
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
-            //int radius = 20;
 
-            //// Tạo GraphicsPath để vẽ hình chữ nhật bo góc
-            //GraphicsPath path = new GraphicsPath();
-            //Rectangle rect = new Rectangle(0, 0, pnlHeaderTable.Width - 1, pnlHeaderTable.Height - 1);
+            if (keyData == Keys.Enter)
+            {
+                string searchTerm = txtSearch.Text.Trim().ToLower();
+                SearchFood(searchTerm);
+                return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
 
-            //// Thêm hình chữ nhật bo góc vào GraphicsPath
-            //path.AddArc(rect.X, rect.Y, radius, radius, 180, 90); // Bo góc trên bên trái
-            //path.AddArc(rect.X + rect.Width - radius, rect.Y, radius, radius, 270, 90); // Bo góc trên bên phải
-            //path.AddLine(rect.X + rect.Width, rect.Y + radius, rect.X + rect.Width, rect.Y + rect.Height); // Vẽ đường thẳng từ trên xuống dưới bên phải
-            ////path.AddLine(rect.X + rect.Width, rect.Y + rect.Height, rect.X, rect.Y + rect.Height); // Vẽ đường thẳng ngang ở dưới
-            ////path.AddLine(rect.X, rect.Y + rect.Height, rect.X, rect.Y + radius); // Vẽ đường thẳng từ dưới lên trên bên trái
-            //path.CloseFigure();
-            //pnlHeaderTable.Region = new Region(path);
+        private void SearchFood(string searchTerm)
+        {
+            var allFood = _foodBLL.GetListFoods();
+            var filteredFoods = allFood.Where(food => food.FoodName.ToLower().Contains(searchTerm)).ToList();
+            if(filteredFoods.Count > 0)
+            {
+                _currentPage = 1;
+                _totalPages = (filteredFoods.Count + _pageSize) / _pageSize;
+                LoadFilteredFoods(filteredFoods, _currentPage);
+                UpdatePagination();
+            }
+            else
+            {
+                new MessageForm("Không tìm thấy món ăn nào!", "Thông báo", 1);
+            }
+        }
+
+        private void LoadFilteredFoods(List<FoodDTO> filteredFoods, int page)
+        {
+            fpnlMenu.Controls.Clear();
+
+            var foodsToShow = filteredFoods.Skip((page - 1) * _pageSize).Take(_pageSize).ToList();
+
+            foreach (var food in foodsToShow)
+            {
+                ucFood _ucFood = new ucFood();
+                _ucFood._idFood = food.FoodId;
+                _ucFood._FName = food.FoodName;
+                _ucFood._FPrice = food.FoodUnitPrice;
+                _ucFood.Margin = new Padding(10);
+
+                _ucFood.FoodUpdated += UcFood_FoodUpdated;
+
+                fpnlMenu.Controls.Add(_ucFood);
+            }
+
+            UpdatePagination();
+        }
+
+        private void btnOrder_Click(object sender, EventArgs e)
+        {
+            SendToBack();
+            _orderDetail.SetData(_selectedFoodList);
+            _orderDetail.BringToFront();
         }
 
         
-    }
-    public static class ControlExtensions
-    {
-        public static void DoubleBuffered(this Control control, bool setting)
-        {
-            System.Reflection.PropertyInfo propertyInfo = control.GetType().GetProperty("DoubleBuffered", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic);
-            propertyInfo.SetValue(control, setting, null);
-        }
     }
 }

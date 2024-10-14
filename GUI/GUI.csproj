@@ -103,6 +103,12 @@
     <Compile Include="frmMenuOrder.Designer.cs">
       <DependentUpon>frmMenuOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmOrderDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrderDetail.Designer.cs">
+      <DependentUpon>frmOrderDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoadingForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +134,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="SharedDataTable.cs" />
     <Compile Include="PurchasedIngredient\DetailInvoice.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -188,11 +195,23 @@
     <Compile Include="SettingFormSecurity.Designer.cs">
       <DependentUpon>SettingFormSecurity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Warehouse\Warehouse-EditData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Warehouse\Warehouse-EditData.Designer.cs">
+      <DependentUpon>Warehouse-EditData.cs</DependentUpon>
+    </Compile>
     <Compile Include="Warehouse\Warehouse-ListAll.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Warehouse\Warehouse-ListAll.Designer.cs">
       <DependentUpon>Warehouse-ListAll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Warehouse\Warehouse-ServingPrecal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Warehouse\Warehouse-ServingPrecal.Designer.cs">
+      <DependentUpon>Warehouse-ServingPrecal.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
@@ -220,6 +239,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenuOrder.resx">
       <DependentUpon>frmMenuOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrderDetail.resx">
+      <DependentUpon>frmOrderDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoadingForm.resx">
       <DependentUpon>LoadingForm.cs</DependentUpon>
@@ -268,8 +290,14 @@
     <EmbeddedResource Include="SettingFormSecurity.resx">
       <DependentUpon>SettingFormSecurity.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Warehouse\Warehouse-EditData.resx">
+      <DependentUpon>Warehouse-EditData.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Warehouse\Warehouse-ListAll.resx">
       <DependentUpon>Warehouse-ListAll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Warehouse\Warehouse-ServingPrecal.resx">
+      <DependentUpon>Warehouse-ServingPrecal.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -499,13 +527,22 @@
     <None Include="Resources\addressPanel.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\btnPage.png" />
+    <Content Include="Resources\ImageFood\AP0001.jpg" />
+    <Content Include="Resources\ImageFood\AP0002.jpg" />
+    <Content Include="Resources\ImageFood\AP0003.jpg" />
+    <None Include="Resources\field_multi_editable_420x80.png" />
+    <None Include="Resources\field_multi_readonly_420x80.png" />
+    <None Include="Resources\field_multi_valuechanged_420x80.png" />
+    <None Include="Resources\field_single_editable_420x40.png" />
+    <None Include="Resources\field_single_readonly_420x40.png" />
+    <None Include="Resources\field_single_valuechanged_420x40.png" />
     <None Include="Resources\bgPurchasedList.png" />
     <None Include="Resources\btnAdd.png" />
     <None Include="Resources\btnBack.png" />
     <Content Include="Resources\ImageFood\AP0006.JPG" />
     <Content Include="Resources\ImageFood\default .jpg" />
     <Content Include="Resources\ImageFood\default.jpg" />
-    <Content Include="Resources\ImageFood\MN0010.jpg" />
     <None Include="Resources\panelNumberic2.png" />
     <None Include="Resources\panelNumberic.png" />
     <None Include="Resources\avatar.png" />
@@ -580,6 +617,11 @@
     <Content Include="Resources\AvatarImage\QL20240001.JPG" />
     <Content Include="Resources\AvatarImage\KH20240001.JPG" />
     <Content Include="Resources\AvatarImage\LT20240001.JPG" />
+    <None Include="Resources\btnSaveOrderDetail.png" />
+    <None Include="Resources\btnBackToOrders.jpg" />
+    <None Include="Resources\btnBackToOrder.jpg" />
+    <None Include="Resources\SearchBarOrder.png" />
+    <None Include="Resources\Searchbar.jpg" />
     <Content Include="Resources\AvatarImage\QL20240001.JPG" />
     <None Include="Resources\pnlHeaderListOrder.png" />
     <None Include="Resources\warnning.png" />
