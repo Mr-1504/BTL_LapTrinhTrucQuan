@@ -67,6 +67,7 @@ namespace GUI
             dataIngredientMNG.AllowUserToResizeRows = false;
             maMon.Text = "Mã món ăn";
             cbFoodType.Hide();
+            btnAddFood.Hide();
             foodManager = form;
             idFood = foodID;
             DataTable foodTable = new DataTable();

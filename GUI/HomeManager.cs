@@ -72,7 +72,7 @@ namespace GUI
             chartSale.Series.Add(series);
             chartSale.ChartAreas[0].AxisX.Title = "";
             chartSale.ChartAreas[0].AxisY.Title = "Doanh thu (VND)";
-            chartSale.ChartAreas[0].AxisX.Interval = 1; 
+            chartSale.ChartAreas[0].AxisX.Interval = 1;
         }
         private void cbbHoatDong_SelectedIndexChanged(object sender, EventArgs e)
         {
