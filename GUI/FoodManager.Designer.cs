@@ -144,6 +144,7 @@
             this.btnPage_st.TabIndex = 2;
             this.btnPage_st.Text = "1";
             this.btnPage_st.UseVisualStyleBackColor = true;
+            this.btnPage_st.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PageButton_Click);
             // 
             // btnPage_nd
             // 
@@ -158,6 +159,7 @@
             this.btnPage_nd.TabIndex = 3;
             this.btnPage_nd.Text = "2";
             this.btnPage_nd.UseVisualStyleBackColor = true;
+            this.btnPage_nd.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PageButton_Click);
             // 
             // btnPage_rd
             // 
@@ -172,6 +174,7 @@
             this.btnPage_rd.TabIndex = 4;
             this.btnPage_rd.Text = "3";
             this.btnPage_rd.UseVisualStyleBackColor = true;
+            this.btnPage_rd.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PageButton_Click);
             // 
             // btnPage_th
             // 
@@ -186,6 +189,7 @@
             this.btnPage_th.TabIndex = 5;
             this.btnPage_th.Text = "4";
             this.btnPage_th.UseVisualStyleBackColor = true;
+            this.btnPage_th.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PageButton_Click);
             // 
             // btnNext
             // 
