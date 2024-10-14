@@ -240,8 +240,8 @@ namespace GUI
                     }
                     else if (employeeRole == "LT")
                     {
-                        frmListOrders frmListOrders = new frmListOrders();
-                        OpenComponent(frmListOrders);
+                        frmListOrders ListOrder = new frmListOrders();
+                        OpenComponent(ListOrder);
                     }
                     break;
                 case "Employee":
@@ -265,7 +265,8 @@ namespace GUI
 
                     break;
                 case "OrderList":
-
+                    frmListOrders frmListOrder = new frmListOrders();
+                    OpenComponent(frmListOrder);
                     break;
                 case "EditInformation":
                     Warehouse_EditData warehouse = new Warehouse_EditData();
