@@ -183,6 +183,7 @@ namespace GUI
         private void btnBackToOrder_Click(object sender, EventArgs e)
         {
             SendToBack();
+            _frmListOrders.BringToFront();
             _frmListOrders.LoadOrderData();
         }
 

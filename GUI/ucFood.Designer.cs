@@ -123,9 +123,9 @@
             this.lblName.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.lblName.Location = new System.Drawing.Point(10, 101);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(32, 15);
+            this.lblName.Size = new System.Drawing.Size(44, 15);
             this.lblName.TabIndex = 3;
-            this.lblName.Text = "Name";
+            this.lblName.Text = "Tên món";
             // 
             // lblPriceValue
             // 
@@ -144,9 +144,9 @@
             this.lblPrice.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.lblPrice.Location = new System.Drawing.Point(10, 50);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(28, 15);
+            this.lblPrice.Size = new System.Drawing.Size(21, 15);
             this.lblPrice.TabIndex = 1;
-            this.lblPrice.Text = "Price";
+            this.lblPrice.Text = "Giá";
             // 
             // picFood
             // 

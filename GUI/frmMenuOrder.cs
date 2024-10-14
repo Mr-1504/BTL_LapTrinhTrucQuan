@@ -367,6 +367,21 @@ namespace GUI
             _orderDetail.BringToFront();
         }
 
-        
+        private void pnlSearchBarOrder_Paint(object sender, PaintEventArgs e)
+        {
+            int radius = 30;
+
+            // Tạo GraphicsPath để vẽ hình chữ nhật bo góc
+            GraphicsPath path = new GraphicsPath();
+            Rectangle rect = new Rectangle(0, 0, pnlSearchBarOrder.Width - 1, pnlSearchBarOrder.Height - 1);
+
+            // Thêm hình chữ nhật bo góc vào GraphicsPath
+            path.AddArc(rect.X, rect.Y, radius, radius, 180, 90);
+            path.AddArc(rect.X + rect.Width - radius, rect.Y, radius, radius, 270, 90);
+            path.AddArc(rect.X + rect.Width - radius, rect.Y + rect.Height - radius, radius, radius, 0, 90);
+            path.AddArc(rect.X, rect.Y + rect.Height - radius, radius, radius, 90, 90);
+            path.CloseFigure();
+            pnlSearchBarOrder.Region = new Region(path);
+        }
     }
 }
