@@ -17,7 +17,14 @@ namespace DTO
             FoodUnitPrice = foodUnitPrice;
             Status = status;
         }
-
+        public FoodDTO(string foodName, string foodMaking, int foodUnitPrice, string foodId, Status status)
+        {
+            FoodName = foodName;
+            FoodMaking = foodMaking;
+            FoodUnitPrice = foodUnitPrice;
+            FoodId = foodId;
+            Status = status;
+        }
         public FoodDTO(string foodId, string foodName, string foodMaking, int foodUnitPrice, Status status) 
             : this(foodName, foodMaking, foodUnitPrice, status)
         {

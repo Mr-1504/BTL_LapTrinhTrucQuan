@@ -1,5 +1,6 @@
 ﻿using BLL;
 using GUI.PurchasedIngredient;
+using GUI.Warehouse;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -54,14 +55,15 @@ namespace GUI
             pnlMenu.MouseEnter += Menu_MouseLeave;
             LoadMenu(employeeId);
             string employeeRole = employeeId.Substring(0,2).ToUpper();
-            if(employeeRole == "QL")
+            if(employeeRole == "QL" || employeeRole == "AD")
             {
                 HomeManager homeManager = new HomeManager();
                 OpenComponent(homeManager);
             }
             else if(employeeRole == "KH")
             {
-
+                Warehouse_ListAll warehouse_ListAll = new Warehouse_ListAll();
+                OpenComponent(warehouse_ListAll);
             }
             else if (employeeRole == "LT")
             {
@@ -86,9 +88,6 @@ namespace GUI
         }
         public void loadImage()
         {
-            btnAvatar.BackgroundImage = Image.FromFile(_imagePath);
-
-
             _imagePath = $@"..\..\Resources\AvatarImage\{_id}.JPG";
             btnAvatar.BackgroundImage = Image.FromFile(_imagePath);
         }
@@ -228,14 +227,15 @@ namespace GUI
                 case "Home":
 
                     string employeeRole = _id.Substring(0, 2).ToUpper();
-                    if (employeeRole == "QL")
+                    if (employeeRole == "QL" || employeeRole == "AD")
                     {
                         HomeManager homeManager = new HomeManager();
                         OpenComponent(homeManager);
                     }
                     else if (employeeRole == "KH")
                     {
-
+                        Warehouse_ListAll warehouse_ListAll = new Warehouse_ListAll();
+                        OpenComponent(warehouse_ListAll);
                     }
                     else if (employeeRole == "LT")
                     {
@@ -248,9 +248,12 @@ namespace GUI
 
                     break;
                 case "Food":
-
+                    FoodManager foodManager = new FoodManager();
+                    OpenComponent(foodManager);
                     break;
                 case "Warehouse":
+                    Warehouse_ServingPrecal warehouse_ServingPrecal = new Warehouse_ServingPrecal();
+                    OpenComponent(warehouse_ServingPrecal);
                     break;
                 case "Import":
                     PurchasedList purchasedList = new PurchasedList(_id, this);
@@ -263,7 +266,8 @@ namespace GUI
 
                     break;
                 case "EditInformation":
-
+                    Warehouse_EditData warehouse = new Warehouse_EditData();
+                    OpenComponent(warehouse);
                     break;
             }
         }

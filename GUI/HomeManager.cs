@@ -26,7 +26,6 @@ namespace GUI
             textSoDonHangRight.AutoSize = false;
             textSoLoaiNguyenLieu.AutoSize = false;
             textNguyenLieuTrongKhoLau.AutoSize = false;
-            textSoNguyenLieuSapHet.AutoSize = false;
             textSoNhaCungCap.AutoSize = false;
             textSoNhanVienKho.AutoSize = false;
             textSoTienNLMoiNhap.AutoSize = false;
@@ -34,13 +33,13 @@ namespace GUI
             textDoanhThuNgay.Text = managerBLL.GetSaleToday().ToString();
             textDonHang.Text = managerBLL.GetOrderToday().ToString();
             textSoNhanVien.Text = managerBLL.GetEmployee().ToString();
-            textSoNguyenLieuSapHet.Text = "0";
             textNguyenLieuTrongKhoLau.Text = managerBLL.GetIngredientOld();
             textSoNhaCungCap.Text = managerBLL.GetSupplier().ToString();
             textSoNhanVienKho.Text = managerBLL.GetEmployeeWarehouse().ToString();
             textSoTienNLMoiNhap.Text = managerBLL.GetMoneyIngredient().ToString();
             textTongChiKho.Text = managerBLL.GetTotalWarehouse().ToString();
             textSoLoaiNguyenLieu.Text = managerBLL.GetIngredient().ToString();
+            textSoBan.Text = managerBLL.GetTable().ToString();
             cbbHoatDong.Items.Clear();
             cbbHoatDong.Items.Add("Tuần");
             cbbHoatDong.Items.Add("Tháng");

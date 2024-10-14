@@ -1,4 +1,5 @@
 ﻿using BLL;
+using DAL;
 using DTO;
 using System;
 using System.Collections.Generic;
@@ -14,14 +15,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using Utilities;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace GUI
 {
     public partial class FoodManager2 : Form
     {
         FoodManager foodManager;
-        bool edit;
-        string idFood=null;
+        bool editIngredient,edit;
+        string idFood = null, selectedPath, idFood1;
         FoodManagerBLL2 foodBLL = new FoodManagerBLL2();
         public FoodManager2(FoodManager form)
         {
@@ -35,14 +37,26 @@ namespace GUI
             dataIngredientMNG.AllowUserToResizeColumns = false;
             dataIngredientMNG.AutoGenerateColumns = false;
             dataIngredientMNG.AllowUserToResizeRows = false;
+            maMon.Text = "Kiểu món ăn";
+            idFood1 = "AA0000";
+            FoodID.Hide();
+            cbIngredient.Hide();
+            textNumber.Hide();
+            cbUnit.Hide();
+            btnDeleteIngredient.Hide();
+            btnSave.Hide();
+            btnSaveFood.Hide();
+            cbFoodType.Items.Add("Món khai vị");
+            cbFoodType.Items.Add("Món chính");
+            cbFoodType.Items.Add("Món tráng miệng");
             foodManager = form;
             ingredient();
             dataIngredientMNG.SelectionChanged += DataIngredientMNG_SelectionChanged;
         }
-        public FoodManager2(FoodManager form,string foodID)
+        public FoodManager2(FoodManager form, string foodID)
         {
             InitializeComponent();
-            edit=false;
+            edit = true;
             dataIngredientMNG.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataIngredientMNG.ReadOnly = true;
             dataIngredientMNG.EnableHeadersVisualStyles = false;
@@ -51,6 +65,8 @@ namespace GUI
             dataIngredientMNG.AllowUserToResizeColumns = false;
             dataIngredientMNG.AutoGenerateColumns = false;
             dataIngredientMNG.AllowUserToResizeRows = false;
+            maMon.Text = "Mã món ăn";
+            cbFoodType.Hide();
             foodManager = form;
             idFood = foodID;
             DataTable foodTable = new DataTable();
@@ -58,6 +74,26 @@ namespace GUI
             FoodID.Text = idFood;
             nameFood.Text = foodTable.Rows[0]["TenMonAn"].ToString();
             Price.Text = foodTable.Rows[0]["DonGia"].ToString();
+            textMaking.Text = foodTable.Rows[0]["CachLam"].ToString(); 
+            LoadDataGredient(foodID);
+            LoadFoodImage(foodID);
+            ingredient();
+            dataIngredientMNG.SelectionChanged += DataIngredientMNG_SelectionChanged;
+            cbIngredient.SelectedIndexChanged += cbIngredient_SelectedIndexChanged;
+            
+        }
+
+        private void ShowAdd()
+        {
+            cbIngredient.Show();
+            textNumber.Show();
+            cbUnit.Show();
+            btnDeleteIngredient.Show();
+            btnSave.Show();
+            btnSaveFood.Show();
+        }
+        private void LoadDataGredient(string foodID)
+        {
             DataTable ingredientTable = new DataTable();
             ingredientTable = foodBLL.getIngredientForFood(foodID);
             dataIngredientMNG.Columns["ingredientID"].DataPropertyName = "MaNguyenLieu";
@@ -65,11 +101,7 @@ namespace GUI
             dataIngredientMNG.Columns["number"].DataPropertyName = "SoLuong";
             dataIngredientMNG.Columns["unit"].DataPropertyName = "DonViTinh";
             dataIngredientMNG.DataSource = ingredientTable;
-            LoadFoodImage( foodID );
-            ingredient();
-            dataIngredientMNG.SelectionChanged += DataIngredientMNG_SelectionChanged;
         }
-
         private void DataIngredientMNG_SelectionChanged(object sender, EventArgs e)
         {
             selectIngredient();
@@ -78,19 +110,40 @@ namespace GUI
         private void ingredient()
         {
             cbIngredient.Items.Clear();
-            cbUnit.Items.Clear();
+            cbUnit.Clear();
             DataTable ingredient = new DataTable();
             ingredient = foodBLL.getIngredient();
             for (int i = 0; i < ingredient.Rows.Count; i++)
             {
                 cbIngredient.Items.Add(ingredient.Rows[i]["TenNguyenLieu"]);
             }
-            Unit [] unit  = (Unit[] )Enum.GetValues(typeof(Unit)); 
-            foreach(var name in unit)
-            {
-                cbUnit.Items.Add(name.GetEnumDescription());
-            }
+            //Unit[] unit = (Unit[])Enum.GetValues(typeof(Unit));
+            //foreach (var name in unit)
+            //{
+            //    cbUnit.Items.Add(name.GetEnumDescription());
+            //}
 
+        }
+        private bool IngredientTable(string ingredientID){
+            foreach (DataGridViewRow row in dataIngredientMNG.Rows)
+            {
+                if (row.Cells["ingredientID"].Value != null && row.Cells["ingredientID"].Value.ToString() == ingredientID)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        private bool IngredientExistsInGrid(string ingredientName)
+        {
+            foreach (DataGridViewRow row in dataIngredientMNG.Rows)
+            {
+                if (row.Cells["nameIngredient"].Value != null && row.Cells["nameIngredient"].Value.ToString() == ingredientName)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
         private void selectIngredient()
         {
@@ -101,7 +154,8 @@ namespace GUI
                 cbIngredient.Text = selectedRow.Cells["nameIngredient"].Value.ToString();
                 textNumber.Text = selectedRow.Cells["number"].Value.ToString();
                 cbUnit.Text = selectedRow.Cells["unit"].Value.ToString();
-                
+                btnSave.Text = "Lưu";
+                editIngredient = true;
             }
         }
         private void dataEmployerMNG_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -193,11 +247,11 @@ namespace GUI
                     pictureBox1.Image.Dispose();
                     pictureBox1.Image = null;
                 }
-
-                using (FileStream fs = new FileStream(defaultImagePath, FileMode.Open, FileAccess.Read))
+                using (FileStream stream = new FileStream(defaultImagePath, FileMode.Open, FileAccess.Read, FileShare.Read))
                 {
-                    pictureBox1.Image = Image.FromStream(fs);
+                    pictureBox1.Image = Image.FromStream(stream);
                 }
+
             }
 
         }
@@ -209,149 +263,284 @@ namespace GUI
                 openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png";
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-
                     string selectedImagePath = openFileDialog.FileName;
                     string resourcePath = $@"..\..\Resources\ImageFood\";
                     string destinationPath = Path.Combine(resourcePath, $"{idFood}.jpg");
 
+                    if (!Directory.Exists(resourcePath))
+                    {
+                        Directory.CreateDirectory(resourcePath);
+                    }
                     if (pictureBox1.Image != null)
                     {
                         pictureBox1.Image.Dispose();
                         pictureBox1.Image = null;
                     }
-                    if (edit == false)
+
+                    try
                     {
-                        //selectedPath = selectedImagePath;
+                        File.Copy(selectedImagePath, destinationPath, true);
+
+                        LoadFoodImage(idFood);
                     }
-
-                    File.Copy(selectedImagePath, destinationPath, true);
-
-                    LoadFoodImage(idFood);
+                    catch (IOException ioEx)
+                    {
+                        MessageBox.Show($"Error copying file: {ioEx.Message}");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"An error occurred: {ex.Message}");
+                    }
                 }
             }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (edit == true)
+            if (editIngredient == true)
             {
+                DataTable dataIngredientTable = new DataTable();
+                dataIngredientTable = foodBLL.GetIngredients(Ingredient.IngredientName, cbIngredient.Text);
+                string editID = dataIngredientTable.Rows[0][0].ToString();
 
-                //string s = gender.SelectedItem.ToString();
+                RecipeDTO recipeDTO = new RecipeDTO(
+                    idFood,
+                    editID,
+                    decimal.Parse(textNumber.Text)
+                );
 
-                //if (s == Gender.Female.GetEnumDescription() || s == Gender.Male.GetEnumDescription())
-                //{
-                //    EmployeeDTO employeeDTO = new EmployeeDTO
-                //    (
-                //    employID.Text,  // Sử dụng giá trị từ TextBox
-                //        name.Text,
-                //        s == Gender.Male.GetEnumDescription() ? Gender.Male : Gender.Female,  // Gán giá trị enum đã chuyển đổi
-                //        dateTimeBirthDay.Value,
-                //        hometown.Text,
-                //        address.Text,
-                //        numberPhone.Text
-                //    );
-
-                //    int result = employManager2BLL.UpdateEmployee(employeeDTO);
-
-                //    if (result > 0)
-                //    {
-                //        MessageBox.Show("Cập nhật thông tin nhân viên thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //        employ.ShowComponent(true);  // Hiển thị lại form chính
-                //        this.Close();  // Đóng form hiện tại
-                //    }
-                //    else
-                //    {
-                //        MessageBox.Show("Cập nhật thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //    }
-                //}
-                //else
-                //{
-                //    MessageBox.Show("Giới tính không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //}
+                foodBLL.UpdateRecipe(recipeDTO);
+                LoadDataGredient(idFood);  
             }
             else
             {
+                DataTable dataIngredientTable = new DataTable();
+                dataIngredientTable = foodBLL.GetIngredients(Ingredient.IngredientName, cbIngredient.Text);
+                string editID = dataIngredientTable.Rows[0][0].ToString();
 
-                //EmployeeStatus status = EmployeeStatus.CurrentlyWorking;
-                //string s = gender.SelectedItem.ToString();
+                RecipeDTO recipeDTO = new RecipeDTO(
+                    idFood,
+                    editID,
+                    decimal.Parse(textNumber.Text)
+                );
 
-                //if (s == Gender.Female.GetEnumDescription() || s == Gender.Male.GetEnumDescription())
-                //{
-                //    EmployeeDTO employeeDTO = new EmployeeDTO
-                //    (
-                //        name.Text,
-                //        s == Gender.Male.GetEnumDescription() ? Gender.Male : Gender.Female,
-                //        dateTimeBirthDay.Value,
-                //        hometown.Text,
-                //        address.Text,
-                //        numberPhone.Text,
-                //        status
-                //    );
-                //    EmployeeType employeeType = new EmployeeType();
-                //    if (cbboxChucVu.SelectedItem != null)
-                //    {
-                //        string selectedRole = cbboxChucVu.SelectedItem.ToString();
-                //        switch (selectedRole)
-                //        {
-                //            case "Quản Lý":
-                //                employeeType = EmployeeType.Manager;
-                //                break;
-                //            case "Lễ Tân":
-                //                employeeType = EmployeeType.Receptionist;
-                //                break;
-                //            case "Kho Hàng":
-                //                employeeType = EmployeeType.Warehouse;
-                //                break;
-                //        }
-
-                //        int result = employManager2BLL.AddEmployee(employeeType, employeeDTO);
-
-
-                //        if (result > 0)
-                //        {
-                //            MessageBox.Show("Thêm nhân viên thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //            employ.ShowComponent(true);
-                //            EmployeeDTO employee = new EmployManager2BLL().GetNewestEmployee(employeeType);
-
-                //            string resourcePath = $@"..\..\Resources\AvatarImage\";
-                //            string destinationPath = Path.Combine(resourcePath, $"{employee.EmployeeId}.jpg");
-
-                //            if (string.IsNullOrEmpty(selectedPath))
-                //            {
-                //                string defaultImagePath = Path.Combine(resourcePath, "default.jpg");
-                //                File.Copy(defaultImagePath, destinationPath, true);
-                //            }
-                //            else
-                //            {
-                //                File.Copy(selectedPath, destinationPath, true);
-                //            }
-                //            employeeID = "AA0000000";
-                //            destinationPath = Path.Combine(resourcePath, $"{employeeID}.jpg");
-                //            File.Delete(destinationPath);
-                //            LoadEmployeeImage(employeeID);
-                //            this.Close();
-                //        }
-                //        else if (result == 0)
-                //        {
-                //            MessageBox.Show("Thêm nhân viên thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                //        }
-                //        else
-                //        {
-                //            MessageBox.Show("csdl", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                //        }
-                //    }
-                //    else
-                //    {
-                //        MessageBox.Show("Vui lòng chọn chức vụ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                //    }
-                //}
-                //else
-                //{
-                //    MessageBox.Show("Giới tính không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //}
+                foodBLL.AddNewRecipe(recipeDTO);
+                LoadDataGredient(idFood);  
             }
+
+            btnSave.Text = "Thêm";
+            editIngredient = false;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string errorMessage;
+            if (!int.TryParse(Price.Text, out int numberValue) || numberValue <= 0)
+            {
+                MessageBox.Show("Giá phải là số nguyên lớn hơn 0.", "Lỗi nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            FoodDTO foodDTO = new FoodDTO(
+                nameFood.Text,
+                textMaking.Text,
+                numberValue,
+                idFood,  
+                Utilities.Status.Use
+            );
+
+            if (!foodBLL.ValidateFood(foodDTO, out errorMessage))
+            {
+                MessageBox.Show(errorMessage, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            int result = foodBLL.UpdateFood(foodDTO);
+            if (result > 0)
+            {
+                MessageBox.Show("Cập nhật thông tin món ăn thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                foodManager.Update(); 
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Cập nhật thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void FoodManager2_Load(object sender, EventArgs e)
+        {
+            cbIngredient_SelectedIndexChanged(null, null);
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            if (dataIngredientMNG.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dataIngredientMNG.SelectedRows[0];
+                RecipeDTO recipeDTO = new RecipeDTO(
+                    idFood,
+                    selectedRow.Cells["ingredientID"].Value.ToString(),
+                    decimal.Parse(selectedRow.Cells["number"].Value.ToString())
+                );
+                int resul = foodBLL.RemoveRecipe(recipeDTO);
+                if (resul > 0)
+                {
+                    MessageBox.Show("Xóa nguyên liệu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadDataGredient(idFood);
+                }
+                else
+                {
+                    MessageBox.Show("Xóa nguyên liệu thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void cbIngredient_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (IngredientExistsInGrid(cbIngredient.Text))
+            {
+                DataGridViewRow row = dataIngredientMNG.Rows
+                    .Cast<DataGridViewRow>()
+                    .FirstOrDefault(r => r.Cells["nameIngredient"].Value.ToString() == cbIngredient.Text);
+
+                if (row != null)
+                {
+                    textNumber.Text = row.Cells["number"].Value.ToString();
+                    cbUnit.Text = row.Cells["unit"].Value.ToString();
+                }
+
+                btnSave.Text = "Lưu";
+                editIngredient = true;
+            }
+            else
+            {
+                textNumber.Text = string.Empty;
+                DataTable ingredientUnit = new DataTable();
+                ingredientUnit = foodBLL.GetIngredients(Ingredient.IngredientName, cbIngredient.Text);
+                cbUnit.Text = ingredientUnit.Rows[0][2].ToString();
+                btnSave.Text = "Thêm";
+                editIngredient = false;
+            }
+
+        }
+        private void btnSave_MouseLeave(object sender, EventArgs e)
+        {
+            btnSaveFood.BackgroundImage = Properties.Resources.btn;
+            btnSaveFood.BackgroundImageLayout = ImageLayout.Zoom;
+        }
+        private void btnSave_MouseEnter(object sender, EventArgs e)
+        {
+            btnSaveFood.BackgroundImage = Properties.Resources.hover;
+            btnSaveFood.BackgroundImageLayout = ImageLayout.Zoom;
+        }
+        private void btnDelete_MouseLeave(object sender, EventArgs e)
+        {
+            btnDeleteIngredient.BackgroundImage = Properties.Resources.btn;
+            btnDeleteIngredient.BackgroundImageLayout = ImageLayout.Zoom;
+        }
+
+        private void btnAddFood_Click(object sender, EventArgs e)
+        {
+            string errorMessage;
+            if (!int.TryParse(Price.Text, out int numberValue) || numberValue <= 0)
+            {
+                MessageBox.Show("Giá phải là số nguyên lớn hơn 0.", "Lỗi nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            FoodDTO foodDTO = new FoodDTO(
+                nameFood.Text,
+                textMaking.Text,
+                numberValue,
+                Utilities.Status.Use
+            );
+
+            FoodType foodType = new FoodType();
+            if (cbFoodType.SelectedItem != null)
+            {
+                string selectedRole = cbFoodType.SelectedItem.ToString();
+                switch (selectedRole)
+                {
+                    case "Món khai vị":
+                        foodType = FoodType.Appetizer;
+                        break;
+                    case "Món chính":
+                        foodType = FoodType.MainCourse;
+                        break;
+                    case "Món tráng miệng":
+                        foodType = FoodType.Dessert;
+                        break;
+                }
+
+                if (!foodBLL.ValidateFood(foodDTO, out errorMessage))
+                {
+                    MessageBox.Show(errorMessage, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                int result = foodBLL.AddNewFood(foodType, foodDTO);
+                if (result > 0)
+                {
+                    MessageBox.Show("Thêm món ăn thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ShowAdd();
+                    btnAddFood.Hide();
+                    
+                    FoodDTO foodDTO1 = new FoodManagerBLL2().GetNewestFood(foodType);
+                    Console.WriteLine(foodDTO1.FoodId.ToString());
+                    string resourcePath = $@"..\..\Resources\ImageFood\";
+                    string destinationPath = Path.Combine(resourcePath, $"{foodDTO1.FoodId}.jpg");
+
+                    if (string.IsNullOrEmpty(selectedPath))
+                    {
+                        string defaultImagePath = Path.Combine(resourcePath, "default.jpg");
+                        File.Copy(defaultImagePath, destinationPath, true);
+                    }
+                    else
+                    {
+                        File.Copy(selectedPath, destinationPath, true);
+                    }
+                    idFood1 = "AA0000";
+                    destinationPath = Path.Combine(resourcePath, $"{idFood1}.jpg");
+                    File.Delete(destinationPath);
+                    idFood = foodDTO1.FoodId;
+
+                }
+                else
+                {
+                    MessageBox.Show("Thêm món thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn loại món ăn!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnDelete_MouseEnter(object sender, EventArgs e)
+        {
+            btnDeleteIngredient.BackgroundImage = Properties.Resources.hover;
+            btnDeleteIngredient.BackgroundImageLayout = ImageLayout.Zoom;
+        }
+        private void btnSaveIngredient_MouseLeave(object sender, EventArgs e)
+        {
+            btnSave.BackgroundImage = Properties.Resources.btn;
+            btnSave.BackgroundImageLayout = ImageLayout.Zoom;
+        }
+        private void btnSaveIngredient_MouseEnter(object sender, EventArgs e)
+        {
+            btnSave.BackgroundImage = Properties.Resources.hover;
+            btnSave.BackgroundImageLayout = ImageLayout.Zoom;
+        }
+        private void btnAddFood_MouseLeave(object sender, EventArgs e)
+        {
+            btnAddFood.BackgroundImage = Properties.Resources.btn;
+            btnAddFood.BackgroundImageLayout = ImageLayout.Zoom;
+        }
+        private void btnAddFood_MouseEnter(object sender, EventArgs e)
+        {
+            btnAddFood.BackgroundImage = Properties.Resources.hover;
+            btnAddFood.BackgroundImageLayout = ImageLayout.Zoom;
         }
     }
 }

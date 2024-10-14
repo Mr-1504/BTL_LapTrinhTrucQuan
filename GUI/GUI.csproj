@@ -195,11 +195,23 @@
     <Compile Include="SettingFormSecurity.Designer.cs">
       <DependentUpon>SettingFormSecurity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Warehouse\Warehouse-EditData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Warehouse\Warehouse-EditData.Designer.cs">
+      <DependentUpon>Warehouse-EditData.cs</DependentUpon>
+    </Compile>
     <Compile Include="Warehouse\Warehouse-ListAll.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Warehouse\Warehouse-ListAll.Designer.cs">
       <DependentUpon>Warehouse-ListAll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Warehouse\Warehouse-ServingPrecal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Warehouse\Warehouse-ServingPrecal.Designer.cs">
+      <DependentUpon>Warehouse-ServingPrecal.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
@@ -278,8 +290,14 @@
     <EmbeddedResource Include="SettingFormSecurity.resx">
       <DependentUpon>SettingFormSecurity.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Warehouse\Warehouse-EditData.resx">
+      <DependentUpon>Warehouse-EditData.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Warehouse\Warehouse-ListAll.resx">
       <DependentUpon>Warehouse-ListAll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Warehouse\Warehouse-ServingPrecal.resx">
+      <DependentUpon>Warehouse-ServingPrecal.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -509,13 +527,22 @@
     <None Include="Resources\addressPanel.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\btnPage.png" />
+    <Content Include="Resources\ImageFood\AP0001.jpg" />
+    <Content Include="Resources\ImageFood\AP0002.jpg" />
+    <Content Include="Resources\ImageFood\AP0003.jpg" />
+    <None Include="Resources\field_multi_editable_420x80.png" />
+    <None Include="Resources\field_multi_readonly_420x80.png" />
+    <None Include="Resources\field_multi_valuechanged_420x80.png" />
+    <None Include="Resources\field_single_editable_420x40.png" />
+    <None Include="Resources\field_single_readonly_420x40.png" />
+    <None Include="Resources\field_single_valuechanged_420x40.png" />
     <None Include="Resources\bgPurchasedList.png" />
     <None Include="Resources\btnAdd.png" />
     <None Include="Resources\btnBack.png" />
     <Content Include="Resources\ImageFood\AP0006.JPG" />
     <Content Include="Resources\ImageFood\default .jpg" />
     <Content Include="Resources\ImageFood\default.jpg" />
-    <Content Include="Resources\ImageFood\MN0010.jpg" />
     <None Include="Resources\panelNumberic2.png" />
     <None Include="Resources\panelNumberic.png" />
     <None Include="Resources\avatar.png" />
