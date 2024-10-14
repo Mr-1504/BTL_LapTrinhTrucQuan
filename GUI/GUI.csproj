@@ -103,6 +103,12 @@
     <Compile Include="frmMenuOrder.Designer.cs">
       <DependentUpon>frmMenuOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmOrderDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrderDetail.Designer.cs">
+      <DependentUpon>frmOrderDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoadingForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +134,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="SharedDataTable.cs" />
     <Compile Include="PurchasedIngredient\DetailInvoice.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -232,6 +239,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenuOrder.resx">
       <DependentUpon>frmMenuOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrderDetail.resx">
+      <DependentUpon>frmOrderDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoadingForm.resx">
       <DependentUpon>LoadingForm.cs</DependentUpon>
@@ -607,6 +617,11 @@
     <Content Include="Resources\AvatarImage\QL20240001.JPG" />
     <Content Include="Resources\AvatarImage\KH20240001.JPG" />
     <Content Include="Resources\AvatarImage\LT20240001.JPG" />
+    <None Include="Resources\btnSaveOrderDetail.png" />
+    <None Include="Resources\btnBackToOrders.jpg" />
+    <None Include="Resources\btnBackToOrder.jpg" />
+    <None Include="Resources\SearchBarOrder.png" />
+    <None Include="Resources\Searchbar.jpg" />
     <Content Include="Resources\AvatarImage\QL20240001.JPG" />
     <None Include="Resources\pnlHeaderListOrder.png" />
     <None Include="Resources\warnning.png" />

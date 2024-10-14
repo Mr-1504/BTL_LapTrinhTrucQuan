@@ -52,6 +52,7 @@
     <Compile Include="OrderBLL.cs" />
     <Compile Include="EmployeeBLL.cs" />
     <Compile Include="IngredientBLL.cs" />
+    <Compile Include="OrderDetailBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PurchaseInvoiceBLL.cs" />
     <Compile Include="RoleBLL.cs" />

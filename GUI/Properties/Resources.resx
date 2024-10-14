@@ -168,6 +168,9 @@
   <data name="panelLogin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\panelLogin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="SearchBarOrder" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SearchBarOrder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="step2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\step2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -343,6 +346,10 @@
   <data name="picEmployeeBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\picEmployeeBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+
+  <data name="lblButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lblButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+</data>
   <data name="btnReturn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnReturn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -387,6 +394,9 @@
   <data name="UnSeen1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\UnSeen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="btnBackToOrders" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnBackToOrders.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ListIngrdient" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ListIngrdient.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -414,6 +424,9 @@
   <data name="lblFood" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\lblFood.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="btnReturn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnReturn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+</data>
   <data name="namePanel" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\namePanel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -500,6 +513,10 @@
   <data name="Yes" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Yes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+
+  <data name="btnSaveOrderDetail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnSaveOrderDetail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+</data>
   <data name="btnBack" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnBack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
