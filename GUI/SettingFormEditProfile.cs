@@ -214,5 +214,10 @@ namespace GUI
                 }
             }
         }
+
+        private void txtPhone_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
