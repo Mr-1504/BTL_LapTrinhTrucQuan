@@ -67,7 +67,8 @@ namespace GUI
             }
             else if (employeeRole == "LT")
             {
-
+                frmListOrders frmListOrders = new frmListOrders();
+                OpenComponent(frmListOrders);
             }
             
             ActiveControl = picLogo;
@@ -239,7 +240,8 @@ namespace GUI
                     }
                     else if (employeeRole == "LT")
                     {
-
+                        frmListOrders frmListOrders = new frmListOrders();
+                        OpenComponent(frmListOrders);
                     }
                     break;
                 case "Employee":
