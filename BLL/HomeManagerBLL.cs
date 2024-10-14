@@ -42,6 +42,11 @@ namespace BLL
         {
             return saleDAL.GetTotalSalesCurrentYear();
         }
+        //Số bàn hiện tại 
+        public int GetTable()
+        {
+            return saleDAL.GetTable();
+        }
 
         //Số đơn hàng nhân tuần hiện tại
         public int GetOrderCountCurrentWeek()

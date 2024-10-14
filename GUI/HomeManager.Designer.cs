@@ -31,9 +31,9 @@ namespace GUI
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeManager));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label1 = new System.Windows.Forms.Label();
             this.InPanelManager1 = new System.Windows.Forms.Panel();
             this.PanelIngredient = new System.Windows.Forms.Panel();
@@ -323,7 +323,9 @@ namespace GUI
             this.panel5.BackgroundImage = global::GUI.Properties.Resources.panelNumberic;
             this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel5.Controls.Add(this.textTongChiKho);
+
             this.panel5.Location = new System.Drawing.Point(236, 202);
+
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(164, 35);
             this.panel5.TabIndex = 17;
@@ -346,6 +348,7 @@ namespace GUI
             this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel4.Controls.Add(this.textSoNhanVienKho);
             this.panel4.Location = new System.Drawing.Point(236, 131);
+
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(164, 35);
             this.panel4.TabIndex = 16;
@@ -387,7 +390,9 @@ namespace GUI
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
             this.label13.Location = new System.Drawing.Point(34, 207);
+
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(115, 19);
             this.label13.TabIndex = 9;
@@ -397,7 +402,9 @@ namespace GUI
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
             this.label12.Location = new System.Drawing.Point(34, 137);
+
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(148, 19);
             this.label12.TabIndex = 8;
@@ -482,16 +489,16 @@ namespace GUI
             // 
             this.chartSale.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.chartSale.BorderSkin.BorderWidth = 0;
-            chartArea1.Name = "ChartArea1";
-            this.chartSale.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartSale.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.chartSale.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartSale.Legends.Add(legend2);
             this.chartSale.Location = new System.Drawing.Point(0, 0);
             this.chartSale.Name = "chartSale";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartSale.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartSale.Series.Add(series2);
             this.chartSale.Size = new System.Drawing.Size(1020, 281);
             this.chartSale.TabIndex = 0;
             this.chartSale.Text = "chart1";

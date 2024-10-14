@@ -23,7 +23,7 @@ namespace GUI
     {
         FoodManager foodManager;
         bool editIngredient,edit;
-        string idFood = null;
+        string idFood = null, selectedPath, idFood1;
         FoodManagerBLL2 foodBLL = new FoodManagerBLL2();
         public FoodManager2(FoodManager form)
         {
@@ -38,7 +38,14 @@ namespace GUI
             dataIngredientMNG.AutoGenerateColumns = false;
             dataIngredientMNG.AllowUserToResizeRows = false;
             maMon.Text = "Kiểu món ăn";
+            idFood1 = "AA0000";
             FoodID.Hide();
+            cbIngredient.Hide();
+            textNumber.Hide();
+            cbUnit.Hide();
+            btnDeleteIngredient.Hide();
+            btnSave.Hide();
+            btnSaveFood.Hide();
             cbFoodType.Items.Add("Món khai vị");
             cbFoodType.Items.Add("Món chính");
             cbFoodType.Items.Add("Món tráng miệng");
@@ -76,6 +83,15 @@ namespace GUI
             
         }
 
+        private void ShowAdd()
+        {
+            cbIngredient.Show();
+            textNumber.Show();
+            cbUnit.Show();
+            btnDeleteIngredient.Show();
+            btnSave.Show();
+            btnSaveFood.Show();
+        }
         private void LoadDataGredient(string foodID)
         {
             DataTable ingredientTable = new DataTable();
@@ -318,101 +334,37 @@ namespace GUI
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
-            if (edit == true)
+            string errorMessage;
+            if (!int.TryParse(Price.Text, out int numberValue) || numberValue <= 0)
             {
-                int numberValue;
-                if (!int.TryParse(Price.Text, out numberValue))
-                {
-                    MessageBox.Show("Phải nhập số nguyên.", "Lỗi nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                FoodDTO foodDTO = new FoodDTO(
-                    nameFood.Text,
-                    textMaking.Text,
-                    numberValue,
-                    idFood,
-                    Utilities.Status.Use
-                );
-                int result = foodBLL.UpdateFood( foodDTO );
-                Console.WriteLine( result );
-                if (result > 0)
-                {
-                    MessageBox.Show("Cập nhật thông tin món ăn thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    foodManager.Update();
-                    foodManager.ShowComponent(true);
-                    this.Close();
-                    this.SendToBack();
-                    foodManager.BringToFront();
-                }
-                else
-                {
-                    MessageBox.Show("Cập nhật thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                
+                MessageBox.Show("Giá phải là số nguyên lớn hơn 0.", "Lỗi nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            FoodDTO foodDTO = new FoodDTO(
+                nameFood.Text,
+                textMaking.Text,
+                numberValue,
+                idFood,  
+                Utilities.Status.Use
+            );
+
+            if (!foodBLL.ValidateFood(foodDTO, out errorMessage))
+            {
+                MessageBox.Show(errorMessage, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            int result = foodBLL.UpdateFood(foodDTO);
+            if (result > 0)
+            {
+                MessageBox.Show("Cập nhật thông tin món ăn thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                foodManager.Update(); 
+                this.Close();
             }
             else
             {
-                int numberValue;
-                if (!int.TryParse(Price.Text, out numberValue))
-                {
-                    MessageBox.Show("Phải nhập số nguyên.", "Lỗi nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                FoodDTO foodDTO = new FoodDTO(
-                    nameFood.Text,
-                    textMaking.Text,
-                    numberValue,
-                    Utilities.Status.Use
-                );
-
-                FoodType foodType = new FoodType();
-                if (cbFoodType.SelectedItem != null)
-                {
-                    string selectedRole = cbFoodType.SelectedItem.ToString();
-                    switch (selectedRole)
-                    {
-                        case "Món khai vị":
-                            foodType = FoodType.Appetizer;
-                            break;
-                        case "Món chính":
-                            foodType = FoodType.MainCourse;
-                            break;
-                        case "Món tráng miệng":
-                            foodType = FoodType.Dessert;
-                            break;
-                    }
-
-                    int result = foodBLL.AddNewFood(foodType, foodDTO);
-
-
-                    if (result > 0)
-                    {
-                        MessageBox.Show("Thêm món ăn thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        foodManager.ShowComponent(true);
-                        
-
-                       
-                    }
-                    else if (result == 0)
-                    {
-                        MessageBox.Show("Thêm món thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                    }
-                    else
-                    {
-                        MessageBox.Show("csdl", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Vui lòng chọn loại món ăn!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+                MessageBox.Show("Cập nhật thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-
-        
         }
 
         private void FoodManager2_Load(object sender, EventArgs e)
@@ -487,6 +439,84 @@ namespace GUI
             btnDeleteIngredient.BackgroundImage = Properties.Resources.btn;
             btnDeleteIngredient.BackgroundImageLayout = ImageLayout.Zoom;
         }
+
+        private void btnAddFood_Click(object sender, EventArgs e)
+        {
+            string errorMessage;
+            if (!int.TryParse(Price.Text, out int numberValue) || numberValue <= 0)
+            {
+                MessageBox.Show("Giá phải là số nguyên lớn hơn 0.", "Lỗi nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            FoodDTO foodDTO = new FoodDTO(
+                nameFood.Text,
+                textMaking.Text,
+                numberValue,
+                Utilities.Status.Use
+            );
+
+            FoodType foodType = new FoodType();
+            if (cbFoodType.SelectedItem != null)
+            {
+                string selectedRole = cbFoodType.SelectedItem.ToString();
+                switch (selectedRole)
+                {
+                    case "Món khai vị":
+                        foodType = FoodType.Appetizer;
+                        break;
+                    case "Món chính":
+                        foodType = FoodType.MainCourse;
+                        break;
+                    case "Món tráng miệng":
+                        foodType = FoodType.Dessert;
+                        break;
+                }
+
+                if (!foodBLL.ValidateFood(foodDTO, out errorMessage))
+                {
+                    MessageBox.Show(errorMessage, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                int result = foodBLL.AddNewFood(foodType, foodDTO);
+                if (result > 0)
+                {
+                    MessageBox.Show("Thêm món ăn thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ShowAdd();
+                    btnAddFood.Hide();
+                    
+                    FoodDTO foodDTO1 = new FoodManagerBLL2().GetNewestFood(foodType);
+                    Console.WriteLine(foodDTO1.FoodId.ToString());
+                    string resourcePath = $@"..\..\Resources\ImageFood\";
+                    string destinationPath = Path.Combine(resourcePath, $"{foodDTO1.FoodId}.jpg");
+
+                    if (string.IsNullOrEmpty(selectedPath))
+                    {
+                        string defaultImagePath = Path.Combine(resourcePath, "default.jpg");
+                        File.Copy(defaultImagePath, destinationPath, true);
+                    }
+                    else
+                    {
+                        File.Copy(selectedPath, destinationPath, true);
+                    }
+                    idFood1 = "AA0000";
+                    destinationPath = Path.Combine(resourcePath, $"{idFood1}.jpg");
+                    File.Delete(destinationPath);
+                    idFood = foodDTO1.FoodId;
+
+                }
+                else
+                {
+                    MessageBox.Show("Thêm món thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn loại món ăn!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
         private void btnDelete_MouseEnter(object sender, EventArgs e)
         {
             btnDeleteIngredient.BackgroundImage = Properties.Resources.hover;
@@ -501,6 +531,16 @@ namespace GUI
         {
             btnSave.BackgroundImage = Properties.Resources.hover;
             btnSave.BackgroundImageLayout = ImageLayout.Zoom;
+        }
+        private void btnAddFood_MouseLeave(object sender, EventArgs e)
+        {
+            btnAddFood.BackgroundImage = Properties.Resources.btn;
+            btnAddFood.BackgroundImageLayout = ImageLayout.Zoom;
+        }
+        private void btnAddFood_MouseEnter(object sender, EventArgs e)
+        {
+            btnAddFood.BackgroundImage = Properties.Resources.hover;
+            btnAddFood.BackgroundImageLayout = ImageLayout.Zoom;
         }
     }
 }
