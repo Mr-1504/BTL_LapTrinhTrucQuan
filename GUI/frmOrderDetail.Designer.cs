@@ -47,8 +47,10 @@
             this.lblHoaDonBan = new System.Windows.Forms.Label();
             this.lblChiTietHoaDon = new System.Windows.Forms.Label();
             this.btnBackToOrder = new System.Windows.Forms.Button();
+            this.pnlContent = new System.Windows.Forms.Panel();
             this.pnlOrderDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListFood)).BeginInit();
+            this.pnlContent.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlOrderDetail
@@ -69,7 +71,7 @@
             this.pnlOrderDetail.Controls.Add(this.lblMaHoaDon);
             this.pnlOrderDetail.Controls.Add(this.lblThoiDiemTaoHD);
             this.pnlOrderDetail.Controls.Add(this.lblHoaDonBan);
-            this.pnlOrderDetail.Location = new System.Drawing.Point(23, 86);
+            this.pnlOrderDetail.Location = new System.Drawing.Point(23, 87);
             this.pnlOrderDetail.Name = "pnlOrderDetail";
             this.pnlOrderDetail.Size = new System.Drawing.Size(1312, 706);
             this.pnlOrderDetail.TabIndex = 0;
@@ -183,6 +185,9 @@
             this.dgvListFood.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListFood.Location = new System.Drawing.Point(607, 82);
             this.dgvListFood.Name = "dgvListFood";
+            this.dgvListFood.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
+            this.dgvListFood.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvListFood.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.dgvListFood.Size = new System.Drawing.Size(674, 584);
             this.dgvListFood.TabIndex = 5;
             // 
@@ -238,7 +243,7 @@
             // 
             this.lblChiTietHoaDon.AutoSize = true;
             this.lblChiTietHoaDon.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblChiTietHoaDon.Location = new System.Drawing.Point(103, 30);
+            this.lblChiTietHoaDon.Location = new System.Drawing.Point(104, 27);
             this.lblChiTietHoaDon.Name = "lblChiTietHoaDon";
             this.lblChiTietHoaDon.Size = new System.Drawing.Size(199, 29);
             this.lblChiTietHoaDon.TabIndex = 2;
@@ -257,45 +262,55 @@
             this.btnBackToOrder.Click += new System.EventHandler(this.btnBackToOrder_Click);
             this.btnBackToOrder.Paint += new System.Windows.Forms.PaintEventHandler(this.btnBackToOrder_Paint);
             // 
+            // pnlContent
+            // 
+            this.pnlContent.Controls.Add(this.btnBackToOrder);
+            this.pnlContent.Controls.Add(this.lblChiTietHoaDon);
+            this.pnlContent.Controls.Add(this.pnlOrderDetail);
+            this.pnlContent.Location = new System.Drawing.Point(0, 0);
+            this.pnlContent.Name = "pnlContent";
+            this.pnlContent.Size = new System.Drawing.Size(1370, 815);
+            this.pnlContent.TabIndex = 3;
+            // 
             // frmOrderDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 815);
-            this.Controls.Add(this.lblChiTietHoaDon);
-            this.Controls.Add(this.btnBackToOrder);
-            this.Controls.Add(this.pnlOrderDetail);
+            this.Controls.Add(this.pnlContent);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmOrderDetail";
             this.Text = "frmOrderDetail";
             this.pnlOrderDetail.ResumeLayout(false);
             this.pnlOrderDetail.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListFood)).EndInit();
+            this.pnlContent.ResumeLayout(false);
+            this.pnlContent.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Panel pnlOrderDetail;
-        private System.Windows.Forms.Button btnBackToOrder;
-        private System.Windows.Forms.Label lblChiTietHoaDon;
-        private System.Windows.Forms.Label lblHoaDonBan;
-        private System.Windows.Forms.Label lblThoiDiemTaoHD;
-        private System.Windows.Forms.ComboBox cmbStatusOrder;
-        private System.Windows.Forms.Label lblTrangThai;
-        private System.Windows.Forms.Label lblMaHoaDon;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dgvListFood;
-        private System.Windows.Forms.Button btnThemMonAn;
-        private System.Windows.Forms.Button btnSaveOrderDetail;
-        private System.Windows.Forms.Label lblTimeOrder;
-        private System.Windows.Forms.Label lblIdOrder;
+        private System.Windows.Forms.TextBox txtIdTable;
+        private System.Windows.Forms.Label lblSoBan;
         private System.Windows.Forms.Panel pnlNganCach;
         private System.Windows.Forms.Label lblTotalPrice;
         private System.Windows.Forms.Label lblTongtien;
-        private System.Windows.Forms.TextBox txtIdTable;
-        private System.Windows.Forms.Label lblSoBan;
+        private System.Windows.Forms.Label lblTimeOrder;
+        private System.Windows.Forms.Label lblIdOrder;
+        private System.Windows.Forms.Button btnSaveOrderDetail;
+        private System.Windows.Forms.Button btnThemMonAn;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dgvListFood;
+        private System.Windows.Forms.ComboBox cmbStatusOrder;
+        private System.Windows.Forms.Label lblTrangThai;
+        private System.Windows.Forms.Label lblMaHoaDon;
+        private System.Windows.Forms.Label lblThoiDiemTaoHD;
+        private System.Windows.Forms.Label lblHoaDonBan;
+        private System.Windows.Forms.Label lblChiTietHoaDon;
+        private System.Windows.Forms.Button btnBackToOrder;
+        private System.Windows.Forms.Panel pnlContent;
     }
 }
