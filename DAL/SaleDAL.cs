@@ -26,6 +26,12 @@ namespace DAL
             else return SqlHelper.ExecuteScalar(query, new object[] { });
         }
         //Lấy số bàn đang đặt ngày hôm nay
+        public int GetTable()
+        {
+            string query = "Select count(*) from DonHang where NgayTao = GETDATE() and TrangThai = N'Chưa thanh toán'";
+            if (SqlHelper.ExecuteScalar(query, new object[] { }) == -1) return 0;
+            else return SqlHelper.ExecuteScalar(query, new object[] { });
+        }
 
         //Lấy số nhân viên 
         public int GetEmployee()

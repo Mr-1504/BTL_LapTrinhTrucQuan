@@ -55,7 +55,7 @@ namespace GUI
             pnlMenu.MouseEnter += Menu_MouseLeave;
             LoadMenu(employeeId);
             string employeeRole = employeeId.Substring(0,2).ToUpper();
-            if(employeeRole == "QL")
+            if(employeeRole == "QL" || employeeRole == "AD")
             {
                 HomeManager homeManager = new HomeManager();
                 OpenComponent(homeManager);
@@ -227,7 +227,7 @@ namespace GUI
                 case "Home":
 
                     string employeeRole = _id.Substring(0, 2).ToUpper();
-                    if (employeeRole == "QL")
+                    if (employeeRole == "QL" || employeeRole == "AD")
                     {
                         HomeManager homeManager = new HomeManager();
                         OpenComponent(homeManager);
