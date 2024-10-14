@@ -21,8 +21,13 @@ namespace GUI
         private int _totalPrice;
         private int _tableNumer;
         private frmListOrders _frmListOrders;
-        private BindingSource foodItemsBindingSource;        
-        public frmOrderDetail(frmListOrders listOrders,string orderID, DateTime orderDate, Order orderStatus, int totalPrice, int tableNumber )
+        private DataTable _data;
+
+        frmMenuOrder _menuOrder;
+
+        public DataTable Data { get => _data; set => _data = value; }
+
+        public frmOrderDetail(frmListOrders listOrders, string orderID, DateTime orderDate, Order orderStatus, int totalPrice, int tableNumber)
         {
             InitializeComponent();
             _frmListOrders = listOrders;
@@ -31,19 +36,33 @@ namespace GUI
             _orderStatus = orderStatus;
             _totalPrice = totalPrice;
             _tableNumer = tableNumber;
+            _menuOrder = new frmMenuOrder(this);
+            _frmListOrders.Add(_menuOrder);
+            Data = new DataTable();
+            Data.Columns.Add("FoodName");
+            Data.Columns.Add("Quantity");
+            Data.Columns.Add("TotalPrice");
+
 
             lblIdOrder.Text = orderID;
             lblTimeOrder.Text = orderDate.ToString();
             lblTotalPrice.Text = totalPrice.ToString();
             txtIdTable.Text = tableNumber.ToString();
 
-
             IntitializeOrderStatus();
             SetUpDataGridView();
             LoadOrderDetails(orderID);
-
-
-           
+        }
+        public void SetData(List<FoodUpdatedEventArgs> data)
+        {
+            foreach (FoodUpdatedEventArgs e in data)
+            {
+                _data.Rows.Add(e.FoodName, e.Quantity, e.FoodPrice * e.Quantity);
+            }
+            dgvListFood.Columns["FoodName"].DataPropertyName = "FoodName";
+            dgvListFood.Columns["Quantity"].DataPropertyName = "Quantity";
+            dgvListFood.Columns["TotalPrice"].DataPropertyName = "TotalPrice";
+            dgvListFood.DataSource = _data;
         }
 
         private void SetUpDataGridView()
@@ -57,6 +76,7 @@ namespace GUI
             DataGridViewTextBoxColumn FoodNameColumn = new DataGridViewTextBoxColumn();
             FoodNameColumn.HeaderText = "Tên món ăn";
             FoodNameColumn.Name = "FoodName";
+            FoodNameColumn.DataPropertyName = "FoodName";
             FoodNameColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dgvListFood.Columns.Add(FoodNameColumn);
 
@@ -64,13 +84,15 @@ namespace GUI
             DataGridViewTextBoxColumn QuantityColumn = new DataGridViewTextBoxColumn();
             QuantityColumn.HeaderText = "Số lượng";
             QuantityColumn.Name = "Quantity";
+            QuantityColumn.DataPropertyName = "Quantity";
             QuantityColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dgvListFood.Columns.Add(QuantityColumn);
 
 
             DataGridViewTextBoxColumn PriceColumn = new DataGridViewTextBoxColumn();
             PriceColumn.HeaderText = "Thành tiền";
-            PriceColumn.Name = "Price";
+            PriceColumn.Name = "TotalPrice";
+            PriceColumn.DataPropertyName = "TotalPrice";
             PriceColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dgvListFood.Columns.Add(PriceColumn);
 
@@ -96,7 +118,7 @@ namespace GUI
 
             dgvListFood.Columns["FoodName"].DataPropertyName = "TenMonAn";
             dgvListFood.Columns["Quantity"].DataPropertyName = "SoLuong";
-            dgvListFood.Columns["Price"].DataPropertyName = "ThanhTien";
+            dgvListFood.Columns["TotalPrice"].DataPropertyName = "ThanhTien";
         }
 
         private void IntitializeOrderStatus()
@@ -160,10 +182,8 @@ namespace GUI
 
         private void btnBackToOrder_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            SendToBack();
             _frmListOrders.LoadOrderData();
-            _frmListOrders.Show();
-           
         }
 
         private void btnThemMonAn_Click(object sender, EventArgs e)
@@ -173,19 +193,7 @@ namespace GUI
                 new MessageForm("Đơn hàng đã dược thanh toán. Vui lòng không đặt thêm món!", "Thông báo", 1);
                 return;
             }
-
-            frmMenuOrder menuOrder = new frmMenuOrder();
-            menuOrder.Show();
-
-
+            _menuOrder.BringToFront();
         }
-
-        
-
-
-
-        
-
-        
     }
 }
