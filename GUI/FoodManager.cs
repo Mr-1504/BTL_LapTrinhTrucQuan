@@ -28,7 +28,6 @@ namespace GUI
         {
             InitializeComponent();
             btnPrevious.Enabled = false;
-            this.DoubleBuffered(true);
             CustomizeFlowLayoutPanel();
         }
         private void CustomizeFlowLayoutPanel()
