@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FoodManager2));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button1 = new System.Windows.Forms.Button();
             this.nameFood = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -42,6 +42,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.pnFood = new System.Windows.Forms.Panel();
+            this.btnAddFood = new System.Windows.Forms.Button();
             this.addresspanel = new System.Windows.Forms.Panel();
             this.textMaking = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -58,6 +59,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.maMon = new System.Windows.Forms.Label();
             this.pnIngredient = new System.Windows.Forms.Panel();
+            this.btnDeleteIngredient = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -69,7 +71,6 @@
             this.panel10 = new System.Windows.Forms.Panel();
             this.cbIngredient = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.btnDeleteIngredient = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -203,6 +204,7 @@
             // pnFood
             // 
             this.pnFood.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.pnFood.Controls.Add(this.btnAddFood);
             this.pnFood.Controls.Add(this.addresspanel);
             this.pnFood.Controls.Add(this.label8);
             this.pnFood.Controls.Add(this.btnSaveFood);
@@ -221,6 +223,27 @@
             this.pnFood.Size = new System.Drawing.Size(710, 800);
             this.pnFood.TabIndex = 24;
             this.pnFood.Paint += new System.Windows.Forms.PaintEventHandler(this.pnFood_Paint);
+            // 
+            // btnAddFood
+            // 
+            this.btnAddFood.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddFood.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddFood.BackgroundImage")));
+            this.btnAddFood.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnAddFood.FlatAppearance.BorderSize = 0;
+            this.btnAddFood.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnAddFood.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnAddFood.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddFood.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddFood.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnAddFood.Location = new System.Drawing.Point(522, 732);
+            this.btnAddFood.Name = "btnAddFood";
+            this.btnAddFood.Size = new System.Drawing.Size(171, 52);
+            this.btnAddFood.TabIndex = 41;
+            this.btnAddFood.Text = "Thêm";
+            this.btnAddFood.UseVisualStyleBackColor = false;
+            this.btnAddFood.Click += new System.EventHandler(this.btnAddFood_Click);
+            this.btnAddFood.MouseEnter += new System.EventHandler(this.btnAddFood_MouseEnter);
+            this.btnAddFood.MouseLeave += new System.EventHandler(this.btnAddFood_MouseLeave);
             // 
             // addresspanel
             // 
@@ -309,14 +332,14 @@
             // 
             this.dataIngredientMNG.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataIngredientMNG.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataIngredientMNG.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataIngredientMNG.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataIngredientMNG.ColumnHeadersHeight = 40;
             this.dataIngredientMNG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataIngredientMNG.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -324,25 +347,25 @@
             this.nameIngredient,
             this.number,
             this.unit});
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataIngredientMNG.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataIngredientMNG.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataIngredientMNG.Location = new System.Drawing.Point(17, 430);
             this.dataIngredientMNG.Name = "dataIngredientMNG";
             this.dataIngredientMNG.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataIngredientMNG.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataIngredientMNG.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataIngredientMNG.RowHeadersVisible = false;
             this.dataIngredientMNG.RowTemplate.Height = 30;
             this.dataIngredientMNG.RowTemplate.ReadOnly = true;
@@ -423,6 +446,27 @@
             this.pnIngredient.Size = new System.Drawing.Size(635, 800);
             this.pnIngredient.TabIndex = 26;
             this.pnIngredient.Paint += new System.Windows.Forms.PaintEventHandler(this.pnIngredient_Paint);
+            // 
+            // btnDeleteIngredient
+            // 
+            this.btnDeleteIngredient.BackColor = System.Drawing.Color.Transparent;
+            this.btnDeleteIngredient.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDeleteIngredient.BackgroundImage")));
+            this.btnDeleteIngredient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnDeleteIngredient.FlatAppearance.BorderSize = 0;
+            this.btnDeleteIngredient.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnDeleteIngredient.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnDeleteIngredient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteIngredient.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteIngredient.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnDeleteIngredient.Location = new System.Drawing.Point(26, 732);
+            this.btnDeleteIngredient.Name = "btnDeleteIngredient";
+            this.btnDeleteIngredient.Size = new System.Drawing.Size(171, 52);
+            this.btnDeleteIngredient.TabIndex = 40;
+            this.btnDeleteIngredient.Text = "Xóa";
+            this.btnDeleteIngredient.UseVisualStyleBackColor = false;
+            this.btnDeleteIngredient.Click += new System.EventHandler(this.button2_Click_1);
+            this.btnDeleteIngredient.MouseEnter += new System.EventHandler(this.btnDelete_MouseEnter);
+            this.btnDeleteIngredient.MouseLeave += new System.EventHandler(this.btnDelete_MouseLeave);
             // 
             // btnSave
             // 
@@ -555,27 +599,6 @@
             this.label6.TabIndex = 4;
             this.label6.Text = "Tên nguyên liệu";
             // 
-            // btnDeleteIngredient
-            // 
-            this.btnDeleteIngredient.BackColor = System.Drawing.Color.Transparent;
-            this.btnDeleteIngredient.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDeleteIngredient.BackgroundImage")));
-            this.btnDeleteIngredient.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnDeleteIngredient.FlatAppearance.BorderSize = 0;
-            this.btnDeleteIngredient.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnDeleteIngredient.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnDeleteIngredient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteIngredient.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteIngredient.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnDeleteIngredient.Location = new System.Drawing.Point(26, 732);
-            this.btnDeleteIngredient.Name = "btnDeleteIngredient";
-            this.btnDeleteIngredient.Size = new System.Drawing.Size(171, 52);
-            this.btnDeleteIngredient.TabIndex = 40;
-            this.btnDeleteIngredient.Text = "Xóa";
-            this.btnDeleteIngredient.UseVisualStyleBackColor = false;
-            this.btnDeleteIngredient.Click += new System.EventHandler(this.button2_Click_1);
-            this.btnDeleteIngredient.MouseEnter += new System.EventHandler(this.btnDelete_MouseEnter);
-            this.btnDeleteIngredient.MouseLeave += new System.EventHandler(this.btnDelete_MouseLeave);
-            // 
             // FoodManager2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -651,5 +674,6 @@
         private System.Windows.Forms.TextBox textMaking;
         private System.Windows.Forms.ComboBox cbFoodType;
         private System.Windows.Forms.Button btnDeleteIngredient;
+        private System.Windows.Forms.Button btnAddFood;
     }
 }

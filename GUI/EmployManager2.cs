@@ -26,6 +26,7 @@ namespace GUI
         public EmployManager2(EmployManager form)
         {
             InitializeComponent();
+            
             employID.AutoSize = false;
             numberPhone.AutoSize = false;
             gender.AutoSize = false;
@@ -48,6 +49,7 @@ namespace GUI
         public EmployManager2(string employID1,EmployManager form)
         {
             InitializeComponent();
+            
             employID.AutoSize = false;
             numberPhone.AutoSize = false;
             gender.AutoSize = false;
@@ -109,54 +111,54 @@ namespace GUI
         private void button4_Click(object sender, EventArgs e)
         {
 
-            if (edit == true)
+            string errorMessage;
+            if (edit)
             {
-                
-                string s = gender.SelectedItem.ToString();
-                
-                if (s==Gender.Female.GetEnumDescription() || s==Gender.Male.GetEnumDescription() )
+                if (gender.SelectedItem == null)
                 {
-                    EmployeeDTO employeeDTO = new EmployeeDTO
-                    (
-                        employID.Text,  
-                        name.Text,
-                        s == Gender.Male.GetEnumDescription() ? Gender.Male : Gender.Female,  
-                        dateTimeBirthDay.Value,
-                        hometown.Text,
-                        address.Text,
-                        numberPhone.Text
-                    );
+                    MessageBox.Show("Vui lòng chọn giới tính!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                string selectedGender = gender.SelectedItem.ToString();
+                EmployeeDTO employeeDTO = new EmployeeDTO(
+                    employID.Text,
+                    name.Text,
+                    selectedGender == Gender.Male.GetEnumDescription() ? Gender.Male : Gender.Female,
+                    dateTimeBirthDay.Value,
+                    hometown.Text,
+                    address.Text,
+                    numberPhone.Text
+                );
 
-                    int result = employManager2BLL.UpdateEmployee(employeeDTO);
-
-                    if (result > 0)
-                    {
-                        MessageBox.Show("Cập nhật thông tin nhân viên thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        employ.ShowComponent(true);  // Hiển thị lại form chính
-                        this.Close();  // Đóng form hiện tại
-                    }
-                    else
-                    {
-                        MessageBox.Show("Cập nhật thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                // Validate and Update employee
+                if (employManager2BLL.UpdateEmployee(employeeDTO, out errorMessage))
+                {
+                    MessageBox.Show("Cập nhật thông tin nhân viên thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    employ.ShowComponent(true);
+                    this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Giới tính không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(errorMessage, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                
+
                 EmployeeStatus status = EmployeeStatus.CurrentlyWorking;
+                if (gender.SelectedItem == null)
+                {
+                    MessageBox.Show("Vui lòng chọn giới tính!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
                 string s = gender.SelectedItem.ToString();
-                
+
                 if (s == Gender.Female.GetEnumDescription() || s == Gender.Male.GetEnumDescription())
                 {
                     EmployeeDTO employeeDTO = new EmployeeDTO
                     (
                         name.Text,
-                        s == Gender.Male.GetEnumDescription() ? Gender.Male : Gender.Female, 
+                        s == Gender.Male.GetEnumDescription() ? Gender.Male : Gender.Female,
                         dateTimeBirthDay.Value,
                         hometown.Text,
                         address.Text,
@@ -179,14 +181,10 @@ namespace GUI
                                 employeeType = EmployeeType.Warehouse;
                                 break;
                         }
-
-                        int result = employManager2BLL.AddEmployee(employeeType,employeeDTO);
-                        
-
-                        if (result > 0)
+                        if (employManager2BLL.AddEmployee(employeeType, employeeDTO, out errorMessage))
                         {
                             MessageBox.Show("Thêm nhân viên thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            employ.ShowComponent(true);  
+                            employ.ShowComponent(true);
                             EmployeeDTO employee = new EmployManager2BLL().GetNewestEmployee(employeeType);
 
                             string resourcePath = $@"..\..\Resources\AvatarImage\";
@@ -205,17 +203,11 @@ namespace GUI
                             destinationPath = Path.Combine(resourcePath, $"{employeeID}.jpg");
                             File.Delete(destinationPath);
                             LoadEmployeeImage(employeeID);
-                            this.Close();  
-                        }
-                        else if(result == 0)
-                        {
-                            MessageBox.Show("Thêm nhân viên thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                            this.Close();
                         }
                         else
                         {
-                            MessageBox.Show("csdl", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                            MessageBox.Show(errorMessage, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     else

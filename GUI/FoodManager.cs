@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
+using Utilities;
 
 namespace GUI
 {
@@ -167,11 +168,14 @@ namespace GUI
             for (int i = startItem; i < endItem; i++)
             {
                 DataRow row = data.Rows[i];
-                string id = row["MaMonAn"].ToString();
-                string name = row["TenMonAn"].ToString();
-                string price = row["DonGia"].ToString();
-                string imageFileName = row["MaMonAn"].ToString();
-                AddFood(id, name, price, imageFileName);
+                if (row["TrangThai"].ToString() == "1")
+                {
+                    string id = row["MaMonAn"].ToString();
+                    string name = row["TenMonAn"].ToString();
+                    string price = row["DonGia"].ToString();
+                    string imageFileName = row["MaMonAn"].ToString();
+                    AddFood(id, name, price, imageFileName);
+                }
             }
 
             UpdatePagination();
@@ -351,7 +355,16 @@ namespace GUI
         }
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            selectedFoodId=null;
+            int resul = foodManagerBLL.ChangeFoodStatus(selectedFoodId, Utilities.Status.NoUse);
+            if (resul > 0)
+            {
+                MessageBox.Show("Xóa món ăn thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadFoodItems();
+            }
+            else
+            {
+                MessageBox.Show("Xóa món ăn thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
         private void FoodManager2_FormClosed(object sender, FormClosedEventArgs e)
