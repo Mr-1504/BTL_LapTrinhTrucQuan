@@ -34,6 +34,7 @@ namespace GUI
         {
             this.pnEditPassword = new System.Windows.Forms.Panel();
             this.grbOptinon = new System.Windows.Forms.GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.pnLine = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.languageComboBox = new System.Windows.Forms.ComboBox();
@@ -42,7 +43,6 @@ namespace GUI
             this.lbOp3 = new System.Windows.Forms.Label();
             this.lbOp2 = new System.Windows.Forms.Label();
             this.lbOp1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Panel();
             this.pnEditPassword.SuspendLayout();
             this.grbOptinon.SuspendLayout();
@@ -54,7 +54,7 @@ namespace GUI
             this.pnEditPassword.Location = new System.Drawing.Point(11, 11);
             this.pnEditPassword.Margin = new System.Windows.Forms.Padding(2);
             this.pnEditPassword.Name = "pnEditPassword";
-            this.pnEditPassword.Size = new System.Drawing.Size(1246, 617);
+            this.pnEditPassword.Size = new System.Drawing.Size(1258, 660);
             this.pnEditPassword.TabIndex = 17;
             // 
             // grbOptinon
@@ -70,21 +70,30 @@ namespace GUI
             this.grbOptinon.Controls.Add(this.lbOp2);
             this.grbOptinon.Controls.Add(this.lbOp1);
             this.grbOptinon.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbOptinon.Location = new System.Drawing.Point(16, 28);
+            this.grbOptinon.Location = new System.Drawing.Point(16, 14);
             this.grbOptinon.Name = "grbOptinon";
-            this.grbOptinon.Size = new System.Drawing.Size(1213, 574);
+            this.grbOptinon.Size = new System.Drawing.Size(1230, 643);
             this.grbOptinon.TabIndex = 0;
             this.grbOptinon.TabStop = false;
             this.grbOptinon.Text = "Tuỳ chọn";
             this.grbOptinon.Enter += new System.EventHandler(this.grbEditPassword_Enter);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel1.Location = new System.Drawing.Point(3, 572);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1223, 2);
+            this.panel1.TabIndex = 31;
+            // 
             // pnLine
             // 
             this.pnLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.pnLine.Location = new System.Drawing.Point(346, 14);
+            this.pnLine.Location = new System.Drawing.Point(296, 16);
             this.pnLine.Margin = new System.Windows.Forms.Padding(2);
             this.pnLine.Name = "pnLine";
-            this.pnLine.Size = new System.Drawing.Size(2, 560);
+            this.pnLine.Size = new System.Drawing.Size(2, 700);
             this.pnLine.TabIndex = 30;
             this.pnLine.Paint += new System.Windows.Forms.PaintEventHandler(this.pnLine_Paint);
             // 
@@ -166,29 +175,21 @@ namespace GUI
             this.lbOp1.TabIndex = 14;
             this.lbOp1.Text = "Toàn màn hình";
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel1.Location = new System.Drawing.Point(1, 498);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1213, 2);
-            this.panel1.TabIndex = 31;
-            // 
             // btnLogout
             // 
             this.btnLogout.BackgroundImage = global::GUI.Properties.Resources.image;
-            this.btnLogout.Location = new System.Drawing.Point(53, 517);
+            this.btnLogout.Location = new System.Drawing.Point(45, 588);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(197, 39);
             this.btnLogout.TabIndex = 32;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            this.btnLogout.Paint += new System.Windows.Forms.PaintEventHandler(this.btnLogout_Paint);
             // 
             // SettingFormOption
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1280, 652);
+            this.ClientSize = new System.Drawing.Size(1280, 682);
             this.Controls.Add(this.pnEditPassword);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SettingFormOption";

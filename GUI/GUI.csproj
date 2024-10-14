@@ -529,6 +529,7 @@
   <ItemGroup>
     <None Include="Resources\btnPage.png" />
     <None Include="Resources\image.png" />
+    <None Include="Resources\image2.png" />
     <Content Include="Resources\ImageFood\AP0001.jpg" />
     <Content Include="Resources\ImageFood\AP0002.jpg" />
     <Content Include="Resources\ImageFood\AP0003.jpg" />
