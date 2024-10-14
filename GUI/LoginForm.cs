@@ -189,7 +189,7 @@ namespace GUI
             {
                 lblName.ForeColor = Color.Black;
                 lblPassword.ForeColor = Color.Black;
-                MessageBox.Show(result[1], "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                new MessageForm(result[1], "Lỗi", 1).ShowDialog();
             }
             else if (result[0] == "E")
             {
@@ -240,7 +240,7 @@ namespace GUI
         {
             picLoad.Visible = false;
             Hide();
-            baseForm = new BaseForm(id);
+            baseForm = new BaseForm(id.ToUpper());
             baseForm.Show();
             tmrLoad.Stop();
 
@@ -263,11 +263,6 @@ namespace GUI
                 e.Handled = true;
                 Login();
             }
-        }
-
-        private void LoginForm_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
