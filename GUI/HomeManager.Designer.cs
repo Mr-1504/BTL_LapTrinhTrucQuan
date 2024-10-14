@@ -31,9 +31,9 @@ namespace GUI
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeManager));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label1 = new System.Windows.Forms.Label();
             this.InPanelManager1 = new System.Windows.Forms.Panel();
             this.PanelIngredient = new System.Windows.Forms.Panel();
@@ -55,12 +55,9 @@ namespace GUI
             this.textSoNhanVienKho = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.textSoNhaCungCap = new System.Windows.Forms.TextBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.textSoNguyenLieuSapHet = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -108,7 +105,6 @@ namespace GUI
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.PanelChart.SuspendLayout();
@@ -310,11 +306,9 @@ namespace GUI
             this.PanelWarehouse.Controls.Add(this.panel5);
             this.PanelWarehouse.Controls.Add(this.panel4);
             this.PanelWarehouse.Controls.Add(this.panel3);
-            this.PanelWarehouse.Controls.Add(this.panel2);
             this.PanelWarehouse.Controls.Add(this.label13);
             this.PanelWarehouse.Controls.Add(this.label12);
             this.PanelWarehouse.Controls.Add(this.label11);
-            this.PanelWarehouse.Controls.Add(this.label10);
             this.PanelWarehouse.Controls.Add(this.label8);
             this.PanelWarehouse.Controls.Add(this.pictureBox7);
             this.PanelWarehouse.Location = new System.Drawing.Point(30, 532);
@@ -329,7 +323,7 @@ namespace GUI
             this.panel5.BackgroundImage = global::GUI.Properties.Resources.panelNumberic;
             this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel5.Controls.Add(this.textTongChiKho);
-            this.panel5.Location = new System.Drawing.Point(236, 215);
+            this.panel5.Location = new System.Drawing.Point(244, 202);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(164, 35);
             this.panel5.TabIndex = 17;
@@ -351,7 +345,7 @@ namespace GUI
             this.panel4.BackgroundImage = global::GUI.Properties.Resources.panelNumberic;
             this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel4.Controls.Add(this.textSoNhanVienKho);
-            this.panel4.Location = new System.Drawing.Point(236, 164);
+            this.panel4.Location = new System.Drawing.Point(244, 131);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(164, 35);
             this.panel4.TabIndex = 16;
@@ -373,7 +367,7 @@ namespace GUI
             this.panel3.BackgroundImage = global::GUI.Properties.Resources.panelNumberic;
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel3.Controls.Add(this.textSoNhaCungCap);
-            this.panel3.Location = new System.Drawing.Point(236, 113);
+            this.panel3.Location = new System.Drawing.Point(244, 62);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(164, 35);
             this.panel3.TabIndex = 15;
@@ -389,33 +383,11 @@ namespace GUI
             this.textSoNhaCungCap.Size = new System.Drawing.Size(148, 22);
             this.textSoNhaCungCap.TabIndex = 11;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.BackgroundImage = global::GUI.Properties.Resources.panelNumberic;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel2.Controls.Add(this.textSoNguyenLieuSapHet);
-            this.panel2.Location = new System.Drawing.Point(236, 62);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(164, 35);
-            this.panel2.TabIndex = 14;
-            // 
-            // textSoNguyenLieuSapHet
-            // 
-            this.textSoNguyenLieuSapHet.BackColor = System.Drawing.Color.LightGray;
-            this.textSoNguyenLieuSapHet.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textSoNguyenLieuSapHet.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textSoNguyenLieuSapHet.Location = new System.Drawing.Point(8, 6);
-            this.textSoNguyenLieuSapHet.Name = "textSoNguyenLieuSapHet";
-            this.textSoNguyenLieuSapHet.ReadOnly = true;
-            this.textSoNguyenLieuSapHet.Size = new System.Drawing.Size(148, 22);
-            this.textSoNguyenLieuSapHet.TabIndex = 10;
-            // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(34, 220);
+            this.label13.Location = new System.Drawing.Point(42, 207);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(115, 19);
             this.label13.TabIndex = 9;
@@ -425,7 +397,7 @@ namespace GUI
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(34, 170);
+            this.label12.Location = new System.Drawing.Point(42, 137);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(148, 19);
             this.label12.TabIndex = 8;
@@ -435,22 +407,11 @@ namespace GUI
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(34, 120);
+            this.label11.Location = new System.Drawing.Point(42, 69);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(144, 19);
             this.label11.TabIndex = 7;
             this.label11.Text = "Số nhà cung cấp:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(34, 70);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(189, 19);
-            this.label10.TabIndex = 6;
-            this.label10.Text = "Số nguyên liệu sắp hết:";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label8
             // 
@@ -521,16 +482,16 @@ namespace GUI
             // 
             this.chartSale.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.chartSale.BorderSkin.BorderWidth = 0;
-            chartArea1.Name = "ChartArea1";
-            this.chartSale.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartSale.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.chartSale.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartSale.Legends.Add(legend2);
             this.chartSale.Location = new System.Drawing.Point(0, 0);
             this.chartSale.Name = "chartSale";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartSale.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartSale.Series.Add(series2);
             this.chartSale.Size = new System.Drawing.Size(1020, 281);
             this.chartSale.TabIndex = 0;
             this.chartSale.Text = "chart1";
@@ -892,8 +853,6 @@ namespace GUI
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.PanelChart.ResumeLayout(false);
@@ -954,8 +913,6 @@ namespace GUI
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textSoNguyenLieuSapHet;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
@@ -980,7 +937,6 @@ namespace GUI
         private System.Windows.Forms.Label textSoNhanVien;
         private System.Windows.Forms.Label textSoBan;
         private System.Windows.Forms.Label textDonHang;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel8;

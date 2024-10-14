@@ -69,5 +69,14 @@ namespace DAL
             string query = "Select nl.MaNguyenLieu,TenNguyenLieu,nm.SoLuong,DonViTinh from MonAn as ma join NguyenLieuMonAn as nm on ma.MaMonAn=nm.MaMonAn join NguyenLieu as nl on nm.MaNguyenLieu=nl.MaNguyenLieu where ma.MaMonAn = @foodID";
             return SqlHelper.ExecuteReader(query, new object[] { foodID });
         }
+        public DataTable GetNewestFood(FoodType prefix)
+        {
+            int count = GetFoodCount(prefix);
+            if (count == -1)
+                return null;
+            string foodId = prefix.GetEnumDescription() + new string('0', 4 - count.ToString().Length) + count.ToString();
+            string query = "SELECT * FROM MonAn WHERE MaMonAn = @foodId";
+            return SqlHelper.ExecuteReader(query, new object[] { foodId });
+        }
     }
 }

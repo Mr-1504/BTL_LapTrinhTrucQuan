@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Utilities;
 
 namespace BLL
 {
@@ -14,6 +15,10 @@ namespace BLL
         public DataTable GetFoods()
         {
             return foodDAL.GetFoods();
+        }
+        public int ChangeFoodStatus(string foodId, Status status)
+        {
+            return foodDAL.ChangeFoodStatus(foodId, status);
         }
     }
 }
