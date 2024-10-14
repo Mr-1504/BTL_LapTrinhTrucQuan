@@ -184,12 +184,10 @@ namespace GUI
                 Order orderStaus = Config.GetEnumValueFromDescription<Order>(status);
                 int totalPrice = Convert.ToInt32(dgvListOrders.Rows[e.RowIndex].Cells["TotalPrice"].Value);
                 int tableNumber = Convert.ToInt32(dgvListOrders.Rows[e.RowIndex].Cells["IdTable"].Value);
-                this.Hide();
                 frmOrderDetail orderDetail = new frmOrderDetail(this,orderID,orderDate, orderStaus, totalPrice, tableNumber);
                 
-                orderDetail.FormClosed += (s, args) => this.Show();
-
-                orderDetail.Show();
+                Add(orderDetail);
+                orderDetail.BringToFront();
             }
         }
 
