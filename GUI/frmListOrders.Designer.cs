@@ -31,35 +31,29 @@ namespace GUI
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dgvListOrders = new System.Windows.Forms.DataGridView();
+            this.btnThemDonHang = new System.Windows.Forms.Button();
             this.pnlSearchBarOrder = new System.Windows.Forms.Panel();
             this.txtSearchBarOrder = new System.Windows.Forms.TextBox();
-            this.btnThemDonHang = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListOrders)).BeginInit();
+            this.dgvListOrders = new System.Windows.Forms.DataGridView();
+            this.pnlContent = new System.Windows.Forms.Panel();
+            this.pnlBack = new System.Windows.Forms.Panel();
             this.pnlSearchBarOrder.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListOrders)).BeginInit();
+            this.pnlContent.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dgvListOrders
+            // btnThemDonHang
             // 
-            this.dgvListOrders.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvListOrders.BackgroundColor = System.Drawing.Color.White;
-            this.dgvListOrders.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvListOrders.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgvListOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 10F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvListOrders.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvListOrders.Location = new System.Drawing.Point(68, 170);
-            this.dgvListOrders.Margin = new System.Windows.Forms.Padding(0);
-            this.dgvListOrders.Name = "dgvListOrders";
-            this.dgvListOrders.Size = new System.Drawing.Size(1274, 456);
-            this.dgvListOrders.TabIndex = 0;
-            this.dgvListOrders.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListOrders_CellClick);
+            this.btnThemDonHang.BackgroundImage = global::GUI.Properties.Resources.btnThem;
+            this.btnThemDonHang.FlatAppearance.BorderSize = 0;
+            this.btnThemDonHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThemDonHang.Location = new System.Drawing.Point(1226, 53);
+            this.btnThemDonHang.Name = "btnThemDonHang";
+            this.btnThemDonHang.Size = new System.Drawing.Size(116, 41);
+            this.btnThemDonHang.TabIndex = 1;
+            this.btnThemDonHang.UseVisualStyleBackColor = true;
+            this.btnThemDonHang.Click += new System.EventHandler(this.btnThemDonHang_Click);
+            this.btnThemDonHang.Paint += new System.Windows.Forms.PaintEventHandler(this.btnThemDonHang_Paint);
             // 
             // pnlSearchBarOrder
             // 
@@ -83,18 +77,45 @@ namespace GUI
             this.txtSearchBarOrder.MouseEnter += new System.EventHandler(this.txtSearchBarOrder_MouseEnter);
             this.txtSearchBarOrder.MouseLeave += new System.EventHandler(this.txtSearchBarOrder_MouseLeave);
             // 
-            // btnThemDonHang
+            // dgvListOrders
             // 
-            this.btnThemDonHang.BackgroundImage = global::GUI.Properties.Resources.btnThem;
-            this.btnThemDonHang.FlatAppearance.BorderSize = 0;
-            this.btnThemDonHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThemDonHang.Location = new System.Drawing.Point(1226, 53);
-            this.btnThemDonHang.Name = "btnThemDonHang";
-            this.btnThemDonHang.Size = new System.Drawing.Size(116, 41);
-            this.btnThemDonHang.TabIndex = 1;
-            this.btnThemDonHang.UseVisualStyleBackColor = true;
-            this.btnThemDonHang.Click += new System.EventHandler(this.btnThemDonHang_Click);
-            this.btnThemDonHang.Paint += new System.Windows.Forms.PaintEventHandler(this.btnThemDonHang_Paint);
+            this.dgvListOrders.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvListOrders.BackgroundColor = System.Drawing.Color.White;
+            this.dgvListOrders.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvListOrders.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvListOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 10F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListOrders.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvListOrders.Location = new System.Drawing.Point(68, 166);
+            this.dgvListOrders.Margin = new System.Windows.Forms.Padding(0);
+            this.dgvListOrders.Name = "dgvListOrders";
+            this.dgvListOrders.Size = new System.Drawing.Size(1274, 456);
+            this.dgvListOrders.TabIndex = 0;
+            this.dgvListOrders.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListOrders_CellClick);
+            // 
+            // pnlContent
+            // 
+            this.pnlContent.Controls.Add(this.dgvListOrders);
+            this.pnlContent.Controls.Add(this.pnlSearchBarOrder);
+            this.pnlContent.Controls.Add(this.btnThemDonHang);
+            this.pnlContent.Controls.Add(this.pnlBack);
+            this.pnlContent.Location = new System.Drawing.Point(0, 0);
+            this.pnlContent.Name = "pnlContent";
+            this.pnlContent.Size = new System.Drawing.Size(1370, 815);
+            this.pnlContent.TabIndex = 3;
+            // 
+            // pnlBack
+            // 
+            this.pnlBack.Location = new System.Drawing.Point(0, 0);
+            this.pnlBack.Name = "pnlBack";
+            this.pnlBack.Size = new System.Drawing.Size(1370, 815);
+            this.pnlBack.TabIndex = 3;
             // 
             // frmListOrders
             // 
@@ -102,23 +123,25 @@ namespace GUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
             this.ClientSize = new System.Drawing.Size(1370, 815);
-            this.Controls.Add(this.pnlSearchBarOrder);
-            this.Controls.Add(this.dgvListOrders);
-            this.Controls.Add(this.btnThemDonHang);
+            this.Controls.Add(this.pnlContent);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmListOrders";
             this.Text = "frmListOrders";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListOrders)).EndInit();
             this.pnlSearchBarOrder.ResumeLayout(false);
             this.pnlSearchBarOrder.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListOrders)).EndInit();
+            this.pnlContent.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Button btnThemDonHang;
-        private System.Windows.Forms.DataGridView dgvListOrders;
+
+        private Button btnThemDonHang;
         private Panel pnlSearchBarOrder;
         private TextBox txtSearchBarOrder;
+        private DataGridView dgvListOrders;
+        private Panel pnlContent;
+        private Panel pnlBack;
     }
 }
