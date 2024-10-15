@@ -134,6 +134,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="SharedDataTable.cs" />
     <Compile Include="PurchasedIngredient\DetailInvoice.cs">
       <SubType>UserControl</SubType>
     </Compile>

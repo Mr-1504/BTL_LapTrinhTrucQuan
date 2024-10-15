@@ -44,11 +44,9 @@ namespace GUI
             this.dgvOrders = new System.Windows.Forms.DataGridView();
             this.pnlHeaderTable = new System.Windows.Forms.Panel();
             this.btnOrder = new System.Windows.Forms.Button();
-            this.pnlSearchBarOrder = new System.Windows.Forms.Panel();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.fpnlPagination.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).BeginInit();
-            this.pnlSearchBarOrder.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblMenu
@@ -73,9 +71,9 @@ namespace GUI
             // 
             // fpnlMenu
             // 
-            this.fpnlMenu.Location = new System.Drawing.Point(12, 107);
+            this.fpnlMenu.Location = new System.Drawing.Point(12, 63);
             this.fpnlMenu.Name = "fpnlMenu";
-            this.fpnlMenu.Size = new System.Drawing.Size(517, 631);
+            this.fpnlMenu.Size = new System.Drawing.Size(517, 675);
             this.fpnlMenu.TabIndex = 8;
             // 
             // fpnlPagination
@@ -222,25 +220,12 @@ namespace GUI
             this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click);
             this.btnOrder.Paint += new System.Windows.Forms.PaintEventHandler(this.btnOrder_Paint);
             // 
-            // pnlSearchBarOrder
-            // 
-            this.pnlSearchBarOrder.BackgroundImage = global::GUI.Properties.Resources.SearchBarOrder;
-            this.pnlSearchBarOrder.Controls.Add(this.txtSearch);
-            this.pnlSearchBarOrder.Location = new System.Drawing.Point(116, 27);
-            this.pnlSearchBarOrder.Name = "pnlSearchBarOrder";
-            this.pnlSearchBarOrder.Size = new System.Drawing.Size(300, 48);
-            this.pnlSearchBarOrder.TabIndex = 13;
-            this.pnlSearchBarOrder.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlSearchBarOrder_Paint);
-            // 
             // txtSearch
             // 
-            this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSearch.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtSearch.Location = new System.Drawing.Point(18, 15);
+            this.txtSearch.Location = new System.Drawing.Point(161, 28);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(225, 13);
-            this.txtSearch.TabIndex = 0;
-            this.txtSearch.Text = "Món ăn cần tìm ?";
+            this.txtSearch.Size = new System.Drawing.Size(289, 20);
+            this.txtSearch.TabIndex = 12;
             // 
             // frmMenuOrder
             // 
@@ -248,7 +233,7 @@ namespace GUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
             this.ClientSize = new System.Drawing.Size(1370, 815);
-            this.Controls.Add(this.pnlSearchBarOrder);
+            this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.pnlHeaderTable);
             this.Controls.Add(this.dgvOrders);
             this.Controls.Add(this.fpnlPagination);
@@ -261,8 +246,6 @@ namespace GUI
             this.Load += new System.EventHandler(this.frmOrders_Load);
             this.fpnlPagination.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).EndInit();
-            this.pnlSearchBarOrder.ResumeLayout(false);
-            this.pnlSearchBarOrder.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -282,7 +265,6 @@ namespace GUI
         private System.Windows.Forms.Button btnPage_th;
         private System.Windows.Forms.DataGridView dgvOrders;
         private System.Windows.Forms.Panel pnlHeaderTable;
-        private System.Windows.Forms.Panel pnlSearchBarOrder;
         private System.Windows.Forms.TextBox txtSearch;
     }
 }
