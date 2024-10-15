@@ -63,6 +63,7 @@ namespace GUI
             dgvListFood.Columns["Quantity"].DataPropertyName = "Quantity";
             dgvListFood.Columns["TotalPrice"].DataPropertyName = "TotalPrice";
             dgvListFood.DataSource = _data;
+            CalculateTotalPrice();
         }
 
         private void SetUpDataGridView()
@@ -99,7 +100,8 @@ namespace GUI
             
 
             dgvListFood.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 12F, FontStyle.Bold);
-
+            dgvListFood.DefaultCellStyle.SelectionBackColor =  dgvListFood.DefaultCellStyle.BackColor;
+            dgvListFood.DefaultCellStyle.SelectionForeColor = dgvListFood.DefaultCellStyle.ForeColor;
             dgvListFood.RowTemplate.Height = 50;
             dgvListFood.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dgvListFood.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -119,6 +121,19 @@ namespace GUI
             dgvListFood.Columns["FoodName"].DataPropertyName = "TenMonAn";
             dgvListFood.Columns["Quantity"].DataPropertyName = "SoLuong";
             dgvListFood.Columns["TotalPrice"].DataPropertyName = "ThanhTien";
+            CalculateTotalPrice();
+            
+        }
+
+        private void CalculateTotalPrice()
+        {
+            int total = 0;
+            foreach(DataGridViewRow row in dgvListFood.Rows)
+            {
+                int price = Convert.ToInt32(row.Cells["TotalPrice"].Value);
+                total += price;
+            }
+            lblTotalPrice.Text = total.ToString();
         }
 
         private void IntitializeOrderStatus()
@@ -194,6 +209,39 @@ namespace GUI
                 return;
             }
             _menuOrder.BringToFront();
+        }
+
+        private void btnSaveOrderDetail_Click(object sender, EventArgs e)
+        {
+            if(!CheckOrderConstraints())
+            {
+                return;
+            }
+        }
+
+        private bool CheckOrderConstraints()
+        {
+            if(string.IsNullOrEmpty(txtIdTable.Text))
+            {
+                new MessageForm("Bạn phải chọn bàn!", "Thông báo", 1);
+                return false;
+            }
+            if (_data.Rows.Count == 0)
+            {
+                new MessageForm("Bạn chưa chọn món!", "Thông báo", 1);
+                return false;
+            }
+            if(cmbStatusOrder.SelectedItem.ToString() == Order.unpaid.GetEnumDescription())
+            {
+                lblWarning.Text = "Đơn hàng này chưa được thanh toán!";
+                lblWarning.Visible = true;
+            }
+            else
+            {
+                lblWarning.Visible = false;
+            }
+
+            return true;
         }
     }
 }

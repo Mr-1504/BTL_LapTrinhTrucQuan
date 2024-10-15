@@ -38,5 +38,12 @@ namespace BLL
         {
             return _orderDAL.GetLastInsertOrderID();
         }
+
+        public int UpdateOrder(OrderDTO order)
+        {
+            return _orderDAL.UpdateOrder(order); 
+        }
+
+        
     }
 }

@@ -49,6 +49,7 @@
             this.lblChiTietHoaDon = new System.Windows.Forms.Label();
             this.btnBackToOrder = new System.Windows.Forms.Button();
             this.pnlContent = new System.Windows.Forms.Panel();
+            this.lblWarning = new System.Windows.Forms.Label();
             this.pnlOrderDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListFood)).BeginInit();
             this.pnlContent.SuspendLayout();
@@ -56,6 +57,7 @@
             // 
             // pnlOrderDetail
             // 
+            this.pnlOrderDetail.Controls.Add(this.lblWarning);
             this.pnlOrderDetail.Controls.Add(this.txtIdTable);
             this.pnlOrderDetail.Controls.Add(this.lblSoBan);
             this.pnlOrderDetail.Controls.Add(this.pnlNganCach);
@@ -155,6 +157,7 @@
             this.btnSaveOrderDetail.Size = new System.Drawing.Size(150, 60);
             this.btnSaveOrderDetail.TabIndex = 8;
             this.btnSaveOrderDetail.UseVisualStyleBackColor = true;
+            this.btnSaveOrderDetail.Click += new System.EventHandler(this.btnSaveOrderDetail_Click);
             this.btnSaveOrderDetail.Paint += new System.Windows.Forms.PaintEventHandler(this.btnSaveOrderDetail_Paint);
             // 
             // btnThemMonAn
@@ -282,6 +285,18 @@
             this.pnlContent.Size = new System.Drawing.Size(1370, 815);
             this.pnlContent.TabIndex = 3;
             // 
+            // lblWarning
+            // 
+            this.lblWarning.AutoSize = true;
+            this.lblWarning.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWarning.ForeColor = System.Drawing.Color.Red;
+            this.lblWarning.Location = new System.Drawing.Point(77, 426);
+            this.lblWarning.Name = "lblWarning";
+            this.lblWarning.Size = new System.Drawing.Size(50, 18);
+            this.lblWarning.TabIndex = 16;
+            this.lblWarning.Text = "label2";
+            this.lblWarning.Visible = false;
+            // 
             // frmOrderDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -322,5 +337,6 @@
         private System.Windows.Forms.Label lblChiTietHoaDon;
         private System.Windows.Forms.Button btnBackToOrder;
         private System.Windows.Forms.Panel pnlContent;
+        private System.Windows.Forms.Label lblWarning;
     }
 }
