@@ -1,6 +1,7 @@
 ﻿using DTO;
 using System;
 using System.Data;
+using System.Windows.Forms;
 using Utilities;
 
 namespace DAL
@@ -94,6 +95,18 @@ namespace DAL
             string orderId = GetOrderCount(day, month, year).ToString();
             orderId = "HDB" + day + month + year + new string('0', 3 - orderId.Length) + orderId;
             return orderId;
+        }
+
+        public bool IsOrderPaid(string orderId)
+        {
+            string query = "SELECT TrangThai FROM DonHang WHERE MaDon = @orderId";
+            DataTable dt = SqlHelper.ExecuteReader(query, new object[] {orderId});
+            if (dt.Rows.Count > 0)
+            {
+                var status = dt.Rows[0].ToString();
+                return status == "Đã thanh toán";
+            }
+            return false;
         }
 
         

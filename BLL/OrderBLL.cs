@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Utilities;
 
 namespace BLL
 {
@@ -43,6 +44,56 @@ namespace BLL
         {
             return _orderDAL.UpdateOrder(order); 
         }
+
+        public DataTable GetOrderById(string orderID)
+        {
+            return _orderDAL.GetOrder(orderID);
+        }
+
+        public bool ValidateOrder(string orderId, string tableNumber, string totalPrice, string status, out string errorMessage)
+        {
+            DataTable dt = _orderDAL.GetOrder(orderId);
+            if(dt.Rows.Count == 0)
+            {
+                errorMessage = "Không tìm thấy đơn hàng!";
+                return false;
+            }
+
+            DataRow row =  dt.Rows[0];
+
+            if (row["SoBan"].ToString() != tableNumber)
+            {
+                errorMessage = "Số bàn đã thay đổi!";
+                return false;
+            }
+
+            if (row["TrangThai"].ToString() != status)
+            {
+                errorMessage = "Trạng thái thanh toán đã thay đổi!";
+                return false;
+            }
+
+            if (Convert.ToInt32(row["TongTien"]) != Convert.ToInt32(totalPrice))
+            {
+                errorMessage = "Tổng tiền đã thay đổi!";
+                return false;
+            }
+            errorMessage = string.Empty;
+            return true;
+        }
+
+        public void UpdateOrder(string orderId, int totalPrice, DateTime datetime, int tableNumber, Utilities.Order status)
+        {
+            OrderDTO order = new OrderDTO(orderId, datetime, totalPrice, tableNumber, status);
+            _orderDAL.UpdateOrder(order);
+        }
+
+        public bool IsOrderPaid(string orderId)
+        {
+            return _orderDAL.IsOrderPaid(orderId);
+        }
+
+        
 
         
     }

@@ -22,6 +22,8 @@ namespace GUI
         private int _tableNumer;
         private frmListOrders _frmListOrders;
         private DataTable _data;
+        private OrderBLL _orderBLL;
+        private OrderDetailBLL _orderDetailBLL;
 
         frmMenuOrder _menuOrder;
 
@@ -38,6 +40,8 @@ namespace GUI
             _tableNumer = tableNumber;
             _menuOrder = new frmMenuOrder(this);
             _frmListOrders.Add(_menuOrder);
+            _orderBLL = new OrderBLL();
+            _orderDetailBLL = new OrderDetailBLL();
             Data = new DataTable();
             Data.Columns.Add("FoodName");
             Data.Columns.Add("Quantity");
@@ -205,7 +209,7 @@ namespace GUI
         {
             if(_orderStatus == Order.paid)
             {
-                new MessageForm("Đơn hàng đã dược thanh toán. Vui lòng không đặt thêm món!", "Thông báo", 1);
+                new MessageForm("Đơn hàng đã được thanh toán. Vui lòng không đặt thêm món!", "Thông báo", 1);
                 return;
             }
             _menuOrder.BringToFront();
@@ -213,35 +217,68 @@ namespace GUI
 
         private void btnSaveOrderDetail_Click(object sender, EventArgs e)
         {
-            if(!CheckOrderConstraints())
-            {
+            string errorMessage;
+            if(string.IsNullOrEmpty(txtIdTable.Text) || Convert.ToInt32(txtIdTable.Text) == 0) {
+                new MessageForm("Bạn cần nhập số bàn!", "Thông báo", 1);
                 return;
             }
-        }
-
-        private bool CheckOrderConstraints()
-        {
-            if(string.IsNullOrEmpty(txtIdTable.Text))
+            if(_orderBLL.IsOrderPaid(_orderID))
             {
-                new MessageForm("Bạn phải chọn bàn!", "Thông báo", 1);
-                return false;
+                new MessageForm("Không thể thêm chi tiết vào đơn hàng đã thanh toán!", "Thông báo", 1);
             }
-            if (_data.Rows.Count == 0)
+            bool isExitOrderDetail= _orderDetailBLL.IsExitOrderDetail(_orderID);
+            if(!isExitOrderDetail)
             {
-                new MessageForm("Bạn chưa chọn món!", "Thông báo", 1);
-                return false;
-            }
-            if(cmbStatusOrder.SelectedItem.ToString() == Order.unpaid.GetEnumDescription())
-            {
-                lblWarning.Text = "Đơn hàng này chưa được thanh toán!";
-                lblWarning.Visible = true;
+                _orderDetailBLL.CreateOrderDetail(_orderID, _data);
+                UpdateOrder();
+                new MessageForm("Chi tiết đơn hàng đã được thêm thành công!", "Thông báo", 1);
             }
             else
             {
-                lblWarning.Visible = false;
-            }
+                if(!_orderBLL.ValidateOrder(_orderID, txtIdTable.Text, lblTotalPrice.Text, cmbStatusOrder.Text, out errorMessage))
+                {
+                    new MessageForm(errorMessage, "Thông báo", 1);
+                    return;
+                }
+                if (_orderDetailBLL.ValidateOrderDetails(_orderID, _data, out errorMessage))
+                {
+                    _orderDetailBLL.UpdateOrderDetails(_orderID, _data);
+                    UpdateOrder();
+                    new MessageForm("Chi tiết đơn hàng đã được cập nhật thành công!", "Thông báo", 1);
+                }
 
-            return true;
+            }
         }
+
+        private void UpdateOrder()
+        {
+            try
+            {
+                var orderStatus = GetOrderStatus(cmbStatusOrder.Text);
+                _orderBLL.UpdateOrder(_orderID, Convert.ToInt32(lblTotalPrice.Text), _orderDate, Convert.ToInt32(txtIdTable.Text), orderStatus);
+            }
+            catch(ArgumentException ex)
+            {
+                new MessageForm(ex.Message, "Thông báo", 1);
+            }
+            
+
+        }
+
+        private Order GetOrderStatus(string status)
+        {
+            switch(status){
+                case "Đã thanh toán":
+                    return Order.paid;
+                case "Chưa thanh toán":
+                    return Order.unpaid;
+                default:
+                    throw new ArgumentException("Trạng thái đơn hàng không hợp lệ");
+            }
+        }
+
+        
+
+        
     }
 }

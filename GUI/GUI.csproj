@@ -90,7 +90,6 @@
     <Compile Include="HomeManager.Designer.cs">
       <DependentUpon>HomeManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="FoodUpdatedEventArgs.cs" />
     <Compile Include="frmListOrders.cs">
       <SubType>Form</SubType>
     </Compile>

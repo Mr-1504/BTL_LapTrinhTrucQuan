@@ -57,6 +57,7 @@ namespace GUI
             DataGridViewTextBoxColumn TimePaymentColumn = new DataGridViewTextBoxColumn();
             TimePaymentColumn.HeaderText = "Thời gian";
             TimePaymentColumn.Name = "TimePayment";
+            TimePaymentColumn.DefaultCellStyle.Format = "dd/MM/yyyy";
             TimePaymentColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dgvListOrders.Columns.Add(TimePaymentColumn);
 
