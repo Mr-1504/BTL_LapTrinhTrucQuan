@@ -13,10 +13,12 @@ namespace Utilities
 
             var baseConnectionString = ConfigurationManager.ConnectionStrings["BaseConnectionString"].ConnectionString;
             var databaseName = ConfigurationManager.AppSettings["DatabaseName"];
-            return "Data Source=DESKTOP-PIULBJ0\\SQLEXPRESS01;Initial Catalog=QuanLyNguyenLieuMonAn;Integrated Security=True;";
+            //return "Data Source=DESKTOP-PIULBJ0\\SQLEXPRESS01;Initial Catalog=QuanLyNguyenLieuMonAn;Integrated Security=True;";
 
-            //return baseConnectionString.Replace("Data Source=;", $"Data Source={deviceName}\\SQLEXPRESS;")
-            //                           .Replace("Initial Catalog=;", $"Initial Catalog={databaseName};");
+
+            return baseConnectionString.Replace("Data Source=;", $"Data Source={deviceName}\\SQLEXPRESS01;")
+                                   .Replace("Initial Catalog=;", $"Initial Catalog={databaseName};");
+
 
         }
 

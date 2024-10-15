@@ -323,7 +323,9 @@ namespace GUI
             this.panel5.BackgroundImage = global::GUI.Properties.Resources.panelNumberic;
             this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel5.Controls.Add(this.textTongChiKho);
-            this.panel5.Location = new System.Drawing.Point(244, 202);
+
+            this.panel5.Location = new System.Drawing.Point(236, 202);
+
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(164, 35);
             this.panel5.TabIndex = 17;
@@ -345,7 +347,8 @@ namespace GUI
             this.panel4.BackgroundImage = global::GUI.Properties.Resources.panelNumberic;
             this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel4.Controls.Add(this.textSoNhanVienKho);
-            this.panel4.Location = new System.Drawing.Point(244, 131);
+            this.panel4.Location = new System.Drawing.Point(236, 131);
+
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(164, 35);
             this.panel4.TabIndex = 16;
@@ -367,7 +370,7 @@ namespace GUI
             this.panel3.BackgroundImage = global::GUI.Properties.Resources.panelNumberic;
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel3.Controls.Add(this.textSoNhaCungCap);
-            this.panel3.Location = new System.Drawing.Point(244, 62);
+            this.panel3.Location = new System.Drawing.Point(236, 62);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(164, 35);
             this.panel3.TabIndex = 15;
@@ -387,7 +390,9 @@ namespace GUI
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(42, 207);
+
+            this.label13.Location = new System.Drawing.Point(34, 207);
+
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(115, 19);
             this.label13.TabIndex = 9;
@@ -397,7 +402,9 @@ namespace GUI
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(42, 137);
+
+            this.label12.Location = new System.Drawing.Point(34, 137);
+
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(148, 19);
             this.label12.TabIndex = 8;
@@ -407,7 +414,7 @@ namespace GUI
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(42, 69);
+            this.label11.Location = new System.Drawing.Point(34, 69);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(144, 19);
             this.label11.TabIndex = 7;

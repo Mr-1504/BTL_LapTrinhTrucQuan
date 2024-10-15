@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Globalization;
 using System.Media;
 using System.Resources;
@@ -11,11 +12,14 @@ namespace GUI
     {
         private ResourceManager resManager;
         private CultureInfo cultureInfo;
-
-        public SettingFormOption()
+        private Action[] _action;
+        public SettingFormOption(Action[] action)
         {
             InitializeComponent();
             InitializeLanguage();
+            _action = action;
+            btnLogout.MouseEnter += BtnLogout_MouseEnter;
+            btnLogout.MouseLeave += BtnLogout_MouseLeave;
         }
 
         private void InitializeLanguage()
@@ -103,6 +107,33 @@ namespace GUI
         private void pnLine_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            // Đóng form hiện tại
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+            loginForm.FormClosed += (s, args) => Application.Exit();
+            _action[2]();
+
+            // Mở form đăng nhập
+            
+            
+        }
+
+        private void btnLogout_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        private void BtnLogout_MouseEnter(object sender, EventArgs e)
+        {
+            btnLogout.BackgroundImage = Properties.Resources.image2;
+        }
+
+        private void BtnLogout_MouseLeave(object sender, EventArgs e)
+        {
+            btnLogout.BackgroundImage = Properties.Resources.image;
         }
     }
 }

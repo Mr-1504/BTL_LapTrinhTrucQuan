@@ -67,13 +67,14 @@ namespace GUI
             }
             else if (employeeRole == "LT")
             {
-
+                frmListOrders frmListOrders = new frmListOrders();
+                OpenComponent(frmListOrders);
             }
             
             ActiveControl = picLogo;
 
             //
-            _actions = new Action[2] { dispose, loadImage };
+            _actions = new Action[3] { dispose, loadImage, CloseBaseForm };
             _imagePath = $@"..\..\Resources\AvatarImage\{_id}.JPG";
             btnAvatar.BackgroundImage = Image.FromFile(_imagePath);
         }
@@ -90,6 +91,10 @@ namespace GUI
         {
             _imagePath = $@"..\..\Resources\AvatarImage\{_id}.JPG";
             btnAvatar.BackgroundImage = Image.FromFile(_imagePath);
+        }
+        public void CloseBaseForm()
+        {
+            this.Hide();
         }
         private void LoadMenu(string employeeId)
         {
@@ -239,7 +244,8 @@ namespace GUI
                     }
                     else if (employeeRole == "LT")
                     {
-
+                        frmListOrders ListOrder = new frmListOrders();
+                        OpenComponent(ListOrder);
                     }
                     break;
                 case "Employee":
@@ -263,7 +269,8 @@ namespace GUI
 
                     break;
                 case "OrderList":
-
+                    frmListOrders frmListOrder = new frmListOrders();
+                    OpenComponent(frmListOrder);
                     break;
                 case "EditInformation":
                     Warehouse_EditData warehouse = new Warehouse_EditData();

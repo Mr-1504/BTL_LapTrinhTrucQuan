@@ -28,7 +28,6 @@ namespace GUI
         {
             InitializeComponent();
             btnPrevious.Enabled = false;
-            this.DoubleBuffered(true);
             CustomizeFlowLayoutPanel();
         }
         private void CustomizeFlowLayoutPanel()
@@ -189,10 +188,49 @@ namespace GUI
         }
         private void UpdatePageButtons(int totalPages, int currentPage)
         {
+            //Button[] pageButtons = { btnPage_st, btnPage_nd, btnPage_rd, btnPage_th };
+            //int buttonsToShow = Math.Min(totalPages, 4); 
+            //int startPage, endPage;
+
+            //if (totalPages <= 4)
+            //{
+            //    startPage = 1;
+            //    endPage = totalPages;
+            //}
+            //else
+            //{
+            //    if (currentPage <= 2)
+            //    {
+            //        startPage = 1;
+            //        endPage = 4;
+            //    }
+            //    else if (currentPage >= totalPages - 1)
+            //    {
+            //        startPage = totalPages - 3;
+            //        endPage = totalPages;
+            //    }
+            //    else
+            //    {
+            //        startPage = currentPage - 1;
+            //        endPage = currentPage + 2;
+            //    }
+            //}
+
+            //for (int i = 0; i < buttonsToShow; i++)
+            //{
+            //    pageButtons[i].Text = (startPage + i).ToString();
+            //    pageButtons[i].Visible = true;
+            //}
+
+            //for (int i = buttonsToShow; i < pageButtons.Length; i++)
+            //{
+            //    pageButtons[i].Visible = false;
+            //}
+            //UpdateButtonColors(currentPage);
             Button[] pageButtons = { btnPage_st, btnPage_nd, btnPage_rd, btnPage_th };
-            int buttonsToShow = Math.Min(totalPages, 4); 
+            int buttonsToShow = Math.Min(totalPages, 4);
             int startPage, endPage;
-            
+
             if (totalPages <= 4)
             {
                 startPage = 1;
@@ -200,20 +238,11 @@ namespace GUI
             }
             else
             {
-                if (currentPage <= 2)
+                startPage = Math.Max(1, currentPage - 1);
+                endPage = Math.Min(startPage + 3, totalPages);
+                if (endPage - startPage < 3)
                 {
-                    startPage = 1;
-                    endPage = 4;
-                }
-                else if (currentPage >= totalPages - 1)
-                {
-                    startPage = totalPages - 3;
-                    endPage = totalPages;
-                }
-                else
-                {
-                    startPage = currentPage - 1;
-                    endPage = currentPage + 2;
+                    startPage = Math.Max(1, endPage - 3);
                 }
             }
 
@@ -227,25 +256,27 @@ namespace GUI
             {
                 pageButtons[i].Visible = false;
             }
+
             UpdateButtonColors(currentPage);
-            btnPage_st.Click += PageButton_Click;
-            btnPage_nd.Click += PageButton_Click;
-            btnPage_rd.Click += PageButton_Click;
-            btnPage_th.Click += PageButton_Click;
+            //btnPage_st.Click += PageButton_Click;
+            //btnPage_nd.Click += PageButton_Click;
+            //btnPage_rd.Click += PageButton_Click;
+            //btnPage_th.Click += PageButton_Click;
         }
-        private void PageButton_Click(object sender, EventArgs e)
-        {
-            Button clickedButton = sender as Button;
-            if (clickedButton != null && int.TryParse(clickedButton.Text, out int selectedPage))
-            {
-                if (selectedPage != currentPage)
-                {
-                    currentPage = selectedPage; 
-                    LoadFoodItems();            
-                    UpdatePageButtons(totalPages, currentPage);  
-                }
-            }
-        }
+        
+        //private void PageButton_Click(object sender, EventArgs e)
+        //{
+        //    Button clickedButton = sender as Button;
+        //    if (clickedButton != null && int.TryParse(clickedButton.Text, out int selectedPage))
+        //    {
+        //        if (selectedPage != currentPage)
+        //        {
+        //            currentPage = selectedPage; 
+        //            LoadFoodItems();            
+        //            UpdatePageButtons(totalPages, currentPage);  
+        //        }
+        //    }
+        //}
 
         private void UpdateButtonColors(int currentPage)
         {
