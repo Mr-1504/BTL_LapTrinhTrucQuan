@@ -142,7 +142,7 @@ namespace GUI
             slidePanel1.Visible = false;
             slidePanel3.Visible = false;
             // Tạo instance của form con SettingFormSecurity
-            SettingFormOption formOption = new SettingFormOption(_action);
+            SettingFormOption formOption = new SettingFormOption();
 
             // Gọi hàm LoadChildForm để nhúng form con vào panel
             LoadChildForm(formOption);

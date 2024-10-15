@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlOrderDetail = new System.Windows.Forms.Panel();
             this.txtIdTable = new System.Windows.Forms.TextBox();
             this.lblSoBan = new System.Windows.Forms.Label();
@@ -183,8 +184,17 @@
             // 
             this.dgvListFood.BackgroundColor = System.Drawing.Color.White;
             this.dgvListFood.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListFood.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvListFood.Location = new System.Drawing.Point(607, 82);
             this.dgvListFood.Name = "dgvListFood";
+            this.dgvListFood.ReadOnly = true;
             this.dgvListFood.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
             this.dgvListFood.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvListFood.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;

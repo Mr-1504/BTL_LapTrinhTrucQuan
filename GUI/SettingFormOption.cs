@@ -11,12 +11,11 @@ namespace GUI
     {
         private ResourceManager resManager;
         private CultureInfo cultureInfo;
-        private Action[] _action;
-        public SettingFormOption(Action[] action)
+
+        public SettingFormOption()
         {
             InitializeComponent();
             InitializeLanguage();
-            _action = action;
         }
 
         private void InitializeLanguage()
@@ -105,19 +104,6 @@ namespace GUI
         {
 
         }
-
-        private void btnLogout_Click(object sender, EventArgs e)
-        {
-            // Đóng form hiện tại
-            LoginForm loginForm = new LoginForm();
-            loginForm.Show();
-            _action[2]();
-
-            // Mở form đăng nhập
-            
-            
-        }
-
     }
 }
 
