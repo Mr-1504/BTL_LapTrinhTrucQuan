@@ -67,6 +67,11 @@ namespace BLL
         {
             return saleDAL.GetMonthlySales();
         }
+        //Danh sách doanh thu theo tháng năm trước
+        public List<int> GetMonthlySales2()
+        {
+            return saleDAL.GetMonthlySales2();
+        }
         //Số bàn 
         public int GetTable()
         {

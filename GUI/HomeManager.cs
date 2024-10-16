@@ -45,35 +45,73 @@ namespace GUI
             cbbHoatDong.Items.Add("Tháng");
             cbbHoatDong.Items.Add("Năm");
             cbbHoatDong.SelectedIndexChanged += cbbHoatDong_SelectedIndexChanged;
+            LoadLiveChart();
+        }
+        private void LoadLiveChart()
+        {
+            var doanhThuCurrentYearSeries = new LiveCharts.Wpf.LineSeries
+            {
+                Title = "Doanh thu năm hiện tại",
+                Values = new LiveCharts.ChartValues<int>()
+            };
+            var doanhThuLastYearSeries = new LiveCharts.Wpf.LineSeries
+            {
+                Title = "Doanh thu năm trước",
+                Values = new LiveCharts.ChartValues<int>()
+            };
+            List<int> doanhThuCurrentYear = managerBLL.GetMonthlySales(); 
+            List<int> doanhThuLastYear = managerBLL.GetMonthlySales2(); 
 
-
+            for (int i = 0; i < 12; i++)
+            {
+                doanhThuCurrentYearSeries.Values.Add(doanhThuCurrentYear[i]);
+                doanhThuLastYearSeries.Values.Add(doanhThuLastYear[i]);
+            }
+            cartesianChart1.Series = new LiveCharts.SeriesCollection
+            {
+                doanhThuCurrentYearSeries,
+                doanhThuLastYearSeries
+            };
+            cartesianChart1.AxisX.Clear();
+            cartesianChart1.AxisX.Add(new LiveCharts.Wpf.Axis
+            {
+                Labels = new[] { "Tháng 1", "Tháng 2", "Tháng 3", "Tháng 4", "Tháng 5", "Tháng 6", "Tháng 7", "Tháng 8", "Tháng 9", "Tháng 10", "Tháng 11", "Tháng 12" }
+            });
+            cartesianChart1.AxisY.Clear();
+            cartesianChart1.AxisY.Add(new LiveCharts.Wpf.Axis
+            {
+                Title = "Doanh thu (VND)"
+            });
+            doanhThuCurrentYearSeries.DataLabels = true;
+            doanhThuLastYearSeries.DataLabels = true;
         }
 
         private void HomeManager_Load(object sender, EventArgs e)
         {
-            LoadChartData();
+            //LoadChartData();
+            LoadLiveChart();
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
 
         }
-        private void LoadChartData()
-        {
-            chartSale.Series.Clear();
-            Series series = new Series("Doanh thu");
-            series.ChartType = SeriesChartType.Column;
-            series.IsValueShownAsLabel = true;
-            List<int> doanhThuThang = managerBLL.GetMonthlySales();
-            for (int i = 0; i < 12; i++)
-            {
-                series.Points.AddXY("Tháng " + (i + 1), doanhThuThang[i]);
-            }
-            chartSale.Series.Add(series);
-            chartSale.ChartAreas[0].AxisX.Title = "";
-            chartSale.ChartAreas[0].AxisY.Title = "Doanh thu (VND)";
-            chartSale.ChartAreas[0].AxisX.Interval = 1;
-        }
+        //private void LoadChartData()
+        //{
+        //    chartSale.Series.Clear();
+        //    Series series = new Series("Doanh thu");
+        //    series.ChartType = SeriesChartType.Column;
+        //    series.IsValueShownAsLabel = true;
+        //    List<int> doanhThuThang = managerBLL.GetMonthlySales();
+        //    for (int i = 0; i < 12; i++)
+        //    {
+        //        series.Points.AddXY("Tháng " + (i + 1), doanhThuThang[i]);
+        //    }
+        //    chartSale.Series.Add(series);
+        //    chartSale.ChartAreas[0].AxisX.Title = "";
+        //    chartSale.ChartAreas[0].AxisY.Title = "Doanh thu (VND)";
+        //    chartSale.ChartAreas[0].AxisX.Interval = 1;
+        //}
         private void cbbHoatDong_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Kiểm tra giá trị được chọn trong ComboBox
