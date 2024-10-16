@@ -359,6 +359,7 @@ namespace GUI
             pnlContent.ResumeLayout();
         }
 
+
         private void txtSearch_Enter(object sender, EventArgs e)
         {
             txtSearch.Text = txtSearch.Text == "Tìm kiếm" ? "" : txtSearch.Text;

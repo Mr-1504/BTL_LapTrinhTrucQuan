@@ -261,7 +261,8 @@ namespace GUI
                 // Mở tệp ảnh để hiển thị
                 using (FileStream fs = new FileStream(imagePath, FileMode.Open, FileAccess.Read))
                 {
-                    pictureBox1.Image = Image.FromStream(fs);
+                    Image originalImage = Image.FromStream(fs);
+                    pictureBox1.Image = Resize(originalImage, pictureBox1.Width, pictureBox1.Height);
                 }
             }
             else
@@ -278,10 +279,15 @@ namespace GUI
 
                 using (FileStream fs = new FileStream(defaultImagePath, FileMode.Open, FileAccess.Read))
                 {
-                    pictureBox1.Image = Image.FromStream(fs);
+                    Image originalImage = Image.FromStream(fs);
+                    pictureBox1.Image = Resize(originalImage, pictureBox1.Width, pictureBox1.Height);
                 }
             }
 
+        }
+        private Image Resize(Image imgToResize, int width, int height)
+        {
+            return new Bitmap(imgToResize, new Size(width, height));
         }
         private void btnChangeImage_Click(object sender, EventArgs e)
         {
