@@ -16,7 +16,7 @@ namespace Utilities
             //return "Data Source=DESKTOP-PIULBJ0\\SQLEXPRESS01;Initial Catalog=QuanLyNguyenLieuMonAn;Integrated Security=True;";
 
 
-            return baseConnectionString.Replace("Data Source=;", $"Data Source={deviceName}\\SQLEXPRESS01;")
+            return baseConnectionString.Replace("Data Source=;", $"Data Source={deviceName}\\SQLEXPRESS;")
                                    .Replace("Initial Catalog=;", $"Initial Catalog={databaseName};");
 
 
