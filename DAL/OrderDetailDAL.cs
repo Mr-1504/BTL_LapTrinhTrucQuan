@@ -1,6 +1,7 @@
 ﻿using Utilities;
 using DTO;
 using System.Data;
+using System;
 
 namespace DAL
 {
@@ -36,6 +37,18 @@ namespace DAL
         {
             string query = "SELECT MonAn.TenMonAn, ChiTietDonHang.SoLuong, ChiTietDonHang.SoLuong * MonAn.DonGia as ThanhTien FROM ChiTietDonHang JOIN MonAn ON ChiTietDonHang.MaMonAn = MonAn.MaMonAn where ChiTietDonHang.MaDon = @OrderID";
             return SqlHelper.ExecuteReader(query, new object[] { orderId });
+        }
+
+        public int CalculateTotalPrice(string orderId)
+        {
+            int toltalPrice = 0;
+            string query = "SELECT SUM(ChiTietDonHang.SoLuong * MonAn.DonGia) AS TongTien FROM ChiTietDonHang JOIN MonAn ON ChiTietDonHang.MaMonAn = MonAn.MaMonAn WHERE ChiTietDonHang.MaDon = @orderId ";
+            DataTable dt = SqlHelper.ExecuteReader(query, new object[] { orderId });
+            if (dt.Rows.Count > 0)
+            {
+                return Convert.ToInt32(dt.Rows[0]["TongTien"]);
+            }
+            return toltalPrice;
         }
     }
 }

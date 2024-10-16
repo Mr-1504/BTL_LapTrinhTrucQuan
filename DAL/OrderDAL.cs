@@ -109,6 +109,12 @@ namespace DAL
             return false;
         }
 
+        public int UpdateOrderTotalPrice(string orderId, int totalPrice)
+        {
+            string query = "UPDATE DonHang set TongTien = @TotalPrice Where MaDon = @orderId";
+            return SqlHelper.ExecuteNonQuery(query, new object[] {orderId, totalPrice});
+        }
+
         
     }
 }

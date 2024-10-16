@@ -58,12 +58,12 @@ namespace BLL
                 DataRow currentRow = current.Rows[i];
                 DataRow dtRow = dt.Rows[i];
 
-                if (currentRow["FoodName"].ToString() != dtRow["TenMonAn"].ToString() )
+                if (currentRow["TenMonAn"].ToString() != dtRow["TenMonAn"].ToString() )
                 {
                     errorMessage = $"Đã thêm món ăn mới ở dòng {i + 1}!";
                     return true;
                 }
-                if (Convert.ToInt32(currentRow["Quantity"]) != Convert.ToInt32(dtRow["SoLuong"]))
+                if (Convert.ToInt32(currentRow["SoLuong"]) != Convert.ToInt32(dtRow["SoLuong"]))
                 {
                     errorMessage = $"Số lượng món ăn ở dòng {i + 1} đã thay đổi!";
                     return true;
@@ -78,13 +78,13 @@ namespace BLL
             
             foreach(DataRow row in dt.Rows)
             {
-                string foodName = row["FoodName"].ToString();
+                string foodName = row["TenMonAn"].ToString();
                 string foodId = _foodBLL.GetFoodIdByName(foodName);
                 var orderDetail = new OrderDetailDTO
                 {
                     OrderId = orderId,
                     FoodId = foodId,
-                    Quantity = Convert.ToInt32(row["Quantity"])
+                    Quantity = Convert.ToInt32(row["SoLuong"])
                 };
                 AddNewOrderDetails(orderDetail);
             }
@@ -96,17 +96,21 @@ namespace BLL
 
             foreach(DataRow row in dt.Rows)
             {
-                string foodName = row["FoodName"].ToString();
-                int newQuantity = Convert.ToInt32(row["Quantity"]);
-                int newTotalPrice = Convert.ToInt32(row["TotalPrice"]);
+                string foodName = row["TenMonAn"].ToString();
+                int newQuantity = Convert.ToInt32(row["SoLuong"]);
+                int newTotalPrice = Convert.ToInt32(row["ThanhTien"]);
 
                 bool exists = false;
                 foreach(DataRow currentRow in current.Rows)
                 {
-                    if (currentRow["FoodName"].ToString() == foodName)
+                    if (currentRow["TenMonAn"].ToString() == foodName)
                     {
+                        int currentQuantity = Convert.ToInt32(currentRow["SoLuong"]);
+                        int updatedQuantity = currentQuantity + newQuantity;
                         string foodId = _foodBLL.GetFoodIdByName(foodName);
-                        _orderDetailDAL.UpdateOrder(new OrderDetailDTO(orderId, foodId, newQuantity));
+                        _orderDetailDAL.UpdateOrder(new OrderDetailDTO(orderId, foodId, updatedQuantity));
+                       
+                        
                         exists = true;
                         break;
                     }
@@ -118,6 +122,11 @@ namespace BLL
                     AddNewOrderDetails(new OrderDetailDTO(orderId, foodId, newQuantity));
                 }
             }
+        }
+
+        public int CalculateTotalPrice(string orderId)
+        {
+            return _orderDetailDAL.CalculateTotalPrice(orderId);
         }
     }
 }

@@ -61,12 +61,29 @@ namespace GUI
         {
             foreach (FoodUpdatedEventArgs e in data)
             {
-                _data.Rows.Add(e.FoodName, e.Quantity, e.FoodPrice * e.Quantity);
+                bool isExist = false;
+                foreach(DataRow row in _data.Rows)
+                {
+                    if (row["TenMonAN"].ToString() == e.FoodName)
+                    {
+                        int newQuantity = Convert.ToInt32(row["SoLuong"]) + e.Quantity;
+                        row["SoLuong"] = newQuantity;
+                        row["ThanhTien"] = newQuantity * e.FoodPrice;
+                        isExist = true;
+                        break;
+                    }
+                }
+                if(!isExist)
+                {
+                    _data.Rows.Add(e.FoodName, e.Quantity, e.FoodPrice * e.Quantity);
+                }
+               
             }
-            dgvListFood.Columns["FoodName"].DataPropertyName = "FoodName";
-            dgvListFood.Columns["Quantity"].DataPropertyName = "Quantity";
-            dgvListFood.Columns["TotalPrice"].DataPropertyName = "TotalPrice";
+            dgvListFood.Columns["FoodName"].DataPropertyName = "TenMonAn";
+            dgvListFood.Columns["Quantity"].DataPropertyName = "SoLuong";
+            dgvListFood.Columns["TotalPrice"].DataPropertyName = "ThanhTien";
             dgvListFood.DataSource = _data;
+            
             CalculateTotalPrice();
         }
 
@@ -113,14 +130,15 @@ namespace GUI
             dgvListFood.RowHeadersVisible = false;
             dgvListFood.ColumnHeadersVisible = true;
             dgvListFood.ReadOnly = true;
+
         }
 
         private void LoadOrderDetails(string orderID)
         {
             OrderDetailBLL _orderDetailBLL = new OrderDetailBLL();
-            DataTable dt = _orderDetailBLL.GetOrderDetailsByOrderId(orderID);
+            _data = _orderDetailBLL.GetOrderDetailsByOrderId(_orderID);
 
-            dgvListFood.DataSource = dt;
+            dgvListFood.DataSource = _data;
 
             dgvListFood.Columns["FoodName"].DataPropertyName = "TenMonAn";
             dgvListFood.Columns["Quantity"].DataPropertyName = "SoLuong";
@@ -244,6 +262,7 @@ namespace GUI
                 {
                     _orderDetailBLL.UpdateOrderDetails(_orderID, _data);
                     UpdateOrder();
+                    LoadOrderDetails(_orderID);
                     new MessageForm("Chi tiết đơn hàng đã được cập nhật thành công!", "Thông báo", 1);
                 }
 
@@ -255,6 +274,7 @@ namespace GUI
             try
             {
                 var orderStatus = GetOrderStatus(cmbStatusOrder.Text);
+                
                 _orderBLL.UpdateOrder(_orderID, Convert.ToInt32(lblTotalPrice.Text), _orderDate, Convert.ToInt32(txtIdTable.Text), orderStatus);
             }
             catch(ArgumentException ex)
