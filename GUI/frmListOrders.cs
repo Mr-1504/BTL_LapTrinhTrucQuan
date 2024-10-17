@@ -266,8 +266,13 @@ namespace GUI
         {
             
             Controls.Add(userControl);
+            int xPos = (Screen.PrimaryScreen.WorkingArea.Width - userControl.Width) / 2 - 100;
+            int yPos = (Screen.PrimaryScreen.WorkingArea.Height - userControl.Height) / 2;
+
+            userControl.Location = new Point(xPos, yPos);
             userControl.Show();
             userControl.SendToBack();
+
         }
 
         private void dgvListOrders_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
