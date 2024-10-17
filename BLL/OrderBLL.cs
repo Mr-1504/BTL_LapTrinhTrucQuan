@@ -61,11 +61,11 @@ namespace BLL
 
             DataRow row =  dt.Rows[0];
 
-            if (row["SoBan"].ToString() != tableNumber)
-            {
-                errorMessage = "Số bàn đã thay đổi!";
-                return false;
-            }
+            //if (row["SoBan"].ToString() != tableNumber)
+            //{
+            //    errorMessage = "Số bàn đã thay đổi!";
+            //    return false;
+            //}
 
             if (row["TrangThai"].ToString() != status)
             {
@@ -73,11 +73,11 @@ namespace BLL
                 return false;
             }
 
-            if (Convert.ToInt32(row["TongTien"]) != Convert.ToInt32(totalPrice))
-            {
-                errorMessage = "Tổng tiền đã thay đổi!";
-                return false;
-            }
+            //if (Convert.ToInt32(row["TongTien"]) != Convert.ToInt32(totalPrice))
+            //{
+            //    errorMessage = "Tổng tiền đã thay đổi!";
+            //    return false;
+            //}
             errorMessage = string.Empty;
             return true;
         }

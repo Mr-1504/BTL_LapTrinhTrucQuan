@@ -194,6 +194,12 @@
     <Compile Include="SettingFormSecurity.Designer.cs">
       <DependentUpon>SettingFormSecurity.cs</DependentUpon>
     </Compile>
+    <Compile Include="ucInvoiceDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucInvoiceDetail.Designer.cs">
+      <DependentUpon>ucInvoiceDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Warehouse\Warehouse-EditData.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -288,6 +294,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SettingFormSecurity.resx">
       <DependentUpon>SettingFormSecurity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucInvoiceDetail.resx">
+      <DependentUpon>ucInvoiceDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Warehouse\Warehouse-EditData.resx">
       <DependentUpon>Warehouse-EditData.cs</DependentUpon>
@@ -526,7 +535,9 @@
     <None Include="Resources\addressPanel.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\InvoiceDetailLogo.jpg" />
     <None Include="Resources\btnPage.png" />
+    <None Include="Resources\btnThoat.png" />
     <Content Include="Resources\ImageFood\AP0001.jpg" />
     <Content Include="Resources\ImageFood\AP0002.jpg" />
     <Content Include="Resources\ImageFood\AP0003.jpg" />

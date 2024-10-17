@@ -245,6 +245,7 @@ namespace GUI
                 new MessageForm("Không thể thêm chi tiết vào đơn hàng đã thanh toán!", "Thông báo", 1);
             }
             bool isExitOrderDetail= _orderDetailBLL.IsExitOrderDetail(_orderID);
+            Console.WriteLine("IsExitOrderDetail: " + isExitOrderDetail);
             if(!isExitOrderDetail)
             {
                 _orderDetailBLL.CreateOrderDetail(_orderID, _data);
@@ -253,10 +254,11 @@ namespace GUI
             }
             else
             {
-                if(!_orderBLL.ValidateOrder(_orderID, txtIdTable.Text, lblTotalPrice.Text, cmbStatusOrder.Text, out errorMessage))
+                if (!_orderBLL.ValidateOrder(_orderID, txtIdTable.Text, lblTotalPrice.Text, cmbStatusOrder.Text, out errorMessage))
                 {
                     new MessageForm(errorMessage, "Thông báo", 1);
-                    return;
+                    UpdateOrder();
+                    
                 }
                 if (_orderDetailBLL.ValidateOrderDetails(_orderID, _data, out errorMessage))
                 {
@@ -265,6 +267,7 @@ namespace GUI
                     LoadOrderDetails(_orderID);
                     new MessageForm("Chi tiết đơn hàng đã được cập nhật thành công!", "Thông báo", 1);
                 }
+                
 
             }
         }

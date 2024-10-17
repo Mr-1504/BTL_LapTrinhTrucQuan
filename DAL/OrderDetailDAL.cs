@@ -10,7 +10,7 @@ namespace DAL
         public int IsExitOrder(string orderId)
         {
             string query = "SELECT COUNT(*) FROM ChiTietDonHang WHERE MaDon = @OrderId";
-            return SqlHelper.ExecuteNonQuery(query, new object[] { orderId });
+            return SqlHelper.ExecuteScalar(query, new object[] { orderId });
         }
 
         public int AddNewOrderDetail(OrderDetailDTO orderDetail)
@@ -49,6 +49,12 @@ namespace DAL
                 return Convert.ToInt32(dt.Rows[0]["TongTien"]);
             }
             return toltalPrice;
+        }
+
+        public DataTable GetOrderDetailWithFood(string orderId)
+        {
+            string query = "SELECT ChiTietDonHang.MaMonAn, MonAn.TenMonAn, ChiTietDonHang.SoLuong, MonAn.DonGia, ChiTietDonHang.SoLuong * MonAn.DonGia as ThanhTien FROM ChiTietDonHang JOIN MonAn ON ChiTietDonHang.MaMonAn = MonAn.MaMonAn WHERE ChiTietDonHang.MaDon = @orderId";
+            return SqlHelper.ExecuteReader(query, new Object[] { orderId });
         }
     }
 }

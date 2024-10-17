@@ -51,7 +51,7 @@ namespace BLL
             if(dt.Rows.Count != current.Rows.Count)
             {
                 errorMessage = "Số lượng món đã thay đổi";
-                return false;
+                return true;
             }
             for(int i = 0; i < current.Rows.Count; i++)
             {
@@ -106,7 +106,7 @@ namespace BLL
                     if (currentRow["TenMonAn"].ToString() == foodName)
                     {
                         int currentQuantity = Convert.ToInt32(currentRow["SoLuong"]);
-                        int updatedQuantity = currentQuantity + newQuantity;
+                        int updatedQuantity =  newQuantity;
                         string foodId = _foodBLL.GetFoodIdByName(foodName);
                         _orderDetailDAL.UpdateOrder(new OrderDetailDTO(orderId, foodId, updatedQuantity));
                        
@@ -127,6 +127,11 @@ namespace BLL
         public int CalculateTotalPrice(string orderId)
         {
             return _orderDetailDAL.CalculateTotalPrice(orderId);
+        }
+
+        public DataTable GetOrderDetailWithFood(string orderId)
+        {
+            return _orderDetailDAL.GetOrderDetailWithFood(orderId);
         }
     }
 }
