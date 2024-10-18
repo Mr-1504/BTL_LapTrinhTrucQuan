@@ -23,7 +23,7 @@ namespace GUI
         bool edit;
         EmployManager2BLL employManager2BLL = new EmployManager2BLL();
         string employeeID, selectedPath;
-        public EmployManager2(EmployManager form)
+        public EmployManager2(EmployManager form,string erole)
         {
             InitializeComponent();
             
@@ -37,16 +37,25 @@ namespace GUI
             gender.Items.Add("Nam");
             gender.Items.Add("Nữ");
             ma_quyen.Text = "Chức vụ";
-            cbboxChucVu.Items.Clear();
-            cbboxChucVu.Items.Add("Quản Lý");
-            cbboxChucVu.Items.Add("Lễ Tân");
-            cbboxChucVu.Items.Add("Kho Hàng");
+            if(erole == "QL")
+            {
+                cbboxChucVu.Items.Clear();
+                cbboxChucVu.Items.Add("Quản Lý");
+                cbboxChucVu.Items.Add("Lễ Tân");
+            }
+            else if(erole == "AD")
+            {
+                cbboxChucVu.Items.Clear();
+                cbboxChucVu.Items.Add("Quản Lý");
+                cbboxChucVu.Items.Add("Lễ Tân");
+                cbboxChucVu.Items.Add("Kho Hàng");
+            }
             employID.Hide();
             employ = form;
             employeeID = "AA0000000";
             LoadEmployeeImage(employeeID);
         }
-        public EmployManager2(string employID1,EmployManager form)
+        public EmployManager2(string employID1,EmployManager form,string erole)
         {
             InitializeComponent();
             
@@ -55,6 +64,7 @@ namespace GUI
             gender.AutoSize = false;
             address.AutoSize = false;
             hometown.AutoSize = false;
+            
             gender.Items.Clear();
             gender.Items.Add("Nam");
             gender.Items.Add("Nữ");
@@ -65,6 +75,32 @@ namespace GUI
             DataTable editTable  = new DataTable();
             editTable = employManager2BLL.EditEmployeeManager(employID1, Employee.EmployeeId);
             employID.Text = editTable.Rows[0]["MaNhanVien"].ToString();
+            if(employID.Text.Substring(0, 2) == "QL")
+            {
+                if (erole == "QL")
+                {
+
+                    numberPhone.ReadOnly = true;
+                    gender.DropDownStyle = ComboBoxStyle.DropDownList;
+                    address.ReadOnly = true;
+                    hometown.ReadOnly = true;
+                    dateTimeBirthDay.Enabled = false;
+                    name.ReadOnly = true;
+                    btnSave.Enabled = false; 
+                    btnChaneIm.Enabled = false;
+                }
+                else if (erole == "AD")
+                {
+                    numberPhone.ReadOnly = false;
+                    gender.DropDownStyle = ComboBoxStyle.DropDown;
+                    address.ReadOnly = false;
+                    hometown.ReadOnly = false;
+                    dateTimeBirthDay.Enabled = true;
+                    name.ReadOnly = false;
+                    btnSave.Enabled = true; 
+                    btnChaneIm.Enabled = true;
+                }
+            }
             numberPhone.Text = editTable.Rows[0]["DienThoai"].ToString();
             gender.SelectedItem = editTable.Rows[0]["GioiTinh"].ToString();
             address.Text = editTable.Rows[0]["DiaChi"].ToString();

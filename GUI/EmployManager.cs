@@ -17,33 +17,26 @@ namespace GUI
     public partial class EmployManager : Form
     {
         EmployManagerBLL employ = new EmployManagerBLL();
-
-        public EmployManager()
+        string role = null;
+        public EmployManager(string eRole)
         {
             InitializeComponent();
             dataEmployerMNG.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataEmployerMNG.ReadOnly = true;  // Không cho phép chỉnh sửa
-            //Chinh hang tieu de
+            dataEmployerMNG.ReadOnly = true;  
             dataEmployerMNG.ColumnHeadersDefaultCellStyle.BackColor = Color.DeepSkyBlue;
             dataEmployerMNG.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dataEmployerMNG.EnableHeadersVisualStyles = false;
             dataEmployerMNG.ColumnHeadersHeight = 50;
             dataEmployerMNG.ColumnHeadersBorderStyle = (DataGridViewHeaderBorderStyle)DataGridViewCellBorderStyle.None;
-            // Khóa không cho phép kéo dãn cột
             dataEmployerMNG.AllowUserToResizeColumns = false;
             dataEmployerMNG.AutoGenerateColumns = false;
-
-
-            // Khóa không cho phép kéo dãn hàng
             dataEmployerMNG.AllowUserToResizeRows = false;
 
-            
-            // Gán DataPropertyName để ánh xạ với tên cột trong cơ sở dữ liệu
             dataEmployerMNG.Columns["EmployeeID"].DataPropertyName = "MaNhanVien";
             dataEmployerMNG.Columns["EmployeeName"].DataPropertyName = "TenNhanVien";
             dataEmployerMNG.Columns["NumberPhone"].DataPropertyName = "DienThoai";
             dataEmployerMNG.Columns["Address"].DataPropertyName = "DiaChi";
-            
+            role = eRole; 
             LoadEmployeeData1();
             pnlEmployMNG.Focus();
             dataEmployerMNG.AllowUserToAddRows = false;
@@ -81,7 +74,7 @@ namespace GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            EmployManager2 employManager2 = new EmployManager2(this);
+            EmployManager2 employManager2 = new EmployManager2(this,role);
 
             ShowComponent(false);
             employManager2.TopLevel = false;
@@ -122,7 +115,7 @@ namespace GUI
                         return;
                     }
                 }
-                EmployManager2 employManager2 = new EmployManager2(employeeID, this);
+                EmployManager2 employManager2 = new EmployManager2(employeeID, this,role);
                 employManager2.TopLevel = false;
                 pnlEmployMNG.Controls.Add(employManager2);
                 employManager2.Show();
@@ -146,7 +139,6 @@ namespace GUI
             employeeTable = employ1.GetEmployees();
             dataEmployerMNG.DataSource = employeeTable;
             LoadEmployeeData1();
-
 
         }
        
@@ -266,9 +258,5 @@ namespace GUI
             }
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
