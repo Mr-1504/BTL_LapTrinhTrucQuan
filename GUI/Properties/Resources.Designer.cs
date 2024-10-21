@@ -573,9 +573,9 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap InvoiceDetailLogo {
+        internal static System.Drawing.Bitmap image {
             get {
-                object obj = ResourceManager.GetObject("InvoiceDetailLogo", resourceCulture);
+                object obj = ResourceManager.GetObject("image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -586,6 +586,16 @@ namespace GUI.Properties {
         internal static System.Drawing.Bitmap image2 {
             get {
                 object obj = ResourceManager.GetObject("image2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap InvoiceDetailLogo {
+            get {
+                object obj = ResourceManager.GetObject("InvoiceDetailLogo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
