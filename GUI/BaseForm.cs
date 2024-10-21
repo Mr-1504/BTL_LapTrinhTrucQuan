@@ -3,6 +3,7 @@ using GUI.PurchasedIngredient;
 using GUI.Warehouse;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Security.Cryptography;
 using System.Windows.Forms;
@@ -245,8 +246,17 @@ namespace GUI
                     }
                     break;
                 case "Employee":
-                    EmployManager employManager = new EmployManager();
-                    OpenComponent(employManager);
+                    string employeeRole2 = _id.Substring(0, 2).ToUpper();
+                    if (employeeRole2 == "QL")
+                    {
+                        EmployManager employManager = new EmployManager("QL");
+                        OpenComponent(employManager);
+                    }
+                    else if (employeeRole2 == "AD")
+                    {
+                        EmployManager employManager = new EmployManager("AD");
+                        OpenComponent(employManager);
+                    }
 
                     break;
                 case "Food":
@@ -354,6 +364,7 @@ namespace GUI
 
             pnlContent.ResumeLayout();
         }
+
 
         private void txtSearch_Enter(object sender, EventArgs e)
         {

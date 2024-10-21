@@ -244,6 +244,9 @@
   <data name="btnConfirmInputHover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnConfirmInputHover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="field_multi_editable_420x80" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\field_multi_editable_420x80.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -450,5 +453,8 @@
   </data>
   <data name="btnThoat" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnThoat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="image2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\image2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

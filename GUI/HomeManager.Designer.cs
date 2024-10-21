@@ -31,9 +31,6 @@ namespace GUI
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeManager));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label1 = new System.Windows.Forms.Label();
             this.InPanelManager1 = new System.Windows.Forms.Panel();
             this.PanelIngredient = new System.Windows.Forms.Panel();
@@ -64,7 +61,6 @@ namespace GUI
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.PanelChart = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-            this.chartSale = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label5 = new System.Windows.Forms.Label();
             this.PanelStaff = new System.Windows.Forms.Panel();
             this.textSoNhanVien = new System.Windows.Forms.Label();
@@ -95,6 +91,7 @@ namespace GUI
             this.label20 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
+            this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
             this.InPanelManager1.SuspendLayout();
             this.PanelIngredient.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -108,7 +105,6 @@ namespace GUI
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.PanelChart.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartSale)).BeginInit();
             this.PanelStaff.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.PanelTable.SuspendLayout();
@@ -323,9 +319,7 @@ namespace GUI
             this.panel5.BackgroundImage = global::GUI.Properties.Resources.panelNumberic;
             this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel5.Controls.Add(this.textTongChiKho);
-
             this.panel5.Location = new System.Drawing.Point(236, 202);
-
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(164, 35);
             this.panel5.TabIndex = 17;
@@ -348,7 +342,6 @@ namespace GUI
             this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel4.Controls.Add(this.textSoNhanVienKho);
             this.panel4.Location = new System.Drawing.Point(236, 131);
-
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(164, 35);
             this.panel4.TabIndex = 16;
@@ -390,9 +383,7 @@ namespace GUI
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
             this.label13.Location = new System.Drawing.Point(34, 207);
-
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(115, 19);
             this.label13.TabIndex = 9;
@@ -402,9 +393,7 @@ namespace GUI
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
             this.label12.Location = new System.Drawing.Point(34, 137);
-
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(148, 19);
             this.label12.TabIndex = 8;
@@ -467,8 +456,8 @@ namespace GUI
             // PanelChart
             // 
             this.PanelChart.BackColor = System.Drawing.Color.White;
+            this.PanelChart.Controls.Add(this.cartesianChart1);
             this.PanelChart.Controls.Add(this.label7);
-            this.PanelChart.Controls.Add(this.chartSale);
             this.PanelChart.Location = new System.Drawing.Point(30, 206);
             this.PanelChart.Name = "PanelChart";
             this.PanelChart.Size = new System.Drawing.Size(1020, 320);
@@ -484,24 +473,6 @@ namespace GUI
             this.label7.Size = new System.Drawing.Size(368, 22);
             this.label7.TabIndex = 1;
             this.label7.Text = "Biểu đồ doanh thu theo tháng của năm";
-            // 
-            // chartSale
-            // 
-            this.chartSale.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.chartSale.BorderSkin.BorderWidth = 0;
-            chartArea2.Name = "ChartArea1";
-            this.chartSale.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartSale.Legends.Add(legend2);
-            this.chartSale.Location = new System.Drawing.Point(0, 0);
-            this.chartSale.Name = "chartSale";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chartSale.Series.Add(series2);
-            this.chartSale.Size = new System.Drawing.Size(1020, 281);
-            this.chartSale.TabIndex = 0;
-            this.chartSale.Text = "chart1";
             // 
             // label5
             // 
@@ -829,6 +800,14 @@ namespace GUI
             this.label22.TabIndex = 14;
             this.label22.Text = "Doanh thu:";
             // 
+            // cartesianChart1
+            // 
+            this.cartesianChart1.Location = new System.Drawing.Point(0, -4);
+            this.cartesianChart1.Name = "cartesianChart1";
+            this.cartesianChart1.Size = new System.Drawing.Size(1020, 274);
+            this.cartesianChart1.TabIndex = 29;
+            this.cartesianChart1.Text = "cartesianChart1";
+            // 
             // HomeManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -864,7 +843,6 @@ namespace GUI
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.PanelChart.ResumeLayout(false);
             this.PanelChart.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartSale)).EndInit();
             this.PanelStaff.ResumeLayout(false);
             this.PanelStaff.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -914,7 +892,6 @@ namespace GUI
         private System.Windows.Forms.Panel PanelWarehouse;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chartSale;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox pictureBox8;
@@ -953,5 +930,6 @@ namespace GUI
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Panel panel10;
+        private LiveCharts.WinForms.CartesianChart cartesianChart1;
     }
 }

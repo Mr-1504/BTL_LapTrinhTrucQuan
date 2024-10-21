@@ -91,7 +91,7 @@ namespace DAL
         }
 
 
-        //Danh sách doanh thu từng tháng 
+        //Danh sách doanh thu từng tháng
         public List<int> GetMonthlySales()
         {
             List<int> doanhThuThang = new List<int>();
@@ -102,7 +102,7 @@ namespace DAL
             using (SqlConnection conn = new SqlConnection(SqlHelper.GetConnectionString()))
             {
                 conn.Open();
-                string query = "SELECT MONTH(NgayTao) AS Thang, SUM(TongTien) AS DoanhThu FROM DonHang GROUP BY MONTH(NgayTao) ORDER BY MONTH(NgayTao)";
+                string query = "SELECT MONTH(NgayTao) AS Thang, SUM(TongTien) AS DoanhThu FROM DonHang Where Year(NgayTao) = Year(GetDate()) GROUP BY MONTH(NgayTao) ORDER BY MONTH(NgayTao)";
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
@@ -114,7 +114,7 @@ namespace DAL
                             int doanhThu = reader.GetInt32(1); // Doanh thu
 
                             // Lưu doanh thu vào danh sách doanhThuThang
-                            doanhThuThang[thang - 1] = doanhThu; 
+                            doanhThuThang[thang - 1] = doanhThu;
                         }
                     }
                 }
@@ -122,6 +122,67 @@ namespace DAL
 
             return doanhThuThang;
         }
+        //Danh sách doanh thu từng tháng
+        public List<int> GetMonthlySales2()
+        {
+            List<int> doanhThuThang = new List<int>();
+            for (int i = 0; i < 12; i++)
+            {
+                doanhThuThang.Add(0);
+            }
+            using (SqlConnection conn = new SqlConnection(SqlHelper.GetConnectionString()))
+            {
+                conn.Open();
+                string query = "SELECT MONTH(NgayTao) AS Thang, SUM(TongTien) AS DoanhThu FROM DonHang Where Year(NgayTao) = Year(GetDate())-1 GROUP BY MONTH(NgayTao) ORDER BY MONTH(NgayTao)";
+
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            int thang = reader.GetInt32(0); // Tháng
+                            int doanhThu = reader.GetInt32(1); // Doanh thu
+
+                            // Lưu doanh thu vào danh sách doanhThuThang
+                            doanhThuThang[thang - 1] = doanhThu;
+                        }
+                    }
+                }
+            }
+
+            return doanhThuThang;
+        }
+        //public List<int> GetMonthlySales()
+        //{
+        //    List<int> doanhThuThang = new List<int>(new int[12]);  // Tạo danh sách có 12 phần tử, mặc định là 0
+        //    using (SqlConnection conn = new SqlConnection(SqlHelper.GetConnectionString()))
+        //    {
+        //        conn.Open();
+        //        string query = @"
+        //    SELECT MONTH(NgayTao) AS Thang, SUM(TongTien) AS DoanhThu 
+        //    FROM DonHang 
+        //    WHERE YEAR(NgayTao) = YEAR(GETDATE())  -- Lấy doanh thu của năm hiện tại
+        //    GROUP BY MONTH(NgayTao)
+        //    ORDER BY MONTH(NgayTao)";
+
+        //        using (SqlCommand cmd = new SqlCommand(query, conn))
+        //        {
+        //            using (SqlDataReader reader = cmd.ExecuteReader())
+        //            {
+        //                while (reader.Read())
+        //                {
+        //                    int thang = reader.GetInt32(0) - 1;  // Tháng từ 1-12, điều chỉnh để phù hợp với chỉ số 0-based của danh sách
+        //                    int doanhThu = reader.GetInt32(1);  // Doanh thu
+
+        //                    doanhThuThang[thang] = doanhThu;  // Gán doanh thu vào vị trí tương ứng với tháng
+        //                }
+        //            }
+        //        }
+        //    }
+        //    return doanhThuThang;
+        //}
+
         //Số nhà cung cấp 
         public int GetSupplier()
         {

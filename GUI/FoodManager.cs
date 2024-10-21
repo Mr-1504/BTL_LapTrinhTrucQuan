@@ -73,7 +73,7 @@ namespace GUI
                     icon = Image.FromStream(fs);
                 }
             }
-
+            icon = Resize(icon, 178, 149);
             boxFoodManager foodBox = new boxFoodManager
             {
                 IdFood = id,
@@ -83,6 +83,10 @@ namespace GUI
             };
             selectFood(foodBox);
             flowLayoutPanelFood.Controls.Add(foodBox);
+        }
+        private Image Resize(Image imgToResize, int width, int height)
+        {
+            return new Bitmap(imgToResize, new Size(width, height));
         }
         private void selectFood(boxFoodManager foodBox)
         {
