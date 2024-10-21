@@ -245,9 +245,10 @@ namespace GUI
                 new MessageForm("Không thể thêm chi tiết vào đơn hàng đã thanh toán!", "Thông báo", 1);
             }
             bool isExitOrderDetail= _orderDetailBLL.IsExitOrderDetail(_orderID);
-            Console.WriteLine("IsExitOrderDetail: " + isExitOrderDetail);
+            
             if(!isExitOrderDetail)
             {
+                _orderBLL.DeDuctIngredients(_orderID, _data);
                 _orderDetailBLL.CreateOrderDetail(_orderID, _data);
                 UpdateOrder();
                 new MessageForm("Chi tiết đơn hàng đã được thêm thành công!", "Thông báo", 1);
@@ -262,6 +263,7 @@ namespace GUI
                 }
                 if (_orderDetailBLL.ValidateOrderDetails(_orderID, _data, out errorMessage))
                 {
+                    _orderBLL.DeDuctIngredients(_orderID, _data);
                     _orderDetailBLL.UpdateOrderDetails(_orderID, _data);
                     UpdateOrder();
                     LoadOrderDetails(_orderID);

@@ -13,7 +13,8 @@ namespace BLL
     public  class OrderBLL
     {
         private OrderDAL _orderDAL = new OrderDAL();
-        
+        private IngredientBLL _ingredientBLL = new IngredientBLL();
+
         public DataTable GetOrders()
         {
             return _orderDAL.GetOrders();
@@ -92,9 +93,35 @@ namespace BLL
         {
             return _orderDAL.IsOrderPaid(orderId);
         }
+        public void DeDuctIngredients(string orderId, DataTable dt)
+        {
+            foreach (DataRow row in dt.Rows)
+            {
+                string foodName = row["TenMonAn"].ToString();
+                string foodId = new FoodBLL().GetFoodIdByName(foodName);
+                int quantity = Convert.ToInt32(row["SoLuong"]);
+                Console.WriteLine($"Food: {foodName}, Quantity: {quantity}");
 
-        
-
-        
+                DataTable current = new OrderDetailBLL().GetOrderDetailsByOrderId(orderId);
+                Console.WriteLine($"Order Details Count: {current.Rows.Count}");
+                DataRow currentRow = current.AsEnumerable().FirstOrDefault(r => r.Field<string>("TenMonAn") == foodName);
+                int currentQuantity = currentRow != null ? Convert.ToInt32(currentRow["SoLuong"]) : 0;
+                Console.WriteLine($"Current Quantity: {currentQuantity}");
+                int quantityToDeduct = quantity - currentQuantity;
+                Console.WriteLine($"QuantityToDeduct: {quantityToDeduct}");
+                Console.WriteLine($"Food: {foodName}, Quantity to Deduct: {quantityToDeduct}");
+                if (quantityToDeduct > 0)
+                {
+                    try
+                    {
+                        _ingredientBLL.DeductIngredients(foodId, quantityToDeduct);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception($"Không thể trừ nguyên liệu cho món {foodName} : {ex.Message}!");
+                    }
+                }
+            }
+        }
     }
 }

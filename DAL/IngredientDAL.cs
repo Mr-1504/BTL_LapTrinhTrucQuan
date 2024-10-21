@@ -1,4 +1,5 @@
 ﻿using DTO;
+using System;
 using System.Data;
 using Utilities;
 
@@ -63,6 +64,27 @@ namespace DAL
         {
             string query = "SELECT * FROM NguyenLieu WHERE " + @enum.GetEnumDescription() + " LIKE @getValue + '%'";
             return SqlHelper.ExecuteReader(query, new object[] { getValue });
+        }
+
+        public int UpdateIngredientQuantity(string ingredientId, decimal quantity)
+        {
+            string query = "UPDATE NguyenLieu SET Soluong = @quantity WHERE MaNguyenLieu = @ingredientId";
+            return SqlHelper.ExecuteNonQuery(query, new object[] { quantity, ingredientId });
+        }
+
+        public decimal GetIngredientQuantity(string ingredientId)
+        {
+            string query = "SELECT Soluong FROM NguyenLieu WHERE MaNguyenLieu = @ingredientId";
+
+            decimal result =SqlHelper.ExecuteScalarDecimal(query, new object[] { ingredientId });
+
+            if(result == -1)
+            {
+                return 0.0m;
+            }
+            return result;
+
+            throw new InvalidCastException("Result is not a valid numeric type.");
         }
     }
 }
