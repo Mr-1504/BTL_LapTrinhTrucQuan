@@ -22,6 +22,8 @@ namespace GUI
         private int _tableNumer;
         private frmListOrders _frmListOrders;
         private DataTable _data;
+        private OrderBLL _orderBLL;
+        private OrderDetailBLL _orderDetailBLL;
 
         frmMenuOrder _menuOrder;
 
@@ -38,6 +40,8 @@ namespace GUI
             _tableNumer = tableNumber;
             _menuOrder = new frmMenuOrder(this);
             _frmListOrders.Add(_menuOrder);
+            _orderBLL = new OrderBLL();
+            _orderDetailBLL = new OrderDetailBLL();
             Data = new DataTable();
             Data.Columns.Add("FoodName");
             Data.Columns.Add("Quantity");
@@ -57,12 +61,30 @@ namespace GUI
         {
             foreach (FoodUpdatedEventArgs e in data)
             {
-                _data.Rows.Add(e.FoodName, e.Quantity, e.FoodPrice * e.Quantity);
+                bool isExist = false;
+                foreach(DataRow row in _data.Rows)
+                {
+                    if (row["TenMonAN"].ToString() == e.FoodName)
+                    {
+                        int newQuantity = Convert.ToInt32(row["SoLuong"]) + e.Quantity;
+                        row["SoLuong"] = newQuantity;
+                        row["ThanhTien"] = newQuantity * e.FoodPrice;
+                        isExist = true;
+                        break;
+                    }
+                }
+                if(!isExist)
+                {
+                    _data.Rows.Add(e.FoodName, e.Quantity, e.FoodPrice * e.Quantity);
+                }
+               
             }
-            dgvListFood.Columns["FoodName"].DataPropertyName = "FoodName";
-            dgvListFood.Columns["Quantity"].DataPropertyName = "Quantity";
-            dgvListFood.Columns["TotalPrice"].DataPropertyName = "TotalPrice";
+            dgvListFood.Columns["FoodName"].DataPropertyName = "TenMonAn";
+            dgvListFood.Columns["Quantity"].DataPropertyName = "SoLuong";
+            dgvListFood.Columns["TotalPrice"].DataPropertyName = "ThanhTien";
             dgvListFood.DataSource = _data;
+            
+            CalculateTotalPrice();
         }
 
         private void SetUpDataGridView()
@@ -99,7 +121,8 @@ namespace GUI
             
 
             dgvListFood.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 12F, FontStyle.Bold);
-
+            dgvListFood.DefaultCellStyle.SelectionBackColor =  dgvListFood.DefaultCellStyle.BackColor;
+            dgvListFood.DefaultCellStyle.SelectionForeColor = dgvListFood.DefaultCellStyle.ForeColor;
             dgvListFood.RowTemplate.Height = 50;
             dgvListFood.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dgvListFood.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -107,18 +130,32 @@ namespace GUI
             dgvListFood.RowHeadersVisible = false;
             dgvListFood.ColumnHeadersVisible = true;
             dgvListFood.ReadOnly = true;
+
         }
 
         private void LoadOrderDetails(string orderID)
         {
             OrderDetailBLL _orderDetailBLL = new OrderDetailBLL();
-            DataTable dt = _orderDetailBLL.GetOrderDetailsByOrderId(orderID);
+            _data = _orderDetailBLL.GetOrderDetailsByOrderId(_orderID);
 
-            dgvListFood.DataSource = dt;
+            dgvListFood.DataSource = _data;
 
             dgvListFood.Columns["FoodName"].DataPropertyName = "TenMonAn";
             dgvListFood.Columns["Quantity"].DataPropertyName = "SoLuong";
             dgvListFood.Columns["TotalPrice"].DataPropertyName = "ThanhTien";
+            CalculateTotalPrice();
+            
+        }
+
+        private void CalculateTotalPrice()
+        {
+            int total = 0;
+            foreach(DataGridViewRow row in dgvListFood.Rows)
+            {
+                int price = Convert.ToInt32(row.Cells["TotalPrice"].Value);
+                total += price;
+            }
+            lblTotalPrice.Text = total.ToString();
         }
 
         private void IntitializeOrderStatus()
@@ -190,10 +227,83 @@ namespace GUI
         {
             if(_orderStatus == Order.paid)
             {
-                new MessageForm("Đơn hàng đã dược thanh toán. Vui lòng không đặt thêm món!", "Thông báo", 1);
+                new MessageForm("Đơn hàng đã được thanh toán. Vui lòng không đặt thêm món!", "Thông báo", 1);
                 return;
             }
             _menuOrder.BringToFront();
         }
+
+        private void btnSaveOrderDetail_Click(object sender, EventArgs e)
+        {
+            string errorMessage;
+            if(string.IsNullOrEmpty(txtIdTable.Text) || Convert.ToInt32(txtIdTable.Text) == 0) {
+                new MessageForm("Bạn cần nhập số bàn!", "Thông báo", 1);
+                return;
+            }
+            if(_orderBLL.IsOrderPaid(_orderID))
+            {
+                new MessageForm("Không thể thêm chi tiết vào đơn hàng đã thanh toán!", "Thông báo", 1);
+            }
+            bool isExitOrderDetail= _orderDetailBLL.IsExitOrderDetail(_orderID);
+            
+            if(!isExitOrderDetail)
+            {
+                _orderBLL.DeDuctIngredients(_orderID, _data);
+                _orderDetailBLL.CreateOrderDetail(_orderID, _data);
+                UpdateOrder();
+                new MessageForm("Chi tiết đơn hàng đã được thêm thành công!", "Thông báo", 1);
+            }
+            else
+            {
+                if (!_orderBLL.ValidateOrder(_orderID, txtIdTable.Text, lblTotalPrice.Text, cmbStatusOrder.Text, out errorMessage))
+                {
+                    new MessageForm(errorMessage, "Thông báo", 1);
+                    UpdateOrder();
+                    
+                }
+                if (_orderDetailBLL.ValidateOrderDetails(_orderID, _data, out errorMessage))
+                {
+                    _orderBLL.DeDuctIngredients(_orderID, _data);
+                    _orderDetailBLL.UpdateOrderDetails(_orderID, _data);
+                    UpdateOrder();
+                    LoadOrderDetails(_orderID);
+                    new MessageForm("Chi tiết đơn hàng đã được cập nhật thành công!", "Thông báo", 1);
+                }
+                
+
+            }
+        }
+
+        private void UpdateOrder()
+        {
+            try
+            {
+                var orderStatus = GetOrderStatus(cmbStatusOrder.Text);
+                
+                _orderBLL.UpdateOrder(_orderID, Convert.ToInt32(lblTotalPrice.Text), _orderDate, Convert.ToInt32(txtIdTable.Text), orderStatus);
+            }
+            catch(ArgumentException ex)
+            {
+                new MessageForm(ex.Message, "Thông báo", 1);
+            }
+            
+
+        }
+
+        private Order GetOrderStatus(string status)
+        {
+            switch(status){
+                case "Đã thanh toán":
+                    return Order.paid;
+                case "Chưa thanh toán":
+                    return Order.unpaid;
+                default:
+                    throw new ArgumentException("Trạng thái đơn hàng không hợp lệ");
+            }
+        }
+
+        
+
+        
     }
 }

@@ -373,6 +373,16 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap btnThoat {
+            get {
+                object obj = ResourceManager.GetObject("btnThoat", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cmbIngredientImput {
             get {
                 object obj = ResourceManager.GetObject("cmbIngredientImput", resourceCulture);
@@ -576,6 +586,16 @@ namespace GUI.Properties {
         internal static System.Drawing.Bitmap image2 {
             get {
                 object obj = ResourceManager.GetObject("image2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap InvoiceDetailLogo {
+            get {
+                object obj = ResourceManager.GetObject("InvoiceDetailLogo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

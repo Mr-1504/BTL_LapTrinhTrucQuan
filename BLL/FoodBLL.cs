@@ -34,5 +34,10 @@ namespace BLL
             }
             return foods;
         }
+
+        public string GetFoodIdByName(string nameFood)
+        {
+            return _foodDAL.GetFoodIdByName(nameFood);
+        }
     }
 }

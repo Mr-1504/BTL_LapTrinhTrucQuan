@@ -29,16 +29,6 @@
         private void InitializeComponent()
         {
             this.pnEditProfile = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.txtAddress = new System.Windows.Forms.TextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.txtCountry = new System.Windows.Forms.TextBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.txtDateofBirth = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.pnLine = new System.Windows.Forms.Panel();
-            this.picEditImage = new System.Windows.Forms.PictureBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.picAvatar = new System.Windows.Forms.PictureBox();
             this.txtGender = new System.Windows.Forms.TextBox();
@@ -47,152 +37,46 @@
             this.lbPhone = new System.Windows.Forms.Label();
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.lbUserName = new System.Windows.Forms.Label();
+            this.txtAddress = new System.Windows.Forms.TextBox();
             this.lbAddress = new System.Windows.Forms.Label();
+            this.txtCountry = new System.Windows.Forms.TextBox();
             this.lbCountry = new System.Windows.Forms.Label();
+            this.txtDateofBirth = new System.Windows.Forms.TextBox();
             this.lbDateofBirth = new System.Windows.Forms.Label();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.lbname = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
+            this.picEditImage = new System.Windows.Forms.PictureBox();
+            this.pnLine = new System.Windows.Forms.Panel();
             this.pnEditProfile.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picEditImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).BeginInit();
-            this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picEditImage)).BeginInit();
             this.SuspendLayout();
             // 
             // pnEditProfile
             // 
-            this.pnEditProfile.Controls.Add(this.panel7);
-            this.pnEditProfile.Controls.Add(this.panel6);
-            this.pnEditProfile.Controls.Add(this.panel5);
-            this.pnEditProfile.Controls.Add(this.panel4);
-            this.pnEditProfile.Controls.Add(this.panel3);
-            this.pnEditProfile.Controls.Add(this.panel2);
-            this.pnEditProfile.Controls.Add(this.panel1);
             this.pnEditProfile.Controls.Add(this.pnLine);
             this.pnEditProfile.Controls.Add(this.picEditImage);
             this.pnEditProfile.Controls.Add(this.btnSave);
             this.pnEditProfile.Controls.Add(this.picAvatar);
+            this.pnEditProfile.Controls.Add(this.txtGender);
             this.pnEditProfile.Controls.Add(this.lbGender);
+            this.pnEditProfile.Controls.Add(this.txtPhone);
             this.pnEditProfile.Controls.Add(this.lbPhone);
+            this.pnEditProfile.Controls.Add(this.txtUserName);
             this.pnEditProfile.Controls.Add(this.lbUserName);
+            this.pnEditProfile.Controls.Add(this.txtAddress);
             this.pnEditProfile.Controls.Add(this.lbAddress);
+            this.pnEditProfile.Controls.Add(this.txtCountry);
             this.pnEditProfile.Controls.Add(this.lbCountry);
+            this.pnEditProfile.Controls.Add(this.txtDateofBirth);
             this.pnEditProfile.Controls.Add(this.lbDateofBirth);
+            this.pnEditProfile.Controls.Add(this.txtName);
             this.pnEditProfile.Controls.Add(this.lbname);
             this.pnEditProfile.Location = new System.Drawing.Point(3, 11);
             this.pnEditProfile.Margin = new System.Windows.Forms.Padding(2);
             this.pnEditProfile.Name = "pnEditProfile";
             this.pnEditProfile.Size = new System.Drawing.Size(1266, 630);
             this.pnEditProfile.TabIndex = 6;
-            // 
-            // panel4
-            // 
-            this.panel4.BackgroundImage = global::GUI.Properties.Resources.BBlueButton;
-            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel4.Controls.Add(this.txtAddress);
-            this.panel4.Location = new System.Drawing.Point(390, 431);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(260, 38);
-            this.panel4.TabIndex = 21;
-            // 
-            // txtAddress
-            // 
-            this.txtAddress.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtAddress.Font = new System.Drawing.Font("Times New Roman", 15.75F);
-            this.txtAddress.Location = new System.Drawing.Point(5, 6);
-            this.txtAddress.Margin = new System.Windows.Forms.Padding(2);
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(250, 25);
-            this.txtAddress.TabIndex = 7;
-            // 
-            // panel3
-            // 
-            this.panel3.BackgroundImage = global::GUI.Properties.Resources.BBlueButton;
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel3.Controls.Add(this.txtCountry);
-            this.panel3.Location = new System.Drawing.Point(390, 316);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(260, 38);
-            this.panel3.TabIndex = 20;
-            // 
-            // txtCountry
-            // 
-            this.txtCountry.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCountry.Font = new System.Drawing.Font("Times New Roman", 15.75F);
-            this.txtCountry.Location = new System.Drawing.Point(5, 6);
-            this.txtCountry.Margin = new System.Windows.Forms.Padding(2);
-            this.txtCountry.Name = "txtCountry";
-            this.txtCountry.Size = new System.Drawing.Size(250, 25);
-            this.txtCountry.TabIndex = 5;
-            // 
-            // panel2
-            // 
-            this.panel2.BackgroundImage = global::GUI.Properties.Resources.BBlueButton;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel2.Controls.Add(this.txtDateofBirth);
-            this.panel2.Location = new System.Drawing.Point(390, 213);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(260, 38);
-            this.panel2.TabIndex = 19;
-            // 
-            // txtDateofBirth
-            // 
-            this.txtDateofBirth.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtDateofBirth.Font = new System.Drawing.Font("Times New Roman", 15.75F);
-            this.txtDateofBirth.Location = new System.Drawing.Point(5, 5);
-            this.txtDateofBirth.Margin = new System.Windows.Forms.Padding(2);
-            this.txtDateofBirth.Name = "txtDateofBirth";
-            this.txtDateofBirth.Size = new System.Drawing.Size(250, 25);
-            this.txtDateofBirth.TabIndex = 3;
-            // 
-            // panel1
-            // 
-            this.panel1.BackgroundImage = global::GUI.Properties.Resources.BBlueButton;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel1.Controls.Add(this.txtName);
-            this.panel1.Location = new System.Drawing.Point(390, 114);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(260, 38);
-            this.panel1.TabIndex = 18;
-            // 
-            // txtName
-            // 
-            this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtName.Font = new System.Drawing.Font("Times New Roman", 15.75F);
-            this.txtName.Location = new System.Drawing.Point(5, 6);
-            this.txtName.Margin = new System.Windows.Forms.Padding(2);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(250, 25);
-            this.txtName.TabIndex = 1;
-            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
-            // 
-            // pnLine
-            // 
-            this.pnLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.pnLine.Location = new System.Drawing.Point(288, -20);
-            this.pnLine.Margin = new System.Windows.Forms.Padding(2);
-            this.pnLine.Name = "pnLine";
-            this.pnLine.Size = new System.Drawing.Size(2, 650);
-            this.pnLine.TabIndex = 17;
-            // 
-            // picEditImage
-            // 
-            this.picEditImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picEditImage.Image = global::GUI.Properties.Resources.picEditInformationGray;
-            this.picEditImage.Location = new System.Drawing.Point(199, 221);
-            this.picEditImage.Name = "picEditImage";
-            this.picEditImage.Size = new System.Drawing.Size(30, 30);
-            this.picEditImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picEditImage.TabIndex = 16;
-            this.picEditImage.TabStop = false;
-            this.picEditImage.Click += new System.EventHandler(this.picEditImage_Click);
             // 
             // btnSave
             // 
@@ -222,12 +106,11 @@
             // 
             // txtGender
             // 
-            this.txtGender.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtGender.Font = new System.Drawing.Font("Times New Roman", 15.75F);
-            this.txtGender.Location = new System.Drawing.Point(6, 6);
+            this.txtGender.Location = new System.Drawing.Point(737, 316);
             this.txtGender.Margin = new System.Windows.Forms.Padding(2);
             this.txtGender.Name = "txtGender";
-            this.txtGender.Size = new System.Drawing.Size(250, 25);
+            this.txtGender.Size = new System.Drawing.Size(260, 32);
             this.txtGender.TabIndex = 13;
             // 
             // lbGender
@@ -243,14 +126,12 @@
             // 
             // txtPhone
             // 
-            this.txtPhone.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPhone.Font = new System.Drawing.Font("Times New Roman", 15.75F);
-            this.txtPhone.Location = new System.Drawing.Point(4, 6);
+            this.txtPhone.Location = new System.Drawing.Point(737, 211);
             this.txtPhone.Margin = new System.Windows.Forms.Padding(2);
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(250, 25);
+            this.txtPhone.Size = new System.Drawing.Size(260, 32);
             this.txtPhone.TabIndex = 11;
-            this.txtPhone.TextChanged += new System.EventHandler(this.txtPhone_TextChanged);
             // 
             // lbPhone
             // 
@@ -265,12 +146,11 @@
             // 
             // txtUserName
             // 
-            this.txtUserName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUserName.Font = new System.Drawing.Font("Times New Roman", 15.75F);
-            this.txtUserName.Location = new System.Drawing.Point(4, 6);
+            this.txtUserName.Location = new System.Drawing.Point(737, 114);
             this.txtUserName.Margin = new System.Windows.Forms.Padding(2);
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(250, 25);
+            this.txtUserName.Size = new System.Drawing.Size(260, 32);
             this.txtUserName.TabIndex = 9;
             // 
             // lbUserName
@@ -284,6 +164,15 @@
             this.lbUserName.TabIndex = 8;
             this.lbUserName.Text = "Tên Đăng nhập";
             // 
+            // txtAddress
+            // 
+            this.txtAddress.Font = new System.Drawing.Font("Times New Roman", 15.75F);
+            this.txtAddress.Location = new System.Drawing.Point(390, 431);
+            this.txtAddress.Margin = new System.Windows.Forms.Padding(2);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(260, 32);
+            this.txtAddress.TabIndex = 7;
+            // 
             // lbAddress
             // 
             this.lbAddress.AutoSize = true;
@@ -294,6 +183,15 @@
             this.lbAddress.Size = new System.Drawing.Size(136, 23);
             this.lbAddress.TabIndex = 6;
             this.lbAddress.Text = "Địa chỉ hiện tại";
+            // 
+            // txtCountry
+            // 
+            this.txtCountry.Font = new System.Drawing.Font("Times New Roman", 15.75F);
+            this.txtCountry.Location = new System.Drawing.Point(390, 316);
+            this.txtCountry.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCountry.Name = "txtCountry";
+            this.txtCountry.Size = new System.Drawing.Size(260, 32);
+            this.txtCountry.TabIndex = 5;
             // 
             // lbCountry
             // 
@@ -306,6 +204,15 @@
             this.lbCountry.TabIndex = 4;
             this.lbCountry.Text = "Quê quán";
             // 
+            // txtDateofBirth
+            // 
+            this.txtDateofBirth.Font = new System.Drawing.Font("Times New Roman", 15.75F);
+            this.txtDateofBirth.Location = new System.Drawing.Point(390, 211);
+            this.txtDateofBirth.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDateofBirth.Name = "txtDateofBirth";
+            this.txtDateofBirth.Size = new System.Drawing.Size(260, 32);
+            this.txtDateofBirth.TabIndex = 3;
+            // 
             // lbDateofBirth
             // 
             this.lbDateofBirth.AutoSize = true;
@@ -316,6 +223,16 @@
             this.lbDateofBirth.Size = new System.Drawing.Size(92, 23);
             this.lbDateofBirth.TabIndex = 2;
             this.lbDateofBirth.Text = "Ngày sinh";
+            // 
+            // txtName
+            // 
+            this.txtName.Font = new System.Drawing.Font("Times New Roman", 15.75F);
+            this.txtName.Location = new System.Drawing.Point(390, 114);
+            this.txtName.Margin = new System.Windows.Forms.Padding(2);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(260, 32);
+            this.txtName.TabIndex = 1;
+            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // lbname
             // 
@@ -328,35 +245,26 @@
             this.lbname.TabIndex = 0;
             this.lbname.Text = "Họ và tên";
             // 
-            // panel5
+            // picEditImage
             // 
-            this.panel5.BackgroundImage = global::GUI.Properties.Resources.BBlueButton;
-            this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel5.Controls.Add(this.txtUserName);
-            this.panel5.Location = new System.Drawing.Point(737, 114);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(260, 38);
-            this.panel5.TabIndex = 22;
+            this.picEditImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picEditImage.Image = global::GUI.Properties.Resources.picEditInformationGray;
+            this.picEditImage.Location = new System.Drawing.Point(199, 221);
+            this.picEditImage.Name = "picEditImage";
+            this.picEditImage.Size = new System.Drawing.Size(30, 30);
+            this.picEditImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picEditImage.TabIndex = 16;
+            this.picEditImage.TabStop = false;
+            this.picEditImage.Click += new System.EventHandler(this.picEditImage_Click);
             // 
-            // panel6
+            // pnLine
             // 
-            this.panel6.BackgroundImage = global::GUI.Properties.Resources.BBlueButton;
-            this.panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel6.Controls.Add(this.txtPhone);
-            this.panel6.Location = new System.Drawing.Point(737, 213);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(260, 38);
-            this.panel6.TabIndex = 23;
-            // 
-            // panel7
-            // 
-            this.panel7.BackgroundImage = global::GUI.Properties.Resources.BBlueButton;
-            this.panel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel7.Controls.Add(this.txtGender);
-            this.panel7.Location = new System.Drawing.Point(737, 322);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(260, 38);
-            this.panel7.TabIndex = 24;
+            this.pnLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.pnLine.Location = new System.Drawing.Point(288, -20);
+            this.pnLine.Margin = new System.Windows.Forms.Padding(2);
+            this.pnLine.Name = "pnLine";
+            this.pnLine.Size = new System.Drawing.Size(2, 650);
+            this.pnLine.TabIndex = 17;
             // 
             // SettingFormEditProfile
             // 
@@ -370,22 +278,8 @@
             this.Load += new System.EventHandler(this.SettingFormEditProfile_Load);
             this.pnEditProfile.ResumeLayout(false);
             this.pnEditProfile.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picEditImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).EndInit();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picEditImage)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -411,12 +305,5 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.PictureBox picEditImage;
         private System.Windows.Forms.Panel pnLine;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel7;
     }
 }

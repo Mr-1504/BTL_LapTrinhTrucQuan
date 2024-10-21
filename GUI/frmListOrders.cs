@@ -57,6 +57,7 @@ namespace GUI
             DataGridViewTextBoxColumn TimePaymentColumn = new DataGridViewTextBoxColumn();
             TimePaymentColumn.HeaderText = "Thời gian";
             TimePaymentColumn.Name = "TimePayment";
+            TimePaymentColumn.DefaultCellStyle.Format = "dd/MM/yyyy";
             TimePaymentColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dgvListOrders.Columns.Add(TimePaymentColumn);
 
@@ -133,7 +134,10 @@ namespace GUI
             if (e.ColumnIndex == dgvListOrders.Columns["PrintInvoice"].Index && e.RowIndex >= 0)
             {
                 string orderId = dgvListOrders.Rows[e.RowIndex].Cells["IDOrder"].Value.ToString();
-                MessageBox.Show("Xuất hóa đơn cho đơn hàng: " + orderId);
+                
+                ucInvoiceDetail invoiceDetail = new ucInvoiceDetail(orderId);
+                AddUc(invoiceDetail);
+                invoiceDetail.BringToFront();
 
             }
         }
@@ -172,23 +176,6 @@ namespace GUI
             path.AddArc(rect.X, rect.Y + rect.Height - radius, radius, radius, 90, 90);
             path.CloseFigure();
             btnThemDonHang.Region = new Region(path);
-        }
-
-        private void dgvListOrders_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                string orderID = dgvListOrders.Rows[e.RowIndex].Cells["IDOrder"].Value.ToString();
-                DateTime orderDate = Convert.ToDateTime(dgvListOrders.Rows[e.RowIndex].Cells["TimePayment"].Value);
-                string status = dgvListOrders.Rows[e.RowIndex].Cells["StatusPayment"].Value.ToString();
-                Order orderStaus = Config.GetEnumValueFromDescription<Order>(status);
-                int totalPrice = Convert.ToInt32(dgvListOrders.Rows[e.RowIndex].Cells["TotalPrice"].Value);
-                int tableNumber = Convert.ToInt32(dgvListOrders.Rows[e.RowIndex].Cells["IdTable"].Value);
-                frmOrderDetail orderDetail = new frmOrderDetail(this,orderID,orderDate, orderStaus, totalPrice, tableNumber);
-                
-                Add(orderDetail);
-                orderDetail.BringToFront();
-            }
         }
 
         private void pnlSearchBarOrder_Paint(object sender, PaintEventArgs e)
@@ -274,6 +261,38 @@ namespace GUI
             frm.Location = new Point(0, 0);
             frm.Show();
             frm.SendToBack();
+        }
+        public void AddUc(UserControl userControl)
+        {
+            
+            Controls.Add(userControl);
+            int xPos = (Screen.PrimaryScreen.WorkingArea.Width - userControl.Width) / 2 - 100;
+            int yPos = (Screen.PrimaryScreen.WorkingArea.Height - userControl.Height) / 2;
+
+            userControl.Location = new Point(xPos, yPos);
+            userControl.Show();
+            userControl.SendToBack();
+
+        }
+
+        private void dgvListOrders_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                string orderID = dgvListOrders.Rows[e.RowIndex].Cells["IDOrder"].Value.ToString();
+                DateTime orderDate = Convert.ToDateTime(dgvListOrders.Rows[e.RowIndex].Cells["TimePayment"].Value);
+                string status = dgvListOrders.Rows[e.RowIndex].Cells["StatusPayment"].Value.ToString();
+                Order orderStaus = Config.GetEnumValueFromDescription<Order>(status);
+                int totalPrice = Convert.ToInt32(dgvListOrders.Rows[e.RowIndex].Cells["TotalPrice"].Value);
+                int tableNumber = Convert.ToInt32(dgvListOrders.Rows[e.RowIndex].Cells["IdTable"].Value);
+
+                frmOrderDetail orderDetail = new frmOrderDetail(this, orderID, orderDate, orderStaus, totalPrice, tableNumber);
+
+                Add(orderDetail);
+                orderDetail.BringToFront();
+
+
+            }
         }
     }
 }
