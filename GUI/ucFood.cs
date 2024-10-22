@@ -34,10 +34,9 @@ namespace GUI
             set => lblNameFood.Text = value;
         }
         private int _count = 0;
-        private Image FImage
+        public Image FImage
         {
-            get { return picFood.Image; }
-            set { picFood.Image = value; }
+            get => picFood.Image; set => picFood.Image = value;
         }
 
         //public ucFood(int idFood, string fName, string fPrice, Image foodImage = null)

@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.IO;
 using System.Linq;
 using System.Net.Http.Headers;
 using System.Text;
@@ -136,7 +137,7 @@ namespace GUI
                 _ucFood._FName = food.FoodName;
                 _ucFood._FPrice = food.FoodUnitPrice;
                 _ucFood.Margin = new Padding(10);
-
+                _ucFood.FImage = AddImageFood(food.FoodId);
                 _ucFood.FoodUpdated += UcFood_FoodUpdated;
 
                 fpnlMenu.Controls.Add(_ucFood);
@@ -144,6 +145,33 @@ namespace GUI
 
             UpdatePagination();
            
+        }
+        public Image AddImageFood(string imageFileName)
+        {
+            string imagePath = $@"..\..\Resources\ImageFood\{imageFileName}.JPG";
+            Image icon = null;
+
+            try
+            {
+                using (FileStream fs = new FileStream(imagePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                {
+                    icon = Image.FromStream(fs);
+                }
+            }
+            catch (Exception)
+            {
+                using (FileStream fs = new FileStream($@"..\..\Resources\ImageFood\default.jpg", FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                {
+                    icon = Image.FromStream(fs);
+                }
+            }
+            icon = Resize(icon, 152, 107);
+            return icon;
+            
+        }
+        private Image Resize(Image imgToResize, int width, int height)
+        {
+            return new Bitmap(imgToResize, new Size(width, height));
         }
         private void UcFood_FoodUpdated(object sender,FoodUpdatedEventArgs e )
         {
