@@ -351,6 +351,7 @@ namespace GUI
 
         private void OpenComponent(Form form)
         {
+            CloseCurrentComponents();
             pnlContent.SuspendLayout();
             form.MouseEnter += Menu_MouseLeave;
             foreach (Control control in form.Controls)
@@ -364,7 +365,16 @@ namespace GUI
 
             pnlContent.ResumeLayout();
         }
-
+        private void CloseCurrentComponents()
+        {
+            foreach (Control control in pnlContent.Controls)
+            {
+                if (control is Form)
+                {
+                    control.Hide(); 
+                }
+            }
+        }
 
         private void txtSearch_Enter(object sender, EventArgs e)
         {
