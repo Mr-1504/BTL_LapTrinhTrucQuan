@@ -85,6 +85,7 @@
             this.pnTabListAll.Size = new System.Drawing.Size(48, 48);
             this.pnTabListAll.TabIndex = 5;
             this.pnTabListAll.Click += new System.EventHandler(this.pnTabListAll_Click);
+            this.pnTabListAll.Paint += new System.Windows.Forms.PaintEventHandler(this.pnTabListAll_Paint);
             // 
             // lbControlTitle
             // 

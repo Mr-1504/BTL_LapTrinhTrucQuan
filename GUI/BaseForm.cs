@@ -63,7 +63,7 @@ namespace GUI
             }
             else if(employeeRole == "KH")
             {
-                Warehouse_ListAll warehouse_ListAll = new Warehouse_ListAll();
+                Warehouse_ListAll warehouse_ListAll = new Warehouse_ListAll(Menu_MouseLeave);
                 OpenComponent(warehouse_ListAll);
             }
             else if (employeeRole == "LT")
@@ -236,7 +236,7 @@ namespace GUI
                     }
                     else if (employeeRole == "KH")
                     {
-                        Warehouse_ListAll warehouse_ListAll = new Warehouse_ListAll();
+                        Warehouse_ListAll warehouse_ListAll = new Warehouse_ListAll(Menu_MouseLeave);
                         OpenComponent(warehouse_ListAll);
                     }
                     else if (employeeRole == "LT")
@@ -262,10 +262,6 @@ namespace GUI
                 case "Food":
                     FoodManager foodManager = new FoodManager();
                     OpenComponent(foodManager);
-                    break;
-                case "Warehouse":
-                    Warehouse_ServingPrecal warehouse_ServingPrecal = new Warehouse_ServingPrecal();
-                    OpenComponent(warehouse_ServingPrecal);
                     break;
                 case "Import":
                     PurchasedList purchasedList = new PurchasedList(_id, this);

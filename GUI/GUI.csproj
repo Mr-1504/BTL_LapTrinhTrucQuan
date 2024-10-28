@@ -549,11 +549,13 @@
     <None Include="Resources\addressPanel.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\SearchBar.png" />
     <None Include="Resources\InvoiceDetailLogo.jpg" />
     <None Include="Resources\btnPage.png" />
     <None Include="Resources\btnThoat.png" />
     <None Include="Resources\image.png" />
     <None Include="Resources\image2.png" />
+    <None Include="Resources\back.png" />
     <Content Include="Resources\ImageFood\AP0001.jpg" />
     <Content Include="Resources\ImageFood\AP0002.jpg" />
     <Content Include="Resources\ImageFood\AP0003.jpg" />

@@ -25,9 +25,13 @@ namespace BLL
             }
             return list;
         }
-        public List<PurchaseInvoiceDTO> GetInvoices()
+        public List<PurchaseInvoiceDTO> GetInvoices(string invoiceId = "", string employeeId = "", string supplierId ="")
         {
-            DataTable dt = new PurchaseInvoiceDAL().GetPurchaseInvoiceTable();
+            DataTable dt;
+            if (invoiceId == "" && employeeId == "" && supplierId == "")
+                dt = new PurchaseInvoiceDAL().GetPurchaseInvoiceTable();
+            else
+                dt = new PurchaseInvoiceDAL().GetPurchaseInvoice(invoiceId, employeeId, supplierId);
             List<PurchaseInvoiceDTO> invoices = new List<PurchaseInvoiceDTO>();
             foreach (DataRow dr in dt.Rows)
             {
@@ -36,9 +40,8 @@ namespace BLL
                 try
                 {
                     date = DateTime.Parse(dr[3].ToString());
-
                 }
-                catch (Exception ex) { }
+                catch (Exception) { }
                 try
                 {
                     total = decimal.Parse(dr[4].ToString());
