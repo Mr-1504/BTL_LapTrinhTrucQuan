@@ -51,34 +51,8 @@ namespace DAL
         public DataTable GetPurchaseInvoice(string purchaseInvoiceId = "", string employeeId = "", string supplierId = "")
         {
             string query = "SELECT * FROM HoaDonNhap WHERE ";
-            object[] objects = new object[3];
-            if (purchaseInvoiceId != "" && employeeId != "" && supplierId != "")
-            {
-                query += "MaHoaDonNhap LIKE @purchaseInvoiceId + '%'" +
-                    " AND MaNhanVien LIKE @employeeId + '%' AND MaNhaCungCap LIKE @supplierId + '%'";
-                objects[0] = purchaseInvoiceId;
-                objects[1] = employeeId;
-                objects[2] = supplierId;
-            }
-            else if (purchaseInvoiceId != "" && employeeId != "" && supplierId == "")
-            {
-                query += "MaHoaDonNhap LIKE @purchaseInvoiceId + '%' AND MaNhanVien LIKE @employeeId + '%'";
-                objects[0] = purchaseInvoiceId;
-                objects[1] = employeeId;
-            }
-            else if (purchaseInvoiceId != "" && employeeId == "" && supplierId != "")
-            {
-                query += "MaHoaDonNhap LIKE @purchaseInvoiceId + '%' AND MaNhaCungCap LIKE @supplierId + '%'";
-                objects[0] = purchaseInvoiceId;
-                objects[1] = supplierId;
-            }
-            else if (purchaseInvoiceId == "" && employeeId != "" && supplierId != "")
-            {
-                query += "MaNhanVien LIKE @employeeId + '%' AND MaNhaCungCap LIKE @supplierId + '%'";
-                objects[0] = employeeId;
-                objects[1] = supplierId;
-            }
-            else if (purchaseInvoiceId != "" && employeeId == "" && supplierId == "")
+            object[] objects = new object[1];
+            if (purchaseInvoiceId != "" && employeeId == "" && supplierId == "")
             {
                 query += "MaHoaDonNhap LIKE @purchaseInvoiceId + '%'";
                 objects[0] = purchaseInvoiceId;
