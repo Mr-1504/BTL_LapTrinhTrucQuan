@@ -1,5 +1,6 @@
 ﻿using BLL;
 using DTO;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
@@ -9,6 +10,7 @@ namespace GUI.PurchasedIngredient
     public partial class PurchasedList : Form
     {
         string _id;
+        Timer _debounceTimer;
         BaseForm _baseForm;
         List<PurchaseInvoiceDTO> _invoices;
         List<EmployeeDTO> _employees;
@@ -20,8 +22,6 @@ namespace GUI.PurchasedIngredient
             InitializeComponent();
             _id = id;
             _baseForm = @base;
-            _employees = new List<EmployeeDTO>();
-            _suppliers = new List<SupplierDTO>();
             _data = new DataTable();
             _data.Columns.Add("Id");
             _data.Columns.Add("Employee");
@@ -36,6 +36,8 @@ namespace GUI.PurchasedIngredient
             _detail.Location = new System.Drawing.Point(0, 0);
             Controls.Add(_detail);
             _detail.SendToBack();
+            cmbSearch.SelectedIndex = 0;
+            ActiveControl = lblHistory;
         }
 
         private void btnAdd_Click(object sender, System.EventArgs e)
@@ -48,7 +50,6 @@ namespace GUI.PurchasedIngredient
         private void Add(PurchaseInvoiceDTO invoice)
         {
             _invoices.Add(invoice);
-
             EmployeeDTO employee = new EmployeeBLL().GetEmployee(invoice.EmployeeId);
             _employees.Add(employee);
 
@@ -57,10 +58,13 @@ namespace GUI.PurchasedIngredient
 
             _data.Rows.Add(invoice.PurchaseInvoiceId, invoice.EmployeeId, invoice.SupplierId, invoice.DateOfPurchase.ToString("HH:mm:ss dd:MM:yyyy"), invoice.Total);
         }
-        private void LoadData()
+        private void LoadData(string invoiceId = "", string employeeId = "", string supplierId = "")
         {
-            _invoices = new PurchaseInvoiceBLL().GetInvoices();
-            foreach(PurchaseInvoiceDTO invoice in _invoices)
+            _data.Clear();
+            _employees = new List<EmployeeDTO>();
+            _suppliers = new List<SupplierDTO>();
+            _invoices = new PurchaseInvoiceBLL().GetInvoices(invoiceId, employeeId, supplierId);
+            foreach (PurchaseInvoiceDTO invoice in _invoices)
             {
                 EmployeeDTO employee = new EmployeeBLL().GetEmployee(invoice.EmployeeId);
                 _employees.Add(employee);
@@ -78,6 +82,50 @@ namespace GUI.PurchasedIngredient
             {
                 _detail.SetInformation(_employees[e.RowIndex], _suppliers[e.RowIndex], _invoices[e.RowIndex]);
                 _detail.BringToFront();
+            }
+        }
+
+        private void txtSearch_Enter(object sender, EventArgs e)
+        {
+            txtSearch.Text = txtSearch.Text == "Tìm kiếm" ? "" : txtSearch.Text;
+        }
+
+        private void txtSearch_Leave(object sender, EventArgs e)
+        {
+            txtSearch.Text = txtSearch.Text.Length == 0 ? "Tìm kiếm" : txtSearch.Text;
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            if(_debounceTimer != null)
+            {
+                _debounceTimer.Stop();
+            }
+            else
+            {
+                _debounceTimer = new Timer();
+                _debounceTimer.Interval = 300;
+                _debounceTimer.Tick += (s, args) =>
+                {
+                    _debounceTimer.Stop();
+                    Search();
+                };
+            }
+            _debounceTimer.Start();
+        }
+        private void Search()
+        {
+            if (cmbSearch.SelectedIndex == 0)
+            {
+                LoadData(invoiceId: txtSearch.Text);
+            }
+            else if (cmbSearch.SelectedIndex == 1)
+            {
+                LoadData(employeeId: txtSearch.Text);
+            }
+            else if (cmbSearch.SelectedIndex == 2)
+            {
+                LoadData(supplierId: txtSearch.Text);
             }
         }
     }
