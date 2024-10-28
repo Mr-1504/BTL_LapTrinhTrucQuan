@@ -32,6 +32,7 @@ namespace GUI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BaseForm));
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.btnAvatar = new System.Windows.Forms.Button();
             this.btnNotification = new System.Windows.Forms.Button();
@@ -509,6 +510,7 @@ namespace GUI
             this.Controls.Add(this.btnSetting);
             this.Controls.Add(this.pnlHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "BaseForm";
