@@ -8,15 +8,17 @@ namespace GUI.Warehouse
 {
     public partial class Warehouse_ServingPrecal : Form
     {
-        public Warehouse_ServingPrecal()
+        private Warehouse_ListAll _listAll;
+        public Warehouse_ServingPrecal(Warehouse_ListAll listAll)
         {
             InitializeComponent();
+            _listAll = listAll;
         }
 
         //  todo: thêm lệnh mở ListAll
         private void pnTabListAll_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("To Warehouse_ListAll");
+            _listAll.BringPanelToFront();
         }
 
         private void Warehouse_ServingPrecal_Load(object sender, EventArgs e)
@@ -113,6 +115,11 @@ namespace GUI.Warehouse
             pc_dgvPrecal.Rows.Remove(pc_dgvPrecal.CurrentRow);
 
             pc_dgvPrecal_ShowData();
+        }
+
+        private void pnTabListAll_Paint(object sender, PaintEventArgs e)
+        {
+
         }
         //  ^^ end
     }
