@@ -18,6 +18,7 @@ namespace Utilities
 
             return baseConnectionString.Replace("Data Source=;", $"Data Source={deviceName}\\SQLEXPRESS;")
                                    .Replace("Initial Catalog=;", $"Initial Catalog={databaseName};");
+            //return "Data Source=QUANG;Initial Catalog=QuanLyNguyenLieuMonAn;Integrated Security=True;";
 
 
         }
@@ -67,6 +68,33 @@ namespace Utilities
                         }
                         conn.Open();
                         return (int) cmd.ExecuteScalar();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return -1;
+            }
+        }
+
+        public static decimal ExecuteScalarDecimal(string query, object[] objects)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(GetConnectionString()))
+                {
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        string[] parameters = query.Split(' ');
+                        int i = 0;
+                        foreach (string param in parameters)
+                        {
+                            if (param[0] == '@')
+                                cmd.Parameters.AddWithValue(param, objects[i++]);
+                        }
+                        conn.Open();
+                        return (decimal)cmd.ExecuteScalar();
                     }
                 }
             }

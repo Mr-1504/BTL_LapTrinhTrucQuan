@@ -1,13 +1,17 @@
 ﻿using DAL;
 using DTO;
+using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using Utilities;
 
 namespace BLL
 {
     public class IngredientBLL
     {
+        private IngredientDAL _ingredientDAL = new IngredientDAL();
+        private RecipeBLL _recipeBLL = new RecipeBLL();
         public List<IngredientDTO> GetIngredients(string search = "")
         {
             List<IngredientDTO> ingredients= new List<IngredientDTO>();
@@ -63,6 +67,39 @@ namespace BLL
             return new IngredientDAL().IsExistIngerdientName(name);
         }
 
+        public decimal GetIngredientQuantity(string ingredientId)
+        {
+            return new IngredientDAL().GetIngredientQuantity(ingredientId);
+        }
+
+        public bool UpdateIngredientQuantity(string ingredientId, decimal newQuantity)
+        {
+            return _ingredientDAL.UpdateIngredientQuantity(ingredientId, newQuantity) > 0;
+        }
+
+        public void DeductIngredients(string foodId, decimal quantityToDeduct)
+        {
+            DataTable recipeTable = _recipeBLL.GetRecipeByFood(foodId);
+            foreach(DataRow row in recipeTable.Rows)
+            {
+                string ingredientId = row["MaNguyenLieu"].ToString();
+                decimal ingredientQuantityPerUnit = decimal.Parse(row["SoLuong"].ToString());
+                decimal quantityToDeductForIngredient = ingredientQuantityPerUnit * quantityToDeduct;
+                Console.WriteLine($"QuantityToDeductForIngredient: {quantityToDeductForIngredient}");
+                decimal currentQuantity = GetIngredientQuantity(ingredientId);
+                Console.WriteLine($"currentQuantity : {currentQuantity}");
+                if(currentQuantity >= quantityToDeductForIngredient)
+                {
+                    UpdateIngredientQuantity(ingredientId, currentQuantity - quantityToDeductForIngredient);
+                }
+                else
+                {
+                    throw new Exception($"Không đủ nguyên liệu cho {ingredientId}!");
+                }
+                
+            }
+
+        }
 
     }
 }

@@ -1,6 +1,7 @@
 ﻿using DTO;
 using System;
 using System.Data;
+using System.Windows.Forms;
 using Utilities;
 
 namespace DAL
@@ -96,6 +97,25 @@ namespace DAL
             return orderId;
         }
 
+        public bool IsOrderPaid(string orderId)
+        {
+            string query = "SELECT TrangThai FROM DonHang WHERE MaDon = @orderId";
+            DataTable dt = SqlHelper.ExecuteReader(query, new object[] {orderId});
+            if (dt.Rows.Count > 0)
+            {
+                var status = dt.Rows[0].ToString();
+                return status == "Đã thanh toán";
+            }
+            return false;
+        }
+
+        public int UpdateOrderTotalPrice(string orderId, int totalPrice)
+        {
+            string query = "UPDATE DonHang set TongTien = @TotalPrice Where MaDon = @orderId";
+            return SqlHelper.ExecuteNonQuery(query, new object[] {orderId, totalPrice});
+        }
+
+        
         
     }
 }

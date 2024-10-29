@@ -3,6 +3,7 @@ using GUI.PurchasedIngredient;
 using GUI.Warehouse;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Security.Cryptography;
 using System.Windows.Forms;
@@ -62,7 +63,7 @@ namespace GUI
             }
             else if(employeeRole == "KH")
             {
-                Warehouse_ListAll warehouse_ListAll = new Warehouse_ListAll();
+                Warehouse_ListAll warehouse_ListAll = new Warehouse_ListAll(Menu_MouseLeave);
                 OpenComponent(warehouse_ListAll);
             }
             else if (employeeRole == "LT")
@@ -235,7 +236,7 @@ namespace GUI
                     }
                     else if (employeeRole == "KH")
                     {
-                        Warehouse_ListAll warehouse_ListAll = new Warehouse_ListAll();
+                        Warehouse_ListAll warehouse_ListAll = new Warehouse_ListAll(Menu_MouseLeave);
                         OpenComponent(warehouse_ListAll);
                     }
                     else if (employeeRole == "LT")
@@ -245,17 +246,22 @@ namespace GUI
                     }
                     break;
                 case "Employee":
-                    EmployManager employManager = new EmployManager();
-                    OpenComponent(employManager);
+                    string employeeRole2 = _id.Substring(0, 2).ToUpper();
+                    if (employeeRole2 == "QL")
+                    {
+                        EmployManager employManager = new EmployManager("QL");
+                        OpenComponent(employManager);
+                    }
+                    else if (employeeRole2 == "AD")
+                    {
+                        EmployManager employManager = new EmployManager("AD");
+                        OpenComponent(employManager);
+                    }
 
                     break;
                 case "Food":
                     FoodManager foodManager = new FoodManager();
                     OpenComponent(foodManager);
-                    break;
-                case "Warehouse":
-                    Warehouse_ServingPrecal warehouse_ServingPrecal = new Warehouse_ServingPrecal();
-                    OpenComponent(warehouse_ServingPrecal);
                     break;
                 case "Import":
                     PurchasedList purchasedList = new PurchasedList(_id, this);
@@ -341,6 +347,7 @@ namespace GUI
 
         private void OpenComponent(Form form)
         {
+            CloseCurrentComponents();
             pnlContent.SuspendLayout();
             form.MouseEnter += Menu_MouseLeave;
             foreach (Control control in form.Controls)
@@ -353,6 +360,16 @@ namespace GUI
             form.Show();
 
             pnlContent.ResumeLayout();
+        }
+        private void CloseCurrentComponents()
+        {
+            foreach (Control control in pnlContent.Controls)
+            {
+                if (control is Form)
+                {
+                    control.Hide(); 
+                }
+            }
         }
 
         private void txtSearch_Enter(object sender, EventArgs e)

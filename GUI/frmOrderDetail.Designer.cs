@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlOrderDetail = new System.Windows.Forms.Panel();
             this.txtIdTable = new System.Windows.Forms.TextBox();
             this.lblSoBan = new System.Windows.Forms.Label();
@@ -48,6 +49,7 @@
             this.lblChiTietHoaDon = new System.Windows.Forms.Label();
             this.btnBackToOrder = new System.Windows.Forms.Button();
             this.pnlContent = new System.Windows.Forms.Panel();
+            this.lblWarning = new System.Windows.Forms.Label();
             this.pnlOrderDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListFood)).BeginInit();
             this.pnlContent.SuspendLayout();
@@ -55,6 +57,7 @@
             // 
             // pnlOrderDetail
             // 
+            this.pnlOrderDetail.Controls.Add(this.lblWarning);
             this.pnlOrderDetail.Controls.Add(this.txtIdTable);
             this.pnlOrderDetail.Controls.Add(this.lblSoBan);
             this.pnlOrderDetail.Controls.Add(this.pnlNganCach);
@@ -154,6 +157,7 @@
             this.btnSaveOrderDetail.Size = new System.Drawing.Size(150, 60);
             this.btnSaveOrderDetail.TabIndex = 8;
             this.btnSaveOrderDetail.UseVisualStyleBackColor = true;
+            this.btnSaveOrderDetail.Click += new System.EventHandler(this.btnSaveOrderDetail_Click);
             this.btnSaveOrderDetail.Paint += new System.Windows.Forms.PaintEventHandler(this.btnSaveOrderDetail_Paint);
             // 
             // btnThemMonAn
@@ -183,8 +187,17 @@
             // 
             this.dgvListFood.BackgroundColor = System.Drawing.Color.White;
             this.dgvListFood.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListFood.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvListFood.Location = new System.Drawing.Point(607, 82);
             this.dgvListFood.Name = "dgvListFood";
+            this.dgvListFood.ReadOnly = true;
             this.dgvListFood.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
             this.dgvListFood.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvListFood.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
@@ -272,6 +285,18 @@
             this.pnlContent.Size = new System.Drawing.Size(1370, 815);
             this.pnlContent.TabIndex = 3;
             // 
+            // lblWarning
+            // 
+            this.lblWarning.AutoSize = true;
+            this.lblWarning.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWarning.ForeColor = System.Drawing.Color.Red;
+            this.lblWarning.Location = new System.Drawing.Point(77, 426);
+            this.lblWarning.Name = "lblWarning";
+            this.lblWarning.Size = new System.Drawing.Size(50, 18);
+            this.lblWarning.TabIndex = 16;
+            this.lblWarning.Text = "label2";
+            this.lblWarning.Visible = false;
+            // 
             // frmOrderDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -312,5 +337,6 @@
         private System.Windows.Forms.Label lblChiTietHoaDon;
         private System.Windows.Forms.Button btnBackToOrder;
         private System.Windows.Forms.Panel pnlContent;
+        private System.Windows.Forms.Label lblWarning;
     }
 }

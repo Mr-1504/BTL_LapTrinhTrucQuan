@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.IO;
 using System.Linq;
 using System.Net.Http.Headers;
 using System.Text;
@@ -136,7 +137,7 @@ namespace GUI
                 _ucFood._FName = food.FoodName;
                 _ucFood._FPrice = food.FoodUnitPrice;
                 _ucFood.Margin = new Padding(10);
-
+                _ucFood.FImage = AddImageFood(food.FoodId);
                 _ucFood.FoodUpdated += UcFood_FoodUpdated;
 
                 fpnlMenu.Controls.Add(_ucFood);
@@ -144,6 +145,33 @@ namespace GUI
 
             UpdatePagination();
            
+        }
+        public Image AddImageFood(string imageFileName)
+        {
+            string imagePath = $@"..\..\Resources\ImageFood\{imageFileName}.JPG";
+            Image icon = null;
+
+            try
+            {
+                using (FileStream fs = new FileStream(imagePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                {
+                    icon = Image.FromStream(fs);
+                }
+            }
+            catch (Exception)
+            {
+                using (FileStream fs = new FileStream($@"..\..\Resources\ImageFood\default.jpg", FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                {
+                    icon = Image.FromStream(fs);
+                }
+            }
+            icon = Resize(icon, 152, 107);
+            return icon;
+            
+        }
+        private Image Resize(Image imgToResize, int width, int height)
+        {
+            return new Bitmap(imgToResize, new Size(width, height));
         }
         private void UcFood_FoodUpdated(object sender,FoodUpdatedEventArgs e )
         {
@@ -308,6 +336,15 @@ namespace GUI
                 btnOrder.Region = new Region(path);
             }
         }
+        private void txtSearch_MouseEnter(object sender, EventArgs e)
+        {
+            txtSearch.Text = txtSearch.Text == "Món ăn cần tìm ?" ? "" : txtSearch.Text;
+        }
+
+        private void txtSearch_MouseLeave(object sender, EventArgs e)
+        {
+            txtSearch.Text = txtSearch.Text.Length == 0 ? "Món ăn cần tìm ?" : txtSearch.Text;
+        }
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
@@ -362,11 +399,36 @@ namespace GUI
 
         private void btnOrder_Click(object sender, EventArgs e)
         {
+            //MessageForm messageForm = new MessageForm("Bạn đã đặt món xong rồi đúng không?", "Xác nhận", 1);
+
+            //if(messageForm.ShowDialog() == DialogResult.Yes)
+            //{
+            //    SendToBack();
+            //    _orderDetail.SetData(_selectedFoodList);
+            //    _orderDetail.BringToFront();
+            //}
+
             SendToBack();
             _orderDetail.SetData(_selectedFoodList);
             _orderDetail.BringToFront();
+
         }
 
-        
+        private void pnlSearchBarOrder_Paint(object sender, PaintEventArgs e)
+        {
+            int radius = 30;
+
+            // Tạo GraphicsPath để vẽ hình chữ nhật bo góc
+            GraphicsPath path = new GraphicsPath();
+            Rectangle rect = new Rectangle(0, 0, pnlSearchBarOrder.Width - 1, pnlSearchBarOrder.Height - 1);
+
+            // Thêm hình chữ nhật bo góc vào GraphicsPath
+            path.AddArc(rect.X, rect.Y, radius, radius, 180, 90);
+            path.AddArc(rect.X + rect.Width - radius, rect.Y, radius, radius, 270, 90);
+            path.AddArc(rect.X + rect.Width - radius, rect.Y + rect.Height - radius, radius, radius, 0, 90);
+            path.AddArc(rect.X, rect.Y + rect.Height - radius, radius, radius, 90, 90);
+            path.CloseFigure();
+            pnlSearchBarOrder.Region = new Region(path);
+        }
     }
 }

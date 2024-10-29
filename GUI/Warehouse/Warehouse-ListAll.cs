@@ -2,16 +2,35 @@
 using System;
 using System.Windows.Forms;
 using Utilities;
+using GUI.Warehouse;
 
 namespace GUI
 {
     public partial class Warehouse_ListAll : Form
     {
-        public Warehouse_ListAll()
+        private Warehouse_ServingPrecal _servingPrecal;
+        private EventHandler _action;
+        public Warehouse_ListAll(EventHandler action)
         {
             InitializeComponent();
+            _servingPrecal = new Warehouse_ServingPrecal(this);
+            _servingPrecal.TopLevel = false;
+            pnlContent.Controls.Add(_servingPrecal);
+            _servingPrecal.Location = new System.Drawing.Point(0, 0);
+            _servingPrecal.Show();
+            _servingPrecal.SendToBack();
+            _action = action;
+            _servingPrecal.MouseEnter += _action;
+            foreach (Control control in _servingPrecal.Controls)
+            {
+                control.MouseEnter += _action;
+            }
         }
 
+        public void BringPanelToFront()
+        {
+            pnBackground.BringToFront();
+        }
         private void Warehouse_ListAll_Load(object sender, EventArgs e)
         {
             dgvTable_PreparingForDisplay();
@@ -115,10 +134,10 @@ namespace GUI
         }
         //  ^^ column search's section end
 
-            //  todo: thêm lệnh mở ServingPrecal
+        //  todo: thêm lệnh mở ServingPrecal
         private void pnTabDishCal_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("To Warehouse_ServingPrecal");
+            _servingPrecal.BringToFront();
         }
     }
 }

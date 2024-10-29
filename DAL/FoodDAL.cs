@@ -78,5 +78,16 @@ namespace DAL
             string query = "SELECT * FROM MonAn WHERE MaMonAn = @foodId";
             return SqlHelper.ExecuteReader(query, new object[] { foodId });
         }
+
+        public string GetFoodIdByName (string foodName)
+        {
+            string query = "SELECT MaMonAn FROM MonAn WHERE TenMonAn = @FoodName";
+            DataTable dt = SqlHelper.ExecuteReader(query, new object[] { foodName });
+            if(dt.Rows.Count > 0)
+            {
+                return dt.Rows[0]["MaMonAn"].ToString();
+            }
+            return null;
+        }
     }
 }
