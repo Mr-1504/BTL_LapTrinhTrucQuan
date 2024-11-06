@@ -75,7 +75,7 @@ namespace GUI
             ActiveControl = picLogo;
 
             //
-            _actions = new Action[2] { dispose, loadImage };
+            _actions = new Action[3] { dispose, loadImage , closeForm };
             _imagePath = $@"..\..\Resources\AvatarImage\{_id}.JPG";
             btnAvatar.BackgroundImage = Image.FromFile(_imagePath);
         }
@@ -87,6 +87,10 @@ namespace GUI
                 btnAvatar.BackgroundImage = null;
             }
 
+        }
+        public void closeForm()
+        {
+            this.Hide();
         }
         public void loadImage()
         {
