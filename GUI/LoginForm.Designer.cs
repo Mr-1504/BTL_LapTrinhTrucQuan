@@ -284,7 +284,6 @@
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";
-            this.Load += new System.EventHandler(this.LoginForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picLoad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTitle)).EndInit();
             this.pnlUser.ResumeLayout(false);
