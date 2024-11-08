@@ -13,7 +13,7 @@ namespace GUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ReportManager());
+            Application.Run(new LoginForm());
 
         }
     }

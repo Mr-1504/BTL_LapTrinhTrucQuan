@@ -28,6 +28,7 @@ namespace GUI
         {
             InitializeComponent();
             btnPrevious.Enabled = false;
+            textSearch.AutoSize = false;
             CustomizeFlowLayoutPanel();
         }
         private void CustomizeFlowLayoutPanel()
@@ -37,7 +38,10 @@ namespace GUI
             flowLayoutPanelFood.WrapContents = true;
         }
 
-
+        private void FoodManager_Load(object sender, EventArgs e)
+        {
+            SetPlaceholder(textSearch, "Nhập tên món ăn tìm kiếm...");
+        }
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
             int radius = 50;
@@ -154,7 +158,14 @@ namespace GUI
 
         private void FoodManager_Shown(object sender, EventArgs e)
         {
-            LoadFoodItems();
+            if (isSearch)
+            {
+                LoadFoodItems(textSearch.Text);
+            }
+            else
+            {
+                LoadFoodItems();
+            }
             CustomizeFlowLayoutPanel();
 
         }
@@ -303,13 +314,13 @@ namespace GUI
         private void btnAdd_Click(object sender, EventArgs e)
         {
             FoodManager2 foodManager2 = new FoodManager2(this);
-            foodManager2.FormClosed += FoodManager2_FormClosed;
             ShowComponent(false);
             foodManager2.TopLevel = false;
             foodManager2.BringToFront();
             foodManager2.Focus(); 
             pnFoodMNG.Controls.Add(foodManager2);
             foodManager2.Show();
+            foodManager2.FormClosed += FoodManager2_FormClosed;
         }
         public void ShowComponent(bool show)
         {
@@ -339,13 +350,13 @@ namespace GUI
             else
             {
                 FoodManager2 foodManager2 = new FoodManager2(this, selectedFoodId);
-                foodManager2.FormClosed += FoodManager2_FormClosed;
                 ShowComponent(false);
                 foodManager2.TopLevel = false;
                 foodManager2.BringToFront();
                 foodManager2.Focus();
                 pnFoodMNG.Controls.Add(foodManager2);
                 foodManager2.Show();
+                foodManager2.FormClosed += FoodManager2_FormClosed;
             }
             
         }
@@ -396,8 +407,16 @@ namespace GUI
         }
         private void FoodManager2_FormClosed(object sender, FormClosedEventArgs e)
         {
-            LoadFoodItems();
             ShowComponent(true);
+            if (isSearch)
+            {
+                LoadFoodItems(textSearch.Text);
+            }
+            else
+            {
+                LoadFoodItems();
+            }
+
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -414,5 +433,49 @@ namespace GUI
                 LoadFoodItems(search);
             }
         }
+
+        private void TextSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                string search = textSearch.Text.ToString();
+                if (string.IsNullOrWhiteSpace(search))
+                {
+                    isSearch = false;
+                    LoadFoodItems();
+                }
+                else
+                {
+                    isSearch = true;
+                    LoadFoodItems(search);
+                }
+                e.SuppressKeyPress = true;
+            }
+        }
+        private void SetPlaceholder(TextBox textBox, string placeholderText)
+        {
+            textBox.Text = placeholderText;
+            textBox.ForeColor = Color.Gray;
+
+            textBox.GotFocus += (s, e) =>
+            {
+                if (textBox.Text == placeholderText)
+                {
+                    textBox.Text = "";
+                    textBox.ForeColor = Color.Black;
+                }
+            };
+
+            textBox.LostFocus += (s, e) =>
+            {
+                if (string.IsNullOrWhiteSpace(textBox.Text))
+                {
+                    textBox.Text = placeholderText;
+                    textBox.ForeColor = Color.Gray;
+                }
+            };
+        }
+
+        
     }
 }

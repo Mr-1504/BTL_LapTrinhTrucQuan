@@ -72,7 +72,7 @@ namespace DAL
         // tìm kiếm nhân viên theo thông tin bất kỳ
         public DataTable GetEmployee(Employee @enum, string getValue)
         {
-            string query = "SELECT * FROM NhanVien WHERE " + @enum.GetEnumDescription() + $" LIKE @getValue + '%' AND TrangThai = N'{EmployeeStatus.CurrentlyWorking.GetEnumDescription()}'";
+            string query = "SELECT * FROM NhanVien WHERE " + @enum.GetEnumDescription() + $" LIKE '%' + @getValue + '%' AND TrangThai = N'{EmployeeStatus.CurrentlyWorking.GetEnumDescription()}'";
             return SqlHelper.ExecuteReader(query, new object[] { getValue });
         }
         public DataTable GetNewesrEmployee(EmployeeType @enum)
