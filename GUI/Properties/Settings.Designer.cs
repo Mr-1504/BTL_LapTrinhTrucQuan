@@ -22,5 +22,16 @@ namespace GUI.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-PIULBJ0\\SQLEXPRESS01;Initial Catalog=QuanLyNguyenLieuMonAn;In" +
+            "tegrated Security=True;Encrypt=True;TrustServerCertificate=True")]
+        public string QuanLyNguyenLieuMonAnConnectionString {
+            get {
+                return ((string)(this["QuanLyNguyenLieuMonAnConnectionString"]));
+            }
+        }
     }
 }

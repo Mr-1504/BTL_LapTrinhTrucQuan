@@ -44,6 +44,8 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.textSearch = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.pnFoodMNG.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -91,6 +93,8 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnSearch);
+            this.panel2.Controls.Add(this.textSearch);
             this.panel2.Controls.Add(this.fpnlPagination);
             this.panel2.Controls.Add(this.panel1);
             this.panel2.Controls.Add(this.btnDelete);
@@ -266,6 +270,23 @@
             this.btnAdd.MouseEnter += new System.EventHandler(this.btnAdd_MouseEnter);
             this.btnAdd.MouseLeave += new System.EventHandler(this.btnAdd_MouseLeave);
             // 
+            // textSearch
+            // 
+            this.textSearch.Location = new System.Drawing.Point(215, 20);
+            this.textSearch.Name = "textSearch";
+            this.textSearch.Size = new System.Drawing.Size(308, 20);
+            this.textSearch.TabIndex = 25;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(529, 18);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.TabIndex = 26;
+            this.btnSearch.Text = "Tìm Kiếm";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
             // FoodManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -303,5 +324,7 @@
         private System.Windows.Forms.Button btnPage_th;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox textSearch;
+        private System.Windows.Forms.Button btnSearch;
     }
 }
