@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
+using Utilities;
 
 namespace GUI.PurchasedIngredient
 {
@@ -36,7 +37,6 @@ namespace GUI.PurchasedIngredient
             _detail.Location = new System.Drawing.Point(0, 0);
             Controls.Add(_detail);
             _detail.SendToBack();
-            cmbSearch.SelectedIndex = 0;
             ActiveControl = lblHistory;
         }
 
@@ -83,6 +83,16 @@ namespace GUI.PurchasedIngredient
                 _detail.SetInformation(_employees[e.RowIndex], _suppliers[e.RowIndex], _invoices[e.RowIndex]);
                 _detail.BringToFront();
             }
+            else if (e.ColumnIndex == dgvList.Columns["Id"].Index && e.RowIndex >= 0)
+            {
+                txtSearchType.Text = SearchTypeForInvoice.InvoiceId.GetEnumDescription();
+            }else if (e.ColumnIndex == dgvList.Columns["colEmployee"].Index && e.RowIndex >= 0)
+            {
+                txtSearchType.Text = SearchTypeForInvoice.EmployeeId.GetEnumDescription();
+            } else if (e.ColumnIndex == dgvList.Columns["colSupplier"].Index && e.RowIndex >= 0)
+            {
+                txtSearchType.Text = SearchTypeForInvoice.SupplierId.GetEnumDescription();
+            }
         }
 
         private void txtSearch_Enter(object sender, EventArgs e)
@@ -93,11 +103,15 @@ namespace GUI.PurchasedIngredient
         private void txtSearch_Leave(object sender, EventArgs e)
         {
             txtSearch.Text = txtSearch.Text.Length == 0 ? "Tìm kiếm" : txtSearch.Text;
+            if (txtSearch.Text == "Tìm kiếm")
+            {
+                LoadData();
+            }
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            if(_debounceTimer != null)
+            if (_debounceTimer != null)
             {
                 _debounceTimer.Stop();
             }
@@ -115,15 +129,23 @@ namespace GUI.PurchasedIngredient
         }
         private void Search()
         {
-            if (cmbSearch.SelectedIndex == 0)
+            var searchValue = txtSearchType.Text;
+            if (txtSearch.Text == "Tìm kiếm")
+            {
+                LoadData();
+            }
+            else if (Config.GetEnumValueFromDescription<SearchTypeForInvoice>(searchValue) ==
+                SearchTypeForInvoice.InvoiceId)
             {
                 LoadData(invoiceId: txtSearch.Text);
             }
-            else if (cmbSearch.SelectedIndex == 1)
+            else if (Config.GetEnumValueFromDescription<SearchTypeForInvoice>(searchValue) ==
+                SearchTypeForInvoice.EmployeeId)
             {
                 LoadData(employeeId: txtSearch.Text);
             }
-            else if (cmbSearch.SelectedIndex == 2)
+            else if (Config.GetEnumValueFromDescription<SearchTypeForInvoice>(searchValue) ==
+                SearchTypeForInvoice.SupplierId)
             {
                 LoadData(supplierId: txtSearch.Text);
             }
