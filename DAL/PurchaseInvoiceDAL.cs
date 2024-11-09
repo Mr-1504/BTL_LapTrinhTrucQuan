@@ -54,17 +54,17 @@ namespace DAL
             object[] objects = new object[1];
             if (purchaseInvoiceId != "" && employeeId == "" && supplierId == "")
             {
-                query += "MaHoaDonNhap LIKE @purchaseInvoiceId + '%'";
+                query += "MaHoaDonNhap LIKE '%' + @purchaseInvoiceId + '%'";
                 objects[0] = purchaseInvoiceId;
             }
             else if (purchaseInvoiceId == "" && employeeId != "" && supplierId == "")
             {
-                query += "MaNhanVien LIKE @employeeId + '%'";
+                query += "MaNhanVien LIKE '%' + @employeeId + '%'";
                 objects[0] = employeeId;
             }
             else if (purchaseInvoiceId == "" && employeeId == "" && supplierId != "")
             {
-                query += "MaNhaCungCap LIKE @supplierId + '%'";
+                query += "MaNhaCungCap LIKE '%' + @supplierId + '%'";
                 objects[0] = supplierId;
             }
             return SqlHelper.ExecuteReader(query, objects);
