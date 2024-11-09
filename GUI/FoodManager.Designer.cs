@@ -34,6 +34,9 @@
             this.flowLayoutPanelFood = new System.Windows.Forms.FlowLayoutPanel();
             this.pnFoodMNG = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.addresspanel = new System.Windows.Forms.Panel();
+            this.textSearch = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.fpnlPagination = new System.Windows.Forms.FlowLayoutPanel();
             this.btnPrevious = new System.Windows.Forms.Button();
             this.btnPage_st = new System.Windows.Forms.Button();
@@ -47,6 +50,7 @@
             this.panel1.SuspendLayout();
             this.pnFoodMNG.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.addresspanel.SuspendLayout();
             this.fpnlPagination.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,6 +95,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.addresspanel);
             this.panel2.Controls.Add(this.fpnlPagination);
             this.panel2.Controls.Add(this.panel1);
             this.panel2.Controls.Add(this.btnDelete);
@@ -101,6 +106,44 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1730, 815);
             this.panel2.TabIndex = 25;
+            // 
+            // addresspanel
+            // 
+            this.addresspanel.BackColor = System.Drawing.Color.Transparent;
+            this.addresspanel.BackgroundImage = global::GUI.Properties.Resources.addressPanel1;
+            this.addresspanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.addresspanel.Controls.Add(this.textSearch);
+            this.addresspanel.Controls.Add(this.btnSearch);
+            this.addresspanel.Location = new System.Drawing.Point(208, 15);
+            this.addresspanel.Name = "addresspanel";
+            this.addresspanel.Size = new System.Drawing.Size(410, 40);
+            this.addresspanel.TabIndex = 29;
+            // 
+            // textSearch
+            // 
+            this.textSearch.BackColor = System.Drawing.SystemColors.Control;
+            this.textSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textSearch.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textSearch.Location = new System.Drawing.Point(16, 8);
+            this.textSearch.Name = "textSearch";
+            this.textSearch.Size = new System.Drawing.Size(279, 26);
+            this.textSearch.TabIndex = 35;
+            this.textSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextSearch_KeyDown);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Location = new System.Drawing.Point(301, 3);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(97, 34);
+            this.btnSearch.TabIndex = 26;
+            this.btnSearch.Text = "Tìm Kiếm";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // fpnlPagination
             // 
@@ -127,7 +170,7 @@
             this.btnPrevious.Name = "btnPrevious";
             this.btnPrevious.Size = new System.Drawing.Size(84, 21);
             this.btnPrevious.TabIndex = 0;
-            this.btnPrevious.Text = "< Previous";
+            this.btnPrevious.Text = "< Trước";
             this.btnPrevious.UseVisualStyleBackColor = true;
             this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
@@ -201,7 +244,7 @@
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(70, 22);
             this.btnNext.TabIndex = 1;
-            this.btnNext.Text = "Next >";
+            this.btnNext.Text = "Sau >";
             this.btnNext.UseVisualStyleBackColor = true;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
@@ -276,11 +319,13 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FoodManager";
             this.Text = "FoodManager";
+            this.Load += new System.EventHandler(this.FoodManager_Load);
             this.Shown += new System.EventHandler(this.FoodManager_Shown);
             this.panel1.ResumeLayout(false);
             this.pnFoodMNG.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.addresspanel.ResumeLayout(false);
             this.fpnlPagination.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -303,5 +348,8 @@
         private System.Windows.Forms.Button btnPage_th;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox textSearch;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Panel addresspanel;
     }
 }

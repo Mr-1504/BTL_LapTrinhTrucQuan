@@ -59,7 +59,7 @@ namespace DAL
         {
             if (Config.IsValidEnum<Food>(@enum.ToString()))
             {
-                string query = "SELECT * FROM MonAn WHERE " + @enum.GetEnumDescription() + " Like @getValue + '%' AND TrangThai = 1";
+                string query = "SELECT * FROM MonAn WHERE " + @enum.GetEnumDescription() + " Like '%' + @getValue + '%' AND TrangThai = 1";
                 return SqlHelper.ExecuteReader(query, new object[] { getValue });
             }
             return null;

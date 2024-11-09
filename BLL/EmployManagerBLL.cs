@@ -22,7 +22,10 @@ namespace BLL
         {
             return employeeDAL.ChangeEmployeeStatus(employeeId, status);
         }
-
+        public DataTable GetEmployees(Employee @enum, string getValue)
+        {
+            return employeeDAL.GetEmployee(@enum, getValue);
+        }
     }
     
 }

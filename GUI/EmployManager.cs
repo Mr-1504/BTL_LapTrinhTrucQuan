@@ -18,6 +18,7 @@ namespace GUI
     {
         EmployManagerBLL employ = new EmployManagerBLL();
         string role = null;
+        bool isSearch = false;
         public EmployManager(string eRole)
         {
             InitializeComponent();
@@ -51,7 +52,7 @@ namespace GUI
 
         private void EmployManager_Load(object sender, EventArgs e)
         {
-
+            SetPlaceholder(textSearch, "Nhập tên nhân viên tìm kiếm...");
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -138,15 +139,23 @@ namespace GUI
             EmployManagerBLL employ1 = new EmployManagerBLL();
             employeeTable = employ1.GetEmployees();
             dataEmployerMNG.DataSource = employeeTable;
-            LoadEmployeeData1();
-
+            if (string.IsNullOrWhiteSpace(textSearch.Text.ToString()))
+            {
+                isSearch = false;
+                LoadEmployeeData1();
+            }
+            else
+            {
+                isSearch = true;
+                LoadEmployeeData1(textSearch.Text.ToString());
+            }
         }
        
         
 
         private void LoadEmployeeData1()
         {
-            // Đổ dữ liệu từ cơ sở dữ liệu vào DataGridView
+            
             DataTable data = employ.GetEmployees();
 
             DataColumn dataColumn = new DataColumn("quyen");
@@ -157,8 +166,35 @@ namespace GUI
             {
                 string employeeID = data.Rows[i]["MaNhanVien"].ToString();
                 string permission = employeeID.Substring(0, 2);
+                if (permission == "QL")
+                {
+                    data.Rows[i]["quyen"] = "Quản lý";
+                }
+                else if (permission == "LT")
+                {
+                    data.Rows[i]["quyen"] = "Lễ Tân";
+                }
+                else
+                {
+                    data.Rows[i]["quyen"] = "Kho Hàng";
+                }
+            }
+            dataEmployerMNG.DataSource = data;
 
-                // Gán quyền dựa trên mã nhân viên
+        }
+        private void LoadEmployeeData1(string textSearch)
+        {
+
+            DataTable data = employ.GetEmployees(Employee.Name,textSearch);
+
+            DataColumn dataColumn = new DataColumn("quyen");
+            data.Columns.Add(dataColumn);
+
+
+            for (int i = 0; i < data.Rows.Count; i++)
+            {
+                string employeeID = data.Rows[i]["MaNhanVien"].ToString();
+                string permission = employeeID.Substring(0, 2);
                 if (permission == "QL")
                 {
                     data.Rows[i]["quyen"] = "Quản lý";
@@ -224,7 +260,17 @@ namespace GUI
             btnDelete.BackgroundImage = Properties.Resources.hover;
             btnDelete.BackgroundImageLayout = ImageLayout.Zoom;
         }
-        
+        private void btnSearch_MouseLeave(object sender, EventArgs e)
+        {
+            btnAdd.BackgroundImage = Properties.Resources.btn;
+            btnAdd.BackgroundImageLayout = ImageLayout.Zoom;
+        }
+
+        private void btnSearch_MouseEnter(object sender, EventArgs e)
+        {
+            btnAdd.BackgroundImage = Properties.Resources.hover;
+            btnAdd.BackgroundImageLayout = ImageLayout.Zoom;
+        }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
@@ -258,5 +304,40 @@ namespace GUI
             }
         }
 
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            LoadEmployeeData();
+        }
+        private void TextSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                LoadEmployeeData();
+                e.SuppressKeyPress = true;
+            }
+        }
+        private void SetPlaceholder(TextBox textBox, string placeholderText)
+        {
+            textBox.Text = placeholderText;
+            textBox.ForeColor = Color.Gray;
+
+            textBox.GotFocus += (s, e) =>
+            {
+                if (textBox.Text == placeholderText)
+                {
+                    textBox.Text = "";
+                    textBox.ForeColor = Color.Black;
+                }
+            };
+
+            textBox.LostFocus += (s, e) =>
+            {
+                if (string.IsNullOrWhiteSpace(textBox.Text))
+                {
+                    textBox.Text = placeholderText;
+                    textBox.ForeColor = Color.Gray;
+                }
+            };
+        }
     }
 }

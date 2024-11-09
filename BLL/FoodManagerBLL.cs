@@ -20,5 +20,9 @@ namespace BLL
         {
             return foodDAL.ChangeFoodStatus(foodId, status);
         }
+        public DataTable GetFoods(Food @enum, string getValue)
+        {
+            return foodDAL.GetFood(@enum, getValue);
+        }
     }
 }
