@@ -9,7 +9,17 @@ using System.Windows.Forms;
 
 namespace Utilities
 {
-    
+    public enum SearchTypeForInvoice
+    {
+        [Description("Mã hóa đơn")]
+        InvoiceId,
+
+        [Description("Mã nhân viên")]
+        EmployeeId,
+
+        [Description("Mã nhà cung cấp")]
+        SupplierId
+    }
     public enum Status
     {
         NoUse,
@@ -218,39 +228,10 @@ namespace Utilities
                 var value = key.GetValue("AppsUseLightTheme");
                 if (value != null && (int)value == 0)
                 {
-                    return true; // Dark mode
+                    return true; 
                 }
             }
-            return false; // Light mode
-        }
-
-        public static DataTable ConvertToDataTable(DataGridView dgv)
-        {
-            DataTable dt = new DataTable();
-
-            foreach (DataGridViewColumn column in dgv.Columns)
-            {
-                dt.Columns.Add(column.HeaderText);
-            }
-
-            foreach (DataGridViewRow row in dgv.Rows)
-            {
-                if (row.IsNewRow) continue;
-
-                DataRow newRow = dt.NewRow();
-
-                for (int i = 0; i < dgv.Columns.Count; i++)
-                {
-                    newRow[i] = row.Cells[i].Value;
-                }
-
-                dt.Rows.Add(newRow);
-            }
-            foreach (DataRow row in dt.Rows)
-            {
-                Console.WriteLine(row.ToString());
-            }
-            return dt;
+            return false;
         }
     }
 }

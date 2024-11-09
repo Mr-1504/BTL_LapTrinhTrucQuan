@@ -114,7 +114,7 @@ namespace BLL
                 new IngredientDAL().UpdateIngredient(ingredient);
             }
         }
-        public string ReadNumberToWords(decimal amount)
+        public static string ReadNumberToWords(decimal amount)
         {
             if (amount == 0) return "không đồng";
 

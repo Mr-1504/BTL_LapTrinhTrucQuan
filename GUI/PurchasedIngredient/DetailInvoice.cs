@@ -30,6 +30,13 @@ namespace GUI.PurchasedIngredient
 
             DataTable data = new PurchaseInvoiceBLL().GetPurchaseInvoiceDetail(invoice.PurchaseInvoiceId);
             dgvList.DataSource = data;
+            decimal total = 0;
+            foreach (DataRow row in data.Rows)
+            {
+                total += Convert.ToDecimal(row[3]) * Convert.ToDecimal(row[2]);
+            }
+            lblTotalValue.Text = total.ToString("#,##0", new System.Globalization.CultureInfo("vi-VN"))
+                + " VND" + "( " + PurchaseInvoiceBLL.ReadNumberToWords(total).ToUpper() + ")";
         }
     }   
 }
