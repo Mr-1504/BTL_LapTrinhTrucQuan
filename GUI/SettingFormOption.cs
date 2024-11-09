@@ -111,15 +111,11 @@ namespace GUI
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            // Đóng form hiện tại
+            _action[2]();
             LoginForm loginForm = new LoginForm();
             loginForm.Show();
             loginForm.FormClosed += (s, args) => Application.Exit();
-            _action[2]();
-
-            // Mở form đăng nhập
-            
-            
+            _action[1]();
         }
 
         private void btnLogout_Paint(object sender, PaintEventArgs e)

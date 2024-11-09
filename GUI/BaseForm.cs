@@ -75,7 +75,7 @@ namespace GUI
             ActiveControl = picLogo;
 
             //
-            _actions = new Action[2] { dispose, loadImage };
+            _actions = new Action[3] { dispose, loadImage, Hide };
             _imagePath = $@"..\..\Resources\AvatarImage\{_id}.JPG";
             btnAvatar.BackgroundImage = Image.FromFile(_imagePath);
         }
