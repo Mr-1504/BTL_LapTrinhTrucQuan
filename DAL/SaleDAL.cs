@@ -15,13 +15,13 @@ namespace DAL
         //Lấy giá trị doanh thu ngày hôm nay
         public int GetSaleToday()
         {
-            string query = "SELECT SUM(TongTien) FROM DonHang WHERE NgayTao = getdate()";
+            string query = "SELECT SUM(TongTien) FROM DonHang WHERE CONVERT(DATE, NgayTao) = CONVERT(DATE, GETDATE())";
             if (SqlHelper.ExecuteScalar(query, new object[] { }) == -1) return 0;
             else return SqlHelper.ExecuteScalar(query, new object[] { });
         }
         //Lấy số đơn hàng ngày hôm nay
         public int GetOrderToday() {
-            string query = "SELECT COUNT(*) FROM DonHang WHERE NgayTao = getdate() AND TrangThai = N'Đã thanh toán'";
+            string query = "SELECT COUNT(*) FROM DonHang WHERE CONVERT(DATE, NgayTao) = CONVERT(DATE, GETDATE()) AND TrangThai = N'Đã thanh toán'";
             if (SqlHelper.ExecuteScalar(query, new object[] { }) == -1) return 0;
             else return SqlHelper.ExecuteScalar(query, new object[] { });
         }
@@ -29,7 +29,7 @@ namespace DAL
         public int GetTableToday()
 
         {
-            string query = "Select count(*) from DonHang where NgayTao = GETDATE() and TrangThai = N'Chưa thanh toán'";
+            string query = "Select count(*) from DonHang where CONVERT(DATE, NgayTao) = CONVERT(DATE, GETDATE()) and TrangThai = N'Chưa thanh toán'";
             if (SqlHelper.ExecuteScalar(query, new object[] { }) == -1) return 0;
             else return SqlHelper.ExecuteScalar(query, new object[] { });
         }
