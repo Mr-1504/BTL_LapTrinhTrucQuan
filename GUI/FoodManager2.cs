@@ -183,7 +183,6 @@ namespace GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            foodManager.Update();
             foodManager.ShowComponent(true);
             this.SendToBack();
             foodManager.BringToFront();

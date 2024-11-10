@@ -86,11 +86,13 @@ namespace GUI
 
         public void ShowComponent(bool show)
         {
+            
             foreach (Control control in Controls)
             {
                 if (control != pnlEmployMNG)
                     control.Visible = show;
             }
+            LoadEmployeeData();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -136,22 +138,44 @@ namespace GUI
         private void LoadEmployeeData()
         {
             DataTable employeeTable;
-            EmployManagerBLL employ1 = new EmployManagerBLL();
-            employeeTable = employ1.GetEmployees();
-            dataEmployerMNG.DataSource = employeeTable;
-            if (string.IsNullOrWhiteSpace(textSearch.Text.ToString()))
+
+            if (isSearch && !string.IsNullOrEmpty(textSearch.Text))
             {
-                isSearch = false;
-                LoadEmployeeData1();
+                employeeTable = employ.GetEmployees(Employee.Name, textSearch.Text);
             }
             else
             {
-                isSearch = true;
-                LoadEmployeeData1(textSearch.Text.ToString());
+                employeeTable = employ.GetEmployees();
+            }
+
+            if (employeeTable != null && employeeTable.Rows.Count > 0)
+            {
+                AddPermissionColumn(employeeTable);
+                dataEmployerMNG.DataSource = employeeTable;
+            }
+            else
+            {
+                dataEmployerMNG.DataSource = null;
             }
         }
-       
-        
+
+        private void AddPermissionColumn(DataTable data)
+        {
+            if (!data.Columns.Contains("quyen"))
+            {
+                data.Columns.Add("quyen");
+            }
+
+            foreach (DataRow row in data.Rows)
+            {
+                string employeeID = row["MaNhanVien"].ToString();
+                string permission = employeeID.Substring(0, 2);
+                row["quyen"] = permission == "QL" ? "Quản lý" : (permission == "LT" ? "Lễ Tân" : "Kho Hàng");
+            }
+        }
+
+
+
 
         private void LoadEmployeeData1()
         {
@@ -162,22 +186,11 @@ namespace GUI
             data.Columns.Add(dataColumn);
 
 
-            for (int i = 0; i < data.Rows.Count; i++)
+            foreach (DataRow row in data.Rows)
             {
-                string employeeID = data.Rows[i]["MaNhanVien"].ToString();
+                string employeeID = row["MaNhanVien"].ToString();
                 string permission = employeeID.Substring(0, 2);
-                if (permission == "QL")
-                {
-                    data.Rows[i]["quyen"] = "Quản lý";
-                }
-                else if (permission == "LT")
-                {
-                    data.Rows[i]["quyen"] = "Lễ Tân";
-                }
-                else
-                {
-                    data.Rows[i]["quyen"] = "Kho Hàng";
-                }
+                row["quyen"] = permission == "QL" ? "Quản lý" : (permission == "LT" ? "Lễ Tân" : "Kho Hàng");
             }
             dataEmployerMNG.DataSource = data;
 
@@ -191,22 +204,11 @@ namespace GUI
             data.Columns.Add(dataColumn);
 
 
-            for (int i = 0; i < data.Rows.Count; i++)
+            foreach (DataRow row in data.Rows)
             {
-                string employeeID = data.Rows[i]["MaNhanVien"].ToString();
+                string employeeID = row["MaNhanVien"].ToString();
                 string permission = employeeID.Substring(0, 2);
-                if (permission == "QL")
-                {
-                    data.Rows[i]["quyen"] = "Quản lý";
-                }
-                else if (permission == "LT")
-                {
-                    data.Rows[i]["quyen"] = "Lễ Tân";
-                }
-                else
-                {
-                    data.Rows[i]["quyen"] = "Kho Hàng";
-                }
+                row["quyen"] = permission == "QL" ? "Quản lý" : (permission == "LT" ? "Lễ Tân" : "Kho Hàng");
             }
             dataEmployerMNG.DataSource = data;
 
@@ -262,14 +264,14 @@ namespace GUI
         }
         private void btnSearch_MouseLeave(object sender, EventArgs e)
         {
-            btnAdd.BackgroundImage = Properties.Resources.btn;
-            btnAdd.BackgroundImageLayout = ImageLayout.Zoom;
+            btnSearch.BackgroundImage = Properties.Resources.btn;
+            btnSearch.BackgroundImageLayout = ImageLayout.Zoom;
         }
 
         private void btnSearch_MouseEnter(object sender, EventArgs e)
         {
-            btnAdd.BackgroundImage = Properties.Resources.hover;
-            btnAdd.BackgroundImageLayout = ImageLayout.Zoom;
+            btnSearch.BackgroundImage = Properties.Resources.hover;
+            btnSearch.BackgroundImageLayout = ImageLayout.Zoom;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -306,13 +308,31 @@ namespace GUI
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            LoadEmployeeData();
+            if (string.IsNullOrWhiteSpace(textSearch.Text.ToString()))
+            {
+                isSearch = false;
+                LoadEmployeeData1();
+            }
+            else
+            {
+                isSearch = true;
+                LoadEmployeeData1(textSearch.Text.ToString());
+            }
         }
         private void TextSearch_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                LoadEmployeeData();
+                if (string.IsNullOrWhiteSpace(textSearch.Text.ToString()))
+                {
+                    isSearch = false;
+                    LoadEmployeeData1();
+                }
+                else
+                {
+                    isSearch = true;
+                    LoadEmployeeData1(textSearch.Text.ToString());
+                }
                 e.SuppressKeyPress = true;
             }
         }

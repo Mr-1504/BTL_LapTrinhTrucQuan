@@ -40,7 +40,7 @@ namespace GUI
             if(erole == "QL")
             {
                 cbboxChucVu.Items.Clear();
-                cbboxChucVu.Items.Add("Quản Lý");
+                cbboxChucVu.Items.Add("Kho Hàng");
                 cbboxChucVu.Items.Add("Lễ Tân");
             }
             else if(erole == "AD")
@@ -117,8 +117,8 @@ namespace GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            employ.Update();
             employ.ShowComponent(true);
+            employ.BringToFront();
             Hide();
         }
 
