@@ -248,7 +248,7 @@
             this.ef_CTHDN_txbMaHDN.Location = new System.Drawing.Point(14, 9);
             this.ef_CTHDN_txbMaHDN.Name = "ef_CTHDN_txbMaHDN";
             this.ef_CTHDN_txbMaHDN.Size = new System.Drawing.Size(390, 22);
-            this.ef_CTHDN_txbMaHDN.TabIndex = 3;
+            this.ef_CTHDN_txbMaHDN.TabIndex = 0;
             this.ef_CTHDN_txbMaHDN.TextChanged += new System.EventHandler(this.ef_evtFieldValueChange);
             // 
             // label17
@@ -279,7 +279,7 @@
             this.ef_CTHDN_txbSLN.Location = new System.Drawing.Point(15, 9);
             this.ef_CTHDN_txbSLN.Name = "ef_CTHDN_txbSLN";
             this.ef_CTHDN_txbSLN.Size = new System.Drawing.Size(390, 22);
-            this.ef_CTHDN_txbSLN.TabIndex = 1;
+            this.ef_CTHDN_txbSLN.TabIndex = 2;
             this.ef_CTHDN_txbSLN.TextChanged += new System.EventHandler(this.ef_evtFieldValueChange);
             // 
             // ef_CTHDN_pnDG
@@ -299,7 +299,7 @@
             this.ef_CTHDN_txbDG.Location = new System.Drawing.Point(15, 9);
             this.ef_CTHDN_txbDG.Name = "ef_CTHDN_txbDG";
             this.ef_CTHDN_txbDG.Size = new System.Drawing.Size(390, 22);
-            this.ef_CTHDN_txbDG.TabIndex = 2;
+            this.ef_CTHDN_txbDG.TabIndex = 3;
             this.ef_CTHDN_txbDG.TextChanged += new System.EventHandler(this.ef_evtFieldValueChange);
             // 
             // label22
@@ -330,7 +330,7 @@
             this.ef_CTHDN_txbMaNL.Location = new System.Drawing.Point(15, 9);
             this.ef_CTHDN_txbMaNL.Name = "ef_CTHDN_txbMaNL";
             this.ef_CTHDN_txbMaNL.Size = new System.Drawing.Size(390, 22);
-            this.ef_CTHDN_txbMaNL.TabIndex = 2;
+            this.ef_CTHDN_txbMaNL.TabIndex = 1;
             this.ef_CTHDN_txbMaNL.TextChanged += new System.EventHandler(this.ef_evtFieldValueChange);
             // 
             // label23
@@ -371,7 +371,7 @@
             this.ef_HDN_dtpNgayNhap.MaximumSize = new System.Drawing.Size(420, 40);
             this.ef_HDN_dtpNgayNhap.Name = "ef_HDN_dtpNgayNhap";
             this.ef_HDN_dtpNgayNhap.Size = new System.Drawing.Size(420, 29);
-            this.ef_HDN_dtpNgayNhap.TabIndex = 0;
+            this.ef_HDN_dtpNgayNhap.TabIndex = 2;
             // 
             // ef_HDN_lbInformantNCC
             // 
@@ -803,7 +803,7 @@
             this.ef_NL_rtbCD.Location = new System.Drawing.Point(15, 10);
             this.ef_NL_rtbCD.Name = "ef_NL_rtbCD";
             this.ef_NL_rtbCD.Size = new System.Drawing.Size(390, 45);
-            this.ef_NL_rtbCD.TabIndex = 0;
+            this.ef_NL_rtbCD.TabIndex = 2;
             this.ef_NL_rtbCD.Text = "";
             this.ef_NL_rtbCD.TextChanged += new System.EventHandler(this.ef_evtFieldValueChange);
             // 
@@ -824,7 +824,7 @@
             this.ef_NL_txbSL.Location = new System.Drawing.Point(15, 9);
             this.ef_NL_txbSL.Name = "ef_NL_txbSL";
             this.ef_NL_txbSL.Size = new System.Drawing.Size(390, 22);
-            this.ef_NL_txbSL.TabIndex = 2;
+            this.ef_NL_txbSL.TabIndex = 5;
             this.ef_NL_txbSL.TextChanged += new System.EventHandler(this.ef_evtFieldValueChange);
             // 
             // label2
@@ -855,7 +855,7 @@
             this.ef_NL_rtbYC.Location = new System.Drawing.Point(14, 10);
             this.ef_NL_rtbYC.Name = "ef_NL_rtbYC";
             this.ef_NL_rtbYC.Size = new System.Drawing.Size(390, 45);
-            this.ef_NL_rtbYC.TabIndex = 1;
+            this.ef_NL_rtbYC.TabIndex = 3;
             this.ef_NL_rtbYC.Text = "";
             this.ef_NL_rtbYC.TextChanged += new System.EventHandler(this.ef_evtFieldValueChange);
             // 
@@ -876,7 +876,7 @@
             this.ef_NL_rtbCCD.Location = new System.Drawing.Point(14, 10);
             this.ef_NL_rtbCCD.Name = "ef_NL_rtbCCD";
             this.ef_NL_rtbCCD.Size = new System.Drawing.Size(390, 45);
-            this.ef_NL_rtbCCD.TabIndex = 2;
+            this.ef_NL_rtbCCD.TabIndex = 4;
             this.ef_NL_rtbCCD.Text = "";
             this.ef_NL_rtbCCD.TextChanged += new System.EventHandler(this.ef_evtFieldValueChange);
             // 
@@ -1025,7 +1025,7 @@
             this.bf_sb_txbSearchbox.Location = new System.Drawing.Point(53, 14);
             this.bf_sb_txbSearchbox.Name = "bf_sb_txbSearchbox";
             this.bf_sb_txbSearchbox.Size = new System.Drawing.Size(215, 22);
-            this.bf_sb_txbSearchbox.TabIndex = 0;
+            this.bf_sb_txbSearchbox.TabIndex = 1;
             this.bf_sb_txbSearchbox.TextChanged += new System.EventHandler(this.bf_sb_txbSearchbox_TextChanged);
             this.bf_sb_txbSearchbox.Enter += new System.EventHandler(this.bf_sb_txbSearchbox_Enter);
             this.bf_sb_txbSearchbox.Leave += new System.EventHandler(this.bf_sb_txbSearchbox_Leave);
