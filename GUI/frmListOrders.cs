@@ -134,8 +134,10 @@ namespace GUI
             if (e.ColumnIndex == dgvListOrders.Columns["PrintInvoice"].Index && e.RowIndex >= 0)
             {
                 string orderId = dgvListOrders.Rows[e.RowIndex].Cells["IDOrder"].Value.ToString();
+                string date = dgvListOrders.Rows[e.RowIndex].Cells["TimePayment"].Value.ToString();
+                string numberTable = dgvListOrders.Rows[e.RowIndex].Cells["IdTable"].Value.ToString();
 
-                ReportInvoice invoice = new ReportInvoice(orderId);
+                ReportInvoice invoice = new ReportInvoice(orderId,date,numberTable);
                 Add(invoice);
                 invoice.BringToFront();
 

@@ -6,3 +6,10 @@
     {
     }
 }
+
+namespace GUI.QuanLyNguyenLieuMonAnDataSetTableAdapters {
+    
+    
+    public partial class ChitietHoaDonBanTableAdapter {
+    }
+}
