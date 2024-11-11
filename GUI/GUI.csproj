@@ -42,6 +42,18 @@
     <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
       <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
     </Reference>
@@ -165,10 +177,19 @@
     <Compile Include="PurchasedIngredient\PurchasedList.Designer.cs">
       <DependentUpon>PurchasedList.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuanLyNguyenLieuMonAnDataSet.cs">
+      <DependentUpon>QuanLyNguyenLieuMonAnDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="QuanLyNguyenLieuMonAnDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>QuanLyNguyenLieuMonAnDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReportInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportInvoice.Designer.cs">
+      <DependentUpon>ReportInvoice.cs</DependentUpon>
     </Compile>
     <Compile Include="ReportManager.cs">
       <SubType>Form</SubType>
@@ -301,6 +322,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PurchasedIngredient\PurchasedList.resx">
       <DependentUpon>PurchasedList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportInvoice.rdlc" />
+    <EmbeddedResource Include="ReportInvoice.resx">
+      <DependentUpon>ReportInvoice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportManager.rdlc" />
     <EmbeddedResource Include="ReportManager.resx">

@@ -30,7 +30,7 @@ namespace GUI
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblMenu = new System.Windows.Forms.Label();
             this.lblOrder = new System.Windows.Forms.Label();
             this.fpnlMenu = new System.Windows.Forms.FlowLayoutPanel();
@@ -55,11 +55,11 @@ namespace GUI
             // 
             this.lblMenu.AutoSize = true;
             this.lblMenu.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMenu.Location = new System.Drawing.Point(31, 27);
+            this.lblMenu.Location = new System.Drawing.Point(12, 32);
             this.lblMenu.Name = "lblMenu";
-            this.lblMenu.Size = new System.Drawing.Size(62, 25);
+            this.lblMenu.Size = new System.Drawing.Size(94, 25);
             this.lblMenu.TabIndex = 2;
-            this.lblMenu.Text = "Menu";
+            this.lblMenu.Text = "Thực đơn";
             // 
             // lblOrder
             // 
@@ -67,9 +67,10 @@ namespace GUI
             this.lblOrder.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOrder.Location = new System.Drawing.Point(560, 27);
             this.lblOrder.Name = "lblOrder";
-            this.lblOrder.Size = new System.Drawing.Size(61, 25);
+            this.lblOrder.Size = new System.Drawing.Size(87, 25);
             this.lblOrder.TabIndex = 6;
-            this.lblOrder.Text = "Order";
+            this.lblOrder.Text = "Đặt món";
+            this.lblOrder.Click += new System.EventHandler(this.lblOrder_Click);
             // 
             // fpnlMenu
             // 
@@ -103,7 +104,7 @@ namespace GUI
             this.btnPrevious.Name = "btnPrevious";
             this.btnPrevious.Size = new System.Drawing.Size(67, 21);
             this.btnPrevious.TabIndex = 0;
-            this.btnPrevious.Text = "< Previous";
+            this.btnPrevious.Text = "< Trước";
             this.btnPrevious.UseVisualStyleBackColor = true;
             this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
@@ -177,7 +178,7 @@ namespace GUI
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(50, 22);
             this.btnNext.TabIndex = 1;
-            this.btnNext.Text = "Next   >";
+            this.btnNext.Text = "Sau   >";
             this.btnNext.UseVisualStyleBackColor = true;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
@@ -186,14 +187,14 @@ namespace GUI
             this.dgvOrders.BackgroundColor = System.Drawing.Color.White;
             this.dgvOrders.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvOrders.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvOrders.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvOrders.Location = new System.Drawing.Point(565, 92);
             this.dgvOrders.Margin = new System.Windows.Forms.Padding(0);
             this.dgvOrders.Name = "dgvOrders";
