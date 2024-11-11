@@ -17,7 +17,7 @@ namespace GUI
     public partial class HomeManager : Form
     {
         HomeManagerBLL managerBLL = new HomeManagerBLL();
-        
+        string idEmployee;
         public HomeManager()
         {
             InitializeComponent();
@@ -45,6 +45,36 @@ namespace GUI
             cbbHoatDong.Items.Add("Tháng");
             cbbHoatDong.Items.Add("Năm");
             cbbHoatDong.SelectedIndexChanged += cbbHoatDong_SelectedIndexChanged;
+            LoadLiveChart();
+        }
+        public HomeManager(string idEmployee)
+        {
+            InitializeComponent();
+            textDoanhThuRight.AutoSize = false;
+            textDT_DHRight.AutoSize = false;
+            textSoDonHangRight.AutoSize = false;
+            textSoLoaiNguyenLieu.AutoSize = false;
+            textNguyenLieuTrongKhoLau.AutoSize = false;
+            textSoNhaCungCap.AutoSize = false;
+            textSoNhanVienKho.AutoSize = false;
+            textSoTienNLMoiNhap.AutoSize = false;
+            textTongChiKho.AutoSize = false;
+            textDoanhThuNgay.Text = managerBLL.GetSaleToday().ToString();
+            textDonHang.Text = managerBLL.GetOrderToday().ToString();
+            textSoNhanVien.Text = managerBLL.GetEmployee().ToString();
+            textNguyenLieuTrongKhoLau.Text = managerBLL.GetIngredientOld();
+            textSoNhaCungCap.Text = managerBLL.GetSupplier().ToString();
+            textSoNhanVienKho.Text = managerBLL.GetEmployeeWarehouse().ToString();
+            textSoTienNLMoiNhap.Text = managerBLL.GetMoneyIngredient().ToString();
+            textTongChiKho.Text = managerBLL.GetTotalWarehouse().ToString();
+            textSoLoaiNguyenLieu.Text = managerBLL.GetIngredient().ToString();
+            textSoBan.Text = managerBLL.GetTable().ToString();
+            cbbHoatDong.Items.Clear();
+            cbbHoatDong.Items.Add("Tuần");
+            cbbHoatDong.Items.Add("Tháng");
+            cbbHoatDong.Items.Add("Năm");
+            cbbHoatDong.SelectedIndexChanged += cbbHoatDong_SelectedIndexChanged;
+            this.idEmployee = idEmployee;
             LoadLiveChart();
         }
         private void LoadLiveChart()
@@ -358,6 +388,39 @@ namespace GUI
         private void label14_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            DataTable s = managerBLL.GetEmployee(Utilities.Employee.EmployeeId, idEmployee);
+            ReportManager reportManager = new ReportManager(this,s.Rows[0][1].ToString(), DateTime.Now);
+            ShowComponent(false);
+            reportManager.TopLevel = false;
+            panelHomeManager.Controls.Add(reportManager);
+            reportManager.Show();
+            reportManager.FormClosed += new FormClosedEventHandler(Report_FormClosed);
+        }
+        public void ShowComponent(bool show)
+        {
+
+            foreach (Control control in Controls)
+            {
+                if (control != panelHomeManager)
+                    control.Visible = show;
+            }
+        }
+        private void Report_FormClosed(object sender, FormClosedEventArgs e)
+        {
+        }
+        private void btnRp_MouseLeave(object sender, EventArgs e)
+        {
+            btnReport.BackgroundImage = Properties.Resources.btn;
+            btnReport.BackgroundImageLayout = ImageLayout.Zoom;
+        }
+        private void btnRp_MouseEnter(object sender, EventArgs e)
+        {
+            btnReport.BackgroundImage = Properties.Resources.hover;
+            btnReport.BackgroundImageLayout = ImageLayout.Zoom;
         }
     }
 }

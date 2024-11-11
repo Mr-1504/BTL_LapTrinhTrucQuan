@@ -60,6 +60,7 @@ namespace GUI
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.PanelChart = new System.Windows.Forms.Panel();
+            this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.PanelStaff = new System.Windows.Forms.Panel();
@@ -80,6 +81,7 @@ namespace GUI
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PanelRight = new System.Windows.Forms.Panel();
+            this.btnReport = new System.Windows.Forms.Button();
             this.panel11 = new System.Windows.Forms.Panel();
             this.textDT_DHRight = new System.Windows.Forms.TextBox();
             this.panel10 = new System.Windows.Forms.Panel();
@@ -91,7 +93,7 @@ namespace GUI
             this.label20 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
+            this.panelHomeManager = new System.Windows.Forms.Panel();
             this.InPanelManager1.SuspendLayout();
             this.PanelIngredient.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -464,6 +466,14 @@ namespace GUI
             this.PanelChart.TabIndex = 11;
             this.PanelChart.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
             // 
+            // cartesianChart1
+            // 
+            this.cartesianChart1.Location = new System.Drawing.Point(0, -4);
+            this.cartesianChart1.Name = "cartesianChart1";
+            this.cartesianChart1.Size = new System.Drawing.Size(1020, 274);
+            this.cartesianChart1.TabIndex = 29;
+            this.cartesianChart1.Text = "cartesianChart1";
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -667,6 +677,7 @@ namespace GUI
             // PanelRight
             // 
             this.PanelRight.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.PanelRight.Controls.Add(this.btnReport);
             this.PanelRight.Controls.Add(this.panel11);
             this.PanelRight.Controls.Add(this.panel10);
             this.PanelRight.Controls.Add(this.panel9);
@@ -680,6 +691,27 @@ namespace GUI
             this.PanelRight.Size = new System.Drawing.Size(273, 800);
             this.PanelRight.TabIndex = 3;
             this.PanelRight.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelRight_Paint);
+            // 
+            // btnReport
+            // 
+            this.btnReport.BackColor = System.Drawing.Color.Transparent;
+            this.btnReport.BackgroundImage = global::GUI.Properties.Resources.btn;
+            this.btnReport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnReport.FlatAppearance.BorderSize = 0;
+            this.btnReport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnReport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReport.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReport.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnReport.Location = new System.Drawing.Point(58, 726);
+            this.btnReport.Name = "btnReport";
+            this.btnReport.Size = new System.Drawing.Size(170, 52);
+            this.btnReport.TabIndex = 26;
+            this.btnReport.Text = "Báo Cáo";
+            this.btnReport.UseVisualStyleBackColor = false;
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
+            this.btnReport.MouseEnter += new System.EventHandler(this.btnRp_MouseEnter);
+            this.btnReport.MouseLeave += new System.EventHandler(this.btnRp_MouseLeave);
             // 
             // panel11
             // 
@@ -800,13 +832,12 @@ namespace GUI
             this.label22.TabIndex = 14;
             this.label22.Text = "Doanh thu:";
             // 
-            // cartesianChart1
+            // panelHomeManager
             // 
-            this.cartesianChart1.Location = new System.Drawing.Point(0, -4);
-            this.cartesianChart1.Name = "cartesianChart1";
-            this.cartesianChart1.Size = new System.Drawing.Size(1020, 274);
-            this.cartesianChart1.TabIndex = 29;
-            this.cartesianChart1.Text = "cartesianChart1";
+            this.panelHomeManager.Location = new System.Drawing.Point(0, 0);
+            this.panelHomeManager.Name = "panelHomeManager";
+            this.panelHomeManager.Size = new System.Drawing.Size(1370, 815);
+            this.panelHomeManager.TabIndex = 4;
             // 
             // HomeManager
             // 
@@ -815,6 +846,7 @@ namespace GUI
             this.ClientSize = new System.Drawing.Size(1370, 815);
             this.Controls.Add(this.PanelRight);
             this.Controls.Add(this.InPanelManager1);
+            this.Controls.Add(this.panelHomeManager);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "HomeManager";
@@ -931,5 +963,7 @@ namespace GUI
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Panel panel10;
         private LiveCharts.WinForms.CartesianChart cartesianChart1;
+        private System.Windows.Forms.Button btnReport;
+        private System.Windows.Forms.Panel panelHomeManager;
     }
 }
