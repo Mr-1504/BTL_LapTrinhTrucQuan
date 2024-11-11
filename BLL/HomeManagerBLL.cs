@@ -13,6 +13,7 @@ namespace BLL
     public class HomeManagerBLL
     {
         SaleDAL saleDAL = new SaleDAL();
+        EmployeeDAL employeeDAL = new EmployeeDAL();
         public int GetSaleToday()
         {
             return saleDAL.GetSaleToday();
@@ -101,13 +102,25 @@ namespace BLL
         //Nguyên liệu lâu nhất 
         public string GetIngredientOld()
         {
-            return saleDAL.GetIngredientOld().Rows[0][1].ToString();
+            try
+            {
+                return saleDAL.GetIngredientOld().Rows[0][1].ToString();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi xảy ra: " + ex.Message);
+                return string.Empty; 
+            }
         }
 
         //Số tiền nhập nguyên liệu hôm nay
         public int GetMoneyIngredient()
         {
             return saleDAL.GetMoneyIngredient();
+        }
+        public DataTable GetEmployee(Employee @enum, string getValue)
+        {
+            return employeeDAL.GetEmployee(@enum, getValue);
         }
     }
 }

@@ -287,18 +287,26 @@ namespace GUI
                 }
 
                 string employeeID = selectRows.Cells["EmployeeID"].Value.ToString();
-
-                int result = employ.DeletaEmployee(employeeID, EmployeeStatus.NoLongerWorking);
-                if(result == 0)
+                if (role == "QL")
                 {
-                    MessageBox.Show("Xóa nhân viên thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (employeeID.Substring(0, 2) == "QL")
+                    {
+                        MessageBox.Show("Bạn không thể xóa quản lý!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Xóa nhân viên thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LoadEmployeeData();
+                    int result = employ.DeletaEmployee(employeeID, EmployeeStatus.NoLongerWorking);
+                    if (result == 0)
+                    {
+                        MessageBox.Show("Xóa nhân viên thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa nhân viên thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadEmployeeData();
+                    }
                 }
-
             }
             else
             {
