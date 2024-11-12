@@ -177,10 +177,19 @@
     <Compile Include="PurchasedIngredient\PurchasedList.Designer.cs">
       <DependentUpon>PurchasedList.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuanLyNguyenLieuMonAnDataSet.cs">
+      <DependentUpon>QuanLyNguyenLieuMonAnDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="QuanLyNguyenLieuMonAnDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>QuanLyNguyenLieuMonAnDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReportInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportInvoice.Designer.cs">
+      <DependentUpon>ReportInvoice.cs</DependentUpon>
     </Compile>
     <Compile Include="ReportManager.cs">
       <SubType>Form</SubType>
@@ -313,6 +322,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PurchasedIngredient\PurchasedList.resx">
       <DependentUpon>PurchasedList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportInvoice.rdlc" />
+    <EmbeddedResource Include="ReportInvoice.resx">
+      <DependentUpon>ReportInvoice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportManager.rdlc" />
     <EmbeddedResource Include="ReportManager.resx">

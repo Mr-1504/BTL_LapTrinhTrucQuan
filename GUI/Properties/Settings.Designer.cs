@@ -33,5 +33,16 @@ namespace GUI.Properties {
                 return ((string)(this["QuanLyNguyenLieuMonAnConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=WANGAMRT\\SQLEXPRESS;Initial Catalog=QuanLyNguyenLieuMonAn;Integrated " +
+            "Security=True;Encrypt=True;TrustServerCertificate=True")]
+        public string QuanLyNguyenLieuMonAnConnectionString1 {
+            get {
+                return ((string)(this["QuanLyNguyenLieuMonAnConnectionString1"]));
+            }
+        }
     }
 }
