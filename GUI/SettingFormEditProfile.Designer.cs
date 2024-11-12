@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.pnEditProfile = new System.Windows.Forms.Panel();
+            this.pnLine = new System.Windows.Forms.Panel();
+            this.picEditImage = new System.Windows.Forms.PictureBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.picAvatar = new System.Windows.Forms.PictureBox();
             this.txtGender = new System.Windows.Forms.TextBox();
@@ -45,11 +47,9 @@
             this.lbDateofBirth = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.lbname = new System.Windows.Forms.Label();
-            this.picEditImage = new System.Windows.Forms.PictureBox();
-            this.pnLine = new System.Windows.Forms.Panel();
             this.pnEditProfile.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEditImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).BeginInit();
             this.SuspendLayout();
             // 
             // pnEditProfile
@@ -78,6 +78,27 @@
             this.pnEditProfile.Size = new System.Drawing.Size(1266, 630);
             this.pnEditProfile.TabIndex = 6;
             // 
+            // pnLine
+            // 
+            this.pnLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.pnLine.Location = new System.Drawing.Point(288, -20);
+            this.pnLine.Margin = new System.Windows.Forms.Padding(2);
+            this.pnLine.Name = "pnLine";
+            this.pnLine.Size = new System.Drawing.Size(2, 650);
+            this.pnLine.TabIndex = 17;
+            // 
+            // picEditImage
+            // 
+            this.picEditImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picEditImage.Image = global::GUI.Properties.Resources.picEditInformationGray;
+            this.picEditImage.Location = new System.Drawing.Point(199, 221);
+            this.picEditImage.Name = "picEditImage";
+            this.picEditImage.Size = new System.Drawing.Size(30, 30);
+            this.picEditImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picEditImage.TabIndex = 16;
+            this.picEditImage.TabStop = false;
+            this.picEditImage.Click += new System.EventHandler(this.picEditImage_Click);
+            // 
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.Color.Blue;
@@ -87,7 +108,7 @@
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(168, 50);
             this.btnSave.TabIndex = 15;
-            this.btnSave.Text = "Save";
+            this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -245,27 +266,6 @@
             this.lbname.TabIndex = 0;
             this.lbname.Text = "Họ và tên";
             // 
-            // picEditImage
-            // 
-            this.picEditImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picEditImage.Image = global::GUI.Properties.Resources.picEditInformationGray;
-            this.picEditImage.Location = new System.Drawing.Point(199, 221);
-            this.picEditImage.Name = "picEditImage";
-            this.picEditImage.Size = new System.Drawing.Size(30, 30);
-            this.picEditImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picEditImage.TabIndex = 16;
-            this.picEditImage.TabStop = false;
-            this.picEditImage.Click += new System.EventHandler(this.picEditImage_Click);
-            // 
-            // pnLine
-            // 
-            this.pnLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.pnLine.Location = new System.Drawing.Point(288, -20);
-            this.pnLine.Margin = new System.Windows.Forms.Padding(2);
-            this.pnLine.Name = "pnLine";
-            this.pnLine.Size = new System.Drawing.Size(2, 650);
-            this.pnLine.TabIndex = 17;
-            // 
             // SettingFormEditProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -278,8 +278,8 @@
             this.Load += new System.EventHandler(this.SettingFormEditProfile_Load);
             this.pnEditProfile.ResumeLayout(false);
             this.pnEditProfile.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEditImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).EndInit();
             this.ResumeLayout(false);
 
         }
