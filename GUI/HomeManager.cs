@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using Utilities;
 
 namespace GUI
 {
@@ -392,8 +393,13 @@ namespace GUI
 
         private void btnReport_Click(object sender, EventArgs e)
         {
+            if (cbbHoatDong.SelectedItem == null)
+            {
+                MessageBox.Show("Vui lòng chọn hoạt động!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             DataTable s = managerBLL.GetEmployee(Utilities.Employee.EmployeeId, idEmployee);
-            ReportManager reportManager = new ReportManager(this,s.Rows[0][1].ToString(), DateTime.Now);
+            ReportManager reportManager = new ReportManager(this,s.Rows[0][1].ToString(), DateTime.Now,cbbHoatDong.SelectedItem.ToString());
             ShowComponent(false);
             reportManager.TopLevel = false;
             panelHomeManager.Controls.Add(reportManager);

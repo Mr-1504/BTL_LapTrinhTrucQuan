@@ -45,7 +45,7 @@ namespace DAL
         //Doanh thu tuần hiện tại
         public int GetTotalSalesCurrentWeek()
         {
-            string query = "SELECT SUM(TongTien) FROM DonHang WHERE DATEPART(WEEK, NgayTao) = DATEPART(WEEK, GETDATE()) AND DATEPART(YEAR, NgayTao) = DATEPART(YEAR, GETDATE())";
+            string query = "SELECT SUM(TongTien) FROM DonHang WHERE DATEPART(WEEK, NgayTao) = DATEPART(WEEK, GETDATE()) AND DATEPART(YEAR, NgayTao) = DATEPART(YEAR, GETDATE()) AND TrangThai = N'Đã thanh toán'";
             if (SqlHelper.ExecuteScalar(query, new object[] { }) == -1) return 0;
             else return SqlHelper.ExecuteScalar(query, new object[] { });
         }
@@ -53,7 +53,7 @@ namespace DAL
         //Doanh thu tháng hiện tại
         public int GetTotalSalesCurrentMonth()
         {
-            string query = "SELECT SUM(TongTien) FROM DonHang WHERE MONTH(NgayTao) = MONTH(GETDATE()) AND YEAR(NgayTao) = YEAR(GETDATE())";
+            string query = "SELECT SUM(TongTien) FROM DonHang WHERE MONTH(NgayTao) = MONTH(GETDATE()) AND YEAR(NgayTao) = YEAR(GETDATE()) and TrangThai = N'Đã thanh toán'";
             if (SqlHelper.ExecuteScalar(query, new object[] { }) == -1) return 0;
             else return SqlHelper.ExecuteScalar(query, new object[] { });
         }
@@ -61,7 +61,7 @@ namespace DAL
         //Doanh thu năm hiện tại
         public int GetTotalSalesCurrentYear()
         {
-            string query = "SELECT SUM(TongTien) FROM DonHang WHERE YEAR(NgayTao) = YEAR(GETDATE())";
+            string query = "SELECT SUM(TongTien) FROM DonHang WHERE YEAR(NgayTao) = YEAR(GETDATE()) and TrangThai = N'Chưa thanh toán'";
             if (SqlHelper.ExecuteScalar(query, new object[] { }) == -1) return 0;
             else return SqlHelper.ExecuteScalar(query, new object[] { });
         }
@@ -102,7 +102,7 @@ namespace DAL
             using (SqlConnection conn = new SqlConnection(SqlHelper.GetConnectionString()))
             {
                 conn.Open();
-                string query = "SELECT MONTH(NgayTao) AS Thang, SUM(TongTien) AS DoanhThu FROM DonHang Where Year(NgayTao) = Year(GetDate()) GROUP BY MONTH(NgayTao) ORDER BY MONTH(NgayTao)";
+                string query = "SELECT MONTH(NgayTao) AS Thang, SUM(TongTien) AS DoanhThu FROM DonHang Where Year(NgayTao) = Year(GetDate()) and TrangThai = N'Đã thanh toán' GROUP BY MONTH(NgayTao) ORDER BY MONTH(NgayTao)";
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
