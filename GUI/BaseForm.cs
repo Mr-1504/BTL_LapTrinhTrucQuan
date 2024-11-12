@@ -58,7 +58,7 @@ namespace GUI
             string employeeRole = employeeId.Substring(0,2).ToUpper();
             if(employeeRole == "QL" || employeeRole == "AD")
             {
-                HomeManager homeManager = new HomeManager();
+                HomeManager homeManager = new HomeManager(_id);
                 OpenComponent(homeManager);
             }
             else if(employeeRole == "KH")
@@ -229,7 +229,7 @@ namespace GUI
                     string employeeRole = _id.Substring(0, 2).ToUpper();
                     if (employeeRole == "QL" || employeeRole == "AD")
                     {
-                        HomeManager homeManager = new HomeManager();
+                        HomeManager homeManager = new HomeManager(_id);
                         OpenComponent(homeManager);
                     }
                     else if (employeeRole == "KH")

@@ -75,6 +75,11 @@ namespace DAL
             string query = "SELECT * FROM NhanVien WHERE " + @enum.GetEnumDescription() + $" LIKE '%' + @getValue + '%' AND TrangThai = N'{EmployeeStatus.CurrentlyWorking.GetEnumDescription()}'";
             return SqlHelper.ExecuteReader(query, new object[] { getValue });
         }
+        public DataTable GetInAllEmployees(Employee @enum, string getValue)
+        {
+            string query = "SELECT * FROM NhanVien WHERE " + @enum.GetEnumDescription() + $" LIKE '%' + @getValue + '%'";
+            return SqlHelper.ExecuteReader(query, new object[] { getValue });
+        }
         public DataTable GetNewesrEmployee(EmployeeType @enum)
         {
             string year = DateTime.Now.Year.ToString();

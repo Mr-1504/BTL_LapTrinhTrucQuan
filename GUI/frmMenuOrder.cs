@@ -430,5 +430,10 @@ namespace GUI
             path.CloseFigure();
             pnlSearchBarOrder.Region = new Region(path);
         }
+
+        private void lblOrder_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

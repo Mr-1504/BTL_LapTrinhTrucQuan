@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using static BLL.WarehouseBLL.EditData;
 using System.Collections.Generic;
+using System.Globalization;
 
 namespace GUI.Warehouse
 {
@@ -251,7 +252,7 @@ namespace GUI.Warehouse
                     res["MaHoaDonNhap"] = ef_HDN_lbMaHD.Text.ToUpper();
                     res["MaNhanVien"] = ef_HDN_txbMaNV.Text;
                     res["MaNhaCungCap"] = ef_HDN_txbMaNCC.Text;
-                    res["NgayNhap"] = ef_HDN_dtpNgayNhap.Value.ToString();
+                    res["NgayNhap"] = ef_HDN_dtpNgayNhap.Value.ToShortDateString();
                     break;
                 case "ChiTietHoaDonNhap":
                     res["tableName"] = "ChiTietHoaDonNhap";

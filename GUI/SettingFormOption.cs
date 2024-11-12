@@ -124,12 +124,12 @@ namespace GUI
         }
         private void BtnLogout_MouseEnter(object sender, EventArgs e)
         {
-            btnLogout.BackgroundImage = Properties.Resources.image2;
+            btnLogout.BackgroundImage = Properties.Resources.logout2;
         }
 
         private void BtnLogout_MouseLeave(object sender, EventArgs e)
         {
-            btnLogout.BackgroundImage = Properties.Resources.image;
+            btnLogout.BackgroundImage = Properties.Resources.logout1;
         }
     }
 }

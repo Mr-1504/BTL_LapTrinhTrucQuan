@@ -325,6 +325,7 @@ namespace GUI
         public void ShowComponent(bool show)
         {
             HideControls(Controls, show);
+            UpdatePagination();
         }
 
         private void HideControls(Control.ControlCollection controls, bool show)

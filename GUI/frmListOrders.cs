@@ -134,10 +134,12 @@ namespace GUI
             if (e.ColumnIndex == dgvListOrders.Columns["PrintInvoice"].Index && e.RowIndex >= 0)
             {
                 string orderId = dgvListOrders.Rows[e.RowIndex].Cells["IDOrder"].Value.ToString();
-                
-                ucInvoiceDetail invoiceDetail = new ucInvoiceDetail(orderId);
-                AddUc(invoiceDetail);
-                invoiceDetail.BringToFront();
+                string date = dgvListOrders.Rows[e.RowIndex].Cells["TimePayment"].Value.ToString();
+                string numberTable = dgvListOrders.Rows[e.RowIndex].Cells["IdTable"].Value.ToString();
+
+                ReportInvoice invoice = new ReportInvoice(orderId,date,numberTable);
+                Add(invoice);
+                invoice.BringToFront();
 
             }
         }
@@ -148,14 +150,14 @@ namespace GUI
             {
                 e.PaintBackground(e.ClipBounds, true);
 
-                // Tạo hình chữ nhật cho nút với kích thước nhỏ hơn
+                
                 Rectangle buttonRect = new Rectangle(e.CellBounds.X + 5, e.CellBounds.Y + 5, e.CellBounds.Width - 10, e.CellBounds.Height - 10); // Kích thước nhỏ hơn
 
-                // Vẽ nội dung chữ "In" với màu xanh
+             
                 TextRenderer.DrawText(e.Graphics, "In", e.CellStyle.Font,
                     buttonRect, Color.Blue, TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
 
-                // Đánh dấu đã vẽ xong để tránh vẽ thêm
+                
                 e.Handled = true;
             }
 
