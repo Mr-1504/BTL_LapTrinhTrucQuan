@@ -86,7 +86,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
             <Top>0.33334in</Top>
-            <Left>4.27083in</Left>
+            <Left>5.44791in</Left>
             <Height>0.48958in</Height>
             <Width>2.69792in</Width>
             <Style>
@@ -472,7 +472,7 @@
             </TablixRowHierarchy>
             <DataSetName>DataSetChiTietDonHangMonAn</DataSetName>
             <Top>2.92583in</Top>
-            <Left>0.63417in</Left>
+            <Left>1.85292in</Left>
             <Height>0.5in</Height>
             <Width>9.88146in</Width>
             <ZIndex>1</ZIndex>
@@ -501,8 +501,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox41</rd:DefaultName>
-            <Top>1.04041in</Top>
-            <Left>0.63417in</Left>
+            <Top>1.05083in</Top>
+            <Left>1.85292in</Left>
             <Height>0.25in</Height>
             <Width>1in</Width>
             <ZIndex>2</ZIndex>
@@ -533,8 +533,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox49</rd:DefaultName>
-            <Top>1.54041in</Top>
-            <Left>0.63417in</Left>
+            <Top>1.55083in</Top>
+            <Left>1.85292in</Left>
             <Height>0.25in</Height>
             <Width>1in</Width>
             <ZIndex>3</ZIndex>
@@ -565,8 +565,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox56</rd:DefaultName>
-            <Top>2.01958in</Top>
-            <Left>0.63417in</Left>
+            <Top>2.03in</Top>
+            <Left>1.85292in</Left>
             <Height>0.25in</Height>
             <Width>1in</Width>
             <ZIndex>4</ZIndex>
@@ -596,7 +596,7 @@
             </Paragraphs>
             <rd:DefaultName>ReportParameterMaDonHang</rd:DefaultName>
             <Top>1.04041in</Top>
-            <Left>2.35292in</Left>
+            <Left>3.0925in</Left>
             <Height>0.25in</Height>
             <Width>2.14583in</Width>
             <ZIndex>5</ZIndex>
@@ -626,7 +626,7 @@
             </Paragraphs>
             <rd:DefaultName>ReportParameterNgayTao</rd:DefaultName>
             <Top>1.54041in</Top>
-            <Left>2.35292in</Left>
+            <Left>3.0925in</Left>
             <Height>0.25in</Height>
             <Width>2.14583in</Width>
             <ZIndex>6</ZIndex>
@@ -656,7 +656,7 @@
             </Paragraphs>
             <rd:DefaultName>ReportParameterSoBan</rd:DefaultName>
             <Top>2.03in</Top>
-            <Left>2.36333in</Left>
+            <Left>3.10291in</Left>
             <Height>0.25in</Height>
             <Width>2.13542in</Width>
             <ZIndex>7</ZIndex>
@@ -674,7 +674,7 @@
         <Height>5.78125in</Height>
         <Style />
       </Body>
-      <Width>11.23958in</Width>
+      <Width>12.77083in</Width>
       <Page>
         <PageHeader>
           <Height>1.29167in</Height>
@@ -726,7 +726,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox2</rd:DefaultName>
               <Top>0.42708in</Top>
-              <Left>0.42187in</Left>
+              <Left>1.5052in</Left>
               <Height>0.625in</Height>
               <Width>2.3125in</Width>
               <Style>
@@ -743,8 +743,8 @@
               <Source>Embedded</Source>
               <Value>Thiếtkếchưacótên</Value>
               <Sizing>FitProportional</Sizing>
-              <Top>0.15104in</Top>
-              <Left>4.67188in</Left>
+              <Top>0.375in</Top>
+              <Left>5.89063in</Left>
               <Height>0.67708in</Height>
               <Width>1.89583in</Width>
               <ZIndex>1</ZIndex>
