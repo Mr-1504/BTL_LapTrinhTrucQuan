@@ -594,6 +594,8 @@
     <None Include="Resources\addressPanel.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\logout1.png" />
+    <None Include="Resources\logout2.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
