@@ -10,7 +10,7 @@ namespace BLL
     {
         public EmployeeDTO GetEmployee(string employeeId)
         {
-            DataTable data = new EmployeeDAL().GetEmployee(Employee.EmployeeId, employeeId);
+            DataTable data = new EmployeeDAL().GetInAllEmployees(Employee.EmployeeId, employeeId);
 
             DateTime date = default;
             try
