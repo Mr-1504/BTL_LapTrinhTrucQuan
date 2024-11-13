@@ -61,7 +61,7 @@ namespace DAL
         //Doanh thu năm hiện tại
         public int GetTotalSalesCurrentYear()
         {
-            string query = "SELECT SUM(TongTien) FROM DonHang WHERE YEAR(NgayTao) = YEAR(GETDATE()) and TrangThai = N'Chưa thanh toán'";
+            string query = "SELECT SUM(TongTien) FROM DonHang WHERE YEAR(NgayTao) = YEAR(GETDATE()) and TrangThai = N'Đã thanh toán'";
             if (SqlHelper.ExecuteScalar(query, new object[] { }) == -1) return 0;
             else return SqlHelper.ExecuteScalar(query, new object[] { });
         }
