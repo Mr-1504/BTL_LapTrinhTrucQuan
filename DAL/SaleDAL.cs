@@ -222,7 +222,7 @@ namespace DAL
         //Số tiền nhập nguyên liệu hôm nay
         public int GetMoneyIngredient()
         {
-            string query = "SELECT SUM(DonGia*SoLuong) FROM ChiTietHoaDonNhap as ct JOIN HoaDonNhap as dn on ct.MaHoaDonNhap = dn.MaHoaDonNhap Where NgayNhap = GetDate()";
+            string query = "SELECT SUM(DonGia*SoLuong) FROM ChiTietHoaDonNhap as ct JOIN HoaDonNhap as dn on ct.MaHoaDonNhap = dn.MaHoaDonNhap Where CONVERT(DATE, NgayNhap) = CONVERT(DATE, GETDATE())";
             if (SqlHelper.ExecuteScalar(query, new object[] { }) == -1) return 0;
             else return SqlHelper.ExecuteScalar(query, new object[] { });
         }
