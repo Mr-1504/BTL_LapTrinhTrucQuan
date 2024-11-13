@@ -32,7 +32,6 @@ namespace GUI
             dataEmployerMNG.AllowUserToResizeColumns = false;
             dataEmployerMNG.AutoGenerateColumns = false;
             dataEmployerMNG.AllowUserToResizeRows = false;
-
             dataEmployerMNG.Columns["EmployeeID"].DataPropertyName = "MaNhanVien";
             dataEmployerMNG.Columns["EmployeeName"].DataPropertyName = "TenNhanVien";
             dataEmployerMNG.Columns["NumberPhone"].DataPropertyName = "DienThoai";
@@ -366,6 +365,29 @@ namespace GUI
                     textBox.ForeColor = Color.Gray;
                 }
             };
+        }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            ReportEmployee reportEmployee = new ReportEmployee(this,"Vinh",DateTime.Now);
+            ShowComponent(false);
+            reportEmployee.TopLevel = false;
+            pnlEmployMNG.Controls.Add(reportEmployee);
+            reportEmployee.Show();
+            reportEmployee.FormClosed += new FormClosedEventHandler(Report_FormClosed);
+        }
+        private void Report_FormClosed(object sender, FormClosedEventArgs e)
+        {
+        }
+        private void btnRp_MouseLeave(object sender, EventArgs e)
+        {
+            btnReport.BackgroundImage = Properties.Resources.btn;
+            btnReport.BackgroundImageLayout = ImageLayout.Zoom;
+        }
+        private void btnRp_MouseEnter(object sender, EventArgs e)
+        {
+            btnReport.BackgroundImage = Properties.Resources.hover;
+            btnReport.BackgroundImageLayout = ImageLayout.Zoom;
         }
     }
 }

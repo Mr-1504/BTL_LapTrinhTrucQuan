@@ -126,7 +126,7 @@
             this.textSearch.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textSearch.Location = new System.Drawing.Point(16, 8);
             this.textSearch.Name = "textSearch";
-            this.textSearch.Size = new System.Drawing.Size(279, 26);
+            this.textSearch.Size = new System.Drawing.Size(279, 22);
             this.textSearch.TabIndex = 35;
             this.textSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextSearch_KeyDown);
             // 
@@ -326,6 +326,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.addresspanel.ResumeLayout(false);
+            this.addresspanel.PerformLayout();
             this.fpnlPagination.ResumeLayout(false);
             this.ResumeLayout(false);
 

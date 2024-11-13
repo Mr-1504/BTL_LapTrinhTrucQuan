@@ -185,6 +185,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QuanLyNguyenLieuMonAnDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ReportEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportEmployee.Designer.cs">
+      <DependentUpon>ReportEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReportInvoice.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -322,6 +328,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PurchasedIngredient\PurchasedList.resx">
       <DependentUpon>PurchasedList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportEmployee.rdlc" />
+    <EmbeddedResource Include="ReportEmployee.resx">
+      <DependentUpon>ReportEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportInvoice.rdlc" />
     <EmbeddedResource Include="ReportInvoice.resx">

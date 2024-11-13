@@ -48,6 +48,7 @@
             this.textSearch = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.btnReport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataEmployerMNG)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -155,9 +156,9 @@
             // 
             // pnlEmployMNG
             // 
-            this.pnlEmployMNG.Location = new System.Drawing.Point(0, -2);
+            this.pnlEmployMNG.Location = new System.Drawing.Point(0, 0);
             this.pnlEmployMNG.Name = "pnlEmployMNG";
-            this.pnlEmployMNG.Size = new System.Drawing.Size(1370, 817);
+            this.pnlEmployMNG.Size = new System.Drawing.Size(1370, 815);
             this.pnlEmployMNG.TabIndex = 6;
             // 
             // btnDelete
@@ -259,11 +260,30 @@
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
+            // btnReport
+            // 
+            this.btnReport.BackColor = System.Drawing.Color.Transparent;
+            this.btnReport.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnReport.BackgroundImage")));
+            this.btnReport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnReport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReport.FlatAppearance.BorderSize = 0;
+            this.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReport.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReport.ForeColor = System.Drawing.Color.White;
+            this.btnReport.Location = new System.Drawing.Point(1144, 330);
+            this.btnReport.Name = "btnReport";
+            this.btnReport.Size = new System.Drawing.Size(170, 52);
+            this.btnReport.TabIndex = 10;
+            this.btnReport.Text = "Thống kê";
+            this.btnReport.UseVisualStyleBackColor = false;
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
+            // 
             // EmployManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 815);
+            this.Controls.Add(this.btnReport);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnDelete);
@@ -298,5 +318,6 @@
         private System.Windows.Forms.TextBox textSearch;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btnReport;
     }
 }
