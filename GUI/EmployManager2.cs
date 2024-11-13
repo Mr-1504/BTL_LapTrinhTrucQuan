@@ -223,7 +223,7 @@ namespace GUI
                             employ.ShowComponent(true);
                             EmployeeDTO employee = new EmployManager2BLL().GetNewestEmployee(employeeType);
 
-                            string resourcePath = $@"..\..\Resources\AvatarImage\";
+                            string resourcePath = $@"Resources\AvatarImage\";
                             string destinationPath = Path.Combine(resourcePath, $"{employee.EmployeeId}.jpg");
 
                             if (string.IsNullOrEmpty(selectedPath))
@@ -280,7 +280,7 @@ namespace GUI
         }
         private void LoadEmployeeImage(string employeeID)
         {
-            string resourcePath = $@"..\..\Resources\AvatarImage\";
+            string resourcePath = $@"Resources\AvatarImage\";
             string imagePath = Path.Combine(resourcePath, $"{employeeID}.jpg");
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
 
@@ -334,7 +334,7 @@ namespace GUI
                 {
                     
                     string selectedImagePath = openFileDialog.FileName;
-                    string resourcePath = $@"..\..\Resources\AvatarImage\";
+                    string resourcePath = $@"Resources\AvatarImage\";
                     string destinationPath = Path.Combine(resourcePath, $"{employeeID}.jpg");
 
                     if (pictureBox1.Image != null)

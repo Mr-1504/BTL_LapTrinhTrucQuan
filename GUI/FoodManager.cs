@@ -60,7 +60,7 @@ namespace GUI
         }
         public void AddFood(string id, string name,string price,string imageFileName)
         {
-            string imagePath = $@"..\..\Resources\ImageFood\{imageFileName}.JPG";
+            string imagePath = $@"Resources\ImageFood\{imageFileName}.JPG";
             Image icon = null;
 
             try
@@ -72,7 +72,7 @@ namespace GUI
             }
             catch (Exception)
             {
-                using (FileStream fs = new FileStream($@"..\..\Resources\ImageFood\default.jpg", FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                using (FileStream fs = new FileStream($@"Resources\ImageFood\default.jpg", FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
                 {
                     icon = Image.FromStream(fs);
                 }

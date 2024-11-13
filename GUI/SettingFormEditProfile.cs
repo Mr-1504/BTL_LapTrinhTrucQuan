@@ -21,7 +21,7 @@ namespace GUI
         {
             _employeeId = employeeId;
             _dt = _employeeDAL.GetEmployee(Employee.EmployeeId, _employeeId);
-            _imagePath = $@"..\..\Resources\AvatarImage\{_employeeId}.JPG";
+            _imagePath = $@"Resources\AvatarImage\{_employeeId}.JPG";
             _actions = actions;
             InitializeComponent();
             picEditImage.MouseEnter += new EventHandler(Picture_MouseEnter);
@@ -186,7 +186,7 @@ namespace GUI
                     string selectedFilePath = openFileDialog.FileName;
 
                     //  đường dẫn mặc định
-                    string targetPath = $@"..\..\Resources\AvatarImage\{_employeeId}.JPG";
+                    string targetPath = $@"Resources\AvatarImage\{_employeeId}.JPG";
 
                     try
                     {

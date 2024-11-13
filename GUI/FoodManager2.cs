@@ -223,7 +223,7 @@ namespace GUI
         }
         private void LoadFoodImage(string foodID)
         {
-            string resourcePath = $@"..\..\Resources\ImageFood\";
+            string resourcePath = $@"Resources\ImageFood\";
             string imagePath = Path.Combine(resourcePath, $"{foodID}.jpg");
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             if (File.Exists(imagePath))
@@ -269,7 +269,7 @@ namespace GUI
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     string selectedImagePath = openFileDialog.FileName;
-                    string resourcePath = $@"..\..\Resources\ImageFood\";
+                    string resourcePath = $@"Resources\ImageFood\";
                     string destinationPath = Path.Combine(resourcePath, $"{idFood}.jpg");
 
                     if (!Directory.Exists(resourcePath))
@@ -492,7 +492,7 @@ namespace GUI
                     
                     FoodDTO foodDTO1 = new FoodManagerBLL2().GetNewestFood(foodType);
                     Console.WriteLine(foodDTO1.FoodId.ToString());
-                    string resourcePath = $@"..\..\Resources\ImageFood\";
+                    string resourcePath = $@"Resources\ImageFood\";
                     string destinationPath = Path.Combine(resourcePath, $"{foodDTO1.FoodId}.jpg");
 
                     if (string.IsNullOrEmpty(selectedPath))
