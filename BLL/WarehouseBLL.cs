@@ -199,6 +199,11 @@ namespace BLL
             {
                 return DAL_GetIngrInfo(maNL);
             }
+
+            public static DataTable BLL_GetDishUsedIngr(string maNL)
+            {
+                return DAL_GetDishUsedIngr(maNL);
+            }
         }
     }
 }

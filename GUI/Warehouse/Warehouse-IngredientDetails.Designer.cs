@@ -50,8 +50,8 @@
             this.rtbCongDung = new System.Windows.Forms.RichTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.dgvMonAn = new System.Windows.Forms.DataGridView();
             this.label10 = new System.Windows.Forms.Label();
+            this.dgvMonAn = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -283,47 +283,6 @@
             this.panel3.Size = new System.Drawing.Size(650, 620);
             this.panel3.TabIndex = 27;
             // 
-            // dgvMonAn
-            // 
-            this.dgvMonAn.AllowUserToAddRows = false;
-            this.dgvMonAn.AllowUserToDeleteRows = false;
-            this.dgvMonAn.AllowUserToResizeColumns = false;
-            this.dgvMonAn.AllowUserToResizeRows = false;
-            this.dgvMonAn.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            this.dgvMonAn.BackgroundColor = System.Drawing.Color.White;
-            this.dgvMonAn.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvMonAn.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvMonAn.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(228)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(228)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMonAn.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvMonAn.ColumnHeadersHeight = 48;
-            this.dgvMonAn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 5);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMonAn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvMonAn.Location = new System.Drawing.Point(24, 58);
-            this.dgvMonAn.MultiSelect = false;
-            this.dgvMonAn.Name = "dgvMonAn";
-            this.dgvMonAn.ReadOnly = true;
-            this.dgvMonAn.RowHeadersVisible = false;
-            this.dgvMonAn.RowTemplate.Height = 32;
-            this.dgvMonAn.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMonAn.Size = new System.Drawing.Size(603, 538);
-            this.dgvMonAn.TabIndex = 38;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -334,6 +293,48 @@
             this.label10.Size = new System.Drawing.Size(342, 25);
             this.label10.TabIndex = 37;
             this.label10.Text = "Các món ăn sử dụng nguyên liệu này";
+            // 
+            // dgvMonAn
+            // 
+            this.dgvMonAn.AllowUserToAddRows = false;
+            this.dgvMonAn.AllowUserToDeleteRows = false;
+            this.dgvMonAn.AllowUserToResizeColumns = false;
+            this.dgvMonAn.AllowUserToResizeRows = false;
+            this.dgvMonAn.BackgroundColor = System.Drawing.Color.White;
+            this.dgvMonAn.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvMonAn.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.dgvMonAn.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(228)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(228)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowFrame;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMonAn.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvMonAn.ColumnHeadersHeight = 48;
+            this.dgvMonAn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvMonAn.Cursor = System.Windows.Forms.Cursors.Arrow;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 5);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMonAn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvMonAn.GridColor = System.Drawing.Color.White;
+            this.dgvMonAn.Location = new System.Drawing.Point(25, 58);
+            this.dgvMonAn.MultiSelect = false;
+            this.dgvMonAn.Name = "dgvMonAn";
+            this.dgvMonAn.ReadOnly = true;
+            this.dgvMonAn.RowHeadersVisible = false;
+            this.dgvMonAn.RowTemplate.Height = 32;
+            this.dgvMonAn.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgvMonAn.Size = new System.Drawing.Size(601, 527);
+            this.dgvMonAn.TabIndex = 38;
             // 
             // Warehouse_IngredientDetails
             // 

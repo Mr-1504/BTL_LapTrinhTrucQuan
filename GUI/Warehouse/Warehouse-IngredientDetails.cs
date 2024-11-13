@@ -29,6 +29,8 @@ namespace GUI.Warehouse
             rtbCongDung.Text = ingrInfo.Rows[0][3].ToString();
             rtbYeuCau.Text = ingrInfo.Rows[0][4].ToString();
             rtbChongChiDinh.Text = ingrInfo.Rows[0][5].ToString();
+            
+            dgvMonAn.DataSource = BLL_GetDishUsedIngr(maNL);
         }
     }
 }

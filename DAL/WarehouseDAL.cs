@@ -304,6 +304,13 @@ namespace DAL
             {
                 return SqlHelper.ExecuteReader($"select top 1 * from NguyenLieu where MaNguyenLieu = N'{maNL}'", new object[] { });
             }
+            public static DataTable DAL_GetDishUsedIngr(string maNL)
+            {
+                string query =
+                    $"with DSMA as ( select distinct MaMonAn from NguyenLieuMonAn where MaNguyenLieu = N'{maNL}') " +
+                    $"select TenMonAn, DonGia from MonAn where MaMonAn in (select * from DSMA)";
+                return SqlHelper.ExecuteReader(query, new object[] { });
+            }
         }
     }
 }
