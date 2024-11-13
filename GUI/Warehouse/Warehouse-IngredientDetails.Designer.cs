@@ -300,6 +300,7 @@
             this.dgvMonAn.AllowUserToDeleteRows = false;
             this.dgvMonAn.AllowUserToResizeColumns = false;
             this.dgvMonAn.AllowUserToResizeRows = false;
+            this.dgvMonAn.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMonAn.BackgroundColor = System.Drawing.Color.White;
             this.dgvMonAn.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvMonAn.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
@@ -313,8 +314,7 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowFrame;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvMonAn.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvMonAn.ColumnHeadersHeight = 48;
-            this.dgvMonAn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvMonAn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMonAn.Cursor = System.Windows.Forms.Cursors.Arrow;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
