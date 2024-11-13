@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlOrderDetail = new System.Windows.Forms.Panel();
+            this.lblWarning = new System.Windows.Forms.Label();
             this.txtIdTable = new System.Windows.Forms.TextBox();
             this.lblSoBan = new System.Windows.Forms.Label();
             this.pnlNganCach = new System.Windows.Forms.Panel();
@@ -49,7 +50,6 @@
             this.lblChiTietHoaDon = new System.Windows.Forms.Label();
             this.btnBackToOrder = new System.Windows.Forms.Button();
             this.pnlContent = new System.Windows.Forms.Panel();
-            this.lblWarning = new System.Windows.Forms.Label();
             this.pnlOrderDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListFood)).BeginInit();
             this.pnlContent.SuspendLayout();
@@ -78,6 +78,18 @@
             this.pnlOrderDetail.Name = "pnlOrderDetail";
             this.pnlOrderDetail.Size = new System.Drawing.Size(1312, 706);
             this.pnlOrderDetail.TabIndex = 0;
+            // 
+            // lblWarning
+            // 
+            this.lblWarning.AutoSize = true;
+            this.lblWarning.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWarning.ForeColor = System.Drawing.Color.Red;
+            this.lblWarning.Location = new System.Drawing.Point(77, 426);
+            this.lblWarning.Name = "lblWarning";
+            this.lblWarning.Size = new System.Drawing.Size(50, 18);
+            this.lblWarning.TabIndex = 16;
+            this.lblWarning.Text = "label2";
+            this.lblWarning.Visible = false;
             // 
             // txtIdTable
             // 
@@ -277,6 +289,7 @@
             // 
             // pnlContent
             // 
+            this.pnlContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
             this.pnlContent.Controls.Add(this.btnBackToOrder);
             this.pnlContent.Controls.Add(this.lblChiTietHoaDon);
             this.pnlContent.Controls.Add(this.pnlOrderDetail);
@@ -284,18 +297,6 @@
             this.pnlContent.Name = "pnlContent";
             this.pnlContent.Size = new System.Drawing.Size(1370, 815);
             this.pnlContent.TabIndex = 3;
-            // 
-            // lblWarning
-            // 
-            this.lblWarning.AutoSize = true;
-            this.lblWarning.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWarning.ForeColor = System.Drawing.Color.Red;
-            this.lblWarning.Location = new System.Drawing.Point(77, 426);
-            this.lblWarning.Name = "lblWarning";
-            this.lblWarning.Size = new System.Drawing.Size(50, 18);
-            this.lblWarning.TabIndex = 16;
-            this.lblWarning.Text = "label2";
-            this.lblWarning.Visible = false;
             // 
             // frmOrderDetail
             // 

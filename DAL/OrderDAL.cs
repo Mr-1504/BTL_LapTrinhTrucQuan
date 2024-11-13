@@ -83,6 +83,10 @@ namespace DAL
 
         public DataTable GetOrder(string orderId)
         {
+            if (!orderId.StartsWith("HDB", StringComparison.OrdinalIgnoreCase))
+            {
+                orderId = "HDB" + orderId;
+            }
             string query = "SELECT * FROM DonHang WHERE MaDon LIKE @orderId + '%'";
             return SqlHelper.ExecuteReader(query, new object[] { orderId});
         }
@@ -114,6 +118,8 @@ namespace DAL
             string query = "UPDATE DonHang set TongTien = @TotalPrice Where MaDon = @orderId";
             return SqlHelper.ExecuteNonQuery(query, new object[] {orderId, totalPrice});
         }
+
+
 
         
         
