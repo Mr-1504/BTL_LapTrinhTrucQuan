@@ -264,6 +264,12 @@
     <Compile Include="Warehouse\Warehouse-EditData.Designer.cs">
       <DependentUpon>Warehouse-EditData.cs</DependentUpon>
     </Compile>
+    <Compile Include="Warehouse\Warehouse-IngredientDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Warehouse\Warehouse-IngredientDetails.Designer.cs">
+      <DependentUpon>Warehouse-IngredientDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Warehouse\Warehouse-ListAll.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -370,6 +376,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Warehouse\Warehouse-EditData.resx">
       <DependentUpon>Warehouse-EditData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Warehouse\Warehouse-IngredientDetails.resx">
+      <DependentUpon>Warehouse-IngredientDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Warehouse\Warehouse-ListAll.resx">
       <DependentUpon>Warehouse-ListAll.cs</DependentUpon>

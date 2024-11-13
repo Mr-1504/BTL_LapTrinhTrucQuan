@@ -9,10 +9,12 @@ namespace GUI
     public partial class Warehouse_ListAll : Form
     {
         private Warehouse_ServingPrecal _servingPrecal;
+        private Warehouse_IngredientDetails _ingredientDetails;
         private EventHandler _action;
         public Warehouse_ListAll(EventHandler action)
         {
             InitializeComponent();
+
             _servingPrecal = new Warehouse_ServingPrecal(this);
             _servingPrecal.TopLevel = false;
             pnlContent.Controls.Add(_servingPrecal);
@@ -22,6 +24,19 @@ namespace GUI
             _action = action;
             _servingPrecal.MouseEnter += _action;
             foreach (Control control in _servingPrecal.Controls)
+            {
+                control.MouseEnter += _action;
+            }
+
+            _ingredientDetails = new Warehouse_IngredientDetails(this);
+            _ingredientDetails.TopLevel = false;
+            pnlContent.Controls.Add(_ingredientDetails);
+            _ingredientDetails.Location = new System.Drawing.Point(0, 0);
+            _ingredientDetails.Show();
+            _ingredientDetails.SendToBack();
+            _action = action;
+            _ingredientDetails.MouseEnter += _action;
+            foreach (Control control in _ingredientDetails.Controls)
             {
                 control.MouseEnter += _action;
             }
@@ -138,6 +153,12 @@ namespace GUI
         private void pnTabDishCal_Click(object sender, EventArgs e)
         {
             _servingPrecal.BringToFront();
+        }
+
+        private void dgvTable_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            _ingredientDetails.loadInformation(dgvTable.Rows[dgvTable.SelectedCells[0].RowIndex].Cells[0].Value.ToString());
+            _ingredientDetails.BringToFront();
         }
     }
 }

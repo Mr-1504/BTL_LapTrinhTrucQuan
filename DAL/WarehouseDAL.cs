@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Net;
@@ -294,6 +295,14 @@ namespace DAL
                         break;
                 }
                 return SqlHelper.ExecuteNonQuery(command, new object[] {});
+            }
+        }
+
+        public static class IngrInfo
+        {
+            public static DataTable DAL_GetIngrInfo(string maNL)
+            {
+                return SqlHelper.ExecuteReader($"select top 1 * from NguyenLieu where MaNguyenLieu = N'{maNL}'", new object[] { });
             }
         }
     }

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Windows.Forms;
+using static DAL.WarehouseDAL.IngrInfo;
 using DAL;
 using Utilities;
 
@@ -190,6 +190,14 @@ namespace BLL
                     status = WarehouseDAL.EditData.DAL_AddField(formData);
                 }
                 return status;
+            }
+        }
+
+        public static class IngrInfo
+        {
+            public static DataTable BLL_GetIngrInfo(string maNL)
+            {
+                return DAL_GetIngrInfo(maNL);
             }
         }
     }
