@@ -93,7 +93,7 @@ namespace BLL
         {
             return _orderDAL.IsOrderPaid(orderId);
         }
-        public void DeDuctIngredients(string orderId, DataTable dt)
+        public int DeDuctIngredients(string orderId, DataTable dt)
         {
             foreach (DataRow row in dt.Rows)
             {
@@ -115,13 +115,15 @@ namespace BLL
                     try
                     {
                         _ingredientBLL.DeductIngredients(foodId, quantityToDeduct);
+                        return 1;
                     }
                     catch (Exception ex)
                     {
-                        throw new Exception($"Không thể trừ nguyên liệu cho món {foodName} : {ex.Message}!");
+                        return -1;
                     }
                 }
             }
+            return 0;
         }
     }
 }

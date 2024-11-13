@@ -249,6 +249,10 @@ namespace GUI
             if(!isExitOrderDetail)
             {
                 _orderBLL.DeDuctIngredients(_orderID, _data);
+                if(_orderBLL.DeDuctIngredients(_orderID,_data) == -1)
+                {
+                    new MessageForm("Không đủ nguyên liệu cho món ăn", "Thông báo", 1);
+                }
                 _orderDetailBLL.CreateOrderDetail(_orderID, _data);
                 UpdateOrder();
                 new MessageForm("Chi tiết đơn hàng đã được thêm thành công!", "Thông báo", 1);

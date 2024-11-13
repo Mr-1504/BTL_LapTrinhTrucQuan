@@ -296,7 +296,8 @@ namespace GUI
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Không thể mở chi tiết hoá đơn. Dữ liệu không hợp lệ hoặc bị thiếu.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    
+                    new MessageForm("Không thể mở chi tiết hoá đơn. Dữ liệu không hợp lệ hoặc bị thiếu.", "Lỗi", 1);
                     Console.WriteLine("Error: " + ex.Message);
                 }
             }
