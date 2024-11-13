@@ -96,7 +96,7 @@ namespace GUI
 
             if (string.IsNullOrEmpty(search) || search == "Đơn hàng cần tìm ?")
             {
-                orderTabel =  _orderBLL.GetOrders(search);
+                orderTabel =  _orderBLL.GetOrders();
             }
             else
             {
@@ -110,6 +110,18 @@ namespace GUI
             dgvListOrders.Columns["StatusPayment"].DataPropertyName = "TrangThai";
             dgvListOrders.Columns["TimePayment"].DataPropertyName = "NgayTao";
             dgvListOrders.Columns["TotalPrice"].DataPropertyName = "TongTien";
+        }
+
+        private void PerformSearch()
+        {
+            string search = txtSearchBarOrder.Text.Trim();
+            _isSearching = !string.IsNullOrEmpty(search) && search != "Đơn hàng cần tìm ?";
+            LoadOrderData(search);
+        }
+
+        private void txtSearchBarOrder_TextChanged(object sender, EventArgs e)
+        {
+            PerformSearch();
         }
 
         private void dgvListOrders_Paint(object sender, PaintEventArgs e)
@@ -209,20 +221,9 @@ namespace GUI
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
 
-            if(keyData == Keys.Enter)
+            if(keyData == Keys.Enter && txtSearchBarOrder.Focused)
             {
-                string searchValue = txtSearchBarOrder.Text.Trim();
-                if (searchValue == "" || searchValue == "Đơn hàng cần tìm ?")
-                {
-                    LoadOrderData();
-                    _isSearching = false;
-                }
-                else
-                {
-                    LoadOrderData(searchValue);
-                    txtSearchBarOrder.Text = "";
-                    _isSearching=true;
-                }
+                PerformSearch();
                 return true;
             }
             return base.ProcessCmdKey(ref msg, keyData);
@@ -231,9 +232,7 @@ namespace GUI
         private void btnThemDonHang_Click(object sender, EventArgs e)
         {
             OrderDTO newOrder = new OrderDTO(DateTime.Now, 0, Order.unpaid);
-            
 
-            //OrderDTO newOrder = new OrderDTO();
             OrderBLL _orderBLL = new OrderBLL();
 
             bool isSuccess = _orderBLL.AddNewOrder(newOrder);
@@ -296,5 +295,7 @@ namespace GUI
 
             }
         }
+
+        
     }
 }

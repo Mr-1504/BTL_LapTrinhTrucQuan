@@ -33,10 +33,10 @@ namespace GUI
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvListOrders = new System.Windows.Forms.DataGridView();
             this.pnlContent = new System.Windows.Forms.Panel();
-            this.pnlBack = new System.Windows.Forms.Panel();
             this.pnlSearchBarOrder = new System.Windows.Forms.Panel();
             this.txtSearchBarOrder = new System.Windows.Forms.TextBox();
             this.btnThemDonHang = new System.Windows.Forms.Button();
+            this.pnlBack = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListOrders)).BeginInit();
             this.pnlContent.SuspendLayout();
             this.pnlSearchBarOrder.SuspendLayout();
@@ -76,13 +76,6 @@ namespace GUI
             this.pnlContent.Size = new System.Drawing.Size(1370, 815);
             this.pnlContent.TabIndex = 3;
             // 
-            // pnlBack
-            // 
-            this.pnlBack.Location = new System.Drawing.Point(0, 0);
-            this.pnlBack.Name = "pnlBack";
-            this.pnlBack.Size = new System.Drawing.Size(1370, 815);
-            this.pnlBack.TabIndex = 3;
-            // 
             // pnlSearchBarOrder
             // 
             this.pnlSearchBarOrder.BackgroundImage = global::GUI.Properties.Resources.SearchBarOrder;
@@ -102,6 +95,7 @@ namespace GUI
             this.txtSearchBarOrder.Size = new System.Drawing.Size(225, 13);
             this.txtSearchBarOrder.TabIndex = 0;
             this.txtSearchBarOrder.Text = "Đơn hàng cần tìm ?";
+            this.txtSearchBarOrder.TextChanged += new System.EventHandler(this.txtSearchBarOrder_TextChanged);
             this.txtSearchBarOrder.MouseEnter += new System.EventHandler(this.txtSearchBarOrder_MouseEnter);
             this.txtSearchBarOrder.MouseLeave += new System.EventHandler(this.txtSearchBarOrder_MouseLeave);
             // 
@@ -117,6 +111,13 @@ namespace GUI
             this.btnThemDonHang.UseVisualStyleBackColor = true;
             this.btnThemDonHang.Click += new System.EventHandler(this.btnThemDonHang_Click);
             this.btnThemDonHang.Paint += new System.Windows.Forms.PaintEventHandler(this.btnThemDonHang_Paint);
+            // 
+            // pnlBack
+            // 
+            this.pnlBack.Location = new System.Drawing.Point(0, 0);
+            this.pnlBack.Name = "pnlBack";
+            this.pnlBack.Size = new System.Drawing.Size(1370, 815);
+            this.pnlBack.TabIndex = 3;
             // 
             // frmListOrders
             // 
