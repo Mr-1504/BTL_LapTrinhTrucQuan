@@ -97,7 +97,7 @@ namespace GUI
             // 
             this.btnPrevious.FlatAppearance.BorderSize = 0;
             this.btnPrevious.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrevious.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrevious.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrevious.ForeColor = System.Drawing.Color.Blue;
             this.btnPrevious.Location = new System.Drawing.Point(4, 4);
             this.btnPrevious.Margin = new System.Windows.Forms.Padding(4);
@@ -112,7 +112,7 @@ namespace GUI
             // 
             this.btnPage_st.FlatAppearance.BorderSize = 0;
             this.btnPage_st.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPage_st.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPage_st.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPage_st.ForeColor = System.Drawing.Color.Blue;
             this.btnPage_st.Location = new System.Drawing.Point(78, 3);
             this.btnPage_st.Name = "btnPage_st";
@@ -127,7 +127,7 @@ namespace GUI
             // 
             this.btnPage_nd.FlatAppearance.BorderSize = 0;
             this.btnPage_nd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPage_nd.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPage_nd.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPage_nd.ForeColor = System.Drawing.Color.Blue;
             this.btnPage_nd.Location = new System.Drawing.Point(114, 3);
             this.btnPage_nd.Name = "btnPage_nd";
@@ -142,7 +142,7 @@ namespace GUI
             // 
             this.btnPage_rd.FlatAppearance.BorderSize = 0;
             this.btnPage_rd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPage_rd.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPage_rd.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPage_rd.ForeColor = System.Drawing.Color.Blue;
             this.btnPage_rd.Location = new System.Drawing.Point(150, 3);
             this.btnPage_rd.Name = "btnPage_rd";
@@ -157,7 +157,7 @@ namespace GUI
             // 
             this.btnPage_th.FlatAppearance.BorderSize = 0;
             this.btnPage_th.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPage_th.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPage_th.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPage_th.ForeColor = System.Drawing.Color.Blue;
             this.btnPage_th.Location = new System.Drawing.Point(186, 3);
             this.btnPage_th.Name = "btnPage_th";
@@ -172,7 +172,7 @@ namespace GUI
             // 
             this.btnNext.FlatAppearance.BorderSize = 0;
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNext.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNext.ForeColor = System.Drawing.Color.Blue;
             this.btnNext.Location = new System.Drawing.Point(222, 3);
             this.btnNext.Name = "btnNext";
