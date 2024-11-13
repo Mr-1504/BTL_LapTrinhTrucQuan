@@ -34,6 +34,8 @@
             this.cbbTrangThai = new System.Windows.Forms.ComboBox();
             this.cbbChucVu = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panelReport.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,6 +50,8 @@
             // 
             // panelReport
             // 
+            this.panelReport.Controls.Add(this.label2);
+            this.panelReport.Controls.Add(this.label1);
             this.panelReport.Controls.Add(this.cbbTrangThai);
             this.panelReport.Controls.Add(this.cbbChucVu);
             this.panelReport.Controls.Add(this.button1);
@@ -59,7 +63,7 @@
             // cbbTrangThai
             // 
             this.cbbTrangThai.FormattingEnabled = true;
-            this.cbbTrangThai.Location = new System.Drawing.Point(465, 25);
+            this.cbbTrangThai.Location = new System.Drawing.Point(788, 25);
             this.cbbTrangThai.Name = "cbbTrangThai";
             this.cbbTrangThai.Size = new System.Drawing.Size(210, 21);
             this.cbbTrangThai.TabIndex = 3;
@@ -67,7 +71,7 @@
             // cbbChucVu
             // 
             this.cbbChucVu.FormattingEnabled = true;
-            this.cbbChucVu.Location = new System.Drawing.Point(155, 25);
+            this.cbbChucVu.Location = new System.Drawing.Point(324, 25);
             this.cbbChucVu.Name = "cbbChucVu";
             this.cbbChucVu.Size = new System.Drawing.Size(201, 21);
             this.cbbChucVu.TabIndex = 2;
@@ -90,6 +94,26 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(212, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(89, 22);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Chức vụ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(664, 24);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(104, 22);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Trạng thái";
+            // 
             // ReportEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -102,6 +126,7 @@
             this.Text = "ReportEmployee";
             this.Load += new System.EventHandler(this.ReportEmployee_Load);
             this.panelReport.ResumeLayout(false);
+            this.panelReport.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -113,5 +138,7 @@
         private System.Windows.Forms.Panel panelReport;
         private System.Windows.Forms.ComboBox cbbTrangThai;
         private System.Windows.Forms.ComboBox cbbChucVu;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }
